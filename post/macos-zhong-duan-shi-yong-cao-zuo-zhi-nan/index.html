@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>【macOS】实用操作指南 | Team Raster</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://raster.team/favicon.ico?v=1755628864511">
+<link rel="stylesheet" href="https://raster.team/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-289X33BWK2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-289X33BWK2');
+</script>
+
+
+    <meta name="description" content="
+访达中的文件显示或隐藏
+
+在访达中切换隐藏文件的显示状态
+永久隐藏某个文件或文件夹
+永久显示某个文件或文件夹
+
+
+开机启动项
+
+
+访达中的文件显示或隐藏
+在访达中切换隐藏文件的显示状态
+cmd + shift + .
+永久隐藏某个文件或文..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://raster.team">
+        <img src="https://raster.team/images/avatar.png?v=1755628864511" class="site-logo">
+        <h1 class="site-title">Team Raster</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页｜Home
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档｜Archives
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签｜Tags
+          </a>
+        
+      
+        
+          <a href="/tag/creations" class="site-nav">
+            作品｜Creations
+          </a>
+        
+      
+        
+          <a href="/tag/Tutorials" class="site-nav">
+            教程｜Tutorials
+          </a>
+        
+      
+        
+          <a href="/tag/Tools" class="site-nav">
+            工具｜Tools
+          </a>
+        
+      
+        
+          <a href="/tag/VoiceDBs" class="site-nav">
+            音源｜VoiceDBs
+          </a>
+        
+      
+        
+          <a href="/tag/Links" class="site-nav">
+            友链｜Links
+          </a>
+        
+      
+        
+          <a href="/tag/About" class="site-nav">
+            关于｜About
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      光栅组资源发布站
+<br />
+<br />ICP备案号：雪ICP备1145141919810号
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 2025 © Team Raster | <a class="rss" href="https://raster.team/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">【macOS】实用操作指南</h2>
+            <div class="post-date">2023-10-30</div>
+            
+            <div class="post-content" v-pre>
+              <p><ul class="markdownIt-TOC">
+<li><a href="#%E8%AE%BF%E8%BE%BE%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E6%98%BE%E7%A4%BA%E6%88%96%E9%9A%90%E8%97%8F">访达中的文件显示或隐藏</a>
+<ul>
+<li><a href="#%E5%9C%A8%E8%AE%BF%E8%BE%BE%E4%B8%AD%E5%88%87%E6%8D%A2%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E7%9A%84%E6%98%BE%E7%A4%BA%E7%8A%B6%E6%80%81">在访达中切换隐藏文件的显示状态</a></li>
+<li><a href="#%E6%B0%B8%E4%B9%85%E9%9A%90%E8%97%8F%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E6%96%87%E4%BB%B6%E5%A4%B9">永久隐藏某个文件或文件夹</a></li>
+<li><a href="#%E6%B0%B8%E4%B9%85%E6%98%BE%E7%A4%BA%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E6%88%96%E6%96%87%E4%BB%B6%E5%A4%B9">永久显示某个文件或文件夹</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E9%A1%B9">开机启动项</a></li>
+</ul>
+</p>
+<h1 id="访达中的文件显示或隐藏">访达中的文件显示或隐藏</h1>
+<h2 id="在访达中切换隐藏文件的显示状态">在访达中切换隐藏文件的显示状态</h2>
+<p><code>cmd</code> + <code>shift</code> + <code>.</code></p>
+<h2 id="永久隐藏某个文件或文件夹">永久隐藏某个文件或文件夹</h2>
+<pre><code>chflag hidden &lt;将要隐藏的内容拖进来&gt;
+</code></pre>
+<h2 id="永久显示某个文件或文件夹">永久显示某个文件或文件夹</h2>
+<pre><code>chflag nohidden &lt;将要显示的内容拖进来&gt;
+</code></pre>
+<h1 id="开机启动项">开机启动项</h1>
+<p>早期版本的 macOS 依赖于两个文件夹—— /Library/StartupItems和/System/Library/StartupItems——来保存启动 Mac 时指定加载的项目。Apple 现在不鼓励使用 StartupItems 文件夹，但一些旧应用程序可能仍会使用它们。</p>
+<p>通常你的/System/Library/StartupItems文件夹应该是空的，但如果它包含你不再使用的东西，你可以将不需要的项目拖到废纸篓以防止它在你下次启动你的 Mac 时自动加载。</p>
+<p>从 OS 10.4 Tiger 开始，Apple 为开发人员提供了另一种自动启动项目的机制：启动 由进程控制的守护进程和代理launchd。这为开发人员提供了更大的灵活性，但对用户而言透明度较低。</p>
+<p>不是直接打开应用程序，而是 launchd加载特殊格式的 .plist 文档，指定应该启动什么以及在什么情况下启动。有时这些启动项会在后台持续运行，有时会按预定的时间间隔运行，有时会根据需要运行——例如，响应某个文件或文件夹发生更改等事件——然后退出。</p>
+<p>使用的.plist 文件launchd可以占据三个文件夹中的任何一个，它们的位置决定了每个项目何时加载以及具有什么权限：</p>
+<p>/Library/LaunchDaemons和/System/Library/LaunchDaemons中的项目在 Mac 启动时加载，并以根用户身份运行。<br>
+/Library/LaunchAgents和/System/Library/LaunchAgents中的项目在任何用户登录时加载，并以该用户身份运行。<br>
+/Users/[your-username]/Library/LaunchAgents中的项目仅在该特定用户登录时加载，并以该用户身份运行。</p>
+<p>不要更改系统文件：在这些文件夹中，位于/System文件夹中的两个（/System/Library/LaunchDaemons和/System/Library/LaunchAgents）用于作为 macOS 一部分包含的组件，您应该抵制诱惑移除或更改它们——它们可能对保持 Mac 正常运行至关重要。</p>
+<p>https://jar.cool/ru-he-zai-mac-shang-cha-zhao-he-shan-chu-qi-dong/</p>
+
+            </div>
+            
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '6187e0f7e50dfedb9a89',
+        clientSecret: '881a2c7fee8770c1162636e7a62d8debc75796cf',
+        repo: 'website-comment',
+        owner: 'Ander-Index',
+        admin: ['Ander-Index'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
