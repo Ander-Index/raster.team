@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://raster.team</id>
     <title>Team Raster</title>
-    <updated>2025-08-22T09:52:33.996Z</updated>
+    <updated>2025-08-30T14:46:59.284Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://raster.team"/>
     <link rel="self" href="https://raster.team/atom.xml"/>
