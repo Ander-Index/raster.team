@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>【教程】如何不写代码就提取或转换含有多张图片的 .heic | Team Raster</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://raster.team/favicon.ico?v=1756716806955">
+<link rel="stylesheet" href="https://raster.team/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-289X33BWK2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-289X33BWK2');
+</script>
+
+
+    <meta name="description" content="写在前面
+很显然，蠢老虎我根本不会编程。
+所以这篇文章不涉及任何代码，纯现成软件，但是都不开源。
+如果你在寻找开源的解决方案……或许你可以看看 .heic 的官方文档，
+但是如果愿意看官方文档并去写代码的，估计也不会看到我这篇文章……
+ma..." />
+    <meta name="keywords" content="Tutorials" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://raster.team">
+        <img src="https://raster.team/images/avatar.png?v=1756716806955" class="site-logo">
+        <h1 class="site-title">Team Raster</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页｜Home
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档｜Archives
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签｜Tags
+          </a>
+        
+      
+        
+          <a href="/tag/creations" class="site-nav">
+            作品｜Creations
+          </a>
+        
+      
+        
+          <a href="/tag/Tutorials" class="site-nav">
+            教程｜Tutorials
+          </a>
+        
+      
+        
+          <a href="/tag/Tools" class="site-nav">
+            工具｜Tools
+          </a>
+        
+      
+        
+          <a href="/tag/VoiceDBs" class="site-nav">
+            音源｜VoiceDBs
+          </a>
+        
+      
+        
+          <a href="/tag/Links" class="site-nav">
+            友链｜Links
+          </a>
+        
+      
+        
+          <a href="/tag/About" class="site-nav">
+            关于｜About
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      光栅组资源发布站
+<br />
+<br />ICP备案号：雪ICP备1145141919810号
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 2025 © Team Raster | <a class="rss" href="https://raster.team/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">【教程】如何不写代码就提取或转换含有多张图片的 .heic</h2>
+            <div class="post-date">2022-05-07</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="写在前面">写在前面</h1>
+<p>很显然，蠢老虎我根本不会编程。<br>
+所以这篇文章不涉及任何代码，纯现成软件，但是都不开源。<br>
+如果你在寻找开源的解决方案……或许你可以看看 .heic 的官方文档，<br>
+但是如果愿意看官方文档并去写代码的，估计也不会看到我这篇文章……<br>
+macOS 与 Windows 的操作方法不一样，原因是它们对 .heic 的支持力不同。<br>
+<s>（似乎这个格式是需要收取厂商专利费的）</s></p>
+<p>以 Monterey Graphic.heic 为例，下称“目标”。</p>
+<h1 id="macos">macOS</h1>
+<p>macOS 对于 .heic 是系统级的兼容，你在购买 Mac 的时候就已经通过苹果交过了这笔专利费……（所谓羊毛出在羊身上。）</p>
+<ol>
+<li>在 预览 中打开目标。</li>
+<li>把图片一张一张的拖到桌面就可以了。</li>
+<li>但是这样出来的图片式 .tiff 格式，如果不喜欢，那么可以选择导出</li>
+<li>在菜单：“文件 &gt; 导出...”中</li>
+<li>通过格式等选项，就可以选择自己想要导出的格式和大小。<br>
+<img src="https://s3.bmp.ovh/imgs/2022/06/10/81edb038908af330.png" alt="外链_预览导出格式选项" loading="lazy"></li>
+</ol>
+<h1 id="windows">Windows</h1>
+<p>经过测试，目前只有这款叫做 Joyoshare HEIC Converter 的软件可以在 Windows 端转换这种多合一的 .heic 文件。不过，这款软件是收费的……</p>
+<p>Joyoshare HEIC Converter 官网：<a href="https://www.joyoshare.com/heic-converter/">https://www.joyoshare.com/heic-converter/</a></p>
+<p>其提供试用，但是没有注册的版本导出的内容会有水印。<br>
+但是这款软件的“学习版”你可以搜一搜，不难查到。</p>
+<ol>
+<li>首先</li>
+<li>然后</li>
+<li>注意</li>
+<li>这样一来就把 .heic 合集全部解散并转换出来了。</li>
+</ol>
+<h1 id="碎碎念">碎碎念</h1>
+<p>.heic 的颜色确实很不错，但这毕竟还是个新技术，相关的工具文档还有软件上的支持都太少了，不知道以后会怎样。（2022年6月10日）</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://raster.team/tag/tutorials/" class="tag">
+                    Tutorials
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://raster.team/post/Live2D_Raku-Kogarashi_Normal_1.0/">
+                  <h3 class="post-title">
+                    【Live2D】洛凩_Normal_1.0
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '6187e0f7e50dfedb9a89',
+        clientSecret: '881a2c7fee8770c1162636e7a62d8debc75796cf',
+        repo: 'website-comment',
+        owner: 'Ander-Index',
+        admin: ['Ander-Index'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
