@@ -8,8 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://raster.team/favicon.ico?v=1770089077376">
-<link rel="stylesheet" href="https://raster.team/styles/main.css">
+<link rel="shortcut icon" href="https://blog.raster.team/favicon.ico?v=1772769888508">
+<link rel="stylesheet" href="https://blog.raster.team/styles/main.css">
 
 
   
@@ -47,8 +47,8 @@ VoiceMeeter 我不喜欢。
       <div class="sidebar" :class="{ 'full-height': menuVisible }">
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
-      <a class="site-title-container" href="https://raster.team">
-        <img src="https://raster.team/images/avatar.png?v=1770089077376" class="site-logo">
+      <a class="site-title-container" href="https://blog.raster.team">
+        <img src="https://blog.raster.team/images/avatar.png?v=1772769888508" class="site-logo">
         <h1 class="site-title">Team Raster</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -133,7 +133,7 @@ VoiceMeeter 我不喜欢。
 <br />ICP备案号：雪ICP备1145141919810号
     </div>
     <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 2025 © Team Raster | <a class="rss" href="https://raster.team/atom.xml" target="_blank">RSS</a>
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 2025 © Team Raster | <a class="rss" href="https://blog.raster.team/atom.xml" target="_blank">RSS</a>
     </div>
   </div>
 </div>
@@ -208,20 +208,20 @@ VoiceMeeter 我不喜欢。<br>
 <p>REAPER 官方下载页：<a href="http://reaper.fm/download.php">http://reaper.fm/download.php</a></p>
 <p>这个有必要说明一下，ReaRoute ASIO 是 REAPER 的一部分，需要安装 REAPER 才可以使用 ReaRoute ASIO.</p>
 <p>且在安装的时候，ReaRoute ASIO 是一个可选项，所以安装时要确保已经勾选了ReaRoute ASIO.</p>
-<figure data-type="image" tabindex="1"><img src="https://raster.team/post-images/1693475687780.png" alt="安装截图" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://blog.raster.team/post-images/1693475687780.png" alt="安装截图" loading="lazy"></figure>
 <center>这个 ReaRoute ASIO 一定要选上</center>
 <p>如果已经安装过 REAPER, 但是当时没有安装 ReaRoute ASIO, 那也只需要覆盖安装即可。</p>
 <h1 id="设置-reaper">设置 REAPER</h1>
 <h2 id="1-设置-daw-使用的-asio-驱动">1. 设置 DAW 使用的 ASIO 驱动</h2>
 <p>ReaRoute ASIO 并不是用来驱动声卡的，它是一套虚拟线路。所以在 REAPER 中，音频设备仍然要选择使用当前声卡的 ASIO 驱动。</p>
 <p>比如这里我的声卡是 YAMAHA UR242. 那么在 REAPER 偏好设置中，ASIO 驱动就选择 Yamaha Steinberg USB ASIO.<br>
-<img src="https://raster.team/post-images/1693535636273.png" alt="" loading="lazy"></p>
+<img src="https://blog.raster.team/post-images/1693535636273.png" alt="" loading="lazy"></p>
 <h2 id="2-设置-rearoute-asio-路由">2. 设置 ReaRoute ASIO 路由</h2>
 <p>先假定要把总线上的音频输出到 OBS，（如果你想输出某个轨道的音频，就把假定的内容替换为那个轨道，毕竟总线其实也是一条轨道。）</p>
-<p>按下 Route 按钮来打开路由面板<img src="https://raster.team/post-images/1693535940516.png" alt="" loading="lazy"></p>
+<p>按下 Route 按钮来打开路由面板<img src="https://blog.raster.team/post-images/1693535940516.png" alt="" loading="lazy"></p>
 <center>如果没找到这个按钮，就需要去 选项 > 主题 > 主题调整器 中把这个按钮显示出来</center>
 <p>然后，在音频硬件输出中选择 ReaRoute 系列的通道。<br>
-<img src="https://raster.team/post-images/1693536096834.png" alt="" loading="lazy"></p>
+<img src="https://blog.raster.team/post-images/1693536096834.png" alt="" loading="lazy"></p>
 <p>其中，两个一组的 ReaRoute 通道意味着立体声输出。单独的 ReaRoute 通道意味着单声道输出。<br>
 可根据自己的需要同时串流多个通道到多个地方去。</p>
 <p>这里就选择 &quot;ReaRoute 1 / ReaRoute 2&quot; 这个立体声组合。（选哪个真的无所谓，就像是一堆子轨道没有什么优略之分，选了什么记住就行，后面设置 OBS-ASIO 用的到。）</p>
@@ -229,10 +229,10 @@ VoiceMeeter 我不喜欢。<br>
 <h1 id="设置-obs">设置 OBS</h1>
 <p>有了发送就需要接收。</p>
 <h2 id="1-从-obs-的-来源-面板中选择-asio-input-capture">1. 从 OBS 的 来源 面板中选择 ASIO Input Capture</h2>
-<figure data-type="image" tabindex="2"><img src="https://raster.team/post-images/1693538190535.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://blog.raster.team/post-images/1693538190535.png" alt="" loading="lazy"></figure>
 <center>如果没有这个选项，滚回去安装 OBS-ASIO</center>
 <h2 id="2-从-device-里选择-rearoute-asio">2. 从 Device 里选择 ReaRoute ASIO</h2>
-<p><img src="https://raster.team/post-images/1693538750903.png" alt="" loading="lazy"><br>
+<p><img src="https://blog.raster.team/post-images/1693538750903.png" alt="" loading="lazy"><br>
 注意这里是要选择 ReaRoute ASIO, 而不是声卡 ASIO, 因为信号是从 ReaRoute ASIO 来的。</p>
 <h2 id="3-选择-format-与-channel">3. 选择 Format 与 Channel</h2>
 <ul>
@@ -271,14 +271,14 @@ VoiceMeeter 我不喜欢。<br>
 <p>Live 正在发出信号，那么就需要 REAPER 进行接收并“解码”<br>
 1. 将 REAPER 按照前半部分教程中的路由进行设置，这样一来 ReaRoute ASIO 的 1/2 便和 OBS 连接在了一起。<br>
 2. 在 REAPER 中新建一条轨道，用来接收与 Live 建立的 3/4 中的内容。<br>
-3. 按亮该轨道的录音准备，并选择 ReaRoute 3 / ReaRoute 4, 如果你想要使用其它的路由方案，请自行选择输入设备。<img src="https://raster.team/post-images/1693821147025.png" alt="" loading="lazy"><br>
+3. 按亮该轨道的录音准备，并选择 ReaRoute 3 / ReaRoute 4, 如果你想要使用其它的路由方案，请自行选择输入设备。<img src="https://blog.raster.team/post-images/1693821147025.png" alt="" loading="lazy"><br>
 4. 打开 监听 按钮。此时如果你的 Live 播放正常的话，那么你应当能够听到来自 Live 正在播放的内容。<br>
 5. 检查一下 OBS 的 ASIO Input Capture 的电平是否正在跳动，如果跳动则说明音频顺利的从 Live 通过 ReaRoute ASIO 3/4 到达 REAPER, 并从 REAPER 通过 ReaRoute ASIO 1/2 到达了 OBS.<br>
 6. ENJOY! 你甚至可以试着自己玩出其它 DAW 互相串流的花样，还可以叫上 ReaStream 和 ReaNINJAM 一起玩~ヽ(￣ω￣(￣ω￣〃)ゝ（也可以把当前的配置保存为一个模板，方便下次直接用。）</p>
 <h2 id="故障排除">故障排除</h2>
 <h3 id="q-设置好了-reaper-的新轨道和接收-但是什么内容也没有输入进-reaper">Q: 设置好了 REAPER 的新轨道和接收, 但是什么内容也没有输入进 REAPER</h3>
 <p>这可能是 Live 的 Master 输出没有还卡在 1/2 上，手动设置为 3/4 就好<br>
-<img src="https://raster.team/post-images/1693820535276.png" alt="" loading="lazy"></p>
+<img src="https://blog.raster.team/post-images/1693820535276.png" alt="" loading="lazy"></p>
 <h3 id="q-听到了声音的重复">Q: 听到了声音的重复</h3>
 <p>那大概是你哪个地方的监听开多了，整个教程中，只需要打开 REAPER 中的监听就可以了。</p>
 <h1 id="音频输出到-obs-解决了但是音频输入到-daw-怎么解决">音频输出到 OBS 解决了，但是音频输入到 DAW 怎么解决？</h1>
@@ -297,11 +297,11 @@ VoiceMeeter 我不喜欢。<br>
             
               <div class="tag-container">
                 
-                  <a href="https://raster.team/tag/reaper/" class="tag">
+                  <a href="https://blog.raster.team/tag/reaper/" class="tag">
                     REAPER
                   </a>
                 
-                  <a href="https://raster.team/tag/tutorials/" class="tag">
+                  <a href="https://blog.raster.team/tag/tutorials/" class="tag">
                     Tutorials
                   </a>
                 
@@ -310,7 +310,7 @@ VoiceMeeter 我不喜欢。<br>
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://raster.team/post/UTAU_JA-JP_Shinne-Tatsu_Japanese_VCV_1.0/">
+                <a href="https://blog.raster.team/post/UTAU_JA-JP_Shinne-Tatsu_Japanese_VCV_1.0/">
                   <h3 class="post-title">
                     【UTAU】辰音タツ_日本語_VCV_1.0
                   </h3>
