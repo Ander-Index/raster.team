@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.raster.team</id>
     <title>Team Raster</title>
-    <updated>2026-03-17T03:40:21.620Z</updated>
+    <updated>2026-03-17T04:02:29.643Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.raster.team"/>
     <link rel="self" href="https://blog.raster.team/atom.xml"/>
@@ -20,11 +20,11 @@
         <updated>2026-03-17T03:22:06.000Z</updated>
         <summary type="html"><![CDATA[<p>这是一个正在进行的汉化项目。还没完全搞定，因为我是一边做一边看。</p>
 <p>时不时更新，想看可以先来看，全做完了我会到处吆喝的。</p>
-<p>点击这里跳转：<a href="/Sub-Sites/Chipbook_Guide/guide/index.html">/Sub-Sites/Chipbook_Guide/guide/index.html</a></p>
+<p>点击这里跳转：<a href="/chapbook/guide/">/chapbook/guide/</a></p>
 ]]></summary>
         <content type="html"><![CDATA[<p>这是一个正在进行的汉化项目。还没完全搞定，因为我是一边做一边看。</p>
 <p>时不时更新，想看可以先来看，全做完了我会到处吆喝的。</p>
-<p>点击这里跳转：<a href="/Sub-Sites/Chipbook_Guide/guide/index.html">/Sub-Sites/Chipbook_Guide/guide/index.html</a></p>
+<p>点击这里跳转：<a href="/chapbook/guide/">/chapbook/guide/</a></p>
 ]]></content>
     </entry>
     <entry>
