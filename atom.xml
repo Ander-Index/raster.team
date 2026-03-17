@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.raster.team</id>
     <title>Team Raster</title>
-    <updated>2026-03-06T04:05:37.274Z</updated>
+    <updated>2026-03-17T03:32:03.539Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.raster.team"/>
     <link rel="self" href="https://blog.raster.team/atom.xml"/>
@@ -12,6 +12,13 @@
     <logo>https://blog.raster.team/images/avatar.png</logo>
     <icon>https://blog.raster.team/favicon.ico</icon>
     <rights>All rights reserved 2026, Team Raster</rights>
+    <entry>
+        <title type="html"><![CDATA[【Twine】Chapbook 指南]]></title>
+        <id>https://blog.raster.team/post/Tutorial_Twine-Chapbook-Guide/</id>
+        <link href="https://blog.raster.team/post/Tutorial_Twine-Chapbook-Guide/">
+        </link>
+        <updated>2026-03-17T03:22:06.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【REAPER】简体中文语言包]]></title>
         <id>https://blog.raster.team/post/REAPER_Chinese-Simplified.ReaperLangPack/</id>
@@ -139,17 +146,6 @@ for 花梨</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>我的意思是，如果你使 REAPER, 那么你就不需要一个一个的替换成最新的 Kontakt, 再重新把音色加载一遍……<br>
 也就是说，这篇文章想要告诉你如何把 REAPER 里所有用到的 Kontakt 在不丢失配置的情况下升级到最新的 Kontakt 大版本，比如从 Kontakt 6 升级到 Kontakt 7 而不丢失之前的配置。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【Single】云光]]></title>
-        <id>https://blog.raster.team/post/Music_Yun-Guang/</id>
-        <link href="https://blog.raster.team/post/Music_Yun-Guang/">
-        </link>
-        <updated>2023-09-05T08:38:30.000Z</updated>
-        <summary type="html"><![CDATA[<p>这本来是给一个独立游戏写的 OP, 但是那个游戏项目终止了，那这曲子就发出来算了。┑(￣Д ￣)┍</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>这本来是给一个独立游戏写的 OP, 但是那个游戏项目终止了，那这曲子就发出来算了。┑(￣Д ￣)┍</p>
 ]]></content>
     </entry>
 </feed>
