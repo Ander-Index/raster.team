@@ -28,7 +28,7 @@
         <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../custom-9d78ee23.css">
+        <link rel="stylesheet" href="../custom-64f50166.css">
 
 
         <!-- Provide site root and default themes to javascript -->
@@ -36,10 +36,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-3c51d062.js";
+            window.path_to_searchindex_js = "../searchindex-6d482eac.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-1ffae8ea.js"></script>
+        <script src="../toc-55de0766.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -193,23 +193,23 @@ You remember suddenly that you left the stove on at home.
 <h2 id="advice-on-using-after"><a class="header" href="#advice-on-using-after">Advice on Using <code>after</code></a></h2>
 <p>The <code>after</code> modifier should be used sparingly, and the delays should be specified keeping in mind that everyone reads a different pace. One minute may not seem very long, but it’s an eternity for fast players.</p>
 <p>Chapbook signals that more text will be coming by displaying an animated watch in the lower-right corner of the page, and impatient players can click the mouse or press a key to skip over the delay. This functionality cannot be disabled.</p>
-<h2 id="modifiers-normally-create-paragraphs"><a class="header" href="#modifiers-normally-create-paragraphs">Modifiers Normally Create Paragraphs</a></h2>
-<p>Modifiers normally cause the text that follows them to be in a separate paragraph from the text before it. There are cases, though, where you want text to appear with the preceding paragraph instead. The <code>append</code> modifier makes this happen.</p>
-<pre><code>You've solved the mystery at last.
+<h2 id="修饰符通常创建段落modifiers-normally-create-paragraphs"><a class="header" href="#修饰符通常创建段落modifiers-normally-create-paragraphs">修饰符通常创建段落｜Modifiers Normally Create Paragraphs</a></h2>
+<p>修饰符通常会使紧随其后的文本与前文处于不同的段落中。不过，在某些情况下，您可能希望文本与前一段落一起显示。<code>append</code> 修饰符可以实现这一效果。</p>
+<pre><code>你终于解开了这个谜团。
 
 [after 500ms; append]
-But then it hits you: why _did_ Mrs. Peacock have a lead pipe in her purse?
+但随后你突然意识到：为什么皮考克夫人的手提包里会有一根铅管呢？
 </code></pre>
-<p>The semicolon allows you to join multiple modifiers together in a single line. It’s equivalent to:</p>
+<p>分号允许您将多个修饰符连接在同一行中。它相当于：</p>
 <pre><code>[after 500ms]
 [append]
-But then it hits you: why _did_ Mrs. Peacock have a lead pipe in her purse?
+但随后你突然意识到：为什么皮考克夫人的手提包里会有一根铅管呢？
 </code></pre>
-<p>It doesn’t matter which order you put <code>append</code>, and unlike <code>after</code>, you enter it by itself, without any extra explanation.</p>
+<p>无论您以何种顺序放置 <code>append</code> 修饰符，这都无关紧要；与 <code>after</code> 不同，您可以单独输入它，无需任何额外说明。</p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1">
-<p>Including, fiendishly, days, months, and years. Chapbook uses a library called <code>timestring</code> to parse these delays. <a href="https://github.com/mike182uk/timestring/blob/master/README.md#keywords">Its documentation</a> lists out all of the possibilities. <a href="#fr-1-1">↩</a></p>
+<p>包括，令人头疼的是，日、月、年。Chapbook使用一个名为 <code>timestring</code> 的库来解析这些延迟。其<a href="https://github.com/mike182uk/timestring/blob/master/README.md#keywords">文档</a>列出了所有可能性。 <a href="#fr-1-1">↩</a></p>
 </li>
 </ol>
 

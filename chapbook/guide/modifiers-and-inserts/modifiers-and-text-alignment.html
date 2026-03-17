@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Modifiers and Text Alignment</title>
+        <title>修饰符与文本对齐｜Modifiers and Text Alignment</title>
 
 
         <!-- Custom HTML head -->
@@ -28,7 +28,7 @@
         <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../custom-9d78ee23.css">
+        <link rel="stylesheet" href="../custom-64f50166.css">
 
 
         <!-- Provide site root and default themes to javascript -->
@@ -36,10 +36,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-3c51d062.js";
+            window.path_to_searchindex_js = "../searchindex-6d482eac.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-1ffae8ea.js"></script>
+        <script src="../toc-55de0766.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -184,17 +184,18 @@
 _Lasciate ogne speranza, voi ch'intrate_
 </code></pre>
 <p>The text <code>[align center]</code> is never shown to the player. Instead, Chapbook centers the text following it. As you might have guessed, you can also write <code>[align right]</code> and <code>[align left]</code>.</p>
-<h2 id="the-continue-modifier"><a class="header" href="#the-continue-modifier">The <code>continue</code> modifier</a></h2>
-<p>Modifiers apply to all the text that follow them, until either the end of the passage or another modifier appears in the source text. To cancel all active modifiers, use <code>[continue]</code> like so:</p>
-<pre><code>Above the cave mouth, someone has carved:
+<h2 id="continue-修饰符the-continue-modifier"><a class="header" href="#continue-修饰符the-continue-modifier"><code>continue</code> 修饰符｜The <code>continue</code> modifier</a></h2>
+<p>修饰符会应用于其后出现的所有文本，直到段落结束或源文本中出现另一个修饰符。若要取消所有生效的修饰符，请使用 [continue] 如下所示：</p>
+<pre><code>洞口上方，有人刻着：
 
 [align center]
-_Lasciate ogne speranza, voi ch'intrate_
+_Lasciate ogne speranza, voi ch'intrate（来者需要放弃一切希望）_
 
 [continue]
-You feel a little less confident in your plan.
+你对你的计划感到有点不那么自信了。
 </code></pre>
-<p><code>[continue]</code> simply cancels all active modifiers. You can abbreviate it as <code>[cont'd]</code> or <code>[cont]</code>.</p>
+<p><code>[continue]</code> 仅用于取消所有生效的修饰符。可缩写为 <code>[cont'd]</code> 或 <code>[cont]</code>。</p>
+<p>王洛木：简单来说，就是用来划清上一个修饰符的修饰范围的。</p>
 <h2 id="vertical-text-alignment"><a class="header" href="#vertical-text-alignment">Vertical text alignment</a></h2>
 <p>If you’d like to change how text is aligned vertically inside the page
 container, see the <a href="../customization/page-style.html">Page Style</a> section.</p>
