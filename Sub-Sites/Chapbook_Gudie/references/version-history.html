@@ -1,0 +1,444 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Version History</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-2459343d.css">
+        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../custom-110853f7.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-0057b209.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-55de0766.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="version-history"><a class="header" href="#version-history">Version History</a></h1>
+<h2 id="230-24-november-24"><a class="header" href="#230-24-november-24">2.3.0, 24 November 24</a></h2>
+<p><code>https://klembot.github.io.chapbook/use/2.3.0/format.js</code></p>
+<ul>
+<li>Passage transitions now use the View Transition API where available. This will
+result in smoother transitions, with less possibility for content to jump
+around. If the browser doesn’t support this API (as of this writing, Chrome
+and Safari do but Firefox does not yet), Chapbook automatically uses the
+<code>none</code> transition, e.g. changing content instantaneously.</li>
+<li>It’s now no longer possible to configure header and footer transitions
+separately from the main body content. These configuration variables are no
+longer used.</li>
+<li>The spacing between paragraphs and other content has been corrected. (Earlier
+2.x versions used too much space.)</li>
+<li>When restoring state at the start of a session, style changes in
+<code>config.style</code> are handled properly.</li>
+<li>Passage links are now properly keyboard-focusable.</li>
+<li>Borders on header and footer content are now styled properly.</li>
+<li>Using <code>{</code> inside of a quoted part of an insert, like <code>{restart link, label: '{Start over'}</code>, is handled correctly.</li>
+<li>The “Reveal Link” toolbar button in Twine now inserts the correct code.</li>
+<li>Passages referenced via the <code>{link to}</code> insert now show as references in Twine.</li>
+</ul>
+<p><em>Changes people extending Chapbook should be aware of</em></p>
+<ul>
+<li>The <code>body-content</code> and <code>marginal-content</code> custom elements that previous 2.x
+versions are no longer present, and the HTML structure of the page has changed
+to more closely resemble what it looked like in version 1.</li>
+<li>There’s now a <code>&lt;page-transition&gt;</code> element enclosing the page that allows for
+changing content with the the configured transition. To do this, use JavaScript like this:</li>
+</ul>
+<pre><code>document.querySelector('page-transition').startTransition(() =&gt; {
+    // Code that changes content here
+  }, {preserveWindowScroll: true});
+</code></pre>
+<h2 id="220-28-july-2024"><a class="header" href="#220-28-july-2024">2.2.0, 28 July 2024</a></h2>
+<p><code>https://klembot.github.io/chapbook/use/2.2.0/format.js</code></p>
+<ul>
+<li>Navigating to a new passage resets the window scroll position to the top, as
+it had under Chapbook 1.</li>
+<li>Added a new lookup <code>passage.fromText</code>, which records the text of the last link
+used to navigate to another passage. Like <code>passage.from</code>, this can be used for
+setter-style links.</li>
+</ul>
+<h2 id="210-16-june-2024"><a class="header" href="#210-16-june-2024">2.1.0, 16 June 2024</a></h2>
+<p><code>https://klembot.github.io/chapbook/use/2.1.0/format.js</code></p>
+<ul>
+<li>Chapbook now uses <a href="https://www.reasonable.work/colors/">Reasonable Colors</a> as
+its built-in palette. More hues are available, but there are fewer shades than
+with the previous palette. This palette is designed to make choosing
+accessible color schemes (i.e. with sufficient color contrast) easy. The
+previous palette can still be used by adding <code>oc-</code> in front of a color name,
+like <code>oc-red-5</code>. But this palette will be removed entirely in a future
+release.</li>
+<li>Chapbook now supports switching between a light and dark theme. These themes
+can be customized, and theme switching can be disabled.</li>
+<li>Chapbook also supports fluid font sizing, where font size is proportional to
+the the browser width. This feature can be customized or disabled.</li>
+<li>The header and footer borders can now be customized using state variables
+instead of CSS.</li>
+<li>A new lookup, <code>passage.from</code>, records the name of the passage that the player
+last visited before the current passage. It can be used to implement basic
+setter links as popularized in other story formats, though it doesn’t handle
+all ways that setter links work there.</li>
+<li>A bug where <code>[JavaScript]</code> and <code>[CSS]</code> modifiers weren’t processing their code
+properly has been fixed.</li>
+<li>A bug where story JavaScript and style wasn’t loaded has been fixed.</li>
+<li>A bug where multiple consecutive italicized paragraphs weren’t displayed
+properly has been fixed.</li>
+</ul>
+<h2 id="200-12-march-2024"><a class="header" href="#200-12-march-2024">2.0.0, 12 March 2024</a></h2>
+<p><code>https://klembot.github.io/chapbook/use/2.0.0/format.js</code></p>
+<p>This version contains breaking changes from the 1.x series, but the majority of
+authors won’t need to make any changes to their stories to start using this
+version. The 2.0 version is mostly a behind-the-scenes update.</p>
+<p><em>Changes authors should be aware of</em></p>
+<ul>
+<li>Chapbook 2 now relies heavily on CSS variables and custom elements in the
+browser. Both these features have been available in mainstream web browsers
+since 2018 (six years ago at time of writing), but this means that old
+browsers will not play Chapbook 2.0 stories.</li>
+<li>The micro version of Chapbook, which removed backstage code, is no longer
+available. This is because thanks to refactoring the code, the full version of
+Chapbook 2.0 is now smaller than the micro version of 1.x was, and also
+because very few people used the micro version.</li>
+<li>The way to add custom inserts and modifiers has changed. Instead of modifying
+state variables, call
+<a href="./advanced/adding-custom-inserts.html"><code>engine.template.inserts.add()</code></a> or
+<a href="./advanced/adding-custom-modifiers.html"><code>engine.template.modifiers.add()</code></a>.
+This change was made so that all of Chapbook’s state can be serialized to
+JSON. In the 1.x versions, non-serializable things like functions were allowed
+to be added to state, but they wouldn’t be saved permanently. This led to
+unpredictable behavior.</li>
+<li>Setting fonts to use <code>small caps</code> now uses native CSS (specifically, the
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps"><code>font-variant-caps</code></a>
+property) instead of trying to imitate small caps styling.</li>
+<li>In the unlikely event that the <code>trail</code> variable has become malformed, the
+lookup <code>passage.visits</code> will have the value <code>0</code> instead of <code>undefined</code>.</li>
+</ul>
+<p><em>Changes people extending Chapbook should be aware of</em></p>
+<ul>
+<li>
+<p>The DOM structure of the page has changed considerably. Chapbook now uses
+custom elements instead of <code>data-cb-</code> attributes for behavior. \</p>
+<p>One popular <code>data-cb-</code> attribute that extensions used was <code>data-cb-go</code>, which
+caused navigation to a passage when an element was clicked. Here is JavaScript
+code that can be added to a story that will carry over this behavior if an extension
+you use depends on it:</p>
+</li>
+</ul>
+<pre><code>window.addEventListener('click', ({target}) =&gt; {  
+  const goable = target.closest('[data-cb-go]');
+  
+  if (goable) {
+    window.go(goable.dataset.cbGo);
+  }
+});
+</code></pre>
+<ul>
+<li>
+<p>Instead of managing its own event bus, Chapbook now dispatches custom events
+on <code>window</code>. The names of these events have changed. See <a href="././api/">the API
+documentation</a> for more details.</p>
+</li>
+<li>
+<p>The <code>engine.render()</code> function has been moved to <code>engine.template.render()</code>.</p>
+</li>
+<li>
+<p>Chapbook’s backstage components now use the prefix <code>chapbookbackstage-</code> for
+storing notes and state snapshots in browser local storage instead of <code>cb-</code>.
+This better parallels the local storage keys used by the rest of Chapbook
+code, which uses <code>chapbook-</code>.</p>
+</li>
+</ul>
+<h2 id="123-26-february-2023"><a class="header" href="#123-26-february-2023">1.2.3, 26 February 2023</a></h2>
+<p><code>https://klembot.github.io/chapbook/use/1.2.3/format.js</code></p>
+<ul>
+<li>The <code>{cycling link}</code> and <code>{dropdown menu}</code> inserts now handle numeric choices
+correctly.</li>
+<li>Fixed a bug where the watch icon that appears when using the <code>[after timespan]</code> modifier would not appear correctly in Firefox.</li>
+<li>Fixed the reveal link and text input Twine editor toolbar buttons.</li>
+</ul>
+<h2 id="122-5-april-2022"><a class="header" href="#122-5-april-2022">1.2.2, 5 April 2022</a></h2>
+<p><code>https://klembot.github.io/chapbook/use/1.2.2/format.js</code></p>
+<ul>
+<li>Added Twine editor extensions.</li>
+</ul>
+<h2 id="121-17-january-2021"><a class="header" href="#121-17-january-2021">1.2.1, 17 January 2021</a></h2>
+<p><code>https://klembot.github.io/chapbook/use/1.2.1/format.js</code></p>
+<ul>
+<li>If a variable is set to an array, it can now be dereferenced using an insert,
+e.g. <code>{myArray[1]}</code>.</li>
+<li>Mixing conditional modifiers with forks now behaves correctly.</li>
+<li>Updated the Markdown renderer library used, Marked, to version 1.2.7.</li>
+<li>Fixed typos in the guide.</li>
+</ul>
+<h2 id="120-6-july-2020"><a class="header" href="#120-6-july-2020">1.2.0, 6 July 2020</a></h2>
+<p><code>https://klembot.github.io/chapbook/use/1.2.0/format.js</code></p>
+<p><strong>This introduces a change in how story progress is saved in players’ browsers.
+If you re-publish a story with this version of Chapbook that had been published
+with an earlier one, players will lose their progress.</strong></p>
+<ul>
+<li>Adds a <code>passages()</code> function to <code>engine.story</code>, currently undocumented, for
+use by author scripts. This provides access to all passages in the story.</li>
+<li>Player progress is now saved using a combination of the story name and its
+IFID. This is prevent collisions, e.g. if authors ever named two different
+stories <code>Test</code>, saved progress would collide.</li>
+<li>Now, when a player navigates to a new passage, the browser will always return
+to the top. In the past, the scroll position on a sufficiently long passage
+would remain the same.</li>
+<li>Fixes a bug where changing style (via certain variables like
+<code>config.style.page.font</code>) would cause an error message when restarting a
+story.</li>
+<li>Fixes a bug where the copy-and-paste section of the Style tab of Backstage did
+not update when changes were made.</li>
+<li>Corrects documentation about styling the header and footer (thanks,
+<a href="https://github.com/klembot/chapbook/pull/77">Gospodin</a>).</li>
+</ul>
+<h2 id="111-17-may-2020"><a class="header" href="#111-17-may-2020">1.1.1, 17 May 2020</a></h2>
+<p><code>https://klembot.github.io/chapbook/use/1.1.1/format.js</code></p>
+<ul>
+<li>Fixes a bug introduced in 1.1.0 where nested lookup variables (like
+<code>random.coinFlip</code>) did not work–which is to say, all of them.</li>
+</ul>
+<h2 id="110-10-may-2020"><a class="header" href="#110-10-may-2020">1.1.0, 10 May 2020</a></h2>
+<p><code>https://klembot.github.io/chapbook/use/1.1.0/format.js</code></p>
+<ul>
+<li>Adds a new insert, <code>{no ambient sound}</code>, which stops any existing ambient sound.</li>
+<li>Adds a link to this documentation in the story format’s description in Twine.</li>
+<li>Updates browser support to <a href="https://github.com/browserslist/browserslist">browserslist</a>’s default preset.</li>
+<li>Fixes a bug with using decimals in font sizes, e.g. <code>1.25rem</code>.</li>
+<li>Fixes a bug where clicking a cycling link too fast could cause the web browser tab
+to lock up.</li>
+<li>Fixes a bug with the <code>{reveal link}</code> insert where paragraph ordering was incorrect.</li>
+<li>Fixes a bug where setting <code>config.body.transition.name</code> to <code>none</code> caused paragraphs in passages to stack horizontally instead of vertically.</li>
+<li>Fixes several bugs with using objects as variables.</li>
+<li>Fixes some inaccurate parts of this guide.</li>
+</ul>
+<h2 id="100-18-august-2019"><a class="header" href="#100-18-august-2019">1.0.0, 18 August 2019</a></h2>
+<p><code>https://klembot.github.io/chapbook/use/1.0.0/format.js</code></p>
+<p>Initial public release.</p>
+<h2 id="002-19-october-2018"><a class="header" href="#002-19-october-2018">0.0.2, 19 October 2018</a></h2>
+<ul>
+<li>Fixes a bug where hard restarts in stories deleted the entire local storage
+object, which could trash, among other things, the Twine story library if
+you’re using the web version (yikes). Thanks to Brendan Hennessy for
+identifying this early.</li>
+</ul>
+<h2 id="001-14-october-2018"><a class="header" href="#001-14-october-2018">0.0.1, 14 October 2018</a></h2>
+<p>Initial public prerelease.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../references/modifiers.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../references/lifecycle.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../references/modifiers.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../references/lifecycle.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-c2a407aa.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
