@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>嵌入段落｜Embedding Passages</title>
+        <title>Embedding Passages</title>
 
 
         <!-- Custom HTML head -->
@@ -36,10 +36,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-6d482eac.js";
+            window.path_to_searchindex_js = "../searchindex-3c51d062.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-55de0766.js"></script>
+        <script src="../toc-1ffae8ea.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -175,14 +175,14 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="嵌入段落embedding-passages"><a class="header" href="#嵌入段落embedding-passages">嵌入段落｜Embedding Passages</a></h1>
-<p>在分支叙事中，一个常见的需求是让不同的路径汇聚在一起。实现这一点的最简单方法是让两个段落链接到同一个段落，但你也可以通过将一个段落嵌入到另一个段落中，以在故事中创造一个不那么明显的衔接。</p>
-<p>例如，想象一下，主角在前往名为“L.A.”的段落途中，要么乘坐飞机，要么乘坐火车：</p>
-<pre><code>你花了几个小时看着云朵在飞机机翼下飘移，随后抵达了[[L.A.]]。
+                        <h1 id="embedding-passages"><a class="header" href="#embedding-passages">Embedding Passages</a></h1>
+<p>A common need in branching narrative is for divergent paths to merge together. The easiest way to make this happen is for the two passages to link to the same one, but you can also create a less obvious stitch in your story by embedding one passage inside another.</p>
+<p>For example, imagine that the main character takes either a plane or train on the way to a passage named “L.A.”:</p>
+<pre><code>You spend a few hours watching the clouds drift below the wings of the plane before arriving in [[L.A.]]
 </code></pre>
 <pre><code>The cross-country train ride leaves plenty of space for contemplation on the way to [[L.A.]]
 </code></pre>
-<p>你也可以使用 <code>{embed passage}</code> 插入功能，直接将段落合并：</p>
+<p>You could instead merge the passages directly, using the <code>{embed passage}</code> insert:</p>
 <pre><code>You spend a few hours watching the clouds drift below the wings of the plane.
 
 {embed passage: 'L.A.'}
@@ -191,8 +191,8 @@
 
 {embed passage: 'L.A.'}
 </code></pre>
-<p>两段文字将在其文本下方显示“L.A.”段落的内容。除了段落名称外，<code>{embed passage}</code> 的插入不接受任何其他参数。</p>
-<p>请记住，与任何插入功能一样，<code>{embed passage}</code> 可以放置在段落文本的任何位置。它可以夹在段落的文本之间，甚至可以重复使用。</p>
+<p>The two passages will show the contents of the “L.A.” passage below their text. Apart from the passage name, the <code>embed passage</code> insert does not accept any other parameters.</p>
+<p>Remember that like any insert, <code>{embed passage}</code> can be placed at any point in the text of a passage. It can be sandwiched between text in a passage, or even repeatedly used.</p>
 
                     </main>
 

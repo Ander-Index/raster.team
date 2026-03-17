@@ -37,10 +37,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-6d482eac.js";
+            window.path_to_searchindex_js = "searchindex-3c51d062.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-55de0766.js"></script>
+        <script src="toc-1ffae8ea.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -176,10 +176,10 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="简介introduction"><a href="#简介introduction" class="header">简介｜Introduction</a></h1>
+                        <h1 id="introduction"><a href="#introduction" class="header">Introduction</a></h1>
 <div class="intro intro-path">
     
-<h1>简介｜Introduction</h1>
+<h1>Introduction</h1>
 
 </div>
 
@@ -376,7 +376,7 @@ worth the time investment.</p>
 <p>Chapbook, sadly, cannot be used with Twine 1. <a href="#fr-1-1">↩</a></p>
 </li>
 <li id="footnote-2">
-<p>If you have programming experience, this idea may immediately cause some alarm–how can you possibly write anything serious without this functionality? <a href="#条件性显示conditional-display">Conditional Display</a> discusses this subject, but it may be a bit hard to follow if you skip ahead immediately. <a href="#fr-2-1">↩</a></p>
+<p>If you have programming experience, this idea may immediately cause some alarm–how can you possibly write anything serious without this functionality? <a href="#conditional-display">Conditional Display</a> discusses this subject, but it may be a bit hard to follow if you skip ahead immediately. <a href="#fr-2-1">↩</a></p>
 </li>
 </ol>
 </li>
@@ -388,7 +388,7 @@ worth the time investment.</p>
 </ul>
 </div>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="致谢acknowledgments"><a class="header" href="#致谢acknowledgments">致谢｜Acknowledgments</a></h1>
+<h1 id="acknowledgments"><a class="header" href="#acknowledgments">Acknowledgments</a></h1>
 <p>Chapbook is a confluence of ideas rather than one, wholly original one. Its vars sections are familiar territory to anyone who has used YAML front matter in a static site generator like <a href="https://hexo.io/docs/front-matter.html">Hexo</a>. And much of its state-centered design–in opposition to an imperative design, where change occurs mostly through function calls–comes from what I’ve learned from <a href="https://redux.js.org">Redux</a>, the de facto standard library for managing state in the <a href="https://reactjs.org">React</a> ecosystem.</p>
 <p>You may not be able to tell it by looking at the syntax, but the named hooks of Leon Arnott’s <a href="https://twine2.neocities.org">Harlowe story format</a> inspired many of the thoughts that Chapbook is based upon. What I found so appealing about named hooks is the idea of keeping code separate from the text it affects; that logic could be kept, if only at arm’s length, separate from prose.</p>
 <p>Chapbook’s default aesthetics owe a lot to the style of the interactive fiction engine <a href="http://idmillington.github.io/undum/">Undum</a>, by Ian Millington, as well as Liza Daly’s works <em><a href="https://stoneharborgame.com">Stone Harbor</a></em> and <em><a href="https://lizadaly.com/pages/harmonia/">Harmonia</a></em>. I hope you find Chapbook’s appearance half as graceful as these examples. Or if not–I hope I’ve left you enough hooks to customize it away into something better.</p>
@@ -396,8 +396,8 @@ worth the time investment.</p>
 <p>If you take a look at the <a href="https://twinery.org/cookbook/">Twine Cookbook</a>, you’ll see more than a few similarities between its table of contents and this guide’s. This is no accident. One of my design goals with Chapbook was to make common use cases easy–and the Twine Cookbook has been a wonderful signpost as to what people wanted to achieve with Twine.</p>
 <p>You might also notice some resemblance between this guide and the <a href="https://inform-fiction.org/manual/">Inform Designer’s Manual</a>, written by Graham Nelson, which not only is one of my favorite works of technical writing, but is possibly the one document that’s most responsible for my ongoing infatuation with interactive fiction.</p>
 <p>Finally, I want to thank my creative partner Joel Haddock for patiently playing the roles of guinea pig and sounding board in equal measure.</p>
-<h2 id="本指南中的照片photos-in-this-guide"><a class="header" href="#本指南中的照片photos-in-this-guide">本指南中的照片｜Photos in this Guide</a></h2>
-<p>本指南中的照片来源于 <a href="https://pixabay.com">Pixabay</a> 和 <a href="https://unplash.com">Unsplash</a> 网站，并根据这些网站的许可条款使用。拍摄这些照片的作者包括：</p>
+<h2 id="photos-in-this-guide"><a class="header" href="#photos-in-this-guide">Photos in this Guide</a></h2>
+<p>The photos found in this guide come from a combination of <a href="https://pixabay.com">Pixabay</a> and <a href="https://unplash.com">Unsplash</a>, and are used under terms of the licenses on those web sites. The people who took these photos are:</p>
 <ul>
 <li><a href="https://pixabay.com/en/chess-game-board-chess-game-1403622/">Angela Bedürftig</a></li>
 <li><a href="https://pixabay.com/en/battleship-engine-room-historic-war-389274/">Gregory Butler</a></li>
@@ -410,14 +410,14 @@ worth the time investment.</p>
 <li><a href="https://pixabay.com/en/mic-microphone-sound-check-sing-1132528/">Rudy and Peter Skitterians</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="文本与链接text-and-links"><a href="#文本与链接text-and-links" class="header">文本与链接｜Text and Links</a></h1>
+<h1 id="text-and-links"><a href="#text-and-links" class="header">Text and Links</a></h1>
 <div class="intro links">
     
-<h1>文本与链接｜Text and Links</h1>
+<h1>Text and Links</h1>
 
 </div>
 
-<p>本节首先讲解如何为故事中的文本添加格式，例如粗体或小型大写字母，以及如何在段落间创建链接。完成学习后，您将能够制作出类似《选择你的冒险》系列书籍的数字版本。</p>
+<p>This section begins with an explanation of how to add text formatting, such as boldface or small caps, to text in your story, and create links between passages. Once you’ve finished it, you’ll be able to create the digital equivalent of books like the <em>Choose Your Own Adventure</em> series.</p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="text-formatting"><a class="header" href="#text-formatting">Text Formatting</a></h1>
 <p>Of course, you can type paragraphs into a Twine passage in Chapbook and it will display them as you would expect. But for other kinds of formatting, such as bold or italics, Chapbook follows the syntax of a popular markup language called <a href="https://daringfireball.net/markdown">Markdown</a>.</p>
@@ -603,7 +603,7 @@ The following morning was no better than the day before.
 <h2 id="other-custom-styling"><a class="header" href="#other-custom-styling">Other Custom Styling</a></h2>
 <p>You can also enter HTML into a passage without any extra code surrounding it. It will be displayed exactly as you type it in. The library that Chapbook uses to render Markdown is sometimes inconsistent about how it treats HTML, however. It will always let HTML tags pass through as-is, but whether it interprets the contents of these tags as Markdown or HTML can depend on the exact situation. Unfortunately, the best way to test this is to experiment.</p>
 <h2 id="blockquotes-dont-behave-as-you-might-expect"><a class="header" href="#blockquotes-dont-behave-as-you-might-expect">Blockquotes Don’t Behave As You Might Expect</a></h2>
-<p>Chapbook formatting differs from standard Markdown in how it displays blockquotes–that is, a long stretch of text, often multiple paragraphs, that is indented to indicate it isn’t part of the main text. Markdown uses <code>&gt;</code> at the start of a line to indicate this. However, Chapbook uses the <code>&gt;</code> to mark text as part of a <a href="#分叉forks">fork</a> instead. If you’d like to display a block quotation, put <code>&lt;blockquote&gt;</code> and <code>&lt;/blockquote&gt;</code> around it.</p>
+<p>Chapbook formatting differs from standard Markdown in how it displays blockquotes–that is, a long stretch of text, often multiple paragraphs, that is indented to indicate it isn’t part of the main text. Markdown uses <code>&gt;</code> at the start of a line to indicate this. However, Chapbook uses the <code>&gt;</code> to mark text as part of a <a href="#forks">fork</a> instead. If you’d like to display a block quotation, put <code>&lt;blockquote&gt;</code> and <code>&lt;/blockquote&gt;</code> around it.</p>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -631,43 +631,43 @@ tr, td {
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="简单链接simple-links"><a class="header" href="#简单链接simple-links">简单链接｜Simple Links</a></h1>
-<p>每个 Twine 故事的核心都是链接。Chapbook 遵循 Twine 的链接输入惯例，也就是说，它毫不客气地借鉴了各处维基所使用的语法。</p>
-<p>最简单的链接标记法是用双括号将段落名称括起来：[[一扇小门]]。这会在文本中直接显示该段落的标题。</p>
-<p>但有时，在文本中隐藏目的地的名称是有道理的——可能是因为你的段落名为“<code>一个可怕的结局</code>”，或者段落标题是大写的，但你希望在一个句子中间链接它。你可以用两种不同但等效的方式来实现这一点。</p>
+<h1 id="simple-links"><a class="header" href="#simple-links">Simple Links</a></h1>
+<p>At the heart of every Twine story are links. Chapbook follows the Twine conventions for typing links, which is to say, it steals shamelessly from the syntax used by wikis everywhere.</p>
+<p>The simplest link notation surrounds a name of a passage with double square brackets: <code>[[A tiny door]]</code>. This displays the title of the passage directly in the text.</p>
+<p>Sometimes it makes sense to obscure the name of the destination in the text–perhaps because your passage is named <code>A Grisly End</code>, or the title of the passage is capitalized but you’d like to link it in the middle of a sentence. You can do this in two different, but equivalent ways.</p>
 <div class="table-wrapper">
 <table>
 <thead>
-<tr><th>输入</th><th>显示</th></tr>
+<tr><th>Typed</th><th>Displayed</th></tr>
 </thead>
 <tbody>
-<tr><td><code>你信心十足地[[打开了门-&gt;一个可怕的结局]]。</code></td><td>你信心十足地<a href="javascript:void(0)">打开了门</a>。</td></tr>
-<tr><td><code>坐在长椅上的那位[[Scarlet 小姐&lt;-年轻女士]]，在你看来似乎莫名地对你心怀愧疚。</code></td><td>坐在长椅上的那位<a href="javascript:void(0)">年轻女士</a>，在你看来似乎莫名地对你心怀愧疚。</td></tr>
+<tr><td><code>You [[open the door-&gt;A Grisly End]] with great confidence.</code></td><td>You <a href="javascript:void(0)">open the door</a> with great confidence.</td></tr>
+<tr><td><code>The [[Miss Scarlet&lt;-young lady]] seated in the chaise seems inexplicably guilty to you.</code></td><td>The <a href="javascript:void(0)">young lady</a> seated in the chaise seems inexplicably guilty to you.</td></tr>
 </tbody>
 </table>
 </div>
-<p>（当然，以上示例中的链接并未指向任何具体位置。）</p>
-<p>最简单的记忆方法是：将箭头视为指向你所链接的段落。箭头指向哪个方向并不重要；选择让你感觉最舒适的语法即可。</p>
-<p>你不能在简单链接内部使用 <a href="#text-formatting">Markdown 或其他格式字符</a>。例如，如果你想将某个链接设为斜体，应将格式放在链接外部，即 <code>_[[a friend of a friend]]_</code>。关于如何创建内部包含格式的链接（例如<a href="javascript:void(0)">《一个拥有<em>特定</em>技能的人》</a>），请参阅<a href="#link-inserts">链接插入</a>。</p>
-<h2 id="外部链接external-links"><a class="header" href="#外部链接external-links">外部链接｜External Links</a></h2>
-<p>要链接到另一个网页，请输入一个 URL，而不是段落名称。您可以使用任何您喜欢的链接语法，不过箭头语法在大多数情况下能让您的文本更具可读性：</p>
+<p>(The links don’t lead anywhere in the examples above, of course.)</p>
+<p>The easiest way to remember this is to think of the arrow pointing to the passage you’re linking to. It doesn’t matter which direction the arrow points; use the syntax that feels most comfortable to you.</p>
+<p>You cannot use <a href="#text-formatting">Markdown or other formatting characters</a> inside a simple link. If you’d like to italicize a certain link, for example, put the formatting around the link instead, i.e. <code>_[[a friend of a friend]]_</code>. See <a href="#link-inserts">Link Inserts</a> for how to create a link that has formatting inside it, like <a href="javascript:void(0)">a man with <em>particular</em> skills</a>.</p>
+<h2 id="external-links"><a class="header" href="#external-links">External Links</a></h2>
+<p>To link to another web page, enter a URL instead of a passage name. You can use any link syntax you’d like, though the arrow syntax makes your text more readable in most cases:</p>
 <div class="table-wrapper">
 <table>
 <thead>
-<tr><th>输入</th><th>显示</th></tr>
+<tr><th>Typed</th><th>Displayed</th></tr>
 </thead>
 <tbody>
-<tr><td><code>你在你的电脑上[[打开了 Twine-&gt;https://twinery.org]]。</code></td><td>你在你的电脑上打开了 <a href="https://twinery.org">打开了 Twine</a>。</td></tr>
+<tr><td><code>You [[open Twine-&gt;https://twinery.org]] on your computer.</code></td><td>You <a href="https://twinery.org">open Twine</a> on your computer.</td></tr>
 </tbody>
 </table>
 </div>
-<h2 id="旧版链接语法older-link-syntax"><a class="header" href="#旧版链接语法older-link-syntax">旧版链接语法｜Older Link Syntax</a></h2>
-<p>Chapbook 也支持来自 Twine 1 的链接语法，该语法使用竖线（或称管道字符）：</p>
+<h2 id="older-link-syntax"><a class="header" href="#older-link-syntax">Older Link Syntax</a></h2>
+<p>Chapbook also supports the link syntax from Twine 1 that used a vertical bar (or pipe character):</p>
 <table>
 <thead>
 <tr>
-<th>输入</th>
-<th>显示</th>
+<th>Typed</th>
+<th>Displayed</th>
 </tr>
 
 </thead>
@@ -675,14 +675,14 @@ tr, td {
 <tbody>
 <tr>
 <td>
-<code>你信心满满地[[打开了门|一个可怕的结局]]。</code>
+<code>You [[open the door|A Grisly End]] with great confidence.</code>
 <td>
-你信心满满地<a href="javascript:void(0)">打开了门</a>。
+You <a href="javascript:void(0)">open the door</a> with great confidence.
 </td>
 
 <tbody>
 
-<p>这种语法比箭头语法更难记忆，因此现在几乎没有理由使用它，除非你是从 Twine 1 中学到的。</p>
+<p>This is harder to remember than the arrow syntax, so there’s little reason to use it now unless you learned it from Twine 1.</p>
 <style>
 tr, td {
 	width: 50%;
@@ -693,49 +693,49 @@ tr, td {
 </tbody>
 </table>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="分叉forks"><a class="header" href="#分叉forks">分叉｜Forks</a></h1>
-<p>在互动小说中，展示一系列可能的选择是一种常见手法，通常出现在段落结尾处。《选择你自己的冒险》系列丛书会在页面底部呈现如下文本：</p>
+<h1 id="forks"><a class="header" href="#forks">Forks</a></h1>
+<p>It’s a staple of interactive fiction to show a set of possible choices together, often at the end of a passage. The <em>Choose Your Own Adventure</em> series of books would have text like this at the bottom of a page:</p>
 <blockquote>
-<p>如果你决定沿着海滩行走，请翻到第 5 页。</p>
-<p>如果你决定攀爬岩石山丘，请翻到第 6 页。</p>
+<p>If you decide to walk along the beach, turn to page 5.</p>
+<p>If you decide to climb the rocky hill, turn to page 6.</p>
 </blockquote>
-<p>在数字格式中工作时，我们当然不需要指定页码，但将这些选择与正文区分开来仍然是不错的做法。Chapbook 将这些链接集合称为 <em>分叉</em>，并通过将每个链接单独成行并在开头加上 <code>&gt;</code> 来标示：</p>
-<pre><code>&gt; [[沿着海滩漫步]]
-&gt; [[攀爬岩石大崖]]
+<p>We don’t need to specify page numbers when working in a digital format, of course, but it can still be nice to set off these choices from the rest of the text. Chapbook calls these bundles of links <em>forks</em>, and they are signalled by placing each link on separate line, with <code>&gt;</code> at its beginning:</p>
+<pre><code>&gt; [[Walk along the beach]]
+&gt; [[Climb the rocky hall]]
 </code></pre>
-<p>分叉会在链接之间显示浅色线条，并将链接文本水平居中。请参阅<a href="#分叉样式fork-style">分叉样式</a>以了解如何更改此设置。</p>
+<p>Forks display light lines between the links and horizontally center the text of the links. See <a href="#fork-style">Fork Style</a> to learn how to change this.</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="链接方式ways-to-link"><a class="header" href="#链接方式ways-to-link">链接方式｜Ways to Link</a></h1>
-<p>超链接 (Hyperlink) 这个概念，还需要解释吗？你能记得打开网页浏览器后，点击了多少个超链接才找到这份指南吗？我们视超链接为理所当然，因为它们是网络的基础组成部分，然而，我们仍在共同探索它们的所有用途。</p>
-<p>而超文本 (Hypertext) 仍然是一种如此年轻的媒介，以至于尽管世界大多认同链接存在不同的类别，但对于这些类别具体是什么，更不用说该如何命名，尚未达成共识。</p>
-<p>那么，这里有一些值得思考的问题。</p>
+<h1 id="ways-to-link"><a class="header" href="#ways-to-link">Ways to Link</a></h1>
+<p>The concept of a hyperlink doesn’t bear explaining, does it? Can you remember how many hyperlinks you followed to reach this guide after you opened your web browser? We take hyperlinks for granted because they are such a fundamental part of the web, and yet, we’re still collectively figuring out all of their uses.</p>
+<p>Hypertext is still such a young medium that although the world mostly agrees that there exists categories of links, there isn’t yet a consensus on what these categories are, let alone what they should be called.</p>
+<p>So, some food for thought.</p>
 <ul>
 <li>
-<p><a href="https://heterogenoustasks.wordpress.com/2015/01/26/standard-patterns-in-choice-based-games/">《选择导向游戏中的标准模式》</a> 分析了《选择你自己的冒险》系列及其衍生作品，并识别出它们常见的分支方式。</p>
+<p><a href="https://heterogenoustasks.wordpress.com/2015/01/26/standard-patterns-in-choice-based-games/">Standard Patterns in Choice-Based Games</a> analyzes <em>Choose Your Own Adventure</em> books and their descendants and identifies some common ways they branched.</p>
 </li>
 <li>
-<p><a href="http://www.eastgate.com/patterns/Print.html">《超文本模式》</a> 进行了类似的研究，但其分析对象是 20 世纪 90 年代的文学性超文本作品。</p>
+<p><a href="http://www.eastgate.com/patterns/Print.html">Patterns of Hypertext</a> does something similar, but instead uses the literary hypertexts of the 1990s as its sources.</p>
 </li>
 <li>
-<p><a href="http://www.deenalarsen.net/fundamentals/links.html">《电子文学基础：修辞手法》</a> 提出了一些练习，旨在拓展你对链接运用时的视角。</p>
+<p><a href="http://www.deenalarsen.net/fundamentals/links.html">Fun da mentals: Rhetorical Devices for Electronic Literature</a> suggests some exercises to try to broaden your perspective on linking.</p>
 </li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="介绍后台视图introducing-backstage"><a class="header" href="#介绍后台视图introducing-backstage">介绍后台视图｜Introducing Backstage</a></h1>
-<p>当您在 Twine 编辑器中点击工具栏的“测试”按钮启动故事时，Chapbook 会启用 <em>后台视图</em>：这是一个位于故事界面侧边的面板，让您能够在以玩家身份体验故事的同时，窥探并调整其内部运行机制。本节将重点介绍后台视图中的“历史记录”与“笔记”标签页。其余标签页（“状态”与“样式”）将分别在本指南后续章节《<a href="#state-backstage">状态后台</a>》与《<a href="#page-style">页面样式</a>》中详细说明。</p>
-<p>若需临时隐藏后台视图，可点击视图左侧的箭头按钮，该按钮可切换视图的显示状态。</p>
+<h1 id="introducing-backstage"><a class="header" href="#introducing-backstage">Introducing Backstage</a></h1>
+<p>When you launch your story from Twine using the <strong>Test</strong> button in the editor toolbar, Chapbook enables its <em>backstage view</em>: a panel that sits beside your story and allows you to peek into its workings and tinker with them while you interact with it as players will. This section discusses the <strong>History</strong> and <strong>Notes</strong> tabs in the backstage view. The other tabs, <strong>State</strong> and <strong>Style</strong>, are discussed later in this guide in <a href="#state-backstage">State Backstage</a> and <a href="#page-style">Page Style</a> respectively.</p>
+<p>If you would like to temporarily hide the backstage view, use the arrow button to its left, which toggles the view’s visibility.</p>
 <aside data-hint="info">
 While testing your story in Twine, it's best to use the <strong>Test</strong> button instead of <strong>Play</strong>. If you use the  <strong>Play</strong> button instead, Chapbook will try to resume play where you last left off. Usually, you'd like to start from the beginning, which Chapbook does in test mode.
 </aside>
-<h2 id="历史记录选项卡the-history-tab"><a class="header" href="#历史记录选项卡the-history-tab">历史记录选项卡｜The History Tab</a></h2>
-<p>当你访问故事中的段落时，历史记录选项卡将以表格形式显示它们，最旧的位于顶部，最新的位于底部。</p>
-<p>你可能会在每个段落名称旁边看到一些额外的行。这些在<a href="#state-backstage">状态后台</a>中有解释，但目前你可以忽略它们。</p>
-<p>使用表格中条目旁边的 ↳ 按钮，可以将故事回退到该段落。</p>
-<h2 id="笔记标签页the-notes-tab"><a class="header" href="#笔记标签页the-notes-tab">笔记标签页｜The Notes Tab</a></h2>
-<p>此标签页可用于记录当前阅读段落的笔记——包括拼写错误或任何其他想要记录的想法。这些笔记独立于故事本身存储，因此当多人协作撰写故事时，每位参与者均可保留各自的笔记。您输入的笔记将在键入时自动保存。</p>
-<p>您可通过“<strong>导出笔记</strong>”按钮导出已输入的笔记，并使用“<strong>导入笔记</strong>”按钮将其导入他人的浏览器。若某段落已存在笔记，新导入的笔记将显示在原有内容下方。如需清空笔记，请使用“<strong>删除全部笔记</strong>”按钮。</p>
+<h2 id="the-history-tab"><a class="header" href="#the-history-tab">The History Tab</a></h2>
+<p>As you visit passages in your story, the History tab will show them in a tabular list, with the oldest at the top and the most recent at the bottom.</p>
+<p>You may see some additional rows next to each passage name. These are explained in <a href="#state-backstage">State Backstage</a>, but for now you can ignore them.</p>
+<p>Use the ↳ button beside an entry in the table to rewind the story to that passage.</p>
+<h2 id="the-notes-tab"><a class="header" href="#the-notes-tab">The Notes Tab</a></h2>
+<p>This tab can be used to record notes on the passage you’re currently viewing–noting misspellings, or any other thoughts you’d like to record. These notes are stored separately from the story itself, so that if you are collaborating with other people on a story, each of you can keep separate notes. The notes you enter are saved automatically as you type.</p>
+<p>You can export notes you’ve entered using the <strong>Export Notes</strong> button, and import them into someone else’s browser using the <strong>Import Notes</strong> button. If any notes already exist for a passage, the notes you import will appear below what was previously entered. If you’d like to reset your notes, use the <strong>Delete All Notes</strong> button.</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="修饰符与插入modifiers-and-inserts"><a href="#修饰符与插入modifiers-and-inserts" class="header">修饰符与插入｜Modifiers and Inserts</a></h1>
+<h1 id="modifiers-and-inserts"><a href="#modifiers-and-inserts" class="header">Modifiers and Inserts</a></h1>
 <div class="intro modifiers-inserts">
     
 <h1>Modifiers and Inserts</h1>
@@ -753,18 +753,17 @@ While testing your story in Twine, it's best to use the <strong>Test</strong> bu
 _Lasciate ogne speranza, voi ch'intrate_
 </code></pre>
 <p>The text <code>[align center]</code> is never shown to the player. Instead, Chapbook centers the text following it. As you might have guessed, you can also write <code>[align right]</code> and <code>[align left]</code>.</p>
-<h2 id="continue-修饰符the-continue-modifier"><a class="header" href="#continue-修饰符the-continue-modifier"><code>continue</code> 修饰符｜The <code>continue</code> modifier</a></h2>
-<p>修饰符会应用于其后出现的所有文本，直到段落结束或源文本中出现另一个修饰符。若要取消所有生效的修饰符，请使用 [continue] 如下所示：</p>
-<pre><code>洞口上方，有人刻着：
+<h2 id="the-continue-modifier"><a class="header" href="#the-continue-modifier">The <code>continue</code> modifier</a></h2>
+<p>Modifiers apply to all the text that follow them, until either the end of the passage or another modifier appears in the source text. To cancel all active modifiers, use <code>[continue]</code> like so:</p>
+<pre><code>Above the cave mouth, someone has carved:
 
 [align center]
-_Lasciate ogne speranza, voi ch'intrate（来者需要放弃一切希望）_
+_Lasciate ogne speranza, voi ch'intrate_
 
 [continue]
-你对你的计划感到有点不那么自信了。
+You feel a little less confident in your plan.
 </code></pre>
-<p><code>[continue]</code> 仅用于取消所有生效的修饰符。可缩写为 <code>[cont'd]</code> 或 <code>[cont]</code>。</p>
-<p>王洛木：简单来说，就是用来划清上一个修饰符的修饰范围的。</p>
+<p><code>[continue]</code> simply cancels all active modifiers. You can abbreviate it as <code>[cont'd]</code> or <code>[cont]</code>.</p>
 <h2 id="vertical-text-alignment"><a class="header" href="#vertical-text-alignment">Vertical text alignment</a></h2>
 <p>If you’d like to change how text is aligned vertically inside the page
 container, see the <a href="#page-style">Page Style</a> section.</p>
@@ -796,23 +795,23 @@ You remember suddenly that you left the stove on at home.
 <h2 id="advice-on-using-after"><a class="header" href="#advice-on-using-after">Advice on Using <code>after</code></a></h2>
 <p>The <code>after</code> modifier should be used sparingly, and the delays should be specified keeping in mind that everyone reads a different pace. One minute may not seem very long, but it’s an eternity for fast players.</p>
 <p>Chapbook signals that more text will be coming by displaying an animated watch in the lower-right corner of the page, and impatient players can click the mouse or press a key to skip over the delay. This functionality cannot be disabled.</p>
-<h2 id="修饰符通常创建段落modifiers-normally-create-paragraphs"><a class="header" href="#修饰符通常创建段落modifiers-normally-create-paragraphs">修饰符通常创建段落｜Modifiers Normally Create Paragraphs</a></h2>
-<p>修饰符通常会使紧随其后的文本与前文处于不同的段落中。不过，在某些情况下，您可能希望文本与前一段落一起显示。<code>append</code> 修饰符可以实现这一效果。</p>
-<pre><code>你终于解开了这个谜团。
+<h2 id="modifiers-normally-create-paragraphs"><a class="header" href="#modifiers-normally-create-paragraphs">Modifiers Normally Create Paragraphs</a></h2>
+<p>Modifiers normally cause the text that follows them to be in a separate paragraph from the text before it. There are cases, though, where you want text to appear with the preceding paragraph instead. The <code>append</code> modifier makes this happen.</p>
+<pre><code>You've solved the mystery at last.
 
 [after 500ms; append]
-但随后你突然意识到：为什么皮考克夫人的手提包里会有一根铅管呢？
+But then it hits you: why _did_ Mrs. Peacock have a lead pipe in her purse?
 </code></pre>
-<p>分号允许您将多个修饰符连接在同一行中。它相当于：</p>
+<p>The semicolon allows you to join multiple modifiers together in a single line. It’s equivalent to:</p>
 <pre><code>[after 500ms]
 [append]
-但随后你突然意识到：为什么皮考克夫人的手提包里会有一根铅管呢？
+But then it hits you: why _did_ Mrs. Peacock have a lead pipe in her purse?
 </code></pre>
-<p>无论您以何种顺序放置 <code>append</code> 修饰符，这都无关紧要；与 <code>after</code> 不同，您可以单独输入它，无需任何额外说明。</p>
+<p>It doesn’t matter which order you put <code>append</code>, and unlike <code>after</code>, you enter it by itself, without any extra explanation.</p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-3">
-<p>包括，令人头疼的是，日、月、年。Chapbook使用一个名为 <code>timestring</code> 的库来解析这些延迟。其<a href="https://github.com/mike182uk/timestring/blob/master/README.md#keywords">文档</a>列出了所有可能性。 <a href="#fr-1-1-3">↩</a></p>
+<p>Including, fiendishly, days, months, and years. Chapbook uses a library called <code>timestring</code> to parse these delays. <a href="https://github.com/mike182uk/timestring/blob/master/README.md#keywords">Its documentation</a> lists out all of the possibilities. <a href="#fr-1-1-3">↩</a></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
@@ -837,7 +836,7 @@ Maybe have the screen flash?
 [continue]
 And you felt quite depressed.
 </code></pre>
-<p>These notes are stored separately from what is entered in the <a href="#介绍后台视图introducing-backstage">Notes backstage tab</a>, unfortunately.</p>
+<p>These notes are stored separately from what is entered in the <a href="#introducing-backstage">Notes backstage tab</a>, unfortunately.</p>
 <aside data-hint="danger">
 Unlike backstage comments, notes are still visible to anyone who knows how to use their web browser's development tools. Don't put anything you need to keep secret in a note.
 </aside>
@@ -1002,14 +1001,14 @@ Carrots
 </blockquote>
 <p>Notice how the period after the link insert is moved to the end, after Carrots, but not on a line by itself, and the rest of the paragraph continues.</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="嵌入段落embedding-passages"><a class="header" href="#嵌入段落embedding-passages">嵌入段落｜Embedding Passages</a></h1>
-<p>在分支叙事中，一个常见的需求是让不同的路径汇聚在一起。实现这一点的最简单方法是让两个段落链接到同一个段落，但你也可以通过将一个段落嵌入到另一个段落中，以在故事中创造一个不那么明显的衔接。</p>
-<p>例如，想象一下，主角在前往名为“L.A.”的段落途中，要么乘坐飞机，要么乘坐火车：</p>
-<pre><code>你花了几个小时看着云朵在飞机机翼下飘移，随后抵达了[[L.A.]]。
+<h1 id="embedding-passages"><a class="header" href="#embedding-passages">Embedding Passages</a></h1>
+<p>A common need in branching narrative is for divergent paths to merge together. The easiest way to make this happen is for the two passages to link to the same one, but you can also create a less obvious stitch in your story by embedding one passage inside another.</p>
+<p>For example, imagine that the main character takes either a plane or train on the way to a passage named “L.A.”:</p>
+<pre><code>You spend a few hours watching the clouds drift below the wings of the plane before arriving in [[L.A.]]
 </code></pre>
 <pre><code>The cross-country train ride leaves plenty of space for contemplation on the way to [[L.A.]]
 </code></pre>
-<p>你也可以使用 <code>{embed passage}</code> 插入功能，直接将段落合并：</p>
+<p>You could instead merge the passages directly, using the <code>{embed passage}</code> insert:</p>
 <pre><code>You spend a few hours watching the clouds drift below the wings of the plane.
 
 {embed passage: 'L.A.'}
@@ -1018,10 +1017,10 @@ Carrots
 
 {embed passage: 'L.A.'}
 </code></pre>
-<p>两段文字将在其文本下方显示“L.A.”段落的内容。除了段落名称外，<code>{embed passage}</code> 的插入不接受任何其他参数。</p>
-<p>请记住，与任何插入功能一样，<code>{embed passage}</code> 可以放置在段落文本的任何位置。它可以夹在段落的文本之间，甚至可以重复使用。</p>
+<p>The two passages will show the contents of the “L.A.” passage below their text. Apart from the passage name, the <code>embed passage</code> insert does not accept any other parameters.</p>
+<p>Remember that like any insert, <code>{embed passage}</code> can be placed at any point in the text of a passage. It can be sandwiched between text in a passage, or even repeatedly used.</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="添加状态到故事adding-state-to-stories"><a href="#添加状态到故事adding-state-to-stories" class="header">添加状态到故事｜Adding State to Stories</a></h1>
+<h1 id="adding-state-to-stories"><a href="#adding-state-to-stories" class="header">Adding State to Stories</a></h1>
 <div class="intro state">
     
 <h1>State</h1>
@@ -1234,127 +1233,125 @@ _unreasonablePrice: cash + 3
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="条件性显示conditional-display"><a class="header" href="#条件性显示conditional-display">条件性显示｜Conditional Display</a></h1>
-<p>故事中变量的另一个常见用途是封锁对某个分支的访问，或者相反地解锁故事的隐藏部分。要在 Chapbook 中实现这一点，你需要将变量与修饰符结合使用。</p>
-<p>例如，假设你有一个段落，描述主人公在杂草丛中发现一把钥匙：</p>
+<h1 id="conditional-display"><a class="header" href="#conditional-display">Conditional Display</a></h1>
+<p>The other common use of variables in stories is to block off access to a branch, or conversely unlock a hidden part of a story. In order to do this with Chapbook, you’ll need to combine a variable with a modifier.</p>
+<p>For instance, let’s say you have a passage where the protagonist finds a key hidden in the weeds:</p>
 <pre><code>hasKey: true
 --
-真是件怪事：就在树根周围的杂草丛中，躺着一把锈迹斑斑的钥匙。
+It's the strangest thing: there, in the weeds that surround the base of the tree, is a single rusted key.
 
-捡起钥匙后，你决定[[继续前进]]。
+After picking it up, you decide to [[move on]].
 </code></pre>
-<p>随后在故事中，当主人公遇到这把钥匙对应的门时：</p>
-<pre><code>在大厅的尽头，你发现一扇毫无特色的钢门。
+<p>Then later in the story, when the protagonist encounters the door the key belongs to:</p>
+<pre><code>At the end of the hall, you find a featureless steel door.
 
 [if hasKey]
-你可以尝试用找到的钥匙[[打开它]]。
+You could try [[unlocking it]] with the key you found.
 
 [continue]
-你思考了一下，只得[[转身回去]]。
+You consider [[turning back]].
 </code></pre>
-<p>只有当玩家早些时候找到了钥匙，他们才会看到“你可以试试用找到的钥匙打开它”，但在所有情况下他们都会看到“你思考了一下，只得转身回去”。<code>if</code> 修饰符仅在修饰符中的表达式评估为真时，才显示其下方的文本。你可以输入任何最终能评估为布尔值<sup class="footnote-reference" id="fr-1-1-9"><a href="#footnote-1-9">1</a></sup>的内容。更多示例：</p>
+<p>Only if the player had found the key earlier do they see “You could try unlocking it with the key you found,” but in all cases they see “You consider turning back.” The <code>if</code> modifier only displays the text below it if the expression in the modifier evaluates to true. You can enter anything that eventually evaluates to a boolean<sup class="footnote-reference" id="fr-1-1-9"><a href="#footnote-1-9">1</a></sup>. Some more examples:</p>
 <ul>
 <li><code>[if stringVariable === 'red']</code></li>
 <li><code>[if dollarsInPocket &gt; 5]</code></li>
 <li><code>[if 2 + 2 === 4]</code></li>
 </ul>
-<h2 id="除非条件unless-conditions"><a class="header" href="#除非条件unless-conditions">除非条件｜Unless Conditions</a></h2>
-<p>在某些情况下，使用 <code>unless</code> 比使用 <code>if</code> 更具表现力。</p>
+<h2 id="unless-conditions"><a class="header" href="#unless-conditions">Unless Conditions</a></h2>
+<p>In certain cases, it’s more expressive to use an <code>unless</code> instead of an <code>if</code>.</p>
 <pre><code>[unless tookAntidote]
-时间已耗尽。你的呼吸在喉间停滞；身体从椅子上滑落，世界陷入黑暗。
+You've run out of time. Your breath catches in your throat; your body slips from the chair, and the world turns dark.
 </code></pre>
-<p><code>unless</code> 修饰符的工作方式与 <code>if</code> 完全相同，唯一的区别是，只有当它们的条件评估为假时，才会显示其后的文本。</p>
-<h2 id="否则条件else-conditions"><a class="header" href="#否则条件else-conditions">否则条件｜Else Conditions</a></h2>
-<p>本节第一个示例的措辞有些生硬。我们可以使用 <code>else</code> 修饰符使其更流畅：</p>
+<p><code>unless</code> modifiers work exactly the same as <code>if</code> ones, only they display the text following them if their condition evaluates to false.</p>
+<h2 id="else-conditions"><a class="header" href="#else-conditions">Else Conditions</a></h2>
+<p>The wording of the first example in this section is a bit awkward. We could make it flow better using an <code>else</code> modifier:</p>
 <pre><code>[if hasKey]
-你可以试试用找到的钥匙[[打开它]]，或者直接[[转身离开]]。
+You could try [[unlocking it]] with the the key you found, or just [[turn back]].
 
 [else]
-除了[[转身离开]]以外，无事可做。
+Nothing to do here but [[turn back]].
 </code></pre>
-<p><code>else</code> 修饰符会在前一个 <code>if</code> 未显示文本时显示其后的文本。它们与 <code>unless</code> 条件无关。<code>else</code> 也仅适用于单个段落；如果你在一个段落中使用 <code>if</code>，则不能将匹配的 <code>else</code> 放在另一个段落中。如果你发现需要跨段落实现类似逻辑，请在第二个段落中使用 <code>unless</code> 来替代 <code>if</code>然后重复相同的判断条件。</p>
-<h2 id="修饰符包括条件修饰符不能嵌套modifiers-including-conditional-ones-cannot-be-nested"><a class="header" href="#修饰符包括条件修饰符不能嵌套modifiers-including-conditional-ones-cannot-be-nested">修饰符（包括条件修饰符）不能嵌套｜Modifiers (Including Conditional Ones) Cannot Be Nested</a></h2>
-<p>在 Chapbook 中，无法直接嵌套条件修饰符。这意味着：</p>
+<p><code>else</code> modifiers display the text following them if the previous <code>if</code> did not display. They have no relationship with <code>unless</code> conditions. <code>else</code>s also only apply on a per-passage basis; if you use an <code>if</code> in one passage, you cannot place the matching <code>else</code> in a different passage. If you find yourself wanting to do something along these lines, instead repeat the same condition in the second passage and use an <code>unless</code> instead of an <code>if</code>.</p>
+<h2 id="modifiers-including-conditional-ones-cannot-be-nested"><a class="header" href="#modifiers-including-conditional-ones-cannot-be-nested">Modifiers (Including Conditional Ones) Cannot Be Nested</a></h2>
+<p>It is not possible to directly nest conditional modifiers in Chapbook. Meaning:</p>
 <pre><code>[if hasKey]
-你可以[[打开门]]...
+You could [[open the door]]...
 
 [if monsterDistance &lt; 2]
-……这或许是你生存的最佳机会。
+... and it might be your best chance for survival.
 </code></pre>
-<p>如果 <code>hasKey</code> 为 false 且 <code>monsterDistance</code> 为 1，则只会显示：</p>
 <p>Would, if <code>hasKey</code> is false and <code>monsterDistance</code> is 1, only display:</p>
-<pre><code>……这或许是你生存的最佳机会。
+<pre><code>... and it might be your best chance for survival.
 </code></pre>
-<p>这是因为修饰符仅影响紧随其后的文本。它们不会影响文本中位于其前或后的其他修饰符，也不会影响任何其他文本。要解决这一问题，你应该这样写：</p>
+<p>This is because modifiers only affect the text directly following them. They do not affect modifiers before or after them in the text, or any other text. You should instead write:</p>
 <pre><code>[if hasKey]
-你可以[[打开门]]...
+You could [[open the door]]...
 
 [if hasKey &amp;&amp; monsterDistance &lt; 2]
-……这或许是你生存的最佳机会。
+... and it might be your best chance for survival.
 </code></pre>
-<p>让我们来看一个更复杂的例子：</p>
+<p>Let’s take a more complicated example:</p>
 <ul>
-<li>玩家必须首先通过观察找到某扇特定的秘密门。</li>
-<li>一旦找到，这扇门只能用他们之前找到的钥匙来解锁。</li>
-<li>一旦解锁，门将保持开启状态。</li>
+<li>The player must have first found a certain secret door by looking.</li>
+<li>Once found, the door can only be unlocked with a key they previously found.</li>
+<li>Once unlocked, the door remains open.</li>
 </ul>
-<p>这可以用流行的SugarCube故事格式写成：</p>
+<p>This might be written in the popular SugarCube story format as:</p>
 <pre><code>&lt;&lt;if $doorFound&gt;&gt;
 &lt;&lt;if $doorUnlocked&gt;&gt;
-门敞开着，没有上锁，随时欢迎你[[踏入其中]]。
+The door stands open and unlocked, ready for you to [[enter it]].
 &lt;&lt;else&gt;&gt;
-你在这里发现了一扇门，&lt;&lt;if $hasKey&gt;&gt;随时可以[[解锁]]&lt;&lt;else&gt;&gt;但还没找到能打开它的钥匙。
+You've found a door here, &lt;&lt;if $hasKey&gt;&gt;ready to be [[unlocked]]&lt;&lt;else&gt;&gt;but you haven't found a key yet that will open it.
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;else&gt;&gt;
-这里似乎没什么值得注意的，但也许[[搜索一下会有所发现]]。
+There seems to be nothing of note here, but perhaps [[a search would turn up something]].
 &lt;&lt;/if&gt;&gt;
 </code></pre>
-<p>（为简洁起见，本例省略了设置 <code>$doorFound</code> 和 <code>$hasKey</code> 的其他代码段。）</p>
-<p>在 Chapbook 中，您可以使用临时变量来简化段落的部分逻辑，并写成：</p>
+<p>(This example omits, for brevity’s sake, the other passages where <code>$doorFound</code> and <code>$hasKey</code> would be set.)</p>
+<p>In Chapbook, you could instead use temporary variables to simplify some of the logic of the passage, and write:</p>
 <pre><code>_doorOpen: doorFound &amp;&amp; doorUnlocked
 _doorLocked: doorFound &amp;&amp; !doorUnlocked
 --
 [if _doorOpen]
-门敞开着，没有上锁，随时欢迎你[[踏入其中]]。
+The door stands open and unlocked, ready for you to [[enter it]].
 
 [if _doorLocked]
-你在这里发现了一扇门，
+You've found a door here,
 
 [if _doorLocked &amp;&amp; hasKey; append]
-准备好被[[解锁]]。
+ready to be [[unlocked]].
 
 [if _doorLocked &amp;&amp; !hasKey; append]
-但你还没找到能打开它的钥匙。
+but you haven't found a key yet that will open it.
 
 [if !doorFound]
-这里似乎没什么值得注意的，但也许[[搜索一下会有发现]]。
+There seems to be nothing of note here, but perhaps [[a search would turn up something]].
 </code></pre>
-<p>请记住，<code>doorFound</code>、<code>doorUnlocked</code> 和 <code>hasKey</code> 是在其他段落中设置的。请注意——您不能在“<code>但你还没找到能打开它的钥匙。</code>”前使用 [else]。该 else 会在所有 [if] 不成立的情况下显示，即使 <code>doorFound</code> 为 <code>false</code> 时也是如此。</p>
-<p>另一种方法是将部分逻辑移至单独的段落并<a href="#嵌入段落embedding-passages">嵌入</a>:</p>
-<p>An alternate method is to move parts of your logic to a separate passage and <a href="#嵌入段落embedding-passages">embed it</a>:</p>
+<p>Remember that <code>doorFound</code>, <code>doorUnlocked</code>, and <code>hasKey</code> are set in other passages. And beware–you cannot use an <code>[else]</code> in front of <code>but you haven't found a key yet that will open it.</code> The <code>else</code> will display in all cases that the <code>[if]</code> does not, even when <code>doorFound</code> is <code>false</code>.</p>
+<p>An alternate method is to move parts of your logic to a separate passage and <a href="#embedding-passages">embed it</a>:</p>
 <pre><code>_doorOpen: doorFound &amp;&amp; doorUnlocked
 _doorLocked: doorFound &amp;&amp; !doorUnlocked
 --
 [if doorFound &amp;&amp; doorUnlocked]
-门敞开着，未上锁，静候你[[踏入其中]]。
+The door stands open and unlocked, ready for you to [[enter it]].
 
 [if doorFound &amp;&amp; !doorUnlocked]
 {embed passage: 'locked door logic'}
 
 [if !doorFound]
-这里似乎没什么值得注意的，但也许[[搜索一下会有发现]]。
+There seems to be nothing of note here, but perhaps [[a search would turn up something]].
 </code></pre>
-<p>采用哪种方法最佳取决于具体情况。不建议将段落嵌入超过一个层级。</p>
-<h2 id="禁用测试条件disabling-conditions-for-testing"><a class="header" href="#禁用测试条件disabling-conditions-for-testing">禁用测试条件｜Disabling Conditions For Testing</a></h2>
-<p>覆盖条件修饰符使其无论何种情况都始终显示或从不显示，这个功能有时会很有用。为此，只需将 [if] 改为 [ifalways] 或 [ifnever] 即可。</p>
+<p>Which approach is best to take depends on the situation. It’s not a good idea to embed passages more than one level deep.</p>
+<h2 id="disabling-conditions-for-testing"><a class="header" href="#disabling-conditions-for-testing">Disabling Conditions For Testing</a></h2>
+<p>It can be useful to override a conditional modifier so that it always or never displays, regardless of circumstances. To do this, change <code>[if]</code> to either <code>[ifalways]</code> or <code>[ifnever]</code>.</p>
 <pre><code>[ifnever 1 + 1 === 2]
-这原本应该通过常规的[if]条件显示，但实际并未显示。
+This would have been shown with a regular [if], but isn't.
 </code></pre>
-<p>这将影响其后出现的任何[else]修饰符。</p>
+<p>This affects any <code>[else]</code> modifiers that follow it.</p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-9">
-<p>实际上，也可以写成 <code>[if stringVariable]</code> 或 <code>[if 2 + 2]</code>。在这些情况下，任何非空字符串（例如非 <code>''</code>）都被视为真，任何非零数字也被视为真。不过，最好还是明确地写成 <code>[if stringVariable !== '']</code> 和 <code>[if 2 + 2 !== 0]</code>。 <a href="#fr-1-1-9">↩</a></p>
+<p>Truthfully, it is also possible to write <code>[if stringVariable]</code> or <code>[if 2 + 2]</code>. In these cases, any non-empty string (e.g. not <code>''</code>) is treated as true, and any non-zero number is treated as true. It’s best to be explicit, however, and write <code>[if stringVariable !== '']</code> and <code>[if 2 + 2 !== 0]</code>. <a href="#fr-1-1-9">↩</a></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
@@ -1424,7 +1421,7 @@ Additional functionality related to saving progress, such as being able to share
 <p>State can be very slippery to work with, as it’s not normally directly visible in your story–you can only infer from its side effects. Chapbook provides tools to track and even change state as you test your story.</p>
 <h2 id="the-state-tab"><a class="header" href="#the-state-tab">The State Tab</a></h2>
 <p>Under the State tab, you’ll find a Variables heading. This shows the current state of your story as you play. You can also select a value on the right side of the variables table and enter a new one–press the Return or Enter key when you’re done to set the variable. You may only enter values in the variables table, not expressions.</p>
-<p>If the Show Defaults checkbox is ticked, Chapbook will show various built-in variables–mainly related to Chapbook’s configuration. See <a href="#自定义customization">Customization</a> for more details.</p>
+<p>If the Show Defaults checkbox is ticked, Chapbook will show various built-in variables–mainly related to Chapbook’s configuration. See <a href="#customization">Customization</a> for more details.</p>
 <h2 id="state-snaphots"><a class="header" href="#state-snaphots">State Snaphots</a></h2>
 <p>Beneath the variables table is the Snapshots heading. Snapshots allow you to quickly save and restore the state of your story at any point. For example, if you’d like to skip the prologue or test a specific scene, play through your story as usual. When you’ve reached the point you’d like to skip to, use the Add Snapshot button. After giving your snapshot a name, it will appear under the Snapshots heading as a button. Using this button will immediately set the state of your story, including the passage you were viewing, to what it was.</p>
 <p>Use the × button at the end of a snapshot button to remove it. Snapshots are saved to your web browser only.</p>
@@ -1589,7 +1586,7 @@ Four.
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="多媒体multimedia"><a href="#多媒体multimedia" class="header">多媒体｜Multimedia</a></h1>
+<h1 id="multimedia"><a href="#multimedia" class="header">Multimedia</a></h1>
 <div class="intro multimedia">
     
 <h1>Multimedia</h1>
@@ -1598,15 +1595,18 @@ Four.
 
 <p>This section covers adding images, audio, and video to your stories.</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="发布模式publishing-models"><a class="header" href="#发布模式publishing-models">发布模式｜Publishing Models</a></h1>
-<p>Twine 2 目前不允许在故事文件中嵌入图像、音频或视频等资源。这是为了让您的故事能够快速高效地加载。Twine 1 通过使用一种称为 Base64 的技术对资源进行编码来允许此操作，该技术将二进制数据转换为可以安全嵌入HTML的文本。但这有两个缺点：</p>
+<h1 id="publishing-models"><a class="header" href="#publishing-models">Publishing Models</a></h1>
+<p>Twine 2 does not currently permit embedding images, audio, or video–assets, for short–in your story files. This is so that your story loads quickly and efficiently. Twine 1 permitted this by encoding them using a technique called Base64, which converts binary data into text that can be safely embedded into HTML. This has two disadvantages:</p>
 <ul>
-<li>Base64 会使文件大小增加 33% 的开销，导致故事加载速度显著慢于原本可能达到的速度。</li>
-<li>故事必须在其所有资源完全下载完成后才能开始播放。如果故事使用了许多图像，这可能会带来麻烦；而对于音频和视频文件（其大小通常是图像的十倍），这种情况将是灾难性的。</li>
+<li>Base64 adds a 33% overhead to file sizes, causing stories to load
+significantly slower than they could otherwise.</li>
+<li>A story couldn’t begin to be played until all its assets had completely
+downloaded. This can be troublesome if a story uses many images, but this
+would be disastrous for audio and video, where files are ten times as large.</li>
 </ul>
-<p>在 Twine 2 中，所有多媒体资源都必须独立于已发布的故事文件本身而存在。您可以选择两种方法。两种方法同样可行——具体取决于您的情况。</p>
-<h2 id="自包含发布self-contained-publishing"><a class="header" href="#自包含发布self-contained-publishing">自包含发布｜Self-Contained Publishing</a></h2>
-<p>在这种方法中，您将故事使用的资源与已发布的故事文件本身存放在同一位置。典型的安排如下所示：</p>
+<p>In Twine 2, any multimedia assets must exist separately from the published story file itself. There are two approaches you can take. Either one is equally viable–it depends on your situation.</p>
+<h2 id="self-contained-publishing"><a class="header" href="#self-contained-publishing">Self-Contained Publishing</a></h2>
+<p>In this approach, you publish assets used by your story in the same place as the published story file itself. A typical arrangement is shown below:</p>
 <ul class="directory-listing">
 	
 <li class="file">Story.html</li>
@@ -1646,17 +1646,17 @@ Four.
 
 </ul>
 
-<p>自包含模式的一个优势在于，你的作品可以轻松打包成归档文件（通常为 ZIP 格式），并在数字市场上架。这种情况下，玩家只需下载一次故事文件，解压后即可开始游玩，无需保持活跃的网络连接。</p>
-<p>自包含故事也可直接发布至网站，这样玩家就无需额外经历下载归档文件并解压的步骤，但需要注意网站将消耗的带宽。带宽是衡量网站数据传输量的指标。如果你发布的故事包含一个 1MB 大小的音频文件（约 1 分钟时长），且有 1000 名玩家体验，网站将消耗 1GB 带宽。</p>
-<p>一些网站托管服务商承诺以固定费用提供无限带宽，但若网站使用过多带宽则会限制连接速度；另一些服务商则会暂时关闭使用过多带宽的网站。还有些服务商会保持您的网站全速运行，无论消耗多少带宽，但会根据实际使用量收取浮动费用——有时金额相当高昂。</p>
-<p>总而言之：如果您计划将独立故事发布到网站，应当了解所选托管服务商的使用限制。</p>
-<p>独立发布的另一个缺点是，Twine 2 目前缺乏足够工具来辅助故事创作。为确保素材正确显示，您必须将故事发布至与素材相同的文件夹。在 Twine 2 内部测试故事时，素材将无法正常显示。</p>
-<p>当您向独立故事添加资源时，需要使用_相对 URL_。您之前已经接触过URL——它们显示在网页浏览器窗口的顶部，用于指示资源的存储位置。它们通常以 <code>http://</code> 或 <code>https://</code> 开头。然而，相对URL是根据您已发布的故事文件的位置来定位资源的。在上面的示意图中，开场音乐的相对 URL 是 <code>Assets/Audio/Intro Song.mp3</code>。相对 URL 不以任何前缀开头；相反，故事文件目录下的每个子目录都用正斜杠（<code>/</code>）分隔，资源文件名放在最后。如果您链接的资源与已发布的故事文件位于同一目录中，那么该资源的文件名即可作为相对 URL 使用。</p>
-<h2 id="云发布cloud-publishing"><a class="header" href="#云发布cloud-publishing">云发布｜Cloud Publishing</a></h2>
-<p>在这种模式下，您将资产发布到现有的服务平台，如 Flickr 或 YouTube。故事文件可供下载或发布至网站，但资产会从这些外部站点加载。因此，玩家在游戏过程中需要保持活跃的互联网连接。</p>
-<p>云发布意味着您无需担心带宽问题，但作为交换，大多数服务会在您的资源上添加某种水印或其他标识信息，以表明您正在使用他们的服务。托管服务也有服务条款，可能会对您发布的内容类型施加限制。</p>
-<p>云端发布还允许您在 Twine 2 中直接测试故事，无需将故事发布为文件。为此，您有时会使用 <em>嵌入代码</em> 将资源整合到故事中——这是由您使用的服务提供的 HTML 源代码片段。</p>
-<p>若选择使用云端资源，务必确保您具备合法使用权限。直接盗链资源（即未经许可从其他服务器嵌入素材）的行为极具诱惑力，但那是种不当做法——您可能使资源所有者承担带宽成本（如前述“自包含发布模式”所述），且若被资源所有者发现，对方可移除您链接的资源，甚至替换为令人反感或尴尬的内容。</p>
+<p>One advantage of the self-contained approach is that your work can be easily packaged into an archive file, usually in ZIP format, and made available on digital marketplaces. In this scenario, a player can download your story once, unpack it, and begin playing without having to have an active Internet connection.</p>
+<p>A self-contained story can be published to a web site, so that players don’t have to go to the extra step of downloading the archive file and expanding it, but you should be aware of the bandwidth the site will use. Bandwidth is a measurement of how much data is transferred to and from a web site. If you publish a story with an audio file that is 1 MB in size (about a minute long) that 1,000 people play, the site will consume 1 GB of bandwidth.</p>
+<p>Some web site hosting providers promise unlimited bandwidth at a flat fee, but throttle connections if a site uses too much bandwidth; others will temporarily shut a site down that uses too much bandwidth. Others will keep your site available at full speed no matter how much bandwidth you consume, but charge you a variable–sometimes steep–amount of money depending on how much bandwidth it consumes.</p>
+<p>All of which is to say: if you plan to post a self-contained story to a web site, you should understand the constraints of the hosting provider you use.</p>
+<p>Another disadvantage to self-contained publishing is that Twine 2 doesn’t currently have many tools to help you while you are creating your story. In order for assets to display correctly, you’ll have to publish your story to the same folder as your assets. Testing your story inside Twine 2 will not display the assets correctly.</p>
+<p>When you add assets to a self-contained story, you’ll use a <em>relative URL</em>. You’ve encountered URLs before; they appear at the top of a web browser window, and indicate the location at which a resource is stored. They typically begin with <code>http://</code> or <code>https://</code>. Relative URLs, however, locate a resource in relation to your published story file. In the diagram above, the relative URL for the intro song is <code>Assets/Audio/Intro Song.mp3</code>. A relative URL does not start with any preamble; instead, each directory beneath the story file’s directory is separated by a forward slash (<code>/</code>), with the file name of the asset given last. If you link to an asset in the same directory as the published story file, the filename of the asset works as a relative URL.</p>
+<h2 id="cloud-publishing"><a class="header" href="#cloud-publishing">Cloud Publishing</a></h2>
+<p>In this approach, you publish your assets to an existing service like Flickr or YouTube. Your story file can be downloaded or posted to a web site, but your assets will load from these external sites. As such, players will need to have an active Internet connection as they play.</p>
+<p>Cloud publishing means you won’t have to worry about bandwidth, but in exchange most services place some kind of watermark or other identifying information on your asset so that it’s clear that you’re using their service. Hosting services also have terms of service that may place restrictions on what kind of content you post.</p>
+<p>Cloud publishing also allows you to test stories inside Twine 2 without having to publish your story to a file. To do this, you’ll sometimes use an <em>embed code</em> to incorporate your assets into your story, which is a fragment of HTML source code provided by the service you use.</p>
+<p>If you choose to use assets in the cloud, it’s important that you ensure that you are legally able to do so. It is tempting to <em>hotlink</em> resources–that is, embed assets from another server without permission. This is bad form at minimum, as you are potentially incurring bandwidth costs for the site owner (as noted in <em>Self-Contained Publishing Above</em> above), but if a site owner finds out you’ve done this, they can remove the assets you’ve linked to or replace them with something obnoxious or embarrassing.</p>
 <style>
 
 ul.directory-listing {
@@ -1820,7 +1820,7 @@ For now, it's not possible to have a YouTube video start when a passage displays
 Accessibility features for video will be added to a future release of Chapbook.
 </aside>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="自定义customization"><a href="#自定义customization" class="header">自定义｜Customization</a></h1>
+<h1 id="customization"><a href="#customization" class="header">Customization</a></h1>
 <div class="intro customization">
     
 <h1>Customization</h1>
@@ -2644,17 +2644,17 @@ Unlike <code>config.style.page.style.border</code>, setting these to <code>'shad
 <p>This should be a single <a href="#colors">color</a>, like
 <code>'orange-2'</code>.</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="分叉样式fork-style"><a class="header" href="#分叉样式fork-style">分叉样式｜Fork Style</a></h1>
-<p><a href="#分叉forks">分叉</a>的显示方式可以通过多个变量进行自定义。</p>
-<p>首先，使用 <code>config.style.page.fork.divider.style</code> 设置链接之间分隔线的样式。它可以设置为以下任一值：</p>
+<h1 id="fork-style"><a class="header" href="#fork-style">Fork Style</a></h1>
+<p>The way <a href="#forks">forks</a> display can be customized through several variables.</p>
+<p>First, <code>config.style.page.fork.divider.style</code> sets the style of the dividing line between links. It can be set to any of these values:</p>
 <ul>
 <li><code>dashed</code></li>
 <li><code>dotted</code></li>
-<li><code>double</code>，显示两条细水平线</li>
+<li><code>double</code>, which displays two thin horizontal lines</li>
 <li><code>solid</code></li>
-<li><code>none</code>，完全隐藏分隔线</li>
+<li><code>none</code>, which hides the dividers completely</li>
 </ul>
-<p><code>config.style.page.fork.divider.size</code> 设置分隔线的粗细，<code>config.style.page.fork.divider.color</code> 设置其颜色。</p>
+<p><code>config.style.page.fork.divider.size</code> sets the thickness of the dividing line, and <code>config.style.page.fork.divider.color</code> sets its color.</p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="dark-theme"><a class="header" href="#dark-theme">Dark Theme</a></h1>
 <p>Chapbook has two themes:</p>
@@ -2807,7 +2807,7 @@ scheme you design has sufficient contrast for low-vision players. Your colors sh
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="玩家输入player-input"><a href="#玩家输入player-input" class="header">玩家输入｜Player Input</a></h1>
+<h1 id="player-input"><a href="#player-input" class="header">Player Input</a></h1>
 <div class="intro input">
     
 <h1>Player Input</h1>
@@ -3268,7 +3268,7 @@ Renders a link that switches between light and dark themes. <code>darkLabel</cod
 </dl>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="modifiers"><a class="header" href="#modifiers">Modifiers</a></h1>
-<p>All of the below affect the text following them. See <a href="#修饰符与插入modifiers-and-inserts">Modifiers and Inserts</a> for more information.</p>
+<p>All of the below affect the text following them. See <a href="#modifiers-and-inserts">Modifiers and Inserts</a> for more information.</p>
 <dl>
 <dt>
 <code>[after <i>time</i>]</code>
