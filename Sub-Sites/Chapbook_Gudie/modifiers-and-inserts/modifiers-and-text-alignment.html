@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>修饰符与文本对齐｜Modifiers and Text Alignment</title>
+        <title>修饰符与文本对齐</title>
 
 
         <!-- Custom HTML head -->
@@ -36,10 +36,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-0057b209.js";
+            window.path_to_searchindex_js = "../searchindex-ba4541d0.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-55de0766.js"></script>
+        <script src="../toc-1fec90ef.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -175,37 +175,36 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="modifiers-and-text-alignment"><a class="header" href="#modifiers-and-text-alignment">Modifiers and Text Alignment</a></h1>
-<p>One thing not mentioned in the previous section is how you would center text, or even right-align it. Alignment was never part of the original version of Markdown, and so various dialects of Markdown use their own notation for it.<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup></p>
-<p>Chapbook uses a general-purpose notation called a <em>modifier</em> to apply special handling to blocks of text. Modifiers are always single lines that begin and end with square brackets<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup>, like so:</p>
-<pre><code>Above the cave mouth, someone has carved:
+                        <h1 id="修饰符与文本对齐modifiers-and-text-alignment"><a class="header" href="#修饰符与文本对齐modifiers-and-text-alignment">修饰符与文本对齐｜Modifiers and Text Alignment</a></h1>
+<p>上一节未提及的一点是如何将文本居中，甚至右对齐。对齐功能从未包含在原始版本的 Markdown 中，因此各种 Markdown 方言都使用自己的标记来实现它。<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup></p>
+<p>Chapbook 使用一种称为修饰符的通用标记，对文本块应用特殊处理。修饰符始终是单行，以方括号<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup>开始和结束，如下所示：</p>
+<pre><code>洞口上方，有人刻着：
 
 [align center]
-_Lasciate ogne speranza, voi ch'intrate_
+_入此门者，当弃绝一切希望_
 </code></pre>
-<p>The text <code>[align center]</code> is never shown to the player. Instead, Chapbook centers the text following it. As you might have guessed, you can also write <code>[align right]</code> and <code>[align left]</code>.</p>
+<p>文本中的 <code>[align center]</code> 永远不会显示给玩家。相反，Chapbook 会将其后的文本居中显示。正如你可能猜到的，你也可以使用 <code>[align right]</code> 和 <code>[align left]</code>。</p>
 <h2 id="continue-修饰符the-continue-modifier"><a class="header" href="#continue-修饰符the-continue-modifier"><code>continue</code> 修饰符｜The <code>continue</code> modifier</a></h2>
 <p>修饰符会应用于其后出现的所有文本，直到段落结束或源文本中出现另一个修饰符。若要取消所有生效的修饰符，请使用 [continue] 如下所示：</p>
 <pre><code>洞口上方，有人刻着：
 
 [align center]
-_Lasciate ogne speranza, voi ch'intrate（来者需要放弃一切希望）_
+_入此门者，当弃绝一切希望_
 
 [continue]
 你对你的计划感到有点不那么自信了。
 </code></pre>
 <p><code>[continue]</code> 仅用于取消所有生效的修饰符。可缩写为 <code>[cont'd]</code> 或 <code>[cont]</code>。</p>
-<p>王洛木：简单来说，就是用来划清上一个修饰符的修饰范围的。</p>
-<h2 id="vertical-text-alignment"><a class="header" href="#vertical-text-alignment">Vertical text alignment</a></h2>
-<p>If you’d like to change how text is aligned vertically inside the page
-container, see the <a href="./customization/page-style.html">Page Style</a> section.</p>
+<p>（王洛木：简单来说，就是用来划清上一个修饰符的修饰范围的。）</p>
+<h2 id="垂直文本对齐vertical-text-alignment"><a class="header" href="#垂直文本对齐vertical-text-alignment">垂直文本对齐｜Vertical text alignment</a></h2>
+<p>如果您想更改页面容器内文本的垂直对齐方式，请参阅[页面样式(./customization/page-style.html)]部分。</p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1">
-<p>Twine 2’s default format, Harlowe, for instance, uses punctuation like <code>=&gt;&lt;=</code> on the preceding line to indicate centered text, while other Markdown dialects put arrows around centered text, like <code>-&gt;SALE TODAY&lt;-</code>. <a href="#fr-1-1">↩</a></p>
+<p>例如，Twine 2 的默认格式 Harlowe 使用前一行上的标点符号如 <code>=&gt;&lt;=</code> 来表示居中文本，而其他 Markdown 方言则用箭头包围居中文本，如<code>-&gt;今日特卖&lt;-</code>。 <a href="#fr-1-1">↩</a></p>
 </li>
 <li id="footnote-2">
-<p>If you’d like to show players a line of text with brackets in it, enter a single backslash (<code>\</code>) at the start of the line. Chapbook will display the text as-is without the backslash you entered. <a href="#fr-2-1">↩</a></p>
+<p>如果您想向玩家显示一行包含括号的文本，请在行首输入一个反斜杠（<code>\</code>）。Chapbook 将按原样显示文本，而不显示您输入的反斜杠。 <a href="#fr-2-1">↩</a></p>
 </li>
 </ol>
 

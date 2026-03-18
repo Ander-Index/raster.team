@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>图像｜Images</title>
+        <title>图像</title>
 
 
         <!-- Custom HTML head -->
@@ -36,10 +36,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-0057b209.js";
+            window.path_to_searchindex_js = "../searchindex-ba4541d0.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-55de0766.js"></script>
+        <script src="../toc-1fec90ef.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -175,30 +175,32 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="images"><a class="header" href="#images">Images</a></h1>
-<h2 id="embedding-your-own-images"><a class="header" href="#embedding-your-own-images">Embedding Your Own Images</a></h2>
-<p>To display an image in a passage, use the <code>{embed image}</code> insert:</p>
-<pre><code>For all you know, not a single person has entered this cave in a thousand years. The cave entrance is covered in moss and leaves.
+                        <h1 id="图像images"><a class="header" href="#图像images">图像｜Images</a></h1>
+<h2 id="嵌入您自己的图像embedding-your-own-images"><a class="header" href="#嵌入您自己的图像embedding-your-own-images">嵌入您自己的图像｜Embedding Your Own Images</a></h2>
+<p>要在段落中显示图像，请使用 <code>{embed image}</code> 插入：</p>
+<pre><code>要知道，可能已经上千年没人踏足过这个洞穴了。洞口长满了青苔和落叶。
 
-{embed image: 'cave.jpeg', alt: 'Cave entrance'}
+{embed image: '洞穴.jpeg', alt: '洞穴入口'}
 </code></pre>
-<p>The <code>alt</code> property is explained below under “Alternate Text.”</p>
-<h2 id="embedding-images-from-flickr"><a class="header" href="#embedding-images-from-flickr">Embedding Images from Flickr</a></h2>
-<p><a href="https://flickr.com">Flickr</a> is a venerable photography service that allows people to mark their uploaded photos as embeddable. If a photo can be embedded, you will see an icon that looks a bit like an arrow in the lower right of the photo. Selecting that option will display the embed code to use, which is rather lengthy. Make sure to use the code found in the Embed tab, not the Share or BBCode ones. Once you have the code, use the <code>{embed Flickr image}</code> insert as below.</p>
-<pre><code>The night sky is alive:
+<p>（王洛木：当然，你也可以通过把网络图片链接的地址插入进去以引用。）</p>
+<p><code>alt</code> 属性的解释请参见下文“替代文本”部分。</p>
+<h2 id="嵌入来自-flickr-的图片embedding-images-from-flickr"><a class="header" href="#嵌入来自-flickr-的图片embedding-images-from-flickr">嵌入来自 Flickr 的图片｜Embedding Images from Flickr</a></h2>
+<p>Flickr 是一个历史悠久的摄影服务平台，允许用户将上传的照片标记为可供嵌入。若某张照片支持嵌入功能，您会在照片右下角看到一个类似箭头的图标。选择该选项将显示用于嵌入的代码，这段代码通常较为冗长。请务必使用“嵌入”标签页中的代码，而非“分享”或 “BBCode” 标签页的代码。获取代码后，请按以下方式使用 <code>{embed Flickr image}</code> 插入功能。</p>
+<p>(注：截止至本文翻译的 2026 年，Flickr 无法在中国大陆访问，请使用其它方案。)</p>
+<pre><code>生动的夜空：
 
 {embed Flickr image: '&lt;a data-flickr-embed="true"  href="https://www.flickr.com/photos/kees-scherer/43929816675/in/photolist-29VVN1k-MxBBfR-Mxmaoa-2abPdAf-28uxzXE-MsR1ev-MqbA18-P2bWEY-29LvwHZ-P1DPQ7-2b3znq5-28jiA4E-2b4qGd6-29QQrVa-2a4C5X3-MhDEFV-2b3tVwa-MfPdhz-2aZTken-2aTGEx1-2aVbrLg-NLVUU7-289o89h-288U1wq-2aN6BuN-NH87Jm-2aQH3Ta-NDwgPd-NB3Mym-2aHjvXP-29jgSN2-29zFLg5-27TFbQw-Nw3iLs-2aD2Dfn-27SXWGo-29f84mZ-LRdL8r-2aVtHgk-2awe7hj-29ux7nq-LPVrYk-2avhxQJ-2azf7ct-2ayX3mM-2aygKz8-27Nwi91-27NmmvS-NqvSME-2axAzDV" title="The Andromeda Galaxy, Messier 31"&gt;&lt;img src="https://farm2.staticflickr.com/1857/43929816675_07357e53b0_m.jpg" width="240" height="185" alt="The Andromeda Galaxy, Messier 31"&gt;&lt;/a&gt;&lt;script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"&gt;&lt;/script&gt;', alt: 'the Andromeda galaxy'}
 </code></pre>
 <aside data-hint="danger">
-Just because Flickr allows you to embed an image does not mean you have the <em>right</em> to use it in your story freely. Check the image's page for the license the photo's uploader is using. Some may not be allowed to be used in commercial projects, while others may not allow usage at all.
+Flickr 允许嵌入图片并不意味着您可以随意在作品中使用该图片。请务必查看图片页面中上传者标注的<em>许可协议</em>。部分图片可能禁止用于商业项目，而其他图片可能完全禁止使用。
 </aside>
 <aside data-hint="working">
-Other types of image embeds may come in a future version of Chapbook, as well as more flexibility in layout--e.g. having an image appear to the left or right of the text.
+其他类型的图像嵌入功能可能会在 Chapbook 的未来版本中出现，同时布局方面也会有更大的灵活性——例如，让图像显示在文本的左侧或右侧。
 </aside>
-<h2 id="alternate-text"><a class="header" href="#alternate-text">Alternate Text</a></h2>
-<p>Regardless of where your image comes from, you must give it <em>alternate text</em>. This is so that players who have a visual disability are able to have an equivalent experience to those who don’t. <a href="https://webaim.org/techniques/alttext/">WebAIM</a> has an excellent in-depth treatment of alternative text, but the gist is that it should contain a brief description of what the image depicts, that would work well for someone reading your story out loud. Because, for players with a visual disability, they often in fact will have your story read out loud by screen reader software.</p>
-<p>When writing alternate text, avoid phrases like “image of Abraham Lincoln” or “Boston Harbor photo”– just write “Abraham Lincoln” or “Boston Harbor.”</p>
-<p>If your image is purely decorative–say, a fancy border–then it should have empty alternative text, so that screen readers will skip over it: This doesn’t mean omitting <code>alt</code> entirely, but setting it to an empty string, as below.</p>
+<h2 id="替代文本alternate-text"><a class="header" href="#替代文本alternate-text">替代文本｜Alternate Text</a></h2>
+<p>无论您的图像来自何处，都必须为其提供 <em>替代文本</em>。这是为了让有视觉障碍的玩家能够获得与无障碍玩家同等的体验。<a href="https://webaim.org/techniques/alttext/">WebAIM</a> 对替代文本有非常详尽的阐述，但核心要点是：替代文本应包含对图像内容的简要描述，以便在朗读故事时能为听众提供良好的理解。因为对于有视觉障碍的玩家而言，他们通常确实会通过屏幕阅读软件来听取故事内容。</p>
+<p>撰写替代文本时，请避免使用“亚伯拉罕·林肯的图像“或“波士顿港照片“这类表述——直接使用“亚伯拉罕·林肯“或“波士顿港“即可。</p>
+<p>如果您的图像纯粹是装饰性的——例如，一个花哨的边框——那么它应该设置空的替代文本，以便屏幕阅读器可以跳过它：这并不意味着完全省略<code>alt</code>属性，而是将其设置为空字符串，如下所示。</p>
 <pre><code>{embed image: 'asterisk.jpeg', alt:''}
 </code></pre>
 <hr>

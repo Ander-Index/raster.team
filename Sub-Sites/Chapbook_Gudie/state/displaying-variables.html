@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Displaying Variables</title>
+        <title>显示变量</title>
 
 
         <!-- Custom HTML head -->
@@ -36,10 +36,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-0057b209.js";
+            window.path_to_searchindex_js = "../searchindex-ba4541d0.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-55de0766.js"></script>
+        <script src="../toc-1fec90ef.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -175,31 +175,31 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="displaying-variables"><a class="header" href="#displaying-variables">Displaying Variables</a></h1>
-<p>Of course, setting variables isn’t very useful by itself. They need to affect the course of a story somehow. The simplest way they can do this is simply being inserted into the story. You can display the contents of a variable using an insert.</p>
-<p>The passage source below:</p>
-<pre><code>name: 'Chris'
+                        <h1 id="显示变量displaying-variables"><a class="header" href="#显示变量displaying-variables">显示变量｜Displaying Variables</a></h1>
+<p>当然，仅设置变量本身并无太大意义。它们需要以某种方式影响故事进程。最简单的方式就是直接将变量插入故事中。您可以使用插入功能来显示变量的内容。</p>
+<p>以下段落：</p>
+<pre><code>名字: '克里斯'
 --
-"Hi, {name}," your guide greets you.
+“你好，{名字}，你的向导向你打招呼。”
 </code></pre>
-<p>Will display as: <code>"Hi, Chris," your guide greets you.</code> This example is a little silly, since you could just as easily write <code>Chris</code> where <code><code>name</code></code> is. But the advantage of storing it in a variable is that you could keep using <code><code>name</code></code> later in your story. You could also use this, for example, to allow the player to choose a gender (or lack thereof) and then use the correct pronouns throughout the story.</p>
-<p>Variable inserts do not allow any parameters, as introduced in <a href="./text-and-links/link-inserts.html">Link Inserts</a>; the name of the variable acts as the insert name.<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup></p>
-<h2 id="you-cannot-put-expressions-in-an-insert"><a class="header" href="#you-cannot-put-expressions-in-an-insert">You Cannot Put Expressions In An Insert</a></h2>
-<p>The following will not display as you might expect:</p>
-<pre><code>cash: 3
+<p>将显示为：“嗨，克里斯，“你的向导向你打招呼。这个例子有点傻，因为你完全可以在<code>名字</code>的位置直接写<code>克里斯</code>。但将其存储在变量中的优势在于，你可以在故事后续部分继续使用<code>名字</code>。例如，你也可以利用这一点，允许玩家选择性别（或不选择性别），然后在整个故事中使用正确的代词。</p>
+<p>变量插入不允许任何参数，正如在<a href="./modifiers-and-inserts/link-inserts.html">链接插入</a>中介绍的那样；变量名充当插入名称。<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup></p>
+<h2 id="不能在插入中使用表达式you-cannot-put-expressions-in-an-insert"><a class="header" href="#不能在插入中使用表达式you-cannot-put-expressions-in-an-insert">不能在插入中使用表达式｜You Cannot Put Expressions In An Insert</a></h2>
+<p>以下内容<strong>不会</strong>如你所期望的那样显示：</p>
+<pre><code>现金: 3
 --
-"Sorry, but I decided that I want {cash + 2} dollars for it," the salesman replies.
+“抱歉，但我决定要价 {现金 + 2} 美元，”销售员回答道。
 </code></pre>
-<p>Expressions like this are not allowed in variable inserts– you may only enter the name of a variable. It’s simple enough to accomplish this with a temporary variable:</p>
-<pre><code>cash: 3
-_unreasonablePrice: cash + 3
+<p>在变量插入中不允许使用这样的表达式——您只能输入变量的名称。不过，使用临时变量可以轻松实现这一点：</p>
+<pre><code>现金: 3
+_不合理价格: 现金 + 3
 --
-"Sorry, but I decided that I want {_unreasonablePrice} for it," the salesman replies.
+“抱歉，但我决定这件东西要价{_不合理价格}。”销售员回答道。replies.
 </code></pre>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1">
-<p>You can always distinguish a variable insert from another type of insert by looking for spaces inside it. <code>{back link}</code> could never be a variable insert because <code>back link</code> contains spaces, and thus could never be the name of a variable. <a href="#fr-1-1">↩</a></p>
+<p>您总是可以通过查看其中是否包含空格来区分变量插入与其他类型的插入。<code>{back link}</code> 绝不可能是变量插入，因为 <code>back link</code> 包含空格，因此绝不可能是变量的名称。 <a href="#fr-1-1">↩</a></p>
 </li>
 </ol>
 
