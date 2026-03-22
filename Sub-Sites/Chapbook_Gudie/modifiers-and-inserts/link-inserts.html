@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Link Inserts</title>
+        <title>链接插入</title>
 
 
         <!-- Custom HTML head -->
@@ -36,10 +36,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-ba4541d0.js";
+            window.path_to_searchindex_js = "../searchindex-d9c3c349.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-1fec90ef.js"></script>
+        <script src="../toc-9a453c8c.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -175,51 +175,42 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="link-inserts"><a class="header" href="#link-inserts">Link Inserts</a></h1>
-<p>Sometimes you’d like to link to a passage, but don’t know its name exactly. Take the passage below:</p>
-<pre><code>You walk a bit down the alleyway. The scent of the black trash bags simmering in the summer heat is overpowering--terrible in three separate yet indescribable ways--so you [[retreat for now]].
+                        <h1 id="链接插入link-inserts"><a class="header" href="#链接插入link-inserts">链接插入｜Link Inserts</a></h1>
+<p>有时您想链接到某个段落，但不确定其确切名称。以下面这段为例：</p>
+<pre><code>你沿着小巷走了一小段路。黑色垃圾袋在夏日高温下散发出的气味令人难以忍受——它以三种各自不同却又难以名状的方式汹汹袭来——于是你[[暂且退却]]。
 </code></pre>
-<p>All well and good, except that alleyways often have two entrances. If a player could reach this passage two different ways, how can you make sure they return to the right place? You can use an <em>insert</em> to do this. Inserts are special instructions in passage text that are framed with curly brackets, <code>{like this}</code>, and are interpreted instead of displayed verbatim. They’re called inserts because they instruct Chapbook to insert something into the text for you. In this case, we want Chapbook to insert a link to whatever passage the player was looking at before they reached this one.</p>
-<p>In this case, we’d write:</p>
-<pre><code>You walk a bit down the alleyway. The scent of the black trash bags simmering in the summer heat is overpowering--terrible in three separate yet indescribable ways--so you {back link, label: 'retreat for now'}.
+<p>一切都很好，只是小巷通常有两个入口。如果玩家可以通过两种不同方式到达这个段落，您如何确保他们返回正确的位置？您可以使用插入来实现这一点。插入是段落文本中的特殊指令，用花括号括起来，<code>{像这样}</code>，它们会被解释而不是逐字显示。之所以称为插入，是因为它们指示 Chapbook 为您在文本中插入某些内容。在这种情况下，我们希望 Chapbook 插入一个链接，指向玩家到达此段落之前正在查看的段落。</p>
+<p>在这种情况下，我们会这样写：</p>
+<pre><code>你沿着小巷走了一小段路。黑色垃圾袋在夏日高温下散发出的气味令人难以忍受——它以三种各自不同却又难以名状的方式汹汹袭来——于是你{back link, label: '暂且退却'}。
 </code></pre>
-<p>Inserts follow this format:</p>
+<p>插入内容遵循以下格式：</p>
 <p class="insert-example">
 	<span class="punc">{</span>
-	<span class="identifier">insert name</span>
+	<span class="identifier">插入名称</span>
 	<span class="punc">:</span>
-	<span class="direct-object">value</span>
+	<span class="direct-object">值</span>
 	<span class="punc">,</span>
 	<span class="param1">
-		<span class="param-name">parameter name</span>
+		<span class="param-name">参数名称</span>
 		<span class="punc">:</span>
-		<span class="param-value">value</span>
+		<span class="param-value">值</span>
 	</span>
 	<span class="punc">,</span>
 	<span class="param2">
-		<span class="param-name">parameter name</span>
+		<span class="param-name">参数名称</span>
 		<span class="punc">:</span>
-		<span class="param-value">value</span>
+		<span class="param-value">值</span>
 	</span>
 	<span class="punc">}</span>
 </p>
 
 <ul>
-<li>The <em>insert name</em> signals what type of insert this is, i.e. <code>back link</code>.</li>
-<li><em>Parameter names</em> signal more specific descriptions of how the insert should
-appear or behave, i.e. <code>label</code>. Each kind of insert accepts different
-parameter names. Parameter names, unlike values, never have quotation marks
-around them. An insert can have any number of parameters, including none.
-Two are shown in the example above to demonstrate that they are divided by
-commas.</li>
-<li><em>Values</em> are where you specify the behavior of the insert. If a parameter
-value is text–like the words <code>'retreat for now'</code>–they must have either
-single or double quotation marks around them, so that Chapbook knows where
-the beginning and end of the text is. There’s no difference in how single or
-double quotation marks are handled; it’s just convenient to write <code>{back link, label: 'Exclaim, "Well, I never!"'}</code>.<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup> Any other types of values,
-such as numbers, must not have quotation marks around them.</li>
+<li><em>插入名称</em> (Insert name) 指示此插入的类型，例如<code>back link</code>（反向链接）。</li>
+<li><em>参数名称</em> (Parameter names) 指示了插入内容应如何显示或行为的更具体描述，例如 <code>label</code>。每种插入类型接受不同的参数名称。与值不同，参数名称从不使用引号包围。一个插入可以包含任意数量的参数，包括零个。上例中展示了两个参数，以说明它们由逗号分隔。</li>
+<li><em>值</em> (Values) 用于指定插入内容的行为。如果参数值是文本——例如词语“暂时撤退”——则必须用单引号或双引号包围，以便 Chapbook 知道文本的起始和结束位置。单引号和双引号的处理方式没有区别；这样书写只是为了方便，例如 <code>{back link, label: '惊呼道, "哎呀，我真是万万没想到！"'}</code><sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup>。任何其他类型的值，例如数字，则不得使用引号包围。</li>
 </ul>
-<p>An insert must have its contents all on one line–no line breaks with the Enter or Return key are permitted.</p>
+<p>插入内容必须全部位于一行——不允许使用回车键进行换行。</p>
+<p>除了插入名称外，上述示例中的所有内容都是可选的。不同的插入使用此用法的不同变体——例如，<code>back link</code> 插入在插入名称后不使用值：</p>
 <p>Everything in the example above is optional except the insert name. Different inserts use different variations of this usage–for instance, the <code>back link</code> insert does not use a value following the insert name:</p>
 <p class="insert-example">
 	<span class="punc">{</span>
@@ -228,33 +219,33 @@ such as numbers, must not have quotation marks around them.</li>
 	<span class="param1">
 		<span class="param-name">label</span>
 		<span class="punc">:</span>
-		<span class="param-value">'retreat for now'</span>
+		<span class="param-value">'暂时撤退'</span>
 	</span>
 	<span class="punc">}</span>
 </p>
 
-<p>You can also leave off the <code>label</code> property and just write <code>{back link}</code>: in this case, Chapbook will assume you’d like it to use the word ‘Back’ as the link label.</p>
-<p>If Chapbook is unable to understand the contents of an insert, it displays it as-is. This is so that you can otherwise use curly brackets in your text.</p>
+<p>您也可以省略 <code>label</code>（标签）属性，直接写成 <code>{back link}</code>: 在这种情况下，Chapbook 会默认使用 ‘Back’ 一词作为链接标签。</p>
+<p>如果 Chapbook 无法理解插入内容，它会按原样显示。这样您就可以在文本中正常使用花括号。</p>
 <aside data-hint="danger">
-You cannot nest inserts inside each other.
+您不能在插入内容中嵌套其他插入内容。
 </aside>
-<h2 id="restarting-the-story"><a class="header" href="#restarting-the-story">Restarting the Story</a></h2>
-<p>There’s another insert very similar to <code>{back link}</code> that’s named <code>{restart link}</code>. Instead of going to a previous passage, it takes the player back to the very beginning of the story. You could of course link back to the first passage by name, but for now, consider this a handy shortcut. <code>{restart link}</code> also resets other aspects of Chapbook’s operation, as you’ll learn in <a href="./state/continuity.html">Continuity Between Sessions</a>.</p>
-<p>As with <code>{back link}</code>, <code>{restart link}</code> allows you to specify a label:</p>
-<pre><code>{restart link, label: 'Oh forget it all'}
+<h2 id="重新开始故事restarting-the-story"><a class="header" href="#重新开始故事restarting-the-story">重新开始故事｜Restarting the Story</a></h2>
+<p>还有一种与 <code>{back link}</code> 非常相似的插入功能，名为 <code>{restart link}</code>。它不会将玩家带回到之前的段落，而是让玩家回到故事的起点。你当然也可以通过名称链接回第一个段落，但现在，可以将其视为一个便捷的快捷方式。<code>{restart link}</code> 还会重置 Chapbook 操作的其他方面，你将在<a href="./state/continuity.html">《会话间的连续性》</a>章节中了解到。</p>
+<p>与 <code>{back link}</code> 一样，<code>{restart link}</code> 允许你指定一个标签：</p>
+<pre><code>{restart link, label: '哦，算了吧'}
 </code></pre>
-<p>If you write <code>{restart link}</code> by itself, Chapbook will use the label ‘Restart’.</p>
-<h2 id="manual-links"><a class="header" href="#manual-links">Manual Links</a></h2>
-<p>You can also insert a link using the insert <code>{link to}</code>. Below are some examples:</p>
-<pre><code>You decide after entirely too much deliberation to download {link to: 'https://mozilla.org/firefox', label: 'Firefox'}.
+<p>如果你单独写 {restart link}，Chapbook 会使用标签 ‘Restart’。</p>
+<h2 id="手动链接manual-links"><a class="header" href="#手动链接manual-links">手动链接｜Manual Links</a></h2>
+<p>你也可以使用插入 <code>{link to}</code> 来插入链接。以下是一些示例：</p>
+<pre><code>经过一番过度的深思熟虑后，你决定下载{link to: 'https://mozilla.org/firefox', label: '火狐浏览器'}。
 
-You notice that there is a {link to: 'narrow alleyway'} off to one side.
+你注意到一旁有条{link to: '狭窄小巷'}。
 
-A {link to: 'Bryan Mills', label: 'A man with *certain* skills'} is just who's needed.
+正好需要一位{link to: 'Bryan Mills', label: '身怀*绝技*的男子'}。
 </code></pre>
-<p>The third example demonstrates one use of manual link inserts: although they are more verbose than simple links, they do allow you to enter Markdown formatting into the link label. Passage links also have other uses; see <a href="./state/the-vars-section.html#expressions-can-be-used-in%20inserts">The Vars Section</a> for how you can change the destination of a link dynamically.</p>
-<h2 id="cycling-links"><a class="header" href="#cycling-links">Cycling Links</a></h2>
-<p>Chapbook has an insert for cycling links–that is, links that do not move the player anywhere, but change their label. See <a href="./player-input/dropdown-menus-cycling-links.html">Menus and Cycling Links</a> for more information.</p>
+<p>第三个例子展示了手动插入链接的一种用途：尽管它们比简单链接更为冗长，但确实允许你在链接标签中使用 Markdown 格式。段落链接还有其他用途；关于如何动态更改链接目标，请参阅<a href="./state/the-vars-section.html#expressions-can-be-used-in%20inserts">变量部分</a>。</p>
+<h2 id="循环链接cycling-links"><a class="header" href="#循环链接cycling-links">循环链接｜Cycling Links</a></h2>
+<p>Chapbook 提供了一种循环链接插入功能——这种链接不会将玩家导向任何地方，而是会改变其显示标签。更多信息请参阅菜单与<a href="./player-input/dropdown-menus-cycling-links.html">循环链接</a>章节。</p>
 <style>
 .insert-example {
 	font-size: 120%;
@@ -291,7 +282,7 @@ A {link to: 'Bryan Mills', label: 'A man with *certain* skills'} is just who's n
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1">
-<p>If you need to use a single or double quote inside a text value set off with the same punctuation mark, put a backslash (<code>\</code>) in front of it, like so: <code>{back link, label: '"I couldn\'t possibly comment," he replied.'}</code> <a href="#fr-1-1">↩</a></p>
+<p>如果需要在以相同标点符号分隔的文本值内使用单引号或双引号，请在其前面加上反斜杠（<code>\</code>），例如：<code>{back link, label: '"我无 (couldn\'t) 可奉告，" 他回答道。'}</code> <a href="#fr-1-1">↩</a></p>
 </li>
 </ol>
 

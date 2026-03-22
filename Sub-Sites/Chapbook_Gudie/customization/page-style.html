@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Page Style</title>
+        <title>页面样式</title>
 
 
         <!-- Custom HTML head -->
@@ -36,10 +36,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-ba4541d0.js";
+            window.path_to_searchindex_js = "../searchindex-d9c3c349.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-1fec90ef.js"></script>
+        <script src="../toc-9a453c8c.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -175,29 +175,29 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="页面风格page-style"><a class="header" href="#页面风格page-style">页面风格｜Page Style</a></h1>
-<p>On sufficiently wide web browser windows, Chapbook will add horizontal margins around the text of your story so that it’s comfortable to read. The exact width of the text column is based upon the font size that’s set in <code>config.style.page.font</code>. You can control the appearance around the text through several variables.</p>
-<p>First, the variable <code>config.style.page.style.border</code> takes one of several possible values:</p>
+                        <h1 id="页面样式page-style"><a class="header" href="#页面样式page-style">页面样式｜Page Style</a></h1>
+<p>在足够宽的网页浏览器窗口中，Chapbook 会在故事文本周围添加水平边距，以提供舒适的阅读体验。文本栏的确切宽度基于 <code>config.style.page.font</code> 中设置的字体大小。您可以通过多个变量来控制文本周围的外观。</p>
+<p>首先，变量 <code>config.style.page.style.border</code> 接受以下几个可能的值之一：</p>
 <ul>
-<li><code>'none'</code> creates no visible border around the page content.</li>
-<li><code>'thin-line'</code> and <code>'thick-line'</code> create flat borders around the content.</li>
-<li><code>'shadow'</code> adds a drop shadow around the content.</li>
+<li><code>'none'</code> 会在页面内容周围创建不可见的边框。</li>
+<li><code>'thin-line'</code> 和 <code>'thick-line'</code> 会在内容周围创建扁平边框。</li>
+<li><code>'shadow'</code> 会在内容周围添加投影效果。</li>
 </ul>
-<p>Chapbook’s default appearance is <code>'shadow'</code>.</p>
-<p>If you use <code>'thin-line'</code> or <code>'thick-line'</code>, you can specify the color of the line using the variable <code>config.style.page.style.borderColor</code>. This should be set to a single <a href="fonts-and-colors.html#colors">color</a>.</p>
-<p>The variable <code>config.style.backdrop</code> sets the <a href="fonts-and-colors.html#colors">color</a> of the area around the text content. On smaller browser windows (especially mobile devices), this area is not visible, however.</p>
-<p>When the story shows a new passage, it creates a transition between text based on what is set in the <code>config.body.transition.name</code> variable:</p>
+<p>Chapbook 的默认外观是 <code>'shadow'</code>（阴影）。</p>
+<p>若使用 <code>'thin-line'</code> 或 <code>'thick-line'</code>，可通过变量 <code>config.style.page.style.borderColor</code> 来指定线条颜色。该值应设置为单一<a href="fonts-and-colors.html#colors">颜色</a>。</p>
+<p>变量 <code>config.style.backdrop</code> 用于设置文本内容周围区域的背景<a href="fonts-and-colors.html#colors">颜色</a>。但在较小的浏览器窗口（尤其是移动设备）中，此区域不可见。</p>
+<p>当故事显示新段落时，会根据 <code>config.body.transition.name</code> 变量中的设置，在文本之间创建过渡效果：</p>
 <ul>
-<li><code>'crossfade'</code> causes the old text to fade out at the same time that the new text fades in</li>
-<li><code>'fadeInOut'</code> causes the old text to fade out, then the new text to fade in</li>
-<li><code>'none'</code> causes the new text to replace the old text immediately</li>
+<li><code>'crossfade'</code> 会使旧文本淡出的同时新文本淡入</li>
+<li><code>'fadeInOut'</code> 会使旧文本淡出，然后新文本再淡入</li>
+<li><code>'none'</code> 会使新文本立即替换旧文本</li>
 </ul>
 <aside data-hint="info">
-<p>The <code>'crossfade'</code> and <code>'fadeInOut'</code> transitions require that the player's web browser supports the View Transitions API. If it doesn't, Chapbook will use the <code>'none'</code> transition instead.
+<p><code>'crossfade'</code> 和 <code>'fadeInOut'</code> 过渡效果要求玩家的网页浏览器支持视图过渡 API。如果不支持，Chapbook 将改用 <code>'none'</code> 过渡效果。
 
-<p>Chapbook’s default transition is <code>'crossfade'</code>.</p>
-<p>If you use <code>'crossfade'</code> or <code>'fadeInOut'</code>, you can control how long the transition takes by setting <code>config.body.transition.duration</code>, which should be a string in the same format that the <a href="./text-and-links/modifiers-and-delayed-text.html">after modifer</a> accepts. Remember that it doesn’t understand decimals, so if you’d like a transition to take half a second, set <code>config.page.transition.duration</code> to <code>'500ms'</code>. Also keep in mind that the duration is the duration of the complete transition–a <code>'crossfade'</code> and <code>'fadeInOut'</code> transition with the same duration might look as though they last different amounts of time, as the <code>'fadeInOut'</code> has two steps.</p>
-<p>Finally, Chapbook vertically centers text inside the page by default. To change this, set <code>config.style.page.verticalAlign</code> to either <code>'top'</code>, <code>'center'</code>, or <code>'bottom'</code>.</p>
+<p>Chapbook 的默认过渡效果是 <code>'crossfade'</code>。</p>
+<p>如果你使用 <code>'crossfade'</code> 或 <code>'fadeInOut'</code> 效果，可以通过设置 <code>config.body.transition.duration</code> 来控制过渡时长，该值应为与 <a href="./text-and-links/modifiers-and-delayed-text.html">after 修饰符</a>接受的格式相同的字符串。请注意，它不支持小数，因此如果你希望过渡持续半秒，请将 <code>config.page.transition.duration</code> 设置为 <code>'500ms'</code>。另外要记住，持续时间是指完整过渡的时长——相同持续时间的“交叉淡入淡出”和“淡入淡出”过渡可能看起来持续时间不同，因为“淡入淡出”包含两个步骤。</p>
+<p>最后，Chapbook 默认将页面内的文本垂直居中。要更改此设置，请将 <code>config.style.page.verticalAlign</code> 设置为 <code>'top'</code>（置顶）, <code>'center'</code>（居中）, 或 <code>'bottom'</code>（置底）。</p>
 </p>
 </aside>
                     </main>

@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>The Header and Footer</title>
+        <title>页眉和页脚</title>
 
 
         <!-- Custom HTML head -->
@@ -36,10 +36,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-ba4541d0.js";
+            window.path_to_searchindex_js = "../searchindex-d9c3c349.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-1fec90ef.js"></script>
+        <script src="../toc-9a453c8c.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -176,10 +176,10 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="页眉和页脚the-header-and-footer"><a class="header" href="#页眉和页脚the-header-and-footer">页眉和页脚｜The Header and Footer</a></h1>
-<h2 id="content"><a class="header" href="#content">Content</a></h2>
-<p>Normally, Chapbook displays your story’s title and a link to restart it at the bottom of the page. This area, called the <em>footer</em>, can be changed to include additional information and links. You can also add information at the top of the page, in its <em>header</em>, in a similar manner. The <em><a href="https://klembot.github.io/chapbook/examples/cloak-of-darkness.html">Cloak of Darkness</a></em> example, for instance, displays the current location in the header.</p>
-<p>The header and footer are further divided into three areas: <em>left</em>, <em>center</em>, and <em>right</em>. You do not need to place content into each area–Chapbook does its best to evenly space your content regardless of which areas you use.</p>
-<p>To change a header or footer area, set the corresponding variable in the <code>config</code> object.</p>
+<h2 id="内容content"><a class="header" href="#内容content">内容｜Content</a></h2>
+<p>通常，Chapbook 会在页面底部显示故事标题和重启链接。这个区域称为<em>页脚</em>，可以修改以包含额外信息和链接。同样地，您也可以在页面顶部的<em>页眉</em>中添加信息。例如，《黑暗斗篷》示例会在页眉中显示当前位置。</p>
+<p>页眉和页脚进一步划分为三个区域：<em>左侧</em>、<em>中间</em>和<em>右侧</em>。您无需在每个区域都放置内容——无论您使用哪些区域，Chapbook 都会尽力均匀分布您的内容。</p>
+<p>要更改页眉或页脚区域，请在 <code>config</code> 对象中设置相应的变量。</p>
 <table style="border: 1px solid #ddd; text-align: center">
 	
 <tbody>
@@ -192,7 +192,7 @@
 
 		
 <tr>
-			<td colspan="3"><i>main passage text</i></td>
+			<td colspan="3"><i>主段落文本</i></td>
 		</tr>
 
 		
@@ -206,40 +206,37 @@
 
 </table>
 
-<p>Remember that you must set the object property to a string for it to function correctly–meaning, you must put single or double quotes around the value. For example:</p>
-<pre><code>config.header.center: "Midday"
+<p>请记住，必须将对象属性设置为字符串才能使其正常工作——也就是说，必须用单引号或双引号将值括起来。例如：</p>
+<p>变量的内容会以与段落文本相同的方式被解释，因此您可以在变量中使用链接、插入内容，以及从技术上讲，修饰符：</p>
+<pre><code>config.header.center: "中午"
 </code></pre>
-<p>The contents of the variable are interpreted the same way that passage text is, so you can use links, <a href="./modifiers-and-inserts/link-inserts.html">inserts</a>, and, technically, <a href="./modifiers-and-inserts/modifiers-and-text-alignment.html">modifiers</a> in the variables:</p>
-<pre><code>config.header.right: "Money left: {money}"
-config.footer.center: "[[Other stories in this anthology]]"
+<p>变量的内容会以与段落文本相同的方式被解释，因此您可以在变量中使用链接、[插入][<a href="./modifiers-and-inserts/link-inserts.html">inserts</a>]，以及从技术上讲，<a href="./modifiers-and-inserts/modifiers-and-text-alignment.html">修饰符</a>也可以：</p>
+<pre><code>config.header.right: "剩余金额：{money}"
+config.footer.center: "[[本合集中的其他故事]]"
 </code></pre>
-<p>The header and footer are designed to display a single line of text, though, so modifiers are probably of limited use. The header and footer are updated every time a new passage is shown in the body of the page, so variable inserts like the one shown above will automatically update during play.</p>
-<h2 id="borders"><a class="header" href="#borders">Borders</a></h2>
-<p>In addition to <a href="./fonts-and-colors.html">setting the font and color</a> of the
-header and footer, you may also change the appearance of the borders that appear
-between them and the main passage text. These borders normally are visible only
-when there is content displayed in the header or footer.</p>
-<p>There are two variables that control the appearance of the border itself:</p>
+<p>不过，页眉和页脚设计为显示单行文本，因此修饰符的用途可能有限。每次页面主体中显示新段落时，页眉和页脚都会更新，因此如上所示的变量插入内容将在游戏过程中自动更新。</p>
+<h2 id="边框borders"><a class="header" href="#边框borders">边框｜Borders</a></h2>
+<p>除了<a href="./fonts-and-colors.html">设置页眉和页脚的字体和颜色</a>外，您还可以更改它们与主要段落文本之间出现的边框外观。这些边框通常仅在页眉或页脚中有内容显示时才可见。</p>
+<p>有两个变量控制边框本身的外观：</p>
 <ul>
 <li><code>config.style.dark.page.footer.border</code></li>
 <li><code>config.style.dark.page.header.border</code></li>
 </ul>
-<p>Similar to <a href="./page-style.html"><code>config.style.page.style.border</code></a>, they take three possible values.</p>
+<p>与 <a href="./page-style.html"><code>config.style.page.style.border</code></a> 类似，它们可以取三个可能的值。</p>
 <ul>
-<li><code>'none'</code> causes no border to be shown, even if there is content in the header or footer.</li>
-<li><code>'thin-line'</code> causes a thin line to be used as a border.</li>
-<li><code>'thick-line'</code> uses a thick line instead.</li>
+<li><code>'none'</code> 会导致不显示边框，即使页眉或页脚中有内容。</li>
+<li><code>'thin-line'</code> 会使用一条细线作为边框。</li>
+<li><code>'thick-line'</code> 使用粗线条代替边框。</li>
 </ul>
 <aside data-hint="info">
-Unlike <code>config.style.page.style.border</code>, setting these to <code>'shadow'</code> has no effect.
+与 <code>config.style.page.style.border</code> 不同，将这些设置为 <code>'shadow'</code>（阴影）不会产生任何效果。
 </aside>
-<p>To set the color used by the border, set either:</p>
+<p>要设置边框使用的颜色，请设置以下任一选项：</p>
 <ul>
-<li><code>config.style.dark.page.footer.borderColor</code> or</li>
+<li><code>config.style.dark.page.footer.borderColor</code> 或者</li>
 <li><code>config.style.dark.page.header.borderColor</code>.</li>
 </ul>
-<p>This should be a single <a href="fonts-and-colors.html#colors">color</a>, like
-<code>'orange-2'</code>.</p>
+<p>这应该是一个单一<a href="fonts-and-colors.html#colors">颜色</a>，例如 <code>'orange-2'</code>。</p>
 
                     </main>
 

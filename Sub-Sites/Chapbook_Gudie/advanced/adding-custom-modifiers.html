@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Adding Custom Modifiers</title>
+        <title>添加自定义修饰符</title>
 
 
         <!-- Custom HTML head -->
@@ -36,10 +36,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-ba4541d0.js";
+            window.path_to_searchindex_js = "../searchindex-d9c3c349.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-1fec90ef.js"></script>
+        <script src="../toc-9a453c8c.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -175,9 +175,8 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="adding-custom-modifiers"><a class="header" href="#adding-custom-modifiers">Adding Custom Modifiers</a></h1>
-<p>Chapbook can also be extended with custom modifiers. Below is code that adds a
-modifier that turns its text uppercase:</p>
+                        <h1 id="添加自定义修饰符adding-custom-modifiers"><a class="header" href="#添加自定义修饰符adding-custom-modifiers">添加自定义修饰符｜Adding Custom Modifiers</a></h1>
+<p>Chapbook 也可以通过自定义修饰符进行扩展。以下代码添加了一个功能为将文本转换为大写的修饰符：</p>
 <pre><code>[JavaScript]
 engine.extend('2.0.0', () =&gt; {
   engine.template.modifiers.add({
@@ -188,35 +187,22 @@ engine.extend('2.0.0', () =&gt; {
   });
 });
 </code></pre>
-<p>You can also place code like this into your story’s JavaScript in Twine–this
-uses the <code>[JavaScript]</code> modifier for clarity.</p>
+<p>您也可以将类似代码放入 Twine 中故事的 JavaScript 部分——为清晰起见，这里使用了 <code>[JavaScript]</code> 修饰符。</p>
 <aside data-hint="danger">
-You cannot define a modifier in the same passage that you use it in.
+你不能在同一个段落中定义并使用一个修饰符。
 </aside>
-<p>See <a href="adding-custom-inserts.html">the first part of Adding Custom Inserts</a> for an
-explanation of the <code>engine.extend()</code> function call. The <code>match</code> property works
-the same way as the <code>match</code> property for an insert; Chapbook compares possible
-modifier text with <code>match</code> properties until it finds a match.</p>
-<p>The <code>process()</code> property is where the work of a modifier occurs. The <code>output</code>
-argument it is passed has three properties. Each one is Markdown source code,
-<em>not</em> HTML as it will be finally rendered.</p>
+<p>关于 <code>engine.extend()</code>（引擎扩展）函数调用的解释，请参见<a href="adding-custom-inserts.html">《添加自定义插入》</a>的第一部分。<code>match</code>（匹配）属性的工作原理与插入的 <code>match</code> 属性相同；Chapbook 会将可能的修饰符文本与 <code>match</code> 属性进行比较，直到找到匹配项。</p>
+<p><code>process()</code> 属性是修饰符执行其功能的地方。它接收的 <code>output</code>（输出）参数有三个属性。每一个都是 Markdown 源代码，<em>而非</em>最终渲染的 HTML。</p>
 <ul>
-<li><code>text</code>, the text that the modifier is being applied to.</li>
-<li><code>startsNewParagraph</code>, a Boolean value indicating whether this block of text
-should begin a new paragraph. (The <a href="./modifiers-and-inserts/delayed-text.html">append
-modifier</a>, for example, sets this to
-<code>false</code>.)</li>
+<li><code>text</code>，即修饰符所应用的文本。</li>
+<li><code>startsNewParagraph</code>，一个布尔值，指示此文本块是否应开始新段落。（例如，<a href="./modifiers-and-inserts/delayed-text.html">append 修饰符</a>将此值设为 <code>false</code>。）</li>
 </ul>
-<p>Modifiers also receive an argument, <code>options</code>, which the example above didn’t
-show. <code>options</code> is an object with two properties:</p>
+<p>修饰符还会接收一个参数，<code>options</code>，上述示例未展示此参数。<code>options</code> 是一个包含两个属性的对象：</p>
 <ul>
-<li><code>state</code>, a private state object that is carried over invocations of a modifier
-in a single passage</li>
-<li><code>invocation</code>, the exact text that was typed in the modifier, without the
-square brackets surrounding it</li>
+<li><code>state</code>（状态），一个私有状态对象，在单个段落中修饰符的多次调用间持续存在。</li>
+<li><code>invocation</code>（调用），即修饰符中键入的确切文本，不包含其周围的方括号。</li>
 </ul>
-<p>Below is an example showing how <code>state</code> and <code>invocation</code> can be used to remove
-more and more letters from a passage.</p>
+<p>以下是一个示例，展示了如何利用 <code>state</code> 和 <code>invocation</code> 来逐步删除段落中的字母。</p>
 <pre><code>[JavaScript]
 engine.extend('2.0.0', () =&gt; {
   engine.template.modifiers.add({
@@ -233,7 +219,7 @@ engine.extend('2.0.0', () =&gt; {
   });
 });
 </code></pre>
-<p>So that the following passage (from Kurt Vonnegut’s <em>Slaughterhouse Five</em>)…</p>
+<p>因此，以下段落（摘自 Kurt Vonnegut 的《第五号屠宰场》）……</p>
 <pre><code>[remove aeiou]
 American planes, full of holes and wounded men and corpses took off backwards from an airfield in England. Over France a few German fighter planes flew at them backwards, sucked bullets and shell fragments from some of the planes and crewmen. They did the same for wrecked American bombers on the ground, and those planes flew up backwards to join the formation.
 
@@ -243,17 +229,14 @@ The formation flew backwards over a German city that was in flames. The bombers 
 [also remove t]
 When the bombers got back to their base, the steel cylinders were taken from the racks and shipped back to the United States of America, where factories were operating night and day, dismantling the cylinders, separating the dangerous contents into minerals. Touchingly, it was mainly women who did this work. The minerals were then shipped to specialists in remote areas. It was their business to put them into the ground, to hide them cleverly, so they would never hurt anybody ever again.
 </code></pre>
-<p>… Would display as:</p>
+<p>……将显示为：</p>
 <pre><code>XmXrXcXn plXnXs, fXll Xf hXlXs Xnd wXXndXd mXn Xnd cXrpsXs tXXk Xff bXckwXrds frXm Xn XXrfXXld Xn XnglXnd. XvXr FrXncX X fXw GXrmXn fXghtXr plXnXs flXw Xt thXm bXckwXrds, sXckXd bXllXts Xnd shXll frXgmXnts frXm sXmX Xf thX plXnXs Xnd crXwmXn. ThXy dXd thX sXmX fXr wrXckXd XmXrXcXn bXmbXrs Xn thX grXXnd, Xnd thXsX plXnXs flXw Xp bXckwXrds tX jXXn thX fXrmXtXXn.
 
 TXX fXXmXtXXn fXXw bXckwXXXX XvXX X GXXmXn cXty tXXt wXX Xn fXXmXX. TXX bXmbXXX XpXnXX tXXXX bXmb bXy XXXXX, XxXXtXX X mXXXcXXXXX mXgnXtXXm wXXcX XXXXnk tXX fXXXX, gXtXXXXX tXXm XntX cyXXnXXXcXX XtXXX cXntXXnXXX, XnX XXftXX tXX cXntXXnXXX XntX tXX bXXXXXX Xf tXX pXXnXX. TXX cXntXXnXXX wXXX XtXXXX nXXtXy Xn XXckX. TXX GXXmXnX bXXXw XXX mXXXcXXXXX XXvXcXX Xf tXXXX Xwn, wXXcX wXXX XXng XtXXX tXbXX. TXXy XXXX tXXm tX XXck mXXX fXXgmXntX fXXm tXX cXXwmXn XnX pXXnXX. BXt tXXXX wXXX XtXXX X fXw wXXnXXX XmXXXcXnX, tXXXgX, XnX XXmX Xf tXX bXmbXXX wXXX Xn bXX XXpXXX. XvXX FXXncX, tXXXgX, GXXmXn fXgXtXXX cXmX Xp XgXXn, mXXX XvXXytXXng XnX XvXXybXXy XX gXXX XX nXw.
 
 WXXn XXX bXmbXXX gXX bXck XX XXXXX bXXX, XXX XXXXX cyXXnXXXX wXXX XXkXn fXXm XXX XXckX XnX XXXppXX bXck XX XXX XnXXXX XXXXXX Xf XmXXXcX, wXXXX fXcXXXXXX wXXX XpXXXXXng nXgXX XnX XXy, XXXmXnXXXng XXX cyXXnXXXX, XXpXXXXXng XXX XXngXXXXX cXnXXnXX XnXX mXnXXXXX. XXXcXXngXy, XX wXX mXXnXy wXmXn wXX XXX XXXX wXXk. XXX mXnXXXXX wXXX XXXn XXXppXX XX XpXcXXXXXXX Xn XXmXXX XXXXX. XX wXX XXXXX bXXXnXXX XX pXX XXXm XnXX XXX gXXXnX, XX XXXX XXXm cXXvXXXy, XX XXXy wXXXX nXvXX XXXX XnybXXy XvXX XgXXn.
 </code></pre>
-<p>Finally, in some cases, you may want a modifier to modify the source text as it
-was exactly entered by the author, before inserts and links are transformed into
-Markdown/HTML equivalents. To do this, write a <code>processRaw()</code> function instead
-of <code>process</code>. It takes the same exact arguments that <code>process()</code> does.</p>
+<p>最后，在某些情况下，你可能希望修饰符能直接修改作者输入的原始文本，即在插入内容和链接被转换为 Markdown/HTML 的等效形式之前进行处理。为此，你可以编写一个 <code>processRaw()</code> 函数来替代 <code>process</code> 函数。它接收的参数与 <code>process()</code> 函数完全相同。</p>
 
                     </main>
 

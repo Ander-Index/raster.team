@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Delayed Text</title>
+        <title>延迟文本</title>
 
 
         <!-- Custom HTML head -->
@@ -36,10 +36,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-ba4541d0.js";
+            window.path_to_searchindex_js = "../searchindex-d9c3c349.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-1fec90ef.js"></script>
+        <script src="../toc-9a453c8c.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -175,24 +175,24 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="delayed-text"><a class="header" href="#delayed-text">Delayed Text</a></h1>
-<p>You can also use a modifier to cause part of the text of a passage to appear after a delay. If you’ve never seen this effect before, take a look at the introduction to Stephen Granade’s <em><a href="http://ifarchive.org/if-archive/games/competition2017/Will%20Not%20Let%20Me%20Go/Will%20Not%20Let%20Me%20Go.html">Will Not Let Me Go</a></em>. The sentences fade in and out, leaving you with a single word, “remember.” Although that story wasn’t built with Chapbook, you can use Chapbook’s delayed text functionality to achieve the same effect.</p>
-<p>Here’s an example of this modifier in action:</p>
-<pre><code>You settle in for the long transatlantic flight.
+                        <h1 id="延迟文本delayed-text"><a class="header" href="#延迟文本delayed-text">延迟文本｜Delayed Text</a></h1>
+<p>您也可以使用修饰符使段落中的部分文本延迟显示。如果您从未见过这种效果，不妨看看 Stephen Granade 的《不会让我走》的引言部分。句子会逐渐淡入淡出，最终只留下一个词——“记住”。虽然那个故事并非用 Chapbook 构建，但您可以使用 Chapbook 的延迟文本功能来实现相同的效果。</p>
+<p>以下是该修饰符的实际应用示例：</p>
+<pre><code>你安顿下来，准备度过漫长的跨大西洋飞行。
 
 [after 1 second]
-You remember suddenly that you left the stove on at home.
+你突然想起家里的炉子没关。
 </code></pre>
-<p>The text <code>[after 1s]</code> is never shown to the player. Instead, Chapbook displays <code>You remember suddenly that you left the stove on at home.</code> after the previous text has been onscreen for one second.</p>
-<p>You can put any measurement of time you want in the <code>after</code> modifier<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup>, and you can abbreviate the units of time. The below are all valid:</p>
+<p>文本 <code>[after 1s]</code> 永远不会向玩家显示。相反，Chapbook 会在前一段文本显示一秒后，呈现“<code>你突然想起家里的炉子没关。</code>。</p>
+<p>您可以在 <code>after</code> 修饰符<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup>中使用任意时间单位，且可缩写时间单位。以下均为有效格式：</p>
 <pre><code>[after 300 milliseconds]
 [after 300ms]
 [after 1 minute]
 </code></pre>
-<p>The <code>after</code> modifier only allows round numbers. Instead of writing <code>1.5 seconds</code>, you must write <code>1 second 500 milliseconds</code>, or shorter: <code>1s500ms</code> or <code>1500ms</code>.</p>
-<h2 id="advice-on-using-after"><a class="header" href="#advice-on-using-after">Advice on Using <code>after</code></a></h2>
-<p>The <code>after</code> modifier should be used sparingly, and the delays should be specified keeping in mind that everyone reads a different pace. One minute may not seem very long, but it’s an eternity for fast players.</p>
-<p>Chapbook signals that more text will be coming by displaying an animated watch in the lower-right corner of the page, and impatient players can click the mouse or press a key to skip over the delay. This functionality cannot be disabled.</p>
+<p><code>after</code> 修饰符仅允许使用整数。因此，不能写作 <code>1.5 seconds</code>，而必须写成 <code>1 second 500 milliseconds</code>，或更简短的写法：<code>1s500ms</code> 或 <code>1500ms</code>。</p>
+<h2 id="关于使用-after-的建议advice-on-using-after"><a class="header" href="#关于使用-after-的建议advice-on-using-after">关于使用 <code>after</code> 的建议｜Advice on Using <code>after</code></a></h2>
+<p>应谨慎使用 <code>after</code> 修饰符，且在设定延迟时间时需考虑到每个人的阅读速度不同。一分钟或许看似不长，但对于阅读速度快的玩家而言却无比漫长。</p>
+<p>Chapbook 通过在页面右下角显示一个动画手表图标来提示后续将有更多文本出现，不耐烦的玩家可通过点击鼠标或按键跳过延迟。此功能无法被禁用。</p>
 <h2 id="修饰符通常创建段落modifiers-normally-create-paragraphs"><a class="header" href="#修饰符通常创建段落modifiers-normally-create-paragraphs">修饰符通常创建段落｜Modifiers Normally Create Paragraphs</a></h2>
 <p>修饰符通常会使紧随其后的文本与前文处于不同的段落中。不过，在某些情况下，您可能希望文本与前一段落一起显示。<code>append</code> 修饰符可以实现这一效果。</p>
 <pre><code>你终于解开了这个谜团。

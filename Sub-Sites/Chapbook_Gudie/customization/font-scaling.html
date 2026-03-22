@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Font Scaling</title>
+        <title>字体缩放</title>
 
 
         <!-- Custom HTML head -->
@@ -36,10 +36,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-ba4541d0.js";
+            window.path_to_searchindex_js = "../searchindex-d9c3c349.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-1fec90ef.js"></script>
+        <script src="../toc-9a453c8c.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -176,53 +176,24 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="字体缩放font-scaling"><a class="header" href="#字体缩放font-scaling">字体缩放｜Font Scaling</a></h1>
-<p>By default, Chapbook scales the font size of text based on the width of the
-<em>viewport</em>: the container in which the page is viewed. On a desktop computer,
-the viewport is a browser window, which can be resized by the player as much as
-they like. On a tablet or mobile device, the viewport is typically the entire
-screen.</p>
-<p>Chapbook will only ever increase the font size you set on text. It will never
-make it smaller. The intention is to keep text at a comfortable size regardless
-of the size of the viewport, and to prevent it from appearing in an unnaturally
-narrow column in larger viewports.</p>
-<p>You can customize Chapbook’s font scaling or disable it entirely, so that text
-is always exactly at the size you specify.</p>
-<h2 id="enabling-or-disabling-scaling"><a class="header" href="#enabling-or-disabling-scaling">Enabling or Disabling Scaling</a></h2>
-<p>To disable font scaling, set <code>config.style.fontScaling.enabled</code> to <code>false</code>. This
-takes effect immediately. To re-enable font scaling, set this variable to
-<code>true</code>.</p>
-<p>Remember that players also have the ability to scale font sizes by changing
-browser settings. You can’t prevent this from occurring–nor should you want to,
-since often players do this to make text easier to read.</p>
-<h2 id="controlling-scaling"><a class="header" href="#controlling-scaling">Controlling Scaling</a></h2>
-<p>Apart from <code>config.style.fontScaling.enabled</code>, there are two variables that must
-be set for Chapbook to scale font sizes that control exactly how scaling occurs:</p>
-<p><code>config.style.fontScaling.baseViewportWidth</code> is the width, in pixels, of the
-viewport when the font size as set in <code>config</code> variables is used exactly. In
-other words, at any width wider than this, font sizes begin to increase. This
-must be a number like <code>1280</code>, not <code>'1280px'</code>. By default, this is <code>1000</code>.</p>
-<p><code>config.style.fontScaling.addAtDoubleWidth</code> is the amount of pixels that is
-added to font sizes when the viewport is exactly twice as wide as what is in
-<code>config.style.fontScaling.baseViewportWidth</code>. Like <code>baseViewportWidth</code>, this
-must be a number like <code>10</code>, not <code>'10px'</code>. You can’t increase the font size by
-any other unit but pixels. <code>addAtDoubleWidth</code> defines the ratio by which font
-sizes increase. By default, this is set to <code>6</code>.</p>
-<p>There’s a third, optional variable: <code>config.style.fontScaling.maximumSize</code>. This
-is the maximum size a font will be regardless of how wide the viewport becomes.
-Unlike the other variables, this is a string. It should be a CSS length
-measurement, including the unit, like <code>'36px'</code> or <code>'2rem'</code>. by default, this is
-unset.</p>
-<p>If you don’t set a <code>maximumSize</code>, then fonts will be scaled at all viewport
-widths.</p>
+<p>默认情况下，Chapbook 会根据<em>视口</em>（即查看页面的容器）的宽度来缩放文本的字体大小。在台式电脑上，视口是浏览器窗口，玩家可以随意调整其大小。在平板电脑或移动设备上，视口通常是整个屏幕。</p>
+<p>Chapbook 只会增大您为文本设置的字体大小，绝不会使其变小。其目的是无论视口大小如何，都保持文本处于舒适的尺寸，并防止在较大的视口中文本出现在不自然的狭窄列中。</p>
+<p>您可以自定义 Chapbook 的字体缩放比例，或完全禁用此功能，使文本始终精确保持您指定的大小。</p>
+<h2 id="启用或禁用缩放功能enabling-or-disabling-scaling"><a class="header" href="#启用或禁用缩放功能enabling-or-disabling-scaling">启用或禁用缩放功能｜Enabling or Disabling Scaling</a></h2>
+<p>要禁用字体缩放，请将 <code>config.style.fontScaling.enabled</code> 设置为 <code>false</code>。此设置会立即生效。若要重新启用字体缩放，请将此变量设置为 <code>true</code>。</p>
+<p>请注意，玩家也可以通过更改浏览器设置来调整字体大小。您无法阻止这种情况发生——也不应试图阻止，因为玩家通常这样做是为了让文本更易于阅读。</p>
+<h2 id="控制缩放controlling-scaling"><a class="header" href="#控制缩放controlling-scaling">控制缩放｜Controlling Scaling</a></h2>
+<p>除了 <code>config.style.fontScaling.enabled</code> 之外，还有两个变量必须设置，以便 Chapbook 能够缩放字体大小，这两个变量精确控制着缩放的发生方式：</p>
+<p><code>config.style.fontScaling.baseViewportWidth</code> 是一个以像素为单位的视口宽度值，当视口达到此宽度时，将完全使用 <code>config</code> 变量中设置的字体大小。换言之，在任何比此宽度更宽的视口下，字体大小将开始增大。此值必须是一个数字，如 <code>1280</code>，而不是 <code>'1280px'</code>。默认情况下，此值为 <code>1000</code>。</p>
+<p><code>config.style.fontScaling.addAtDoubleWidth</code> 是一个像素值，当视口宽度恰好是 <code>config.style.fontScaling.baseViewportWidth</code> 中数值的两倍时，此值将被添加到字体大小上。与 <code>baseViewportWidth</code> 类似，此值必须是一个数字，如 <code>10</code>，而不是 <code>'10px'</code>。字体大小的增加只能以像素为单位，不能使用其他单位。<code>addAtDoubleWidth</code> 定义了字体大小增加的比率。默认情况下，此值设置为 <code>6</code>。</p>
+<p>还有第三个可选变量：<code>config.style.fontScaling.maximumSize</code>。这是无论视口变得多宽，字体能达到的最大尺寸。与其他变量不同，这是一个字符串。它应该是一个包含单位的 CSS 长度值，例如 <code>'36px'</code> 或 <code>'2rem'</code>。默认情况下，此变量未设置。</p>
+<p>如果你不设置 <code>maximumSize</code>（最大值），那么字体将在所有视口宽度下进行缩放。</p>
 <aside data-hint="info">
-There is no <code>minimumSize</code> setting because Chapbook never scales fonts smaller than what is originally set. That is, if you set <code>config.style.page.font</code> to <code>'Helvetica 18'</code>, the smallest the body text will ever be is 18 pixels.
+没有 <code>minimumSize</code>（最小值）设置，因为 Chapbook 永远不会将字体缩放得比最初设置的尺寸更小。也就是说，如果你将 <code>config.style.page.font</code> 设置为 <code>'Helvetica 18'</code>，那么正文文本的最小尺寸将始终是 18 像素。
 </aside>
-<p>If any of these variables are set to incorrect types, like
-<code>config.style.fontScaling.baseViewportWidth</code> being set to <code>'blue'</code>, then
-Chapbook will not perform any font scaling.</p>
-<h2 id="an-example"><a class="header" href="#an-example">An Example</a></h2>
-<p>These variables can be a little abstract. Let’s work through an example. We’ll
-assume that the player’s browser settings don’t increase or decrease font sizes.</p>
+<p>如果这些变量中的任何一个被设置为错误的类型，例如 <code>config.style.fontScaling.baseViewportWidth</code> 被设置为 <code>'blue'</code>，那么 Chapbook 将不会执行任何字体缩放。</p>
+<h2 id="一个示例an-example"><a class="header" href="#一个示例an-example">一个示例｜An Example</a></h2>
+<p>这些变量可能有些抽象。让我们通过一个示例来理解。我们假设玩家的浏览器设置没有增大或减小字体大小。</p>
 <pre><code>config.page.font: 'Helvetica 20'
 config.style.fontScaling.baseViewportWidth: 1000
 config.style.fontScaling.addAtDoubleWidth: 5
@@ -231,18 +202,18 @@ config.style.fontScaling.maximumSize: '30px'
 <div class="table-wrapper">
 <table>
 <thead>
-<tr><th>When the viewport width is…</th><th>The font size is…</th></tr>
+<tr><th>当视口宽度为…</th><th>字体大小为…</th></tr>
 </thead>
 <tbody>
-<tr><td>1000 pixels and narrower</td><td>20 pixels. The original size is used.</td></tr>
-<tr><td>1000-2000 pixels</td><td>Scaled linearly from 20 pixels to 25 pixels.</td></tr>
-<tr><td>2000 pixels exactly</td><td>25 pixels: the original size plus the amount of pixels set in <code>addAtDoubleWidth</code>.</td></tr>
-<tr><td>2000-3000 pixels</td><td>Scaled linearly from 25 pixels to 30 pixels.</td></tr>
-<tr><td>3000 pixels and wider</td><td>30 pixels. It’s clamped by <code>maximumSize</code>.</td></tr>
+<tr><td>1000 p像素及以下</td><td>20 像素。使用原始尺寸。</td></tr>
+<tr><td>1000-2000 像素</td><td>从 20 像素线性缩放到 25 像素。</td></tr>
+<tr><td>精确为 2000 像素</td><td>25 像素：原始尺寸加上在 <code>addAtDoubleWidth</code> 中设置的像素量。</td></tr>
+<tr><td>2000-3000 像素</td><td>从 25 像素线性缩放到 30 像素。</td></tr>
+<tr><td>3000 像素及更宽</td><td>30 像素。它受到 <code>maximumSize</code> 的限制。</td></tr>
 </tbody>
 </table>
 </div>
-<p>Below is a visual representation of this.</p>
+<p>以下是此内容的视觉呈现。</p>
 <div style="text-align: center; background: white">
 <img src="font-scaling.svg" alt="" height="337" width="350">
 </div>

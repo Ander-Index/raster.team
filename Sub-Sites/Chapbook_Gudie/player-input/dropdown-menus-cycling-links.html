@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Dropdown Menus and Cycling Links</title>
+        <title>下拉菜单与循环链接</title>
 
 
         <!-- Custom HTML head -->
@@ -36,10 +36,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-ba4541d0.js";
+            window.path_to_searchindex_js = "../searchindex-d9c3c349.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-1fec90ef.js"></script>
+        <script src="../toc-9a453c8c.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -175,30 +175,30 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="dropdown-menus-and-cycling-links"><a class="header" href="#dropdown-menus-and-cycling-links">Dropdown Menus and Cycling Links</a></h1>
-<p>Instead of allowing any kind of input at all from a player, you may want to contrain them to a specific set of choices. Chapbook has two mechanisms for this that look different to the player, but behave identically behind the scenes: menus and cycling links.</p>
-<p>In order to do this, we need to introduce a new type of variable, an <em>array</em>. An array is similar to an object<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup> in that it’s a container for other variables. However, where objects contain named variables, arrays are simply an ordered list of values. This array lists the colors of the rainbow:</p>
-<pre><code>['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+                        <h1 id="下拉菜单与循环链接dropdown-menus-and-cycling-links"><a class="header" href="#下拉菜单与循环链接dropdown-menus-and-cycling-links">下拉菜单与循环链接｜Dropdown Menus and Cycling Links</a></h1>
+<p>与其允许玩家输入任何内容，不如将他们限制在特定的选择范围内。Chapbook 提供了两种机制来实现这一点，它们对玩家来说看起来不同，但在幕后行为相同：菜单和循环链接。</p>
+<p>为此，我们需要引入一种新的变量类型：<em>数组</em>。数组与对象<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup>类似，都是其他变量的容器。然而，对象包含的是命名变量，而数组只是一个有序的值列表。这个数组列出了彩虹的颜色：</p>
+<pre><code>['红', '橙', '黄', '绿', '蓝', '靛', '紫']
 </code></pre>
-<p>Arrays are easy to spot: they simply put square brackets around a list of values separated by commas. An array can contain any type of value: <code>['red', 3, true]</code> is a valid array. Arrays can also be empty, though in practice you’ll rarely encounter this. The way to express an empty array is by writing <code>[]</code>.</p>
-<h2 id="dropdown-menus"><a class="header" href="#dropdown-menus">Dropdown Menus</a></h2>
-<p>The <code>{dropdown menu}</code> insert displays a menu of choices to the player.</p>
-<pre><code>What meal do you enjoy most?
+<p>数组很容易识别：它们只是用方括号括起一个由逗号分隔的值列表。数组可以包含任何类型的值：<code>['红色', 3, true]</code> 就是一个有效的数组。数组也可以是空的，尽管在实践中你很少会遇到这种情况。表示空数组的方法是写成 <code>[]</code>。</p>
+<h2 id="下拉菜单dropdown-menus"><a class="header" href="#下拉菜单dropdown-menus">下拉菜单｜Dropdown Menus</a></h2>
+<p>插入 <code>{dropdown menu}</code> 会向玩家显示一个选项菜单。</p>
+<pre><code>你最喜欢哪一餐？
 
-{dropdown menu for: 'meal', choices: ['Breakfast', 'Lunch', 'Dinner']}
+{ropdown menu for: '餐点', choices: ['早餐', '午餐', '晚餐']}
 </code></pre>
-<p>As with text inputs, <code>{dropdown menu}</code> inserts save the selected value to a variable–in the example above, a variable named <code>meal</code>. If <code>meal</code> were previously set to a value in the menu, that value will be automatically preselected for the player. Otherwise, the menu shows the first option you list in the array of choices.</p>
-<p>Unlike a text input, a dropdown menu does not block navigation to another passage, since it always has some value set.</p>
-<h2 id="cycling-links"><a class="header" href="#cycling-links">Cycling Links</a></h2>
-<p>The <code>{cycling link}</code> insert works exactly the same way as <code>{dropdown menu}</code>, only it shows a text link that the player selects to change. As the name implies, when the player reaches the last value in the <code>choices</code> array, the link starts over at the first element in the array.</p>
-<pre><code>I enjoy {cycling link for: 'meal', choices: ['Breakfast', 'Lunch', 'Dinner']} the most.
+<p>与文本输入类似，<code>{dropdown menu}</code> 插入会将所选值保存到一个变量中——在上面的例子中，是一个名为 <code>餐点</code> 的变量。如果 <code>餐点</code> 之前被设置为菜单中的某个值，该值将自动预选给玩家。否则，菜单将显示你在选项数组中列出的第一个选项。</p>
+<p>与文本输入不同，下拉菜单不会阻碍导航到其他段落，因为它始终有某个已设定的值。</p>
+<h2 id="循环链接cycling-links"><a class="header" href="#循环链接cycling-links">循环链接｜Cycling Links</a></h2>
+<p><code>{cycling link}</code> 的工作方式与 <code>{dropdown menu}</code> 完全相同，只是它显示一个文本链接供玩家点击时切换。顾名思义，当玩家到达 <code>choices</code>（选项）数组中的最后一个值时，链接会重新从数组的第一个元素开始循环。</p>
+<pre><code>我最喜欢{cycling link for: '餐点', choices: ['早餐', '午餐', '晚餐']}。
 </code></pre>
-<h2 id="optional-parts"><a class="header" href="#optional-parts">Optional Parts</a></h2>
-<p>Just like text inputs, dropdown menus and cycling links don’t require that their value be saved to a variable. To do this, omit the <code>for:</code> part of the insert. For example, <code>{cycling link, choices: ['Breakfast', 'Lunch', 'Dinner']}</code>.</p>
+<h2 id="可选部分optional-parts"><a class="header" href="#可选部分optional-parts">可选部分｜Optional Parts</a></h2>
+<p>就像文本输入一样，下拉菜单和循环链接并不要求将其值保存到变量中。要实现这一点，只需省略插入中的 <code>for:</code> 部分。例如，<code>{cycling link, choices: ['Breakfast', 'Lunch', 'Dinner']}</code>。</p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1">
-<p>It is a peculiarity of JavaScript, the programming language of web browsers, that arrays are in fact implemented as objects, so in a sense arrays <em>are</em> objects. However, it’s best to think of them at this stage as a distinct concept. <a href="#fr-1-1">↩</a></p>
+<p>JavaScript（网页浏览器的编程语言）有一个独特之处：数组实际上是以对象的形式实现的，因此在某种意义上，数组<em>就是</em>对象。不过，现阶段最好还是将它们视为一个独立的概念。 <a href="#fr-1-1">↩</a></p>
 </li>
 </ol>
 

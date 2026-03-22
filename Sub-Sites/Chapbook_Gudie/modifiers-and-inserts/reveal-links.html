@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Reveal Links</title>
+        <title>揭示链接</title>
 
 
         <!-- Custom HTML head -->
@@ -36,10 +36,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-ba4541d0.js";
+            window.path_to_searchindex_js = "../searchindex-d9c3c349.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-1fec90ef.js"></script>
+        <script src="../toc-9a453c8c.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -175,39 +175,39 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="reveal-links"><a class="header" href="#reveal-links">Reveal Links</a></h1>
-<p>A link can also reveal more text in your passage instead of displaying an entirely different one. Liza Daly uses this effect in <em><a href="https://stoneharborgame.com/">Stone Harbor</a></em> (a story she created using another authoring system called <a href="https://github.com/lizadaly/windrift">Windrift</a>) to give the story a novelistic feel.</p>
-<p>Chapbook calls these <em>reveal links</em>, and they can either display more text or the contents of an entire passage.</p>
-<p>To display more text, write:</p>
-<pre><code>I was driving home late one night when {reveal link: 'something odd occurred', text: 'I saw five deer staring at me from one side of the road, all in a line'}.
+                        <h1 id="揭示链接reveal-links"><a class="header" href="#揭示链接reveal-links">揭示链接｜Reveal Links</a></h1>
+<p>链接不仅可以显示完全不同的段落，还能在原有段落中揭示更多文本。Liza Daly 在《石港》（她用另一款名为 <a href="https://github.com/lizadaly/windrift">Windrift</a> 的创作系统编写的故事）中运用了这种效果，赋予故事小说般的质感。</p>
+<p>Chapbook 将这类链接称为 <em>揭示链接</em>，它们既能展示更多文本，也能呈现整个段落的内容。</p>
+<p>要显示更多文本，请编写：</p>
+<pre><code>我深夜驾车回家时，{reveal link: '发生了件怪事', text: '看见五只鹿在路边一字排开，齐刷刷地盯着我'}。
 </code></pre>
-<p>This will first display “I was driving home late one night when something odd occurred,” and then when the player selected “something odd occurred,” it will change to “I was driving home late one night when I saw five deer staring at me from one side of the road, all in a line.”</p>
-<p>The text you enter in either part of the insert will be interpreted as source code, so you can use <a href="./text-and-links/text-formatting.html">formatting</a> to further customize its appearance.</p>
-<p>Revealing text works well for short substitutions, but writing long stretches of text can be awkward. In these instances, try revealing a passage:</p>
-<pre><code>I was driving home late one night when {reveal link: 'something odd occurred', passage: 'A Dangerous Incident'}.
+<p>这将首先显示“我深夜驾车回家时，发生了件怪事”，然后当玩家选择“发生了件怪事”时，文本会变为“我深夜驾车回家时，看见五只鹿在路边一字排开，齐刷刷地盯着我”</p>
+<p>您在插入内容的任一部分输入的文本都将被解释为源代码，因此您可以使用<a href="./text-and-links/text-formatting.html">格式化</a>设置进一步自定义其外观。</p>
+<p>文本揭示功能适用于短文本替换，但编写大段文字可能显得笨拙。在这些情况下，请尝试揭示段落内容：</p>
+<pre><code>我深夜驾车回家时，{reveal link: '发生了件怪事', passage: '危险事件'}。
 </code></pre>
-<p>This will work the same way as the previous example, only it will show the contents of the passage named ‘A Dangerous Incident’.</p>
+<p>这与之前的示例工作原理相同，只是它会显示名为“危险事件“的段落内容。</p>
 <aside data-hint="info">
-A passage shown by a reveal link will not be recorded in a session's history.
+由揭示链接显示的段落不会被记录在会话历史中。
 </aside>
-<p>When using a reveal link with a passage containing multiple paragraphs, Chapbook inserts the paragraphs in such a way that the surrounding text’s order is maintained.</p>
-<p>For example, if you have a passage named ‘Shopping List’:</p>
-<pre><code>Apples
+<p>当使用揭示链接显示包含多个自然段的段落时，Chapbook 会以保持周围文本顺序的方式插入这些段落。</p>
+<p>例如，如果您有一个名为“购物清单“的段落：</p>
+<pre><code>苹果
 
-Bananas
+香蕉
 
-Carrots
+胡萝卜
 </code></pre>
-<p>and then a passage with this:</p>
-<pre><code>I went to buy {reveal link: 'groceries', passage: 'Shopping List'}. It was a rainy day.
+<p>然后是一段包含以下内容的文字：</p>
+<pre><code>我去买{reveal link: '杂货', passage: '购物清单'}。那是个下雨天。
 </code></pre>
-<p>The player will see this after they click the link:</p>
+<p>玩家点击链接后将看到以下内容：</p>
 <blockquote>
-<p>I went to buy Apples</p>
-<p>Bananas</p>
-<p>Carrots. It was a rainy day.</p>
+<p>我去买了苹果</p>
+<p>香蕉</p>
+<p>胡萝卜。那是个下雨天。</p>
 </blockquote>
-<p>Notice how the period after the link insert is moved to the end, after Carrots, but not on a line by itself, and the rest of the paragraph continues.</p>
+<p>请注意，链接插入后的句号被移到了末尾，在“胡萝卜”之后，但并非单独成行，而段落的其余部分继续。</p>
 
                     </main>
 

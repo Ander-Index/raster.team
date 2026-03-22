@@ -37,10 +37,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-ba4541d0.js";
+            window.path_to_searchindex_js = "searchindex-d9c3c349.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-1fec90ef.js"></script>
+        <script src="toc-9a453c8c.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -183,7 +183,7 @@
 
 </div>
 
-<p>本文是面向 Twine 2<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup> 的 Chapbook 故事格式指南。故事格式决定了通过 Twine 编辑器创作的故事在网页浏览器中的呈现方式；当您在 Twine 中点击“<strong>播放</strong>“按钮或将故事发布为文件时，所选的故事格式便会接管后续处理。</p>
+<p>本文是面向 Twine 2<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup> 的 Chapbook 故事格式指南。故事格式决定了通过 Twine 编辑器创作的故事在网页浏览器中的呈现方式；当您在 Twine 中点击“<strong>启动</strong>“按钮或将故事发布为文件时，所选的故事格式便会接管后续处理。</p>
 <p>Chapbook 的设计宗旨是让创作者易于使用，同时为玩家生成赏心悦目的阅读体验。它为您的故事提供了合理的默认行为，并支持根据特定需求进行自定义调整。</p>
 <p>本指南不要求您具备任何编程知识；不过，了解 CSS 或 JavaScript 会有所帮助，因为本指南大量运用了这两种技术。指南分为若干章节，将循序渐进地引导您完成故事创作过程。</p>
 <p>但本指南默认您已熟悉 Twine 2 编辑器本身。若您是 Twine 的新用户，<a href="(http:/twinery.org/wiki/twine2:guide)">《Twine 2 指南》</a> 是绝佳的入门资料。网络上还有大量可供参考的教程资源。</p>
@@ -402,136 +402,138 @@
 
 <p>本节首先讲解如何为故事中的文本添加格式，例如粗体或小型大写字母，以及如何在段落间创建链接。完成学习后，您将能够制作出类似《选择你的冒险》系列书籍的数字版本。</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="text-formatting"><a class="header" href="#text-formatting">Text Formatting</a></h1>
-<p>Of course, you can type paragraphs into a Twine passage in Chapbook and it will display them as you would expect. But for other kinds of formatting, such as bold or italics, Chapbook follows the syntax of a popular markup language called <a href="https://daringfireball.net/markdown">Markdown</a>.</p>
-<p>The term ‘markup language’ might sound complex, but in reality it’s just a set of conventions of how to represent formatting in plain text. For example, to make part of your text italicized when displayed, you type asterisks around it, <code>*like so*</code>.</p>
-<p>If you’ve never used Markdown before, try using the <a href="https://daringfireball.net/projects/markdown/dingus">dingus</a> as you read this section. It’s an online playground with a funny name that not only allows you to quickly see how text will be rendered, but also has a cheatsheet that summarizes the different formatting available to you. Bear in mind, however, that Chapbook has a few extra formatting options available to you above and beyond the standard Markdown set.</p>
-<h2 id="italics-and-boldface"><a class="header" href="#italics-and-boldface">Italics and Boldface</a></h2>
-<p>To italicize a a phrase, type <code>*</code> or <code>_</code> (a single underscore)<sup class="footnote-reference" id="fr-1-1-1"><a href="#footnote-1-1">1</a></sup> around it.</p>
+<h1 id="文本格式化text-formatting"><a class="header" href="#文本格式化text-formatting">文本格式化｜Text Formatting</a></h1>
+<p>当然，您可以在 Chapbook 的 Twine 段落中输入文本，它会按预期显示。但对于其他类型的格式设置，例如粗体或斜体，Chapbook 遵循一种名为 <a href="https://daringfireball.net/markdown">Markdown</a> 的流行标记语言的语法。</p>
+<p>“标记语言”这个术语听起来可能很复杂，但实际上它只是一套在纯文本中表示格式的约定。例如，要使文本的某部分在显示时变为斜体，您需要在它周围键入星号，<code>*就像这样*</code>。</p>
+<p>如果你从未使用过 Markdown，请尝试在阅读本节时使用 <a href="https://daringfireball.net/projects/markdown/dingus">dingus</a>。这是一个名字有趣的在线游乐场，不仅能让你快速查看文本的渲染效果，还附带一份速查表，总结了可供你使用的不同格式。但请记住，Chapbook 提供了一些超出标准 Markdown 集的额外格式选项。</p>
+<h2 id="斜体和粗体italics-and-boldface"><a class="header" href="#斜体和粗体italics-and-boldface">斜体和粗体｜Italics and Boldface</a></h2>
+<p>要将短语设为斜体，请在其前后键入 <code>*</code> 或 <code>_</code>（单个下划线）。<sup class="footnote-reference" id="fr-1-1-1"><a href="#footnote-1-1">1</a></sup></p>
 <div class="table-wrapper">
 <table>
 <thead>
-<tr><th>Typed</th><th>Displayed</th></tr>
+<tr><th>输入</th><th>显示</th></tr>
 </thead>
 <tbody>
-<tr><td><code>_Unconventional_ tastes</code></td><td><em>Unconventional</em> tastes</td></tr>
-<tr><td><code>*Unconventional* tastes</code></td><td><em>Unconventional</em> tastes</td></tr>
+<tr><td><code>_非传统_ 品味 tastes</code></td><td><em>非传统</em> 品味</td></tr>
+<tr><td><code>*非传统*品味</code></td><td><em>非传统</em>品味</td></tr>
 </tbody>
 </table>
 </div>
-<p>To make a phrase boldface, type <code>**</code> or <code>__</code> (two underscores) around it.</p>
+<p>（王洛木注释：由于用于是用空格来分隔单词，但中文是连起来的，所以要使用下划线作为斜体标记的话，要在前后使用空格。选择哪种方案只取决于您的喜好与排版。）</p>
+<p>要使短语变为粗体，请在它前后输入 <code>**</code> 或 <code>__</code>（两个下划线）。</p>
 <div class="table-wrapper">
 <table>
 <thead>
-<tr><th>Typed</th><th>Displayed</th></tr>
+<tr><th>输入</th><th>显示</th></tr>
 </thead>
 <tbody>
-<tr><td><code>__Unconventional__ tastes</code></td><td><strong>Unconventional</strong> tastes</td></tr>
-<tr><td><code>**Unconventional** tastes</code></td><td><strong>Unconventional</strong> tastes</td></tr>
+<tr><td><code>__非传统__ 品味</code></td><td><strong>非传统</strong> 品味</td></tr>
+<tr><td><code>**非传统**品味</code></td><td><strong>非传统</strong>品味</td></tr>
 </tbody>
 </table>
 </div>
-<p>It doesn’t matter whether you use asterisks or underscores, so long as you’re consistent in a single usage, and you can mix and match them in your text.</p>
+<p>只要在单次使用中保持一致的话，无论使用星号还是下划线都无关紧要，并且您可以在文本中混合使用它们。</p>
 <div class="table-wrapper">
 <table>
 <thead>
-<tr><th>Typed</th><th>Displayed</th></tr>
+<tr><th>输入</th><th>显示</th></tr>
 </thead>
 <tbody>
-<tr><td><code>**"I'll _murder_ you,"** she hissed.</code></td><td><strong>“I’ll <em>murder</em> you,”</strong> she hissed.</td></tr>
+<tr><td><code>**“我要 _杀_ 了你，”**她嘶声说道。</code></td><td>**“我要 <em>杀</em> 了你，”**她嘶声说道。</td></tr>
 </tbody>
 </table>
 </div>
-<h2 id="underlined-text"><a class="header" href="#underlined-text">Underlined text</a></h2>
-<p>Underlined text is often avoided on the web because underlining is used as a convention to mark text as a hyperlink, and in many case, italicizing text is preferable to underlining it.<sup class="footnote-reference" id="fr-2-1-1"><a href="#footnote-2-1">2</a></sup> However, if you’d like to underline plain text, it can be done by writing <code>&lt;span style="text-decoration:underline"&gt;</code> and <code>&lt;/span&gt;</code> around it.</p>
-<p>(There is also a <code>&lt;u&gt;</code> HTML tag that originally was a signal to underline text, and still does so in many web browsers. But its meaning has changed to “text that is annotated in some way”; for example, underlined because it’s misspelled.)</p>
+<h2 id="带下划线的文本underlined-text"><a class="header" href="#带下划线的文本underlined-text">带下划线的文本｜Underlined text</a></h2>
+<p>在网页上通常避免使用带下划线的文本，因为下划线作为一种惯例用于标记超链接文本，而且在许多情况下，使用斜体文本比使用下划线更可取。<sup class="footnote-reference" id="fr-2-1-1"><a href="#footnote-2-1">2</a></sup>然而，如果您想要为纯文本添加下划线，可以通过在其周围写入 <span style="text-decoration:underline"> 和 </span> 来实现。</p>
+<p>（还有一个 <code>&lt;u&gt;</code> 的 HTML 标签，最初是表示下划线的信号，并且在许多网络浏览器中仍然如此。但它的含义已经变为“以某种方式注释的文本”；例如，因为拼写错误而加下划线。）</p>
 <div class="table-wrapper">
 <table>
 <thead>
-<tr><th>Typed</th><th>Displayed</th></tr>
+<tr><th>输入</th><th>显示</th></tr>
 </thead>
 <tbody>
-<tr><td><code>This isn't a &lt;span style="text-decoration:underline"&gt;link&lt;/span&gt; but it feels like it should be.</code></td><td>This isn’t a <span style="text-decoration:underline">link</span> but it feels like it should be.</td></tr>
+<tr><td><code>这不是一个&lt;span style="text-decoration:underline"&gt;链接&lt;/span&gt;，但感觉它应该是。</code></td><td>这不是一个<span style="text-decoration:underline">链接</span>，但感觉它应该是。</td></tr>
 </tbody>
 </table>
 </div>
-<h2 id="monospaced-type"><a class="header" href="#monospaced-type">Monospaced Type</a></h2>
-<p>To set text in a monospaced typeface, <code>like this</code>, type backticks (<code>`</code>) around it.</p>
+<h2 id="等宽字体monospaced-type"><a class="header" href="#等宽字体monospaced-type">等宽字体｜Monospaced Type</a></h2>
+<p>要将文本设置为等宽字体，<code>像这样</code>，请在文本前后键入反引号（<code>`</code>）。</p>
 <div class="table-wrapper">
 <table>
 <thead>
-<tr><th>Typed</th><th>Displayed</th></tr>
+<tr><th>输入</th><th>显示</th></tr>
 </thead>
 <tbody>
-<tr><td><code>`Beep boop,` HAL commented.</code></td><td><code>Beep boop,</code> HAL commented.</td></tr>
+<tr><td><code>`Beep boop,` HAL 评论道。</code></td><td><code>Beep boop,</code> HAL 评论道。</td></tr>
 </tbody>
 </table>
 </div>
-<h2 id="small-caps"><a class="header" href="#small-caps">Small Caps</a></h2>
+<h2 id="小型大写字母small-caps"><a class="header" href="#小型大写字母small-caps">小型大写字母｜Small Caps</a></h2>
+<p>如果您想将某些文本设置为小型大写字母，请在文本前后键入 <code>~~</code>（两个波浪号）。</p>
 <p>If you’d like to set some text in small caps, type <code>~~</code> (two tildes) around it.</p>
 <div class="table-wrapper">
 <table>
 <thead>
-<tr><th>Typed</th><th>Displayed</th></tr>
+<tr><th>输入</th><th>显示</th></tr>
 </thead>
 <tbody>
-<tr><td><code>Above the door was a ~~NO TRESPASSING~~ sign.</code></td><td>Above the door was a <span style="font-size: 70%; text-transform: uppercase; letter-spacing: 0.08em">NO TRESPASSING</span> sign.</td></tr>
+<tr><td><code>门上方挂着一个~~NO TRESPASSING~~（禁止入内）的标牌。</code></td><td>门上方挂着一个 <span style="font-size: 70%; text-transform: uppercase; letter-spacing: 0.08em">NO TRESPASSING</span>（禁止入内）的标牌。</td></tr>
 </tbody>
 </table>
 </div>
-<p>This convention, though not a part of original recipe Markdown, conflicts with some other Markdown dialects, which use <code>~~</code> for struck-out text, <del>like so</del>. To do this, type <code>&lt;del&gt;</code> and <code>&lt;/del&gt;</code> around your text:</p>
+<p>这一约定虽非原始 Markdown 规范的一部分，但与其他一些 Markdown 方言相冲突，后者使用 <code>~~</code> 表示删除线文本，<del>就像这样</del>。要实现此效果，请在文本前后键入 <code>&lt;del&gt;</code> 和 <code>&lt;/del&gt;</code>：</p>
 <div class="table-wrapper">
 <table>
 <thead>
-<tr><th>Typed</th><th>Displayed</th></tr>
+<tr><th>输入</th><th>显示</th></tr>
 </thead>
 <tbody>
-<tr><td><code>At the bottom of the page, nearly completely covered by the government censor's pen, was that same code name you had seen before: &lt;del&gt;S-5900&lt;/del&gt;.</code></td><td>At the bottom of the page, nearly completely covered by the government censor’s pen, was that same code name you had seen before: <del>S-5900</del>.</td></tr>
+<tr><td><code>页面底部，几乎完全被政府审查员的笔迹所覆盖，正是你之前见过的那个代号：&lt;del&gt;S-5900&lt;/del&gt;。</code></td><td>页面底部，几乎完全被政府审查员的笔迹所覆盖，正是你之前见过的那个代号：<del>S-5900</del>。</td></tr>
 </tbody>
 </table>
 </div>
-<h2 id="line-breaks"><a class="header" href="#line-breaks">Line Breaks</a></h2>
-<p>If you’d like to insert a single line break, leave two spaces at the end of a line, or put a backslash (<code>\</code>) at the end of a line.</p>
+<h2 id="换行line-breaks"><a class="header" href="#换行line-breaks">换行｜Line Breaks</a></h2>
+<p>如果您想插入单行换行，请在行末留两个空格，或在行末放置一个反斜杠（<code>\</code>）。</p>
 <table>
 	
 <thead>
-<tr><th>Typed</th><th>Displayed</th></tr>
+<tr><th>输入</th><th>显示</th></tr>
 </thead>
 
 	
 <tbody>
 	
-<tr><td><code>After the final no there comes a yes \</code><br><code>And on that yes the future world depends.</code></td><td>After the final no there comes a yes<br>And on that yes the future world depends.</td></tr>
+<tr><td><code>在最后一个“不”之后，总会出现一个“是”\</code><br><code>而那个“是”，正是未来世界所依存的基石。</code></td><td>在最后一个“不”之后，总会出现一个“是”<br>而那个“是”，正是未来世界所依存的基石。</td></tr>
 
 	</tbody>
 
 </table>
 
-<h2 id="section-breaks"><a class="header" href="#section-breaks">Section Breaks</a></h2>
-<p>A convention sometimes used in publishing to indicate a new scene, or a new line of thought is to separate the text using a series of asterisks, like this:</p>
+<h2 id="章节分隔section-breaks"><a class="header" href="#章节分隔section-breaks">章节分隔｜Section Breaks</a></h2>
+<p>出版界有时会使用一种惯例来表示新场景或新思路，即用一系列星号分隔文本，如下所示：</p>
 <blockquote>
-<p>It had been a long day, and I fell asleep nearly instantly.</p>
+<p>漫长的一天过后，我几乎立刻就睡着了。</p>
 <p style="text-align: center">*   *   *</p>
 
-The following morning was no better than the day before.
+第二天早上并不比前一天好。
 </blockquote>
-<p>To add a section break to your text, type <code>***</code> (three asterisks) on a line by itself.</p>
-<h2 id="lists"><a class="header" href="#lists">Lists</a></h2>
-<p>To created a bulleted list (or, in the parlance of the web, an unordered list), type <code>*</code>, <code>-</code>, or <code>+</code> at the beginning of a new line. It doesn’t matter which character you use, but you do need to be consistent in each list.</p>
+<p>要在文本中添加分节符，请单独在一行输入 <code>***</code>（三个星号）。</p>
+<h2 id="列表lists"><a class="header" href="#列表lists">列表｜Lists</a></h2>
+<p>要创建项目符号列表（或者用网络术语来说，无序列表），请在新行开头输入 <code>*</code>、<code>-</code> 或 <code>+</code>。使用哪个字符并不重要，但您需要在每个列表中保持一致。</p>
 <table>
 	
 <thead>
-<tr><th>Typed</th><th>Displayed</th></tr>
+<tr><th>输入</th><th>显示</th></tr>
 </thead>
 
 	
 <tbody>
 	
-<tr><td><code>* Red</code><br><code>* Green</code><br><code>* Blue</code></td><td>
+<tr><td><code>* 红色</code><br><code>* 绿色</code><br><code>* 蓝色</code></td><td>
 <ul>
-<li>Red</li>
-<li>Green</li>
-<li>Blue</li>
+<li>红色</li>
+<li>绿色</li>
+<li>蓝色</li>
 </ul>
 </td></tr>
 
@@ -539,30 +541,30 @@ The following morning was no better than the day before.
 
 </table>
 
-<p>To create a numbered list (also known as an ordered list), start each line either with a number and a period, or just a <code>#</code>. The numbering you use doesn’t actually matter–you can have two items starting with <code>2.</code> and the list will still be numbered correctly.</p>
+<p>要创建编号列表（也称为有序列表），请以数字和句点开头每一行，或者仅使用 <code>#</code>。您使用的编号实际上并不重要——即使两个项目都以 <code>2.</code> 开头，列表仍将正确编号。</p>
 <table>
 	
 <thead>
-<tr><th>Typed</th><th>Displayed</th></tr>
+<tr><th>输入</th><th>显示</th></tr>
 </thead>
 
 	
 <tbody>
 	
-<tr><td><code># Red</code><br><code># Green</code><br><code># Blue</code></td><td>
+<tr><td><code># 红色</code><br><code># 绿色</code><br><code># 蓝色</code></td><td>
 <ol>
-<li>Red</li>
-<li>Green</li>
-<li>Blue</li>
+<li>红色</li>
+<li>绿色</li>
+<li>蓝色</li>
 </ol>
 </td></tr>
 
 	
-<tr><td><code>1. Red</code><br><code>2. Green</code><br><code>3. Blue</code></td><td>
+<tr><td><code>1. 红色</code><br><code>2. 绿色</code><br><code>3. 蓝色</code></td><td>
 <ol>
-<li>Red</li>
-<li>Green</li>
-<li>Blue</li>
+<li>红色</li>
+<li>绿色</li>
+<li>蓝色</li>
 </ol>
 </td></tr>
 
@@ -570,31 +572,32 @@ The following morning was no better than the day before.
 
 </table>
 
-<p>Why bother to specially format a numbered list? Just like in word processors, using this format will cause each item to be nicely indented, so that the second line of text of each item appears to the right of the initial number.</p>
-<h2 id="ignoring-formatting-characters"><a class="header" href="#ignoring-formatting-characters">Ignoring Formatting Characters</a></h2>
+<p>为何要特意格式化编号列表？就像在文字处理软件中那样，使用这种格式会使每个项目都得到恰当的缩进，从而让每个项目的第二行文本出现在起始编号的右侧。</p>
+<h2 id="忽略格式化字符ignoring-formatting-characters"><a class="header" href="#忽略格式化字符ignoring-formatting-characters">忽略格式化字符｜Ignoring Formatting Characters</a></h2>
+<p>有时您会希望按原样使用 Markdown 格式化字符，而不让它们启动格式化。最简单的方法是在它们前面加上 <code>\</code>（反斜杠）。</p>
 <p>Occasionally you’ll want to use Markdown formatting characters as-is, without them initiating formatting. The simplest way to do this is to put a <code>\</code> (backslash) in front of them.</p>
 <div class="table-wrapper">
 <table>
 <thead>
-<tr><th>Typed</th><th>Displayed</th></tr>
+<tr><th>已输入</th><th>显示</th></tr>
 </thead>
 <tbody>
-<tr><td><code>\*\* PLEASE EXIT NOW \*\*</code></td><td>** PLEASE EXIT NOW **</td></tr>
+<tr><td><code>\*\* 请立即退出 \*\*</code></td><td>** 请立即退出 **</td></tr>
 </tbody>
 </table>
 </div>
-<h2 id="other-custom-styling"><a class="header" href="#other-custom-styling">Other Custom Styling</a></h2>
-<p>You can also enter HTML into a passage without any extra code surrounding it. It will be displayed exactly as you type it in. The library that Chapbook uses to render Markdown is sometimes inconsistent about how it treats HTML, however. It will always let HTML tags pass through as-is, but whether it interprets the contents of these tags as Markdown or HTML can depend on the exact situation. Unfortunately, the best way to test this is to experiment.</p>
-<h2 id="blockquotes-dont-behave-as-you-might-expect"><a class="header" href="#blockquotes-dont-behave-as-you-might-expect">Blockquotes Don’t Behave As You Might Expect</a></h2>
-<p>Chapbook formatting differs from standard Markdown in how it displays blockquotes–that is, a long stretch of text, often multiple paragraphs, that is indented to indicate it isn’t part of the main text. Markdown uses <code>&gt;</code> at the start of a line to indicate this. However, Chapbook uses the <code>&gt;</code> to mark text as part of a <a href="#分叉forks">fork</a> instead. If you’d like to display a block quotation, put <code>&lt;blockquote&gt;</code> and <code>&lt;/blockquote&gt;</code> around it.</p>
+<h2 id="其他自定义样式other-custom-styling"><a class="header" href="#其他自定义样式other-custom-styling">其他自定义样式｜Other Custom Styling</a></h2>
+<p>您也可以直接将 HTML 代码输入段落中，无需额外代码包裹。输入的内容将完全按照您键入的方式显示。不过，Chapbook 用于渲染 Markdown 的库在处理 HTML 时有时会不一致。它总是会让 HTML 标签原样通过，但这些标签内的内容是被解释为 Markdown 还是 HTML，可能取决于具体情况。遗憾的是，测试这一点的最佳方法是进行实验。</p>
+<h2 id="引用块的行为可能出乎您的意料blockquotes-dont-behave-as-you-might-expect"><a class="header" href="#引用块的行为可能出乎您的意料blockquotes-dont-behave-as-you-might-expect">引用块的行为可能出乎您的意料｜Blockquotes Don’t Behave As You Might Expect</a></h2>
+<p>Chapbook 的格式化方式与标准 Markdown 在显示块引用时有所不同——块引用是指一段较长的文本，通常包含多个段落，通过缩进表示其不属于正文内容。Markdown 使用行首的 <code>&gt;</code> 符号来标识块引用。然而，Chapbook 中的 <code>&gt;</code> 符号被用于标记<a href="#分叉forks">分叉</a>文本。若需显示块引用，请使用 <code>&lt;blockquote&gt;</code> 和 <code>&lt;/blockquote&gt;</code> 标签包裹相应内容。</p>
 <div class="table-wrapper">
 <table>
 <thead>
-<tr><th>Typed</th><th>Displayed</th></tr>
+<tr><th>输入</th><th>显示</th></tr>
 </thead>
 <tbody>
-<tr><td><code>&lt;blockquote&gt;Call me Ishmael. Some years ago–never mind how long precisely–having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.&lt;/blockquote&gt;</code></td><td>
-<blockquote>Call me Ishmael. Some years ago–never mind how long precisely–having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.</blockquote>
+<tr><td><code>&lt;blockquote&gt;叫我 Ishmael。几年前——具体多久不必细说——当时我囊中羞涩，岸上又没什么特别能引起我兴趣的事，便想着不如出海航行一阵，去看看这世界的水域部分。&lt;/blockquote&gt;</code></td><td>
+<blockquote>叫我 Ishmael。几年前——具体多久不必细说——当时我囊中羞涩，岸上又没什么特别能引起我兴趣的事，便想着不如出海航行一阵，去看看这世界的水域部分。</blockquote>
 </td></tr>
 </tbody>
 </table>
@@ -607,10 +610,10 @@ tr, td {
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-1">
-<p>Underscores as italics have a tangled history behind them; they resemble underlines, which were more-or-less invented as a workaround for typewriters being unable to italicize words. <a href="#fr-1-1-1">↩</a></p>
+<p>用下划线表示斜体背后有一段复杂的历史；它们类似于下划线，而后者或多或少是作为打字机无法将单词斜体化的变通方法而被发明的。 <a href="#fr-1-1-1">↩</a></p>
 </li>
 <li id="footnote-2-1">
-<p>Underlines were originally a proofreading convention to tell typesetters to italicize the text, in fact. <a href="#fr-2-1-1">↩</a></p>
+<p>事实上，下划线最初是一种校对惯例，用于告知排版员将文本设为斜体。 <a href="#fr-2-1-1">↩</a></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
@@ -631,7 +634,7 @@ tr, td {
 </div>
 <p>（当然，以上示例中的链接并未指向任何具体位置。）</p>
 <p>最简单的记忆方法是：将箭头视为指向你所链接的段落。箭头指向哪个方向并不重要；选择让你感觉最舒适的语法即可。</p>
-<p>你不能在简单链接内部使用 <a href="#text-formatting">Markdown 或其他格式字符</a>。例如，如果你想将某个链接设为斜体，应将格式放在链接外部，即 <code>_[[a friend of a friend]]_</code>。关于如何创建内部包含格式的链接（例如<a href="javascript:void(0)">《一个拥有<em>特定</em>技能的人》</a>），请参阅<a href="text-and-links/modifiers-and-inserts/link-inserts.html">链接插入</a>。</p>
+<p>你不能在简单链接内部使用 <a href="#文本格式化text-formatting">Markdown 或其他格式字符</a>。例如，如果你想将某个链接设为斜体，应将格式放在链接外部，即 <code>_[[a friend of a friend]]_</code>。关于如何创建内部包含格式的链接（例如<a href="javascript:void(0)">《一个拥有<em>特定</em>技能的人》</a>），请参阅<a href="text-and-links/modifiers-and-inserts/link-inserts.html">链接插入</a>。</p>
 <h2 id="外部链接external-links"><a class="header" href="#外部链接external-links">外部链接｜External Links</a></h2>
 <p>要链接到另一个网页，请输入一个 URL，而不是段落名称。您可以使用任何您喜欢的链接语法，不过箭头语法在大多数情况下能让您的文本更具可读性：</p>
 <div class="table-wrapper">
@@ -760,24 +763,24 @@ _入此门者，当弃绝一切希望_
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="delayed-text"><a class="header" href="#delayed-text">Delayed Text</a></h1>
-<p>You can also use a modifier to cause part of the text of a passage to appear after a delay. If you’ve never seen this effect before, take a look at the introduction to Stephen Granade’s <em><a href="http://ifarchive.org/if-archive/games/competition2017/Will%20Not%20Let%20Me%20Go/Will%20Not%20Let%20Me%20Go.html">Will Not Let Me Go</a></em>. The sentences fade in and out, leaving you with a single word, “remember.” Although that story wasn’t built with Chapbook, you can use Chapbook’s delayed text functionality to achieve the same effect.</p>
-<p>Here’s an example of this modifier in action:</p>
-<pre><code>You settle in for the long transatlantic flight.
+<h1 id="延迟文本delayed-text"><a class="header" href="#延迟文本delayed-text">延迟文本｜Delayed Text</a></h1>
+<p>您也可以使用修饰符使段落中的部分文本延迟显示。如果您从未见过这种效果，不妨看看 Stephen Granade 的《不会让我走》的引言部分。句子会逐渐淡入淡出，最终只留下一个词——“记住”。虽然那个故事并非用 Chapbook 构建，但您可以使用 Chapbook 的延迟文本功能来实现相同的效果。</p>
+<p>以下是该修饰符的实际应用示例：</p>
+<pre><code>你安顿下来，准备度过漫长的跨大西洋飞行。
 
 [after 1 second]
-You remember suddenly that you left the stove on at home.
+你突然想起家里的炉子没关。
 </code></pre>
-<p>The text <code>[after 1s]</code> is never shown to the player. Instead, Chapbook displays <code>You remember suddenly that you left the stove on at home.</code> after the previous text has been onscreen for one second.</p>
-<p>You can put any measurement of time you want in the <code>after</code> modifier<sup class="footnote-reference" id="fr-1-1-3"><a href="#footnote-1-3">1</a></sup>, and you can abbreviate the units of time. The below are all valid:</p>
+<p>文本 <code>[after 1s]</code> 永远不会向玩家显示。相反，Chapbook 会在前一段文本显示一秒后，呈现“<code>你突然想起家里的炉子没关。</code>。</p>
+<p>您可以在 <code>after</code> 修饰符<sup class="footnote-reference" id="fr-1-1-3"><a href="#footnote-1-3">1</a></sup>中使用任意时间单位，且可缩写时间单位。以下均为有效格式：</p>
 <pre><code>[after 300 milliseconds]
 [after 300ms]
 [after 1 minute]
 </code></pre>
-<p>The <code>after</code> modifier only allows round numbers. Instead of writing <code>1.5 seconds</code>, you must write <code>1 second 500 milliseconds</code>, or shorter: <code>1s500ms</code> or <code>1500ms</code>.</p>
-<h2 id="advice-on-using-after"><a class="header" href="#advice-on-using-after">Advice on Using <code>after</code></a></h2>
-<p>The <code>after</code> modifier should be used sparingly, and the delays should be specified keeping in mind that everyone reads a different pace. One minute may not seem very long, but it’s an eternity for fast players.</p>
-<p>Chapbook signals that more text will be coming by displaying an animated watch in the lower-right corner of the page, and impatient players can click the mouse or press a key to skip over the delay. This functionality cannot be disabled.</p>
+<p><code>after</code> 修饰符仅允许使用整数。因此，不能写作 <code>1.5 seconds</code>，而必须写成 <code>1 second 500 milliseconds</code>，或更简短的写法：<code>1s500ms</code> 或 <code>1500ms</code>。</p>
+<h2 id="关于使用-after-的建议advice-on-using-after"><a class="header" href="#关于使用-after-的建议advice-on-using-after">关于使用 <code>after</code> 的建议｜Advice on Using <code>after</code></a></h2>
+<p>应谨慎使用 <code>after</code> 修饰符，且在设定延迟时间时需考虑到每个人的阅读速度不同。一分钟或许看似不长，但对于阅读速度快的玩家而言却无比漫长。</p>
+<p>Chapbook 通过在页面右下角显示一个动画手表图标来提示后续将有更多文本出现，不耐烦的玩家可通过点击鼠标或按键跳过延迟。此功能无法被禁用。</p>
 <h2 id="修饰符通常创建段落modifiers-normally-create-paragraphs"><a class="header" href="#修饰符通常创建段落modifiers-normally-create-paragraphs">修饰符通常创建段落｜Modifiers Normally Create Paragraphs</a></h2>
 <p>修饰符通常会使紧随其后的文本与前文处于不同的段落中。不过，在某些情况下，您可能希望文本与前一段落一起显示。<code>append</code> 修饰符可以实现这一效果。</p>
 <pre><code>你终于解开了这个谜团。
@@ -830,51 +833,42 @@ You remember suddenly that you left the stove on at home.
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="link-inserts"><a class="header" href="#link-inserts">Link Inserts</a></h1>
-<p>Sometimes you’d like to link to a passage, but don’t know its name exactly. Take the passage below:</p>
-<pre><code>You walk a bit down the alleyway. The scent of the black trash bags simmering in the summer heat is overpowering--terrible in three separate yet indescribable ways--so you [[retreat for now]].
+<h1 id="链接插入link-inserts"><a class="header" href="#链接插入link-inserts">链接插入｜Link Inserts</a></h1>
+<p>有时您想链接到某个段落，但不确定其确切名称。以下面这段为例：</p>
+<pre><code>你沿着小巷走了一小段路。黑色垃圾袋在夏日高温下散发出的气味令人难以忍受——它以三种各自不同却又难以名状的方式汹汹袭来——于是你[[暂且退却]]。
 </code></pre>
-<p>All well and good, except that alleyways often have two entrances. If a player could reach this passage two different ways, how can you make sure they return to the right place? You can use an <em>insert</em> to do this. Inserts are special instructions in passage text that are framed with curly brackets, <code>{like this}</code>, and are interpreted instead of displayed verbatim. They’re called inserts because they instruct Chapbook to insert something into the text for you. In this case, we want Chapbook to insert a link to whatever passage the player was looking at before they reached this one.</p>
-<p>In this case, we’d write:</p>
-<pre><code>You walk a bit down the alleyway. The scent of the black trash bags simmering in the summer heat is overpowering--terrible in three separate yet indescribable ways--so you {back link, label: 'retreat for now'}.
+<p>一切都很好，只是小巷通常有两个入口。如果玩家可以通过两种不同方式到达这个段落，您如何确保他们返回正确的位置？您可以使用插入来实现这一点。插入是段落文本中的特殊指令，用花括号括起来，<code>{像这样}</code>，它们会被解释而不是逐字显示。之所以称为插入，是因为它们指示 Chapbook 为您在文本中插入某些内容。在这种情况下，我们希望 Chapbook 插入一个链接，指向玩家到达此段落之前正在查看的段落。</p>
+<p>在这种情况下，我们会这样写：</p>
+<pre><code>你沿着小巷走了一小段路。黑色垃圾袋在夏日高温下散发出的气味令人难以忍受——它以三种各自不同却又难以名状的方式汹汹袭来——于是你{back link, label: '暂且退却'}。
 </code></pre>
-<p>Inserts follow this format:</p>
+<p>插入内容遵循以下格式：</p>
 <p class="insert-example">
 	<span class="punc">{</span>
-	<span class="identifier">insert name</span>
+	<span class="identifier">插入名称</span>
 	<span class="punc">:</span>
-	<span class="direct-object">value</span>
+	<span class="direct-object">值</span>
 	<span class="punc">,</span>
 	<span class="param1">
-		<span class="param-name">parameter name</span>
+		<span class="param-name">参数名称</span>
 		<span class="punc">:</span>
-		<span class="param-value">value</span>
+		<span class="param-value">值</span>
 	</span>
 	<span class="punc">,</span>
 	<span class="param2">
-		<span class="param-name">parameter name</span>
+		<span class="param-name">参数名称</span>
 		<span class="punc">:</span>
-		<span class="param-value">value</span>
+		<span class="param-value">值</span>
 	</span>
 	<span class="punc">}</span>
 </p>
 
 <ul>
-<li>The <em>insert name</em> signals what type of insert this is, i.e. <code>back link</code>.</li>
-<li><em>Parameter names</em> signal more specific descriptions of how the insert should
-appear or behave, i.e. <code>label</code>. Each kind of insert accepts different
-parameter names. Parameter names, unlike values, never have quotation marks
-around them. An insert can have any number of parameters, including none.
-Two are shown in the example above to demonstrate that they are divided by
-commas.</li>
-<li><em>Values</em> are where you specify the behavior of the insert. If a parameter
-value is text–like the words <code>'retreat for now'</code>–they must have either
-single or double quotation marks around them, so that Chapbook knows where
-the beginning and end of the text is. There’s no difference in how single or
-double quotation marks are handled; it’s just convenient to write <code>{back link, label: 'Exclaim, "Well, I never!"'}</code>.<sup class="footnote-reference" id="fr-1-1-5"><a href="#footnote-1-5">1</a></sup> Any other types of values,
-such as numbers, must not have quotation marks around them.</li>
+<li><em>插入名称</em> (Insert name) 指示此插入的类型，例如<code>back link</code>（反向链接）。</li>
+<li><em>参数名称</em> (Parameter names) 指示了插入内容应如何显示或行为的更具体描述，例如 <code>label</code>。每种插入类型接受不同的参数名称。与值不同，参数名称从不使用引号包围。一个插入可以包含任意数量的参数，包括零个。上例中展示了两个参数，以说明它们由逗号分隔。</li>
+<li><em>值</em> (Values) 用于指定插入内容的行为。如果参数值是文本——例如词语“暂时撤退”——则必须用单引号或双引号包围，以便 Chapbook 知道文本的起始和结束位置。单引号和双引号的处理方式没有区别；这样书写只是为了方便，例如 <code>{back link, label: '惊呼道, "哎呀，我真是万万没想到！"'}</code><sup class="footnote-reference" id="fr-1-1-5"><a href="#footnote-1-5">1</a></sup>。任何其他类型的值，例如数字，则不得使用引号包围。</li>
 </ul>
-<p>An insert must have its contents all on one line–no line breaks with the Enter or Return key are permitted.</p>
+<p>插入内容必须全部位于一行——不允许使用回车键进行换行。</p>
+<p>除了插入名称外，上述示例中的所有内容都是可选的。不同的插入使用此用法的不同变体——例如，<code>back link</code> 插入在插入名称后不使用值：</p>
 <p>Everything in the example above is optional except the insert name. Different inserts use different variations of this usage–for instance, the <code>back link</code> insert does not use a value following the insert name:</p>
 <p class="insert-example">
 	<span class="punc">{</span>
@@ -883,33 +877,33 @@ such as numbers, must not have quotation marks around them.</li>
 	<span class="param1">
 		<span class="param-name">label</span>
 		<span class="punc">:</span>
-		<span class="param-value">'retreat for now'</span>
+		<span class="param-value">'暂时撤退'</span>
 	</span>
 	<span class="punc">}</span>
 </p>
 
-<p>You can also leave off the <code>label</code> property and just write <code>{back link}</code>: in this case, Chapbook will assume you’d like it to use the word ‘Back’ as the link label.</p>
-<p>If Chapbook is unable to understand the contents of an insert, it displays it as-is. This is so that you can otherwise use curly brackets in your text.</p>
+<p>您也可以省略 <code>label</code>（标签）属性，直接写成 <code>{back link}</code>: 在这种情况下，Chapbook 会默认使用 ‘Back’ 一词作为链接标签。</p>
+<p>如果 Chapbook 无法理解插入内容，它会按原样显示。这样您就可以在文本中正常使用花括号。</p>
 <aside data-hint="danger">
-You cannot nest inserts inside each other.
+您不能在插入内容中嵌套其他插入内容。
 </aside>
-<h2 id="restarting-the-story"><a class="header" href="#restarting-the-story">Restarting the Story</a></h2>
-<p>There’s another insert very similar to <code>{back link}</code> that’s named <code>{restart link}</code>. Instead of going to a previous passage, it takes the player back to the very beginning of the story. You could of course link back to the first passage by name, but for now, consider this a handy shortcut. <code>{restart link}</code> also resets other aspects of Chapbook’s operation, as you’ll learn in <a href="modifiers-and-inserts/state/continuity.html">Continuity Between Sessions</a>.</p>
-<p>As with <code>{back link}</code>, <code>{restart link}</code> allows you to specify a label:</p>
-<pre><code>{restart link, label: 'Oh forget it all'}
+<h2 id="重新开始故事restarting-the-story"><a class="header" href="#重新开始故事restarting-the-story">重新开始故事｜Restarting the Story</a></h2>
+<p>还有一种与 <code>{back link}</code> 非常相似的插入功能，名为 <code>{restart link}</code>。它不会将玩家带回到之前的段落，而是让玩家回到故事的起点。你当然也可以通过名称链接回第一个段落，但现在，可以将其视为一个便捷的快捷方式。<code>{restart link}</code> 还会重置 Chapbook 操作的其他方面，你将在<a href="modifiers-and-inserts/state/continuity.html">《会话间的连续性》</a>章节中了解到。</p>
+<p>与 <code>{back link}</code> 一样，<code>{restart link}</code> 允许你指定一个标签：</p>
+<pre><code>{restart link, label: '哦，算了吧'}
 </code></pre>
-<p>If you write <code>{restart link}</code> by itself, Chapbook will use the label ‘Restart’.</p>
-<h2 id="manual-links"><a class="header" href="#manual-links">Manual Links</a></h2>
-<p>You can also insert a link using the insert <code>{link to}</code>. Below are some examples:</p>
-<pre><code>You decide after entirely too much deliberation to download {link to: 'https://mozilla.org/firefox', label: 'Firefox'}.
+<p>如果你单独写 {restart link}，Chapbook 会使用标签 ‘Restart’。</p>
+<h2 id="手动链接manual-links"><a class="header" href="#手动链接manual-links">手动链接｜Manual Links</a></h2>
+<p>你也可以使用插入 <code>{link to}</code> 来插入链接。以下是一些示例：</p>
+<pre><code>经过一番过度的深思熟虑后，你决定下载{link to: 'https://mozilla.org/firefox', label: '火狐浏览器'}。
 
-You notice that there is a {link to: 'narrow alleyway'} off to one side.
+你注意到一旁有条{link to: '狭窄小巷'}。
 
-A {link to: 'Bryan Mills', label: 'A man with *certain* skills'} is just who's needed.
+正好需要一位{link to: 'Bryan Mills', label: '身怀*绝技*的男子'}。
 </code></pre>
-<p>The third example demonstrates one use of manual link inserts: although they are more verbose than simple links, they do allow you to enter Markdown formatting into the link label. Passage links also have other uses; see <a href="modifiers-and-inserts/state/the-vars-section.html#expressions-can-be-used-in%20inserts">The Vars Section</a> for how you can change the destination of a link dynamically.</p>
-<h2 id="cycling-links"><a class="header" href="#cycling-links">Cycling Links</a></h2>
-<p>Chapbook has an insert for cycling links–that is, links that do not move the player anywhere, but change their label. See <a href="modifiers-and-inserts/player-input/dropdown-menus-cycling-links.html">Menus and Cycling Links</a> for more information.</p>
+<p>第三个例子展示了手动插入链接的一种用途：尽管它们比简单链接更为冗长，但确实允许你在链接标签中使用 Markdown 格式。段落链接还有其他用途；关于如何动态更改链接目标，请参阅<a href="modifiers-and-inserts/state/the-vars-section.html#expressions-can-be-used-in%20inserts">变量部分</a>。</p>
+<h2 id="循环链接cycling-links"><a class="header" href="#循环链接cycling-links">循环链接｜Cycling Links</a></h2>
+<p>Chapbook 提供了一种循环链接插入功能——这种链接不会将玩家导向任何地方，而是会改变其显示标签。更多信息请参阅菜单与<a href="modifiers-and-inserts/player-input/dropdown-menus-cycling-links.html">循环链接</a>章节。</p>
 <style>
 .insert-example {
 	font-size: 120%;
@@ -946,43 +940,43 @@ A {link to: 'Bryan Mills', label: 'A man with *certain* skills'} is just who's n
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-5">
-<p>If you need to use a single or double quote inside a text value set off with the same punctuation mark, put a backslash (<code>\</code>) in front of it, like so: <code>{back link, label: '"I couldn\'t possibly comment," he replied.'}</code> <a href="#fr-1-1-5">↩</a></p>
+<p>如果需要在以相同标点符号分隔的文本值内使用单引号或双引号，请在其前面加上反斜杠（<code>\</code>），例如：<code>{back link, label: '"我无 (couldn\'t) 可奉告，" 他回答道。'}</code> <a href="#fr-1-1-5">↩</a></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="reveal-links"><a class="header" href="#reveal-links">Reveal Links</a></h1>
-<p>A link can also reveal more text in your passage instead of displaying an entirely different one. Liza Daly uses this effect in <em><a href="https://stoneharborgame.com/">Stone Harbor</a></em> (a story she created using another authoring system called <a href="https://github.com/lizadaly/windrift">Windrift</a>) to give the story a novelistic feel.</p>
-<p>Chapbook calls these <em>reveal links</em>, and they can either display more text or the contents of an entire passage.</p>
-<p>To display more text, write:</p>
-<pre><code>I was driving home late one night when {reveal link: 'something odd occurred', text: 'I saw five deer staring at me from one side of the road, all in a line'}.
+<h1 id="揭示链接reveal-links"><a class="header" href="#揭示链接reveal-links">揭示链接｜Reveal Links</a></h1>
+<p>链接不仅可以显示完全不同的段落，还能在原有段落中揭示更多文本。Liza Daly 在《石港》（她用另一款名为 <a href="https://github.com/lizadaly/windrift">Windrift</a> 的创作系统编写的故事）中运用了这种效果，赋予故事小说般的质感。</p>
+<p>Chapbook 将这类链接称为 <em>揭示链接</em>，它们既能展示更多文本，也能呈现整个段落的内容。</p>
+<p>要显示更多文本，请编写：</p>
+<pre><code>我深夜驾车回家时，{reveal link: '发生了件怪事', text: '看见五只鹿在路边一字排开，齐刷刷地盯着我'}。
 </code></pre>
-<p>This will first display “I was driving home late one night when something odd occurred,” and then when the player selected “something odd occurred,” it will change to “I was driving home late one night when I saw five deer staring at me from one side of the road, all in a line.”</p>
-<p>The text you enter in either part of the insert will be interpreted as source code, so you can use <a href="modifiers-and-inserts/text-and-links/text-formatting.html">formatting</a> to further customize its appearance.</p>
-<p>Revealing text works well for short substitutions, but writing long stretches of text can be awkward. In these instances, try revealing a passage:</p>
-<pre><code>I was driving home late one night when {reveal link: 'something odd occurred', passage: 'A Dangerous Incident'}.
+<p>这将首先显示“我深夜驾车回家时，发生了件怪事”，然后当玩家选择“发生了件怪事”时，文本会变为“我深夜驾车回家时，看见五只鹿在路边一字排开，齐刷刷地盯着我”</p>
+<p>您在插入内容的任一部分输入的文本都将被解释为源代码，因此您可以使用<a href="modifiers-and-inserts/text-and-links/text-formatting.html">格式化</a>设置进一步自定义其外观。</p>
+<p>文本揭示功能适用于短文本替换，但编写大段文字可能显得笨拙。在这些情况下，请尝试揭示段落内容：</p>
+<pre><code>我深夜驾车回家时，{reveal link: '发生了件怪事', passage: '危险事件'}。
 </code></pre>
-<p>This will work the same way as the previous example, only it will show the contents of the passage named ‘A Dangerous Incident’.</p>
+<p>这与之前的示例工作原理相同，只是它会显示名为“危险事件“的段落内容。</p>
 <aside data-hint="info">
-A passage shown by a reveal link will not be recorded in a session's history.
+由揭示链接显示的段落不会被记录在会话历史中。
 </aside>
-<p>When using a reveal link with a passage containing multiple paragraphs, Chapbook inserts the paragraphs in such a way that the surrounding text’s order is maintained.</p>
-<p>For example, if you have a passage named ‘Shopping List’:</p>
-<pre><code>Apples
+<p>当使用揭示链接显示包含多个自然段的段落时，Chapbook 会以保持周围文本顺序的方式插入这些段落。</p>
+<p>例如，如果您有一个名为“购物清单“的段落：</p>
+<pre><code>苹果
 
-Bananas
+香蕉
 
-Carrots
+胡萝卜
 </code></pre>
-<p>and then a passage with this:</p>
-<pre><code>I went to buy {reveal link: 'groceries', passage: 'Shopping List'}. It was a rainy day.
+<p>然后是一段包含以下内容的文字：</p>
+<pre><code>我去买{reveal link: '杂货', passage: '购物清单'}。那是个下雨天。
 </code></pre>
-<p>The player will see this after they click the link:</p>
+<p>玩家点击链接后将看到以下内容：</p>
 <blockquote>
-<p>I went to buy Apples</p>
-<p>Bananas</p>
-<p>Carrots. It was a rainy day.</p>
+<p>我去买了苹果</p>
+<p>香蕉</p>
+<p>胡萝卜。那是个下雨天。</p>
 </blockquote>
-<p>Notice how the period after the link insert is moved to the end, after Carrots, but not on a line by itself, and the rest of the paragraph continues.</p>
+<p>请注意，链接插入后的句号被移到了末尾，在“胡萝卜”之后，但并非单独成行，而段落的其余部分继续。</p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="嵌入段落embedding-passages"><a class="header" href="#嵌入段落embedding-passages">嵌入段落｜Embedding Passages</a></h1>
 <p>在分支叙事中，一个常见的需求是让不同的路径汇聚在一起。实现这一点的最简单方法是让两个段落链接到同一个段落，但你也可以通过将一个段落嵌入到另一个段落中，以在故事中创造一个不那么明显的衔接。</p>
@@ -1013,27 +1007,27 @@ Carrots
 <p>在本节中，你将学习如何为故事添加状态，这让你能够追踪到比玩家所遵循的链接更多的信息，从而记录故事的一次完整游玩过程。</p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="状态是什么what-is-state"><a class="header" href="#状态是什么what-is-state">状态是什么？｜What is State?</a></h1>
-<p>You can create a compelling story with just the techniques outlined in the previous section. The <a href="https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure"><em>Choose Your Own Adventure</em> book series</a> that has been part of Western pop culture since it exploded in popularity in the 1980s did just that. Turning to a particular page in the book is the equivalent of following a link in a digital medium, of course.</p>
-<p>But in the wake of <em>CYOA</em>’s popularity came another wave of interactive books written by people familiar with tabletop role-playing games like <em>Dungeons &amp; Dragons</em>.<sup class="footnote-reference" id="fr-1-1-6"><a href="#footnote-1-6">1</a></sup> They thought the format could be adapted to provide similar experiences to a live RPG session, but without the trouble of having to round up three or four other people to play with. They began to incorporate the trappings of RPGs–in particular, the character sheet.</p>
-<p>If you’ve never seen a character sheet, they resemble a spreadsheet, but instead of a household budget or a corporate profit and loss statement, they describe a character numerically. A very smart D&amp;D character has an intelligence of 17, but an average strength of 7. A character might start with 20 hit points, but after taking a nasty fall into a mountain crevasse only have 8 left.</p>
-<p>With character sheets came the concept of <em>state</em>: that is, two readers could reach the same page of a gamebook, but one could be doing very well for themselves, but the other on death’s door. The essential quality of state is that it varies between sessions; hence, it contains <em>variables</em>. Variables may be independent (strength and intelligence) or dependent (a weakened character, for example, may be able to carry less weight than usual).</p>
-<p>The other popular use of state has been to record whether an event has happened and enable or disable links based on that. The <a href="https://gamebooks.org/Series/389"><em>Sherlock Holmes Solo Mysteries</em></a> series, for example, asks the reader to check Clue A or Clue Q on their character sheet after making a discovery, and then later only allow the protagonist to solve the mystery if they had uncovered all the necessary clues along the way.</p>
-<p>Later, the Storyspace hypertext system would incorporate the concept of state with its guard fields. Similar to checking off clues, stories created with Storyspace can choose to show certain links only to players who satisfy the conditions of their guard fields.</p>
-<p>The Choice of Games series uses a system well-suited to long narratives that its designers named fairmath. Fairmath averages variable changes so that each time a variable increases or decreases, it does so at a diminishing rate. The effect is similar to the experience-point system of <em>D&amp;D</em>	, where it takes increasingly longer for a skill to improve as a character becomes better at it–although fairmath allows a variable to both increase and decrease, <em>D&amp;D</em> players almost always simply accumulate experience points.</p>
-<p>Although state in hypertext may have its roots in the number crunching of RPGs, there’s no reason it needs to be so clinical or reductionist.<sup class="footnote-reference" id="fr-2-1-3"><a href="#footnote-2-3">2</a></sup> Tom McHenry’s <a href="https://tommchenry.itch.io/horse-master"><em>Horse Master</em></a> shows a player numerous variables about their horse, including Uncanny and Realness, but it never explains their purpose directly. Porpentine’s <a href="http://slimedaughter.com/games/twine/begscape/"><em>Begscape</em></a> uses precious few variables–most apparent to the player are coins and health–but uses them cruelly.</p>
-<h2 id="is-state-separate-from-the-players-path"><a class="header" href="#is-state-separate-from-the-players-path">Is State Separate From The Player’s Path?</a></h2>
-<p>From a certain point of view, though, isn’t state simply a side effect of the choices the player makes? That is–do we really need to record anything but what links the player followed? If the outcome of a story hinges on whether the player found Clue M, then surely all we really need to track is what passages they visited. There’s no need for this extra bookkeeping.</p>
-<p>There are two reasons to record state separately: first, for convenience’s sake. It’s tedious to type out the code equivalent of “if the player has visited this passage but not this other one” or “if the player has visited any one of these four passages” repeatedly. Secondly, a story might incorporate elements of randomness, such that multiple playthroughs following the same links may yield different results.<sup class="footnote-reference" id="fr-3-1"><a href="#footnote-3">3</a></sup></p>
+<p>仅凭前一节概述的技巧，你就能创作出引人入胜的故事。自20世纪80年代风靡以来，成为西方流行文化一部分的<a href="https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure">《选择你自己的冒险》系列丛书</a>正是这样做的。当然，翻到书中特定页面的行为，等同于在数字媒介中点击链接。</p>
+<p>但在《选择你自己的冒险》系列走红之后，另一波互动书籍的浪潮随之而来，这些书籍由熟悉《龙与地下城》<sup class="footnote-reference" id="fr-1-1-6"><a href="#footnote-1-6">1</a></sup>等桌面角色扮演游戏的人士创作。他们认为，这种形式可以加以调整，以提供类似现场角色扮演游戏的体验，同时又无需费力召集三四个其他人一同参与。他们开始融入角色扮演游戏的典型元素——尤其是角色卡。</p>
+<p>如果你从未见过角色卡，它们类似于电子表格，但并非用于家庭预算或公司损益表，而是以数字方式描述一个角色。一个非常聪明的《龙与地下城》角色可能拥有 17 点的智力，但力量仅为平均水平的 7 点。一个角色可能初始拥有 20 点生命值，但在不幸坠入山体裂缝后仅剩 8 点。</p>
+<p>伴随角色卡而来的是<em>状态</em>的概念：即两位读者可能到达游戏书的同一页，但其中一人可能状态极佳，而另一人却濒临死亡。状态的核心特性在于它在不同游戏会话之间会发生变化；因此，它包含<em>变量</em>。这些变量可能是独立的（如力量和智力），也可能是相互依赖的（例如，一个虚弱的角色可能比平时能携带更少的重量）。</p>
+<p>状态另一个常见的用途是记录事件是否发生，并据此启用或禁用链接。例如，<a href="https://gamebooks.org/Series/389">《夏洛克·福尔摩斯单人探案》系列</a>要求读者在发现线索后，在角色表上勾选线索 A 或线索 Q，随后只有当主角沿途收集到所有必要线索时，才允许其解开谜团。</p>
+<p>后来，Storyspace 超文本系统通过其守卫字段引入了状态概念。与勾选线索类似，用 Storyspace 创作的故事可以选择仅向满足守卫字段条件的玩家显示特定链接。</p>
+<p>《选择游戏》系列采用了一种非常适合长篇叙事的系统，其设计者将其命名为 Fairmath。Fairmath 对变量变化进行平均处理，使得每次变量增减时，其变化率都会递减。这种效果类似于《龙与地下城》的经验值系统，即随着角色技能提升，进一步升级所需的时间越来越长——尽管 Fairmath 允许变量增减双向变动，而《龙与地下城》玩家几乎总是在单纯积累经验值。</p>
+<p>尽管超文本中的状态设定可能源于角色扮演游戏的数值计算，但这并不意味着它必须如此刻板或简化<sup class="footnote-reference" id="fr-2-1-3"><a href="#footnote-2-3">2</a></sup>。Tom McHenry 的<a href="https://tommchenry.itch.io/horse-master">《驭马大师》</a>向玩家展示了关于马匹的众多变量，包括“灵异值“和“真实度“，却从未直接解释这些变量的作用。波旁汀的<a href="http://slimedaughter.com/games/twine/begscape/">《乞讨景观》</a>使用的变量极少——对玩家而言最明显的是硬币和生命值——但却以残酷的方式运用这些变量。</p>
+<h2 id="状态设定是否独立于玩家路径is-state-separate-from-the-players-path"><a class="header" href="#状态设定是否独立于玩家路径is-state-separate-from-the-players-path">状态设定是否独立于玩家路径？｜Is State Separate From The Player’s Path?</a></h2>
+<p>不过，从某种角度来看，状态难道不正是玩家选择所产生的副作用吗？也就是说——除了记录玩家点击了哪些链接，我们真的还需要记录其他东西吗？如果故事结局取决于玩家是否找到线索 M，那么我们真正需要追踪的显然只是他们访问过哪些段落。这种额外的记录工作根本没有必要。</p>
+<p>将状态单独记录有两个原因：首先是为了方便。反复编写类似“如果玩家访问过此段落但未访问另一段落“或“如果玩家访问过这四个段落中的任意一个“的代码是件繁琐的事。其次，故事可能包含随机性元素，即使多次游戏遵循相同的链接路径，也可能产生不同的结果<sup class="footnote-reference" id="fr-3-1"><a href="#footnote-3">3</a></sup>。</p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-6">
-<p><a href="https://www.librarything.com/work/15900828"><em>You Are The Hero</em></a>, a retrospective of the <em>Fighting Fantasy</em> book series, offers an intriguing peek into the history of one of these RPG-influenced gamebook series. And if you’ve never tried the genre, <a href="https://www.projectaon.org/">Project Aon</a> hosts nearly all of the works of Joe Dever, who was perhaps the most prolific RPG gamebook author, in a format that can be played in a web browser for free. <a href="#fr-1-1-6">↩</a></p>
+<p><a href="https://www.librarything.com/work/15900828">《你就是英雄》</a>作为一部对《战斗幻想》系列书籍的回顾，为读者提供了窥探这一受角色扮演游戏影响的游戏书系列历史的迷人视角。若你从未尝试过此类作品，<a href="https://www.projectaon.org/">Project Aon</a>网站几乎收录了 Joe Dever 的全部著作——他或许是多产的游戏书作者——并以可在网页浏览器中免费游玩的格式呈现。 <a href="#fr-1-1-6">↩</a></p>
 </li>
 <li id="footnote-2-3">
-<p>To pick apart just one thing in the <em>D&amp;D</em> paradigm: there are many different types of intelligence, and the concept of assigning numeric scores to intelligence in people has a <a href="https://www.theatlantic.com/national/archive/2013/05/why-people-keep-misunderstanding-the-connection-between-race-and-iq/275876/">dark history</a>. <a href="#fr-2-1-3">↩</a></p>
+<p>仅剖析龙与地下城范式中的一个方面：智力存在多种不同类型，而用数值衡量人类智力的概念背后有着一段<a href="https://www.theatlantic.com/national/archive/2013/05/why-people-keep-misunderstanding-the-connection-between-race-and-iq/275876/">黑暗的历史</a>。 <a href="#fr-2-1-3">↩</a></p>
 </li>
 <li id="footnote-3">
-<p>For more on incorporating randomness into your story, see <a href="#randomness">Randomness</a>. <a href="#fr-3-1">↩</a></p>
+<p>关于如何在故事中融入随机元素，请参阅<a href="#随机性randomness">《随机性》</a>章节。 <a href="#fr-3-1">↩</a></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
@@ -1058,7 +1052,7 @@ Carrots
 <p>遗憾的是，你不能在变量名中使用空格。因此，一种被称为 <em>驼峰命名法</em>（因其产生的单词形似驼峰）的常见做法是使用大写字母将短语连接在一起，就像上面那个 <code>doomedToDieInFiveMinutes</code> 的例子一样。另一种命名风格，<em>蛇形命名法</em>，则倾向于使用下划线；例如 <code>doomed_to_die_in_five_minutes</code> 。两种方式都完全可以。选择你觉得最舒服的使用即可。</p>
 <p>另一种常见做法是，当变量的值仅在当前段落中使用时，在变量名前加一个下划线。这种做法只是给自己一个提示；Chapbook 并不强制要求这样使用。<sup class="footnote-reference" id="fr-2-1-4"><a href="#footnote-2-4">2</a></sup></p>
 <aside data-hint="info">
-变量名可以包含句点 (<code>.</code>)，但它们具有特殊含义。在阅读"<a href="#objects-and-lookup-variables">对象与查找值</a>"部分之前，最好避免在变量名中使用句点。
+变量名可以包含句点 (<code>.</code>)，但它们具有特殊含义。在阅读"<a href="#对象与查询变量objects-and-lookup-variables">对象与查找值</a>"部分之前，最好避免在变量名中使用句点。
 </aside>
 <aside data-hint="danger">
 <p>
@@ -1339,159 +1333,141 @@ _doorLocked: doorFound &amp;&amp; !doorUnlocked
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="conditions-and-variables"><a class="header" href="#conditions-and-variables">Conditions and Variables</a></h1>
-<p>You cannot use inserts or modifiers in the vars section of a passage, so you cannot write something like:</p>
-<pre><code>[if cousins &gt; 10]
-largeFamily: true
+<h1 id="条件和变量conditions-and-variables"><a class="header" href="#条件和变量conditions-and-variables">条件和变量｜Conditions and Variables</a></h1>
+<p>你不能在段落变量部分使用插入或修饰符，因此不能编写如下代码：</p>
+<pre><code>[if 亲戚 &gt; 10]
+大家庭: true
 --
-You sit back in your chair and consider everyone you'll need to invite to the reunion.
+你靠在椅背上，开始考虑需要邀请哪些人来参加这次聚会。
 </code></pre>
-<p>Instead, there are two ways you can assign a variable a value based on a condition. First, you can assign a variable to the result of a comparison, either true or false:</p>
-<pre><code>largeFamily: cousins &gt; 10
+<p>相反，有两种方法可以根据条件为变量赋值。首先，可以将变量赋值为比较结果，即真或假：</p>
+<pre><code>大家庭: 亲戚 &gt; 10
 --
-You sit back in your chair and consider everyone you'll need to invite to the reunion.
+你靠在椅背上，开始考虑需要邀请哪些人来参加这次聚会。
 </code></pre>
-<p>This passage sets the variable <code>largeFamily</code> to either <code>true</code> or <code>false</code>, depending on what value the variable <code>cousins</code> has. However, you may want to set variables to other types of values besides booleans. To do this, add a condition to the assignment:</p>
-<pre><code>transportation: 'car'
-transportation (kilometers &gt; 1000): 'plane' 
+<p>这段文字根据变量<code>亲戚</code>的值，将变量<code>大家庭</code>设置为 <code>true</code> 或 <code>false</code> 。然而，除了布尔值之外，您可能还想将变量设置为其他类型的值。为此，请在赋值中添加一个条件：</p>
+<pre><code>载具: '汽车'
+载具 (里程 &gt; 1000): '飞机' 
 --
-You'll need to take a {transportation} to get there.
+你需要乘坐{载具}以到达那里。
 </code></pre>
-<p>This example demonstrates two new things about vars sections:</p>
+<p>此示例展示了关于变量部分的两个新特性：</p>
 <ul>
-<li>You may change a variable more than once in a single vars section. Chapbook changes the variables in the order they are written, top to bottom.</li>
-<li>If you write an expression inside parentheses before the colon (<code>:</code>) that tells Chapbook what value to set, that particular line will only take effect if the expression evaluates to <code>true</code>.</li>
+<li>您可以在单个变量部分中多次更改变量。Chapbook 会按照从上到下的顺序更改变量。</li>
+<li>如果在冒号（<code>:</code>）之前的括号内写入一个表达式，该表达式用于告诉 Chapbook 要设置的值需要在表达式评估为 <code>true</code> 时才会生效。</li>
 </ul>
-<p>So first <code>transportation</code> is set to <code>'car'</code>, and then, if <code>kilometers</code> is greater than <code>1000</code>, the value of <code>transportation</code> is immediately changed to <code>'plane'</code>. Chapbook runs through each variable assignment in sequence, doing nothing else in between, so the two assignments effectively work as one.</p>
-<p>Here’s a more complex example showing how multiple assignments and conditions go hand in hand.</p>
-<pre><code>language: 'an unknown language'
-language (country === 'Brazil'): 'Portuguese' 
-language (country === 'China'): 'Mandarin' 
-language (country === 'Ethiopia'): 'Amharic'
-language (country === 'Russia'): 'Russian'
-language (country === 'Australia' || country === 'United States'): 'English'
+<p>首先，交通工具被设置为<code>汽车</code>，然后，如果<code>里程</code>大于 <code>1000</code>，交通工具的值会立即被改为“飞机”。Chapbook 会按顺序处理每个变量赋值，中间不进行其他操作，因此这两个赋值实际上相当于一个操作。</p>
+<p>这里有一个更复杂的例子，展示了多个赋值和条件如何协同工作。</p>
+<pre><code>语言: '未知语言'
+语言 (国家 === '巴西'): '葡萄牙语' 
+语言 (国家 === '中国'): '普通话' 
+语言 (国家 === '埃塞俄比亚'): '阿姆哈拉语'
+语言 (国家 === '俄罗斯'): '俄语'
+语言 (国家 === '澳大利亚' || 国家 === '美国'): '英语'
 --
-The official language of {country} is {language}.
+{country}的官方语言是{language}。
 </code></pre>
-<p>Although Chapbook sets variables in the order you write them, often times it won’t matter much, as you’ll usually want to write conditions that are mutually exclusive of each other–that is, only one line ever takes effect.</p>
+<p>尽管 Chapbook 会按照你编写的顺序设置变量，但通常这并不重要，因为你通常会编写相互排斥的条件——也就是说，只有一行会实际生效。</p>
 <hr>
 <ol class="footnote-definition"></ol>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="continuity-between-sessions"><a class="header" href="#continuity-between-sessions">Continuity Between Sessions</a></h1>
-<p>Chapbook is designed so that players don’t need to manually save their progress, as is often typical in digital games. Instead, it silently saves the state of play every time the player navigates to a new passage.</p>
-<p>This is partly by necessity and partly by design. It’s necessary to continually save progress because browsers, especially those on mobile devices, are extremely stingy with resources. If a player begins your story but decides to check social media in another browser tab and then gets lost in a series of adorable cat pictures, the browser may decide to put your story’s tab into the equivalent of hibernation. When the player returns to your story, the browser essentially reloads the story<sup class="footnote-reference" id="fr-1-1-10"><a href="#footnote-1-11">1</a></sup>, which causes any unsaved progress to be lost. Thus, progress needs to be continually saved.</p>
-<p>It also discourages a habit in players that is nicknamed <em><a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/SaveScumming">save scumming</a></em>, where players constantly save and reload their progress in an effort to find what they believe is the most optimal outcome.</p>
-<p>Chapbook saves state by using a feature of web browsers called <em>local storage</em>. If you are familiar with browser cookies, local storage works similarly to them, though local storage allows for storing much more data than a cookie. You don’t need to know what either technology is to use Chapbook successfully, but it is important to understand two things:</p>
+<h1 id="话间的连续性continuity-between-sessions"><a class="header" href="#话间的连续性continuity-between-sessions">话间的连续性｜Continuity Between Sessions</a></h1>
+<p>Chapbook 的设计使得玩家无需像在数字游戏中通常那样手动保存进度。相反，每当玩家导航至新的段落时，它都会静默地保存游戏状态。</p>
+<p>这既是出于必要，也是设计使然。持续保存进度是必要的，因为浏览器，尤其是移动设备上的浏览器，对资源极为吝啬。如果玩家开始阅读你的故事，但决定在另一个浏览器标签页中查看社交媒体，然后沉浸在一系列可爱的猫咪图片中，浏览器可能会决定将你的故事标签页置于类似休眠的状态。当玩家返回你的故事时，浏览器基本上会重新加载故事<sup class="footnote-reference" id="fr-1-1-10"><a href="#footnote-1-11">1</a></sup>，这会导致任何未保存的进度丢失。因此，需要持续保存进度。</p>
+<p>这也抑制了玩家中一种被称为“<a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/SaveScumming">存档作弊</a>”的习惯，即玩家不断保存并重新加载进度，以寻求他们认为最理想的结果。</p>
+<p>Chapbook 通过使用网络浏览器的一项名为<em>本地存储</em>的功能来保存状态。如果你熟悉浏览器 cookie，本地存储的工作原理与之类似，不过本地存储允许存储的数据量远大于 cookie。你无需了解这两项技术即可成功使用 Chapbook，但需要理解以下两点：</p>
 <ol>
 <li>
-<p>A player’s state is saved only to their device, and to the browser they are using. If a player starts out using Microsoft Edge but changes halfway to Mozilla Firefox, they’ll start from the very beginning of your story in Firefox. Their progress in Edge isn’t lost, of course. Likewise if they begin on their phone and switch to a laptop halfway through, they will start from the beginning.</p>
+<p>玩家的状态仅保存在其设备和所使用的浏览器中。如果玩家开始时使用 Microsoft Edge，中途改用 Mozilla Firefox，他们将在 Firefox 中从故事的最开始重新开始。当然，他们在 Edge 中的进度并未丢失。同样地，如果他们在手机上开始游戏，中途切换到笔记本电脑，也将从头开始。</p>
 </li>
 <li>
-<p>If a player clears their browsing history, they’ll lose their progress in your story.</p>
+<p>如果玩家清除了浏览历史记录，他们将会丢失在您故事中的进度。</p>
 </li>
 </ol>
-<p>Because state is retained across sessions, you <em>must</em> use the <a href="state/text-and-links/link-inserts.html#restarting-the-story"><code>{restart link}</code> insert</a> in order to start the story fresh once you begin using state in your stories. If you only link back to the first passage, variables will remain in the state they were at the end of play–which is likely to produce weird results.</p>
+<p>由于状态会在会话间保留，一旦开始在故事中使用状态，您<em>必须</em>使用 <a href="state/text-and-links/link-inserts.html#restarting-the-story"><code>{restart link}</code> 插入</a>才能重新开始故事。如果仅链接回第一个段落，变量将保持在游戏结束时的状态——这很可能会导致奇怪的结果。</p>
 <aside data-hint="working">
-Additional functionality related to saving progress, such as being able to share saved states between browsers or devices, or allowing players on a device the ability to have more than one save, may come in a future version of Chapbook.
+与保存进度相关的附加功能，例如能够在不同浏览器或设备间共享保存的状态，或允许设备上的玩家拥有多个存档，可能会在 Chapbook 的未来版本中推出。
 </aside>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-11">
-<p>In fact, you’ll often see a loading indicator briefly when this occurs, instead of the page reappearing instantly. <a href="#fr-1-1-10">↩</a></p>
+<p>实际上，当这种情况发生时，您通常会短暂看到一个加载指示器，而不是页面立即重新出现。 <a href="#fr-1-1-10">↩</a></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="state-backstage"><a class="header" href="#state-backstage">State Backstage</a></h1>
-<p>State can be very slippery to work with, as it’s not normally directly visible in your story–you can only infer from its side effects. Chapbook provides tools to track and even change state as you test your story.</p>
-<h2 id="the-state-tab"><a class="header" href="#the-state-tab">The State Tab</a></h2>
-<p>Under the State tab, you’ll find a Variables heading. This shows the current state of your story as you play. You can also select a value on the right side of the variables table and enter a new one–press the Return or Enter key when you’re done to set the variable. You may only enter values in the variables table, not expressions.</p>
-<p>If the Show Defaults checkbox is ticked, Chapbook will show various built-in variables–mainly related to Chapbook’s configuration. See <a href="state/customization/index.html">Customization</a> for more details.</p>
-<h2 id="state-snaphots"><a class="header" href="#state-snaphots">State Snaphots</a></h2>
-<p>Beneath the variables table is the Snapshots heading. Snapshots allow you to quickly save and restore the state of your story at any point. For example, if you’d like to skip the prologue or test a specific scene, play through your story as usual. When you’ve reached the point you’d like to skip to, use the Add Snapshot button. After giving your snapshot a name, it will appear under the Snapshots heading as a button. Using this button will immediately set the state of your story, including the passage you were viewing, to what it was.</p>
-<p>Use the × button at the end of a snapshot button to remove it. Snapshots are saved to your web browser only.</p>
+<h1 id="状态后台state-backstage"><a class="header" href="#状态后台state-backstage">状态后台｜State Backstage</a></h1>
+<p>状态处理起来可能非常棘手，因为它通常不会直接在故事中显现——你只能从其副作用中推断。Chapbook 提供了工具，让你在测试故事时能够追踪甚至更改状态。</p>
+<h2 id="状态标签页the-state-tab"><a class="header" href="#状态标签页the-state-tab">状态标签页｜The State Tab</a></h2>
+<p>在“状态“选项卡下，您会看到一个“变量“标题。这里会显示您在游玩过程中故事的当前状态。您还可以在变量表的右侧选择一个值并输入新值——完成后按回车键或 Enter 键来设置变量。您只能在变量表中输入数值，不能输入表达式。</p>
+<p>如果勾选了“显示默认值“复选框，Chapbook 将显示各种内置变量——主要与 Chapbook 的配置相关。更多详情请参阅“<a href="state/customization/index.html">自定义</a>“部分。</p>
+<h2 id="状态快照state-snaphots"><a class="header" href="#状态快照state-snaphots">状态快照｜State Snaphots</a></h2>
+<p>变量表下方是快照标题。快照功能允许您快速保存和恢复故事在任意时间点的状态。例如，若想跳过序章或测试特定场景，只需照常推进故事流程。当抵达希望跳转的位置时，点击“添加快照“按钮。命名快照后，它将作为按钮出现在快照标题下方。点击该按钮可立即将故事状态（包括您当时浏览的段落）恢复至保存时的状态。</p>
+<p>点击快照按钮末端的 × 按钮即可将其删除。快照仅保存在您的网页浏览器中。</p>
 <aside data-hint="working">
-Exporting snapshots for use by other people working on your story may come in a future version of Chapbook.
+未来版本的 Chapbook 可能会支持导出快照，供其他协作者使用。
 </aside>
-<h2 id="state-in-history"><a class="header" href="#state-in-history">State in History</a></h2>
-<p>The History tab also shows changes to state as you navigate through a story. If a passage changes a variable, you’ll see a separate row in the history table showing that change. This is informational only–you cannot change variables from the History tab.</p>
+<h2 id="历史状态state-in-history"><a class="header" href="#历史状态state-in-history">历史状态｜State in History</a></h2>
+<p>历史标签页还会在您浏览故事时显示状态的变化。如果某个段落修改了变量，您会在历史表格中看到单独的一行显示该变更。这仅为信息展示——您无法通过历史标签页修改变量。</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="objects-and-lookup-variables"><a class="header" href="#objects-and-lookup-variables">Objects and Lookup Variables</a></h1>
-<p>In addition to variables you create, Chapbook also maintains a number of
-built-in variables called <em>lookups</em>. Unlike regular variables, lookups cannot be
-changed by you. Instead, they correspond to properties in the environment–the
-current date and time when the player is interacting with your story, for
-example, or even the story itself.</p>
-<h2 id="introducing-objects"><a class="header" href="#introducing-objects">Introducing Objects</a></h2>
-<p>In order to leave as many variable names available to you as possible, Chapbook
-groups its built-in lookup variables together using <em>objects</em>. An objects are
-another type of variable–like a string, boolean, or number–that acts as a
-container for other variables. Unlike simple variable types like strings or
-numbers, objects don’t have values unto themselves. They only contain other
-variables.</p>
-<p>To access a variable inside an object container, enter the object’s name, then a
-period (<code>.</code>), then the variable. For instance, <code>story.name</code> accesses the
-variable named <code>name</code> inside of <code>story</code>.</p>
-<p>You can nest objects as much as you’d like, and you can also write something
-like this in the vars section of a passage:</p>
-<pre><code>my.favorite.variable: 'red'
+<h1 id="对象与查询变量objects-and-lookup-variables"><a class="header" href="#对象与查询变量objects-and-lookup-variables">对象与查询变量｜Objects and Lookup Variables</a></h1>
+<p>除了您创建的变量之外，Chapbook 还维护了许多称为<em>查询</em>的内置变量。与常规变量不同，查询变量无法由您更改。相反，它们对应于环境中的属性——例如玩家与您的故事互动时的当前日期和时间，甚至故事本身。</p>
+<h2 id="对象简介introducing-objects"><a class="header" href="#对象简介introducing-objects">对象简介｜Introducing Objects</a></h2>
+<p>为了尽可能为您保留更多可用的变量名，Chapbook 将其内置的查询变量通过<em>对象</em>进行分组。对象是另一种类型的变量——类似于字符串、布尔值或数字——它充当其他变量的容器。与字符串或数字等简单变量类型不同，对象本身没有值。它们只包含其他变量。</p>
+<p>要访问对象容器内的变量，请输入对象名称，然后是一个句点（<code>.</code>），再然后是变量名。例如，<code>story.name</code> 访问的是 <code>story</code> 对象内名为 <code>name</code> 的变量。</p>
+<p>您可以根据需要任意嵌套对象，并且也可以在段落（passage）的变量部分编写类似这样的内容：</p>
+<pre><code>my.favorite.variable: '红色'
 </code></pre>
-<p>Chapbook will create each object variable (e.g. <code>my</code> and <code>favorite</code>) for you if
-it doesn’t already exist.</p>
-<h2 id="built-in-lookup-variables"><a class="header" href="#built-in-lookup-variables">Built-In Lookup Variables</a></h2>
-<p>Below is a list of lookups that Chapbook maintains for you:</p>
+<p>如果尚不存在，Chapbook 将为您创建每个对象变量（例如 <code>my</code> 和 <code>favorite</code>）。</p>
+<h2 id="内置查询变量built-in-lookup-variables"><a class="header" href="#内置查询变量built-in-lookup-variables">内置查询变量｜Built-In Lookup Variables</a></h2>
+<p>以下是 Chapbook 为您维护的查询列表：</p>
 <div class="table-wrapper">
 <table>
 <thead>
-<tr><th>Variable Name</th><th>Description</th><th>Example</th></tr>
+<tr><th>变量名称</th><th>描述</th><th>示例</th></tr>
 </thead>
 <tbody>
-<tr><td><code>browser.darkTheme</code></td><td>Whether the effective theme currently used by Chapbook is dark. See <a href="state/style/dark-theme.html">Dark Theme</a> for more details.</td><td><code>true</code></td></tr>
-<tr><td><code>browser.darkSystemTheme</code></td><td>Whether the browser is currently set to use a dark user interface. Typically, this done through a system preference.</td><td><code>true</code></td></tr>
-<tr><td><code>browser.height</code></td><td>The height of the browser window in pixels.</td><td><code>768</code></td></tr>
-<tr><td><code>browser.online</code></td><td>Whether the browser currently has a network connection.</td><td><code>true</code></td></tr>
-<tr><td><code>browser.width</code></td><td>The width of the browser window in pixels.</td><td><code>1024</code></td></tr>
-<tr><td><code>engine.version</code></td><td>The version of Chapbook currently running, as a string.</td><td><code>'1.0.0'</code></td></tr>
-<tr><td><code>now.datestamp</code></td><td>A short human-readable description of the date right now.</td><td><code>'2/15/2011'</code></td></tr>
-<tr><td><code>now.day</code></td><td>The current day of the month, 1-31.</td><td><code>15</code></td></tr>
-<tr><td><code>now.hour</code></td><td>The hour of the time right now, where midnight is 0 and 11:00 PM is 23.</td><td><code>18</code></td></tr>
-<tr><td><code>now.minute</code></td><td>The minute of the time right now, 0-59.</td><td><code>15</code></td></tr>
-<tr><td><code>now.month</code></td><td>The current month, 1-12.</td><td><code>2</code></td></tr>
-<tr><td><code>now.monthName</code></td><td>The name of the current month.</td><td><code>'February'</code></td></tr>
-<tr><td><code>now.second</code></td><td>The second of the time right now, 0-59.</td><td><code>45</code></td></tr>
-<tr><td><code>now.timestamp</code></td><td>A short human-readable description of the time right now.</td><td><code>'6:18:15 PM'</code></td></tr>
-<tr><td><code>now.weekday</code></td><td>The current day of the week, where Sunday is 1, Wednesday is 4, and Saturday is 7.</td><td><code>3</code></td></tr>
-<tr><td><code>now.weekdayName</code></td><td>The name of the current day of the week.</td><td><code>'Tuesday'</code></td></tr>
-<tr><td><code>now.year</code></td><td>The current four-digit year.</td><td><code>2011</code></td></tr>
-<tr><td><code>passage.from</code></td><td>The name of the last passage the player visited, as set in the Twine editor. If the player has only visited a single passage, this is <code>undefined</code>.</td><td><code>'Untitled Passage 1'</code></td></tr>
-<tr><td><code>passage.fromText</code></td><td>The text of the last link the player used to go to a new passage. If the player has only visited a single passage, this is <code>undefined</code>. If the player moved to another passage by some other means that didn’t involve clicking a link, then this reflects the last link used.</td><td><code>'Link name'</code></td></tr>
-<tr><td><code>passage.name</code></td><td>The name of the current passage as set in the Twine editor.</td><td><code>'Untitled Passage'</code></td></tr>
-<tr><td><code>passage.visits</code></td><td>The number of times the player has seen the current passage, including the current time. That is, the first time the player sees a passage, this lookup’s value is 1.</td><td>1</td></tr>
-<tr><td><code>story.name</code></td><td>The name of the story as set in the Twine editor.</td><td><code>'Untitled Story'</code></td></tr>
+<tr><td><code>browser.darkTheme</code></td><td>当前 Chapbook 使用的有效主题是否为<a href="state/style/dark-theme.html">深色模式</a>。</td><td><code>true</code></td></tr>
+<tr><td><code>browser.darkSystemTheme</code></td><td>浏览器当前是否设置为使用深色用户界面。通常通过系统偏好设置实现。</td><td><code>true</code></td></tr>
+<tr><td><code>browser.height</code></td><td>浏览器窗口的高度（以像素为单位）。</td><td><code>768</code></td></tr>
+<tr><td><code>browser.online</code></td><td>浏览器当前是否具有网络连接。</td><td><code>true</code></td></tr>
+<tr><td><code>browser.width</code></td><td>浏览器窗口的宽度，以像素为单位。</td><td><code>1024</code></td></tr>
+<tr><td><code>engine.version</code></td><td>当前运行的 Chapbook 版本，以字符串形式表示。</td><td><code>'1.0.0'</code></td></tr>
+<tr><td><code>now.datestamp</code></td><td>当前日期的简短、人类可读描述。</td><td><code>'2/15/2011'</code></td></tr>
+<tr><td><code>now.day</code></td><td>当前月份中的日期，范围是 1 到 31。</td><td><code>15</code></td></tr>
+<tr><td><code>now.hour</code></td><td>当前时间的小时数，其中午夜为 0，晚上 11 点为23。</td><td><code>18</code></td></tr>
+<tr><td><code>now.minute</code></td><td>当前时间的分钟数，范围是 0 到 59。</td><td><code>15</code></td></tr>
+<tr><td><code>now.month</code></td><td>当前月份，范围是 1 到 12。</td><td><code>2</code></td></tr>
+<tr><td><code>now.monthName</code></td><td>当前月份的名称。</td><td><code>'February'</code></td></tr>
+<tr><td><code>now.second</code></td><td>当前时间的秒数，范围 0-59。</td><td><code>45</code></td></tr>
+<tr><td><code>now.timestamp</code></td><td>当前时间的十二小时制易读版本。</td><td><code>'6:18:15 PM'</code></td></tr>
+<tr><td><code>now.weekday</code></td><td>当前星期几，其中星期日为 1，星期三为 4，星期六为 7。7.</td><td><code>3</code></td></tr>
+<tr><td><code>now.weekdayName</code></td><td>前星期几的名称。</td><td><code>'Tuesday'</code></td></tr>
+<tr><td><code>now.year</code></td><td>当前的四位数年份。</td><td><code>2011</code></td></tr>
+<tr><td><code>passage.from</code></td><td>玩家最后访问的段落名称，由 Twine 编辑器中设置的一样。若玩家仅访问过单个段落，则此项 <code>undefined</code>（未定义）。<code>undefined</code>.</td><td><code>'Untitled Passage 1'</code></td></tr>
+<tr><td><code>passage.fromText</code></td><td>玩家上次用于跳转至新段落的链接文本。若玩家仅访问过单个段落，则此项为 <code>undefined</code>。若玩家通过点击链接以外的其他方式移动至另一段落，则此项反映的是最后使用的链接。</td><td><code>'Link name'</code></td></tr>
+<tr><td><code>passage.name</code></td><td>在 Twine 编辑器中设置的当前段落名称。</td><td><code>'Untitled Passage'</code></td></tr>
+<tr><td><code>passage.visits</code></td><td>玩家已查看当前段落的次数，包括当前这次。也就是说，玩家首次查看一个段落时，此查询变量的值为 1。</td><td>1</td></tr>
+<tr><td><code>story.name</code></td><td>故事在 Twine 编辑器中设定的名称。</td><td><code>'Untitled Story'</code></td></tr>
 </tbody>
 </table>
 </div>
-<p>Note that <code>now</code> lookup values reflect when they were last accessed, which is
-usually when a passage is navigated to. String values like <code>now.monthName</code> will
-vary by the language the player has set as default in their browser– a French
-person will see <code>Août</code> where an American sees <code>August</code>, for example, and
-similarly the French will see <code>now.datestamp</code> as <code>'15/2/2011'</code> where Americans
-see it as <code>'2/15/2011'</code>.</p>
+<p>请注意，<code>now</code> 查询值反映的是它们最后一次被访问的时间，这通常是在导航到某个段落时。像 <code>now.monthName</code> 这样的字符串值会根据玩家在浏览器中设置的默认语言而变化——例如，法国人会看到 <code>Août</code>，而美国人会看到 <code>August</code>；同样地，法国人看到的 <code>now.datestamp</code> 会是 <code>'15/2/2011'</code>，而美国人看到的则是 <code>'2/15/2011'</code>。</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="randomness"><a class="header" href="#randomness">Randomness</a></h1>
-<p>Randomness is a powerful tool for creating interactive experiences. It can assist with simulation–to decide whether actions of a character succeed, as in tabletop role-playing games–but it can also be used for aesthetic purposes, from altering phrasings in text to creating an entirely randomized narrative.</p>
-<p>The main way to make use of randomness with Chapbook is through <a href="#objects-and-lookup-variables">lookup variables</a> in the <code>random</code> object. For instance:</p>
+<h1 id="随机性randomness"><a class="header" href="#随机性randomness">随机性｜Randomness</a></h1>
+<p>随机性是创造互动体验的强大工具。它不仅能用于模拟——例如决定角色行动是否成功，就像桌面角色扮演游戏那样——还能用于美学目的，从改变文本措辞到创造完全随机的叙事。</p>
+<p>在 Chapbook 中利用随机性的主要方式是通过 <code>random</code> 对象中的<a href="#对象与查询变量objects-and-lookup-variables">查询变量</a>。例如：</p>
 <pre><code>[if random.coinFlip]
-Heads!
+正面！
 
 [else]
-Tails!
+反面！
 </code></pre>
-<p>… will display “Heads!” half of the time the story is played and “Tails!” the other half. The value of <code>random.coinFlip</code> potentially changes every time its value is used.<sup class="footnote-reference" id="fr-1-1-11"><a href="#footnote-1-12">1</a></sup></p>
-<p>For more fine-grained randomness, you can use lookup variables such as <code>random.d100</code>, which is a random whole number between 1 to 100. The full list is:</p>
+<p>……在故事运行时，有一半的概率会显示“正面！”，另一半概率显示“反面！”。<code>random.coinFlip</code> 的值在每次使用时都可能发生变化。<sup class="footnote-reference" id="fr-1-1-11"><a href="#footnote-1-12">1</a></sup></p>
+<p>如需更精细的随机性，可以使用查询变量，例如 <code>random.d100</code>，这是一个介于 1 到 100 之间的随机整数。完整列表如下：</p>
 <div class="table-wrapper">
 <table>
 <thead>
-<tr><th>Lookup</th><th>Range</th></tr>
+<tr><th>查询</th><th>范围</th></tr>
 </thead>
 <tbody>
 <tr><td><code>random.fraction</code></td><td>0-1</td></tr>
@@ -1508,65 +1484,65 @@ Tails!
 </tbody>
 </table>
 </div>
-<p>All of the lookups listed above are always whole numbers, except <code>random.fraction</code>, which is a decimal between 0 and 1.</p>
-<p>One easy mistake that can be made with these lookup variables is to forget that their values change every time they are used. For instance:</p>
+<p>上面列出的所有查询结果都是整数，只有 <code>random.fraction</code> 例外，它是介于 0 到 1 之间的小数。</p>
+<p>使用这些查询变量时容易犯的一个错误是忘记它们的值每次被调用时都会改变。例如：</p>
 <pre><code>[if random.d4 === 1]
-One.
+一。
 
 [if random.d4 === 2]
-Two.
+二。
 
 [if random.d4 === 3]
-Three.
+三。
 
 [if random.d4 === 4]
-Four.
+四。
 </code></pre>
-<p>The passage above may show just one paragraph, but it’s also possible for it to show more than one, or even none at all. Because <code>random.d4</code> changes value, the end result could look like this:</p>
+<p>上面这段文字可能只显示一个段落，但也可能显示多个段落，甚至完全不显示任何内容。由于 <code>random.d4</code> 的值会变化，最终结果可能呈现如下形式：</p>
 <pre><code>[if 4 === 1]
-One.
+一。
 
 [if 2 === 2]
-Two.
+二。
 
 [if 1 === 3]
-Three.
+三。
 
 [if 4 === 4]
-Four.
+四。
 </code></pre>
-<p>… which would display:</p>
-<pre><code>Two.
+<p>…这将显示：</p>
+<pre><code>二。
 
-Four.
+四。
 </code></pre>
-<p>If you’d like to re-use a specific random value, the easiest thing to do is to assign it to a variable like so:<sup class="footnote-reference" id="fr-2-1-5"><a href="#footnote-2-5">2</a></sup></p>
+<p>若想重复使用某个特定的随机值，最简单的方法就是将其赋值给变量，例如：<sup class="footnote-reference" id="fr-2-1-5"><a href="#footnote-2-5">2</a></sup></p>
 <pre><code>_chosen: random.d4
 --
 [if _chosen === 1]
-One.
+一。
 
 [if _chosen === 2]
-Two.
+二。
 
 [if _chosen === 3]
-Three.
+三。
 
 [if _chosen === 4]
-Four.
+四。
 
 </code></pre>
-<h2 id="chapbook-is-pseudorandom"><a class="header" href="#chapbook-is-pseudorandom">Chapbook Is Pseudorandom</a></h2>
-<p>Chapbook’s randomness is not truly random: in fact, the process by which it generates random numbers is entirely predictable. This may sound ludicrous, but this is how almost all computer-generated random numbers work. Chapbook uses what is called a pseudorandom number generator, which generates a stream of apparently random numbers based on a seed value.</p>
-<p>The pseudorandom number generator will always generate the same values when using a particular seed value. Unless otherwise specified, Chapbook will use a seed value based on the date and time that a playthrough first begins, so each session will see different pseudorandom values. Chapbook stores this seed value in <code>config.random.seed</code>. This variable can be both read and written to.</p>
-<p>Why would you want to change the pseudorandom seed, though? It can help with testing–for example, if someone reports a problem with your story, you can set your seed value to theirs and be able to replay things exactly as they experienced them. You can also set a seed value manually in a version of your story you give to others to test, so that you can ensure everyone has a consistent experience.</p>
+<h2 id="chapbook-是伪随机的chapbook-is-pseudorandom"><a class="header" href="#chapbook-是伪随机的chapbook-is-pseudorandom">Chapbook 是伪随机的｜Chapbook Is Pseudorandom</a></h2>
+<p>Chapbook 的随机性并非真正随机：实际上，它生成随机数的过程完全可预测。这听起来可能很荒谬，但几乎所有计算机生成的随机数都是如此运作的。Chapbook 使用的是所谓的伪随机数生成器，它基于一个种子值生成一串看似随机的数字。</p>
+<p>伪随机数生成器在使用特定种子值时，总会生成相同的数值。除非另有说明，Chapbook 将采用基于游戏流程首次启动日期时间的种子值，因此每个会话将呈现不同的伪随机数值。Chapbook将此种子值存储在 <code>config.random.seed</code> 中，该变量支持读取与写入操作。</p>
+<p>不过，你为何要更改伪随机种子呢？这有助于测试——例如，如果有人报告了你的故事存在问题，你可以将种子值设置为他们的，从而能够完全按照他们经历的方式重现事件。你还可以在提供给他人测试的故事版本中手动设置种子值，以确保每个人都有一致的体验。</p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-12">
-<p>Which is to say it is possible, as demonstrated in <em><a href="https://en.wikipedia.org/wiki/Rosencrantz_and_Guildenstern_Are_Dead#Act_One">Rosencrantz and Guildenstern Are Dead</a></em>, that <code>random.coinFlip</code> holds the same value after it is read. <a href="#fr-1-1-11">↩</a></p>
+<p>也就是说，正如<a href="https://en.wikipedia.org/wiki/Rosencrantz_and_Guildenstern_Are_Dead#Act_One">《Rosencrantz 和 Guildenstern 已死》</a>中所展示的那样，<code>random.coinFlip</code> 在被读取后仍可能保持相同的值。 <a href="#fr-1-1-11">↩</a></p>
 </li>
 <li id="footnote-2-5">
-<p>This example uses an underscore in its variable name to signal a temporary variable, but remember that this is merely a convention. <a href="#fr-2-1-5">↩</a></p>
+<p>此例在变量名中使用下划线来标识临时变量，但请记住这仅是一种约定。 <a href="#fr-2-1-5">↩</a></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
@@ -1703,104 +1679,103 @@ Flickr 允许嵌入图片并不意味着您可以随意在作品中使用该图�
 <ol class="footnote-definition"></ol>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="音频audio"><a class="header" href="#音频audio">音频｜Audio</a></h1>
-<p>Chapbook supports two types of audio: <em>ambient sound</em> and <em>sound effects</em>. Ambient sounds are long-running audio, such as music or background noise, that automatically loop when playback completes. Sound effects are one-off sounds, like the sound of a door opening or an explosion.</p>
-<p>There are two other differences between sound effects and ambient audio:</p>
+<p>Chapbook 支持两种类型的音频：<em>环境音</em>和<em>音效</em>。环境音是持续播放的音频，例如音乐或背景噪音，播放完毕后会自动循环。音效是一次性的声音，比如开门声或爆炸声。</p>
+<p>音效与环境音之间还有另外两个区别：</p>
 <ul>
-<li>There can only be one ambient sound playing at a time under normal circumstances.</li>
-<li>Sound effects are preloaded when your story begins. This is so that when you ask for an effect to be played in your story, there will be as little delay as possible before it begins playback. However, this means that you should be careful about the file size of the sound effects you use. The preloading process takes place in the background as players interact with your story, so large sound effects will not delay the start of your story. But it’s still wasteful to load large files.</li>
+<li>通常情况下，同一时间只能播放一种环境音。</li>
+<li>音效会在故事开始时预加载。这样当你在故事中要求播放某个音效时，就能最大程度减少播放前的延迟。但这也意味着你需要注意所用音效的文件大小。预加载过程会在玩家与故事互动时于后台进行，因此大型音效文件不会延迟故事的开始。但加载大文件仍然会造成资源浪费。</li>
 </ul>
-<p>You should also make sure that all your sounds are in MP3 format. There are other types of audio formats, such as Ogg Vorbis or WAV, but browser support varies for each of these. MP3 is as universal a format as possible. There are many applications, including the open-source <a href="https://www.audacityteam.org/">Audacity</a>, that can convert audio files into MP3 format for you.</p>
-<h2 id="sound-effects"><a class="header" href="#sound-effects">Sound Effects</a></h2>
-<p>Before playing a sound effect, you must first define it in your story state. Below is an example of how you would define a sound effect:</p>
-<pre><code>sound.effect.explosion.url: 'boom.mp3'
-sound.effect.explosion.description: 'a large explosion'
+<p>你还需要确保所有音频均为 MP3 格式。虽然存在 Ogg Vorbis 或 WAV 等其他音频格式，但不同浏览器对这些格式的支持程度各异。MP3 是兼容性最广的通用格式。包括开源软件 <a href="https://www.audacityteam.org/">Audacity</a> 在内的许多应用程序都能帮你将音频文件转换为 MP3 格式。</p>
+<h2 id="音效sound-effects"><a class="header" href="#音效sound-effects">音效｜Sound Effects</a></h2>
+<p>在播放音效前，你必须在故事状态中先定义它。以下是如何定义音效的示例：</p>
+<pre><code>sound.effect.爆炸.url: '爆炸.mp3'
+sound.effect.爆炸.description: '一场大爆炸'
 --
-The timer reads 0:00...
+计时器显示为 0:00…
 </code></pre>
-<p>The <code>explosion</code> keyword defines the name of the ambient sound, which you’ll use later. The <code>url</code> property defines the address to load the sound from, and the <code>description</code> provides a textual description of the contents of the sound. This is so that players who have difficulty hearing, or who have muted your story, can receive an alternate version of the sound.</p>
-<p>Once you’ve defined your sound effect, you can play it in a passage using the <code>{sound effect}</code> insert.</p>
-<pre><code>sound.effect.explosion.url: 'boom.mp3'
-sound.effect.explosion.description: 'a large explosion'
+<p><code>explosion</code> 关键字定义了环境音的名称，你稍后会用到它。<code>url</code> 属性定义了加载声音的地址，<code>description</code> 则提供了声音内容的文字描述。这样，听力有困难的玩家或已将故事静音的玩家就能获得声音的替代版本。</p>
+<p>定义好音效后，你可以使用 <code>{sound effect}</code> 插入在段落中播放它。</p>
+<pre><code>sound.effect.爆炸.url: '爆炸.mp3'
+sound.effect.爆炸.description: '一场大爆炸'
 --
-The timer reads 0:00...
+计时器显示为 0:00…
 
-{sound effect: 'explosion'}
+{sound effect: '爆炸'}
 </code></pre>
-<p>The exact place you put the insert matters. If a player has disabled sound, or is unable to hear your sound, they will see the text of the <code>description</code> property instead where you enter the insert.</p>
-<p>If you insert multiple different sound effects in a single passage, they will play simultaneously. If you insert a sound effect in another passage the player reaches while the effect is stil playing, the second insert will have no effect.</p>
-<p>If you need to play a sound effect repeatedly, define it multiple times. You can assign the entire object to save time. For example:</p>
-<pre><code>sound.effect.explosion.url: 'boom.mp3'
-sound.effect.explosion.description: 'a large explosion'
-sound.effect.explosion2: sound.effect.explosion
+<p>插入的确切位置很重要。如果玩家禁用了声音，或无法听到你的声音，他们将在你插入的地方看到 <code>description</code> 属性的文本。</p>
+<p>如果你在同一段落中插入多个不同的音效，它们会同时播放。如果某个音效仍在播放时，玩家进入了另一个插入了该音效的段落，则第二次插入不会产生效果。（王洛木：也就是说，正在播放音效不会因为被另一段落中重复触发而重播或打断。）</p>
+<p>如果你需要重复播放一个音效，请多次定义它。你可以通过赋值整个对象来节省时间。例如：</p>
+<pre><code>sound.effect.爆炸.url: '爆炸.mp3'
+sound.effect.爆炸.description: '一场大爆炸'
+sound.effect.爆炸2: sound.effect.爆炸
 --
-The timer reads 0:00...
+计时器显示为 0:00…
 
-{sound effect: 'explosion'}
+{sound effect: '爆炸'}
 
-[[Oof.]]
+[[哦呼。]]
 </code></pre>
-<p>(Note the lack of quotation marks around <code>sound.effect.explosion</code> in the line that sets <code>sound.effect.explosion2</code>.)</p>
-<p>Assigning the <code>sound.effect.explosion2</code> <a href="multimedia/state/objects-and-lookups.html">object</a> wholesale, instead of setting it property-by-property, causes it to be a copy of <code>sound.effect.explosion</code>. If you ever change a property of <code>sound.effect.explosion</code>, <code>sound.effect.explosion2</code> will change too.</p>
-<p>And then, in the passage named <code>Oof.</code>, you’d write:</p>
-<pre><code>That wasn't so bad. Wait...
+<p>（请注意，在设置 <code>sound.effect.爆炸2</code> 的那一行中，<code>sound.effect.爆炸</code> 没有使用引号。）</p>
+<p>将 <code>sound.effect.爆炸2</code> <a href="multimedia/state/objects-and-lookups.html">对象</a>整体赋值，而不是逐属性设置，可以让它成为 <code>sound.effect.爆炸</code> 的一个副本。如果你之后更改了 <code>sound.effect.爆炸</code> 的某个属性，<code>sound.effect.爆炸2</code> 也会随之改变。</p>
+<p>接着，在名为<code>哦呼。</code>的段落中，你会写道：</p>
+<pre><code>这还不算太糟。等等……
 
-{sound effect: 'explosion2'}
+{sound effect: '爆炸2'}
 </code></pre>
-<h2 id="ambient-sound"><a class="header" href="#ambient-sound">Ambient Sound</a></h2>
-<p>The process of defining an ambient sound is very similar to defining a sound effect.</p>
-<pre><code>sound.ambient.forest.url: 'forest.mp3'
-sound.ambient.forest.description: 'midday forest sounds'
+<h2 id="环境音效ambient-sound"><a class="header" href="#环境音效ambient-sound">环境音效｜Ambient Sound</a></h2>
+<p>定义环境音效的过程与定义音效非常相似。</p>
+<pre><code>sound.ambient.森林.url: '森林.mp3'
+sound.ambient.森林.description: '中午的森林氛围声'
 --
-It's a beautiful day.
+完美的一天。
 </code></pre>
-<p>Similarly, you begin playing an ambient sound with an insert:</p>
-<pre><code>sound.ambient.forest.url: 'forest.mp3'
-sound.ambient.forest.description: 'midday forest sounds'
+<p>同样地，你可以通过插入 <code>{ambient sound}</code> 来开始播放环境音效。</p>
+<pre><code>sound.ambient.森林.url: '森林.mp3'
+sound.ambient.森林.description: '中午的森林氛围声'
 --
-{ambient sound: 'forest'}
+{ambient sound: '森林'}
 
-It's a beautiful day.
+完美的一天。
 
 </code></pre>
-<p>The only difference here is that the sound will fade in, and if there was already an ambient sound playing, the two will crossfade. The exact length of the fade is determined by the state variable <code>sound.transitionDuration</code>. It is a string in the same format that the <a href="multimedia/modifiers-and-inserts/delayed-text.html">after modifier</a> accepts.</p>
-<p>To stop playing all ambient sound, write <code>{no ambient sound}</code>.</p>
-<h2 id="controlling-sound-volume"><a class="header" href="#controlling-sound-volume">Controlling Sound Volume</a></h2>
-<p>To set the master sound volume for your story, change the state variable <code>sound.volume</code> to a decimal between 0 and 1. 0 is muted, and 1 is full volume. You can also temporarily mute all sound by setting <code>sound.mute</code> (note the lack of a D at the end) to <code>true</code>. The advantage of using <code>sound.mute</code> is that it allows you to toggle between no sound and a previously-set volume.</p>
-<p>You can also set a sound’s volume when playing it using an insert. Both of the inserts below begin playing a sound at half normal volume.</p>
-<pre><code>{sound effect: 'explosion', volume: 0.5}
-{ambient sound: 'forest', volume: 0.5}
+<p>唯一的区别在于，音效会淡入播放，如果已有环境音正在播放，两者会交叉淡出过渡。淡入淡出的具体时长由状态变量 <code>sound.transitionDuration</code> 决定。该变量为字符串格式，与 <a href="multimedia/modifiers-and-inserts/delayed-text.html">after 修饰符</a>接受的格式相同。</p>
+<p>若要停止播放所有环境音，请写入 <code>{no ambient sound}</code>。</p>
+<h2 id="控制音效音量controlling-sound-volume"><a class="header" href="#控制音效音量controlling-sound-volume">控制音效音量｜Controlling Sound Volume</a></h2>
+<p>要设置故事的主音量，可将状态变量 <code>sound.volume</code> 更改为 0 到 1 之间的小数。0 表示静音，1 表示最大音量。您也可以通过将 <code>sound.mute</code>（注意末尾没有字母 D）设为 <code>true</code> 来临时静音所有音效。使用 <code>sound.mute</code> 的优势在于，它允许您在静音状态与先前设置的音量之间切换。</p>
+<pre><code>{sound effect: '爆炸', volume: 0.5}
+{ambient sound: '森林', volume: 0.5}
 </code></pre>
-<h2 id="browser-autoplay-problems"><a class="header" href="#browser-autoplay-problems">Browser Autoplay Problems</a></h2>
-<p>Chapbook makes every effort to resume sound playback between play sessions, so that if you begin playing an ambient sound, it resumes whenever the player comes back to your story. However, this runs afoul of strict restrictions most browsers have regarding sound that immediately plays when a web page is loaded. Some browsers have a blanket ban on this, while others take into account a player’s behavior on the web site hosting your story–if a player has previously interacted a lot with the site, it may allow it, but the exact criteria for allowing it is often unclear.</p>
-<p>Playing sound after a player has followed a link or otherwise clicked or tapped a link in your story should always work, whatever a browser’s autoplay policy is.</p>
-<h2 id="manually-controlling-sound"><a class="header" href="#manually-controlling-sound">Manually Controlling Sound</a></h2>
-<p>You may also manually play sounds, either sound effects or ambient sound, by setting their <code>playing</code> property to <code>true</code>. This property automatically becomes <code>false</code> once an effect finishes playing, but will never change for ambient sound unless you use an <code>{ambient sound}</code> insert or set its <code>playing</code> property to <code>false</code> again.</p>
-<p>You can use this for more complex effects, such as layering ambient sounds; however, you <em>must</em> make sure to include appropriate descriptions for people who are unable to hear your audio. To do this, enclose the description inside <code>&lt;audio&gt;</code> and <code>&lt;/audio&gt;</code> like so:</p>
-<pre><code>sound.ambient.forest.playing: true
-sound.ambient.rain.playing: true
+<h2 id="浏览器自动播放问题browser-autoplay-problems"><a class="header" href="#浏览器自动播放问题browser-autoplay-problems">浏览器自动播放问题｜Browser Autoplay Problems</a></h2>
+<p>Chapbook 会尽力在游戏会话之间恢复音频播放，这样如果你开始播放环境音效，每当玩家返回你的故事时，音效都会自动继续。然而，这种做法与大多数浏览器对网页加载时立即播放声音的严格限制相冲突。部分浏览器会全面禁止此类行为，而另一些则会考虑玩家在托管你故事的网站上的行为记录——如果玩家之前在该网站有过频繁互动，浏览器可能会允许播放，但具体的允许标准往往并不明确。</p>
+<p>但是玩家在故事中点击或轻触链接后播放声音，无论浏览器的自动播放政策如何，这个操作都会终有效。</p>
+<h2 id="手动控制声音manually-controlling-sound"><a class="header" href="#手动控制声音manually-controlling-sound">手动控制声音｜Manually Controlling Sound</a></h2>
+<p>您也可以通过将音效或环境音的 <code>playing</code> 属性设置为 <code>true</code> 来手动播放声音。音效播放完毕后，该属性会自动变为 <code>false</code>，但环境音的播放属性除非您使用 <code>{ambient sound}</code> 插入或再次将其播放属性设为 <code>false</code>，否则不会改变。</p>
+<p>所以您可以将此用于更复杂的效果，例如叠加环境音；但必须<em>确保</em>为无法听到音频的人提供适当的描述。为此，请将描述内容置于<code>&lt;audio&gt;</code> 和 <code>&lt;/audio&gt;</code> 标签之间，如下所示：</p>
+<pre><code>sound.ambient.森林.playing: true
+sound.ambient.下雨.playing: true
 --
-You walk outside.
+你走到室外了了。
 
-&lt;audio&gt;Rainy forest background sound&lt;/audio&gt;
+&lt;audio&gt;雨林的背景音&lt;/audio&gt;
 </code></pre>
-<p>The text inside the will not be displayed ordinarily.</p>
+<p>其中的文本通常不会显示。</p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="视频video"><a class="header" href="#视频video">视频｜Video</a></h1>
-<h2 id="embedding-your-own-video"><a class="header" href="#embedding-your-own-video">Embedding Your Own Video</a></h2>
+<h2 id="嵌入您自己的视频embedding-your-own-video"><a class="header" href="#嵌入您自己的视频embedding-your-own-video">嵌入您自己的视频｜Embedding Your Own Video</a></h2>
 <aside data-hint="working">
-Chapbook doesn't yet support embedding your own video, but it will.
+Chapbook 目前尚不支持嵌入您自己的视频，但未来将会支持。
 </aside>
-<h2 id="embedding-a-youtube-video"><a class="header" href="#embedding-a-youtube-video">Embedding a YouTube Video</a></h2>
-<p>You’ve heard of <a href="https://youtube.com">YouTube</a>, right? To embed a YouTube video, use its URL with the <code>{embed YouTube video}</code> insert:</p>
-<pre><code>Tell me if you've seen this one before.
+<h2 id="嵌入-youtube-视频embedding-a-youtube-video"><a class="header" href="#嵌入-youtube-视频embedding-a-youtube-video">嵌入 YouTube 视频｜Embedding a YouTube Video</a></h2>
+<p>您听说过 <a href="https://youtube.com">YouTube</a> 吧？要嵌入 YouTube 视频，请使用其 URL 搭配 <code>{embed YouTube video}</code> 插入此功能：</p>
+<pre><code>告诉我你以前是否看过这个。
 
 {embed YouTube video: 'https://www.youtube.com/watch?v=9bZkp7q19f0'}
 </code></pre>
 <aside data-hint="working">
-For now, it's not possible to have a YouTube video start when a passage displays. The player will need to begin playback.
+目前尚无法实现当段落显示时 YouTube 视频自动开始播放。播放器仍需手动启动。
 </aside>
 <aside data-hint="working">
-Accessibility features for video will be added to a future release of Chapbook.
+视频的无障碍功能将在 Chapbook 的未来版本中添加。
 </aside>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="自定义"><a href="#自定义" class="header">自定义</a></h1>
@@ -1813,52 +1788,32 @@ Accessibility features for video will be added to a future release of Chapbook.
 <p>本节介绍如何在网页浏览器中自定义故事的外观和行为，包括颜色和字体样式。</p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="字体和颜色fonts-and-colors"><a class="header" href="#字体和颜色fonts-and-colors">字体和颜色｜Fonts and Colors</a></h1>
-<p>The easiest way to customize your story’s fonts and colors is with the <strong>Style</strong>
-backstage tab<sup class="footnote-reference" id="fr-1-1-12"><a href="#footnote-1-14">1</a></sup>, which sets values in the <code>config.style</code> object for you. As
-you make changes in that tab, your story’s appearance will automatically update,
-so you can easily experiment to find a look that fits your story. However,
-changes you make will not be permanently saved. The next time you test or play
-your story, it will revert back to its previous appearance.</p>
+<p>自定义故事字体与颜色的最简便方法是使用<em>样式</em>后台选项卡<sup class="footnote-reference" id="fr-1-1-12"><a href="#footnote-1-14">1</a></sup>，该选项卡会为您自动设置 <code>config.style</code> 对象中的值。当您在该选项卡中进行调整时，故事外观将实时更新，方便您轻松尝试不同风格以匹配故事基调。但请注意，此处所做的更改不会永久保存。下次测试或运行故事时，界面将恢复至先前的外观状态。</p>
 <aside data-hint="info">
-<p>The <strong>Style</strong> tab mentions theme and lets you switch between them. See <a href="#暗黑主题dark-theme">Dark Theme</a> for more information on what this does.</p>
+<p><strong>样式</strong>选项卡中提及了主题功能，并允许您在不同主题间切换。关于此功能的详细说明，请参阅<a href="#深色主题dark-theme">深色主题</a>文档。</p>
 
-<p>The most important thing to understand is that the text fields in the <strong>Style</strong> tab reflect the style of the current theme, and update when the theme changes.</p>
+<p>最重要的是要理解<strong>样式</strong>选项卡中的文本字段是反映当前主题的样式，并会在主题更改时更新。</p>
 
 </aside>
-<p>In order to make changes in the <strong>Style</strong> tab permanent, you must copy the code
-in the <strong>Config</strong> panel at the top of the tab into your starting passage’s vars
-section. (This passage is shown with a rocket-ship icon in Twine’s story map.)
-Clicking anywhere in the box the code sits in will automatically select all of
-it to make copying and pasting easy.</p>
-<p>Doing so will cause the appropriate variables to be set when your story first
-begins–which doesn’t mean that it has to be the only appearance your story
-takes on. You can change variables in the <code>config.style</code> object in a later
-passage’s vars section and your story’s appearance will change when the passage
-is visited. You could use this, for example, to denote a dream sequence or
-flashback.</p>
-<p>The other panels in the <strong>Style</strong> tab, <strong>Page</strong>, <strong>Header</strong>, and <strong>Footer</strong>, all
-have the same fields. As you might guess, <strong>Page</strong> sets the base style of your
-story and <strong>Header</strong> and <strong>Footer</strong> govern the areas above and below the main
-text. By default, Chapbook stories don’t have a header.</p>
+<p>若要使<strong>样式</strong>选项卡中的更改永久生效，必须将选项卡顶部<strong>配置</strong>面板中的代码复制到起始段落的变量部分。（该段落在 Twine 故事地图中显示为火箭图标。）点击代码所在框内的任意位置将自动全选所有内容，便于复制粘贴。</p>
+<p>这样做会在故事开始时设置相应的变量——但这并不意味着这是故事唯一的呈现方式。你可以在后续段落的变量部分更改 <code>config.style</code> 对象中的变量，当访问该段落时，故事的外观就会改变。例如，你可以利用这一点来表示梦境序列或闪回。</p>
+<p><strong>样式</strong>选项卡中的其他面板，<strong>页面</strong>、<strong>页眉</strong>和<strong>页脚</strong>，都包含相同的字段。正如你可能猜到的，<strong>页面</strong>设置故事的基础样式，而<strong>页眉</strong>和<strong>页脚</strong>则控制主文本上方和下方的区域。默认情况下，Chapbook 故事没有页眉。</p>
 <div class="page-diagram">
 	
-<div class="header">header</div>
+<div class="header">页眉</div>
 
 	
-<div class="content">main content</div>
+<div class="content">主要内容</div>
 
 	
-<div class="footer">footer</div>
+<div class="footer">页脚</div>
 
 </div>
 
-<p>The values you set for page, header, and footer styles inherit from each other.
-That means that if a header or footer style value isn’t set, it will use the
-corresponding page value instead. If a page value isn’t set either, Chapbook’s
-default style will be used instead.</p>
-<h2 id="setting-text-style"><a class="header" href="#setting-text-style">Setting Text Style</a></h2>
+<p>您为页面、页眉和页脚样式设置的值会相互继承。 这意味着如果页眉或页脚样式值未设置，则会使用对应的页面值。如果页面值也未设置，则会使用 Chapbook 的默认样式。</p>
+<h2 id="设置文本样式setting-text-style"><a class="header" href="#设置文本样式setting-text-style">设置文本样式｜Setting Text Style</a></h2>
 <aside data-hint="info">
-Applies to:
+适用于：
 <ul>
 <li><code>config.style.page.font</code></li>
 
@@ -1873,47 +1828,26 @@ Applies to:
 <li><code>config.style.page.header.link.active.font</code></li>
 
 
-<p>Chapbook uses a concise notation for specifying text style. Below is a simple
-example:</p>
+<p>Chapbook 使用一种简洁的符号来指定文本样式。下面是一个简单的例子：</p>
 <pre><code>Palatino 18
 </code></pre>
-<p>This sets a Palatino typeface at 18 pixels tall.<sup class="footnote-reference" id="fr-2-1-6"><a href="#footnote-2-6">2</a></sup> But in actual use, you
-ought to use something like this instead:</p>
+<p>这将设置一个 18 像素高的 Palatino 字体。<sup class="footnote-reference" id="fr-2-1-6"><a href="#footnote-2-6">2</a></sup>但在实际使用中，你应该使用类似这样的方式：</p>
 <pre><code>Palatino/serif 18
 </code></pre>
-<p>Slashes separate alternate typefaces in what is called a <em>font stack</em>. Before
-the advent of web fonts, font stacks were a crucial part of web design. At that
-time, web browsers were only capable of displaying fonts installed in the
-operating system, so designers had to specify alternate typefaces in order to
-create a consistent appearance across different operating systems.</p>
-<p>In our current times, font stacks affect more what a page looks like at first
-glance–typically, text appears immediately in a system font, then in a web font
-after it finishes loading. (See <a href="#外部网页字体external-web-fonts">External Web Fonts</a> for
-details on how to use a web font with Chapbook.) But there are players who will
-have disabled web fonts, either out of personal preference or a need to save
-network bandwidth, and it’s good practice to design your story to accommodate
-that.</p>
-<p>The example above indicates that if a typeface named Palatino isn’t available to
-the player’s web browser, <code>serif</code> signals it should fall back to a generic serif
-font.<sup class="footnote-reference" id="fr-3-1-2"><a href="#footnote-3-2">3</a></sup> If you’d like to set your story in Helvetica, you might use:</p>
+<p>斜杠分隔了所谓的<em>字体栈</em>中的备用字体。在网络字体出现之前，字体栈是网页设计的关键组成部分。那时，网页浏览器只能显示操作系统中已安装的字体，因此设计师必须指定备用字体，以确保在不同操作系统上呈现一致的外观。</p>
+<p>在我们当前的时代，字体栈更多影响的是页面第一眼的外观——通常，文本会先以系统字体立即显示，然后在网络字体加载完成后切换。（关于如何在Chapbook中使用网络字体的详细信息，请参阅<a href="#外部网页字体external-web-fonts">外部网络字体</a>。）但有些用户可能会出于个人偏好或节省网络带宽的需要而禁用网络字体，因此将你的故事设计成能适应这种情况是一种良好的实践。</p>
+<p>上面的例子表明，如果玩家的网页浏览器没有名为 Palatino 的字体，<code>serif</code> 这个信号会指示其回退到通用的衬线字体。<sup class="footnote-reference" id="fr-3-1-2"><a href="#footnote-3-2">3</a></sup>如果你想将故事文本设置为 Helvetica 字体，可以使用：</p>
 <pre><code>Helvetica/Arial/sans-serif 14
 </code></pre>
-<p>Many people viewing your story using a Windows computer won’t have Helvetica
-available, but they almost certainly will have Arial, Microsoft’s <a href="https://ilovetypography.com/2007/10/06/arial-versus-helvetica/">Helvetica
-competitor</a>, and if for some reason they have neither, the
-story will use whatever sans serif font is available.</p>
-<p>When specifying typefaces that have spaces in their name, you don’t need to do
-anything special:</p>
+<p>许多使用 Windows 电脑查看你故事的读者可能没有 Helvetica 字体，但他们几乎肯定会有 Arial——这是微软开发的 Helvetica 竞品字体。如果出于某种原因两者都没有，故事将使用任何可用的无衬线字体。</p>
+<p>当指定名称中包含空格的字体时，你无需进行任何特殊处理：</p>
 <pre><code>Times/Times New Roman/serif 20
 </code></pre>
-<p>You can also modify a font with the words <code>bold</code>, <code>italic</code>, <code>underline</code> or
-<code>small caps</code>. If you’d like to use multiple styles, put spaces between them:</p>
+<p>你还可以使用单词 <code>bold</code>（加粗），<code>italic</code>（斜体），<code>underline</code>（下划线）或 <code>small caps</code>（小型大写字母）来修改字体样式。如果想同时使用多种样式，请在它们之间用空格分隔：</p>
 <pre><code>Palatino 18 bold italic
 </code></pre>
-<p>There is a special font style named <code>regular</code>, which removes any bold, italic,
-underline, or small-cap styling that the font would normally inherit.</p>
-<p>Font styles <em>must</em> be entered in all-lowercase. This is because you can omit
-parts of the declaration. All of the below are valid font notations:</p>
+<p>有一种特殊的字体样式名为 <code>regular</code>（常规），它会移除字体通常会继承的任何粗体、斜体、下划线或小型大写字母样式。</p>
+<p>字体样式<em>必须</em>全部以小写字母输入。这是因为你可以省略声明的部分内容。以下所有都是有效的字体表示法：</p>
 <ul>
 <li><code>Palatino</code></li>
 <li><code>18</code></li>
@@ -1921,13 +1855,13 @@ parts of the declaration. All of the below are valid font notations:</p>
 <li><code>Palatino bold</code></li>
 <li><code>18 small caps</code></li>
 </ul>
-<p>The omitted parts are inherited as described above.</p>
+<p>省略的部分将按照上述描述进行继承。</p>
 <aside data-hint="info">
-The font size you specify may be increased by Chapbook. See <a href="#字体缩放font-scaling">Font Scaling</a> for more information.
+你指定的字体大小可能会被 Chapbook 增加。更多信息请参阅<a href="#字体缩放font-scaling">字体缩放</a>。
 </aside>
-<h2 id="colors"><a class="header" href="#colors">Colors</a></h2>
+<h2 id="颜色colors"><a class="header" href="#颜色colors">颜色｜Colors</a></h2>
 <aside data-hint="info">
-Applies to:
+适用于：
 <ul>
 <li><code>config.style.backdrop</code></li>
 
@@ -1952,11 +1886,8 @@ Applies to:
 <li><code>config.style.page.link.active.lineColor</code></li>
 
 
-<p>Although you don’t have to use it, Chapbook includes a color palette called
-<a href="https://www.reasonable.work/colors/">Reasonable Colors</a> created by Matthew Howell. Reasonable
-Colors is designed to make designing accessible and attractive color
-combinations easy.</p>
-<p>There are 25 hues, and each hue has 6 shades:</p>
+<p>虽然并非必须使用，但 Chapbook 包含一个名为“<a href="https://www.reasonable.work/colors/">合理色彩</a>“的调色板，由 Matthew Howell 创建。合理色彩旨在让设计既易于查看又美观的色彩组合变得简单。</p>
+<p>共有 25 种色调，每种色调有 6 种深浅：</p>
 <div class="swatch-row">
 <div class="swatch" style="background-color: rgb(246, 246, 246);">gray-1</div>
 
@@ -2332,30 +2263,13 @@ combinations easy.</p>
 
 </div>
 
-<p>To use a particular shade, enter the name in its box, e.g. <code>yellow-6</code>. To ensure
-that text has enough color contrast, choose two shades that have at least a
-numerical difference of 3. That is, <code>yellow-6</code> on a <code>yellow-3</code> background has
-sufficient contrast, but <code>red-5</code> on <code>red-3</code> doesn’t. The <a href="https://www.reasonable.work/colors/">Reasonable
-Colors</a> site also has suggestions on colors that will
-complement a given hue–choose a hue to see detailed information–but you don’t
-have to follow these suggestions, of course.</p>
-<p>You can also use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Applying_color#How_to_describe_a_color">any other color notation</a> that web browsers
-understand, from the traditional hex triplet notation (e.g. <code>#0b7285</code>) to more
-modern ones, such as <code>hsla(0%, 65%, 48%, 0.75)</code>.</p>
-<p>When setting colors in <code>config</code>, often you can specify both a background and
-foreground. For instance, you can set <code>config.style.page.color</code> to
-<code>'orange-4 on orange-1'</code>. However, when specifying a border color, for instance
-<code>config.style.page.link.lineColor</code>, only the foreground is used.</p>
-<p>As with fonts, you can omit parts of a color declaration. Setting
-<code>config.style.page.link.color</code> to <code>'on blue-3'</code> causes links to use the page’s
-foreground color, whatever it may be, but use a medium blue as background.</p>
-<h2 id="open-color-deprecated"><a class="header" href="#open-color-deprecated">Open Color (deprecated)</a></h2>
-<p>Version 1 of Chapbook included a different color palette called <a href="https://yeun.github.io/open-color/">Open
-Color</a>. You can continue to use it, but this palette will be removed
-in version 3 of Chapbook. To continue to use these colors, add <code>oc-</code> in front of
-their name: i.e. <code>oc-red-6</code> or <code>oc-gray</code>.</p>
-<p>The full list of hues and shades available in Open Color is available on <a href="https://yeun.github.io/open-color/">its
-project web site</a>.</p>
+<p>要使用特定色调，请在对应框中输入名称，例如 <code>yellow-6</code>。为确保文本具有足够的色彩对比度，请选择数值差异至少为 3 的两种色调。也就是说，<code>yellow-6</code> 在 <code>yellow-3</code> 背景上具有足够的对比度，但 <code>red-5</code> 在 <code>red-3</code> 背景上则不然。“<a href="https://www.reasonable.work/colors/">合理色彩</a>”网站还提供了关于如何搭配特定色调的色彩建议——选择一种色调即可查看详细信息——当然，您r是否遵循这些建议只取决于您。</p>
+<p>您也可以使用任何其他网络浏览器支持的<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Applying_color#How_to_describe_a_color">颜色注释法</a>，从传统的十六进制三元组表示法（例如 <code>#0b7285</code>）到更现代的表示法，例如 <code>hsla(0%, 65%, 48%, 0.75)</code>。</p>
+<p>在 <code>config</code>（配置）中设置颜色时，通常可以同时指定背景色和前景色。例如，您可以将 <code>config.style.page.color</code> 设置为 <code>'orange-4 on orange-1'</code>。然而，在指定边框颜色时，例如 <code>config.style.page.link.lineColor</code>，则仅使用前景色。</p>
+<p>与字体一样，您可以省略颜色声明的部分内容。将 <code>config.style.page.link.color</code> 设置为 <code>'on blue-3'</code> 会使链接使用页面的前景色（无论其具体颜色如何），但使用中等蓝色作为背景。</p>
+<h2 id="open-color已弃用open-color-deprecated"><a class="header" href="#open-color已弃用open-color-deprecated">Open Color（已弃用）｜Open Color (deprecated)</a></h2>
+<p>Chapbook 版本 1 包含一个名为开放色彩的不同调色板。您可以继续使用它，但此调色板将在 Chapbook 版本 3 中被移除。若要继续使用这些颜色，请在它们的名称前添加 <code>oc-</code>，例如：<code>oc-red-6</code> 或 <code>oc-gray</code>。</p>
+<p>Open Color 中可用的完整色调和色度列表可在<a href="https://yeun.github.io/open-color/">其项目网站</a>上找到。</p>
 <style>
 .page-diagram {
 	width: 20vw;
@@ -2408,109 +2322,76 @@ project web site</a>.</p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-14">
-<p>To review, launching your story with Twine’s <strong>Test</strong> button will cause the
-backstage view to appear, including the <strong>Style</strong> tab. <a href="#fr-1-1-12">↩</a></p>
+<p>回顾一下，使用 Twine 的<strong>测试</strong>按钮启动你的故事可以让后台视图出现，其中包括<strong>样式</strong>选项卡。 <a href="#fr-1-1-12">↩</a></p>
 </li>
 <li id="footnote-2-6">
-<p>If you are familiar with
-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">CSS units</a>, you
-can also use them, e.g. <code>Palatino 1rem</code> or <code>Palatino 25%</code>. <a href="#fr-2-1-6">↩</a></p>
+<p>如果你熟悉 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">CSS 单位</a>，也可以使用它们，例如 <code>Palatino 1rem</code> 或 <code>Palatino 25%</code>。 <a href="#fr-2-1-6">↩</a></p>
 </li>
 <li id="footnote-3-2">
-<p>What’s a serif? <a href="https://en.wikipedia.org/wiki/Serif">Wikipedia</a> aptly
-answers. <a href="#fr-3-1-2">↩</a></p>
+<p>什么是衬线字体？<a href="https://en.wikipedia.org/wiki/Serif">维基百科</a>给出了恰当的回答。 <a href="#fr-3-1-2">↩</a></p>
 </li>
 </ol>
 </ul>
 </aside></ul>
 </aside><div style="break-before: page; page-break-before: always;"></div>
 <h1 id="外部网页字体external-web-fonts"><a class="header" href="#外部网页字体external-web-fonts">外部网页字体｜External Web Fonts</a></h1>
-<p>Creating a good font stack is difficult because there are very few typefaces you can count on a majority of your players having installed. Fortunately, you aren’t limited to what your players happen to have installed–instead, you can use web fonts.</p>
-<h2 id="using-google-fonts"><a class="header" href="#using-google-fonts">Using Google Fonts</a></h2>
-<p>Google provides a wide variety of freely-usable fonts through their <a href="https://fonts.google.com">Google Fonts</a> service. To use Google Fonts in your story, first find the embed code for the families you wish to use:</p>
+<p>构建一个良好的字体栈很困难，因为你能指望大多数玩家已安装的字体种类非常少。幸运的是，你并不局限于玩家恰好安装的字体——相反，你可以使用网页字体。</p>
+<h2 id="使用-google-fontsusing-google-fonts"><a class="header" href="#使用-google-fontsusing-google-fonts">使用 Google Fonts｜Using Google Fonts</a></h2>
+<p>Google 通过其 <a href="https://fonts.google.com">Google Fonts</a> 服务提供了多种可免费使用的字体。要在故事中使用 Google Fonts，首先找到您希望使用的字体的嵌入代码：</p>
 <p style="text-align: center">
 <img src="customization/google-font.png" width="300" height="198" alt="Google Fonts screenshot">
 </p>
 
-<p>Copy the embed code that Google Fonts offers you, i.e. <code>&lt;link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"&gt; </code>, and set the variable <code>config.style.googleFont</code> to it in your first passage. You can then use the font name anywhere in the rest of <code>config.style</code> as usual:</p>
+<p>复制 Google Fonts 提供的嵌入代码，例如 <code>&lt;link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"&gt;</code>，并在您的第一个段落中将其赋值给变量 <code>config.style.googleFont</code>。然后，您就可以像往常一样在 <code>config.style</code> 的其他任何地方使用该字体名称：</p>
 <pre><code>config.style.googleFont: '&lt;link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"&gt;'
 config.style.page.font: 'Open Sans/sans-serif 18'
 --
-Welcome aboard the U.S.S. Hood.
+欢迎登上 U.S.S. Hood。
 </code></pre>
-<p>Note that because <code>config.style.googleFont</code> is a string, you must put single quotes around its value. (It’s much easier to type single quotes here, since the embed code has double quotes in it.)</p>
-<h2 id="using-adobe-typekit-fonts"><a class="header" href="#using-adobe-typekit-fonts">Using Adobe Typekit Fonts</a></h2>
-<p>Adobe Typekit serves a similar purpose to Google Fonts, but most of its collection requires an Adobe Creative Cloud subscription to use. That said, it does permit free use of some of its font families.</p>
-<p>Once you’ve assembled a kit–Adobe’s terminology for one or more font families you plan to use–find its embed code in Typekit.</p>
+<p>请注意，由于 <code>config.style.googleFont</code> 是一个字符串，您必须在其值周围加上单引号。（在这里输入单引号会比较好，因为嵌入代码中已经包含双引号。）</p>
+<h2 id="使用-adobe-typekit-字体using-adobe-typekit-fonts"><a class="header" href="#使用-adobe-typekit-字体using-adobe-typekit-fonts">使用 Adobe Typekit 字体｜Using Adobe Typekit Fonts</a></h2>
+<p>Adobe Typekit 与 Google Fonts 功能类似，但其字体库中的大部分字体需要订阅 Adobe Creative Cloud 才能使用。不过，它也允许免费使用部分字体家族。</p>
+<p>在 Typekit 中创建好字体套件（Adobe 对计划使用的一个或多个字体家族的术语）后，找到其嵌入代码。</p>
 <p style="text-align: center">
 <img src="customization/typekit-font.png" width="300" height="152" alt="Typekit screenshot">
 </p>
 
-<p>Copy the default code, i.e. <code>&lt;link rel="stylesheet" href="https://use.typekit.net/abcdefgh.css"&gt;</code>, and set the variable <code>config.style.typekitFont</code> to it in your first passage. As with Google Fonts, you can then use the font name anywhere in the rest of <code>config.style</code>.</p>
+<p>复制默认代码，比如 <code>&lt;link rel="stylesheet" href="https://use.typekit.net/abcdefgh.css"&gt;</code>，并将其赋值给变量 <code>config.style.typekitFont</code>，放在你的第一个段落中。与 Google Fonts 一样，之后你就可以在 <code>config.style</code> 的其他任何地方使用该字体名称。</p>
 <pre><code>config.style.typekitFont: '&lt;link rel="stylesheet" href="https://use.typekit.net/abdefgh.css"&gt;'
 config.style.page.font: 'Open Sans/sans-serif 18'
 --
-Welcome aboard the U.S.S. Hood.
+欢迎登上 U.S.S. Hood。
 </code></pre>
-<h2 id="other-web-fonts"><a class="header" href="#other-web-fonts">Other Web Fonts</a></h2>
-<p>You can also use web fonts separately from a cloud service. Please make sure to check the license for the font; it’s not uncommon, for example, to be required to pay a certain fee to use a font for personal use, but a different for use on the web, or in an app.</p>
-<p>To include a font directly by URL, add two properties to <code>config.style.fonts</code>:</p>
+<h2 id="其他网络字体other-web-fonts"><a class="header" href="#其他网络字体other-web-fonts">其他网络字体｜Other Web Fonts</a></h2>
+<p>你也可以从云服务单独使用网络字体。请务必检查字体的许可证；例如，通常需要支付一定费用才能将字体用于个人用途，但在网页或应用程序中使用则可能需要支付不同的费用。</p>
+<p>要通过 URL 直接包含字体，请向 <code>config.style.fonts</code> 添加两个属性：</p>
 <pre><code>config.style.fonts.leagueSpartan.url: 'league-spartan.woff2'
 config.style.fonts.leagueSpartan.name: 'League Spartan'
 config.style.page.font: 'League Spartan/sans-serif 16'
 --
-It is the year 1969, and you are walking on the moon.
+这是 1969 年，你正在月球上行走。
 </code></pre>
-<p>Chapbook can’t infer the name of the font from the <code>url</code> property, so you must tell it what it is.</p>
+<p>Chapbook 无法从 <code>url</code> 属性推断字体名称，因此您必须明确告知它是什么。</p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="字体缩放font-scaling"><a class="header" href="#字体缩放font-scaling">字体缩放｜Font Scaling</a></h1>
-<p>By default, Chapbook scales the font size of text based on the width of the
-<em>viewport</em>: the container in which the page is viewed. On a desktop computer,
-the viewport is a browser window, which can be resized by the player as much as
-they like. On a tablet or mobile device, the viewport is typically the entire
-screen.</p>
-<p>Chapbook will only ever increase the font size you set on text. It will never
-make it smaller. The intention is to keep text at a comfortable size regardless
-of the size of the viewport, and to prevent it from appearing in an unnaturally
-narrow column in larger viewports.</p>
-<p>You can customize Chapbook’s font scaling or disable it entirely, so that text
-is always exactly at the size you specify.</p>
-<h2 id="enabling-or-disabling-scaling"><a class="header" href="#enabling-or-disabling-scaling">Enabling or Disabling Scaling</a></h2>
-<p>To disable font scaling, set <code>config.style.fontScaling.enabled</code> to <code>false</code>. This
-takes effect immediately. To re-enable font scaling, set this variable to
-<code>true</code>.</p>
-<p>Remember that players also have the ability to scale font sizes by changing
-browser settings. You can’t prevent this from occurring–nor should you want to,
-since often players do this to make text easier to read.</p>
-<h2 id="controlling-scaling"><a class="header" href="#controlling-scaling">Controlling Scaling</a></h2>
-<p>Apart from <code>config.style.fontScaling.enabled</code>, there are two variables that must
-be set for Chapbook to scale font sizes that control exactly how scaling occurs:</p>
-<p><code>config.style.fontScaling.baseViewportWidth</code> is the width, in pixels, of the
-viewport when the font size as set in <code>config</code> variables is used exactly. In
-other words, at any width wider than this, font sizes begin to increase. This
-must be a number like <code>1280</code>, not <code>'1280px'</code>. By default, this is <code>1000</code>.</p>
-<p><code>config.style.fontScaling.addAtDoubleWidth</code> is the amount of pixels that is
-added to font sizes when the viewport is exactly twice as wide as what is in
-<code>config.style.fontScaling.baseViewportWidth</code>. Like <code>baseViewportWidth</code>, this
-must be a number like <code>10</code>, not <code>'10px'</code>. You can’t increase the font size by
-any other unit but pixels. <code>addAtDoubleWidth</code> defines the ratio by which font
-sizes increase. By default, this is set to <code>6</code>.</p>
-<p>There’s a third, optional variable: <code>config.style.fontScaling.maximumSize</code>. This
-is the maximum size a font will be regardless of how wide the viewport becomes.
-Unlike the other variables, this is a string. It should be a CSS length
-measurement, including the unit, like <code>'36px'</code> or <code>'2rem'</code>. by default, this is
-unset.</p>
-<p>If you don’t set a <code>maximumSize</code>, then fonts will be scaled at all viewport
-widths.</p>
+<p>默认情况下，Chapbook 会根据<em>视口</em>（即查看页面的容器）的宽度来缩放文本的字体大小。在台式电脑上，视口是浏览器窗口，玩家可以随意调整其大小。在平板电脑或移动设备上，视口通常是整个屏幕。</p>
+<p>Chapbook 只会增大您为文本设置的字体大小，绝不会使其变小。其目的是无论视口大小如何，都保持文本处于舒适的尺寸，并防止在较大的视口中文本出现在不自然的狭窄列中。</p>
+<p>您可以自定义 Chapbook 的字体缩放比例，或完全禁用此功能，使文本始终精确保持您指定的大小。</p>
+<h2 id="启用或禁用缩放功能enabling-or-disabling-scaling"><a class="header" href="#启用或禁用缩放功能enabling-or-disabling-scaling">启用或禁用缩放功能｜Enabling or Disabling Scaling</a></h2>
+<p>要禁用字体缩放，请将 <code>config.style.fontScaling.enabled</code> 设置为 <code>false</code>。此设置会立即生效。若要重新启用字体缩放，请将此变量设置为 <code>true</code>。</p>
+<p>请注意，玩家也可以通过更改浏览器设置来调整字体大小。您无法阻止这种情况发生——也不应试图阻止，因为玩家通常这样做是为了让文本更易于阅读。</p>
+<h2 id="控制缩放controlling-scaling"><a class="header" href="#控制缩放controlling-scaling">控制缩放｜Controlling Scaling</a></h2>
+<p>除了 <code>config.style.fontScaling.enabled</code> 之外，还有两个变量必须设置，以便 Chapbook 能够缩放字体大小，这两个变量精确控制着缩放的发生方式：</p>
+<p><code>config.style.fontScaling.baseViewportWidth</code> 是一个以像素为单位的视口宽度值，当视口达到此宽度时，将完全使用 <code>config</code> 变量中设置的字体大小。换言之，在任何比此宽度更宽的视口下，字体大小将开始增大。此值必须是一个数字，如 <code>1280</code>，而不是 <code>'1280px'</code>。默认情况下，此值为 <code>1000</code>。</p>
+<p><code>config.style.fontScaling.addAtDoubleWidth</code> 是一个像素值，当视口宽度恰好是 <code>config.style.fontScaling.baseViewportWidth</code> 中数值的两倍时，此值将被添加到字体大小上。与 <code>baseViewportWidth</code> 类似，此值必须是一个数字，如 <code>10</code>，而不是 <code>'10px'</code>。字体大小的增加只能以像素为单位，不能使用其他单位。<code>addAtDoubleWidth</code> 定义了字体大小增加的比率。默认情况下，此值设置为 <code>6</code>。</p>
+<p>还有第三个可选变量：<code>config.style.fontScaling.maximumSize</code>。这是无论视口变得多宽，字体能达到的最大尺寸。与其他变量不同，这是一个字符串。它应该是一个包含单位的 CSS 长度值，例如 <code>'36px'</code> 或 <code>'2rem'</code>。默认情况下，此变量未设置。</p>
+<p>如果你不设置 <code>maximumSize</code>（最大值），那么字体将在所有视口宽度下进行缩放。</p>
 <aside data-hint="info">
-There is no <code>minimumSize</code> setting because Chapbook never scales fonts smaller than what is originally set. That is, if you set <code>config.style.page.font</code> to <code>'Helvetica 18'</code>, the smallest the body text will ever be is 18 pixels.
+没有 <code>minimumSize</code>（最小值）设置，因为 Chapbook 永远不会将字体缩放得比最初设置的尺寸更小。也就是说，如果你将 <code>config.style.page.font</code> 设置为 <code>'Helvetica 18'</code>，那么正文文本的最小尺寸将始终是 18 像素。
 </aside>
-<p>If any of these variables are set to incorrect types, like
-<code>config.style.fontScaling.baseViewportWidth</code> being set to <code>'blue'</code>, then
-Chapbook will not perform any font scaling.</p>
-<h2 id="an-example"><a class="header" href="#an-example">An Example</a></h2>
-<p>These variables can be a little abstract. Let’s work through an example. We’ll
-assume that the player’s browser settings don’t increase or decrease font sizes.</p>
+<p>如果这些变量中的任何一个被设置为错误的类型，例如 <code>config.style.fontScaling.baseViewportWidth</code> 被设置为 <code>'blue'</code>，那么 Chapbook 将不会执行任何字体缩放。</p>
+<h2 id="一个示例an-example"><a class="header" href="#一个示例an-example">一个示例｜An Example</a></h2>
+<p>这些变量可能有些抽象。让我们通过一个示例来理解。我们假设玩家的浏览器设置没有增大或减小字体大小。</p>
 <pre><code>config.page.font: 'Helvetica 20'
 config.style.fontScaling.baseViewportWidth: 1000
 config.style.fontScaling.addAtDoubleWidth: 5
@@ -2519,53 +2400,53 @@ config.style.fontScaling.maximumSize: '30px'
 <div class="table-wrapper">
 <table>
 <thead>
-<tr><th>When the viewport width is…</th><th>The font size is…</th></tr>
+<tr><th>当视口宽度为…</th><th>字体大小为…</th></tr>
 </thead>
 <tbody>
-<tr><td>1000 pixels and narrower</td><td>20 pixels. The original size is used.</td></tr>
-<tr><td>1000-2000 pixels</td><td>Scaled linearly from 20 pixels to 25 pixels.</td></tr>
-<tr><td>2000 pixels exactly</td><td>25 pixels: the original size plus the amount of pixels set in <code>addAtDoubleWidth</code>.</td></tr>
-<tr><td>2000-3000 pixels</td><td>Scaled linearly from 25 pixels to 30 pixels.</td></tr>
-<tr><td>3000 pixels and wider</td><td>30 pixels. It’s clamped by <code>maximumSize</code>.</td></tr>
+<tr><td>1000 p像素及以下</td><td>20 像素。使用原始尺寸。</td></tr>
+<tr><td>1000-2000 像素</td><td>从 20 像素线性缩放到 25 像素。</td></tr>
+<tr><td>精确为 2000 像素</td><td>25 像素：原始尺寸加上在 <code>addAtDoubleWidth</code> 中设置的像素量。</td></tr>
+<tr><td>2000-3000 像素</td><td>从 25 像素线性缩放到 30 像素。</td></tr>
+<tr><td>3000 像素及更宽</td><td>30 像素。它受到 <code>maximumSize</code> 的限制。</td></tr>
 </tbody>
 </table>
 </div>
-<p>Below is a visual representation of this.</p>
+<p>以下是此内容的视觉呈现。</p>
 <div style="text-align: center; background: white">
 <img src="customization/font-scaling.svg" alt="" height="337" width="350">
 </div>
 
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="页面风格page-style"><a class="header" href="#页面风格page-style">页面风格｜Page Style</a></h1>
-<p>On sufficiently wide web browser windows, Chapbook will add horizontal margins around the text of your story so that it’s comfortable to read. The exact width of the text column is based upon the font size that’s set in <code>config.style.page.font</code>. You can control the appearance around the text through several variables.</p>
-<p>First, the variable <code>config.style.page.style.border</code> takes one of several possible values:</p>
+<h1 id="页面样式page-style"><a class="header" href="#页面样式page-style">页面样式｜Page Style</a></h1>
+<p>在足够宽的网页浏览器窗口中，Chapbook 会在故事文本周围添加水平边距，以提供舒适的阅读体验。文本栏的确切宽度基于 <code>config.style.page.font</code> 中设置的字体大小。您可以通过多个变量来控制文本周围的外观。</p>
+<p>首先，变量 <code>config.style.page.style.border</code> 接受以下几个可能的值之一：</p>
 <ul>
-<li><code>'none'</code> creates no visible border around the page content.</li>
-<li><code>'thin-line'</code> and <code>'thick-line'</code> create flat borders around the content.</li>
-<li><code>'shadow'</code> adds a drop shadow around the content.</li>
+<li><code>'none'</code> 会在页面内容周围创建不可见的边框。</li>
+<li><code>'thin-line'</code> 和 <code>'thick-line'</code> 会在内容周围创建扁平边框。</li>
+<li><code>'shadow'</code> 会在内容周围添加投影效果。</li>
 </ul>
-<p>Chapbook’s default appearance is <code>'shadow'</code>.</p>
-<p>If you use <code>'thin-line'</code> or <code>'thick-line'</code>, you can specify the color of the line using the variable <code>config.style.page.style.borderColor</code>. This should be set to a single <a href="#colors">color</a>.</p>
-<p>The variable <code>config.style.backdrop</code> sets the <a href="#colors">color</a> of the area around the text content. On smaller browser windows (especially mobile devices), this area is not visible, however.</p>
-<p>When the story shows a new passage, it creates a transition between text based on what is set in the <code>config.body.transition.name</code> variable:</p>
+<p>Chapbook 的默认外观是 <code>'shadow'</code>（阴影）。</p>
+<p>若使用 <code>'thin-line'</code> 或 <code>'thick-line'</code>，可通过变量 <code>config.style.page.style.borderColor</code> 来指定线条颜色。该值应设置为单一<a href="#colors">颜色</a>。</p>
+<p>变量 <code>config.style.backdrop</code> 用于设置文本内容周围区域的背景<a href="#colors">颜色</a>。但在较小的浏览器窗口（尤其是移动设备）中，此区域不可见。</p>
+<p>当故事显示新段落时，会根据 <code>config.body.transition.name</code> 变量中的设置，在文本之间创建过渡效果：</p>
 <ul>
-<li><code>'crossfade'</code> causes the old text to fade out at the same time that the new text fades in</li>
-<li><code>'fadeInOut'</code> causes the old text to fade out, then the new text to fade in</li>
-<li><code>'none'</code> causes the new text to replace the old text immediately</li>
+<li><code>'crossfade'</code> 会使旧文本淡出的同时新文本淡入</li>
+<li><code>'fadeInOut'</code> 会使旧文本淡出，然后新文本再淡入</li>
+<li><code>'none'</code> 会使新文本立即替换旧文本</li>
 </ul>
 <aside data-hint="info">
-<p>The <code>'crossfade'</code> and <code>'fadeInOut'</code> transitions require that the player's web browser supports the View Transitions API. If it doesn't, Chapbook will use the <code>'none'</code> transition instead.
+<p><code>'crossfade'</code> 和 <code>'fadeInOut'</code> 过渡效果要求玩家的网页浏览器支持视图过渡 API。如果不支持，Chapbook 将改用 <code>'none'</code> 过渡效果。
 
-<p>Chapbook’s default transition is <code>'crossfade'</code>.</p>
-<p>If you use <code>'crossfade'</code> or <code>'fadeInOut'</code>, you can control how long the transition takes by setting <code>config.body.transition.duration</code>, which should be a string in the same format that the <a href="customization/text-and-links/modifiers-and-delayed-text.html">after modifer</a> accepts. Remember that it doesn’t understand decimals, so if you’d like a transition to take half a second, set <code>config.page.transition.duration</code> to <code>'500ms'</code>. Also keep in mind that the duration is the duration of the complete transition–a <code>'crossfade'</code> and <code>'fadeInOut'</code> transition with the same duration might look as though they last different amounts of time, as the <code>'fadeInOut'</code> has two steps.</p>
-<p>Finally, Chapbook vertically centers text inside the page by default. To change this, set <code>config.style.page.verticalAlign</code> to either <code>'top'</code>, <code>'center'</code>, or <code>'bottom'</code>.</p>
+<p>Chapbook 的默认过渡效果是 <code>'crossfade'</code>。</p>
+<p>如果你使用 <code>'crossfade'</code> 或 <code>'fadeInOut'</code> 效果，可以通过设置 <code>config.body.transition.duration</code> 来控制过渡时长，该值应为与 <a href="customization/text-and-links/modifiers-and-delayed-text.html">after 修饰符</a>接受的格式相同的字符串。请注意，它不支持小数，因此如果你希望过渡持续半秒，请将 <code>config.page.transition.duration</code> 设置为 <code>'500ms'</code>。另外要记住，持续时间是指完整过渡的时长——相同持续时间的“交叉淡入淡出”和“淡入淡出”过渡可能看起来持续时间不同，因为“淡入淡出”包含两个步骤。</p>
+<p>最后，Chapbook 默认将页面内的文本垂直居中。要更改此设置，请将 <code>config.style.page.verticalAlign</code> 设置为 <code>'top'</code>（置顶）, <code>'center'</code>（居中）, 或 <code>'bottom'</code>（置底）。</p>
 </p>
 </aside><div style="break-before: page; page-break-before: always;"></div>
 <h1 id="页眉和页脚the-header-and-footer"><a class="header" href="#页眉和页脚the-header-and-footer">页眉和页脚｜The Header and Footer</a></h1>
-<h2 id="content"><a class="header" href="#content">Content</a></h2>
-<p>Normally, Chapbook displays your story’s title and a link to restart it at the bottom of the page. This area, called the <em>footer</em>, can be changed to include additional information and links. You can also add information at the top of the page, in its <em>header</em>, in a similar manner. The <em><a href="https://klembot.github.io/chapbook/examples/cloak-of-darkness.html">Cloak of Darkness</a></em> example, for instance, displays the current location in the header.</p>
-<p>The header and footer are further divided into three areas: <em>left</em>, <em>center</em>, and <em>right</em>. You do not need to place content into each area–Chapbook does its best to evenly space your content regardless of which areas you use.</p>
-<p>To change a header or footer area, set the corresponding variable in the <code>config</code> object.</p>
+<h2 id="内容content"><a class="header" href="#内容content">内容｜Content</a></h2>
+<p>通常，Chapbook 会在页面底部显示故事标题和重启链接。这个区域称为<em>页脚</em>，可以修改以包含额外信息和链接。同样地，您也可以在页面顶部的<em>页眉</em>中添加信息。例如，《黑暗斗篷》示例会在页眉中显示当前位置。</p>
+<p>页眉和页脚进一步划分为三个区域：<em>左侧</em>、<em>中间</em>和<em>右侧</em>。您无需在每个区域都放置内容——无论您使用哪些区域，Chapbook 都会尽力均匀分布您的内容。</p>
+<p>要更改页眉或页脚区域，请在 <code>config</code> 对象中设置相应的变量。</p>
 <table style="border: 1px solid #ddd; text-align: center">
 	
 <tbody>
@@ -2578,7 +2459,7 @@ config.style.fontScaling.maximumSize: '30px'
 
 		
 <tr>
-			<td colspan="3"><i>main passage text</i></td>
+			<td colspan="3"><i>主段落文本</i></td>
 		</tr>
 
 		
@@ -2592,40 +2473,37 @@ config.style.fontScaling.maximumSize: '30px'
 
 </table>
 
-<p>Remember that you must set the object property to a string for it to function correctly–meaning, you must put single or double quotes around the value. For example:</p>
-<pre><code>config.header.center: "Midday"
+<p>请记住，必须将对象属性设置为字符串才能使其正常工作——也就是说，必须用单引号或双引号将值括起来。例如：</p>
+<p>变量的内容会以与段落文本相同的方式被解释，因此您可以在变量中使用链接、插入内容，以及从技术上讲，修饰符：</p>
+<pre><code>config.header.center: "中午"
 </code></pre>
-<p>The contents of the variable are interpreted the same way that passage text is, so you can use links, <a href="customization/modifiers-and-inserts/link-inserts.html">inserts</a>, and, technically, <a href="customization/modifiers-and-inserts/modifiers-and-text-alignment.html">modifiers</a> in the variables:</p>
-<pre><code>config.header.right: "Money left: {money}"
-config.footer.center: "[[Other stories in this anthology]]"
+<p>变量的内容会以与段落文本相同的方式被解释，因此您可以在变量中使用链接、[插入][<a href="customization/modifiers-and-inserts/link-inserts.html">inserts</a>]，以及从技术上讲，<a href="customization/modifiers-and-inserts/modifiers-and-text-alignment.html">修饰符</a>也可以：</p>
+<pre><code>config.header.right: "剩余金额：{money}"
+config.footer.center: "[[本合集中的其他故事]]"
 </code></pre>
-<p>The header and footer are designed to display a single line of text, though, so modifiers are probably of limited use. The header and footer are updated every time a new passage is shown in the body of the page, so variable inserts like the one shown above will automatically update during play.</p>
-<h2 id="borders"><a class="header" href="#borders">Borders</a></h2>
-<p>In addition to <a href="#字体和颜色fonts-and-colors">setting the font and color</a> of the
-header and footer, you may also change the appearance of the borders that appear
-between them and the main passage text. These borders normally are visible only
-when there is content displayed in the header or footer.</p>
-<p>There are two variables that control the appearance of the border itself:</p>
+<p>不过，页眉和页脚设计为显示单行文本，因此修饰符的用途可能有限。每次页面主体中显示新段落时，页眉和页脚都会更新，因此如上所示的变量插入内容将在游戏过程中自动更新。</p>
+<h2 id="边框borders"><a class="header" href="#边框borders">边框｜Borders</a></h2>
+<p>除了<a href="#字体和颜色fonts-and-colors">设置页眉和页脚的字体和颜色</a>外，您还可以更改它们与主要段落文本之间出现的边框外观。这些边框通常仅在页眉或页脚中有内容显示时才可见。</p>
+<p>有两个变量控制边框本身的外观：</p>
 <ul>
 <li><code>config.style.dark.page.footer.border</code></li>
 <li><code>config.style.dark.page.header.border</code></li>
 </ul>
-<p>Similar to <a href="#页面风格page-style"><code>config.style.page.style.border</code></a>, they take three possible values.</p>
+<p>与 <a href="#页面样式page-style"><code>config.style.page.style.border</code></a> 类似，它们可以取三个可能的值。</p>
 <ul>
-<li><code>'none'</code> causes no border to be shown, even if there is content in the header or footer.</li>
-<li><code>'thin-line'</code> causes a thin line to be used as a border.</li>
-<li><code>'thick-line'</code> uses a thick line instead.</li>
+<li><code>'none'</code> 会导致不显示边框，即使页眉或页脚中有内容。</li>
+<li><code>'thin-line'</code> 会使用一条细线作为边框。</li>
+<li><code>'thick-line'</code> 使用粗线条代替边框。</li>
 </ul>
 <aside data-hint="info">
-Unlike <code>config.style.page.style.border</code>, setting these to <code>'shadow'</code> has no effect.
+与 <code>config.style.page.style.border</code> 不同，将这些设置为 <code>'shadow'</code>（阴影）不会产生任何效果。
 </aside>
-<p>To set the color used by the border, set either:</p>
+<p>要设置边框使用的颜色，请设置以下任一选项：</p>
 <ul>
-<li><code>config.style.dark.page.footer.borderColor</code> or</li>
+<li><code>config.style.dark.page.footer.borderColor</code> 或者</li>
 <li><code>config.style.dark.page.header.borderColor</code>.</li>
 </ul>
-<p>This should be a single <a href="#colors">color</a>, like
-<code>'orange-2'</code>.</p>
+<p>这应该是一个单一<a href="#colors">颜色</a>，例如 <code>'orange-2'</code>。</p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="分叉样式fork-style"><a class="header" href="#分叉样式fork-style">分叉样式｜Fork Style</a></h1>
 <p><a href="customization/text-and-links/forks.html">分叉</a>的显示方式可以通过多个变量进行自定义。</p>
@@ -2639,154 +2517,90 @@ Unlike <code>config.style.page.style.border</code>, setting these to <code>'shad
 </ul>
 <p><code>config.style.page.fork.divider.size</code> 设置分隔线的粗细，<code>config.style.page.fork.divider.color</code> 设置其颜色。</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="暗黑主题dark-theme"><a class="header" href="#暗黑主题dark-theme">暗黑主题｜Dark Theme</a></h1>
-<p>Chapbook has two themes:</p>
+<h1 id="深色主题dark-theme"><a class="header" href="#深色主题dark-theme">深色主题｜Dark Theme</a></h1>
+<p>Chapbook 提供两种主题：</p>
 <ul>
-<li>A <em>light</em> theme, with dark text on a light background</li>
-<li>A <em>dark</em> theme, with light text on a dark background</li>
+<li><em>浅色</em>主题，采用浅色背景搭配深色文字</li>
+<li><em>深色</em>主题，即在深色背景上显示浅色文字</li>
 </ul>
-<p>It starts by using the theme that corresponds to the <em>system theme</em>. Most
-operating systems now allow users to choose a light or dark appearance for the
-user interface. In macOS, this is set in the Appearance system setting, for
-example, while in recent Windows versions, this set in the Colors section of
-Personalization options. If Chapbook is unable to determine what the system
-theme is, or the browser the player is using doesn’t make this information
-available to web pages, then it will use the light theme.</p>
-<p>Chapbook also shows a link labeled <strong>Switch Theme</strong> in the footer of the story
-that allow players to swap between light and dark themes. This setting, like
-other <a href="customization/state">state</a>, is remembered across play sessions.</p>
-<p>The light theme can also be considered the default theme. When the dark theme is
-active, Chapbook uses the light theme for any styles not defined by the dark
-theme. Typically, dark themes vary only in colors from light themes, so you do
-not need to set some styles twice, like fonts.</p>
-<p>All of this behavior may be customized.</p>
+<p>它首先使用与<em>系统主题</em>相对应的主题。现在大多数操作系统都允许用户为界面选择浅色或深色外观。例如，在 macOS 中，这需要在系统设置的“外观”中进行配置；而在较新的 Windows 版本中，则需在个性化选项的“颜色”部分进行设置。如果 Chapbook 无法检测到系统主题，或者玩家使用的浏览器未向网页提供此信息，则将默认使用浅色主题。</p>
+<p>Chapbook 会在故事页脚处显示一个名为<strong>切换主题</strong>的链接，允许玩家在浅色和深色主题之间进行切换。与其他<a href="customization/state">状态</a>设置一样，该设置会在多个游戏会话之间保持记忆。</p>
+<p>浅色主题也可被视为默认主题。当深色主题启用时，Chapbook 会对深色主题未定义的样式使用浅色主题。通常深色主题仅在色彩方面与浅色主题存在差异，因此您无需重复设置某些样式（例如字体）。</p>
+<p>下面这些行为均可自定义。</p>
 <ul>
-<li>You can customize both the light and dark theme.</li>
-<li>You can lock Chapbook so that it only uses a single theme: either the default,
-light theme, or a theme you’ve customized.</li>
-<li>You can place a link that switches the theme elsewhere in your story.</li>
+<li>您可以同时自定义浅色与深色主题。</li>
+<li>您可以将 Chapbook 锁定为仅使用单一主题：既可以是默认的浅色主题，也可以是您自定义的主题。</li>
+<li>您可以在故事的其他位置放置切换主题的链接。</li>
 </ul>
-<h2 id="customizing-themes-using-the-style-backstage-tab"><a class="header" href="#customizing-themes-using-the-style-backstage-tab">Customizing Themes Using the Style Backstage Tab</a></h2>
-<p>At the top of the <strong>Style</strong> backstage tab, there’s text explaining which theme
-is active: either light or dark. Use the <strong>Switch Theme</strong> button beside this
-text to switch between light and dark themes. This button works exactly the same
-as the <strong>Switch Theme</strong> link in the page footer.</p>
-<p>The text fields under the <strong>Page</strong>, <strong>Header</strong>, and <strong>Footer</strong> update to show
-the value for the current theme. When the dark theme is active but a particular
-style is falling back to what has been defined in the light theme, then that
-value is shown in a light gray in the field.</p>
-<p>The <strong>Theme Switching</strong> checkbox controls whether Chapbook will switch between
-themes. If this is unchecked, Chapbook will always use the light theme
-regardless of system settings, and will hide the theme switcher on the page.</p>
-<h2 id="customizing-themes-in-code"><a class="header" href="#customizing-themes-in-code">Customizing Themes in Code</a></h2>
-<p>All of the descriptions of how to customize appearance in this section have
-applied to the default, light theme. So for example, setting
-<code>config.style.page.font</code> <a href="#字体和颜色fonts-and-colors">sets the font</a> in the light
-theme.</p>
-<p>The dark theme uses nearly the same variable names as the light theme, but they
-begin with <code>config.style.dark</code> instead of <code>config.style</code>. So
-<code>config.style.dark.page.font</code> sets the font in the dark theme.</p>
-<p>If a dark theme variable isn’t defined, Chapbook falls back to whatever is set
-in the light theme equivalent.</p>
-<p>As an example, consider these variables:</p>
+<h2 id="使用后台的样式选项卡自定义主题customizing-themes-using-the-style-backstage-tab"><a class="header" href="#使用后台的样式选项卡自定义主题customizing-themes-using-the-style-backstage-tab">使用后台的样式选项卡自定义主题｜Customizing Themes Using the Style Backstage Tab</a></h2>
+<p>后台的<strong>样式</strong>选项卡顶部有文字说明当前激活的是浅色还是深色主题。使用该文字旁的<strong>切换主题</strong>按钮可在浅色与深色主题间切换。此按钮的功能与页面页脚中的<strong>切换主题</strong>链接完全相同。</p>
+<p><strong>页面</strong>、<strong>页眉</strong>和<strong>页脚</strong>下方的文本字段会更新显示当前主题的对应值。当深色主题激活时，若特定样式仍沿用浅色主题的定义，则该字段会以浅灰色显示对应数值。</p>
+<p><strong>主题切换</strong>复选框控制着 Chapbook 是否会在主题之间切换。如果取消勾选此项，Chapbook 将始终使用浅色主题，无视系统设置，并会隐藏页面上的主题切换器。</p>
+<h2 id="在代码中自定义主题customizing-themes-in-code"><a class="header" href="#在代码中自定义主题customizing-themes-in-code">在代码中自定义主题｜Customizing Themes in Code</a></h2>
+<p>本节中所有关于如何自定义外观的描述都适用于默认的浅色主题。例如，设置 <code>config.style.page.font</code> 会调整浅色主题下的<a href="#字体和颜色fonts-and-colors">字体</a>。</p>
+<p>深色主题使用的变量名与浅色主题几乎相同，但它们以 <code>config.style.dark</code> 开头，而非 <code>config.style</code>。因此，<code>config.style.dark.page.font</code> 用于设置深色主题下的字体。</p>
+<p>如果深色主题变量未定义，Chapbook 将回退至浅色主题对应变量所设置的值。</p>
+<p>举个例子，请参考以下变量：</p>
 <pre><code>config.style.backdrop: 'blue-3'
 config.style.dark.backdrop: 'blue-6'
 config.style.page.font: 'Courier 24'
 </code></pre>
-<p>Both the light and dark themes will use Courier 24 as their font, but the
-backdrop color will be a dark blue in the dark theme, and a light blue in the
-light theme.</p>
+<p>深色与浅色主题都将使用 Courier 24 作为字体，但深色主题的背景色为深蓝色，而浅色主题的背景色为浅蓝色。</p>
 <aside data-hint="info">
-If you set <code>config.style.dark.page.style.borderColor</code>, make sure to set <code>config.style.dark.page.style.border</code> as well, even if it has the same value as <code>config.style.page.style.border</code> (e.g. the light theme version). This is a quirk in how these variables are translated to onscreen display.
+若设置 c<code>config.style.dark.page.style.borderColor</code>，请务必同时设置 <code>config.style.dark.page.style.border</code>，即使其值与 <code>config.style.page.style.border</code>（即浅色主题版本）相同。这是此类变量在屏幕显示转换过程中的特殊处理要求。
 </aside>
-<h2 id="using-the-current-theme-in-code"><a class="header" href="#using-the-current-theme-in-code">Using the Current Theme in Code</a></h2>
-<p>The <a href="customization/state/objects-and-lookups.html">lookup</a> <code>browser.darkTheme</code> holds
-whether the current theme is dark (<code>true</code>) or light (<code>false</code>). As with other
-lookups, you can’t change this directly. Instead, set
-<code>config.style.page.theme.override</code> as described below.</p>
-<p>There is also a <code>browser.darkSystemTheme</code> lookup that acts the same way as
-<code>browser.darkTheme</code>, but doesn’t take into account any overrides made in
-Chapbook code. It reports back whether the system is using as dark theme, to the
-best of its ability.</p>
-<h2 id="controlling-theme-switching"><a class="header" href="#controlling-theme-switching">Controlling Theme Switching</a></h2>
-<p>The <a href="customization/state/the-vars-section.html">variable</a>
-<code>config.style.page.theme.override</code> tracks which theme Chapbook is using.</p>
+<h2 id="在代码中使用当前主题using-the-current-theme-in-code"><a class="header" href="#在代码中使用当前主题using-the-current-theme-in-code">在代码中使用当前主题｜Using the Current Theme in Code</a></h2>
+<p><a href="customization/state/objects-and-lookups.html">查询</a> <code>browser.darkTheme</code> 保存着当前主题是否为深色 (<code>true</code>) 或浅色 (<code>false</code>) 的信息。与其他查找器一样，您不能直接更改此值。请按照下文所述，设置 <code>config.style.page.theme.override</code>。</p>
+<p>还有一个 <code>browser.darkSystemTheme</code> 查询，其作用方式与 <code>browser.darkTheme</code> 相同，但不会考虑 Chapbook 代码中的任何覆盖设置。它会尽最大能力报告系统是否正在使用深色主题。</p>
+<h2 id="控制主题切换controlling-theme-switching"><a class="header" href="#控制主题切换controlling-theme-switching">控制主题切换｜Controlling Theme Switching</a></h2>
+<p><a href="customization/state/the-vars-section.html">变量</a> <code>config.style.page.theme.override</code> 用于追踪 Chapbook 正在使用的主题。</p>
 <div class="table-wrapper">
 <table>
 <thead>
-<tr><th>Value</th><th>Effect</th></tr>
+<tr><th>值</th><th>效果</th></tr>
 </thead>
 <tbody>
-<tr><td><code>'light'</code></td><td>Uses the light theme regardless of system theme</td></tr>
-<tr><td><code>'dark'</code></td><td>Uses the dark theme regardless of system theme</td></tr>
-<tr><td>any other value</td><td>Uses the system theme</td></tr>
+<tr><td><code>'light'</code></td><td>无论系统主题如何，始终使用浅色主题</td></tr>
+<tr><td><code>'dark'</code></td><td>无论系统主题如何，始终使用深色主题</td></tr>
+<tr><td>任何其他值</td><td>使用系统主题</td></tr>
 </tbody>
 </table>
 </div>
-<p>The “Switch Theme” link that appears in the page footer changes this value. You
-can also set this value directly as well.</p>
-<p>You can use a <code>{theme switcher}</code>
-<a href="customization/modifiers-and-inserts/link-inserts.html">insert</a> to display a link that
-switches theme. You can customize the label shown for each theme like so:</p>
-<p><code>{theme switcher, darkLabel: 'Use Light Theme', lightLabel: 'Use Dark Theme'}</code></p>
-<p>The names of the labels can be confusing. They refer to the current theme, not
-the one that that will be switched to. So <code>darkLabel</code>, as in the example above, is the label shown when clicking the link will switch to the light theme.</p>
-<p>If you’d like the same label to be shown regardless of the current theme, set
-<code>darkLabel</code> and <code>lightLabel</code> to the same value.</p>
-<h2 id="disabling-theme-switching"><a class="header" href="#disabling-theme-switching">Disabling Theme Switching</a></h2>
-<p>If you’d like your story to use the same theme regardless of the system theme,
-set the variable <code>config.style.page.theme.enableSwitching</code> to <code>false</code>. This will
-cause Chapbook to only use the light theme regardless of both the system theme
-and any value set in <code>config.style.page.theme.override</code>. It also will cause all
-<code>{theme switcher}</code> inserts to be hidden.</p>
-<p>Although this variable causes Chapbook to use the light theme (e.g. theme
-defined under <code>config.style</code>, not <code>config.style.dark</code>), you can define this
-theme to have whatever appearance you’d like. If you want your story to only
-have light text on a dark background, you can define the light theme
-accordingly.</p>
+<p>页面页脚中出现的“切换主题”链接会更改此值。您也可以直接设置此值。</p>
+<p>您可以使用 <code>{theme switcher}</code> <a href="customization/modifiers-and-inserts/link-inserts.html">插入</a>来显示切换主题的链接。您可以像这样自定义每个主题显示的标签：</p>
+<p><code>{theme switcher, darkLabel: '使用浅色主题', lightLabel: '使用深色主题'}</code></p>
+<p>标签名称可能令人困惑。它们指的是当前主题，而不是将要切换到的主题。因此，如上例所示，<code>darkLabel</code> 是点击链接将切换到浅色主题时显示的标签。</p>
+<p>如果您希望无论当前主题如何都显示相同的标签，请将 <code>darkLabel</code> 和 <code>lightLabel</code> 设置为相同的值。</p>
+<h2 id="禁用主题切换disabling-theme-switching"><a class="header" href="#禁用主题切换disabling-theme-switching">禁用主题切换｜Disabling Theme Switching</a></h2>
+<p>如果您希望故事无论系统主题如何都使用相同的主题，请将变量 <code>config.style.page.theme.enableSwitching</code> 设置为 <code>false</code>。这将导致 Chapbook 无论系统主题和 <code>config.style.page.theme.override</code> 中设置的任何值如何，都仅使用浅色主题。它还会导致所有 <code>{theme switcher}</code> 插入内容被隐藏。</p>
+<p>尽管此变量使 Chapbook 使用浅色主题（例如，在 <code>config.style</code> 下定义的主题，而非 <code>config.style.dark</code>），但您仍然可以将此主题定义为任意外观。如果您希望故事仅呈现深色背景上的浅色文字，可以自定义相应的浅色主题。</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="design-considerations"><a class="header" href="#design-considerations">Design Considerations</a></h1>
-<p>Players will spend quite a lot of time with your story simply reading its text, so they deserve a well-considered experience. Which is not to say the experience should always be comfortable. Cara Ellison’s <em><a href="https://unwinnable.com/2013/04/25/play-at-heartbreaking-with-cara-ellison/">Sacrilege</a></em> has a searing purple background for its text and bright yellow links that turn green when you point at them, but all this is in service to its content. <em>Sacrilege’s</em> story is, in part, about the sensory overload of a nightclub, so it’s fitting that the text itself somewhat overload the player’s senses.<sup class="footnote-reference" id="fr-1-1-13"><a href="#footnote-1-15">1</a></sup></p>
-<p>Fortunately, people have been designing reading experiences for centuries now, and there’s quite a lot of accumulated wisdom on how to use type gracefully.</p>
+<h1 id="设计考量design-considerations"><a class="header" href="#设计考量design-considerations">设计考量｜Design Considerations</a></h1>
+<p>玩家将花费大量时间阅读故事文本，因此他们理应获得精心设计的体验。但这并不意味着体验必须始终舒适。Cara Ellison 的《亵渎》采用灼目的紫色背景搭配亮黄色链接，鼠标悬停时变为绿色，这一切都服务于其内容。《亵渎》的故事部分涉及夜店的感官过载，因此文本本身对玩家感官造成某种程度的过载恰如其分。<sup class="footnote-reference" id="fr-1-1-13"><a href="#footnote-1-15">1</a></sup></p>
+<p>所幸人类设计阅读体验已有数百年历史，关于如何优雅运用字体的智慧积淀颇丰。</p>
 <ul>
 <li>
-<p>If you’re new to typography, the best first port of call is Matthew
-Butterick’s <a href="https://practicaltypography.com/">Practical Typography</a>. Butterick is
-opinionated and a bit patrician in some of his pronouncements, but his basic
-ideas are sound, and he takes the <em>Practical</em> part of the name of his web
-site seriously.</p>
+<p>如果你刚接触排版，最好的起点是 Matthew
+Butterick 的<a href="https://practicaltypography.com/">《实用排版》</a>。Butterick 的观点有时显得固执且带点贵族气，但他的基本理念是可靠的，并且他认真对待自己网站名称中的<em>实用</em>部分。</p>
 </li>
 <li>
-<p>The Yale Web Style Guide’s <a href="https://webstyleguide.com/9-typography.html">chapter on typography</a> is also
-worth reading, though it is intended for web designers and developers, who
-must build pages from the ground up.</p>
+<p>耶鲁大学网页风格指南中<a href="https://webstyleguide.com/9-typography.html">关于排版的章节</a>也值得一读，尽管它主要面向需要从头构建页面的网页设计师和开发者。</p>
 </li>
 <li>
-<p>If you find yourself truly intrigued by typography, it’s worth tracking down
-a copy of <em><a href="https://en.wikipedia.org/wiki/The_Elements_of_Typographic_Style">The Elements of Typographical Style</a></em>.</p>
+<p>如果你发现自己对排版真正产生了兴趣，值得找一本<a href="https://en.wikipedia.org/wiki/The_Elements_of_Typographic_Style">《排版风格要素》</a>来读。</p>
 </li>
 </ul>
-<p>There is also a strange kind of science to selecting colors.</p>
+<p>选择颜色也涉及一种奇特的科学。</p>
 <ul>
-<li>If you’ve never delved into color theory, try starting  with with the <a href="https://programmingdesignsystems.com/color/color-scheme">Color
-Schemes</a> chapter of Rune Madsen’s <em>Programming Design
-Systems</em>. It uses code examples using a programming language called
-<a href="https://processing.org/">Processing</a>, but you can safely skim over them. If you find
-yourself intrigued by the subject, try the rest of Madsen’s section on
-color.</li>
-<li>Khan Academy has a free <a href="https://www.khanacademy.org/partner-content/pixar/color">online course on the science of color</a>
-that talks about both how our eyes and brains perceive color, and the
-different color models used to represent color.</li>
-<li>There’s no substitute for simply playing with color. The best tool online
-for this is perhaps <a href="https://color.adobe.com/create/color-wheel/">Adobe Color CC</a>, which is beginning to
-show its age but is still useful.</li>
-<li>WebAIM has a <a href="https://webaim.org/resources/contrastchecker/">contrast checker</a> that ensures that the color
-scheme you design has sufficient contrast for low-vision players. Your colors should pass the WCAG AAA criteria for normal text.</li>
+<li>如果你从未接触过色彩理论，不妨从阅读 Rune Madsen 的《编程设计系统》中关于<a href="https://programmingdesignsystems.com/color/color-scheme">配色方案</a>的章节开始。书中使用了名为 <a href="https://processing.org/">Processing</a> 的编程语言代码示例，但你可以大致浏览即可。如果你对这个主题产生了兴趣，可以继续阅读Madsen关于色彩的其他部分。</li>
+<li>可汗学院提供一门<a href="https://www.khanacademy.org/partner-content/pixar/color">关于色彩科学的免费在线课程</a>，内容涵盖我们的眼睛和大脑如何感知色彩，以及用于表示色彩的不同颜色模型。</li>
+<li>没有什么能替代亲手尝试调配色彩。在这方面，或许最好的在线工具是 <a href="https://color.adobe.com/create/color-wheel/">Adobe Color CC</a>，它虽然略显陈旧，但依然实用。</li>
+<li>WebAIM 提供了一个<a href="https://webaim.org/resources/contrastchecker/">对比度检查器</a>，确保你设计的配色方案能为视力不佳的玩家提供足够的对比度。你的颜色搭配应通过 WCAG AAA 标准的普通文本要求。</li>
 </ul>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-15">
-<p>Try playing it, even for a little, then go back to the plain-jane white background of a typical web site. You’ll see afterimages. <a href="#fr-1-1-13">↩</a></p>
+<p>试着玩一下，哪怕只是一小会儿，然后再回到普通网站那种单调的白色背景上。你会看到残影。 <a href="#fr-1-1-13">↩</a></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
@@ -2840,93 +2654,93 @@ scheme you design has sufficient contrast for low-vision players. Your colors sh
 </aside>
 <p>如果出于某种原因，您后续不需要使用文本输入的值，那么您也不必将其保存到变量中。为此，可以只写 <code>{text input}</code> 或 <code>{text input, required: true}</code>。</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="dropdown-menus-and-cycling-links"><a class="header" href="#dropdown-menus-and-cycling-links">Dropdown Menus and Cycling Links</a></h1>
-<p>Instead of allowing any kind of input at all from a player, you may want to contrain them to a specific set of choices. Chapbook has two mechanisms for this that look different to the player, but behave identically behind the scenes: menus and cycling links.</p>
-<p>In order to do this, we need to introduce a new type of variable, an <em>array</em>. An array is similar to an object<sup class="footnote-reference" id="fr-1-1-14"><a href="#footnote-1-16">1</a></sup> in that it’s a container for other variables. However, where objects contain named variables, arrays are simply an ordered list of values. This array lists the colors of the rainbow:</p>
-<pre><code>['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+<h1 id="下拉菜单与循环链接dropdown-menus-and-cycling-links"><a class="header" href="#下拉菜单与循环链接dropdown-menus-and-cycling-links">下拉菜单与循环链接｜Dropdown Menus and Cycling Links</a></h1>
+<p>与其允许玩家输入任何内容，不如将他们限制在特定的选择范围内。Chapbook 提供了两种机制来实现这一点，它们对玩家来说看起来不同，但在幕后行为相同：菜单和循环链接。</p>
+<p>为此，我们需要引入一种新的变量类型：<em>数组</em>。数组与对象<sup class="footnote-reference" id="fr-1-1-14"><a href="#footnote-1-16">1</a></sup>类似，都是其他变量的容器。然而，对象包含的是命名变量，而数组只是一个有序的值列表。这个数组列出了彩虹的颜色：</p>
+<pre><code>['红', '橙', '黄', '绿', '蓝', '靛', '紫']
 </code></pre>
-<p>Arrays are easy to spot: they simply put square brackets around a list of values separated by commas. An array can contain any type of value: <code>['red', 3, true]</code> is a valid array. Arrays can also be empty, though in practice you’ll rarely encounter this. The way to express an empty array is by writing <code>[]</code>.</p>
-<h2 id="dropdown-menus"><a class="header" href="#dropdown-menus">Dropdown Menus</a></h2>
-<p>The <code>{dropdown menu}</code> insert displays a menu of choices to the player.</p>
-<pre><code>What meal do you enjoy most?
+<p>数组很容易识别：它们只是用方括号括起一个由逗号分隔的值列表。数组可以包含任何类型的值：<code>['红色', 3, true]</code> 就是一个有效的数组。数组也可以是空的，尽管在实践中你很少会遇到这种情况。表示空数组的方法是写成 <code>[]</code>。</p>
+<h2 id="下拉菜单dropdown-menus"><a class="header" href="#下拉菜单dropdown-menus">下拉菜单｜Dropdown Menus</a></h2>
+<p>插入 <code>{dropdown menu}</code> 会向玩家显示一个选项菜单。</p>
+<pre><code>你最喜欢哪一餐？
 
-{dropdown menu for: 'meal', choices: ['Breakfast', 'Lunch', 'Dinner']}
+{ropdown menu for: '餐点', choices: ['早餐', '午餐', '晚餐']}
 </code></pre>
-<p>As with text inputs, <code>{dropdown menu}</code> inserts save the selected value to a variable–in the example above, a variable named <code>meal</code>. If <code>meal</code> were previously set to a value in the menu, that value will be automatically preselected for the player. Otherwise, the menu shows the first option you list in the array of choices.</p>
-<p>Unlike a text input, a dropdown menu does not block navigation to another passage, since it always has some value set.</p>
-<h2 id="cycling-links-1"><a class="header" href="#cycling-links-1">Cycling Links</a></h2>
-<p>The <code>{cycling link}</code> insert works exactly the same way as <code>{dropdown menu}</code>, only it shows a text link that the player selects to change. As the name implies, when the player reaches the last value in the <code>choices</code> array, the link starts over at the first element in the array.</p>
-<pre><code>I enjoy {cycling link for: 'meal', choices: ['Breakfast', 'Lunch', 'Dinner']} the most.
+<p>与文本输入类似，<code>{dropdown menu}</code> 插入会将所选值保存到一个变量中——在上面的例子中，是一个名为 <code>餐点</code> 的变量。如果 <code>餐点</code> 之前被设置为菜单中的某个值，该值将自动预选给玩家。否则，菜单将显示你在选项数组中列出的第一个选项。</p>
+<p>与文本输入不同，下拉菜单不会阻碍导航到其他段落，因为它始终有某个已设定的值。</p>
+<h2 id="循环链接cycling-links-1"><a class="header" href="#循环链接cycling-links-1">循环链接｜Cycling Links</a></h2>
+<p><code>{cycling link}</code> 的工作方式与 <code>{dropdown menu}</code> 完全相同，只是它显示一个文本链接供玩家点击时切换。顾名思义，当玩家到达 <code>choices</code>（选项）数组中的最后一个值时，链接会重新从数组的第一个元素开始循环。</p>
+<pre><code>我最喜欢{cycling link for: '餐点', choices: ['早餐', '午餐', '晚餐']}。
 </code></pre>
-<h2 id="optional-parts"><a class="header" href="#optional-parts">Optional Parts</a></h2>
-<p>Just like text inputs, dropdown menus and cycling links don’t require that their value be saved to a variable. To do this, omit the <code>for:</code> part of the insert. For example, <code>{cycling link, choices: ['Breakfast', 'Lunch', 'Dinner']}</code>.</p>
+<h2 id="可选部分optional-parts-1"><a class="header" href="#可选部分optional-parts-1">可选部分｜Optional Parts</a></h2>
+<p>就像文本输入一样，下拉菜单和循环链接并不要求将其值保存到变量中。要实现这一点，只需省略插入中的 <code>for:</code> 部分。例如，<code>{cycling link, choices: ['Breakfast', 'Lunch', 'Dinner']}</code>。</p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-16">
-<p>It is a peculiarity of JavaScript, the programming language of web browsers, that arrays are in fact implemented as objects, so in a sense arrays <em>are</em> objects. However, it’s best to think of them at this stage as a distinct concept. <a href="#fr-1-1-14">↩</a></p>
+<p>JavaScript（网页浏览器的编程语言）有一个独特之处：数组实际上是以对象的形式实现的，因此在某种意义上，数组<em>就是</em>对象。不过，现阶段最好还是将它们视为一个独立的概念。 <a href="#fr-1-1-14">↩</a></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="advanced-topics"><a href="#advanced-topics" class="header">Advanced Topics</a></h1>
+<h1 id="进阶话题"><a href="#进阶话题" class="header">进阶话题</a></h1>
 <div class="intro advanced">
     
-<h1>Advanced Topics</h1>
+<h1>进阶话题｜Advanced Topics</h1>
 
 </div>
 
-<p>This section covers topics that require existing knowledge of Web technologies such as JavaScript and CSS. Learning these is more than this documentation can handle; the <a href="https://developer.mozilla.org/en-US/">Mozilla Developer Network</a> is one place to start if you’re interested in learning.</p>
+<p>本节涵盖需要具备 JavaScript 和 CSS 等 Web 技术基础知识的内容。掌握这些知识已超出本文档的范畴；如果您有兴趣学习，<a href="https://developer.mozilla.org/en-US/">Mozilla 开发者网络</a>是一个不错的起点。</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="using-javascript-in-passages"><a class="header" href="#using-javascript-in-passages">Using JavaScript in Passages</a></h1>
-<p>As a last resort, Chapbook allows you to mix JavaScript into the text of your passage. To do this, use a <code>[JavaScript]</code> modifier:</p>
+<h1 id="在段落中使用-javascriptusing-javascript-in-passages"><a class="header" href="#在段落中使用-javascriptusing-javascript-in-passages">在段落中使用 JavaScript｜Using JavaScript in Passages</a></h1>
+<p>作为最后的手段，Chapbook 允许您在段落文本中混入 JavaScript。为此，请使用 <code>[JavaScript]</code> 修饰符：</p>
 <pre><code>[JavaScript]
-document.title = 'A Sticky Pickle';
+document.title = '一个棘手的困境';
 
 [continued]
-"Oh dear," you think to yourself. "That stain will never come out."
+“哎呀，”你暗自思忖，“那块污渍怕是再也洗不掉了。”
 </code></pre>
-<p>The JavaScript modifier normally does not output anything in Chapbook; however, if you would like to output text, the modifier provides a function <code>write()</code>–just plain <code>write()</code>, not <code>document.write()</code>–that will output HTML source code. Text output via <code>write()</code> <em>will</em> be processed for links and Markdown.</p>
-<p>Below is an example showing how <code>write()</code> works:</p>
-<pre><code>Before you lose your temper, you count to yourself:
+<p>JavaScript 修饰符在 Chapbook 中通常不会输出任何内容；但是，如果您想输出文本，该修饰符提供了一个函数 <code>write()</code>——就是普通的 <code>write()</code>，而不是 <code>document.write()</code>——它将输出 HTML 源代码。通过 <code>write()</code> 输出的文本将进行链接和 Markdown 处理。</p>
+<p>下面是一个展示 <code>write()</code> 如何工作的例子：</p>
+<pre><code>在你发脾气之前，先在心里默数：
 
 [JavaScript]
 for (let i = 1; i &lt;= 10; i++) {
 	write(i + '... ');
 }
 </code></pre>
-<p>You can refer to variables defined in vars sections as you would expect in JavaScript. Changing them in JavaScript will persist changes as you’d expect, as well.</p>
-<pre><code>color: 'red'
+<p>你可以像在 JavaScript 中预期的那样引用在变量部分定义的变量。在 JavaScript 中更改它们也会如预期般保持更改。</p>
+<pre><code>颜色: '红色的'
 --
 [JavaScript]
-write(`The sky is ${color}.`);
+write(`天空是${颜色}。`);
 </code></pre>
-<p>As a result, if you would like your JavaScript code to communicate back with the rest of your story, the easiest way to do this is to set the variable to an initial value in a vars section. If you absolutely need to create new variables in JavaScript, you can call <code>engine.state.set()</code> as below. This usage may change in future versions of Chapbook, though, whereas setting a variable initially in a vars section will always work.</p>
+<p>因此，如果你希望你的 JavaScript 代码与故事的其他部分进行通信，最简单的方法是在 变量部分将变量设置为初始值。如果你真的需要在 JavaScript 中创建新变量，可以像下面这样调用 <code>engine.state.set()</code>。不过，这种用法在 Chapbook 的未来版本中可能会改变，而在变量部分初始设置变量将始终有效。</p>
 <pre><code>[JavaScript]
-let color = 'red';
-engine.state.set('weather', 'sunny');
+let 颜色 = '红色';
+engine.state.set('天气', '阳光明媚');
 
 [continued]
-It was a {weather} day. The sky was {color}.
+真是个{天气}的日子。天空是{颜色}的。
 </code></pre>
-<p>This would display:</p>
+<p>这将显示：</p>
 <blockquote>
-<p>It was a sunny day. The sky was {color}.</p>
+<p>真是个阳光明媚的日子。天空是{颜色}。</p>
 </blockquote>
-<p><code>{color}</code> is displayed as-is because if Chapbook cannot find a matching insert or variable name, it displays the source text as it was entered. Any variables declared using <code>let</code> or <code>const</code> will <em>not</em> be visible to other Chapbook code, and will not be persisted across browser sessions.</p>
+<p><code>{颜色}</code> 会原样显示，因为如果 Chapbook 找不到匹配的插入内容或变量名，它会按输入时的原样显示文本。任何使用 <code>let</code> 或 <code>const</code> 声明的变量对其他 Chapbook 代码<em>不可见</em>，并且不会在浏览器会话之间保留。</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="using-css-in-passages"><a class="header" href="#using-css-in-passages">Using CSS in Passages</a></h1>
-<p>Most of the time, the best way to customize the appearance of your story is to use <a href="advanced/customization">Chapbook’s built-in functionality</a> or the <em>Edit Stylesheet</em> menu item in Twine. However, it is also possible to create passage-specific CSS using the <code>[CSS]</code> modifier.</p>
+<h1 id="在段落中使用-cssusing-css-in-passages"><a class="header" href="#在段落中使用-cssusing-css-in-passages">在段落中使用 CSS｜Using CSS in Passages</a></h1>
+<p>大多数情况下，自定义故事外观的最佳方式是使用 <a href="advanced/customization">Chapbook 的内置功能</a>或 Twine 中的<em>编辑样式表</em>菜单项。不过，也可以通过 [CSS] 修饰符创建特定于段落的 CSS。</p>
 <pre><code>[CSS]
 .page article {
 	color: green;
 }
 
 [continued]
-This text will be in green.
+这段文本将会是绿色的。
 </code></pre>
-<p>The CSS in this modifier will be applied globally–hence why the <code>.page article</code> selector is needed.</p>
+<p>此修饰符中的 CSS 将全局应用——因此需要使用 <code>.page article</code> 选择器。</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="adding-custom-inserts"><a class="header" href="#adding-custom-inserts">Adding Custom Inserts</a></h1>
-<p>Chapbook can be extended with custom inserts. Below is code that adds a <code>{smiley face}</code> insert that displays a 😀 emoji.</p>
+<h1 id="添加自定义插入adding-custom-inserts"><a class="header" href="#添加自定义插入adding-custom-inserts">添加自定义插入｜Adding Custom Inserts</a></h1>
+<p>Chapbook 可以通过自定义插入内容进行扩展。以下代码添加了一个 <code>{smiley face}</code> 插入，用于显示 😀 表情符号。</p>
 <pre><code>[JavaScript]
 engine.extend('2.0.0', () =&gt; {
 	engine.template.inserts.add({
@@ -2935,19 +2749,14 @@ engine.extend('2.0.0', () =&gt; {
 	});
 });
 </code></pre>
-<p>You can also place code like this into your story’s JavaScript in Twine–this uses the <code>[JavaScript]</code> modifier for clarity.<sup class="footnote-reference" id="fr-1-1-15"><a href="#footnote-1-17">1</a></sup></p>
-<p>First, any extension of the Chapbook engine must be wrapped in a <code>engine.extend()</code> function call. The first argument is the minimum version of Chapbook required to make your insert work; this is so that if you share your customization, anyone plugging it into a Chapbook version it won’t work in will receive a harmless warning, instead of the engine crashing with an error. Chapbook follows <a href="https://semver.org/">semantic versioning</a> to assist with this.</p>
-<p>The second argument to <code>engine.extend()</code> is the customization code you’d like to run. In this function, we add a new insert, which is an object with two properties:</p>
+<p>您还可以将类似这样的代码放入 Twine 故事中的 JavaScript 部分——这里使用 <code>[JavaScript]</code> 修饰符以增加清晰度。<sup class="footnote-reference" id="fr-1-1-15"><a href="#footnote-1-17">1</a></sup></p>
+<p>首先，任何对 Chapbook 引擎的扩展都必须封装在 <code>engine.extend()</code> 函数调用中。第一个参数是使你的插入内容正常工作所需的最低 Chapbook 版本；这样，如果你分享你的自定义内容，任何将其插入到无法兼容的 Chapbook 版本中的用户都会收到一个无害的警告，而不是引擎因错误而崩溃。Chapbook <a href="https://semver.org/">遵循语义化版本控制</a>以协助实现这一点。</p>
+<p><code>engine.extend()</code> 的第二个参数是你想要运行的自定义代码。在这个函数中，我们添加了一个新的插入内容，它是一个具有两个属性的对象：</p>
 <ul>
-<li><code>match</code>: a regular expression that the template engine will look for to
-render your insert. Leave out the curly braces; the template engine will
-take care of this for you. Inserts must always have at least one space in
-their <code>match</code> property, so that they can never be mistaken for a variable
-insert.</li>
-<li><code>render</code>: a function that returns a string for what should be displayed. The
-returned value will be eventually rendered as Markdown.</li>
+<li><code>match</code>: 模板引擎将查找以渲染插入内容的正则表达式。请省略花括号；模板引擎会为你处理这一点。插入内容的 <code>match</code> 属性必须始终至少包含一个空格，这样它们就永远不会被误认为是变量插入。</li>
+<li><code>render</code>: 一个返回应显示内容的字符串的函数。返回的值最终将作为 Markdown 渲染。</li>
 </ul>
-<p>You may remember that inserts <a href="advanced/modifiers-and-inserts/link-inserts.html">can take multiple parameters</a>. Here’s a more complex example that demonstrates this:</p>
+<p>你可能还记得，插入内容可以<a href="advanced/modifiers-and-inserts/link-inserts.html">接受多个参数</a>。以下是一个更复杂的示例来演示这一点：</p>
 <pre><code>[JavaScript]
 engine.extend('2.0.0', () =&gt; {
 	engine.template.inserts.add({
@@ -2978,11 +2787,11 @@ engine.extend('2.0.0', () =&gt; {
 	});
 });
 </code></pre>
-<p>This has the following effect:</p>
+<p>这会产生以下效果：</p>
 <div class="table-wrapper">
 <table>
 <thead>
-<tr><th>Typed</th><th>Displayed</th></tr>
+<tr><th>输入</th><th>显示</th></tr>
 </thead>
 <tbody>
 <tr><td><code>{icon of: 'wizard'}</code></td><td>🧙</td></tr>
@@ -2994,13 +2803,13 @@ engine.extend('2.0.0', () =&gt; {
 </tbody>
 </table>
 </div>
-<p>First, notice that the <code>match</code> property doesn’t try to match the entire insert; it just needs to be able to distinguish this insert from any other entered. Also, remember that the first part of the insert needed to be two words, <code>icon of</code>, to distinguish it from a variable insert.</p>
-<p>Then, the <code>render()</code> property takes three new arguments, <code>firstArg</code>, <code>props</code>, and <code>invocation</code>. <code>firstArg</code> is the parameter given to the first part of the insert, and <code>props</code> is an object listing out all other parameters given in the insert. The names of properties are case-sensitive, so <code>{icon of: 'wizard', Mood: 'anger'}</code> would only display 🧙. The final argument, <code>invocation</code>, is the entire text of the insert exactly as it was typed, except for the surrounding curly braces. This is provided so that if neither <code>firstArg</code> or <code>props</code> is enough to achieve the effect you’re looking for, you can look at <code>invocation</code> directly.</p>
-<p>Below are some examples as to how these arguments work in practice.</p>
+<p>首先，请注意，<code>match</code> 属性并不试图匹配整个插入内容；它只需要能够将此插入与其他任何已输入的插入区分开来。同时，请记住，插入的第一部分需要是两个单词，即<code>icon of</code>，以便将其与变量插入区分开。</p>
+<p>然后，<code>render()</code> 属性接受三个新参数：<code>firstArg</code>, <code>props</code>（属性）, 和 <code>invocation</code>（调用）。<code>firstArg</code> 是提供给插入第一部分的参数，<code>props</code> 是一个对象，列出了插入中给出的所有其他参数。属性名称区分大小写，因此 <code>{icon of: 'wizard', mood: 'anger'}</code> 将只显示 🧙。最后一个参数 <code>invocation</code> 是整个插入文本，完全按照输入时的样子，但不包括周围的花括号。提供这个参数是为了在 <code>firstArg</code> 或 <code>props</code> 不足以实现你想要的效果时，你可以直接查看 <code>invocation</code>。</p>
+<p>以下是一些示例，说明这些参数在实际中如何工作。</p>
 <div class="table-wrapper">
 <table>
 <thead>
-<tr><th>Typed</th><th>firstArg</th><th>props</th><th>invocation</th></tr>
+<tr><th>输入</th><th>firstArg</th><th>props</th><th>invocation</th></tr>
 </thead>
 <tbody>
 <tr><td><code>{smiley face}</code></td><td><code>null</code></td><td><code>{}</code></td><td><code>smiley face</code></td></tr>
@@ -3013,13 +2822,12 @@ engine.extend('2.0.0', () =&gt; {
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-17">
-<p>Word of warning–you cannot define an insert in the same passage that you use it in. <a href="#fr-1-1-15">↩</a></p>
+<p>重要提醒：不能在同一个段落中定义并使用同一个插入内容。 <a href="#fr-1-1-15">↩</a></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="adding-custom-modifiers"><a class="header" href="#adding-custom-modifiers">Adding Custom Modifiers</a></h1>
-<p>Chapbook can also be extended with custom modifiers. Below is code that adds a
-modifier that turns its text uppercase:</p>
+<h1 id="添加自定义修饰符adding-custom-modifiers"><a class="header" href="#添加自定义修饰符adding-custom-modifiers">添加自定义修饰符｜Adding Custom Modifiers</a></h1>
+<p>Chapbook 也可以通过自定义修饰符进行扩展。以下代码添加了一个功能为将文本转换为大写的修饰符：</p>
 <pre><code>[JavaScript]
 engine.extend('2.0.0', () =&gt; {
   engine.template.modifiers.add({
@@ -3030,35 +2838,22 @@ engine.extend('2.0.0', () =&gt; {
   });
 });
 </code></pre>
-<p>You can also place code like this into your story’s JavaScript in Twine–this
-uses the <code>[JavaScript]</code> modifier for clarity.</p>
+<p>您也可以将类似代码放入 Twine 中故事的 JavaScript 部分——为清晰起见，这里使用了 <code>[JavaScript]</code> 修饰符。</p>
 <aside data-hint="danger">
-You cannot define a modifier in the same passage that you use it in.
+你不能在同一个段落中定义并使用一个修饰符。
 </aside>
-<p>See <a href="#adding-custom-inserts">the first part of Adding Custom Inserts</a> for an
-explanation of the <code>engine.extend()</code> function call. The <code>match</code> property works
-the same way as the <code>match</code> property for an insert; Chapbook compares possible
-modifier text with <code>match</code> properties until it finds a match.</p>
-<p>The <code>process()</code> property is where the work of a modifier occurs. The <code>output</code>
-argument it is passed has three properties. Each one is Markdown source code,
-<em>not</em> HTML as it will be finally rendered.</p>
+<p>关于 <code>engine.extend()</code>（引擎扩展）函数调用的解释，请参见<a href="#添加自定义插入adding-custom-inserts">《添加自定义插入》</a>的第一部分。<code>match</code>（匹配）属性的工作原理与插入的 <code>match</code> 属性相同；Chapbook 会将可能的修饰符文本与 <code>match</code> 属性进行比较，直到找到匹配项。</p>
+<p><code>process()</code> 属性是修饰符执行其功能的地方。它接收的 <code>output</code>（输出）参数有三个属性。每一个都是 Markdown 源代码，<em>而非</em>最终渲染的 HTML。</p>
 <ul>
-<li><code>text</code>, the text that the modifier is being applied to.</li>
-<li><code>startsNewParagraph</code>, a Boolean value indicating whether this block of text
-should begin a new paragraph. (The <a href="advanced/modifiers-and-inserts/delayed-text.html">append
-modifier</a>, for example, sets this to
-<code>false</code>.)</li>
+<li><code>text</code>，即修饰符所应用的文本。</li>
+<li><code>startsNewParagraph</code>，一个布尔值，指示此文本块是否应开始新段落。（例如，<a href="advanced/modifiers-and-inserts/delayed-text.html">append 修饰符</a>将此值设为 <code>false</code>。）</li>
 </ul>
-<p>Modifiers also receive an argument, <code>options</code>, which the example above didn’t
-show. <code>options</code> is an object with two properties:</p>
+<p>修饰符还会接收一个参数，<code>options</code>，上述示例未展示此参数。<code>options</code> 是一个包含两个属性的对象：</p>
 <ul>
-<li><code>state</code>, a private state object that is carried over invocations of a modifier
-in a single passage</li>
-<li><code>invocation</code>, the exact text that was typed in the modifier, without the
-square brackets surrounding it</li>
+<li><code>state</code>（状态），一个私有状态对象，在单个段落中修饰符的多次调用间持续存在。</li>
+<li><code>invocation</code>（调用），即修饰符中键入的确切文本，不包含其周围的方括号。</li>
 </ul>
-<p>Below is an example showing how <code>state</code> and <code>invocation</code> can be used to remove
-more and more letters from a passage.</p>
+<p>以下是一个示例，展示了如何利用 <code>state</code> 和 <code>invocation</code> 来逐步删除段落中的字母。</p>
 <pre><code>[JavaScript]
 engine.extend('2.0.0', () =&gt; {
   engine.template.modifiers.add({
@@ -3075,7 +2870,7 @@ engine.extend('2.0.0', () =&gt; {
   });
 });
 </code></pre>
-<p>So that the following passage (from Kurt Vonnegut’s <em>Slaughterhouse Five</em>)…</p>
+<p>因此，以下段落（摘自 Kurt Vonnegut 的《第五号屠宰场》）……</p>
 <pre><code>[remove aeiou]
 American planes, full of holes and wounded men and corpses took off backwards from an airfield in England. Over France a few German fighter planes flew at them backwards, sucked bullets and shell fragments from some of the planes and crewmen. They did the same for wrecked American bombers on the ground, and those planes flew up backwards to join the formation.
 
@@ -3085,36 +2880,33 @@ The formation flew backwards over a German city that was in flames. The bombers 
 [also remove t]
 When the bombers got back to their base, the steel cylinders were taken from the racks and shipped back to the United States of America, where factories were operating night and day, dismantling the cylinders, separating the dangerous contents into minerals. Touchingly, it was mainly women who did this work. The minerals were then shipped to specialists in remote areas. It was their business to put them into the ground, to hide them cleverly, so they would never hurt anybody ever again.
 </code></pre>
-<p>… Would display as:</p>
+<p>……将显示为：</p>
 <pre><code>XmXrXcXn plXnXs, fXll Xf hXlXs Xnd wXXndXd mXn Xnd cXrpsXs tXXk Xff bXckwXrds frXm Xn XXrfXXld Xn XnglXnd. XvXr FrXncX X fXw GXrmXn fXghtXr plXnXs flXw Xt thXm bXckwXrds, sXckXd bXllXts Xnd shXll frXgmXnts frXm sXmX Xf thX plXnXs Xnd crXwmXn. ThXy dXd thX sXmX fXr wrXckXd XmXrXcXn bXmbXrs Xn thX grXXnd, Xnd thXsX plXnXs flXw Xp bXckwXrds tX jXXn thX fXrmXtXXn.
 
 TXX fXXmXtXXn fXXw bXckwXXXX XvXX X GXXmXn cXty tXXt wXX Xn fXXmXX. TXX bXmbXXX XpXnXX tXXXX bXmb bXy XXXXX, XxXXtXX X mXXXcXXXXX mXgnXtXXm wXXcX XXXXnk tXX fXXXX, gXtXXXXX tXXm XntX cyXXnXXXcXX XtXXX cXntXXnXXX, XnX XXftXX tXX cXntXXnXXX XntX tXX bXXXXXX Xf tXX pXXnXX. TXX cXntXXnXXX wXXX XtXXXX nXXtXy Xn XXckX. TXX GXXmXnX bXXXw XXX mXXXcXXXXX XXvXcXX Xf tXXXX Xwn, wXXcX wXXX XXng XtXXX tXbXX. TXXy XXXX tXXm tX XXck mXXX fXXgmXntX fXXm tXX cXXwmXn XnX pXXnXX. BXt tXXXX wXXX XtXXX X fXw wXXnXXX XmXXXcXnX, tXXXgX, XnX XXmX Xf tXX bXmbXXX wXXX Xn bXX XXpXXX. XvXX FXXncX, tXXXgX, GXXmXn fXgXtXXX cXmX Xp XgXXn, mXXX XvXXytXXng XnX XvXXybXXy XX gXXX XX nXw.
 
 WXXn XXX bXmbXXX gXX bXck XX XXXXX bXXX, XXX XXXXX cyXXnXXXX wXXX XXkXn fXXm XXX XXckX XnX XXXppXX bXck XX XXX XnXXXX XXXXXX Xf XmXXXcX, wXXXX fXcXXXXXX wXXX XpXXXXXng nXgXX XnX XXy, XXXmXnXXXng XXX cyXXnXXXX, XXpXXXXXng XXX XXngXXXXX cXnXXnXX XnXX mXnXXXXX. XXXcXXngXy, XX wXX mXXnXy wXmXn wXX XXX XXXX wXXk. XXX mXnXXXXX wXXX XXXn XXXppXX XX XpXcXXXXXXX Xn XXmXXX XXXXX. XX wXX XXXXX bXXXnXXX XX pXX XXXm XnXX XXX gXXXnX, XX XXXX XXXm cXXvXXXy, XX XXXy wXXXX nXvXX XXXX XnybXXy XvXX XgXXn.
 </code></pre>
-<p>Finally, in some cases, you may want a modifier to modify the source text as it
-was exactly entered by the author, before inserts and links are transformed into
-Markdown/HTML equivalents. To do this, write a <code>processRaw()</code> function instead
-of <code>process</code>. It takes the same exact arguments that <code>process()</code> does.</p>
+<p>最后，在某些情况下，你可能希望修饰符能直接修改作者输入的原始文本，即在插入内容和链接被转换为 Markdown/HTML 的等效形式之前进行处理。为此，你可以编写一个 <code>processRaw()</code> 函数来替代 <code>process</code> 函数。它接收的参数与 <code>process()</code> 函数完全相同。</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="references"><a href="#references" class="header">References</a></h1>
+<h1 id="参考"><a href="#参考" class="header">参考</a></h1>
 <div class="intro references">
     
-<h1>References</h1>
+<h1>参考｜References</h1>
 
 </div>
 
-<p>This section contains quick references to specific Chapbook topics.</p>
+<p>本节包含 Chapbook 特定主题的快速参考。</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="inserts"><a class="header" href="#inserts">Inserts</a></h1>
-<p>All of the below cause text or other types of content to appear in your passage. See <a href="references/modifiers-and-inserts">Modifiers and Inserts</a> for more information.</p>
+<h1 id="插入inserts"><a class="header" href="#插入inserts">插入｜Inserts</a></h1>
+<p>以下所有内容都会导致文本或其他类型的内容出现在您的段落中。更多信息请参阅<a href="references/modifiers-and-inserts">修饰符和插入</a>。</p>
 <dl>
 <dt>
 <code>{ambient sound: 'sound name'<i>, volume: 0.5</i>}</code>
 </dt>
 
 <dd>
-Begins playing a <a href="references/multimedia/audio.html">previously-defined ambient sound</a>. <code>volume</code> can be omitted; by default, the ambient sound is played at full volume.
+开始播放<a href="references/multimedia/audio.html">预先定义的环境音效</a>。可以省略 <code>volume</code>（音量）参数；默认情况下，环境音效将以最大音量播放。
 </dd>
 
 <dt>
@@ -3122,102 +2914,102 @@ Begins playing a <a href="references/multimedia/audio.html">previously-defined a
 </dt>
 
 <dd>
-Renders a link to the previous passage. <code>label</code> can be omitted; Chapbook will default to using 'Back'.
+渲染指向先前段落的链接。可以省略 <code>label</code>（标签）参数；Chapbook 将默认使用 'Back' 作为标签。
 </dd>
 
 <dt>
-<code>{cycling link<i> for 'variableName'</i>, choices: ['one', 'two', 'three']}</code>
+<code>{cycling link<i> for '变量名'</i>, choices: ['一', '二', '三']}</code>
 
 <dd>
-Renders a cycling link that runs through the options listed in <code>choices</code>, saving the option the player selected to the variable named. <code>for 'variable name'</code> can be omitted; Chapbook will not save the selected value anywhere.
+渲染一个循环链接，遍历选项列表中列出的 <code>choices</code>，将玩家选择的选项保存到指定变量名中。若省略 <code>for '变量名'</code>，Chapbook 将不会保存所选值。
 </dd>
 
 <dt>
-<code>{dropdown menu<i> for 'variableName'</i>, choices: ['one', 'two', 'three']}</code>
+<code>{dropdown menu<i> for '变量名'</i>, choices: ['一', '二', '三']}</code>
 
 <dd>
-Renders a dropdown menu that runs through the options listed in <code>choices</code>, saving the option the player selected to the variable named. <code>for 'variable name'</code> can be omitted; Chapbook will not save the selected value anywhere.
+渲染一个下拉菜单，遍历选项列表中列出的 <code>choices</code>，将玩家选择的选项保存到指定变量名中。若省略 <code>for '变量名'</code>，Chapbook 将不会保存所选值。
 </dd>
 
 <dt>
-<code>{embed Flickr image: 'embed code', alt: 'alternate text'}</code>
+<code>{embed Flickr image: '从 Flicker 得到的嵌入代码', alt: '替换文本'}</code>
 <br>
-abbreviated: <code>{embed Flickr: 'embed code', alt: 'alternate text'}</code>
+缩写形式：<code>{embed Flickr: '从 Flicker 得到的嵌入代码', alt: '替换文本'}</code>
 </dt>
 
 <dd>
-Renders an image hosted on Flickr with alt text specified by <code>alt</code>.
+渲染一张托管在 Flickr 上的图片，并使用 <code>alt</code> 指定的替代文本。
 </dd>
 
 <dt>
-<code>{embed image: 'url', alt: 'alternate text'}</code>
+<code>{embed image: 'URL 地址', alt: '替换文本'}</code>
 </dt>
 
 <dd>
-Renders an image at a particular URL with alt text specified by <code>alt</code>.
+渲染指定 URL 地址的图片，并使用 <code>alt</code> 指定的替代文本。
 </dd>
 
 <dt>
-<code>{embed passage named: 'passage name'}</code>
+<code>{embed passage named: '段落名称'}</code>
 <br>
-abbreviated: <code>{embed passage: 'passage name'}</code>
+简写形式：<code>{embed passage: '段落名称'}</code>
 </dt>
 
 <dd>
-Renders the passage named in the insert. This executes any vars section in that passage.
+渲染指定插入段落的文本。这会执行该段落中的任何变量部分。
 </dd>
 
 <dt>
 <dt>
-<code>{embed Unsplash image: 'URL', alt: 'alternate text'}</code>
+<code>{embed Unsplash image: 'URL 地址', alt: '替换文本'}</code>
 <br>
-abbreviated: <code>{embed Unsplash: 'URL', alt: 'alternate text'}</code>
+简写形式：<code>{embed Unsplash: 'URL 地址', alt: '替换文本'}</code>
 </dt>
 
 <dd>
-Renders an image hosted on Unsplash with alt text specified by <code>alt</code>.
+渲染一张托管在 Unsplash 上的图片，并使用 <code>alt</code> 指定的替代文本。
 </dd>
 
 <dt>
-<code>{embed YouTube video: 'URL'}</code>
+<code>{embed YouTube video: 'URL 地址'}</code>
 <br>
-abbreviated: <code>{embed YouTube: 'URL'}</code>
+简写形式：<code>{embed YouTube: 'URL 地址'}</code>
 </dt>
 
 <dd>
-Renders a video player for a video hosted on YouTube.
+渲染托管在 YouTube 上的视频播放器。
 </dd>
 
 <dt>
-<code>{link to: 'passage name or URL'<i>, label: 'label'</i>}</code>
+<code>{link to: '段落名称或 URL 地址'<i>, label: '标签'</i>}</code>
 </dt>
 
 <dd>
-Renders a link to a passage name or address. <code>label</code> may be omitted; Chapbook will use the passage name or URL as label instead.
+渲染指向段落名称或地址的链接。<code>label</code> 可以省略；Chapbook 将使用段落名称或 URL 地址作为标签。
 </dd>
 
 <dt>
-<code>{restart link<i>, label: 'label'</i>}</code>
+<code>{restart link<i>, label: '标签'</i>}</code>
 </dt>
 
 <dd>
-Renders a link that restarts the story. <code>label</code> may be omitted; Chapbook will use 'Restart' in that instance.
+渲染一个可重新开始故事的链接。<code>label</code> 可以省略；在这种情况下，Chapbook 将使用 'Restart'。
 </dd>
 
 <dt>
-<code>{reveal link: 'label', text: 'revealed text'}</code>
+<code>{reveal link: '标签', text: '揭露文本'}</code>
 </dt>
 
 <dd>
-Renders a link that expands to show the <code>text</code> property when clicked or tapped.
+渲染一个链接，点击或轻触时会展开显示 <code>text</code> 的属性内容。
 </dd>
 
 <dt>
-<code>{reveal link: 'label', passage: 'passage name'}</code>
+<code>{reveal link: '标签', passage: '段落名称'}</code>
 </dt>
 
 <dd>
-Renders a link that expands to show the contents of the passage that has the name specified by the <code>passage</code> property when clicked or tapped.
+渲染一个链接，点击或轻触时会展开显示由 <code>passage</code> 属性指定的段落名称的内容。
 </dd>
 
 <dt>
@@ -3225,21 +3017,21 @@ Renders a link that expands to show the contents of the passage that has the nam
 </dt>
 
 <dd>
-Begins playing a [previously-defined sound effect][sound]. <code>volume</code> can be omitted; by default, the ambient sound is played at full volume.
+开始播放一个[预先定义好的音效][sound]。<code>volume</code> 可以省略；默认情况下，环境音效将以最大音量播放。
 </dd>
 
 <dt>
-<code>{text input<i> for: 'variable name'</i>, <i>required: false</i>}</code>
+<code>{text input<i> for: '变量名'</i>, <i>required: false</i>}</code>
 
 <dd>
-Renders a text field, saving the text entered to the variable named. <code>for 'variable name'</code> can be omitted; Chapbook will not save the selected value anywhere. <code>required</code> can also be omitted; Chapbook will make the field required unless you specify otherwise.
+渲染一个文本字段，将输入的文本保存到指定变量名中。<code>for '变量名'</code> 可省略；此时 Chapbook 不会将所选值保存到任何地方。<code>required</code> 也可省略；除非另行指定，否则 Chapbook 将使该字段成为必填项。
 </dd>
 
 <dt>
-<code>{theme switcher<i>, darkLabel: 'label'</i>, <i>lightLabel: 'label'</i>}</code>
+<code>{theme switcher<i>, darkLabel: '标签'</i>, <i>lightLabel: '标签'</i>}</code>
 
 <dd>
-Renders a link that switches between light and dark themes. <code>darkLabel</code> and <code>lightLabel</code> set the label shown when the theme is currently dark or light.
+渲染一个在浅色和深色主题之间切换的链接。<code>darkLabel</code> 和 <code>lightLabel</code> 分别设置当前主题为深色或浅色时显示的标签。
 </dd>
 
 
@@ -3250,39 +3042,39 @@ Renders a link that switches between light and dark themes. <code>darkLabel</cod
 </dt>
 </dl>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="modifiers"><a class="header" href="#modifiers">Modifiers</a></h1>
-<p>All of the below affect the text following them. See <a href="references/modifiers-and-inserts/index.html">Modifiers and Inserts</a> for more information.</p>
+<h1 id="修饰符modifiers"><a class="header" href="#修饰符modifiers">修饰符｜Modifiers</a></h1>
+<p>以下所有内容都会影响其后的文本。更多信息请参阅“<a href="references/modifiers-and-inserts/index.html">修饰符与插入</a>”。</p>
 <dl>
 <dt>
-<code>[after <i>time</i>]</code>
+<code>[after <i>time</i>]</code>（延迟）
 </dt>
 
 <dd>
-Causes the text to appear after a certain amount of time has passed after the passage is first displayed.
+使文本在首次到达段落后经过一定时间才出现。
 </dd>
 
 <dt>
-<code>[align center]</code>, <code>[align left]</code>, <code>[align right]</code>
+<code>[align center]</code>（居中）, <code>[align left]</code>（左对齐）, <code>[align right]</code>（右对齐）
 </dt>
 
 <dd>
-Causes the text to be aligned a particular way. Aligning left isn't needed under normal circumstances, but is included for compeleteness's sake--use <code>[continue]</code> instead.
+使文本按特定方式对齐。在正常情况下，左对齐通常不需要特意指定，但为了完整性而包含——通常应使用 <code>[continue]</code> 替代。
 </dd>
 
 <dt>
-<code>[append]</code>
+<code>[append]</code>（追加）
 </dt>
 
 <dd>
-Used in conjunction with another modifier to have text immediately follow the text preceding it, instead of appearing in a new paragraph.
+与其他修饰符结合使用，使文本紧接在前一段文本之后追加显示，而不是另起一个自然段。
 </dd>
 
 <dt>
-<code>[continue]</code>, <code>[cont'd]</code>, <code>[cont]</code>
+<code>[continue]</code>, <code>[cont'd]</code>, <code>[cont]</code>（这三个修饰符都是“继续”的意思，除了写法不一样以外，没有区别）
 </dt>
 
 <dd>
-Clears all previously active modifiers.
+清除所有先前激活的修饰符。
 </dd>
 
 <dt>
@@ -3290,39 +3082,39 @@ Clears all previously active modifiers.
 </dt>
 
 <dd>
-Acts like a <code>&lt;style&gt;</code> tag in the passage; the contents of the text will be interpreted as CSS rules instead of normal text.
+作用类似于段落中的 <code>&lt;style&gt;</code> 标签；文本内容将被解释为 CSS 规则而非普通文本。
 </dd>
 
 <dt>
-<code>[else]</code>
+<code>[else]</code>（否则）
 </dt>
 
 <dd>
-Only displays the text if the previous <code>[if]</code> condition was not met. If no previous <code>[if]</code> appeared in the passage's source code, an error occurs.
+仅当先前的 <code>[if]</code> 条件未满足时显示文本。若段落源代码中未出现先前的 <code>[if]</code> 指令，则会产生错误。
 </dd>
 
 <dt>
-<code>[if <i>expression</i>]</code>
+<code>[if <i>表达式</i>]</code>（如果 表达式 为真）
 </dt>
 
 <dd>
-Only displays the text if <i>expression</i> evaluates to true, or a truthy (<a href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy">as defined by Javascript</a>) value.
+仅当表达式计算结果为真值（<a href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy">或 JavaScript 定义的 truthy 值</a>）时才显示文本。
 </dd>
 
 <dt>
-<code>[ifalways <i>expression</i>]</code>
+<code>[ifalways <i>表达式</i>]</code>（不管表达式是真是假都会输出真的如果）
 </dt>
 
 <dd>
-Acts like the <code>[if]</code> modifier, except that it always displays the text it affects, regardless of the condition. This can be useful for quick testing.
+其作用类似于 <code>[if]</code> 修饰符，但无论条件如何，它都始终会给出真值以显示其影响的文本。这对于快速测试很有用。
 </dd>
 
 <dt>
-<code>[ifnever <i>expression</i>]</code>
+<code>[ifnever <i>表达式</i>]</code>（不管表达式是真是假都会输出假的如果）
 </dt>
 
 <dd>
-Acts like the <code>[if]</code> modifier, except that it never displays the text it affects, regardless of the condition. This can be useful for quick testing.
+其作用类似于 <code>[if]</code> 修饰符，但无论条件如何，它都始终会给出假值以永远不显示其影响的文本。这对于快速测试很有用。
 </dd>
 
 <dt>
@@ -3330,29 +3122,30 @@ Acts like the <code>[if]</code> modifier, except that it never displays the text
 </dt>
 
 <dd>
-Acts like a <code>&lt;script&gt;</code> tag in the passage; the contents of the text will be interpreted as JavaScript code instead of normal text. To write output from inside the text, use the function `write()`.
+其作用类似于段落中的 <code>&lt;script&gt;</code> 标签；文本内容将被解释为 JavaScript 代码，而不是普通文本。若要在文本内部输出内容，请使用 `write()` 函数。
 </dd>
 
 <dt>
-<code>[note to self]</code>, <code>[note]</code>, <code>[todo]</code>, <code>[fixme]</code>
+<code>[note to self]</code>, <code>[note]</code>, <code>[todo]</code>, <code>[fixme]</code>（给自己看的笔记、待办清单）
 </dt>
 
 <dd>
-Causes the text to never be visible to the player. This is useful for leaving notes or other information for yourself.
+使文本对玩家永远不可见。这适用于为自己留下笔记或其他信息。
 </dd>
 
 <dt>
-<code>[unless <i>expression</i>]</code>
+<code>[unless <i>表达式</i>]</code>（反如果，表达式假时输出真）
 </dt>
 
 <dd>
-Only displays the text if <i>expression</i> evaluates to false, or a falsy (<a href="https://developer.mozilla.org/en-US/docs/Glossary">as defined by Javascript</a>) value.
+仅在表达式评估为假（<a href="https://developer.mozilla.org/en-US/docs/Glossary">或 JavaScript 定义的假值</a>）时显示文本。
 </dd>
 
 </dl>
 
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="version-history"><a class="header" href="#version-history">Version History</a></h1>
+<h1 id="版本历史version-history"><a class="header" href="#版本历史version-history">版本历史｜Version History</a></h1>
+<p>（王洛木：这页就不翻译了，需要的自己机翻哈～）</p>
 <h2 id="230-24-november-24"><a class="header" href="#230-24-november-24">2.3.0, 24 November 24</a></h2>
 <p><code>https://klembot.github.io.chapbook/use/2.3.0/format.js</code></p>
 <ul>
@@ -3562,9 +3355,9 @@ identifying this early.</li>
 <h2 id="001-14-october-2018"><a class="header" href="#001-14-october-2018">0.0.1, 14 October 2018</a></h2>
 <p>Initial public prerelease.</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="the-chapbook-lifecycle"><a class="header" href="#the-chapbook-lifecycle">The Chapbook Lifecycle</a></h1>
-<p>The diagram below shows the overall flow of execution in Chapbook beginning from when the web browser first loads the page, and is mainly of use when extending Chapbook.</p>
-<p><img src="references/lifecycle.svg" alt="Lifecycle Diagram"></p>
+<h1 id="chapbook-的生命周期the-chapbook-lifecycle"><a class="header" href="#chapbook-的生命周期the-chapbook-lifecycle">Chapbook 的生命周期｜The Chapbook Lifecycle</a></h1>
+<p>下图展示了 Chapbook 从网页浏览器首次加载页面开始的整体执行流程，主要适用于扩展 Chapbook 功能时参考。</p>
+<p><img src="references/lifecycle.svg" alt="生命周期图表"></p>
 
                     </main>
 

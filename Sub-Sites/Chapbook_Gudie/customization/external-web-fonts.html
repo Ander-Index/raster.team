@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>External Web Fonts</title>
+        <title>外部网页字体</title>
 
 
         <!-- Custom HTML head -->
@@ -36,10 +36,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-ba4541d0.js";
+            window.path_to_searchindex_js = "../searchindex-d9c3c349.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-1fec90ef.js"></script>
+        <script src="../toc-9a453c8c.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -176,43 +176,43 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="外部网页字体external-web-fonts"><a class="header" href="#外部网页字体external-web-fonts">外部网页字体｜External Web Fonts</a></h1>
-<p>Creating a good font stack is difficult because there are very few typefaces you can count on a majority of your players having installed. Fortunately, you aren’t limited to what your players happen to have installed–instead, you can use web fonts.</p>
-<h2 id="using-google-fonts"><a class="header" href="#using-google-fonts">Using Google Fonts</a></h2>
-<p>Google provides a wide variety of freely-usable fonts through their <a href="https://fonts.google.com">Google Fonts</a> service. To use Google Fonts in your story, first find the embed code for the families you wish to use:</p>
+<p>构建一个良好的字体栈很困难，因为你能指望大多数玩家已安装的字体种类非常少。幸运的是，你并不局限于玩家恰好安装的字体——相反，你可以使用网页字体。</p>
+<h2 id="使用-google-fontsusing-google-fonts"><a class="header" href="#使用-google-fontsusing-google-fonts">使用 Google Fonts｜Using Google Fonts</a></h2>
+<p>Google 通过其 <a href="https://fonts.google.com">Google Fonts</a> 服务提供了多种可免费使用的字体。要在故事中使用 Google Fonts，首先找到您希望使用的字体的嵌入代码：</p>
 <p style="text-align: center">
 <img src="google-font.png" width="300" height="198" alt="Google Fonts screenshot">
 </p>
 
-<p>Copy the embed code that Google Fonts offers you, i.e. <code>&lt;link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"&gt; </code>, and set the variable <code>config.style.googleFont</code> to it in your first passage. You can then use the font name anywhere in the rest of <code>config.style</code> as usual:</p>
+<p>复制 Google Fonts 提供的嵌入代码，例如 <code>&lt;link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"&gt;</code>，并在您的第一个段落中将其赋值给变量 <code>config.style.googleFont</code>。然后，您就可以像往常一样在 <code>config.style</code> 的其他任何地方使用该字体名称：</p>
 <pre><code>config.style.googleFont: '&lt;link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"&gt;'
 config.style.page.font: 'Open Sans/sans-serif 18'
 --
-Welcome aboard the U.S.S. Hood.
+欢迎登上 U.S.S. Hood。
 </code></pre>
-<p>Note that because <code>config.style.googleFont</code> is a string, you must put single quotes around its value. (It’s much easier to type single quotes here, since the embed code has double quotes in it.)</p>
-<h2 id="using-adobe-typekit-fonts"><a class="header" href="#using-adobe-typekit-fonts">Using Adobe Typekit Fonts</a></h2>
-<p>Adobe Typekit serves a similar purpose to Google Fonts, but most of its collection requires an Adobe Creative Cloud subscription to use. That said, it does permit free use of some of its font families.</p>
-<p>Once you’ve assembled a kit–Adobe’s terminology for one or more font families you plan to use–find its embed code in Typekit.</p>
+<p>请注意，由于 <code>config.style.googleFont</code> 是一个字符串，您必须在其值周围加上单引号。（在这里输入单引号会比较好，因为嵌入代码中已经包含双引号。）</p>
+<h2 id="使用-adobe-typekit-字体using-adobe-typekit-fonts"><a class="header" href="#使用-adobe-typekit-字体using-adobe-typekit-fonts">使用 Adobe Typekit 字体｜Using Adobe Typekit Fonts</a></h2>
+<p>Adobe Typekit 与 Google Fonts 功能类似，但其字体库中的大部分字体需要订阅 Adobe Creative Cloud 才能使用。不过，它也允许免费使用部分字体家族。</p>
+<p>在 Typekit 中创建好字体套件（Adobe 对计划使用的一个或多个字体家族的术语）后，找到其嵌入代码。</p>
 <p style="text-align: center">
 <img src="typekit-font.png" width="300" height="152" alt="Typekit screenshot">
 </p>
 
-<p>Copy the default code, i.e. <code>&lt;link rel="stylesheet" href="https://use.typekit.net/abcdefgh.css"&gt;</code>, and set the variable <code>config.style.typekitFont</code> to it in your first passage. As with Google Fonts, you can then use the font name anywhere in the rest of <code>config.style</code>.</p>
+<p>复制默认代码，比如 <code>&lt;link rel="stylesheet" href="https://use.typekit.net/abcdefgh.css"&gt;</code>，并将其赋值给变量 <code>config.style.typekitFont</code>，放在你的第一个段落中。与 Google Fonts 一样，之后你就可以在 <code>config.style</code> 的其他任何地方使用该字体名称。</p>
 <pre><code>config.style.typekitFont: '&lt;link rel="stylesheet" href="https://use.typekit.net/abdefgh.css"&gt;'
 config.style.page.font: 'Open Sans/sans-serif 18'
 --
-Welcome aboard the U.S.S. Hood.
+欢迎登上 U.S.S. Hood。
 </code></pre>
-<h2 id="other-web-fonts"><a class="header" href="#other-web-fonts">Other Web Fonts</a></h2>
-<p>You can also use web fonts separately from a cloud service. Please make sure to check the license for the font; it’s not uncommon, for example, to be required to pay a certain fee to use a font for personal use, but a different for use on the web, or in an app.</p>
-<p>To include a font directly by URL, add two properties to <code>config.style.fonts</code>:</p>
+<h2 id="其他网络字体other-web-fonts"><a class="header" href="#其他网络字体other-web-fonts">其他网络字体｜Other Web Fonts</a></h2>
+<p>你也可以从云服务单独使用网络字体。请务必检查字体的许可证；例如，通常需要支付一定费用才能将字体用于个人用途，但在网页或应用程序中使用则可能需要支付不同的费用。</p>
+<p>要通过 URL 直接包含字体，请向 <code>config.style.fonts</code> 添加两个属性：</p>
 <pre><code>config.style.fonts.leagueSpartan.url: 'league-spartan.woff2'
 config.style.fonts.leagueSpartan.name: 'League Spartan'
 config.style.page.font: 'League Spartan/sans-serif 16'
 --
-It is the year 1969, and you are walking on the moon.
+这是 1969 年，你正在月球上行走。
 </code></pre>
-<p>Chapbook can’t infer the name of the font from the <code>url</code> property, so you must tell it what it is.</p>
+<p>Chapbook 无法从 <code>url</code> 属性推断字体名称，因此您必须明确告知它是什么。</p>
 
                     </main>
 
