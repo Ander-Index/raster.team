@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.raster.team</id>
     <title>Team Raster</title>
-    <updated>2026-03-17T08:08:37.538Z</updated>
+    <updated>2026-03-23T06:58:51.708Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.raster.team"/>
     <link rel="self" href="https://blog.raster.team/atom.xml"/>
@@ -13,18 +13,16 @@
     <icon>https://blog.raster.team/favicon.ico</icon>
     <rights>All rights reserved 2026, Team Raster</rights>
     <entry>
-        <title type="html"><![CDATA[【Twine】Chapbook 指南]]></title>
+        <title type="html"><![CDATA[【Twine】Chapbook 简体中文指南]]></title>
         <id>https://blog.raster.team/post/Tutorial_Twine-Chapbook-Guide/</id>
         <link href="https://blog.raster.team/post/Tutorial_Twine-Chapbook-Guide/">
         </link>
         <updated>2026-03-17T03:22:06.000Z</updated>
-        <summary type="html"><![CDATA[<p>这是一个正在进行的汉化项目。还没完全搞定，因为我是一边做一边看。</p>
-<p>时不时更新，想看可以先来看，全做完了我会到处吆喝的。</p>
-<p>点击这里跳转：<a href="/Sub-Sites/Chapbook_Gudie/index.html">/Sub-Sites/Chapbook_Gudie/index.html</a></p>
+        <summary type="html"><![CDATA[<p>嗨<sub>这位对互动小说创作感兴趣的朋友</sub>欢迎你~</p>
+<p>如果你您想要直接去看教程，不想听我碎碎念的话，您已经可以直接跳转到：<a href="/Sub-Sites/Chapbook_Gudie/index.html">/Sub-Sites/Chapbook_Gudie/index.html</a></p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>这是一个正在进行的汉化项目。还没完全搞定，因为我是一边做一边看。</p>
-<p>时不时更新，想看可以先来看，全做完了我会到处吆喝的。</p>
-<p>点击这里跳转：<a href="/Sub-Sites/Chapbook_Gudie/index.html">/Sub-Sites/Chapbook_Gudie/index.html</a></p>
+        <content type="html"><![CDATA[<p>嗨<sub>这位对互动小说创作感兴趣的朋友</sub>欢迎你~</p>
+<p>如果你您想要直接去看教程，不想听我碎碎念的话，您已经可以直接跳转到：<a href="/Sub-Sites/Chapbook_Gudie/index.html">/Sub-Sites/Chapbook_Gudie/index.html</a></p>
 ]]></content>
     </entry>
     <entry>

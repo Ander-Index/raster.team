@@ -37,7 +37,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-d9c3c349.js";
+            window.path_to_searchindex_js = "searchindex-1ee0291a.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-9a453c8c.js"></script>
@@ -408,12 +408,12 @@
 <tr><th>输入</th><th>显示</th></tr>
 </thead>
 <tbody>
-<tr><td><code>_非传统_ 品味 tastes</code></td><td><em>非传统</em> 品味</td></tr>
+<tr><td><code>_非传统_ 品味</code></td><td><em>非传统</em> 品味</td></tr>
 <tr><td><code>*非传统*品味</code></td><td><em>非传统</em>品味</td></tr>
 </tbody>
 </table>
 </div>
-<p>（王洛木注释：由于用于是用空格来分隔单词，但中文是连起来的，所以要使用下划线作为斜体标记的话，要在前后使用空格。选择哪种方案只取决于您的喜好与排版。）</p>
+<p>（王洛木：由于英语是用空格来分隔单词，但中文是连起来的，所以要使用下划线作为斜体标记的话，要在前后使用空格。选择哪种方案只取决于您的喜好与排版。）</p>
 <p>要使短语变为粗体，请在它前后输入 <code>**</code> 或 <code>__</code>（两个下划线）。</p>
 <div class="table-wrapper">
 <table>
@@ -433,12 +433,12 @@
 <tr><th>输入</th><th>显示</th></tr>
 </thead>
 <tbody>
-<tr><td><code>**“我要 _杀_ 了你，”**她嘶声说道。</code></td><td>**“我要 <em>杀</em> 了你，”**她嘶声说道。</td></tr>
+<tr><td><code>**“我要 _杀_ 了你，”** 她嘶声说道。</code></td><td><strong>“我要 <em>杀</em> 了你，”</strong> 她嘶声说道。</td></tr>
 </tbody>
 </table>
 </div>
 <h2 id="带下划线的文本underlined-text"><a class="header" href="#带下划线的文本underlined-text">带下划线的文本｜Underlined text</a></h2>
-<p>在网页上通常避免使用带下划线的文本，因为下划线作为一种惯例用于标记超链接文本，而且在许多情况下，使用斜体文本比使用下划线更可取。<sup class="footnote-reference" id="fr-2-1-1"><a href="#footnote-2-1">2</a></sup>然而，如果您想要为纯文本添加下划线，可以通过在其周围写入 <span style="text-decoration:underline"> 和 </span> 来实现。</p>
+<p>在网页上通常避免使用带下划线的文本，因为下划线作为一种惯例用于标记超链接文本，而且在许多情况下，使用斜体文本比使用下划线更可取。<sup class="footnote-reference" id="fr-2-1-1"><a href="#footnote-2-1">2</a></sup>然而，如果您想要为纯文本添加下划线，可以通过在其周围写入 <code>&lt;span style="text-decoration:underline"&gt;</code> 和 <code>&lt;/span&gt;</code> 来实现。</p>
 <p>（还有一个 <code>&lt;u&gt;</code> 的 HTML 标签，最初是表示下划线的信号，并且在许多网络浏览器中仍然如此。但它的含义已经变为“以某种方式注释的文本”；例如，因为拼写错误而加下划线。）</p>
 <div class="table-wrapper">
 <table>
@@ -568,8 +568,7 @@
 
 <p>为何要特意格式化编号列表？就像在文字处理软件中那样，使用这种格式会使每个项目都得到恰当的缩进，从而让每个项目的第二行文本出现在起始编号的右侧。</p>
 <h2 id="忽略格式化字符ignoring-formatting-characters"><a class="header" href="#忽略格式化字符ignoring-formatting-characters">忽略格式化字符｜Ignoring Formatting Characters</a></h2>
-<p>有时您会希望按原样使用 Markdown 格式化字符，而不让它们启动格式化。最简单的方法是在它们前面加上 <code>\</code>（反斜杠）。</p>
-<p>Occasionally you’ll want to use Markdown formatting characters as-is, without them initiating formatting. The simplest way to do this is to put a <code>\</code> (backslash) in front of them.</p>
+<p>有时您会希望按原样使用被 Markdown 格式化标记占用的字符，那么最简单的方法是在它们前面加上 <code>\</code>（反斜杠）。</p>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -613,7 +612,7 @@ tr, td {
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="简单链接simple-links"><a class="header" href="#简单链接simple-links">简单链接｜Simple Links</a></h1>
 <p>每个 Twine 故事的核心都是链接。Chapbook 遵循 Twine 的链接输入惯例，也就是说，它毫不客气地借鉴了各处维基所使用的语法。</p>
-<p>最简单的链接标记法是用双括号将段落名称括起来：[[一扇小门]]。这会在文本中直接显示该段落的标题。</p>
+<p>最简单的链接标记法是用双括号将段落名称括起来：<code>[[一扇小门]]</code>。这会在文本中直接显示该段落的标题。</p>
 <p>但有时，在文本中隐藏目的地的名称是有道理的——可能是因为你的段落名为“<code>一个可怕的结局</code>”，或者段落标题是大写的，但你希望在一个句子中间链接它。你可以用两种不同但等效的方式来实现这一点。</p>
 <div class="table-wrapper">
 <table>
@@ -975,16 +974,16 @@ _入此门者，当弃绝一切希望_
 <h1 id="嵌入段落embedding-passages"><a class="header" href="#嵌入段落embedding-passages">嵌入段落｜Embedding Passages</a></h1>
 <p>在分支叙事中，一个常见的需求是让不同的路径汇聚在一起。实现这一点的最简单方法是让两个段落链接到同一个段落，但你也可以通过将一个段落嵌入到另一个段落中，以在故事中创造一个不那么明显的衔接。</p>
 <p>例如，想象一下，主角在前往名为“L.A.”的段落途中，要么乘坐飞机，要么乘坐火车：</p>
-<pre><code>你花了几个小时看着云朵在飞机机翼下飘移，随后抵达了[[L.A.]]。
+<pre><code>你花了几个小时看着云朵在飞机机翼下飘移，随后抵达了 [[L.A.]]。
 </code></pre>
-<pre><code>The cross-country train ride leaves plenty of space for contemplation on the way to [[L.A.]]
+<pre><code>横穿全国的火车之旅，在前往 [[L.A.]] 的途中，为沉思留下了充足的空间。
 </code></pre>
 <p>你也可以使用 <code>{embed passage}</code> 插入功能，直接将段落合并：</p>
-<pre><code>You spend a few hours watching the clouds drift below the wings of the plane.
+<pre><code>你花了几个小时看着云朵在飞机机翼下飘移。
 
 {embed passage: 'L.A.'}
 </code></pre>
-<pre><code>The cross-country train ride leaves plenty of space for contemplation.
+<pre><code>横穿全国的火车之旅，为沉思留下了充足的空间。
 
 {embed passage: 'L.A.'}
 </code></pre>
