@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.raster.team</id>
     <title>Team Raster</title>
-    <updated>2026-03-23T07:17:51.517Z</updated>
+    <updated>2026-03-24T04:24:13.867Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.raster.team"/>
     <link rel="self" href="https://blog.raster.team/atom.xml"/>
@@ -12,6 +12,13 @@
     <logo>https://blog.raster.team/images/avatar.png</logo>
     <icon>https://blog.raster.team/favicon.ico</icon>
     <rights>All rights reserved 2026, Team Raster</rights>
+    <entry>
+        <title type="html"><![CDATA[【ChoiceScript】ChoiceScript 指南]]></title>
+        <id>https://blog.raster.team/post/choicescript-choicescript-zhi-nan/</id>
+        <link href="https://blog.raster.team/post/choicescript-choicescript-zhi-nan/">
+        </link>
+        <updated>2026-03-24T04:21:50.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【Twine】Chapbook 简体中文指南]]></title>
         <id>https://blog.raster.team/post/Tutorial_Twine-Chapbook-Guide/</id>
@@ -139,19 +146,6 @@ for 花梨</p>
         <content type="html"><![CDATA[<p>……（每天都在与自己的懒惰斗争）<br>
 to 寒<br>
 for 花梨</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【REAPER】如何将工程中的 Kontakt 批量无损跨版本升级？]]></title>
-        <id>https://blog.raster.team/post/Kontakt_How-to-upgrade-Kontakt-without-losing-configurations/</id>
-        <link href="https://blog.raster.team/post/Kontakt_How-to-upgrade-Kontakt-without-losing-configurations/">
-        </link>
-        <updated>2023-10-11T10:16:25.000Z</updated>
-        <summary type="html"><![CDATA[<p>我的意思是，如果你使 REAPER, 那么你就不需要一个一个的替换成最新的 Kontakt, 再重新把音色加载一遍……<br>
-也就是说，这篇文章想要告诉你如何把 REAPER 里所有用到的 Kontakt 在不丢失配置的情况下升级到最新的 Kontakt 大版本，比如从 Kontakt 6 升级到 Kontakt 7 而不丢失之前的配置。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>我的意思是，如果你使 REAPER, 那么你就不需要一个一个的替换成最新的 Kontakt, 再重新把音色加载一遍……<br>
-也就是说，这篇文章想要告诉你如何把 REAPER 里所有用到的 Kontakt 在不丢失配置的情况下升级到最新的 Kontakt 大版本，比如从 Kontakt 6 升级到 Kontakt 7 而不丢失之前的配置。</p>
 ]]></content>
     </entry>
 </feed>
