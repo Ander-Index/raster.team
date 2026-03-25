@@ -31,4 +31,4 @@ choices.add(" ", 0, true, true);
 // -----------------------------------
 
 // create our game
-var story = new Story("story.js");
+var story = new Story("圣诞大攻略：雷琥.ink");
