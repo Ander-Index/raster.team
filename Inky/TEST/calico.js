@@ -158,7 +158,7 @@ class Story
 						
 						// anyway, now we have to search our ink for any INCLUDEs
 						let includeFiles = new Set(Array.from(
-							storyContent.matchAll(/^\s*INCLUDE (.+\.ink)\s*/gi), m => m["1"]
+							storyContent.matchAll(/^\s*INCLUDE (.+\.ink)\s*/gim), m => m["1"]
 						));
 
 						// and iterate through the ones we find,
