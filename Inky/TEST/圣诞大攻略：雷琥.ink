@@ -1,5 +1,4 @@
 INCLUDE 0_Main.ink
-
 INCLUDE B_Basement.ink
 
 INCLUDE G_Dormitory.ink
