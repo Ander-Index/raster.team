@@ -31,4 +31,4 @@ choices.add(" ", 0, true, true);
 // -----------------------------------
 
 // create our game
-var story = new Story("story.ink");
+var story = new Story("story.js");
