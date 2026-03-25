@@ -65,6 +65,8 @@ body
 	margin-bottom: 15vh !important;
 }
 
+/* ================================================================= */
+
 p
 {
 	margin-block-start: 0px !important;
@@ -81,16 +83,16 @@ p, p > *
 }
 
 a 
-{	
+{
+	color: #f16d69;
 	text-decoration: none !important;
 	transition: all 0.5s linear;
 }
 
 a:hover
 {
-	color: white;
+	color: #ffffff;
 }
-
 
 .choice
 {
@@ -123,12 +125,17 @@ a:hover
 }
 
 /* ================================================================= */
-/* PATCH SPECIFIC CSS                                                */
-/* ================================================================= */
 
-/* --------------- */
-/* parallax frames */
-/* --------------- */
+.progressbar
+{
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	background: #7690ac;
+	width: 0%;	
+	height: 1vh;
+}
+
 .frame
 {
 	width: 100%;
@@ -163,16 +170,112 @@ a:hover
 	}
 }
 
-/* ------- */
-/* preload */
-/* ------- */
+/* ================================================================= */
 
-.progressbar
+.winter
 {
-	position: absolute;
-	overflow: hidden;
-	top: 0;
-	background: #7690ac;
-	width: 0%;	
-	height: 1vh;
+	color: #7690ac !important;
+}
+
+.red
+{
+	color: #f76e6a !important;
+}
+
+
+img 
+{
+	-ms-interpolation-mode: nearest-neighbor;
+	image-rendering: crisp-edges;
+	image-rendering: pixelated;
+}
+
+/* ================================================================= */
+
+.frame.menu
+{
+	width: 60vh;
+	height: 48vh;
+	margin: auto;
+	margin-bottom: revert;
+	min-height: revert;
+	max-height: revert;
+}
+
+.menu, .menu ~ p
+{
+	width: 60vh;
+	margin: auto;
+	margin-bottom: revert;
+}
+
+@media (hover:none), (hover:on-demand) 
+{ 
+	.frame.menu
+	{
+		width: 80vmin;
+		height: 64vmin;
+	}
+	
+	.menu, .menu ~ p
+	{
+		width: 80vmin;
+	}	
+}
+
+.menu > .frameLayer
+{
+	width: 120%;
+	height: 120%;
+}
+
+.menu > .frameLayer:nth-child(n+3)
+{
+	width: 100%;
+	height: 100%;
+}
+
+/* ================================================================= */
+
+/* open-sans-300 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('./fonts/OpenSans-Light.ttf');
+}
+/* open-sans-300italic - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300;
+  src: url('./fonts/OpenSans-LightItalic.ttf');
+}
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/OpenSans-Regular.ttf');
+}
+/* open-sans-italic - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url('./fonts/OpenSans-Italic.ttf');
+}
+/* open-sans-700 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./fonts/OpenSans-Bold.ttf');
+}
+/* open-sans-700italic - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: url('./fonts/OpenSans-BoltItalic.ttf');
 }
