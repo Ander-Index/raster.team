@@ -1,0 +1,41 @@
+//  已弃用
+=== function Display_Translation__Carrers(Career)
+{
+-   Career == "No.AZ":
+    ~   return  "黑川物流的老板"
+-   Career == "Aize":
+    ~   return  "神官"
+-   else:
+    ~   return  "“出 BUG 了”"
+}
+////////////////////////////////
+////////////////////////////////
+////////////////////////////////
+////////////////////////////////
+////////////////////////////////
+////////////////////////////////
+//  昵称转换器
+=== function Display_Translation__F_Names(Name)
+{
+-   Name == "No.AZ":
+    ~   return  "AZ"
+-   else:
+    ~   return  "“没写 F_NAME，赶紧爬过来补。”"
+}
+////////////////////////////////
+////////////////////////////////
+////////////////////////////////
+////////////////////////////////
+////////////////////////////////
+////////////////////////////////
+/*
+=== function Display_Translation__Items(Item__VarName)
+{
+-   Item__VarName == "BuMingShengWuDeShiTi":
+    ~   return  "不明生物的尸体"
+-   Item__VarName == "这里是那个函数":
+    ~   return  "啥？"
+-   else:
+    ~   return  "“出 BUG 了”"
+}
+*/

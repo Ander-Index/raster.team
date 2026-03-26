@@ -192,7 +192,7 @@ a:hover
 
 .choice:hover
 {
-    color: #966495;
+    color: #800000;
     opacity: 1;
 }
 
@@ -205,17 +205,17 @@ a:hover
 
 .choice > a:hover
 {
-    color: #966495 !important;
+    color: #800000 !important;
 }
 
 .choice > a:active
 {
-    color: #966495;
+    color: #800000;
 }
 
 .chosen
 {
-    color: #966495 !important;
+    color: #800000 !important;
     opacity: 1 !important;
 }
 
@@ -361,7 +361,7 @@ img {
 
 
 #toolbar a {
-    color: #966495;        /* 文字颜色 */
+    color: #800000;        /* 文字颜色 */
     font-size: 14pt;
     font-weight: bold;
     cursor: pointer;       /* 鼠标移上去会变成小手 */
