@@ -289,29 +289,62 @@ img {
 /* ================================================================= */
 
 #toolbar {
-    position: fixed;
+    position: sticky;
     top: 0;          /* 紧贴屏幕最顶部 */
     left: 0;         /* 紧贴屏幕最左侧 */
     width: 100%;     /* 横跨整个屏幕宽度 */
-    padding: 20px 30px; /* 调整内边距：上下20px，左右30px */
+    padding: 10px 30px; /* 调整内边距：上下20px，左右30px */
     box-sizing: border-box; /* 确保 padding 不会把 100% 宽度撑爆 */
     
     display: flex;
-    justify-content: flex-end; /* 魔法属性：把里面的按钮全部推到最右边！ */
+    justify-content: space-between; /* 魔法属性：把对齐方式改为左右两端对齐！ */
+    align-items: center; /* 垂直方向居中对齐 */
     gap: 20px;
     z-index: 100;
     
-    /* 👇 关键核心：给它一个不透明的底色，用来遮挡滚动的文字 👇 */
-    background-color: black; /* 默认黑夜主题的底色 */
+    /* 👇 关键核心：给它一个半透明的底色，用来遮挡滚动的文字 👇 */
+    background-color: rgba(0, 0, 0, 0.7); /* 默认黑夜主题的底色 */
     /* transition: background-color 0.3s ease; 让主题切换时的背景变色也如丝般顺滑 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* 白色分割线 */
+    /* 👇 3. 强烈推荐的高级质感：毛玻璃模糊效果 */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
+
+#toolbar-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* 👉 修改这个数字就能调整按钮之间的距离 */
+}
+
+/* === 2. Logo 样式配置 === */
+#logo-link {
+    display: flex;
+    align-items: center;
+    border: none !important; /* 防止链接默认的下划线影响图片 */
+}
+
+#logo-img {
+    height: 36px !important; /* 根据实际需求调整 Logo 的高度 */
+    width: auto;  /* 宽度根据高度自动缩放 */
+    border: none;
+    cursor: pointer;
+    
+    /* 防止玩家拖拽图片导致蓝底 */
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
 
 #toolbar a {
     color: #966495;        /* 文字颜色 */
     font-size: 14pt;
     font-weight: bold;
     cursor: pointer;       /* 鼠标移上去会变成小手 */
-    transition: color 0.3s ease; /* 颜色改变时的过渡动画 */
+    /*transition: color 0.3s ease; /* 颜色改变时的过渡动画 */
+    /* text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1); */
 }
 
 #toolbar a:hover {
@@ -343,7 +376,8 @@ body.light-theme .chosen {
 }
 
 body.light-theme #toolbar {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* 黑色分割线 */
 }
 
 
@@ -373,5 +407,6 @@ body.sepia-theme .chosen {
 }
 
 body.sepia-theme #toolbar {
-    background-color: #fdf6e3;
+    background-color: rgba(253, 246, 227, 0.7);
+    border-bottom: 1px solid rgba(101, 123, 131, 0.15); /* 褐色分割线 */
 }
