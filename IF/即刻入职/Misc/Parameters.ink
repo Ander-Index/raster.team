@@ -1,3 +1,4 @@
+=== Parameters
 //  精神状态
 VAR INDEX = -1
 //  最后节点
@@ -15,3 +16,4 @@ VAR Flag__Break__Cinema = 0
 VAR Flag__Break__Home = 0
 VAR Flag__Break__Shutdown = 0
 VAR Flag__Base__Wakeup = 0
+-> DONE

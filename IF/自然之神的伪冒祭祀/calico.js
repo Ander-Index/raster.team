@@ -1571,7 +1571,8 @@ Tags.add("restart",
 		function(story)
 		{
 			// clear the story container, restart everything
-			story.restart();
+			// story.restart();
+			window.location.reload();	//	直接刷新网页
 		});
 
 // -----------------------------------

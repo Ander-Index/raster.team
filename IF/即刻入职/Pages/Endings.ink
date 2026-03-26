@@ -23,7 +23,7 @@
 +   {Flag__Work__Shutdown != 0}办公室
     <-  Ending__Work__Shutdown
     ->  Menu__Endings
-+   ————————————————
++   <hr>
     ->  Page__Endings
 +   {Flag__Break__Interview != 0}面试
     <-  Ending__Break__Home
@@ -37,7 +37,7 @@
 +   {Flag__Break__Shutdown != 0}在家
     <-  Ending__Break__Shutdown
     ->  Menu__Endings
-+   ————————————————
++   <hr>
     ->  Page__Endings
 +   {Menu__Main.Separator <= 5} [返回上一级]
     ->  Menu__Main
@@ -62,7 +62,7 @@
 =   Ending__Work__Business_Trip
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 【GAME OVER】
-————————————————
+<hr>
 #   IMAGE:  https:\/\/img.cntracker.net\/img\/1b4f07fe0ec022dbe5abf4584ae29cf2.png
 【DEV】这是一张占位用的图
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -80,7 +80,7 @@
 =   Ending__Work__Gym
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 【GAME OVER】
-————————————————
+<hr>
 #   IMAGE:  https:\/\/encrypted-tbn0.gstatic.com\/images?q=tbn:ANd9GcTEkP1Cb44RedeX84zvlRGppCTOHWkHEsy_ef-F2T4SC2rhRKbgrSbh_yUh8Z8KdXOGEUw&usqp=CAU
 【DEV】这是一张占位用的图
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -101,7 +101,7 @@
 =   Ending__Work__Off_Work
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 【GAME OVER】
-————————————————
+<hr>
 #   IMAGE:  https:\/\/img.cntracker.net\/img\/1b4f07fe0ec022dbe5abf4584ae29cf2.png
 【DEV】这是一张占位用的图
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -110,7 +110,7 @@
 =   Ending__Work__Napping
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 【GAME OVER】
-————————————————
+<hr>
 #   IMAGE:  https:\/\/img.cntracker.net\/img\/1b4f07fe0ec022dbe5abf4584ae29cf2.png
 【DEV】这是一张占位用的图
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -131,7 +131,7 @@
 =   Ending__Work__Shutdown
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 【GAME OVER】
-————————————————
+<hr>
 #   IMAGE:  https:\/\/img.cntracker.net\/img\/1b4f07fe0ec022dbe5abf4584ae29cf2.png
 【DEV】这是一张占位用的图
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -148,7 +148,7 @@
 =   Ending__Break__Home
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 【GAME OVER】
-————————————————
+<hr>
 #   IMAGE:  https:\/\/img.cntracker.net\/img\/1b4f07fe0ec022dbe5abf4584ae29cf2.png
 【DEV】这是一张占位用的图
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -165,7 +165,7 @@
 =   Ending__Break__Interview
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 【GAME OVER】
-————————————————
+<hr>
 #   IMAGE:  https:\/\/img.cntracker.net\/img\/1b4f07fe0ec022dbe5abf4584ae29cf2.png
 【DEV】这是一张占位用的图
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -182,7 +182,7 @@
 =   Ending__Break__Cinema
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 【GAME OVER】
-————————————————
+<hr>
 #   IMAGE:  https:\/\/img.cntracker.net\/img\/1b4f07fe0ec022dbe5abf4584ae29cf2.png
 【DEV】这是一张占位用的图
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -199,7 +199,7 @@
 =   Ending__Break__Shutdown
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 【GAME OVER】
-————————————————
+<hr>
 #   IMAGE:  https:\/\/img.cntracker.net\/img\/1b4f07fe0ec022dbe5abf4584ae29cf2.png
 【DEV】这是一张占位用的图
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

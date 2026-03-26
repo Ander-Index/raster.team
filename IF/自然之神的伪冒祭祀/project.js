@@ -60,7 +60,7 @@ options.hidelength = 300;    // 元素淡出/清屏的动画时间（默认 600.
 
 // create our game
 
-var story = new Story("自然之神的伪冒祭祀.ink");
+var story = new Story("自然之神的伪冒祭祀.json");
 
 
 // 1. 获取页面上的保存按钮
@@ -134,8 +134,9 @@ resetBtn.addEventListener("click", function(event) {
     var confirmReset = confirm("确定要重新开始游戏吗？所有的进度都将清除，但是不会清除已保存的存档。");
     
     if (confirmReset) {
-        // 调用 Calico 官方的重置接口
-        story.restart();
+        // 放弃使用容易与动画冲突的 story.restart()
+        // 直接刷新当前页面，这是最纯净、最稳定的重置方式
+        window.location.reload();
     }
 });
 
