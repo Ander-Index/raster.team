@@ -1,0 +1,454 @@
+/* ================================================================= */
+/* 引入外部托管字体                                                   */
+/* ================================================================= */
+
+/* 1. 引入更纱黑体 (主字体) */
+@font-face {
+    font-family: 'Sarasa Mono SC';
+    src: url('https://raster.team/Fonts/SarasaMonoSC-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 2. 引入 Nerd Font (符号补充字体) */
+@font-face {
+    font-family: 'Symbols Nerd Font';
+    src: url('https://raster.team/Fonts/SymbolsNerdFontMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&display=swap');
+
+
+
+body
+{
+	font-family: 'Noto Sans SC', 'Open Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+	font-weight: 300;
+	background: black;
+	color: white;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+}
+
+
+
+
+
+
+/* ================================================================= */
+/* 代码块专属样式                                                     */
+/* ================================================================= */
+
+/* 4. 代码块专属样式 (强制优先级：更纱黑体、背景、横向滚动)
+   我们将选择器指向 <pre> 和 <code>，并使用 !important 确保覆盖全局排版规则 */
+code, pre {
+    /* 强制代码使用更纱黑体和 Nerd Font */
+    font-family: 'Sarasa Mono SC', 'Symbols Nerd Font', monospace !important;
+    
+    /* 稍微加一点圆角和半透明背景，让代码在任何主题下都能凸显出来 */
+    background-color: rgba(128, 128, 128, 0.15); 
+    border-radius: 4px;
+
+    /* 👇 终极覆盖：强制代码内容在遇到撞墙时，不允许强制切断，
+          而是允许其横向溢出，以便滚动查看 👇 */
+    overflow-wrap: normal !important; 
+}
+
+code {
+    padding: 2px 6px; /* 行内代码左右留点空隙 */
+}
+
+pre {
+    padding: 12px;
+    overflow-x: auto; /* 单行代码太长时，允许横向滚动 */
+}
+
+pre code {
+    background-color: transparent; /* 多行代码内部不需要重复加背景 */
+    padding: 0;
+}
+
+
+
+
+
+
+/* Seems necessary to make iframes work on itch.io on mobile iOS :-( */
+#container
+{
+    position: absolute;
+    display: block;
+    margin: 0;
+    padding: 0;
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+	z-index: 10;    
+}
+
+#story
+{
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
+	height: 100%;
+	/* width: 700px;  <-- 把这一行删掉或注释掉 */
+	width: 100%; /* 加上这行，让它撑满父级允许的最大空间 */
+	min-width: 60vw;
+	max-width: 80vw !important;
+	transition: opacity 2s ease;
+	padding: 0em 1em 0em 1em;
+}
+
+@media (hover:none), (hover:on-demand)
+{
+	#story
+	{
+		max-width: 90%;
+	} 
+}
+
+#story > *:first-child {
+	margin-top: 10vh !important;
+}
+
+#story > *:last-child 
+{
+	margin-bottom: 15vh !important;
+}
+
+
+
+
+
+/* ================================================================= */
+/* Calico 文本流智能排版规则 (保护单词，防止溢出)                        */
+/* ================================================================= */
+
+p, p > *
+{
+    /* --- 1. 基础排版 --- */
+    margin-block-start: 0px !important;
+    font-size: 16pt;
+    line-height: 1.4;
+
+    /* --- 2. 智能换行组合拳 --- */
+    /* 保护英文单词作为一个整体换行 */
+    word-break: normal !important;
+    
+    /* 终极兜底：当长句（中文或URL）塞满一行时，允许在任何地方切断换行，防止撑爆屏幕 */
+    overflow-wrap: anywhere !important;
+    
+    /* 恢复正常的空白符处理和标点符号“避头尾”规则 */
+    white-space: normal !important;
+    line-break: auto !important;
+
+    /* --- 3. 防止玩家拖拽选中文本产生蓝底 --- */
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+a 
+{	
+	text-decoration: none !important;
+	transition: all 0.5s linear;
+}
+
+a:hover
+{
+	color: white;
+}
+
+
+.choice
+{
+	opacity: 0.5;
+	transition: all 1s;
+	color: white;
+}
+
+.choice:hover
+{
+	color: white;
+	opacity: 1;
+	transition: all 1s;	
+}
+
+.choice > a
+{
+	color: inherit;
+}
+
+.choice > a:active
+{
+	color:red;
+}
+
+.chosen
+{
+	color: white !important;
+	opacity: 1 !important;
+}
+
+/* ================================================================= */
+/* PATCH SPECIFIC CSS                                                */
+/* ================================================================= */
+
+/* --------------- */
+/* parallax frames */
+/* --------------- */
+.frame
+{
+	width: 100%;
+	height: calc(100vw * 0.2);
+	overflow: hidden;
+	position: relative;
+}
+
+.frameLayer
+{
+	position: absolute;
+	width: 120%;
+	display: block;
+	top: -9999px;
+	bottom: -9999px;
+	left: -9999px;
+	right: -9999px;
+	margin: auto;
+	max-width: auto;
+}
+
+/* css for mobile */
+@media (hover:none), (hover:on-demand) 
+{ 
+	.frame 
+	{ 
+		min-height: calc(100vmax * 0.25);
+	}
+	.frameLayer
+	{
+		width: 150%;
+	}
+}
+
+/* ------- */
+/* preload */
+/* ------- */
+
+.progressbar
+{
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	background: #7690ac;
+	width: 0%;	
+	height: 1vh;
+}
+
+/* ================================================================= */
+/* 自己加的                                                          */
+/* ================================================================= */
+
+/* 让图片按照宽度自动缩放 */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ================================================================= */
+/* 工具条 (Toolbar) 样式                                              */
+/* ================================================================= */
+
+#toolbar {
+    position: sticky;
+    top: 0;          /* 紧贴屏幕最顶部 */
+    left: 0;         /* 紧贴屏幕最左侧 */
+    width: 100%;     /* 横跨整个屏幕宽度 */
+    padding: 10px 30px; /* 调整内边距：上下20px，左右30px */
+    box-sizing: border-box; /* 确保 padding 不会把 100% 宽度撑爆 */
+    
+    display: flex;
+    justify-content: space-between; /* 魔法属性：把对齐方式改为左右两端对齐！ */
+    align-items: center; /* 垂直方向居中对齐 */
+    gap: 20px;
+    z-index: 100;
+    
+    /* 👇 关键核心：给它一个半透明的底色，用来遮挡滚动的文字 👇 */
+    background-color: rgba(0, 0, 0, 0.7); /* 默认黑夜主题的底色 */
+    /* transition: background-color 0.3s ease; 让主题切换时的背景变色也如丝般顺滑 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* 白色分割线 */
+    /* 👇 3. 强烈推荐的高级质感：毛玻璃模糊效果 */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+#toolbar-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* 👉 修改这个数字就能调整按钮之间的距离 */
+}
+
+/* === 2. Logo 样式配置 === */
+#logo-link {
+    display: flex;
+    align-items: center;
+    border: none !important; /* 防止链接默认的下划线影响图片 */
+}
+
+#logo-img {
+    height: 36px !important; /* 根据实际需求调整 Logo 的高度 */
+    width: auto;  /* 宽度根据高度自动缩放 */
+    border: none;
+    cursor: pointer;
+    
+    /* 防止玩家拖拽图片导致蓝底 */
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
+
+
+
+
+#toolbar a {
+    color: #966495;        /* 文字颜色 */
+    font-size: 14pt;
+    font-weight: bold;
+    cursor: pointer;       /* 鼠标移上去会变成小手 */
+    /*transition: color 0.3s ease; /* 颜色改变时的过渡动画 */
+    /* text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1); */
+}
+
+#toolbar a:hover {
+    color: #f16d69;        /* 鼠标悬停时的颜色，这里用了 Calico 链接默认的红色 */
+}
+
+
+
+/* ================================================================= */
+/* 工具栏左侧 (Logo 与 标题) 样式配置                                  */
+/* ================================================================= */
+#toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* 控制 Logo 和标题之间的间距，可自行调整 */
+}
+
+#toolbar-title {
+    font-size: 14pt;
+    font-weight: bold;
+    color: white; /* 默认黑夜主题下的文字颜色 */
+    cursor: default; /* 鼠标悬停保持普通指针样式，表明这不是按钮 */
+}
+
+
+
+/* ================================================================= */
+/* 明亮主题 (Light Theme) 样式                                        */
+/* ================================================================= */
+
+/* 当 body 被加上 light-theme 类名时的样式 */
+body.light-theme {
+    background: white;
+    color: black;
+}
+
+/* 明亮主题下的选项颜色（原本是白色，现在改成黑色） */
+body.light-theme .choice {
+    color: black;
+}
+
+body.light-theme .choice:hover {
+    color: black;
+}
+
+body.light-theme .chosen {
+    color: black !important;
+}
+
+body.light-theme #toolbar {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* 黑色分割线 */
+}
+
+/* 适配明亮主题 (Light Theme) */
+body.light-theme #toolbar-title {
+    color: black;
+}
+
+
+/* ================================================================= */
+/* 护眼黄主题 (Sepia Theme) 样式                                      */
+/* ================================================================= */
+
+/* 柔和的米黄色背景和深棕色文字，对眼睛极其友好 */
+body.sepia-theme {
+    background: #fdf6e3; 
+    color: #433422;      
+}
+
+/* 护眼主题下的选项颜色（调整为柔和的浅棕色） */
+body.sepia-theme .choice {
+    color: #8b6b43;
+}
+
+/* 鼠标悬停时的选项颜色 */
+body.sepia-theme .choice:hover {
+    color: #433422;
+}
+
+/* 选中的选项颜色 */
+body.sepia-theme .chosen {
+    color: #433422 !important;
+}
+
+body.sepia-theme #toolbar {
+    background-color: rgba(253, 246, 227, 0.7);
+    border-bottom: 1px solid rgba(101, 123, 131, 0.15); /* 褐色分割线 */
+}
+
+/* 适配护眼黄主题 (Sepia Theme) */
+body.sepia-theme #toolbar-title {
+    color: #433422;
+}
+
+
+
+
+
+
+
+
+
+
