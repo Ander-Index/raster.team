@@ -2348,7 +2348,7 @@ function splitAtCharacter(text, character)
 	{		
 		// return it, and the value after
 		return {
-					before: text.substr(0, splitIndex).trim(),
+					before: text.substr(0, splitIndex).trim().toLowerCase(),
 					after: text.substr(splitIndex+1).trim()
 				};
 	}
