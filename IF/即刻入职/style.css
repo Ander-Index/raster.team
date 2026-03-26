@@ -169,54 +169,69 @@ p, p > *
 
 
 
-
-
-
-
-
-
-
 a 
-{	
-	text-decoration: none !important;
-	transition: all 0.5s linear;
+{   
+    text-decoration: none !important;
+    /* 如果你希望游戏里的普通链接也有动画，可以将下面这行改为 transition: all 0.5s ease !important; */
+    transition: none !important; 
 }
 
 a:hover
 {
-	color: white;
+    color: inherit;
 }
-
 
 .choice
 {
-	opacity: 0.5;
-	transition: all 1s;
-	color: white;
+    opacity: 0.5;
+    color: white;
+    /* 加入0.5秒的平滑过渡效果（时间可自行修改，如 1s 或 0.3s） */
+    transition: all 0.2s ease !important;
+    /* text-align: center; 添加这一行，让文字水平居中 */
 }
 
 .choice:hover
 {
-	color: white;
-	opacity: 1;
-	transition: all 1s;	
+    color: #966495;
+    opacity: 1;
 }
 
 .choice > a
 {
-	color: inherit;
+    color: inherit;
+    /* 内部的 a 标签也要同步加上过渡效果，保证文字颜色渐变时不突兀 */
+    transition: all 0.5s ease !important;
+}
+
+.choice > a:hover
+{
+    color: #966495 !important;
 }
 
 .choice > a:active
 {
-	color:red;
+    color: #966495;
 }
 
 .chosen
 {
-	color: white !important;
-	opacity: 1 !important;
+    color: #966495 !important;
+    opacity: 1 !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ================================================================= */
 /* PATCH SPECIFIC CSS                                                */
