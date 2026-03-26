@@ -33,7 +33,9 @@ import memorycard from "./patches/memorycard.js";
 	options.memorycard_applymostrecenttag.push("play", "resume", "pause", "stop", "background");	//	配置包括背景在内一并记录状态
 
 //	预加载
-import "./patches/memorycard.js";
+import "./patches/preload.js";
+    options.preload_tags.audio.push("play", "pause", "resume", "stop", "background");
+    options.preload_tags.image.push("frame");
 
 // 历史记录
 import "./patches/history.js";
@@ -42,9 +44,22 @@ import "./patches/history.js";
 // import "./patches/autosave.js";
 
 
+// 直接修改引擎默认的全局选项
+options.passagedelay = 0;    // 清理旧段落、展示新段落（包括点击选项后）的延迟。设为 0 就是零等待（默认 200.0）
+options.linedelay = 50;       // 每行文字出现的间隔。设为 0 会让整段话瞬间出现（默认 50.0）
+options.showlength = 888;    // 元素淡入的动画时间（毫秒）。设为 150 能在极速响应中保留一点柔和感（默认 500.0）
+options.hidelength = 300;    // 元素淡出/清屏的动画时间（默认 600.0）
+
+
+
+
+
+
+
 // -----------------------------------
 
 // create our game
+
 var story = new Story("即刻入职.ink");
 
 
@@ -104,6 +119,28 @@ loadBtn.addEventListener("click", function(event) {
 
 
 
+// 1. 获取页面上的重置按钮
+var resetBtn = document.getElementById("reset-btn");
+
+// 2. 监听点击事件
+resetBtn.addEventListener("click", function(event) {
+    event.preventDefault(); 
+    
+    // 弹出一个系统确认框，防止玩家手滑误触导致进度全失
+    var confirmReset = confirm("确定要重新开始游戏吗？所有的进度都将清除，但是不会清除已保存的存档。");
+    
+    if (confirmReset) {
+        // 调用 Calico 官方的重置接口
+        story.restart();
+    }
+});
+
+
+
+
+
+
+
 
 
 
@@ -130,8 +167,8 @@ themeBtn.addEventListener("click", function(event) {
     }
     
     // 视觉反馈：按钮点击后稍微变色闪一下
-    themeBtn.style.color = "#4caf50"; 
-    setTimeout(function() {
-        themeBtn.style.color = ""; 
-    }, 300);
+    // themeBtn.style.color = "#4caf50"; 
+    // setTimeout(function() {
+    //     themeBtn.style.color = ""; 
+    // }, 300);
 });

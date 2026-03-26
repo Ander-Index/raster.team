@@ -1,79 +1,91 @@
-@import url('./Fonts/SourceHanSans-VF.otf.ttc');
+/* ================================================================= */
+/* 引入外部托管字体                                                   */
+/* ================================================================= */
 
-body {
-    font-family: '思源黑体 VF', sans-serif;
-    font-weight: Regular;
-    background: white;
-    overflow: hidden;
+/* 1. 引入更纱黑体 (主字体) */
+@font-face {
+    font-family: 'Sarasa Mono SC';
+    src: url('https://raster.team/Fonts/SarasaMonoSC-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-@media screen and (prefers-reduced-motion: no-preference) {
-    body.switched {
-        transition: color 0.6s, background-color 0.6s;
-    }
+/* 2. 引入 Nerd Font (符号补充字体) */
+@font-face {
+    font-family: 'Symbols Nerd Font';
+    src: url('https://raster.team/Fonts/SymbolsNerdFontMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-h1,
-h2 {
-    text-align: center;
-    font-family: '思源黑体 VF', sans-serif;
-    margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&display=swap');
+
+
+
+body
+{
+	font-family: 'Noto Sans SC', 'Open Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+	font-weight: 300;
+	background: black;
+	color: white;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+}
+
+
+
+
+
+
+/* ================================================================= */
+/* 代码块专属样式                                                     */
+/* ================================================================= */
+
+/* 4. 代码块专属样式 (强制优先级：更纱黑体、背景、横向滚动)
+   我们将选择器指向 <pre> 和 <code>，并使用 !important 确保覆盖全局排版规则 */
+code, pre {
+    /* 强制代码使用更纱黑体和 Nerd Font */
+    font-family: 'Sarasa Mono SC', 'Symbols Nerd Font', monospace !important;
+    
+    /* 稍微加一点圆角和半透明背景，让代码在任何主题下都能凸显出来 */
+    background-color: rgba(128, 128, 128, 0.15); 
+    border-radius: 4px;
+
+    /* 👇 终极覆盖：强制代码内容在遇到撞墙时，不允许强制切断，
+          而是允许其横向溢出，以便滚动查看 👇 */
+    overflow-wrap: normal !important; 
+}
+
+code {
+    padding: 2px 6px; /* 行内代码左右留点空隙 */
+}
+
+pre {
+    padding: 12px;
+    overflow-x: auto; /* 单行代码太长时，允许横向滚动 */
+}
+
+pre code {
+    background-color: transparent; /* 多行代码内部不需要重复加背景 */
     padding: 0;
 }
 
-h1 {
-    font-size: 30pt;
-    margin-bottom: 10px;
-}
 
-h2 {
-    font-size: 14pt;
-    font-style: italic;
-    font-family: sans-serif;
-    font-weight: lighter;
-    color: #BBB;
-}
 
-.header {
-    padding-top: 3em;
-    padding-bottom: 3em;
-}
 
-/*
-  Built-in class:
-    # author: Name
-*/
-.byline {
-    font-style: italic;
-}
 
-.written-in-ink {
-    z-index: 3;
-    font-size: 9pt;
-    font-family: sans-serif;
-    text-align: center;
-    font-weight: 700;
-    position: fixed;
-    display: block;
-    width: 100%;
-    background: white;
-    margin: 0;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    height: 14px;
-    top: 0;
-}
 
-@media screen and (prefers-reduced-motion: no-preference) {
-    .written-in-ink {
-        transition: color 0.6s, background 0.6s;
-    }
-}
-
-/* 
-  Enables <iframe> support work on itch.io when using mobile iOS
-*/
-.outerContainer {
+/* Seems necessary to make iframes work on itch.io on mobile iOS :-( */
+#container
+{
     position: absolute;
     display: block;
     margin: 0;
@@ -85,223 +97,281 @@ h2 {
     width: 100%;
     top: 0;
     left: 0;
-    margin-top: 24px;
     background-size: cover;
     background-repeat: no-repeat;
+	z-index: 10;    
 }
 
-@media screen and (max-width: 980px) {
-    .outerContainer {
-        margin-top: 44px;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
+#story
+{
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
+	height: 100%;
+	/* width: 700px;  <-- 把这一行删掉或注释掉 */
+	width: 100%; /* 加上这行，让它撑满父级允许的最大空间 */
+	min-width: 60vw;
+	max-width: 80vw !important;
+	transition: opacity 2s ease;
+	padding: 0em 1em 0em 1em;
 }
 
-.container {
-    display: block;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    padding-top: 4em;
-    padding-bottom: 4em;
-    background: white;
+@media (hover:none), (hover:on-demand)
+{
+	#story
+	{
+		max-width: 90%;
+	} 
 }
 
-@media screen and (prefers-reduced-motion: no-preference) {
-    .switched .container {
-        transition: background-color 0.6s;
-    }
+#story > *:first-child {
+	margin-top: 10vh !important;
 }
 
-p {
-    font-size: 13pt;
-    color: #888;
-    line-height: 1.7em;
-    font-weight: Regular;
+#story > *:last-child 
+{
+	margin-bottom: 15vh !important;
 }
 
-a {
-    font-weight: 700;
-    color: #966495;
-    font-family: sans-serif;
-    text-decoration: none;
+
+
+
+
+/* ================================================================= */
+/* Calico 文本流智能排版规则 (保护单词，防止溢出)                        */
+/* ================================================================= */
+
+p, p > *
+{
+    /* --- 1. 基础排版 --- */
+    margin-block-start: 0px !important;
+    font-size: 16pt;
+    line-height: 1.4;
+
+    /* --- 2. 智能换行组合拳 --- */
+    /* 保护英文单词作为一个整体换行 */
+    word-break: normal !important;
+    
+    /* 终极兜底：当长句（中文或URL）塞满一行时，允许在任何地方切断换行，防止撑爆屏幕 */
+    overflow-wrap: anywhere !important;
+    
+    /* 恢复正常的空白符处理和标点符号“避头尾”规则 */
+    white-space: normal !important;
+    line-break: auto !important;
+
+    /* --- 3. 防止玩家拖拽选中文本产生蓝底 --- */
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
 }
 
-.unclickable {
-    font-weight: 700;
-    color: #4f3411;
-    font-family: sans-serif;
-    text-decoration: none;
-    cursor: not-allowed;
+
+
+
+
+
+
+
+
+
+
+a 
+{	
+	text-decoration: none !important;
+	transition: all 0.5s linear;
 }
 
-a:hover {
-    color: black;
+a:hover
+{
+	color: white;
 }
 
-@media screen and (prefers-reduced-motion: no-preference) {
-    a {
-        transition: color 0.6s;
-    }
 
-    a:hover {
-        transition: color 0.1s;
-    }
+.choice
+{
+	opacity: 0.5;
+	transition: all 1s;
+	color: white;
 }
 
-strong {
-    color: black;
-    font-weight: bold;
+.choice:hover
+{
+	color: white;
+	opacity: 1;
+	transition: all 1s;	
 }
+
+.choice > a
+{
+	color: inherit;
+}
+
+.choice > a:active
+{
+	color:red;
+}
+
+.chosen
+{
+	color: white !important;
+	opacity: 1 !important;
+}
+
+/* ================================================================= */
+/* PATCH SPECIFIC CSS                                                */
+/* ================================================================= */
+
+/* --------------- */
+/* parallax frames */
+/* --------------- */
+.frame
+{
+	width: 100%;
+	height: calc(100vw * 0.2);
+	overflow: hidden;
+	position: relative;
+}
+
+.frameLayer
+{
+	position: absolute;
+	width: 120%;
+	display: block;
+	top: -9999px;
+	bottom: -9999px;
+	left: -9999px;
+	right: -9999px;
+	margin: auto;
+	max-width: auto;
+}
+
+/* css for mobile */
+@media (hover:none), (hover:on-demand) 
+{ 
+	.frame 
+	{ 
+		min-height: calc(100vmax * 0.25);
+	}
+	.frameLayer
+	{
+		width: 150%;
+	}
+}
+
+/* ------- */
+/* preload */
+/* ------- */
+
+.progressbar
+{
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	background: #7690ac;
+	width: 0%;	
+	height: 1vh;
+}
+
+/* ================================================================= */
+/* 自己加的                                                          */
+/* ================================================================= */
+
+/* 让图片按照宽度自动缩放 */
 
 img {
-    display: block;
-    margin: 0 auto;
     max-width: 100%;
+    height: auto;
 }
 
-.container .hide {
-    opacity: 0.0;
-}
+/* ================================================================= */
+/* 工具条 (Toolbar) 样式                                              */
+/* ================================================================= */
 
-.container .invisible {
-    display: none;
-}
-
-.container>* {
-    opacity: 1.0;
-}
-
-@media screen and (prefers-reduced-motion: no-preference) {
-    .container>* {
-        transition: opacity 1.0s;
-    }
-}
-
-/*
-  Class applied to all choices
-  (Will always appear inside <p> element by default.)
-*/
-.choice {
-    text-align: center;
-    line-height: 1.7em;
-}
-
-/* 
-  Class applied to first choice
-*/
-:not(.choice)+.choice {
-    padding-top: 1em;
-}
-
-/*
-  Class applied to choice links
-*/
-.choice a, .choice span {
-    font-size: 15pt;
-}
-
-/* 
-  Built-in class:
-    The End # CLASS: end
-*/
-.end {
-    text-align: center;
-    font-weight: bold;
-    color: black;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-#controls {
-    z-index: 4;
-    font-size: 9pt;
-    text-align: center;
-    padding-bottom: 6px;
+#toolbar {
     position: fixed;
-    right: 14px;
-    top: 4px;
-    user-select: none;
+    top: 0;          /* 紧贴屏幕最顶部 */
+    left: 0;         /* 紧贴屏幕最左侧 */
+    width: 100%;     /* 横跨整个屏幕宽度 */
+    padding: 20px 30px; /* 调整内边距：上下20px，左右30px */
+    box-sizing: border-box; /* 确保 padding 不会把 100% 宽度撑爆 */
+    
+    display: flex;
+    justify-content: flex-end; /* 魔法属性：把里面的按钮全部推到最右边！ */
+    gap: 20px;
+    z-index: 100;
+    
+    /* 👇 关键核心：给它一个不透明的底色，用来遮挡滚动的文字 👇 */
+    background-color: black; /* 默认黑夜主题的底色 */
+    /* transition: background-color 0.3s ease; 让主题切换时的背景变色也如丝般顺滑 */
+}
+
+#toolbar a {
+    color: #966495;        /* 文字颜色 */
+    font-size: 14pt;
+    font-weight: bold;
+    cursor: pointer;       /* 鼠标移上去会变成小手 */
+    transition: color 0.3s ease; /* 颜色改变时的过渡动画 */
+}
+
+#toolbar a:hover {
+    color: #f16d69;        /* 鼠标悬停时的颜色，这里用了 Calico 链接默认的红色 */
+}
+
+
+/* ================================================================= */
+/* 明亮主题 (Light Theme) 样式                                        */
+/* ================================================================= */
+
+/* 当 body 被加上 light-theme 类名时的样式 */
+body.light-theme {
     background: white;
+    color: black;
 }
 
-@media screen and (prefers-reduced-motion: no-preference) {
-    #controls {
-        transition: color 0.6s, background 0.6s;
-    }
+/* 明亮主题下的选项颜色（原本是白色，现在改成黑色） */
+body.light-theme .choice {
+    color: black;
 }
 
-#controls [disabled] {
-    color: #ccc;
+body.light-theme .choice:hover {
+    color: black;
 }
 
-#controls>*:not(:last-child):after {
-    content: " | ";
+body.light-theme .chosen {
+    color: black !important;
 }
 
-@media screen and (max-width: 980px) {
-    #controls {
-        z-index: 2;
-        padding-top: 24px;
-        top: 0;
-        left: 0;
-        right: 0;
-    }
+body.light-theme #toolbar {
+    background-color: white;
 }
 
-/* 
-  Dark Theme (Added in Inky 0.10.0)
-    # theme: dark
-*/
 
-body.dark {
-    background: black;
-    color: white;
+/* ================================================================= */
+/* 护眼黄主题 (Sepia Theme) 样式                                      */
+/* ================================================================= */
+
+/* 柔和的米黄色背景和深棕色文字，对眼睛极其友好 */
+body.sepia-theme {
+    background: #fdf6e3; 
+    color: #433422;      
 }
 
-.dark h2 {
-    color: #666;
+/* 护眼主题下的选项颜色（调整为柔和的浅棕色） */
+body.sepia-theme .choice {
+    color: #8b6b43;
 }
 
-.dark .container {
-    background: black;
+/* 鼠标悬停时的选项颜色 */
+body.sepia-theme .choice:hover {
+    color: #433422;
 }
 
-.dark .written-in-ink {
-    background: black;
+/* 选中的选项颜色 */
+body.sepia-theme .chosen {
+    color: #433422 !important;
 }
 
-.dark a {
-    color: #966495;
-}
-.dark .unclickable{
-    color: #c4af87;
-    cursor:not-allowed;
-}
-
-.dark a:hover {
-    color: white;
-}
-
-@media screen and (prefers-reduced-motion: no-preference) {
-    .dark a {
-        transition: color 0.6s;
-    }
-}
-
-.dark strong {
-    color: white;
-}
-
-.dark #controls [disabled] {
-    color: #444;
-}
-
-.dark .end {
-    color: white;
-}
-
-.dark #controls {
-    background: black;
+body.sepia-theme #toolbar {
+    background-color: #fdf6e3;
 }

@@ -1,48 +1,28 @@
 ﻿<!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="utf-8">
 
-    <title>即刻入职</title>
+    <title>即刻入职｜黑川物流</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style.css">
-
+	
+    <script type="text/javascript" src="ink.js"></script>
+    <script type="text/javascript" src="calico.js"></script>
+	<script type="module" src="project.js"></script>
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-39LLSCKKW6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-39LLSCKKW6');
-</script>
-
 <body>
-
-    <div class="outerContainer">
-        <h3 class="written-in-ink"><a href="https://www.inklestudios.com/ink">WRITTEN IN INK</a></h3>
-
-        <div id="controls" class="buttons">
-          <a id="rewind" title="Restart story from beginning">restart</a>
-          <a id="save" title="Save progress">save</a>
-          <a id="reload" title="Reload from save point">load</a>
-          <a id="theme-switch" title="Switch theme">theme</a>
+    <div id="container">
+        <div id="toolbar">
+            <a href="#" id="save-btn">保存</a>
+            <a href="#" id="load-btn">读取</a>
+            <a href="#" id="reset-btn">重置</a>
+            <a href="#" id="theme-btn">主题</a>
         </div>
-
-        <div id="story" class="container">
-            <div class="header">
-                <h1>即刻入职</h1>
-                <h2 class="byline"></h2>
-            </div>
-        </div>
+        <div id="story"></div>
     </div>
-
-    <script src="ink.js"></script>
-    <script src="即刻入职.js"></script>
-    <script src="main.js"></script>
 </body>
 </html>

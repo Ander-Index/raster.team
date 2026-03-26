@@ -662,6 +662,9 @@ class Story
 		// reset the story
 		this.ink.ResetState();
 		
+		// 👇 请在这里加上这一行！强行把引擎状态设回空闲 👇
+		this.state = Story.states.idle;
+		
 		// and start it from the beginning
 		this.continue();
 	}
