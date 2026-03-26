@@ -386,6 +386,7 @@ img {
 }
 
 #toolbar-title {
+    display: none !important; /* 这一行会强制隐藏标题 */
     font-size: 14pt;
     font-weight: bold;
     color: white; /* 默认黑夜主题下的文字颜色 */

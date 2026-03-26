@@ -11,7 +11,7 @@
 // INCLUDE Misc/Finales.ink
 // INCLUDE Misc/Achievements.ink
 // INCLUDE Misc/Shutdown.ink
-// INCLUDE Misc/Parameters.ink
+INCLUDE Misc/Parameters.ink
 // ////////////////////////////////
 // ////////////////////////////////
 // ////////////////////////////////
@@ -30,9 +30,9 @@
 // ////////////////////////////////
 // ////////////////////////////////
 // //  Menus
-// INCLUDE Menus/Main.ink
+INCLUDE Menus/Main.ink
 // INCLUDE Menus/Commons.ink
-// INCLUDE Menus/START.ink
+INCLUDE Menus/START.ink
 // INCLUDE Menus/JumpTo.ink
 // INCLUDE Menus/Finale.ink
 // ////////////////////////////////
