@@ -136,37 +136,32 @@ pre code {
 
 
 
-
 /* ================================================================= */
-/* Calico 文本流智能排版规则 (保护单词，防止溢出)                        */
+/* 智能排版终极版：基础排版 + 保护英文单词 + 制裁中文溢出                   */
 /* ================================================================= */
 
-p, p > *
-{
-    /* --- 1. 基础排版 --- */
+p, p * {
+    /* --- 1. 恢复你丢失的基础排版 --- */
     margin-block-start: 0px !important;
     font-size: 16pt;
     line-height: 1.4;
 
-    /* --- 2. 智能换行组合拳 --- */
-    /* 保护英文单词作为一个整体换行 */
+    /* --- 2. 刚才测试成功的智能换行规则 --- */
+    /* 恢复理智：尽量保持英文单词完整 */
     word-break: normal !important;
-    
-    /* 终极兜底：当长句（中文或URL）塞满一行时，允许在任何地方切断换行，防止撑爆屏幕 */
-    overflow-wrap: anywhere !important;
-    
-    /* 恢复正常的空白符处理和标点符号“避头尾”规则 */
-    white-space: normal !important;
+    /* 精准防溢出：允许长串字符在撞墙时切断，优先切中文 */
+    overflow-wrap: break-word !important;
+    /* 恢复正常阅读体验，处理标点 */
     line-break: auto !important;
+    /* 保留空格和引擎必要的文本流 */
+    white-space: pre-wrap !important;
 
-    /* --- 3. 防止玩家拖拽选中文本产生蓝底 --- */
+    /* --- 3. 防拖拽蓝底 --- */
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
 }
-
-
 
 
 a 
