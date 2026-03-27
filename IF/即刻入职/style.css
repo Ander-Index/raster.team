@@ -141,23 +141,28 @@ pre code {
 /* 智能排版终极版：基础排版 + 保护英文单词 + 制裁中文溢出                   */
 /* ================================================================= */
 
-p, p * {
-    /* --- 1. 恢复你丢失的基础排版 --- */
+/* --- 1. 基础排版（只针对外层 p 标签，不干扰里面的标题等特殊元素） --- */
+p {
     margin-block-start: 0px !important;
     font-size: 16pt;
     line-height: 1.4;
+}
 
-    /* --- 2. 刚才测试成功的智能换行规则 --- */
+/* --- 2. 智能换行规则（穿透所有内部子元素，强行制裁溢出） --- */
+p, p * {
     /* 恢复理智：尽量保持英文单词完整 */
     word-break: normal !important;
+    
     /* 精准防溢出：允许长串字符在撞墙时切断，优先切中文 */
     overflow-wrap: break-word !important;
+    
     /* 恢复正常阅读体验，处理标点 */
     line-break: auto !important;
+    
     /* 保留空格和引擎必要的文本流 */
     white-space: pre-wrap !important;
 
-    /* --- 3. 防拖拽蓝底 --- */
+    /* 防拖拽蓝底 */
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;
