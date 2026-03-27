@@ -8,25 +8,25 @@ import "./patches/minwordsperline.js";
 import "./patches/dragtoscroll.js";
 
 // convert markdown to HTML tags
-import "./patches/markdowntohtml.js"
+// import "./patches/markdowntohtml.js"
 
 // -----------------------------------
 
-// import helper patch for binding shortcuts to choices
-import choices from "./patches/shortcuts/choices.js";
+// // import helper patch for binding shortcuts to choices
+// import choices from "./patches/shortcuts/choices.js";
 
-// bind the number keys to choices
-for (var i = 0; i < 9; i++)
-{
-	choices.add((i+1).toString(), i, true);
-}
+// // bind the number keys to choices
+// for (var i = 0; i < 9; i++)
+// {
+// 	choices.add((i+1).toString(), i, true);
+// }
 
-// bind z, x, and c to the first three shortcuts respectively
-["z", "x", "c"].forEach((key, index) => { choices.add(key, index, true) })
+// // bind z, x, and c to the first three shortcuts respectively
+// ["z", "x", "c"].forEach((key, index) => { choices.add(key, index, true) })
 
-// bind spacebar to progress the story,
-// provided there's only one choice available
-choices.add(" ", 0, true, true);
+// // bind spacebar to progress the story,
+// // provided there's only one choice available
+// choices.add(" ", 0, true, true);
 
 //	存档插槽
 import memorycard from "./patches/memorycard.js";
@@ -60,7 +60,7 @@ options.hidelength = 300;    // 元素淡出/清屏的动画时间（默认 600.
 
 // create our game
 
-var story = new Story("自然之神的伪冒祭祀.json");
+var story = new Story("自然之神的伪冒祭祀.JSON");
 
 
 // 1. 获取页面上的保存按钮
@@ -134,9 +134,8 @@ resetBtn.addEventListener("click", function(event) {
     var confirmReset = confirm("确定要重新开始游戏吗？所有的进度都将清除，但是不会清除已保存的存档。");
     
     if (confirmReset) {
-        // 放弃使用容易与动画冲突的 story.restart()
-        // 直接刷新当前页面，这是最纯净、最稳定的重置方式
-        window.location.reload();
+        // 调用 Calico 官方的重置接口
+        window.location.reload();	//	直接刷新网页
     }
 });
 
@@ -176,4 +175,205 @@ themeBtn.addEventListener("click", function(event) {
     // setTimeout(function() {
     //     themeBtn.style.color = ""; 
     // }, 300);
+});
+
+
+
+
+
+
+// 添加一个名为 #input_text 的自定义标签
+Tags.add("input_text", function(story, property) {
+    // property 就是标签冒号后面的内容，即你想替换的 Ink 变量名
+    var varName = property ? property.trim() : null;
+    if (!varName) return;
+
+    // 1. 创建一个外层容器 (段落)
+    var container = document.createElement("p");
+    container.className = "custom-input-container";
+
+    // 2. 创建输入框
+    var inputField = document.createElement("input");
+    inputField.type = "text"; 
+    inputField.placeholder = "请输入...";
+    inputField.className = "custom-input-field";
+
+    // 3. 创建确认按钮
+    var confirmBtn = document.createElement("button");
+    confirmBtn.innerText = "确认";
+    confirmBtn.className = "custom-input-btn";
+
+    // 将输入框和按钮加入容器
+    container.appendChild(inputField);
+    container.appendChild(confirmBtn);
+
+    // [关键点] 给游戏容器加一个 class，用于在 CSS 里暂时隐藏默认的 Ink 选项
+    // 这样玩家必须通过输入框来推进流程
+    story.innerdiv.classList.add("hide-choices-for-input");
+
+    // 4. 绑定按钮的点击事件
+    confirmBtn.addEventListener("click", function(event) {
+        event.preventDefault(); // 阻止默认行为
+        
+        var val = inputField.value.trim();
+        if (val !== "") {
+            // 将玩家输入的值赋给 Ink 中的变量
+            story.ink.variablesState[varName] = val;
+            
+            // 改变外观，给玩家已确认的视觉反馈
+            inputField.disabled = true;
+            confirmBtn.disabled = true;
+            confirmBtn.innerText = "已确认 ✔";
+
+            // 稍微延迟一下，然后自动推进故事
+            setTimeout(function() {
+                // 移除隐藏选项的 class
+                story.innerdiv.classList.remove("hide-choices-for-input");
+                
+                // 找到当前的所有选项，并自动点击第一个未被点过的选项
+                var choices = story.innerdiv.querySelectorAll(".choice a");
+                for (var i = 0; i < choices.length; i++) {
+                    if (!choices[i].classList.contains("chosen")) {
+                        choices[i].click();
+                        break;
+                    }
+                }
+            }, 400); // 400 毫秒的延迟让玩家能看清“已确认”的提示
+        } else {
+            // 如果玩家没填内容，给一点提示
+            inputField.placeholder = "内容不能为空哦！";
+            inputField.style.borderColor = "red";
+        }
+    });
+
+    // 小优化：允许玩家按键盘的回车键（Enter）直接提交
+    inputField.addEventListener("keydown", function(event) {
+        event.stopPropagation();    // 【新增这一行】：阻止按键事件“冒泡”到网页外层，这样 Calico 就听不到你的按键了
+        if (event.key === "Enter") {
+            confirmBtn.click();
+        }
+    });
+
+    // 5. 将这组创建好的 UI 元素推入 Calico 的渲染队列中，让它显示在文字流里
+    story.queue.push(container);
+});
+
+
+
+
+
+
+
+
+
+
+// 添加一个名为 #input_num 的自定义标签（专门用于输入数字）
+Tags.add("input_num", function(story, property) {
+    var varName = property ? property.trim() : null;
+    if (!varName) return;
+
+    // 1. 创建外层容器
+    var container = document.createElement("p");
+    container.className = "custom-input-container";
+
+    // 2. 创建数字输入框（核心区别：type 改为了 "number"）
+    var inputField = document.createElement("input");
+    inputField.type = "number"; 
+    inputField.placeholder = "请输入数字...";
+    inputField.className = "custom-input-field";
+
+    // 3. 创建确认按钮
+    var confirmBtn = document.createElement("button");
+    confirmBtn.innerText = "确认";
+    confirmBtn.className = "custom-input-btn";
+
+    container.appendChild(inputField);
+    container.appendChild(confirmBtn);
+
+    // 隐藏默认的选项
+    story.innerdiv.classList.add("hide-choices-for-input");
+
+    // 4. 绑定点击事件
+    confirmBtn.addEventListener("click", function(event) {
+        event.preventDefault();
+        
+        var val = inputField.value.trim();
+        if (val !== "") {
+            // 【核心区别】将玩家填写的文字强制转换为纯数字 (Float)
+            var numVal = parseFloat(val);
+            
+            // 确保转换后确实是一个有效的数字
+            if (!isNaN(numVal)) {
+                // 将数字存入 Ink 变量
+                story.ink.variablesState[varName] = numVal;
+                
+                // 禁用输入框，修改按钮状态
+                inputField.disabled = true;
+                confirmBtn.disabled = true;
+                confirmBtn.innerText = "已确认 ✔";
+
+                // 延迟 400 毫秒后自动推进剧情
+                setTimeout(function() {
+                    story.innerdiv.classList.remove("hide-choices-for-input");
+                    var choices = story.innerdiv.querySelectorAll(".choice a");
+                    for (var i = 0; i < choices.length; i++) {
+                        if (!choices[i].classList.contains("chosen")) {
+                            choices[i].click();
+                            break;
+                        }
+                    }
+                }, 400);
+            } else {
+                inputField.value = "";
+                inputField.placeholder = "只能输入数字哦！";
+                inputField.style.borderColor = "red";
+            }
+        } else {
+            inputField.placeholder = "内容不能为空哦！";
+            inputField.style.borderColor = "red";
+        }
+    });
+
+    // 支持回车键提交
+    inputField.addEventListener("keydown", function(event) {
+        event.stopPropagation();    // 【新增这一行】：阻止按键事件“冒泡”到网页外层，这样 Calico 就听不到你的按键了
+        if (event.key === "Enter") {
+        confirmBtn.click();
+        }
+    });
+
+    // 推入渲染队列
+    story.queue.push(container);
+});
+
+
+
+
+
+
+
+
+// ==========================================
+// 处理带有 # unclickable 标签的不可点击选项
+// ==========================================
+document.getElementById("container").addEventListener("passage choice element", function(event) {
+    var choice = event.detail.choice;
+    var element = event.detail.element; // 这是包裹选项的 <p class="choice">
+    
+    // 检查 Ink 脚本中该选项是否带有 unclickable 标签
+    if (choice.tags && choice.tags.includes("unclickable")) {
+        // 给外层 <p> 加上特定的类名，方便 CSS 调整外观
+        element.classList.add("unclickable");
+        
+        // 获取实际承担点击功能的 <a> 标签
+        var link = element.querySelector("a");
+        
+        // 1. 彻底斩断鼠标交互，真正实现“无法点击”
+        link.style.pointerEvents = "none";
+        
+        // 2. 延迟覆盖引擎默认的悬停小手 (因为 Calico 会在动画结束后重置鼠标样式)
+        setTimeout(function() {
+            link.style.cursor = "not-allowed";
+        }, story.options.suppresschoice + 10);
+    }
 });

@@ -472,3 +472,19 @@ body.sepia-theme #toolbar-title {
 
 
 
+
+/* ================================================================= */
+/* 不可点击选项 (Unclickable Choice) 样式                              */
+/* ================================================================= */
+
+/* 让它半透明变暗，视觉上一看就是被禁用的 */
+.choice.unclickable {
+    opacity: 0.35;
+    cursor: not-allowed !important; /* 强制显示禁止符号 */
+}
+
+/* 覆盖原本选项悬停时会变亮、变白的特效 */
+.choice.unclickable:hover {
+    opacity: 0.35;
+    color: inherit;
+}

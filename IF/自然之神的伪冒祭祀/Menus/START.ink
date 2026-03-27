@@ -8,15 +8,15 @@ TODO    暂时强行将名字拉回 No.AZ
 月光拂面，你所在的位置正是一处被枯树围成的圆心处。
 你环顾四周，这是一片规整的圆形空地，枯黄的草地上撒着暗红色的神秘纹路，构筑成一个奇异的法阵，你是从法阵的正中心处醒来的。
 看起来，你现在所在的地方是……<>
-// +   一片森林
-//     # CLEAR
-//     ->  Forest__START
-// +   深渊之中
-//     # CLEAR
-//     ->  Abyss__START
-// +   茫茫沙漠
-//     # CLEAR
-//     ->  Desert__START
++   一片森林
+    # CLEAR
+    ->  Forest__START
++   深渊之中
+    # CLEAR
+    ->  Abyss__START
++   茫茫沙漠
+    # CLEAR
+    ->  Desert__START
 +   城市郊外⛔️    # unclickable
     TODO    城市开局，直接从政
 ->  END
