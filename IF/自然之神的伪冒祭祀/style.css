@@ -159,7 +159,7 @@ p, p * {
     line-break: auto !important;
     
     /* 保留空格和引擎必要的文本流 */
-    white-space: pre-wrap !important;
+    white-space: normal !important;
 
     /* 防拖拽蓝底 */
     -webkit-user-drag: none;
@@ -167,7 +167,6 @@ p, p * {
     -moz-user-drag: none;
     -o-user-drag: none;
 }
-
 
 a 
 {   
