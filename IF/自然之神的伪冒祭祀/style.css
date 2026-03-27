@@ -9,7 +9,7 @@
 /* 1. 引入更纱黑体 (主字体) */
 @font-face {
     font-family: 'Sarasa Mono SC';
-    src: url('https://raster.team/Fonts/SarasaMonoSC-Regular.ttf') format('truetype');
+    src: url('https://blog.raster.team/Fonts/SarasaMonoSC-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -17,7 +17,7 @@
 /* 2. 引入 Nerd Font (符号补充字体) */
 @font-face {
     font-family: 'Symbols Nerd Font';
-    src: url('https://raster.team/Fonts/SymbolsNerdFontMono-Regular.ttf') format('truetype');
+    src: url('https://blog.raster.team/Fonts/SymbolsNerdFontMono-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
