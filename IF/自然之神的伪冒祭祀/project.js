@@ -60,7 +60,7 @@ options.hidelength = 300;    // 元素淡出/清屏的动画时间（默认 600.
 
 // create our game
 
-var story = new Story("自然之神的伪冒祭祀.JSON");
+var story = new Story("自然之神的伪冒祭祀.json");
 
 
 // 1. 获取页面上的保存按钮
