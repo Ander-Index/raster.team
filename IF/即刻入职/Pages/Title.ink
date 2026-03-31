@@ -1,8 +1,7 @@
 === Page__Title
-更新日期：20260327（全新框架，正在填充内容）
+更新日期：20260327
 
 {Flag__Base__Wakeup: 要重新体验游戏，可以点击菜单中的 RESTART。}
-
 <h1 style="color: \#966495;">即刻入职</h1>
 作者：瑞洛凩｜校对：黑川江凌
 #   IMAGE:  https:\/\/img.cntracker.net\/img\/d25a4487c6e3d267e47d5abd32e0801d.jpg

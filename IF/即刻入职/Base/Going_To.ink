@@ -28,6 +28,6 @@
     ->  Break__Shutdown
 ////////////////////////////////
 //  去上这 B 班
-+   {(Check__SAN(INDEX) != "BAD" and Check__SAN(INDEX) != "AWFUL")or Flag__Work__Shutdown == 0} 上班｜回公司上班
++   {(Check__SAN(INDEX) != "BAD" and Check__SAN(INDEX) != "AWFUL")or Flag__Work__Shutdown == 0} 上班｜去公司上班
     # CLEAR
     ->  Work__Index

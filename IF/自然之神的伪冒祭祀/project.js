@@ -8,7 +8,7 @@ import "./patches/minwordsperline.js";
 import "./patches/dragtoscroll.js";
 
 // convert markdown to HTML tags
-// import "./patches/markdowntohtml.js"
+import "./patches/markdowntohtml.js"
 
 // -----------------------------------
 
