@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.raster.team</id>
+    <title>Team Raster</title>
+    <updated>2026-06-12T02:03:27.581Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://blog.raster.team"/>
+    <link rel="self" href="https://blog.raster.team/atom.xml"/>
+    <subtitle>光栅组资源发布站
+&lt;br /&gt;
+&lt;br /&gt;ICP备案号：雪ICP备1145141919810号</subtitle>
+    <logo>https://blog.raster.team/images/avatar.png</logo>
+    <icon>https://blog.raster.team/favicon.ico</icon>
+    <rights>All rights reserved 2026, Team Raster</rights>
+    <entry>
+        <title type="html"><![CDATA[【ChoiceScript】ChoiceScript 指南]]></title>
+        <id>https://blog.raster.team/post/choicescript-choicescript-zhi-nan/</id>
+        <link href="https://blog.raster.team/post/choicescript-choicescript-zhi-nan/">
+        </link>
+        <updated>2026-03-24T04:21:50.000Z</updated>
+        <summary type="html"><![CDATA[<p>官方的部分已经烤好了，但是我打算先做出一些东西再跟大家宣传。</p>
+<p><a href="https://raster.gitbook.io/zh-hans_choicescript-guide">https://raster.gitbook.io/zh-hans_choicescript-guide</a></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>官方的部分已经烤好了，但是我打算先做出一些东西再跟大家宣传。</p>
+<p><a href="https://raster.gitbook.io/zh-hans_choicescript-guide">https://raster.gitbook.io/zh-hans_choicescript-guide</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【Twine】Chapbook 简体中文指南]]></title>
+        <id>https://blog.raster.team/post/Tutorial_Twine-Chapbook-Guide/</id>
+        <link href="https://blog.raster.team/post/Tutorial_Twine-Chapbook-Guide/">
+        </link>
+        <updated>2026-03-17T03:22:06.000Z</updated>
+        <summary type="html"><![CDATA[<p>嗨～这位对互动小说创作感兴趣的朋友～欢迎你～</p>
+<p>如果您知道这是什么，想要直接去看教程，那么可以直接跳转了：<a href="/Sub-Sites/Chapbook_Gudie/index.html">/Sub-Sites/Chapbook_Gudie/index.html</a></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>嗨～这位对互动小说创作感兴趣的朋友～欢迎你～</p>
+<p>如果您知道这是什么，想要直接去看教程，那么可以直接跳转了：<a href="/Sub-Sites/Chapbook_Gudie/index.html">/Sub-Sites/Chapbook_Gudie/index.html</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【REAPER】简体中文语言包]]></title>
+        <id>https://blog.raster.team/post/REAPER_Chinese-Simplified.ReaperLangPack/</id>
+        <link href="https://blog.raster.team/post/REAPER_Chinese-Simplified.ReaperLangPack/">
+        </link>
+        <updated>2026-02-03T03:22:35.000Z</updated>
+        <summary type="html"><![CDATA[<p>🎉  没错！这款深度打磨的 REAPER 汉化包终于发布啦~！<br>
+💴  完全免费，持续更新<br>
+📅  最后更新时间：2026 年 02 月 02 日<br>
+ℹ️  版本：7.60（也兼容旧版 REAPER）</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>🎉  没错！这款深度打磨的 REAPER 汉化包终于发布啦~！<br>
+💴  完全免费，持续更新<br>
+📅  最后更新时间：2026 年 02 月 02 日<br>
+ℹ️  版本：7.60（也兼容旧版 REAPER）</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【Inky】使用 Ink 进行写作]]></title>
+        <id>https://blog.raster.team/post/Tutorial_WritingWithInk/</id>
+        <link href="https://blog.raster.team/post/Tutorial_WritingWithInk/">
+        </link>
+        <updated>2025-07-02T08:46:51.000Z</updated>
+        <summary type="html"><![CDATA[<p>简体中文教程是从英文原文翻译而来。可能会存在版本滞后性，或与英文版有出入，请与英文版为准。</p>
+<p>翻译时使用了 DeepSeek、ChatGPT 与 DeepL 辅助。</p>
+<p>我可以确保每句翻译我都校正过。</p>
+<p>译者：王洛木 (Nomo_Wang@outlook.com)，如果您有关于翻译的问题要提，且不想要占用 Discussion 资源，可以发邮件给译者。</p>
+<p>翻译时的 Ink 版本：1.2.0</p>
+<p>翻译最后更新时间：2025 年 07 月 01 日</p>
+<p>已全部翻译完毕。如果您在阅读时发现问题，请你用上面的联系方式联系译者反馈，感谢您的阅读～</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>简体中文教程是从英文原文翻译而来。可能会存在版本滞后性，或与英文版有出入，请与英文版为准。</p>
+<p>翻译时使用了 DeepSeek、ChatGPT 与 DeepL 辅助。</p>
+<p>我可以确保每句翻译我都校正过。</p>
+<p>译者：王洛木 (Nomo_Wang@outlook.com)，如果您有关于翻译的问题要提，且不想要占用 Discussion 资源，可以发邮件给译者。</p>
+<p>翻译时的 Ink 版本：1.2.0</p>
+<p>翻译最后更新时间：2025 年 07 月 01 日</p>
+<p>已全部翻译完毕。如果您在阅读时发现问题，请你用上面的联系方式联系译者反馈，感谢您的阅读～</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【星火社游戏制作组】黑之章]]></title>
+        <id>https://blog.raster.team/post/Game_BlackChapter/</id>
+        <link href="https://blog.raster.team/post/Game_BlackChapter/">
+        </link>
+        <updated>2025-06-10T09:37:14.000Z</updated>
+        <summary type="html"><![CDATA[<p>经历了两年历练的新人警察，在偶然的情况下得到了能看穿事物运转的流动之魔眼，持有这种力量的他又一次被卷进那个昏黑的泥潭。</p>
+<p>两年前出现的剥皮者,自称杀人犯的少年、癫狂的邪教祭祀、搜集着灵魂的诡异咒术。当接踵而至的怪异事件和冲突降临到身边时，那熟悉的日常早已不复存在......</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>经历了两年历练的新人警察，在偶然的情况下得到了能看穿事物运转的流动之魔眼，持有这种力量的他又一次被卷进那个昏黑的泥潭。</p>
+<p>两年前出现的剥皮者,自称杀人犯的少年、癫狂的邪教祭祀、搜集着灵魂的诡异咒术。当接踵而至的怪异事件和冲突降临到身边时，那熟悉的日常早已不复存在......</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【UCS】通用音效分类系统命名公约]]></title>
+        <id>https://blog.raster.team/post/UCS_通用音效分类系统命名公约/</id>
+        <link href="https://blog.raster.team/post/UCS_通用音效分类系统命名公约/">
+        </link>
+        <updated>2025-05-16T13:08:56.000Z</updated>
+        <summary type="html"><![CDATA[<p>UCS 强烈推荐采用一种特殊的文件名结构。遵循这一结构后，各类程序中的自动化脚本可直接从文件名中提取信息，并自动填充到最终用户的元数据字段中。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>UCS 强烈推荐采用一种特殊的文件名结构。遵循这一结构后，各类程序中的自动化脚本可直接从文件名中提取信息，并自动填充到最终用户的元数据字段中。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【教程】本站建站所用到的教程、工具还有服务]]></title>
+        <id>https://blog.raster.team/post/Tutorial_Build-your-own-site-easy/</id>
+        <link href="https://blog.raster.team/post/Tutorial_Build-your-own-site-easy/">
+        </link>
+        <updated>2025-02-21T03:27:52.000Z</updated>
+        <summary type="html"><![CDATA[<p>感谢以下的个人与组织提供的支持。<br>
+如果你也有自己搭建一个的意图，不妨参考一下本篇文章~</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>感谢以下的个人与组织提供的支持。<br>
+如果你也有自己搭建一个的意图，不妨参考一下本篇文章~</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【攻略】生化危机 4 重制版，个人向流程记录]]></title>
+        <id>https://blog.raster.team/post/Tutorials_Resident-Evil-4/</id>
+        <link href="https://blog.raster.team/post/Tutorials_Resident-Evil-4/">
+        </link>
+        <updated>2024-10-08T06:54:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>作者：辰远<br>
+本视频的初衷是个人向的记录视频，诣在给自己完成这个小挑战的回忆。但是我为了完成这个挑战也进行了详细的路线规划，所以也适合给各位和我一样水平普通又想打专家S+的小伙伴们一个攻略和参考。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>作者：辰远<br>
+本视频的初衷是个人向的记录视频，诣在给自己完成这个小挑战的回忆。但是我为了完成这个挑战也进行了详细的路线规划，所以也适合给各位和我一样水平普通又想打专家S+的小伙伴们一个攻略和参考。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【macOS】macOS 12+ 的系统壁纸路径]]></title>
+        <id>https://blog.raster.team/post/Tutorial_macOS-12+-的系统壁纸路径/</id>
+        <link href="https://blog.raster.team/post/Tutorial_macOS-12+-的系统壁纸路径/">
+        </link>
+        <updated>2024-01-07T12:21:40.000Z</updated>
+        <summary type="html"><![CDATA[<p>要说系统自带的壁纸，那 macOS 的指定排得上号。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>要说系统自带的壁纸，那 macOS 的指定排得上号。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【Single】桜色の残影〜カリン]]></title>
+        <id>https://blog.raster.team/post/Music_KaRiNn/</id>
+        <link href="https://blog.raster.team/post/Music_KaRiNn/">
+        </link>
+        <updated>2023-12-06T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>……（每天都在与自己的懒惰斗争）<br>
+to 寒<br>
+for 花梨</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>……（每天都在与自己的懒惰斗争）<br>
+to 寒<br>
+for 花梨</p>
+]]></content>
+    </entry>
+</feed>

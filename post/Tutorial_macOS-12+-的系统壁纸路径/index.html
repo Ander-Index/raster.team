@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>【macOS】macOS 12+ 的系统壁纸路径 | Team Raster</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://blog.raster.team/favicon.ico?v=1781229804811">
+<link rel="stylesheet" href="https://blog.raster.team/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-289X33BWK2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-289X33BWK2');
+</script>
+
+
+    <meta name="description" content="要说系统自带的壁纸，那 macOS 的指定排得上号。
+
+先上结论
+
+安装时已经存在的部分仍然在传统地址：/System/Library/Desktop Pictures
+在偏好设置中下载的部分在：/Users/&lt;你的用户名&gt;/L..." />
+    <meta name="keywords" content="Tutorials" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://blog.raster.team">
+        <img src="https://blog.raster.team/images/avatar.png?v=1781229804811" class="site-logo">
+        <h1 class="site-title">Team Raster</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页｜Home
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档｜Archives
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签｜Tags
+          </a>
+        
+      
+        
+          <a href="/tag/creations" class="site-nav">
+            作品｜Creations
+          </a>
+        
+      
+        
+          <a href="/tag/Tutorials" class="site-nav">
+            教程｜Tutorials
+          </a>
+        
+      
+        
+          <a href="/tag/Tools" class="site-nav">
+            工具｜Tools
+          </a>
+        
+      
+        
+          <a href="/tag/VoiceDBs" class="site-nav">
+            音源｜VoiceDBs
+          </a>
+        
+      
+        
+          <a href="/tag/Links" class="site-nav">
+            友链｜Links
+          </a>
+        
+      
+        
+          <a href="/tag/About" class="site-nav">
+            关于｜About
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      光栅组资源发布站
+<br />
+<br />ICP备案号：雪ICP备1145141919810号
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 2025 © Team Raster | <a class="rss" href="https://blog.raster.team/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">【macOS】macOS 12+ 的系统壁纸路径</h2>
+            <div class="post-date">2024-01-07</div>
+            
+              <div class="feature-container" style="background-image: url('https://cntracker.net/img/f7bd65aa13bfff708d6c6983dc572fbe.jpg')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>要说系统自带的壁纸，那 macOS 的指定排得上号。</p>
+<!-- more -->
+<h1 id="先上结论">先上结论</h1>
+<ul>
+<li>安装时已经存在的部分仍然在传统地址：/System/Library/Desktop Pictures</li>
+<li>在偏好设置中下载的部分在：/Users/&lt;你的用户名&gt;/Library/Application Support/com.apple.mobileAssetDesktop</li>
+</ul>
+<h1 id="此外">此外</h1>
+<ul>
+<li>Sonoma 最新的航拍桌面位置在：/Library/Application Support/com.apple.idleassetsd/Customer/4KSDR240FPS</li>
+</ul>
+<h1 id="随手附上下载地址">随手附上下载地址</h1>
+<h2 id="macos-12-monterey">macOS 12 Monterey:</h2>
+<ul>
+<li><s>Lay了，下次一定。（尽快补上）</s></li>
+</ul>
+<h1 id="如何发现的">如何发现的？</h1>
+<p>查了大量的资料，最后找到了这里：<br>
+<a href="https://www.jianshu.com/p/6276684bd00b">《Mac如何查看当前壁纸图片所在的路径》</a>：<a href="https://www.jianshu.com/p/6276684bd00b">https://www.jianshu.com/p/6276684bd00b</a></p>
+<blockquote>
+<p>Mac设置了漂亮的壁纸，却发现找不到壁纸的原位置的解决方法</p>
+<p align="right">——LuckyPan</p>
+</blockquote>
+<p>为防止网页失效，这里备份一下命令行……（均在终端输入）</p>
+<p>显示壁纸所在路径（路径显示在屏幕对应壁纸上）：</p>
+<pre><code>defaults write com.apple.dock desktop-picture-show-debug-text -bool TRUE;killall Dock
+</code></pre>
+<p>要隐藏该路径：</p>
+<pre><code>defaults delete com.apple.dock desktop-picture-show-debug-text;killall Dock
+</code></pre>
+<h1 id="但是">但是……</h1>
+<p>得到的 .heic 文件一张就是一份壁纸，很显然 Apple 把他们一份一份的封装起来了。<br>
+想给这方面做的确实不行的 Windows 用就需要解散它们，并转换成 .jpg。<br>
+要怎么解开这些 .heic，并导出其中的内容呢？<br>
+请移步这篇：<a href="/post/Tutorial_Unpack-HEIC">《【教程】如何不写代码就提取或转换含有多张图片的 .heic》</a></p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://blog.raster.team/tag/tutorials/" class="tag">
+                    Tutorials
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://blog.raster.team/post/Music_KaRiNn/">
+                  <h3 class="post-title">
+                    【Single】桜色の残影〜カリン
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '6187e0f7e50dfedb9a89',
+        clientSecret: '881a2c7fee8770c1162636e7a62d8debc75796cf',
+        repo: 'website-comment',
+        owner: 'Ander-Index',
+        admin: ['Ander-Index'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

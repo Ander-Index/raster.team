@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>【REAPER】如何将工程中的 Kontakt 批量无损跨版本升级？ | Team Raster</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://blog.raster.team/favicon.ico?v=1781229804811">
+<link rel="stylesheet" href="https://blog.raster.team/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-289X33BWK2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-289X33BWK2');
+</script>
+
+
+    <meta name="description" content="我的意思是，如果你使 REAPER, 那么你就不需要一个一个的替换成最新的 Kontakt, 再重新把音色加载一遍……
+也就是说，这篇文章想要告诉你如何把 REAPER 里所有用到的 Kontakt 在不丢失配置的情况下升级到最新的 Kon..." />
+    <meta name="keywords" content="Research,Kontakt,REAPER,Tutorials" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://blog.raster.team">
+        <img src="https://blog.raster.team/images/avatar.png?v=1781229804811" class="site-logo">
+        <h1 class="site-title">Team Raster</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页｜Home
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档｜Archives
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签｜Tags
+          </a>
+        
+      
+        
+          <a href="/tag/creations" class="site-nav">
+            作品｜Creations
+          </a>
+        
+      
+        
+          <a href="/tag/Tutorials" class="site-nav">
+            教程｜Tutorials
+          </a>
+        
+      
+        
+          <a href="/tag/Tools" class="site-nav">
+            工具｜Tools
+          </a>
+        
+      
+        
+          <a href="/tag/VoiceDBs" class="site-nav">
+            音源｜VoiceDBs
+          </a>
+        
+      
+        
+          <a href="/tag/Links" class="site-nav">
+            友链｜Links
+          </a>
+        
+      
+        
+          <a href="/tag/About" class="site-nav">
+            关于｜About
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      光栅组资源发布站
+<br />
+<br />ICP备案号：雪ICP备1145141919810号
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 2025 © Team Raster | <a class="rss" href="https://blog.raster.team/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">【REAPER】如何将工程中的 Kontakt 批量无损跨版本升级？</h2>
+            <div class="post-date">2023-10-11</div>
+            
+              <div class="feature-container" style="background-image: url('https://us.v-cdn.net/6034896/uploads/YGOD1WXOXP2D/screenshot-2022-10-07-at-11-27-14.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>我的意思是，如果你使 REAPER, 那么你就不需要一个一个的替换成最新的 Kontakt, 再重新把音色加载一遍……<br>
+也就是说，这篇文章想要告诉你如何把 REAPER 里所有用到的 Kontakt 在不丢失配置的情况下升级到最新的 Kontakt 大版本，比如从 Kontakt 6 升级到 Kontakt 7 而不丢失之前的配置。</p>
+<!-- more -->
+<p>注意，该操作 <strong><font color=red>仅限 REAPER</font></strong>, 原因是只有 REAPER 的工程是以纯文本的方式存储的。</p>
+<h1 id="写在前面">写在前面</h1>
+<p>发现一个很有意思的事情，Kontakt 5 的插件是 Kontakt 5.dll, 而 Kontakt 6 则是 Kontakt.dll, 现在 Kontakt 7 来了，竟然插件名又变成了 Kontakt 7.vst3……</p>
+<p>我猜这大概就和当年宣布“Windows 10 是最后一个版本的 Windows”一样……</p>
+<p><ul class="markdownIt-TOC">
+<li><a href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2">写在前面</a></li>
+<li><a href="#%E6%AD%A5%E9%AA%A4">步骤</a>
+<ul>
+<li><a href="#0-%E5%87%86%E5%A4%87%E6%AD%A5%E9%AA%A4">0. 准备步骤</a></li>
+<li><a href="#1-%E6%89%BE%E5%88%B0%E5%B7%A5%E7%A8%8B%E4%B8%AD%E6%83%B3%E8%A6%81%E6%9B%BF%E6%8D%A2%E7%9A%84-kontakt-%E6%8F%92%E4%BB%B6%E6%8C%87%E7%BA%B9">1. 找到工程中想要替换的 Kontakt 插件指纹</a></li>
+<li><a href="#2-%E8%8E%B7%E5%8F%96%E7%9B%AE%E6%A0%87-kontakt-%E6%8F%92%E4%BB%B6%E6%8C%87%E7%BA%B9">2. 获取目标 Kontakt 插件指纹</a></li>
+<li><a href="#3-%E6%89%B9%E9%87%8F%E6%9B%BF%E6%8D%A2">3. 批量替换</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9C%80%E5%90%8E">最后</a></li>
+</ul>
+</p>
+<p>那么废话少说：</p>
+<h1 id="步骤">步骤</h1>
+<h2 id="0-准备步骤">0. 准备步骤</h2>
+<p>虽然说用 REAPER 很多都会写个一两句代码的，电脑里面常备 Visual Code 也不是什么稀奇的事情，但这是一片面向小白的文章，所以就使用系统自带的记事本吧……<br>
+这里为了做示例，建立了一个名叫 Kontakt Upgrade 的工程：</p>
+<ol>
+<li>First    插入了一个 Kontakt 6 并将此内容重命名为“康泰克 6”，象征性的加载一个音色。</li>
+<li>Second   插入了一个 Kontakt 6 并不重命名，象征性的加载一个音色。</li>
+<li>Third    插入了一个 Kontakt 7，可以象征性的加载一个音色。<br>
+<img src="https://blog.raster.team/post-images/1697014831868.png" alt="" loading="lazy"></li>
+</ol>
+<p>在您的实际操作中，请触类旁通，因为你电脑里的插件指纹可能与我的不一样，所以您大概不能直接从我这里复制我的 ID 号。</p>
+<p><strong><font color=red>这是一个危险操作。您应当备份您的工程，如果出现了任何工程损坏，笔者不负任何泽任。👓</font></strong></p>
+<h2 id="1-找到工程中想要替换的-kontakt-插件指纹">1. 找到工程中想要替换的 Kontakt 插件指纹</h2>
+<ol>
+<li>使用记事本打开 &lt;你的工程&gt;.rpp</li>
+<li>从<code>编辑</code>菜单中使用<code>查找</code>功能，</li>
+<li>查找有关“Kontakt”这个关键字，假如你“恰好给这个插件命名过”，你就可以尝试直接查找那个名称。比如我“恰好”给替换的 Kontakt 6 插件改名交了“康泰克 6”，那么我立即就搜索到了：<br>
+<code>&lt;VST &quot;VST3i: Kontakt (Native Instruments) (64 out)&quot; Kontakt.vst3 0 &quot;康泰克 6&quot; 821777587{5653544E6924446B6F6E74616B740000} &quot;&quot;</code></li>
+</ol>
+<p>去查找另一个没有改过名字的 Kontakt 6，得到这行：<br>
+<code>&lt;VST &quot;VST3i: Kontakt (Native Instruments) (64 out)&quot; Kontakt.vst3 0 &quot;&quot; 821777587{5653544E6924446B6F6E74616B740000} &quot;&quot;</code></p>
+<p>这行的格式是：<br>
+<code>&lt;插件格式 &quot;插件在插件库的名称&quot; &quot;插件在磁盘上存储的名称.后缀&quot; &quot;你对这个插件的命名&quot; 插件指纹 &quot;&quot;</code></p>
+<p><s>插件指纹是我起的名字，实际上叫什么不知道，姑且先这样叫吧。</s></p>
+<p>经过校验也发现，“插件指纹”这个字段不论你有没有在工程中对插件更名都是一致的。<br>
+那么，在我的示例中，我想要替换的 Kontakt 6 的指纹便是这个：<br>
+<code>821777587{5653544E6924446B6F6E74616B740000}</code></p>
+<h2 id="2-获取目标-kontakt-插件指纹">2. 获取目标 Kontakt 插件指纹</h2>
+<p>同样的，用上一步的方法去找 Kontakt 7 的插件指纹，我的是：<br>
+<code>1219583956{5653544E694B376B6F6E74616B742037}</code></p>
+<h2 id="3-批量替换">3. 批量替换</h2>
+<ol>
+<li>使用记事本中的<code>编辑 &gt; 替换</code></li>
+<li>把所有的 Kontakt 6 插件指纹 替换为 Kontakt 7 的插件指纹</li>
+<li>保存。无需担心插件在插件库的名称和插件在磁盘上存储的名称。</li>
+<li>使用 REAPER 打开工程，等待工程完全加载，并检查是否有遗漏。此时 REAPER 其实已经应用了工程自动修复，会根据插件指纹把插件所有的其它指向重新定向。</li>
+<li>保存工程。<strong><font color=red>注意，一旦你保存工程，那么便无法降级回低版本 Kontakt</font></strong></li>
+</ol>
+<h1 id="最后">最后</h1>
+<ul>
+<li>我不确定这个方法什么时候会失效……因为不知道哪个版本的 Kontakt 就会发疯。</li>
+<li>没有测试过能不能用这个方法把 VST2 插件无缝升级为 VST3，但我认为大概率是可行的。</li>
+<li>但是对于别家的插件，这个方法不一定适用，比如我测试了 Ozone 从 9 到 10，这样做虽然升级了插件，但是也丢掉了所有的参数……</li>
+</ul>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://blog.raster.team/tag/research/" class="tag">
+                    Research
+                  </a>
+                
+                  <a href="https://blog.raster.team/tag/kontakt/" class="tag">
+                    Kontakt
+                  </a>
+                
+                  <a href="https://blog.raster.team/tag/reaper/" class="tag">
+                    REAPER
+                  </a>
+                
+                  <a href="https://blog.raster.team/tag/tutorials/" class="tag">
+                    Tutorials
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://blog.raster.team/post/Music_Yun-Guang/">
+                  <h3 class="post-title">
+                    【Single】云光
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '6187e0f7e50dfedb9a89',
+        clientSecret: '881a2c7fee8770c1162636e7a62d8debc75796cf',
+        repo: 'website-comment',
+        owner: 'Ander-Index',
+        admin: ['Ander-Index'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

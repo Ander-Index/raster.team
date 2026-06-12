@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>【Twine】Chapbook 简体中文指南 | Team Raster</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://blog.raster.team/favicon.ico?v=1781229804811">
+<link rel="stylesheet" href="https://blog.raster.team/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-289X33BWK2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-289X33BWK2');
+</script>
+
+
+    <meta name="description" content="嗨～这位对互动小说创作感兴趣的朋友～欢迎你～
+如果您知道这是什么，想要直接去看教程，那么可以直接跳转了：/Sub-Sites/Chapbook_Gudie/index.html
+
+这是什么？
+我不知道您是如何找到这个页面的，也许是搜索 Tw..." />
+    <meta name="keywords" content="Tutorials" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://blog.raster.team">
+        <img src="https://blog.raster.team/images/avatar.png?v=1781229804811" class="site-logo">
+        <h1 class="site-title">Team Raster</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页｜Home
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档｜Archives
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签｜Tags
+          </a>
+        
+      
+        
+          <a href="/tag/creations" class="site-nav">
+            作品｜Creations
+          </a>
+        
+      
+        
+          <a href="/tag/Tutorials" class="site-nav">
+            教程｜Tutorials
+          </a>
+        
+      
+        
+          <a href="/tag/Tools" class="site-nav">
+            工具｜Tools
+          </a>
+        
+      
+        
+          <a href="/tag/VoiceDBs" class="site-nav">
+            音源｜VoiceDBs
+          </a>
+        
+      
+        
+          <a href="/tag/Links" class="site-nav">
+            友链｜Links
+          </a>
+        
+      
+        
+          <a href="/tag/About" class="site-nav">
+            关于｜About
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      光栅组资源发布站
+<br />
+<br />ICP备案号：雪ICP备1145141919810号
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 2025 © Team Raster | <a class="rss" href="https://blog.raster.team/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">【Twine】Chapbook 简体中文指南</h2>
+            <div class="post-date">2026-03-17</div>
+            
+              <div class="feature-container" style="background-image: url('https://blog.raster.team/Sub-Sites/Chapbook_Gudie/path.jpeg')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>嗨～这位对互动小说创作感兴趣的朋友～欢迎你～</p>
+<p>如果您知道这是什么，想要直接去看教程，那么可以直接跳转了：<a href="/Sub-Sites/Chapbook_Gudie/index.html">/Sub-Sites/Chapbook_Gudie/index.html</a></p>
+<!-- more -->
+<h1 id="这是什么">这是什么？</h1>
+<p>我不知道您是如何找到这个页面的，也许是搜索 Twine，也许是搜索 Chapbook，再或者您只是从 Raster.Team 简单地进入本文章想要一看究竟。</p>
+<p>那么……</p>
+<h2 id="twine">Twine</h2>
+<p>Twine 本身只是一款节点式文本编辑器，它本身是不能做出活动小说的。就好比 Visual Code 本身是无法生成程序也不能理解程序的。</p>
+<p>而 Twine 上有几款故事格式，你可以理解为“编程语言”，用 Twine 按照这些故事格式规定好的语法来撰写代码并构建。</p>
+<p>而 Chapbook 就是一种非常容易上手的互动故事的格式，也是官方意图取代最开始的 Harlowe 格式的新格式。</p>
+<p>Twine 和 Chapbook 都是开源免费的项目。</p>
+<h2 id="chapbook">Chapbook</h2>
+<p>笔者已经深度使用过了 Inky、ChoiceScript、Chapbook。</p>
+<p>而最终决定使用 Chapbook 替换掉 Inky 的原因是：</p>
+<ol>
+<li>代码维护活跃：开发者每周都会积极查看案宗并处理合并请求。</li>
+<li>不需要怎么修改也可以构建出很漂亮很现代的互动小说。</li>
+</ol>
+<p>在使用一段时间之后，本人对该项目非常感兴趣，遂进行手册的本地化工作。</p>
+<p>而今天，Chapbook 终于拥有了第一本非英语的译本～🎉</p>
+<h1 id="总结">总结</h1>
+<p>如果您正在寻找互动小说的编写方案，那么欢迎你查看本人翻译的这份手册尝试一下。</p>
+<p>Twine：<a href="https://twinery.org/">https://twinery.org/</a></p>
+<p>Chapbook 作为内置的故事格式本身就安装在了 Twine 里。</p>
+<p>源代码已经提交到 Chapbook 官方代码库。</p>
+<h1 id="哦对了">哦对了……</h1>
+<p>这个手册当然是免费看的，但是……要饭嘛，不寒碜 🙏</p>
+<figure data-type="image" tabindex="1"><img src="https://img.cntracker.net/img/dacf2d5e10d4ecc9a1e74a81f7607d11.jpg" alt="收款码" loading="lazy"></figure>
+<p>一毛也可，感谢您支持我的工作～☕️</p>
+<hr>
+<center>作者：王洛木</center>
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://blog.raster.team/tag/tutorials/" class="tag">
+                    Tutorials
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://blog.raster.team/post/REAPER_Chinese-Simplified.ReaperLangPack/">
+                  <h3 class="post-title">
+                    【REAPER】简体中文语言包
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '6187e0f7e50dfedb9a89',
+        clientSecret: '881a2c7fee8770c1162636e7a62d8debc75796cf',
+        repo: 'website-comment',
+        owner: 'Ander-Index',
+        admin: ['Ander-Index'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
