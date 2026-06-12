@@ -4,3 +4,10 @@
 *.ffs_db
 *.ffs_db
 *.ffs_db
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
