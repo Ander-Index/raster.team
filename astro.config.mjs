@@ -147,13 +147,11 @@ export default defineConfig({
     layout: 'constrained',
     responsiveStyles: true,
     remotePatterns: [
-      // Unsplash (used by demo posts).
-      { protocol: 'https', hostname: 'images.unsplash.com' },
-      // Common CDNs many users plug in. Extend or trim as needed.
-      { protocol: 'https', hostname: '**.githubusercontent.com' },
-      { protocol: 'https', hostname: 'cdn.jsdelivr.net' },
-      { protocol: 'https', hostname: 'res.cloudinary.com' },
-      { protocol: 'https', hostname: 'imagedelivery.net' },
+      // Allow ANY remote image host for optimization. Per Astro docs, omitting
+      // `hostname` matches all hosts for the given protocol. (A bare wildcard
+      // hostname like '**' is rejected: wildcards must be a leading prefix.)
+      { protocol: 'https' },
+      { protocol: 'http' },
     ],
   },
 

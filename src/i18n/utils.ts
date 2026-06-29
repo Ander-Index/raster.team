@@ -117,9 +117,9 @@ export function stripLocale(pathname: string): string {
  */
 // eslint-disable-next-line no-unused-vars
 export function useTranslations(locale: Locale): (key: UIKey) => string {
+  const dict = messages[locale] ?? messages[DEFAULT_LOCALE] ?? {};
   return function t(key: UIKey): string {
-    const dict = messages[locale] ?? messages[DEFAULT_LOCALE];
-    return dict[key] ?? messages[DEFAULT_LOCALE][key] ?? key;
+    return dict[key] ?? messages[DEFAULT_LOCALE]?.[key] ?? key;
   };
 }
 
