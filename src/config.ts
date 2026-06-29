@@ -15,7 +15,7 @@ export const SITE_IMAGES = {
   ogDefault: ogDefaultImg,
 } as const;
 
-export const locales = ['en', 'fr'] as const;
+export const locales = ['zh', 'en', 'ja'] as const;
 export type Locale = (typeof locales)[number];
 
 /**
@@ -110,7 +110,7 @@ export const SITE: SiteConfig = {
   /** Supported locales. Changing this requires adding/removing locale folders, content, and i18n entries. */
   locales: locales,
   /** Default locale. Changing this is a breaking, atomic, multi-file operation. */
-  defaultLocale: 'en',
+  defaultLocale: 'zh',
   /** Show the language switcher and link to translated pages. */
   multilingual: true,
 };

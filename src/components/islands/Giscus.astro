@@ -11,7 +11,7 @@
  * Set values in `src/config.ts` -> GISCUS, or via PUBLIC_GISCUS_* env vars.
  */
 import { GISCUS, type Locale } from '../../config';
-import { useTranslations } from '../../i18n/utils';
+import { useTranslations, LOCALE_META } from '../../i18n/utils';
 import { Icon } from 'astro-icon/components';
 
 interface Props {
@@ -82,7 +82,7 @@ const setupSteps = [
         data-emit-metadata={GISCUS.emitMetadata}
         data-input-position={GISCUS.inputPosition}
         data-loading={GISCUS.loading}
-        data-locale={locale === 'fr' ? 'fr' : 'en'}
+        data-locale={LOCALE_META[locale].giscus}
       />
     )
   }

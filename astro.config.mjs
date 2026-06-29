@@ -157,10 +157,11 @@ export default defineConfig({
     ],
   },
 
-  // i18n config: EN is default and serves at root (no prefix), FR served at /fr.
-  // We rely on filesystem routing (src/pages and src/pages/[...locale]) for the actual
-  // routes, but still expose locales here so integrations like sitemap can
-  // generate hreflang alternates correctly.
+  // i18n config: ZH is default and serves at root (no prefix); EN at /en, JA at /ja.
+  // The /zh/ prefix is a Cloudflare Pages edge 301 -> root alias (public/_redirects),
+  // NOT an Astro route — no /zh/ pages are generated here.
+  // We rely on filesystem routing (src/pages/[...locale]) for the actual routes, but
+  // still expose locales here so integrations like sitemap can emit hreflang alternates.
   i18n: {
     locales: [...SITE.locales],
     defaultLocale: SITE.defaultLocale,
