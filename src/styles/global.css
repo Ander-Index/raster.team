@@ -290,9 +290,14 @@
 
   /* Top bar — uses min-height (not a fixed height) plus vertical padding
      so the controls aren't flush against the browser chrome on either
-     mobile or desktop. */
+     mobile or desktop.
+     Below lg, the topbar breaks out of .chirpy-main-wrapper's horizontal
+     padding so the frosted-glass background spans the full viewport width;
+     otherwise the sidebar mask (and scrolling content) would bleed through
+     the gaps on either side. Reset to natural width at lg+, where the
+     sidebar is always visible and there is no mask. */
   .chirpy-topbar {
-    @apply bg-base-200/80 supports-backdrop-filter:bg-base-200/70 sticky top-0 z-30 flex min-h-(--height-topbar) items-center justify-between gap-3 py-2 backdrop-blur sm:py-3;
+    @apply bg-base-200/80 supports-backdrop-filter:bg-base-200/70 sticky top-0 z-30 -mx-4 flex min-h-(--height-topbar) items-center justify-between gap-3 px-4 py-2 backdrop-blur sm:-mx-6 sm:px-6 sm:py-3 lg:mx-0 lg:px-0;
   }
 
   /* Right rail wrapper. Holds the global Panel widget followed by an

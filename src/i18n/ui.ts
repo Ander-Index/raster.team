@@ -42,8 +42,7 @@ export const messages = {
     'post.commentsSetupBody': 'Giscus 已启用但尚未配置。请在下方填写仓库信息以开启评论。',
     'post.commentsSetupStep1':
       '访问 `giscus.app`，选择你的公开 GitHub 仓库（需开启 Discussions）。',
-    'post.commentsSetupStep2':
-      '复制生成的 `data-repo-id`、`data-category` 与 `data-category-id`。',
+    'post.commentsSetupStep2': '复制生成的 `data-repo-id`、`data-category` 与 `data-category-id`。',
     'post.commentsSetupStep3':
       '在 `.env` 中设置 `PUBLIC_GISCUS_ENABLED`、`PUBLIC_GISCUS_REPO`、`PUBLIC_GISCUS_REPO_ID`、`PUBLIC_GISCUS_CATEGORY` 与 `PUBLIC_GISCUS_CATEGORY_ID`。',
     'post.commentsSetupStep4': '重新构建站点——本提示将被实时评论取代。',

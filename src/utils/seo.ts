@@ -45,7 +45,10 @@ interface BuildSeoArgs {
 /** Build the SEO data block consumed by `<SEO />`. */
 export function buildSeo(args: BuildSeoArgs): SeoMeta {
   return {
-    title: args.title && args.title !== siteTitle(args.locale) ? `${args.title} — ${siteTitle(args.locale)}` : siteTitle(args.locale),
+    title:
+      args.title && args.title !== siteTitle(args.locale)
+        ? `${args.title} — ${siteTitle(args.locale)}`
+        : siteTitle(args.locale),
     description: args.description ?? siteTagline(args.locale),
     canonical: new URL(args.fullPath, SITE.url).toString(),
     ogImage: new URL(withBase(args.ogImage ?? SITE.defaultOgImage), SITE.url).toString(),
