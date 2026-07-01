@@ -1,21 +1,22 @@
 /* global URL */
 import rss from '@astrojs/rss';
 import type { APIRoute } from 'astro';
-import { SITE } from '~/config';
+import { SITE, type Locale } from '~/config';
+import { siteTitle, siteTagline, LOCALE_META } from '~/i18n/utils';
 import { getPosts, postPath } from '~/utils/posts';
 
 export const GET: APIRoute = async (context) => {
-  const { locale } = context.props;
+  const { locale } = context.props as { locale: Locale };
   if (import.meta.env.CI_SKIP_RSS_SITEMAP === 'true') {
     const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     const siteWithBase = `${(context.site ?? new URL(SITE.url)).origin}${base}`;
     return rss({
-      title: SITE.title,
-      description: SITE.description,
+      title: siteTitle(locale),
+      description: siteTagline(locale),
       site: siteWithBase,
       stylesheet: `${base}/rss/styles.xsl`,
       items: [],
-      customData: `<language>en-us</language>`,
+      customData: `<language>${LOCALE_META[locale].htmlLang}</language>`,
     });
   }
 
@@ -25,8 +26,8 @@ export const GET: APIRoute = async (context) => {
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   const siteWithBase = `${(context.site ?? new URL(SITE.url)).origin}${base}`;
   return rss({
-    title: SITE.title,
-    description: SITE.description,
+    title: siteTitle(locale),
+    description: siteTagline(locale),
     site: siteWithBase,
     stylesheet: `${base}/rss/styles.xsl`,
     items: posts.map((post) => ({
@@ -36,7 +37,7 @@ export const GET: APIRoute = async (context) => {
       link: postPath(post),
       categories: [...post.data.tags, ...post.data.categories],
     })),
-    customData: `<language>en-us</language>`,
+    customData: `<language>${LOCALE_META[locale].htmlLang}</language>`,
   });
 };
 

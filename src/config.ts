@@ -1,5 +1,5 @@
 import process from 'node:process';
-import avatarImg from './assets/images/site/avatar.svg';
+import avatarImg from './assets/images/site/avatar.png';
 import ogDefaultImg from './assets/images/site/og-default.svg';
 import type { SiteConfig, NavItem, SocialLink, GiscusConfig } from './types/config';
 
@@ -17,6 +17,26 @@ export const SITE_IMAGES = {
 
 export const locales = ['zh', 'en', 'ja'] as const;
 export type Locale = (typeof locales)[number];
+
+/**
+ * Per-locale site title (标题). Consumed via the `siteTitle(locale)`
+ * helper in `src/i18n/utils.ts`, which falls back to `SITE.title`.
+ */
+export const SITE_TITLES: Record<Locale, string> = {
+  zh: '光栅组',
+  en: 'Team Raster',
+  ja: 'チームラスター',
+};
+
+/**
+ * Per-locale tagline / subtitle (副标题). Used as the sidebar tagline,
+ * meta/OG/RSS description via `siteTagline(locale)`.
+ */
+export const SITE_TAGLINES: Record<Locale, string> = {
+  zh: '造点东西，写点字',
+  en: 'Make things, write words',
+  ja: '造って、書く',
+};
 
 /**
  * Author + social handles. Filled in from env vars (see `.env.example`)
@@ -50,16 +70,15 @@ export const SITE: SiteConfig = {
   // ==========================================
 
   /** Default site title used as homepage <title> and meta. */
-  title: 'Chirping Astro',
+  title: '光栅组',
   /** Site tagline / description. */
-  description:
-    'A modern, multilingual Astro v6 theme inspired by Chirpy — built with Tailwind v4, daisyUI, MDX, Pagefind, and Giscus.',
+  description: '造点东西，写点字',
   /** Author/handle shown in footer + meta. */
   author: {
-    name: 'Chirping Astro',
+    name: 'Team Raster',
     url: GITHUB_HANDLE ? `https://github.com/${GITHUB_HANDLE}` : undefined,
     avatar: avatarImg,
-    bio: 'A text-focused Astro V6 theme.',
+    bio: '',
   },
   /** Default OG image. */
   defaultOgImage: ogDefaultImg.src,

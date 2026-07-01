@@ -1,6 +1,6 @@
 ---
 import { SITE } from '../config';
-import { localizedPath, withBase, LOCALE_META } from '../i18n/utils';
+import { localizedPath, withBase, LOCALE_META, siteTitle } from '../i18n/utils';
 import type { SeoMeta } from '../utils/seo';
 
 interface Props {
@@ -15,14 +15,14 @@ const { meta } = Astro.props;
 // locale's feed too.
 const primaryFeed = {
   href: localizedPath('/rss.xml', meta.locale),
-  title: `${SITE.title}${meta.locale === SITE.defaultLocale ? '' : ` (${meta.locale.toUpperCase()})`} — RSS`,
+  title: `${siteTitle(meta.locale)}${meta.locale === SITE.defaultLocale ? '' : ` (${meta.locale.toUpperCase()})`} — RSS`,
 };
 const otherFeeds = SITE.multilingual
   ? SITE.locales
       .filter((l) => l !== meta.locale)
       .map((l) => ({
         href: localizedPath('/rss.xml', l),
-        title: `${SITE.title}${l === SITE.defaultLocale ? '' : ` (${l.toUpperCase()})`} — RSS`,
+        title: `${siteTitle(l)}${l === SITE.defaultLocale ? '' : ` (${l.toUpperCase()})`} — RSS`,
       }))
   : [];
 const sitemapHref = withBase('/sitemap-index.xml');
@@ -48,7 +48,7 @@ const sitemapHref = withBase('/sitemap-index.xml');
 <link rel="sitemap" type="application/xml" href={sitemapHref} />
 
 {/* Open Graph */}
-<meta property="og:site_name" content={SITE.title} />
+<meta property="og:site_name" content={siteTitle(meta.locale)} />
 <meta property="og:title" content={meta.title} />
 <meta property="og:description" content={meta.description} />
 <meta property="og:type" content={meta.type} />

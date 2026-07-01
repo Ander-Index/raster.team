@@ -12,7 +12,8 @@ import satori from 'satori';
 import { Resvg } from '@resvg/resvg-js';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { SITE } from '../config';
+import { SITE, type Locale } from '../config';
+import { siteTitle } from '../i18n/utils';
 
 export interface OgImageData {
   title: string;
@@ -20,6 +21,7 @@ export interface OgImageData {
   date?: string;
   category?: string;
   tags?: string[];
+  locale?: Locale;
 }
 
 const WIDTH = 1200;
@@ -226,7 +228,7 @@ export async function generateOgImage(data: OgImageData): Promise<Buffer> {
                               fontWeight: 700,
                               color: '#2a408e',
                             },
-                            children: SITE.title,
+                            children: siteTitle(data.locale ?? SITE.defaultLocale),
                           },
                         },
                       ],

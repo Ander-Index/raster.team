@@ -4,7 +4,7 @@
  * Sits inside the main column, below the header.
  */
 import { SITE, type Locale } from '../config';
-import { useTranslations, localizedPath } from '../i18n/utils';
+import { useTranslations, localizedPath, siteTitle } from '../i18n/utils';
 import { Icon } from 'astro-icon/components';
 import SearchButton from './islands/SearchButton.astro';
 import LanguageSwitcher from './islands/LanguageSwitcher.astro';
@@ -64,8 +64,8 @@ const home = localizedPath('/', locale);
     </nav>
 
     {/* Mobile site title */}
-    <a href={home} class="ml-1 truncate text-base font-semibold sm:hidden" aria-label={SITE.title}>
-      {SITE.title}
+    <a href={home} class="ml-1 truncate text-base font-semibold sm:hidden" aria-label={siteTitle(locale)}>
+      {siteTitle(locale)}
     </a>
   </div>
 

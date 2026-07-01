@@ -1,6 +1,6 @@
 /* global URL */
 import { SITE, type Locale } from '../config';
-import { alternates, withBase } from '../i18n/utils';
+import { alternates, withBase, siteTitle, siteTagline } from '../i18n/utils';
 
 export interface SeoMeta {
   title: string;
@@ -45,8 +45,8 @@ interface BuildSeoArgs {
 /** Build the SEO data block consumed by `<SEO />`. */
 export function buildSeo(args: BuildSeoArgs): SeoMeta {
   return {
-    title: args.title && args.title !== SITE.title ? `${args.title} — ${SITE.title}` : SITE.title,
-    description: args.description ?? SITE.description,
+    title: args.title && args.title !== siteTitle(args.locale) ? `${args.title} — ${siteTitle(args.locale)}` : siteTitle(args.locale),
+    description: args.description ?? siteTagline(args.locale),
     canonical: new URL(args.fullPath, SITE.url).toString(),
     ogImage: new URL(withBase(args.ogImage ?? SITE.defaultOgImage), SITE.url).toString(),
     type: args.type ?? 'website',

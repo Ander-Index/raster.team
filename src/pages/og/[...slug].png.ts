@@ -54,6 +54,7 @@ export async function GET({ props }: { props: Props }) {
     date,
     category: post.data.categories[0],
     tags: post.data.tags,
+    locale,
   });
 
   return new Response(new Uint8Array(png), {

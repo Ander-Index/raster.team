@@ -11,7 +11,7 @@
  * Source-of-truth: `src/config.ts` -> SITE.locales / SITE.defaultLocale.
  */
 
-import { SITE, type Locale } from '../config';
+import { SITE, SITE_TITLES, SITE_TAGLINES, type Locale } from '../config';
 import { messages, type UIKey } from './ui';
 
 const DEFAULT_LOCALE: Locale = SITE.defaultLocale;
@@ -29,6 +29,16 @@ export const LOCALE_META: Record<
   en: { label: 'English', htmlLang: 'en', intl: 'en', og: 'en_US', giscus: 'en' },
   ja: { label: '日本語', htmlLang: 'ja', intl: 'ja', og: 'ja_JP', giscus: 'ja' },
 };
+
+/** Locale-aware site title (标题). */
+export function siteTitle(locale: Locale): string {
+  return SITE_TITLES[locale] ?? SITE.title;
+}
+
+/** Locale-aware tagline / subtitle (副标题). */
+export function siteTagline(locale: Locale): string {
+  return SITE_TAGLINES[locale] ?? SITE.description;
+}
 
 /** Configured base path (no trailing slash). E.g. '/chirping-astro' or ''. */
 const BASE = (import.meta.env.BASE_URL ?? '/').replace(/\/+$/, '');
