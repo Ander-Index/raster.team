@@ -300,10 +300,10 @@ export const messages = {
     'panel.recentlyUpdated': '最近の更新',
     'panel.trendingTags': '人気のタグ',
 
-    'footer.poweredBy': 'Powered by',
+    'footer.poweredBy': '提供元',
     'footer.theme': 'テーマ',
     'footer.privacy': 'プライバシーポリシー',
-    'footer.copyright': 'All rights reserved.',
+    'footer.copyright': '著作権所有。',
   },
 } as const satisfies Record<Locale, Record<string, string>>;
 
