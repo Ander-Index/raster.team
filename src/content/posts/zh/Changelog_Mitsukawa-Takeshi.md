@@ -1,15 +1,15 @@
 ---
 title: 【更新日志】光川武
-description: + 加入了新的立绘图片image2.png，更新了音源头像图。
-pubDate: 2019-04-16T16:40:17.000Z
-tags: [Changelogs]
-categories: []
+pubDate: "2019-04-16T16:40:17.000Z"
 draft: false
 toc: true
 pinned: false
 math: false
+tags: [更新日志, Changelog]
+categories: [更新日志]
+description: 光川武 UTAU 音源的更新记录，包括新立绘和音源更新。
 lang: zh
-unlisted: true
+unlisted: false
 ---
 # <font color=#FFFFFF style="background-color:#98f15a; text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;">2019年4月17日</font>
 + 加入了新的立绘图片image2.png，更新了音源头像图。

@@ -1,16 +1,16 @@
 ---
 title: 【UTAU】辰音タツ_中国語_CVVC_1.3
-description: CVVC形式の多音階UTAUライブラリー
-pubDate: 2017-11-12T12:17:25.000Z
-tags: [UTAU, VoiceDBs]
-categories: []
+pubDate: "2017-11-12T12:17:25.000Z"
 draft: false
 heroImage: "https://cntracker.net/img/68a4e5b556a195de0d69e8bf2aefe285.jpg"
 toc: true
 pinned: false
 math: false
-lang: zh
-unlisted: true
+tags: [UTAU, 音源]
+categories: [UTAU]
+description: CVVC形式の多音階UTAUライブラリー * 収録音階：E3、A3、E4 * 上手く歌ってくれる音域：E2〜F5 * 中の人：辰遠
+lang: ja
+unlisted: false
 ---
 CVVC形式の多音階UTAUライブラリー
 * 収録音階：E3、A3、E4

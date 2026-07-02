@@ -1,16 +1,16 @@
 ---
 title: 【UTAU】猫葉莫_日语_Normal_VCV
-description: “猫葉莫 ねこばも”是指UTAU用日语四音阶连续音音源，是由“砂糖车厘”进行角色形象设计、絵制，由“小莫”本人声音录制，并由“奈可塔克 nakotalk”加工制成的。
-pubDate: 2022-06-30T04:00:00.000Z
-tags: [UTAU, VoiceDBs]
-categories: []
+pubDate: "2022-06-30T04:00:00.000Z"
 draft: false
 heroImage: "https://cntracker.net/img/305377c23d163d93a8f3910db4a44367.png"
 toc: true
 pinned: false
 math: false
+tags: [UTAU, 音源, VoiceDB]
+categories: [UTAU]
+description: “猫葉莫 ねこばも”是指UTAU用日语四音阶连续音音源，是由“砂糖车厘”进行角色形象设计、絵制，由“小莫”本人声音录制，并由“奈可塔克 nakotalk”加工制成的。 首先感谢完成最初角色形象设计的瑞洛凩、音源角色形象设计绘制的砂糖车厘，让猫葉莫能有一个好的形象面向大家。 其次，感谢从音源制作初期以来一直参与测试、调声的不存拾、白给小祝祝等老师。 感谢带我入坑和给予指导的北国行者大灰狼——射...
 lang: zh
-unlisted: true
+unlisted: false
 ---
 “猫葉莫 ねこばも”是指UTAU用日语四音阶连续音音源，是由“砂糖车厘”进行角色形象设计、絵制，由“小莫”本人声音录制，并由“奈可塔克 nakotalk”加工制成的。
 

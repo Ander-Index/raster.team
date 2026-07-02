@@ -1,15 +1,15 @@
 ---
 title: 【EULA】猫葉莫使用规约与免责声明
-description: “猫葉莫 ねこばも”是指UTAU用日语四音阶连续音音源，是由“砂糖车厘”进行角色形象设计、絵制，由“小莫”本人声音录制，并由“奈可塔克 nakotalk”加工制成的。
-pubDate: 2022-06-30T04:00:00.000Z
-tags: [EULAs]
-categories: []
+pubDate: "2022-06-30T04:00:00.000Z"
 draft: false
 toc: true
 pinned: false
 math: false
+tags: [EULA, 使用规约]
+categories: [EULA]
+description: 猫葉莫 UTAU 音源的使用规约与免责声明。
 lang: zh
-unlisted: true
+unlisted: false
 ---
 “猫葉莫 ねこばも”是指UTAU用日语四音阶连续音音源，是由“砂糖车厘”进行角色形象设计、絵制，由“小莫”本人声音录制，并由“奈可塔克 nakotalk”加工制成的。
 

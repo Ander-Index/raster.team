@@ -1,15 +1,15 @@
 ---
 title: 【关于】Team Raster
-description: 两个网站的维护成本比较高，所以就二合一了……
-pubDate: 2021-12-24T07:02:24.000Z
-tags: [About]
-categories: []
+pubDate: "2021-12-24T07:02:24.000Z"
 draft: false
 toc: true
 pinned: false
 math: false
+tags: [关于, About]
+categories: [关于]
+description: 两个网站的维护成本比较高，所以就二合一了……
 lang: zh
-unlisted: true
+unlisted: false
 ---
 两个网站的维护成本比较高，所以就二合一了……
 <!-- more -->

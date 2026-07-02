@@ -1,15 +1,19 @@
 ---
 title: 【教程】互动小说踩坑指南
-description: 咳……互动小说的引擎那么多，每一个都有优点和缺点，还有各自的脾气。
 pubDate: 2026-03-25T17:09:11.000Z
-tags: []
-categories: []
-draft: false
+draft: true
 toc: true
 pinned: false
 math: false
+tags:
+  - 教程
+  - Tutorial
+  - 互动小说
+categories:
+  - 教程
+description: 咳……互动小说的引擎那么多，每一个都有优点和缺点，还有各自的脾气。 那么作为一个纯新手，真的只是想写一个互动小说给大家玩，该怎么选择呢？ 作为一个烤了三个互动小说引擎手册的小馋猫，我现在就把我能叫的上号的互动小说引擎跟大家列一列。
 lang: zh
-unlisted: true
+unlisted: false
 ---
 咳……互动小说的引擎那么多，每一个都有优点和缺点，还有各自的脾气。
 

@@ -1,16 +1,16 @@
 ---
 title: 【攻略】生化危机 4 重制版，个人向流程记录
-description: 作者：辰远
-pubDate: 2024-10-08T06:54:00.000Z
-tags: [Tutorials]
-categories: []
+pubDate: "2024-10-08T06:54:00.000Z"
 draft: false
 heroImage: "https://cntracker.net/cdn-cgi/image/width=720/https://cntracker.net/img/6832e722c7d7fa08aabd51d0440702c4.jpg"
 toc: true
 pinned: false
 math: false
+tags: [攻略, Tutorial, 游戏]
+categories: [游戏]
+description: 作者：辰远 本视频的初衷是个人向的记录视频，诣在给自己完成这个小挑战的回忆。但是我为了完成这个挑战也进行了详细的路线规划，所以也适合给各位和我一样水平普通又想打专家S+的小伙伴们一个攻略和参考。
 lang: zh
-unlisted: true
+unlisted: false
 ---
 作者：辰远
 本视频的初衷是个人向的记录视频，诣在给自己完成这个小挑战的回忆。但是我为了完成这个挑战也进行了详细的路线规划，所以也适合给各位和我一样水平普通又想打专家S+的小伙伴们一个攻略和参考。

@@ -1,16 +1,16 @@
 ---
 title: 【Inky】使用 Ink 进行写作
-description: 简体中文教程是从英文原文翻译而来。可能会存在版本滞后性，或与英文版有出入，请与英文版为准。
-pubDate: 2025-07-02T08:46:51.000Z
-tags: [Tutorials]
-categories: []
+pubDate: "2025-07-02T08:46:51.000Z"
 draft: false
 heroImage: "https://cntracker.net/img/217d08a01a33056d70e26c6e222560bb.jpg"
 toc: true
 pinned: false
 math: false
+tags: [教程, Tutorial, Ink, 互动小说]
+categories: [教程]
+description: 简体中文教程是从英文原文翻译而来。可能会存在版本滞后性，或与英文版有出入，请与英文版为准。 翻译时使用了 DeepSeek、ChatGPT 与 DeepL 辅助。 我可以确保每句翻译我都校正过。 译者：王洛木 (Nomo_Wang@outlook.com)，如果您有关于翻译的问题要提，且不想要占用 Discussion 资源，可以发邮件给译者。 翻译时的 Ink 版本：1.2.0 翻译最后更...
 lang: zh
-unlisted: true
+unlisted: false
 ---
 简体中文教程是从英文原文翻译而来。可能会存在版本滞后性，或与英文版有出入，请与英文版为准。
 

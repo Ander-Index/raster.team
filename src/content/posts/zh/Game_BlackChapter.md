@@ -1,16 +1,16 @@
 ---
 title: 【星火社游戏制作组】黑之章
-description: 经历了两年历练的新人警察，在偶然的情况下得到了能看穿事物运转的流动之魔眼，持有这种力量的他又一次被卷进那个昏黑的泥潭。
-pubDate: 2025-06-10T09:37:14.000Z
-tags: [Plans, Services, Game, Creations]
-categories: []
+pubDate: "2025-06-10T09:37:14.000Z"
 draft: false
 heroImage: "https://cntracker.net/img/1c9291ccc8a3d0154220a9e51ab46141.png"
 toc: true
 pinned: false
 math: false
+tags: [游戏, Game, 作品, Creations]
+categories: [游戏]
+description: 经历了两年历练的新人警察，在偶然的情况下得到了能看穿事物运转的流动之魔眼，持有这种力量的他又一次被卷进那个昏黑的泥潭。 两年前出现的剥皮者,自称杀人犯的少年、癫狂的邪教祭祀、搜集着灵魂的诡异咒术。当接踵而至的怪异事件和冲突降临到身边时，那熟悉的日常早已不复存在......
 lang: zh
-unlisted: true
+unlisted: false
 ---
 经历了两年历练的新人警察，在偶然的情况下得到了能看穿事物运转的流动之魔眼，持有这种力量的他又一次被卷进那个昏黑的泥潭。
 

@@ -1,16 +1,16 @@
 ---
 title: 【macOS】macOS 12+ 的系统壁纸路径
-description: 要说系统自带的壁纸，那 macOS 的指定排得上号。
-pubDate: 2024-01-07T12:21:40.000Z
-tags: [Tutorials]
-categories: []
+pubDate: "2024-01-07T12:21:40.000Z"
 draft: false
 heroImage: "https://cntracker.net/img/f7bd65aa13bfff708d6c6983dc572fbe.jpg"
 toc: true
 pinned: false
 math: false
+tags: [教程, Tutorial, macOS]
+categories: [教程]
+description: 要说系统自带的壁纸，那 macOS 的指定排得上号。
 lang: zh
-unlisted: true
+unlisted: false
 ---
 要说系统自带的壁纸，那 macOS 的指定排得上号。
 <!-- more -->

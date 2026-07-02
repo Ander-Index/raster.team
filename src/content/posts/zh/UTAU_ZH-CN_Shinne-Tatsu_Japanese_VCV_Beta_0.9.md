@@ -1,16 +1,16 @@
 ---
 title: 【UTAU】辰远_日语_VCV_Beta_0.9
-description: 这是一个UTAU使用的日语VCV多音阶声库
-pubDate: 2018-11-11T16:00:00.000Z
-tags: [UTAU, VoiceDBs]
-categories: []
+pubDate: "2018-11-11T16:00:00.000Z"
 draft: false
 heroImage: "https://cntracker.net/img/a3379b4bb6f174a48c7e07e443116162.jpg"
 toc: true
 pinned: false
 math: false
+tags: [UTAU, 音源, VoiceDB]
+categories: [UTAU]
+description: 这是一个UTAU使用的日语VCV多音阶声库 * 收录音阶：A2、D3、G3、C4、F4 * 中之人：辰远
 lang: zh
-unlisted: true
+unlisted: false
 ---
 这是一个UTAU使用的日语VCV多音阶声库
 * 收录音阶：A2、D3、G3、C4、F4

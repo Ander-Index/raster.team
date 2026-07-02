@@ -1,16 +1,16 @@
 ---
 title: 【UTAU】默彦明_日语_VCV_Vol.02
-description: 连续音 UTAU 声库
-pubDate: 2016-01-28T16:00:00.000Z
-tags: [UTAU, VoiceDBs]
-categories: []
+pubDate: "2016-01-28T16:00:00.000Z"
 draft: false
 heroImage: "https://cntracker.net/img/adc5af48dc3c750130932cc2b1627de1.jpeg"
 toc: true
 pinned: false
 math: false
+tags: [UTAU, 音源, VoiceDB]
+categories: [UTAU]
+description: "连续音 UTAU 声库 版本: 默彦明 Vol.02 类型: 单音阶 (C3)"
 lang: zh
-unlisted: true
+unlisted: false
 ---
 连续音 UTAU 声库
 版本: 默彦明 Vol.02

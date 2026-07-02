@@ -1,16 +1,16 @@
 ---
 title: 【Single】云光
-description: "这本来是给一个独立游戏写的 OP, 但是那个游戏项目终止了，那这曲子就发出来算了。┑(￣Д ￣)┍"
-pubDate: 2023-09-05T08:38:30.000Z
-tags: [Creations, Music]
-categories: []
+pubDate: "2023-09-05T08:38:30.000Z"
 draft: false
 heroImage: "https://y.qq.com/music/photo_new/T002R300x300M000002jnvzW3UlGXe_1.jpg?max_age=2592000"
 toc: true
 pinned: false
 math: false
+tags: [音乐, Music, 作品, Creations]
+categories: [音乐]
+description: 这本来是给一个独立游戏写的 OP, 但是那个游戏项目终止了，那这曲子就发出来算了。┑(￣Д ￣)┍
 lang: zh
-unlisted: true
+unlisted: false
 ---
 这本来是给一个独立游戏写的 OP, 但是那个游戏项目终止了，那这曲子就发出来算了。┑(￣Д ￣)┍
 

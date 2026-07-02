@@ -1,16 +1,16 @@
 ---
 title: 【UTAU】辰音タツ_日本語_VCV_1.0
-description: 連続音（VCV）形式の多音階UTAUライブラリー
-pubDate: 2022-11-11T16:00:00.000Z
-tags: [UTAU, VoiceDBs]
-categories: []
+pubDate: "2022-11-11T16:00:00.000Z"
 draft: false
 heroImage: "https://cntracker.net/img/7f5fb2c267c1b631cf7d82e5c54a2aa1.jpg"
 toc: true
 pinned: false
 math: false
-lang: zh
-unlisted: true
+tags: [UTAU, 音源]
+categories: [UTAU]
+description: 連続音（VCV）形式の多音階UTAUライブラリー * 収録音階：A2、D3、G3、C4、F4 * 中の人：辰遠
+lang: ja
+unlisted: false
 ---
 連続音（VCV）形式の多音階UTAUライブラリー
 * 収録音階：A2、D3、G3、C4、F4

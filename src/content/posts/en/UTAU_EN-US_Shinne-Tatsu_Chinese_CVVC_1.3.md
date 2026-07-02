@@ -1,16 +1,16 @@
 ---
 title: 【UTAU】Shinne Tatsu_Chinese_CVVC_1.3
-description: This is a Chinese UTAU voice database in CVVC sheet.
-pubDate: 2017-11-11T16:00:25.000Z
-tags: [UTAU, VoiceDBs]
-categories: []
+pubDate: "2017-11-11T16:00:25.000Z"
 draft: false
 heroImage: "https://cntracker.net/img/68a4e5b556a195de0d69e8bf2aefe285.jpg"
 toc: true
 pinned: false
 math: false
-lang: zh
-unlisted: true
+tags: [UTAU, VoiceDB]
+categories: [UTAU]
+description: "This is a Chinese UTAU voice database in CVVC sheet. * Included Scales: E3, A3, E4 * Suitable range: E2~F5 * Character Voice: Shinne Tatsu"
+lang: en
+unlisted: false
 ---
 This is a Chinese UTAU voice database in CVVC sheet.
 * Included Scales: E3, A3, E4

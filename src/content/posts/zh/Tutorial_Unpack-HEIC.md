@@ -1,15 +1,15 @@
 ---
 title: 【教程】如何不写代码就提取或转换含有多张图片的 .heic
-description: 很显然，蠢老虎我根本不会编程。
-pubDate: 2022-05-07T02:20:39.000Z
-tags: [Tutorials]
-categories: []
+pubDate: "2022-05-07T02:20:39.000Z"
 draft: false
 toc: true
 pinned: false
 math: false
+tags: [教程, Tutorial, macOS, Windows]
+categories: [教程]
+description: 不写代码就提取或转换含有多张图片的 .heic 文件的方法。
 lang: zh
-unlisted: true
+unlisted: false
 ---
 # 写在前面
 很显然，蠢老虎我根本不会编程。

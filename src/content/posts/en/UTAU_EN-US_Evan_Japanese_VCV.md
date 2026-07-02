@@ -1,16 +1,16 @@
 ---
 title: 【UTAU】Evan_Japanese_VCV_Vol.02
-description: VCV UTAU Voicebank
-pubDate: 2016-01-28T16:00:00.000Z
-tags: [UTAU, VoiceDBs]
-categories: []
+pubDate: "2016-01-28T16:00:00.000Z"
 draft: false
 heroImage: "https://cntracker.net/img/adc5af48dc3c750130932cc2b1627de1.jpeg"
 toc: true
 pinned: false
 math: false
-lang: zh
-unlisted: true
+tags: [UTAU, VoiceDB]
+categories: [UTAU]
+description: "VCV UTAU Voicebank Version: Evan Vol.02 Type: Single Pitch (C3)"
+lang: en
+unlisted: false
 ---
 VCV UTAU Voicebank
 Version: Evan Vol.02

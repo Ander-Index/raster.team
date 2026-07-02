@@ -1,16 +1,16 @@
 ---
 title: 【教程】本站建站所用到的教程、工具还有服务
-description: 感谢以下的个人与组织提供的支持。
-pubDate: 2025-02-21T03:27:52.000Z
-tags: [Tutorials, Links, Tools, About]
-categories: []
+pubDate: "2025-02-21T03:27:52.000Z"
 draft: false
 heroImage: "https://cntracker.net/img/589e33a290fb0c7687d03c7f50f0a4aa.bmp"
 toc: true
 pinned: false
 math: false
+tags: [教程, Tutorial, 建站, 工具]
+categories: [教程]
+description: 感谢以下的个人与组织提供的支持。 如果你也有自己搭建一个的意图，不妨参考一下本篇文章~
 lang: zh
-unlisted: true
+unlisted: false
 ---
 感谢以下的个人与组织提供的支持。
 如果你也有自己搭建一个的意图，不妨参考一下本篇文章~

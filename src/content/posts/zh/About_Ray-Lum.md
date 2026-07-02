@@ -1,16 +1,16 @@
 ---
 title: 【关于】瑞洛凩
-description: "<font color = \"#966495\">《 ↙ ｡ì ◡ í｡ ↘ 》</font>"
-pubDate: 1998-06-30T16:00:00.000Z
-tags: [About]
-categories: []
+pubDate: "1998-06-30T16:00:00.000Z"
 draft: false
 heroImage: "http://q2.qlogo.cn/headimg_dl?dst_uin=871533911&spec=100&t=1725588600667"
 toc: true
 pinned: false
 math: false
+tags: [关于, About]
+categories: [关于]
+description: 《 ↙ ｡ì ◡ í｡ ↘ 》
 lang: zh
-unlisted: true
+unlisted: false
 ---
  <font color = "#966495">《 ↙ ｡ì ◡ í｡ ↘ 》</font>
 <!-- more -->

@@ -1,15 +1,15 @@
 ---
 title: 【关于】瑞洛凩_INSIDE
-description: "<font color = \"#966495\">看来你是有心人，竟然找到了这里。</font>"
-pubDate: 1998-06-30T16:00:00.000Z
-tags: []
-categories: []
+pubDate: "1998-06-30T16:00:00.000Z"
 draft: false
 toc: true
 pinned: false
 math: false
+tags: [关于, About]
+categories: [关于]
+description: 看来你是有心人，竟然找到了这里。
 lang: zh
-unlisted: true
+unlisted: false
 ---
  <font color = "#966495">看来你是有心人，竟然找到了这里。</font>
  

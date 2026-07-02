@@ -1,15 +1,15 @@
 ---
 title: 【更改记录】REAPER 本地化
-description: + 【通用】新增菜单的覆盖
-pubDate: 2025-08-19T18:41:03.000Z
-tags: [Changelogs]
-categories: []
+pubDate: "2025-08-19T18:41:03.000Z"
 draft: false
 toc: true
 pinned: false
 math: false
+tags: [更新日志, Changelog, REAPER]
+categories: [更新日志]
+description: REAPER 简体中文语言包的更新历史记录。
 lang: zh
-unlisted: true
+unlisted: false
 ---
 # 7.60
 + 【通用】新增菜单的覆盖

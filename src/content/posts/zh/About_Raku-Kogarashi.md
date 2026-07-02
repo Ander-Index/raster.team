@@ -1,16 +1,16 @@
 ---
 title: 【关于】洛凩
-description: 洛凩是瑞洛凩在进行公共表演的时候会使用的名字等。
-pubDate: 2017-06-30T16:00:00.000Z
-tags: [About]
-categories: []
+pubDate: "2017-06-30T16:00:00.000Z"
 draft: false
 heroImage: "http://q2.qlogo.cn/headimg_dl?dst_uin=2177194135&spec=100&t=1725588690558"
 toc: true
 pinned: false
 math: false
+tags: [关于, About]
+categories: [关于]
+description: 咦？居然被你发现了！Σ(っ °Д °;)っ
 lang: zh
-unlisted: true
+unlisted: false
 ---
 <font color="#966495">咦？居然被你发现了！Σ(っ °Д °;)っ</font>
 <!-- more -->

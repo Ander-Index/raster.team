@@ -1,16 +1,16 @@
 ---
 title: 【UTAU】光川武_日语_VCV
-description: 首先感谢完成角色形象设计、绘制的 DX，让光川君有一个很棒的形象。
-pubDate: 2016-06-14T16:00:00.000Z
-tags: [UTAU, VoiceDBs]
-categories: []
+pubDate: "2016-06-14T16:00:00.000Z"
 draft: false
 heroImage: "https://cntracker.net/img/bafe144ff11ac05855268e6ceee4f975.jpg"
 toc: true
 pinned: false
 math: false
+tags: [UTAU, 音源, VoiceDB]
+categories: [UTAU]
+description: 首先感谢完成角色形象设计、绘制的 DX，让光川君有一个很棒的形象。 感谢从音源制作初期以来一直参与测试、调声的 PanCat 感谢带我入坑和给予指导的前辈们。
 lang: zh
-unlisted: true
+unlisted: false
 ---
 首先感谢完成角色形象设计、绘制的 DX，让光川君有一个很棒的形象。
 

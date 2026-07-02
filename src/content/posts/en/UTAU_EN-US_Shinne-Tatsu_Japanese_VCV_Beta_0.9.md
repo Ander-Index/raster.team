@@ -1,16 +1,16 @@
 ---
 title: 【UTAU】Shinne Tatsu_Japanese_VCV_Beta_0.9
-description: This is an japanese Voice Database for UTAU in VCV chart.
-pubDate: 2018-11-11T16:00:00.000Z
-tags: [UTAU, VoiceDBs]
-categories: []
+pubDate: "2018-11-11T16:00:00.000Z"
 draft: false
 heroImage: "https://cntracker.net/img/a3379b4bb6f174a48c7e07e443116162.jpg"
 toc: true
 pinned: false
 math: false
-lang: zh
-unlisted: true
+tags: [UTAU, VoiceDB]
+categories: [UTAU]
+description: "This is an japanese Voice Database for UTAU in VCV chart. * Included Scales: A2, D3, G3, C4, F4 * Character Voice: Shinne Tatsu"
+lang: en
+unlisted: false
 ---
 This is an japanese Voice Database for UTAU in VCV chart.
 * Included Scales: A2, D3, G3, C4, F4

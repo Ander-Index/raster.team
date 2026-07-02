@@ -1,16 +1,16 @@
 ---
 title: 【关于】辰远
-description: "<font color=\"#7EAEF8\">欢迎大家！这里是辰远的信息发布站~</font>"
-pubDate: 1997-11-11T16:00:00.000Z
-tags: [About]
-categories: []
+pubDate: "1997-11-11T16:00:00.000Z"
 draft: false
 heroImage: "http://q2.qlogo.cn/headimg_dl?dst_uin=1260550792&spec=100&t=1725588775930"
 toc: true
 pinned: false
 math: false
+tags: [关于, About]
+categories: [关于]
+description: 欢迎大家！这里是辰远的信息发布站~
 lang: zh
-unlisted: true
+unlisted: false
 ---
  <font color="#7EAEF8">欢迎大家！这里是辰远的信息发布站~</font>
 <!-- more -->

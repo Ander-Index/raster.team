@@ -1,16 +1,16 @@
 ---
 title: 【关于】王洛木
-description: 在与现实的人交涉的时候就会使用这样的 ID。好记，好写，好认。
-pubDate: 1998-06-30T16:00:00.000Z
-tags: [About]
-categories: []
+pubDate: "1998-06-30T16:00:00.000Z"
 draft: false
 heroImage: "http://q2.qlogo.cn/headimg_dl?dst_uin=2134601793&spec=100&t=1725588661896"
 toc: true
 pinned: false
 math: false
+tags: [关于, About]
+categories: [关于]
+description: o(*￣▽￣*)o
 lang: zh
-unlisted: true
+unlisted: false
 ---
 <font color="#699B6A">o(*￣▽￣*)o</font>
 <!-- more -->

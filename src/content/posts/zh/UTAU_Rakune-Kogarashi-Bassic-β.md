@@ -1,15 +1,15 @@
 ---
 title: 【UTAU】Rakune Kogarashi Bassic β
-description: 这是学习新技术时的产物，并没有当成一件真正发行的内容去做，
-pubDate: 2018-12-27T09:09:25.000Z
-tags: [UTAU, VoiceDBs]
-categories: []
+pubDate: "2018-12-27T09:09:25.000Z"
 draft: false
 toc: true
 pinned: false
 math: false
+tags: [UTAU, 音源, VoiceDB]
+categories: [UTAU]
+description: Rakune Kogarashi Bassic β 音源——学习新技术时的产物。
 lang: zh
-unlisted: true
+unlisted: false
 ---
 这是学习新技术时的产物，并没有当成一件真正发行的内容去做，
 
