@@ -1,13 +1,15 @@
 ---
 title: 【关于】瑞洛凩
-pubDate: "1998-06-30T16:00:00.000Z"
+pubDate: 1998-06-30T16:00:00.000Z
 draft: false
-heroImage: "http://q2.qlogo.cn/headimg_dl?dst_uin=871533911&spec=100&t=1725588600667"
+heroImage: http://q2.qlogo.cn/headimg_dl?dst_uin=871533911&spec=100&t=1725588600667
 toc: true
 pinned: false
 math: false
-tags: [关于, About]
-categories: [关于]
+tags:
+  - 关于
+categories:
+  - 关于
 description: 《 ↙ ｡ì ◡ í｡ ↘ 》
 lang: zh
 unlisted: false
@@ -46,7 +48,5 @@ A：这是经过调整的字符画，和设定的面部一样。（　面　部�
 
 # <font color = "#966495">富婆，饭饭，饿饿，QwQ</font>
 （左支付宝，右微信）
-![收款码](https://raster.team/post-images/1652438921299.jpg)
 
- 
-
+![收款码](https://img.cntracker.net/img/dacf2d5e10d4ecc9a1e74a81f7607d11.jpg)

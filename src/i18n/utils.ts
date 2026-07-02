@@ -191,6 +191,36 @@ export function canonicalUrl(pathname: string): string {
   return new URL(pathname, SITE.url).toString();
 }
 
+/**
+ * Build hreflang alternates from an explicit per-locale path map.
+ *
+ * Use this (via `buildSeo({ hreflangPaths })`) when the same logical
+ * page has DIFFERENT paths across locales — e.g. tag pages where the
+ * tag name itself is translated (`/tags/友链/` vs `/en/tags/links/`).
+ *
+ * Each value is a path WITHOUT locale prefix (just like the single-path
+ * `alternates()`); the prefix and `base` are added per locale.
+ *
+ *   alternatesByPath({ zh: '/tags/友链/', en: '/tags/links/' })
+ */
+export function alternatesByPath(
+  pathsByLocale: Partial<Record<Locale, string>>,
+): Array<{ locale: Locale | 'x-default'; href: string }> {
+  const list: Array<{ locale: Locale | 'x-default'; href: string }> = [];
+  for (const locale of SITE.locales) {
+    const p = pathsByLocale[locale];
+    if (!p) continue;
+    list.push({ locale, href: new URL(localizedPath(p, locale), SITE.url).toString() });
+  }
+  if (pathsByLocale[DEFAULT_LOCALE]) {
+    list.push({
+      locale: 'x-default',
+      href: new URL(localizedPath(pathsByLocale[DEFAULT_LOCALE]!, DEFAULT_LOCALE), SITE.url).toString(),
+    });
+  }
+  return list;
+}
+
 /** Pretty label for the language switcher. */
 export function localeLabel(locale: Locale): string {
   return LOCALE_META[locale].label;

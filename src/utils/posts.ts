@@ -13,6 +13,7 @@ import type { ImageMetadata } from 'astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 
 import { SITE, type Locale } from '../config';
+import { TAG_GROUPS, type TagGroup } from '../tag-groups';
 import { withBase, LOCALE_META } from '../i18n/utils';
 import { slugify } from './slugify';
 
@@ -256,4 +257,82 @@ export function categoryPath(locale: Locale, category: string): string {
   const path =
     locale === SITE.defaultLocale ? `/categories/${slug}/` : `/${locale}/categories/${slug}/`;
   return withBase(path);
+}
+
+// ──────────────────────────────────────────────────────────────────────
+// Tag translation groups
+// ──────────────────────────────────────────────────────────────────────
+
+/**
+ * Reverse index: exact tag name -> the group it belongs to. Built once
+ * at module load from `TAG_GROUPS` in `src/tag-groups.ts`.
+ */
+const TAG_GROUP_INDEX: Map<string, TagGroup> = (() => {
+  const m = new Map<string, TagGroup>();
+  for (const group of TAG_GROUPS) {
+    for (const locale of SITE.locales) {
+      const name = group[locale];
+      if (name) m.set(name, group);
+    }
+  }
+  return m;
+})();
+
+/** Find the translation group containing this exact tag name, if any. */
+export function getTagGroup(tagName: string): TagGroup | undefined {
+  return TAG_GROUP_INDEX.get(tagName);
+}
+
+export interface TagTranslationResult {
+  /** Locale -> full localized URL of the equivalent tag page. */
+  links: Partial<Record<Locale, string>>;
+  /** Locale -> path WITHOUT locale prefix (for hreflang). */
+  paths: Partial<Record<Locale, string>>;
+}
+
+/**
+ * Resolve every locale variant of a tag page so the language switcher
+ * and hreflang alternates can point at the right place.
+ *
+ * Resolution order per locale:
+ *   1. If the tag is in a translation group AND that locale's
+ *      translated name exists as a real tag (has posts) → use it.
+ *   2. Else if this is the current locale → always link to itself.
+ *   3. Else if the same slug happens to exist in that locale (e.g.
+ *      "UTAU", "REAPER" shared verbatim) → link to it.
+ *   4. Otherwise omit the locale (no switcher entry, no hreflang).
+ *
+ * This never links to a tag page that doesn't exist.
+ */
+export async function resolveTagTranslations(
+  tagName: string,
+  currentLocale: Locale,
+): Promise<TagTranslationResult> {
+  const group = getTagGroup(tagName);
+  const currentSlug = slugify(tagName);
+  const links: Partial<Record<Locale, string>> = {};
+  const paths: Partial<Record<Locale, string>> = {};
+
+  for (const loc of SITE.locales) {
+    const tags = await getTagsWithCount(loc);
+    const slugToName = new Map(tags.map((t) => [slugify(t.name), t.name] as const));
+
+    let resolved: string | undefined;
+    const translatedName = group?.[loc];
+    if (loc === currentLocale) {
+      // The current locale always reflects the page being viewed, even
+      // if the group lists a different "canonical" name for it.
+      resolved = tagName;
+    } else if (translatedName && slugToName.has(slugify(translatedName))) {
+      resolved = translatedName;
+    } else {
+      resolved = slugToName.get(currentSlug);
+    }
+
+    if (resolved) {
+      links[loc] = tagPath(loc, resolved);
+      paths[loc] = `/tags/${slugify(resolved)}/`;
+    }
+  }
+  return { links, paths };
 }

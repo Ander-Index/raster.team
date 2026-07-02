@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/zh/demo-theme-features.md",
-                "mode": "source",
-                "source": false
+                "file": "posts/zh/about/team-raster.md",
+                "mode": "preview",
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "demo-theme-features"
+              "title": "team-raster"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "-136",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,8 +74,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -181,34 +180,36 @@
       "bases:新建数据库": false
     }
   },
-  "active": "95bc781f58d0f4a9",
+  "active": "3761badade7d5784",
   "lastOpenFiles": [
-    "posts/zh/jiao-cheng-hu-dong-xiao-shuo-cai-keng-zhi-nan.md",
-    "posts/zh/demo-theme-features.md",
-    "posts/ja/UTAU_JA-JP_Shinne-Tatsu_Japanese_VCV_Beta_0.9.md",
-    "posts/ja/UTAU_JA-JP_Shinne-Tatsu_Japanese_VCV_1.0.md",
-    "posts/ja/UTAU_JA-JP_Shinne-Tatsu_Chinese_CVVC_1.3.md",
-    "posts/zh/About_Xi-Qian.md",
+    "posts/zh/about/About_Xi-Qian.md",
+    "posts/zh/about/team-raster.md",
+    "posts/en/about/team-raster.md",
+    "posts/en/about",
+    "posts/zh/about/About_Shinne-Tatsu.md",
+    "posts/zh/about/About_Ray-Lum_INSIDE.md",
+    "posts/zh/about/About_Ray-Lum.md",
+    "posts/zh/about/About_Raku-Kogarashi.md",
+    "posts/zh/about/About_Nomo-Wang.md",
+    "posts/zh/about",
+    "posts/ja/EULA_UTAU-中華組ウィキ登録音源公共規約_20171112.md",
     "posts/en/UTAU_EN-US_Shinne-Tatsu_Japanese_VCV_Beta_0.9.md",
     "posts/en/UTAU_EN-US_Shinne-Tatsu_Japanese_VCV_1.0.md",
     "posts/en/UTAU_EN-US_Shinne-Tatsu_Chinese_CVVC_1.3.md",
     "posts/en/UTAU_EN-US_Evan_Japanese_VCV.md",
-    "posts/ja/EULA_UTAU-中華組ウィキ登録音源公共規約_20171112.md",
+    "posts/en/getting-started.md",
+    "posts/zh/REAPER_Chinese-Simplified.ReaperLangPack.md",
+    "posts/zh/Tutorial_Twine-Chapbook-Guide.md",
+    "posts/zh/demo-theme-features.md",
+    "posts/zh/UTAU_kooriookami_Japanese_VCV.md",
+    "posts/zh/UTAU_kooriookami_Chinese_CVVC.md",
+    "posts/zh/jiao-cheng-hu-dong-xiao-shuo-cai-keng-zhi-nan.md",
+    "posts/ja/UTAU_JA-JP_Shinne-Tatsu_Japanese_VCV_Beta_0.9.md",
+    "posts/ja/UTAU_JA-JP_Shinne-Tatsu_Japanese_VCV_1.0.md",
+    "posts/ja/UTAU_JA-JP_Shinne-Tatsu_Chinese_CVVC_1.3.md",
     "posts/zh/qnap-ru-he-zai-wei-lian-tong-de-nas-shang-yun-xing-peerbanhelper.md",
     "posts/zh/choicescript-choicescript-zhi-nan.md",
     "posts/zh/Wallpaper_Jitsu.md",
-    "posts/zh/UTAU_仙人指路.md",
-    "posts/zh/UTAU_kooriookami_Japanese_VCV.md",
-    "posts/zh/UTAU_kooriookami_Chinese_CVVC.md",
-    "posts/zh/UTAU_ZH-CN_Shinne-Tatsu_Japanese_VCV_Beta_0.9.md",
-    "posts/zh/UTAU_ZH-CN_Shinne-Tatsu_Japanese_VCV_1.0.md",
-    "posts/zh/UTAU_ZH-CN_Shinne-Tatsu_Chinese_CVVC_1.3.md",
-    "posts/zh/UTAU_ZH-CN_MoYanMing_Japanese_VCV.md",
-    "posts/zh/UTAU_Rakune-Kogarashi-Bassic-β.md",
-    "posts/zh/UTAU_Nekobamo.md",
-    "posts/zh/UTAU_Mitsukawa-Takeshi.md",
-    "posts/zh/UTAU_JA-JP_Shinne-Tatsu_Japanese_VCV_Beta_0.9.md",
-    "posts/zh/UTAU_JA-JP_Shinne-Tatsu_Japanese_VCV_1.0.md",
     "__RAW_BACKUP",
     "posts/__RAW_BACKUP"
   ]

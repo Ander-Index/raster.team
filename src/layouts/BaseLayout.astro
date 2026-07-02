@@ -38,6 +38,13 @@ interface Props {
    * to scope hreflang alternates. Defaults to all `SITE.locales`.
    */
   availableLocales?: readonly Locale[];
+  /**
+   * Explicit per-locale paths (without locale prefix) for hreflang
+   * alternates. Use when the same logical page lives at DIFFERENT paths
+   * per locale (e.g. translated tag pages like `/tags/友链/` vs
+   * `/en/tags/links/`). Takes precedence over `pathWithoutLocale`.
+   */
+  hreflangPaths?: Partial<Record<Locale, string>>;
 }
 
 const {
@@ -53,6 +60,7 @@ const {
   crumbs = [],
   seo,
   availableLocales,
+  hreflangPaths,
 } = Astro.props;
 
 const locale: Locale = detectLocale(Astro.url.pathname);
@@ -74,6 +82,7 @@ const meta: SeoMeta =
     modifiedTime,
     tags,
     availableLocales,
+    hreflangPaths,
   });
 ---
 

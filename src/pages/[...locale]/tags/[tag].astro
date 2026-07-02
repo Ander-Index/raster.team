@@ -1,13 +1,13 @@
 ---
-import { SITE } from '~/config';
+import { SITE, type Locale } from '~/config';
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import PostList from '~/components/PostList.astro';
 import { useTranslations, localizedPath } from '~/i18n/utils';
-import { getPosts, getTagsWithCount, slugify } from '~/utils/posts';
+import { getPosts, getTagsWithCount, slugify, resolveTagTranslations } from '~/utils/posts';
 
 interface Props {
   tagName: string;
-  locale: any;
+  locale: Locale;
 }
 
 export async function getStaticPaths() {
@@ -29,11 +29,22 @@ const { tagName, locale } = Astro.props as Props;
 const { tag } = Astro.params;
 const t = useTranslations(locale);
 const posts = (await getPosts(locale)).filter((p) => p.data.tags.some((tg) => slugify(tg) === tag));
+
+// Resolve every locale variant of this tag (translated via the table in
+// src/tag-groups.ts, or shared verbatim, e.g. "UTAU"). Links are only
+// produced for locales where the tag page actually exists.
+const { links: translationLinks, paths: hreflangPaths } = await resolveTagTranslations(
+  tagName,
+  locale,
+);
+const availableLocales = (Object.keys(translationLinks) as Locale[]).sort();
 ---
 
 <BaseLayout
   title={`#${tagName}`}
   pathWithoutLocale={`/tags/${tag}/`}
+  hreflangPaths={hreflangPaths}
+  availableLocales={availableLocales}
   crumbs={[
     { label: t('tags.title'), href: localizedPath('/tags/', locale) },
     { label: `#${tagName}` },
@@ -49,3 +60,10 @@ const posts = (await getPosts(locale)).filter((p) => p.data.tags.some((tg) => sl
   </header>
   <PostList posts={posts} locale={locale} />
 </BaseLayout>
+
+{/* Translation links exposed for the LanguageSwitcher to read at runtime.
+    Same mechanism PostLayout uses; without this the switcher would fall
+    back to same-slug-different-locale and 404 on translated tags. */}
+<script is:inline define:vars={{ links: translationLinks }}>
+  window.__chirpyTranslations = links;
+</script>
