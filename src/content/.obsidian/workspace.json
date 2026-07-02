@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "-136",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -180,7 +181,7 @@
       "bases:新建数据库": false
     }
   },
-  "active": "3761badade7d5784",
+  "active": "95bc781f58d0f4a9",
   "lastOpenFiles": [
     "posts/zh/jiao-cheng-hu-dong-xiao-shuo-cai-keng-zhi-nan.md",
     "posts/zh/demo-theme-features.md",

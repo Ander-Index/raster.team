@@ -2,7 +2,6 @@
 title: 【MMD】别人家的孩子
 pubDate: "1999-12-31T16:00:00.000Z"
 draft: false
-heroImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZIslymPft6LEhQEbVPpzhRie-5UABKXz09TL_EypuATWi37lw4dRJrOd4J4DPqOkp8OE&usqp=CAU"
 toc: true
 pinned: false
 math: false
