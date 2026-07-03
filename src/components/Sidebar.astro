@@ -109,7 +109,7 @@ const activeLen = Math.max(0, ...navMatches.filter((m) => m.matched).map((m) => 
   </header>
 
   {/* Vertical nav */}
-  <nav class="chirpy-nav flex-1" aria-label="Main">
+  <nav class="chirpy-nav w-full" aria-label="Main">
     <ul class="contents flex-col gap-0.5">
       {
         navItems.map((item, i) => {
@@ -131,9 +131,11 @@ const activeLen = Math.max(0, ...navMatches.filter((m) => m.matched).map((m) => 
     </ul>
   </nav>
 
-  {/* Bottom row: theme toggle + socials */}
+  {/* Bottom row: theme toggle + socials. mt-auto pins it to the bottom
+      when there's room; when the sidebar overflows and scrolls, the auto
+      margin collapses so it sits right after the nav and scrolls into view. */}
   <div
-    class="border-base-300 mt-4 flex w-full flex-wrap items-center justify-center gap-2 border-t pt-4"
+    class="border-base-300 mt-auto flex w-full flex-wrap items-center justify-center gap-2 border-t pt-4"
   >
     <ThemeToggle locale={locale} />
     {

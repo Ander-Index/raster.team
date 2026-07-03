@@ -239,6 +239,24 @@
     background: linear-gradient(180deg, var(--color-sidebar-from) 0%, var(--color-sidebar-to) 100%);
     color: var(--color-sidebar-text);
     transition: transform 0.3s ease;
+    /* The whole sidebar (avatar + nav + socials) scrolls as one block when
+       the viewport is too short to show everything. Without this, the nav
+       items get clipped on short windows. */
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+  /* Subtle thin scrollbar that blends with the sidebar gradient. */
+  .chirpy-sidebar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .chirpy-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .chirpy-sidebar::-webkit-scrollbar-thumb {
+    background: color-mix(in oklab, var(--color-sidebar-text) 30%, transparent);
+    border-radius: 9999px;
   }
   @media (max-width: 1023px) {
     .chirpy-sidebar {
