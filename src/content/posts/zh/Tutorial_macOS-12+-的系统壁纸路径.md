@@ -6,7 +6,7 @@ heroImage: "https://cntracker.net/img/f7bd65aa13bfff708d6c6983dc572fbe.jpg"
 toc: true
 pinned: false
 math: false
-tags: [教程, Tutorial, macOS]
+tags: [教程, macOS]
 categories: [教程]
 description: 要说系统自带的壁纸，那 macOS 的指定排得上号。
 lang: zh

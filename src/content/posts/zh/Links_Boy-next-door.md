@@ -6,7 +6,7 @@ heroImage: "https://cntracker.net/img/93fb38ce10fd5dd01ddb8ac132aef00c.jpg"
 toc: true
 pinned: false
 math: false
-tags: [友链, Links, UTAU, 音源]
+tags: [友链, UTAU, 音源]
 categories: [友链]
 description: 如果你想在这里留下你的链接，欢迎联系我们~ 所有的封面图均以外链的形式直接连接到对方的站点， 所以如果你看到那张图没有显示，要么说明你需要梯子，要么就是真的挂了。 如果确认是图挂了，则请联系洛凩让他修复一下。 以下内容按录入顺序排列
 lang: zh

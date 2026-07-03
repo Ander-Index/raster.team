@@ -6,7 +6,7 @@ heroImage: "https://cntracker.net/img/33f91cac2033d8f93cf35836b148b8be.webp"
 toc: true
 pinned: false
 math: false
-tags: [作品, Creations, Live2D, 模型]
+tags: [作品, Live2D, 模型]
 categories: [模型]
 description: 你这老虎怎么虎里虎气的……🥴 Live2D模型《洛凩_1.0_Normal》现在正式公开。欢迎使用。使用时，请遵守EULAs。
 lang: zh

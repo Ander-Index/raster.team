@@ -32,6 +32,8 @@ interface Props {
   crumbs?: Array<{ label: string; href?: string }>;
   /** Pre-built SEO meta override. */
   seo?: SeoMeta;
+  /** Emit `<meta name="robots" content="noindex, nofollow">` (e.g. empty listing pages). */
+  noindex?: boolean;
   /**
    * Locales for which a translation of the current page actually
    * exists. Used to limit the language switcher to working links and
@@ -59,6 +61,7 @@ const {
   narrow = false,
   crumbs = [],
   seo,
+  noindex,
   availableLocales,
   hreflangPaths,
 } = Astro.props;
@@ -83,6 +86,7 @@ const meta: SeoMeta =
     tags,
     availableLocales,
     hreflangPaths,
+    noindex,
   });
 ---
 

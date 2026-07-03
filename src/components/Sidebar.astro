@@ -8,6 +8,7 @@
 import { SITE, NAV, SOCIALS, type Locale } from '../config';
 import { useTranslations, localizedPath, withBase, siteTitle, siteTagline } from '../i18n/utils';
 import type { UIKey } from '../i18n/ui';
+import { getTagGroup, tagPath } from '../utils/posts';
 import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 import ThemeToggle from './islands/ThemeToggle.astro';
@@ -23,11 +24,15 @@ const avatar = SITE.author.avatar;
 const isStringAvatar = typeof avatar === 'string';
 const avatarSrc = isStringAvatar ? avatar.trim() : '';
 
-const navItems = NAV.map((item) => ({
-  ...item,
-  href: localizedPath(item.href, locale),
-  label: t(`nav.${item.key}` as UIKey),
-}));
+const navItems = NAV.map((item) => {
+  // Tag-group entries: resolve the canonical tag name to the active
+  // locale's equivalent (via src/tag-groups.ts) and link to that tag's
+  // listing page. Fixed-path entries are localized as before.
+  const href = item.tag
+    ? tagPath(locale, getTagGroup(item.tag)?.[locale] ?? item.tag)
+    : localizedPath(item.href ?? '/', locale);
+  return { ...item, href, label: t(`nav.${item.key}` as UIKey) };
+});
 ---
 
 <aside id="sidebar" class="chirpy-sidebar" aria-label="Sidebar">

@@ -5,8 +5,8 @@ draft: false
 toc: true
 pinned: false
 math: false
-tags: [EULA, 使用规约]
-categories: [EULA]
+tags: [使用规约]
+categories: [使用规约]
 description: 猫葉莫 UTAU 音源的使用规约与免责声明。
 lang: zh
 unlisted: false

@@ -6,8 +6,8 @@ heroImage: "https://cntracker.net/img/adc5af48dc3c750130932cc2b1627de1.jpeg"
 toc: true
 pinned: false
 math: false
-tags: [UTAU, 音源, VoiceDB]
-categories: [UTAU]
+tags: [UTAU, 音源]
+categories: [音源]
 description: "连续音 UTAU 声库 版本: 默彦明 Vol.02 类型: 单音阶 (C3)"
 lang: zh
 unlisted: false

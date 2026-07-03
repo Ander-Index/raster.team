@@ -6,7 +6,7 @@ heroImage: "https://cntracker.net/img/0eaf028040ab9cfc2d3d03062099a955.png"
 toc: true
 pinned: false
 math: false
-tags: [教程, Tutorial, UCS, 音效]
+tags: [教程, UCS, 音效]
 categories: [教程]
 description: UCS 强烈推荐采用一种特殊的文件名结构。遵循这一结构后，各类程序中的自动化脚本可直接从文件名中提取信息，并自动填充到最终用户的元数据字段中。
 lang: zh

@@ -7,7 +7,7 @@ toc: true
 pinned: false
 math: false
 tags: [UTAU, VoiceDB]
-categories: [UTAU]
+categories: [VoiceDB]
 description: "VCV UTAU Voicebank Version: Evan Vol.02 Type: Single Pitch (C3)"
 lang: en
 unlisted: false

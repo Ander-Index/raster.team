@@ -1,5 +1,6 @@
 ---
 import { SITE, type Locale } from '~/config';
+import { TAG_GROUPS } from '~/tag-groups';
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import PostList from '~/components/PostList.astro';
 import { useTranslations, localizedPath } from '~/i18n/utils';
@@ -12,6 +13,7 @@ interface Props {
 
 export async function getStaticPaths() {
   let paths = [];
+  // 1) One page per tag that actually has posts.
   for (const locale of SITE.locales) {
     const tags = await getTagsWithCount(locale);
     const localeParams = { locale: locale === SITE.defaultLocale ? undefined : locale };
@@ -22,6 +24,25 @@ export async function getStaticPaths() {
       })),
     );
   }
+  // 2) Ensure every tag-group member has a page in every locale, even
+  //    when that locale has no posts for it yet. This keeps navbar
+  //    entries and the language switcher linking to real pages instead
+  //    of 404ing; empty ones show the "no posts" state (and are noindex).
+  const seen = new Set(paths.map((p) => `${p.props.locale}:${p.params.tag}`));
+  for (const group of TAG_GROUPS) {
+    for (const locale of SITE.locales) {
+      const name = group[locale];
+      if (!name) continue;
+      const slug = slugify(name);
+      const key = `${locale}:${slug}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      paths.push({
+        params: { locale: locale === SITE.defaultLocale ? undefined : locale, tag: slug },
+        props: { tagName: name, locale },
+      });
+    }
+  }
   return paths;
 }
 
@@ -31,8 +52,7 @@ const t = useTranslations(locale);
 const posts = (await getPosts(locale)).filter((p) => p.data.tags.some((tg) => slugify(tg) === tag));
 
 // Resolve every locale variant of this tag (translated via the table in
-// src/tag-groups.ts, or shared verbatim, e.g. "UTAU"). Links are only
-// produced for locales where the tag page actually exists.
+// src/tag-groups.ts, or shared verbatim, e.g. "UTAU").
 const { links: translationLinks, paths: hreflangPaths } = await resolveTagTranslations(
   tagName,
   locale,
@@ -45,6 +65,7 @@ const availableLocales = (Object.keys(translationLinks) as Locale[]).sort();
   pathWithoutLocale={`/tags/${tag}/`}
   hreflangPaths={hreflangPaths}
   availableLocales={availableLocales}
+  noindex={posts.length === 0}
   crumbs={[
     { label: t('tags.title'), href: localizedPath('/tags/', locale) },
     { label: `#${tagName}` },

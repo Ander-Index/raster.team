@@ -6,7 +6,7 @@ toc: true
 pinned: false
 math: false
 tags: [UTAU, UST, 作品]
-categories: [UTAU]
+categories: [作品]
 description: 万物生 UST 配布。
 lang: zh
 unlisted: false

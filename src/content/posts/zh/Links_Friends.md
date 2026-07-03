@@ -5,7 +5,7 @@ draft: false
 toc: true
 pinned: false
 math: false
-tags: [友链, Links]
+tags: [友链]
 categories: [友链]
 description: TA 们都是厉害的人。
 lang: zh

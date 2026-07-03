@@ -6,8 +6,8 @@ heroImage: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHB
 toc: true
 pinned: false
 math: false
-tags: [UTAU, 音源, VoiceDB]
-categories: [UTAU]
+tags: [UTAU, 音源]
+categories: [音源]
 description: rua～ 新的一年给大家带来新的音源~这次的Tender音源比起之前的四音阶来说是温油了些w 希望大家在今年也能一如既往地支持我和我家儿子 蟹蟹O(∩_∩)O
 lang: zh
 unlisted: false

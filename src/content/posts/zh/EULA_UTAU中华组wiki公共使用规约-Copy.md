@@ -5,8 +5,8 @@ draft: false
 toc: true
 pinned: false
 math: false
-tags: [EULA, 使用规约, UTAU]
-categories: [EULA]
+tags: [使用规约, UTAU]
+categories: [使用规约]
 description: "本页所记载的使用规约适用于处于分类:使用公共规约下的音源。 只有当音源信息框中的“使用规定”一栏指向本页面时，本规约才会生效。 分类:使用旧版公共规约仍在沿用旧版公共规约。虽然两版的具体内容大致是一致的，但保险起见，对于这些音源请仍以旧版公共规约为准。 而对于那些拥有自己的使用规约的音源，请在使用时参照与其对应的使用规约。"
 lang: zh
 unlisted: false

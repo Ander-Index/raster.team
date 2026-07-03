@@ -6,7 +6,7 @@ heroImage: "https://cntracker.net/img/7f5fb2c267c1b631cf7d82e5c54a2aa1.jpg"
 toc: true
 pinned: false
 math: false
-tags: [歌词, Lyrics]
+tags: [歌词]
 categories: [歌词]
 description: 作者：[TNT](/post/UTAU_EN-US_Shinne-Tatsu_Japanese_VCV_1.0)
 lang: zh

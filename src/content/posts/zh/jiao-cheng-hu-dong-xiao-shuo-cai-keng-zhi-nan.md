@@ -7,7 +7,6 @@ pinned: false
 math: false
 tags:
   - 教程
-  - Tutorial
   - 互动小说
 categories:
   - 教程

@@ -7,7 +7,7 @@ toc: true
 pinned: false
 math: false
 tags: [UTAU, 音源]
-categories: [UTAU]
+categories: [音源]
 description: 連続音（VCV）形式の多音階UTAUライブラリー * 収録音階：A2、D3、G3、C4、F4 * 中の人：辰遠
 lang: ja
 unlisted: false

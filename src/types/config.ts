@@ -39,11 +39,22 @@ export interface SiteConfig {
 }
 
 export interface NavItem {
-  /** Unique key matching i18n.ts entries. */
+  /** Unique key matching i18n.ts entries (label looked up as `nav.<key>`). */
   key: string;
-  /** Path WITHOUT leading locale prefix. The renderer adds it. */
-  href: string;
-  /** Optional icon name (e.g. "home", "tags"). */
+  /**
+   * Fixed path WITHOUT leading locale prefix. The renderer adds the
+   * locale prefix. Mutually exclusive with `tag`.
+   */
+  href?: string;
+  /**
+   * Canonical tag name (any locale's spelling from a group in
+   * `src/tag-groups.ts`). The renderer resolves it to the current
+   * locale's equivalent tag and links to that tag's listing page —
+   * so the same nav entry jumps to `#作品`, `#Creations`, or `#作品`
+   * depending on the active language. Mutually exclusive with `href`.
+   */
+  tag?: string;
+  /** Optional icon name (e.g. "lucide:home"). */
   icon?: string;
 }
 

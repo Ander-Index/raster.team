@@ -6,7 +6,7 @@ heroImage: "https://heart.furcode.cn/image/index-bg.jpg"
 toc: true
 pinned: false
 math: false
-tags: [友链, Links]
+tags: [友链]
 categories: [友链]
 description: 随心社（随心 ACG）是用爱发电的以 Furry 和歌声合成为主要制作方向的 ACGN 创作社团
 lang: zh

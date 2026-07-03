@@ -6,8 +6,8 @@ heroImage: "https://cntracker.net/img/a3379b4bb6f174a48c7e07e443116162.jpg"
 toc: true
 pinned: false
 math: false
-tags: [UTAU, 音源, VoiceDB]
-categories: [UTAU]
+tags: [UTAU, 音源]
+categories: [音源]
 description: 这是一个UTAU使用的日语VCV多音阶声库 * 收录音阶：A2、D3、G3、C4、F4 * 中之人：辰远
 lang: zh
 unlisted: false

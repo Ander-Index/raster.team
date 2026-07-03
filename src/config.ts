@@ -136,10 +136,15 @@ export const SITE: SiteConfig = {
 
 export const NAV: readonly NavItem[] = [
   { key: 'home', href: '/', icon: 'lucide:home' },
+  { key: 'archives', href: '/archives', icon: 'lucide:archive' },
   { key: 'categories', href: '/categories', icon: 'lucide:layers' },
   { key: 'tags', href: '/tags', icon: 'lucide:tag' },
-  { key: 'archives', href: '/archives', icon: 'lucide:archive' },
-  { key: 'about', href: '/about', icon: 'lucide:info' },
+  { key: 'creations', tag: '作品', icon: 'lucide:palette' },
+  { key: 'tutorials', tag: '教程', icon: 'lucide:graduation-cap' },
+  { key: 'tools', tag: '工具', icon: 'lucide:wrench' },
+  { key: 'voicedbs', tag: '音源', icon: 'lucide:mic' },
+  { key: 'links', tag: '友链', icon: 'lucide:link' },
+  { key: 'about', tag: '关于', icon: 'lucide:info' },
 ] as const;
 
 /**

@@ -33,11 +33,14 @@ export const TAG_GROUPS: readonly TagGroup[] = [
 
   // ─── Content types ────────────────────────────────────────
   { zh: '教程', en: 'Tutorial', ja: 'チュートリアル' },
-  { zh: '作品', en: 'Creations', ja: '作品' },
+  { zh: '作品', en: 'Creation', ja: '作品' },
+  { zh: '音源', en: 'VoiceDB', ja: '音源' },
   { zh: '音乐', en: 'Music', ja: '音楽' },
   { zh: '游戏', en: 'Game', ja: 'ゲーム' },
   { zh: '歌词', en: 'Lyrics', ja: '歌詞' },
   { zh: '模型', en: 'Model', ja: 'モデル' },
+  { zh: '壁纸', en: 'Wallpaper', ja: '壁紙' },
+  { zh: '插画', en: 'Illustrations', ja: 'イラスト' },
   { zh: '工具', en: 'Tool', ja: 'ツール' },
   { zh: '音频', en: 'Audio', ja: 'オーディオ' },
   { zh: '关于', en: 'About' },

@@ -5,7 +5,7 @@ draft: false
 toc: true
 pinned: false
 math: false
-tags: [更新日志, Changelog, REAPER]
+tags: [更新日志, REAPER]
 categories: [更新日志]
 description: REAPER 简体中文语言包的更新历史记录。
 lang: zh

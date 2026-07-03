@@ -7,7 +7,7 @@ toc: true
 pinned: false
 math: false
 tags: [UTAU, VoiceDB]
-categories: [UTAU]
+categories: [VoiceDB]
 description: "This is a Chinese UTAU voice database in CVVC sheet. * Included Scales: E3, A3, E4 * Suitable range: E2~F5 * Character Voice: Shinne Tatsu"
 lang: en
 unlisted: false

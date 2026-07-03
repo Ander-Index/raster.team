@@ -5,7 +5,7 @@ draft: false
 toc: true
 pinned: false
 math: false
-tags: [友链, Links, MMD, 模型]
+tags: [友链, MMD, 模型]
 categories: [模型]
 description: 洛凩暂时没有多余的肝来搞3D模型了，但您不妨看看别人家的孩子~
 lang: zh

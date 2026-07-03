@@ -6,7 +6,7 @@ heroImage: "https://y.qq.com/music/photo_new/T002R300x300M000003KDh9j4Tr5M2_1.jp
 toc: true
 pinned: false
 math: false
-tags: [音乐, Music, 作品]
+tags: [音乐, 作品]
 categories: [音乐]
 description: ……（每天都在与自己的懒惰斗争） to 寒 for 花梨
 lang: zh

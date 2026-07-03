@@ -294,15 +294,18 @@ export interface TagTranslationResult {
  * Resolve every locale variant of a tag page so the language switcher
  * and hreflang alternates can point at the right place.
  *
- * Resolution order per locale:
- *   1. If the tag is in a translation group AND that locale's
- *      translated name exists as a real tag (has posts) → use it.
- *   2. Else if this is the current locale → always link to itself.
- *   3. Else if the same slug happens to exist in that locale (e.g.
- *      "UTAU", "REAPER" shared verbatim) → link to it.
- *   4. Otherwise omit the locale (no switcher entry, no hreflang).
+ * Two cases:
+ *  - GROUPED tag (listed in src/tag-groups.ts): link to every locale
+ *    member defined in the group. The corresponding pages are generated
+ *    by `[tag].astro` getStaticPaths for all group members, so these
+ *    never 404 — even when a locale has no posts for the tag yet (the
+ *    page simply shows an empty listing).
+ *  - UNGROUPED tag (e.g. "UTAU", "REAPER" shared verbatim): only link
+ *    locales where the same slug actually has posts, so we never link
+ *    to a non-existent page.
  *
- * This never links to a tag page that doesn't exist.
+ * In both cases the current locale always points at the page being
+ * viewed (never the group's "canonical" name for it).
  */
 export async function resolveTagTranslations(
   tagName: string,
@@ -313,22 +316,21 @@ export async function resolveTagTranslations(
   const links: Partial<Record<Locale, string>> = {};
   const paths: Partial<Record<Locale, string>> = {};
 
+  if (group) {
+    for (const loc of SITE.locales) {
+      const resolved = loc === currentLocale ? tagName : group[loc];
+      if (resolved) {
+        links[loc] = tagPath(loc, resolved);
+        paths[loc] = `/tags/${slugify(resolved)}/`;
+      }
+    }
+    return { links, paths };
+  }
+
   for (const loc of SITE.locales) {
     const tags = await getTagsWithCount(loc);
     const slugToName = new Map(tags.map((t) => [slugify(t.name), t.name] as const));
-
-    let resolved: string | undefined;
-    const translatedName = group?.[loc];
-    if (loc === currentLocale) {
-      // The current locale always reflects the page being viewed, even
-      // if the group lists a different "canonical" name for it.
-      resolved = tagName;
-    } else if (translatedName && slugToName.has(slugify(translatedName))) {
-      resolved = translatedName;
-    } else {
-      resolved = slugToName.get(currentSlug);
-    }
-
+    const resolved = loc === currentLocale ? tagName : slugToName.get(currentSlug);
     if (resolved) {
       links[loc] = tagPath(loc, resolved);
       paths[loc] = `/tags/${slugify(resolved)}/`;

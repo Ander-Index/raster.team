@@ -5,8 +5,8 @@ draft: false
 toc: true
 pinned: false
 math: false
-tags: [UTAU, 音源, VoiceDB]
-categories: [UTAU]
+tags: [UTAU, 音源]
+categories: [音源]
 description: Rakune Kogarashi Bassic β 音源——学习新技术时的产物。
 lang: zh
 unlisted: false

@@ -6,8 +6,8 @@ heroImage: "https://cntracker.net/img/0cbdb2ba94f93b8a9a7dd4200f92d343.gif"
 toc: true
 pinned: false
 math: false
-tags: [UTAU, 友链, Links]
-categories: [UTAU]
+tags: [UTAU, 友链]
+categories: [友链]
 description: 这是洛凩注销 LOFTER 之前的好友，TA 们都是厉害的人。 不分先后顺序。
 lang: zh
 unlisted: false

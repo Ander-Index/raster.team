@@ -2,8 +2,8 @@
 title: 'Getting Started'
 description: 'Your first post with Chirping Astro. Learn how to configure your site, write posts, and deploy.'
 pubDate: 2026-05-03
-tags: [getting-started, tutorial]
-categories: [Guide]
+tags: [getting-started, Tutorial]
+categories: [Tutorial]
 translationKey: getting-started
 pinned: true
 toc: true

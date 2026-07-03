@@ -6,7 +6,7 @@ heroImage: "https://y.qq.com/music/photo_new/T002R300x300M000002jnvzW3UlGXe_1.jp
 toc: true
 pinned: false
 math: false
-tags: [音乐, Music, 作品, Creations]
+tags: [音乐, 作品]
 categories: [音乐]
 description: 这本来是给一个独立游戏写的 OP, 但是那个游戏项目终止了，那这曲子就发出来算了。┑(￣Д ￣)┍
 lang: zh

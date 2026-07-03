@@ -6,7 +6,7 @@ heroImage: "https://cntracker.net/cdn-cgi/image/width=720/https://cntracker.net/
 toc: true
 pinned: false
 math: false
-tags: [攻略, Tutorial, 游戏]
+tags: [攻略, 教程, 游戏]
 categories: [游戏]
 description: 作者：辰远 本视频的初衷是个人向的记录视频，诣在给自己完成这个小挑战的回忆。但是我为了完成这个挑战也进行了详细的路线规划，所以也适合给各位和我一样水平普通又想打专家S+的小伙伴们一个攻略和参考。
 lang: zh

@@ -6,8 +6,8 @@ heroImage: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHB
 toc: true
 pinned: false
 math: false
-tags: [UTAU, 音源, VoiceDB]
-categories: [UTAU]
+tags: [UTAU, 音源]
+categories: [音源]
 description: rua～ 终于，这次带来的是温柔系的音源（拖了也有很久了x），感谢影梦喵和大毛的合作~
 lang: zh
 unlisted: false

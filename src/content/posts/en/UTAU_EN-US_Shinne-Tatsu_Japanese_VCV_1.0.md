@@ -7,7 +7,7 @@ toc: true
 pinned: false
 math: false
 tags: [UTAU, VoiceDB]
-categories: [UTAU]
+categories: [VoiceDB]
 description: "This is an japanese Voice Database for UTAU in VCV chart. * Included Scales: A2, D3, G3, C4, F4 * Character Voice: Shinne Tatsu"
 lang: en
 unlisted: false

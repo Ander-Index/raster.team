@@ -7,7 +7,7 @@ toc: true
 pinned: false
 math: false
 tags: [UTAU, 音源]
-categories: [UTAU]
+categories: [音源]
 description: CVVC形式の多音階UTAUライブラリー * 収録音階：E3、A3、E4 * 上手く歌ってくれる音域：E2〜F5 * 中の人：辰遠
 lang: ja
 unlisted: false

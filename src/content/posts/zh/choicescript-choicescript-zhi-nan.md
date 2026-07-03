@@ -6,7 +6,7 @@ heroImage: "https://www.choiceofgames.com/wp-content/themes/choiceofgames/images
 toc: true
 pinned: false
 math: false
-tags: [教程, Tutorial, 互动小说]
+tags: [教程, 互动小说]
 categories: [教程]
 description: 官方的部分已经烤好了，但是我打算先做出一些东西再跟大家宣传。
 lang: zh

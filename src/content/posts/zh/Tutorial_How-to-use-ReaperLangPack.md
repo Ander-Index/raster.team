@@ -5,7 +5,7 @@ draft: false
 toc: true
 pinned: false
 math: false
-tags: [教程, Tutorial, REAPER, 语言包]
+tags: [教程, REAPER, 语言包]
 categories: [教程]
 description: 双击你下载到的 .ReaperLangPack 就可以了，REAPER 会自动打开并为你安装语言包，安装完之后需要重启 REAPER.  如果还没解决，你再戳进来……
 lang: zh

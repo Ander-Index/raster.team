@@ -5,7 +5,7 @@ draft: false
 toc: true
 pinned: false
 math: false
-tags: [更新日志, Changelog]
+tags: [更新日志]
 categories: [更新日志]
 description: 光川武 UTAU 音源的更新记录，包括新立绘和音源更新。
 lang: zh
