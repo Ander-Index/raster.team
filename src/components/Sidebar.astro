@@ -33,6 +33,34 @@ const navItems = NAV.map((item) => {
     : localizedPath(item.href ?? '/', locale);
   return { ...item, href, label: t(`nav.${item.key}` as UIKey) };
 });
+
+// Active-state matching must compare DECODED paths: `Astro.url.pathname`
+// is percent-encoded (e.g. `/tags/%E4%BD%9C%E5%93%81/`) while nav hrefs
+// for non-ASCII tags are decoded (`/tags/作品/`). Without decoding, the
+// 作品 / 教程 / 工具 ... entries never light up on their own pages.
+const decodePath = (p: string) => {
+  try {
+    return decodeURIComponent(p);
+  } catch {
+    return p;
+  }
+};
+const currentPath = decodePath(Astro.url.pathname.replace(/\/+$/, '') || '/');
+const homePath = decodePath(home.replace(/\/+$/, '') || '/');
+
+// Match each nav item against the current path (exact or prefix).
+const navMatches = navItems.map((item) => {
+  const stripped = decodePath(item.href.replace(/\/+$/, '') || '/');
+  const isHome = stripped === homePath;
+  return {
+    stripped,
+    matched: stripped === currentPath || (!isHome && currentPath.startsWith(stripped + '/')),
+  };
+});
+// Most specific (longest) match wins: on `/tags/作品/` only the 作品 entry
+// lights up, not the parent Tags entry too. Tags still activates on tags
+// that have no dedicated nav entry (e.g. `/tags/utau/`).
+const activeLen = Math.max(0, ...navMatches.filter((m) => m.matched).map((m) => m.stripped.length));
 ---
 
 <aside id="sidebar" class="chirpy-sidebar" aria-label="Sidebar">
@@ -84,12 +112,8 @@ const navItems = NAV.map((item) => {
   <nav class="chirpy-nav flex-1" aria-label="Main">
     <ul class="contents flex-col gap-0.5">
       {
-        navItems.map((item) => {
-          const stripped = item.href.replace(/\/+$/, '') || '/';
-          const current = Astro.url.pathname.replace(/\/+$/, '') || '/';
-          const isActive =
-            stripped === current ||
-            (stripped !== home.replace(/\/+$/, '') && current.startsWith(stripped + '/'));
+        navItems.map((item, i) => {
+          const isActive = navMatches[i].matched && navMatches[i].stripped.length === activeLen;
           return (
             <li>
               <a

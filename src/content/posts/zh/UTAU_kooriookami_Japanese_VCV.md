@@ -32,7 +32,6 @@ rua～
 * PV: 影梦喵
 
 # <font color=#FFFFFF style="background-color:#6699FF; text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;">声库设定</font>
-![外链_冰狼_立绘](https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSbQHNGBHz2_zLYRTwHzvd8fBxGD8V9fxQGn3BK-KSeZm1bP7HH)
 * 立绘画师：Enma
 * 中文名：冰狼｜日文名：氷 クカミ
 * 性别：♂｜年龄：17岁｜生日：12月1日
