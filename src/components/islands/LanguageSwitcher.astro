@@ -78,13 +78,18 @@ const fallbackBase = stripLocale(Astro.url.pathname);
 
 <script>
   function rewireLanguageLinks() {
-    const map = (window as unknown as { __chirpyTranslations?: Record<string, string> })
-      .__chirpyTranslations;
+    const w = window as unknown as { __chirpyTranslations?: Record<string, string> };
+    const map = w.__chirpyTranslations;
     if (!map) return;
     document.querySelectorAll<HTMLAnchorElement>('[data-lang-target]').forEach((a) => {
       const target = a.dataset.langTarget;
       if (target && map[target]) a.href = map[target];
     });
+    // Consume the per-page map so it can't leak onto the next page.
+    // Home / Archives / Categories etc. don't set their own map; without
+    // this clear, their switcher would inherit the previous tag or post
+    // page's translation targets and send those pages to the wrong URL.
+    w.__chirpyTranslations = undefined;
   }
   rewireLanguageLinks();
   document.addEventListener('astro:page-load', rewireLanguageLinks);
