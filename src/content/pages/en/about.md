@@ -2,6 +2,7 @@
 title: About
 description: Chirping Astro — a Chirpy-inspired, multilingual Astro theme built for writers and tinkerers.
 translationKey: about
+unlisted: true
 ---
 
 **Chirping Astro** is an open-source theme that brings the look and feel of

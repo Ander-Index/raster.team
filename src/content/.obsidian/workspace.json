@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "a09c26640f5633b6",
+        "id": "3c0f612cc97d77a3",
         "type": "tabs",
         "children": [
           {
-            "id": "3761badade7d5784",
+            "id": "45173c967a8cd3be",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "posts/zh/about/team-raster.md",
-                "mode": "preview",
-                "source": true
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "team-raster"
+              "title": "新标签页"
             }
           }
         ]
@@ -53,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "主题功能",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,12 +70,11 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 341.5
   },
   "right": {
     "id": "e7536589fc3b8c77",
@@ -163,12 +158,12 @@
               "title": "大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 337.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -181,37 +176,43 @@
       "bases:新建数据库": false
     }
   },
-  "active": "95bc781f58d0f4a9",
+  "active": "45173c967a8cd3be",
   "lastOpenFiles": [
-    "posts/zh/about/About_Xi-Qian.md",
-    "posts/zh/about/team-raster.md",
-    "posts/en/about/team-raster.md",
-    "posts/en/about",
-    "posts/zh/about/About_Shinne-Tatsu.md",
-    "posts/zh/about/About_Ray-Lum_INSIDE.md",
-    "posts/zh/about/About_Ray-Lum.md",
-    "posts/zh/about/About_Raku-Kogarashi.md",
-    "posts/zh/about/About_Nomo-Wang.md",
-    "posts/zh/about",
-    "posts/ja/EULA_UTAU-中華組ウィキ登録音源公共規約_20171112.md",
-    "posts/en/UTAU_EN-US_Shinne-Tatsu_Japanese_VCV_Beta_0.9.md",
-    "posts/en/UTAU_EN-US_Shinne-Tatsu_Japanese_VCV_1.0.md",
-    "posts/en/UTAU_EN-US_Shinne-Tatsu_Chinese_CVVC_1.3.md",
-    "posts/en/UTAU_EN-US_Evan_Japanese_VCV.md",
-    "posts/en/getting-started.md",
-    "posts/zh/REAPER_Chinese-Simplified.ReaperLangPack.md",
-    "posts/zh/Tutorial_Twine-Chapbook-Guide.md",
-    "posts/zh/demo-theme-features.md",
-    "posts/zh/UTAU_kooriookami_Japanese_VCV.md",
-    "posts/zh/UTAU_kooriookami_Chinese_CVVC.md",
-    "posts/zh/jiao-cheng-hu-dong-xiao-shuo-cai-keng-zhi-nan.md",
-    "posts/ja/UTAU_JA-JP_Shinne-Tatsu_Japanese_VCV_Beta_0.9.md",
-    "posts/ja/UTAU_JA-JP_Shinne-Tatsu_Japanese_VCV_1.0.md",
-    "posts/ja/UTAU_JA-JP_Shinne-Tatsu_Chinese_CVVC_1.3.md",
-    "posts/zh/qnap-ru-he-zai-wei-lian-tong-de-nas-shang-yun-xing-peerbanhelper.md",
-    "posts/zh/choicescript-choicescript-zhi-nan.md",
-    "posts/zh/Wallpaper_Jitsu.md",
-    "__RAW_BACKUP",
-    "posts/__RAW_BACKUP"
+    "posts/zh/__RAW/wallpaper_jitsu.md",
+    "posts/zh/__RAW/utau_zh-cn_shinne-tatsu_japanese_vcv_beta_0.9.md",
+    "posts/zh/__RAW/utau_zh-cn_shinne-tatsu_japanese_vcv_1.0.md",
+    "posts/zh/__RAW/utau_zh-cn_shinne-tatsu_chinese_cvvc_1.3.md",
+    "posts/zh/__RAW/utau_zh-cn_moyanming_japanese_vcv.md",
+    "posts/zh/__RAW/utau_nekobamo.md",
+    "posts/zh/__RAW/utau_mitsukawa-takeshi.md",
+    "posts/zh/__RAW/utau_kooriookami_japanese_vcv.md",
+    "posts/zh/__RAW/utau_kooriookami_chinese_cvvc.md",
+    "posts/zh/__RAW/tutorial_writingwithink.md",
+    "posts/zh/__RAW/tutorial_unpack-heic.md",
+    "posts/zh/__RAW/tutorial_twine-chapbook-guide.md",
+    "posts/zh/__RAW/tutorial_rearoute-asio-to-obs-with-reaper.md",
+    "posts/zh/__RAW/tutorial_macos-12+-的系统壁纸路径.md",
+    "posts/zh/__RAW/tutorial_how-to-use-reaperlangpack.md",
+    "posts/zh/__RAW/tutorial_how-to-use-reaperlangpack 1.md",
+    "posts/zh/__RAW/tutorial_build-your-own-site-easy.md",
+    "posts/zh/__RAW/tutorial_build-your-own-site-easy 1.md",
+    "posts/zh/__RAW/tutorial_asio-while-remoting-desktop.md",
+    "posts/zh/__RAW/tutorial_asio-while-remoting-desktop 1.md",
+    "posts/zh/__RAW/tutorials_resident-evil-4.md",
+    "posts/zh/__RAW/reaper_chinese-simplified.reaperlangpack.md",
+    "posts/zh/__RAW/reaper_chinese-simplified.reaperlangpack 1.md",
+    "posts/zh/__RAW/music_yun-guang.md",
+    "posts/zh/__RAW/music_yun-guang 1.md",
+    "posts/zh/__RAW/music_karinn.md",
+    "posts/en/voicedbs/utau/UTAU_EN-US_Evan_Japanese_VCV.md.tmp_rename",
+    "posts/en/voicedbs/utau",
+    "posts/en/voicedbs",
+    "posts/en/demo",
+    "posts/ja/demo",
+    "posts/ja/about",
+    "posts/en/__RAW",
+    "posts/ja/__RAW",
+    "posts/zh/__RAW",
+    "posts/zh/demo"
   ]
 }
