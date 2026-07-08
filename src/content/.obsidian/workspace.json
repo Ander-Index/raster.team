@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/zh/voicedbs/utau/moyanming_japanese_vcv.md",
-                "mode": "preview",
+                "file": "posts/zh/voicedbs/utau/shinne-tatsu_japanese_vcv_1.0.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "moyanming_japanese_vcv"
+              "title": "shinne-tatsu_japanese_vcv_1.0"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "posts/zh/voicedbs/utau/moyanming_japanese_vcv.md",
+                "file": "posts/zh/voicedbs/utau/shinne-tatsu_japanese_vcv_1.0.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "moyanming_japanese_vcv 的反向链接列表"
+              "title": "shinne-tatsu_japanese_vcv_1.0 的反向链接列表"
             }
           },
           {
@@ -155,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "posts/zh/voicedbs/utau/moyanming_japanese_vcv.md",
+                "file": "posts/zh/voicedbs/utau/shinne-tatsu_japanese_vcv_1.0.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "moyanming_japanese_vcv 的大纲"
+              "title": "shinne-tatsu_japanese_vcv_1.0 的大纲"
             }
           }
         ],
@@ -185,15 +185,20 @@
   },
   "active": "45173c967a8cd3be",
   "lastOpenFiles": [
-    "posts/en/voicedbs/utau/evan_japanese_vcv.md",
+    "posts/zh/__RAW/utau_zh-cn_shinne-tatsu_japanese_vcv_beta_0.9.md",
+    "posts/zh/voicedbs/utau/shinne-tatsu_japanese_vcv_1.0.md",
+    "posts/zh/__RAW/utau_zh-cn_shinne-tatsu_chinese_cvvc_1.3.md",
     "posts/zh/voicedbs/utau/moyanming_japanese_vcv.md",
+    "posts/en/voicedbs/utau/evan_japanese_vcv.md",
+    "posts/ja/voicedbs/utau/shinne-tatsu_japanese_vcv_1.0.md",
+    "posts/ja/voicedbs/utau",
+    "posts/ja/voicedbs",
+    "posts/ja/__RAW/utau_ja-jp_shinne-tatsu_chinese_cvvc_1.3.md",
+    "posts/ja/__RAW/utau_ja-jp_shinne-tatsu_japanese_vcv_beta_0.9.md",
     "posts/zh/voicedbs/utau",
     "posts/zh/voicedbs",
     "posts/zh/__RAW/utau_kooriookami_chinese_cvvc.md",
     "posts/zh/__RAW/wallpaper_jitsu.md",
-    "posts/zh/__RAW/utau_zh-cn_shinne-tatsu_japanese_vcv_beta_0.9.md",
-    "posts/zh/__RAW/utau_zh-cn_shinne-tatsu_japanese_vcv_1.0.md",
-    "posts/zh/__RAW/utau_zh-cn_shinne-tatsu_chinese_cvvc_1.3.md",
     "posts/zh/__RAW/utau_nekobamo.md",
     "posts/zh/__RAW/utau_mitsukawa-takeshi.md",
     "posts/zh/__RAW/utau_kooriookami_japanese_vcv.md",
@@ -209,16 +214,11 @@
     "posts/zh/__RAW/tutorial_asio-while-remoting-desktop.md",
     "posts/zh/__RAW/tutorial_asio-while-remoting-desktop 1.md",
     "posts/zh/__RAW/tutorials_resident-evil-4.md",
-    "posts/zh/__RAW/reaper_chinese-simplified.reaperlangpack.md",
-    "posts/zh/__RAW/reaper_chinese-simplified.reaperlangpack 1.md",
-    "posts/zh/__RAW/music_yun-guang.md",
     "posts/en/voicedbs/utau/UTAU_EN-US_Evan_Japanese_VCV.md.tmp_rename",
     "posts/en/voicedbs/utau",
     "posts/en/voicedbs",
     "posts/en/demo",
     "posts/ja/demo",
-    "posts/ja/about",
-    "posts/en/__RAW",
-    "posts/ja/__RAW"
+    "posts/ja/about"
   ]
 }

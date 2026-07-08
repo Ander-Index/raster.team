@@ -24,7 +24,7 @@ Type: Single Pitch (C3)
 
 # 🌍
 
-如果您正在寻找本页的中文版本，请点击页面右上角的"A"按钮。
+如果您正在寻找本页的中文版本，请点击页面右上角的 `文A` 按钮。
 
 # <font color="#daa520">【UTAU voicebank release】Positive Parade/ポジティブ・パレード【默彦明/Evan】</font>
 

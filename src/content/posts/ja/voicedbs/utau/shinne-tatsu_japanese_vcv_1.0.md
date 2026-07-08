@@ -1,16 +1,19 @@
 ---
 title: 【UTAU】辰音タツ_日本語_VCV_1.0
-pubDate: "2022-11-11T16:00:00.000Z"
+pubDate: 2022-11-11T16:00:00.000Z
 draft: false
-heroImage: "https://cntracker.net/img/7f5fb2c267c1b631cf7d82e5c54a2aa1.jpg"
+heroImage: https://cntracker.net/img/7f5fb2c267c1b631cf7d82e5c54a2aa1.jpg
 toc: true
 pinned: false
 math: false
-tags: [UTAU, 音源]
-categories: [音源]
+tags:
+  - UTAU
+  - 音源
+categories:
+  - 音源
 description: 連続音（VCV）形式の多音階UTAUライブラリー * 収録音階：A2、D3、G3、C4、F4 * 中の人：辰遠
 lang: ja
-unlisted: true
+unlisted: false
 ---
 連続音（VCV）形式の多音階UTAUライブラリー
 * 収録音階：A2、D3、G3、C4、F4
@@ -18,8 +21,8 @@ unlisted: true
 <!-- more -->
 
 # 🌏
-* 你在寻找汉语版本吗？[请点击这里](/post/UTAU_ZH-CN_Shinne-Tatsu_Japanese_VCV_1.0)
-* Are you looking for an English version of the page? [Please click here.](/post/UTAU_EN-US_Shinne-Tatsu_Japanese_VCV_1.0)
+- 如果您正在寻找本页的中文版本，请点击页面右上角的 `文A` 按钮。
+- If you are looking for the English version of this page, please click the `文A` button in the upper-right corner of the page.
 
 # <font color="#7EAEF8">【辰音タツ】実 | 原创曲 & 声库 发布</font>
 

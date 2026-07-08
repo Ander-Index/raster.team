@@ -25,7 +25,7 @@ translationKey: moyanming_japanese_vcv
 
 # 🌍
 
-If you are looking for the English version of this page, please click the "A" button in the upper-right corner of the page.
+If you are looking for the English version of this page, please click the `文A` button in the upper-right corner of the page.
 
 # <font color="#daa520">【UTAU兽人音源配布|默彦明】Positive Parade/ポジティブ・パレード【UTAU+MMD】</font>
 
