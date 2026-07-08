@@ -11,10 +11,14 @@
             "id": "45173c967a8cd3be",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "posts/zh/voicedbs/utau/moyanming_japanese_vcv.md",
+                "mode": "preview",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "moyanming_japanese_vcv"
             }
           }
         ]
@@ -74,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 341.5
+    "width": 319.5
   },
   "right": {
     "id": "e7536589fc3b8c77",
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "posts/zh/voicedbs/utau/moyanming_japanese_vcv.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "反向链接"
+              "title": "moyanming_japanese_vcv 的反向链接列表"
             }
           },
           {
@@ -150,12 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "posts/zh/voicedbs/utau/moyanming_japanese_vcv.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "moyanming_japanese_vcv 的大纲"
             }
           }
         ],
@@ -163,7 +169,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 337.5
+    "width": 337.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -178,15 +185,18 @@
   },
   "active": "45173c967a8cd3be",
   "lastOpenFiles": [
+    "posts/en/voicedbs/utau/evan_japanese_vcv.md",
+    "posts/zh/voicedbs/utau/moyanming_japanese_vcv.md",
+    "posts/zh/voicedbs/utau",
+    "posts/zh/voicedbs",
+    "posts/zh/__RAW/utau_kooriookami_chinese_cvvc.md",
     "posts/zh/__RAW/wallpaper_jitsu.md",
     "posts/zh/__RAW/utau_zh-cn_shinne-tatsu_japanese_vcv_beta_0.9.md",
     "posts/zh/__RAW/utau_zh-cn_shinne-tatsu_japanese_vcv_1.0.md",
     "posts/zh/__RAW/utau_zh-cn_shinne-tatsu_chinese_cvvc_1.3.md",
-    "posts/zh/__RAW/utau_zh-cn_moyanming_japanese_vcv.md",
     "posts/zh/__RAW/utau_nekobamo.md",
     "posts/zh/__RAW/utau_mitsukawa-takeshi.md",
     "posts/zh/__RAW/utau_kooriookami_japanese_vcv.md",
-    "posts/zh/__RAW/utau_kooriookami_chinese_cvvc.md",
     "posts/zh/__RAW/tutorial_writingwithink.md",
     "posts/zh/__RAW/tutorial_unpack-heic.md",
     "posts/zh/__RAW/tutorial_twine-chapbook-guide.md",
@@ -202,8 +212,6 @@
     "posts/zh/__RAW/reaper_chinese-simplified.reaperlangpack.md",
     "posts/zh/__RAW/reaper_chinese-simplified.reaperlangpack 1.md",
     "posts/zh/__RAW/music_yun-guang.md",
-    "posts/zh/__RAW/music_yun-guang 1.md",
-    "posts/zh/__RAW/music_karinn.md",
     "posts/en/voicedbs/utau/UTAU_EN-US_Evan_Japanese_VCV.md.tmp_rename",
     "posts/en/voicedbs/utau",
     "posts/en/voicedbs",
@@ -211,8 +219,6 @@
     "posts/ja/demo",
     "posts/ja/about",
     "posts/en/__RAW",
-    "posts/ja/__RAW",
-    "posts/zh/__RAW",
-    "posts/zh/demo"
+    "posts/ja/__RAW"
   ]
 }
