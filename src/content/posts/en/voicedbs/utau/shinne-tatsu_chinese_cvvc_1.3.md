@@ -1,16 +1,19 @@
 ---
 title: 【UTAU】Shinne Tatsu_Chinese_CVVC_1.3
-pubDate: "2017-11-11T16:00:25.000Z"
+pubDate: 2017-11-11T16:00:25.000Z
 draft: false
-heroImage: "https://cntracker.net/img/68a4e5b556a195de0d69e8bf2aefe285.jpg"
+heroImage: https://cntracker.net/img/68a4e5b556a195de0d69e8bf2aefe285.jpg
 toc: true
 pinned: false
 math: false
-tags: [UTAU, VoiceDB]
-categories: [VoiceDB]
+tags:
+  - UTAU
+  - VoiceDB
+categories:
+  - VoiceDB
 description: "This is a Chinese UTAU voice database in CVVC sheet. * Included Scales: E3, A3, E4 * Suitable range: E2~F5 * Character Voice: Shinne Tatsu"
 lang: en
-unlisted: true
+unlisted: false
 ---
 This is a Chinese UTAU voice database in CVVC sheet.
 
@@ -22,8 +25,8 @@ This is a Chinese UTAU voice database in CVVC sheet.
 
 # 🌏
 
-- 您正在寻找本页的汉语版本吗?  [请点击这里](/post/UTAU_ZH-CN_Shinne-Tatsu_Chinese_CVVC_1.3/)
-- このページの日本語版をお探しですか? [ここをクリックしてください。](/post/UTAU_JA-JP_Shinne-Tatsu_Chinese_CVVC_1.3/)
+- 如果您正在寻找本页的中文版本，请点击页面右上角的 `文A` 按钮。
+- このページの日語版をお探しの場合は、ページ右上の `文A` ボタンをクリックしてください。
 
 # <font color="#7EAEF8">【Shinne Tatsu CVVCHN three scales voice database released】First Storm【UTAU furry】</font>
 

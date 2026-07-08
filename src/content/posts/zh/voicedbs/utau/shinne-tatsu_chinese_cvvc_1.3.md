@@ -1,16 +1,19 @@
 ---
 title: 【UTAU】辰远_中文_CVVC_1.3
-pubDate: "2017-11-11T16:00:25.000Z"
+pubDate: 2017-11-11T16:00:25.000Z
 draft: false
-heroImage: "https://cntracker.net/img/68a4e5b556a195de0d69e8bf2aefe285.jpg"
+heroImage: https://cntracker.net/img/68a4e5b556a195de0d69e8bf2aefe285.jpg
 toc: true
 pinned: false
 math: false
-tags: [UTAU, 音源]
-categories: [音源]
+tags:
+  - UTAU
+  - 音源
+categories:
+  - 音源
 description: 这是一个UTAU使用的汉语CVVC多音阶声库 * 收录音阶：E3、A3、E4 * 适合音域：E2~F5 * 中之人：辰远
 lang: zh
-unlisted: true
+unlisted: false
 ---
 这是一个UTAU使用的汉语CVVC多音阶声库
 
@@ -22,8 +25,8 @@ unlisted: true
 
 # 🌏
 
-- このページの日本語版をお探しですか？[ここをクリックしてください。](/post/UTAU_JA-JP-Shinne-Tatsu_Chinese_CVVC_1.3/)
-- Are you looking for an English version of this page? [Please click here.](/post/UTAU_EN-US-Shinne-Tatsu_Chinese_CVVC_1.3/)
+- このページの日語版をお探しの場合は、ページ右上の `文A` ボタンをクリックしてください。
+- If you are looking for the English version of this page, please click the `文A` button in the upper-right corner of the page.
 
 # <font color="#7EAEF8">【辰远CVVCHN三阶音源配布】初岚【UTAU兽人】</font>
 

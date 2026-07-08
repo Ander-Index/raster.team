@@ -1,16 +1,19 @@
 ---
 title: 【UTAU】辰音タツ_中国語_CVVC_1.3
-pubDate: "2017-11-12T12:17:25.000Z"
+pubDate: 2017-11-12T12:17:25.000Z
 draft: false
-heroImage: "https://cntracker.net/img/68a4e5b556a195de0d69e8bf2aefe285.jpg"
+heroImage: https://cntracker.net/img/68a4e5b556a195de0d69e8bf2aefe285.jpg
 toc: true
 pinned: false
 math: false
-tags: [UTAU, 音源]
-categories: [音源]
+tags:
+  - UTAU
+  - 音源
+categories:
+  - 音源
 description: CVVC形式の多音階UTAUライブラリー * 収録音階：E3、A3、E4 * 上手く歌ってくれる音域：E2〜F5 * 中の人：辰遠
 lang: ja
-unlisted: true
+unlisted: false
 ---
 CVVC形式の多音階UTAUライブラリー
 
@@ -22,8 +25,8 @@ CVVC形式の多音階UTAUライブラリー
 
 # 🌏
 
-- 您正在寻找本页的汉语版本吗?  [请点击这里](/post/UTAU_ZH-CN_Shinne-Tatsu_Chinese_CVVC_1.3/)
-- Are you looking for an English version of the page? [Please click here.](/post/UTAU_EN-US-Shinne-Tatsu_Chinese_CVVC_1.3/)
+- 如果您正在寻找本页的中文版本，请点击页面右上角的 `文A` 按钮。
+- If you are looking for the English version of this page, please click the `文A` button in the upper-right corner of the page.
 
 # <font color="#7EAEF8">【辰遠CVVCHN多音階音源配布】初嵐【UTAU獣人】</font>
 

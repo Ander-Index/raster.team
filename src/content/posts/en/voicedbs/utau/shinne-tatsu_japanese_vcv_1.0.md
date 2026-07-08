@@ -25,7 +25,7 @@ This is an japanese Voice Database for UTAU in VCV chart.
 # 🌏
 
 - 如果您正在寻找本页的中文版本，请点击页面右上角的 `文A` 按钮。
-- このページの日語版をお探しの場合は、ページ右上の「文A」ボタンをクリックしてください。
+- このページの日語版をお探しの場合は、ページ右上の `文A` ボタンをクリックしてください。
 
 # <font color="#7EAEF8">Beta notice</font>
 
