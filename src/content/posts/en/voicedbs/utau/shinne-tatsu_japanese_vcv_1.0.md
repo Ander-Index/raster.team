@@ -1,16 +1,19 @@
 ---
 title: 【UTAU】Shinne Tatsu_Japanese_VCV_1.0
-pubDate: "2022-11-11T16:00:00.000Z"
+pubDate: 2022-11-11T16:00:00.000Z
 draft: false
-heroImage: "https://cntracker.net/img/7f5fb2c267c1b631cf7d82e5c54a2aa1.jpg"
+heroImage: https://cntracker.net/img/7f5fb2c267c1b631cf7d82e5c54a2aa1.jpg
 toc: true
 pinned: false
 math: false
-tags: [UTAU, VoiceDB]
-categories: [VoiceDB]
+tags:
+  - UTAU
+  - VoiceDB
+categories:
+  - VoiceDB
 description: "This is an japanese Voice Database for UTAU in VCV chart. * Included Scales: A2, D3, G3, C4, F4 * Character Voice: Shinne Tatsu"
 lang: en
-unlisted: true
+unlisted: false
 ---
 This is an japanese Voice Database for UTAU in VCV chart.
 
@@ -21,8 +24,8 @@ This is an japanese Voice Database for UTAU in VCV chart.
 
 # 🌏
 
-- 您正在寻找本页的汉语版本吗?  [请点击这里](/post/UTAU_ZH-CN_Shinne-Tatsu_Japanese_VCV_1.0)
-- このページの日本語版をお探しですか? [ここをクリックしてください。](/post/UTAU_JA-JP_Shinne-Tatsu_Japanese_VCV_1.0)
+- 如果您正在寻找本页的中文版本，请点击页面右上角的 `文A` 按钮。
+- このページの日語版をお探しの場合は、ページ右上の「文A」ボタンをクリックしてください。
 
 # <font color="#7EAEF8">Beta notice</font>
 

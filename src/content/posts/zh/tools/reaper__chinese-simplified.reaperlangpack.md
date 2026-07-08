@@ -1,16 +1,20 @@
 ---
 title: 【REAPER】简体中文语言包
-pubDate: "2026-02-03T03:22:35.000Z"
+pubDate: 2026-02-03T03:22:35.000Z
 draft: false
-heroImage: "https://cntracker.net/img/fd863c92225505f28bcbd1f4f1aaa7cd.jpg"
+heroImage: https://cntracker.net/img/fd863c92225505f28bcbd1f4f1aaa7cd.jpg
 toc: true
 pinned: false
 math: false
-tags: [REAPER, 工具, 语言包]
-categories: [工具]
+tags:
+  - REAPER
+  - 工具
+  - 语言包
+categories:
+  - 工具
 description: 🎉  没错！这款深度打磨的 REAPER 汉化包终于发布啦~！ 💴  完全免费，持续更新 📅  最后更新时间：2026 年 02 月 02 日 ℹ️  版本：7.60（也兼容旧版 REAPER）
 lang: zh
-unlisted: true
+unlisted: false
 ---
 🎉  没错！这款深度打磨的 REAPER 汉化包终于发布啦~！
 💴  完全免费，持续更新

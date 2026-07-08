@@ -25,7 +25,7 @@ unlisted: false
 
 # 🌏
 
-- このページの英語版をお探しの場合は、ページ右上の `文A` ボタンをクリックしてください。
+- このページの日語版をお探しの場合は、ページ右上の `文A` ボタンをクリックしてください。
 - If you are looking for the English version of this page, please click the `文A` button in the upper-right corner of the page.
 
 # <font color="#7EAEF8">【辰音タツ】実 | 原创曲 & 声库 发布</font>

@@ -1,16 +1,19 @@
 ---
 title: 【UTAU】辰远_日语_VCV_Beta_0.9
-pubDate: "2018-11-11T16:00:00.000Z"
+pubDate: 2018-11-11T16:00:00.000Z
 draft: false
-heroImage: "https://cntracker.net/img/a3379b4bb6f174a48c7e07e443116162.jpg"
+heroImage: https://cntracker.net/img/a3379b4bb6f174a48c7e07e443116162.jpg
 toc: true
 pinned: false
 math: false
-tags: [UTAU, 音源]
-categories: [音源]
+tags:
+  - UTAU
+  - 音源
+categories:
+  - 音源
 description: 这是一个UTAU使用的日语VCV多音阶声库 * 收录音阶：A2、D3、G3、C4、F4 * 中之人：辰远
 lang: zh
-unlisted: true
+unlisted: false
 ---
 这是一个UTAU使用的日语VCV多音阶声库
 
@@ -21,8 +24,8 @@ unlisted: true
 
 # 🌏
 
-- このページの日本語版をお探しですか？[ここをクリックしてください。](/post/UTAU_JA-JP-Shinne-Tatsu_Japanese_VCV_Beta_0.9)
-- Are you looking for an English version of the page? [Please click here.](/post/UTAU_EN-US-Shinne-Tatsu_Japanese_VCV_Beta_0.9)
+- このページの日語版をお探しの場合は、ページ右上の `文A` ボタンをクリックしてください。
+- If you are looking for the English version of this page, please click the `文A` button in the upper-right corner of the page.
 
 # <font color="#7EAEF8">公测须知</font>
 
