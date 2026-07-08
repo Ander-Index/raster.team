@@ -12,6 +12,7 @@ lang: zh
 unlisted: true
 ---
 # 写在前面
+
 很显然，蠢老虎我根本不会编程。
 所以这篇文章不涉及任何代码，纯现成软件，但是都不开源。
 如果你在寻找开源的解决方案……或许你可以看看 .heic 的官方文档，
@@ -22,6 +23,7 @@ macOS 与 Windows 的操作方法不一样，原因是它们对 .heic 的支持�
 以 Monterey Graphic.heic 为例，下称“目标”。
 
 # macOS
+
 macOS 对于 .heic 是系统级的兼容，你在购买 Mac 的时候就已经通过苹果交过了这笔专利费……（所谓羊毛出在羊身上。）
 1. 在 预览 中打开目标。
 2. 把图片一张一张的拖到桌面就可以了。
@@ -31,6 +33,7 @@ macOS 对于 .heic 是系统级的兼容，你在购买 Mac 的时候就已经�
 ![外链_预览导出格式选项](https://s3.bmp.ovh/imgs/2022/06/10/81edb038908af330.png)
 
 # Windows
+
 经过测试，目前只有这款叫做 Joyoshare HEIC Converter 的软件可以在 Windows 端转换这种多合一的 .heic 文件。不过，这款软件是收费的……
 
 Joyoshare HEIC Converter 官网：<https://www.joyoshare.com/heic-converter/>
@@ -44,4 +47,5 @@ Joyoshare HEIC Converter 官网：<https://www.joyoshare.com/heic-converter/>
 4. 这样一来就把 .heic 合集全部解散并转换出来了。
 
 # 碎碎念
+
 .heic 的颜色确实很不错，但这毕竟还是个新技术，相关的工具文档还有软件上的支持都太少了，不知道以后会怎样。（2022年6月10日）

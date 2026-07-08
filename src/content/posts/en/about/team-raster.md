@@ -10,7 +10,6 @@ description: Running two sites was too much work, so we merged them into one.
 unlisted: false
 heroImage: /src/assets/images/site/avatar.png
 ---
-
 # Why this name?
 
 "Team Raster" translates to "光栅組" in Chinese.

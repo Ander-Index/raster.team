@@ -13,57 +13,71 @@ lang: ja
 unlisted: true
 ---
 連続音（VCV）形式の多音階UTAUライブラリー
-* 収録音階：A2、D3、G3、C4、F4
-* 中の人：辰遠
+
+- 収録音階：A2、D3、G3、C4、F4
+- 中の人：辰遠
+
 <!-- more -->
 
 # 🌏
-* 你在寻找汉语版本吗？[请点击这里](/post/UTAU_ZH-CN_Shinne-Tatsu_Japanese_VCV_Beta_0.9)
-* Are you looking for an English version of the page? [Please click here.](/post/UTAU_EN-US-Shinne-Tatsu_Japanese_VCV_Beta_0.9)
+
+- 你在寻找汉语版本吗？[请点击这里](/post/UTAU_ZH-CN_Shinne-Tatsu_Japanese_VCV_Beta_0.9)
+- Are you looking for an English version of the page? [Please click here.](/post/UTAU_EN-US-Shinne-Tatsu_Japanese_VCV_Beta_0.9)
 
 # <font color="#7EAEF8">早期アクセスについて</font>
+
 正式版と違う可能性があります、ご了承ください
 
 # <font color="#7EAEF8">【Projects_Urband】実_Demo【辰音タツ】辰音タツーUTAUライブラリー早期アクセス</font>
+
 <iframe src="https://player.bilibili.com/player.html?aid=721644639&bvid=BV16S4y1d7Ww&cid=441171760&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="min-height:540px;width:100%;height:100%;"> </iframe>
 
-* Bilibili：<https://www.bilibili.com/video/BV16S4y1d7Ww>
-* Acfun: <https://www.acfun.cn/v/ac33071178>
-* 作詞：TNT
-* 作曲：Shinne Tatsu
-* 編曲：Ray Lum
-* イラスト：CRRISPY
+- Bilibili：<https://www.bilibili.com/video/BV16S4y1d7Ww>
+- Acfun: <https://www.acfun.cn/v/ac33071178>
+- 作詞：TNT
+- 作曲：Shinne Tatsu
+- 編曲：Ray Lum
+- イラスト：CRRISPY
 
 # <font color="#7EAEF8">ライブラリー構成</font>
-* 収録音階：A2、D3、G3、C4、F4
-* 中の人：辰遠
+
+- 収録音階：A2、D3、G3、C4、F4
+- 中の人：辰遠
 
 # <font color = "#7eaef8">ダウンロード</font>
+
 ダウンロードできなかったら教えてね
+
 ## ライブラリー本体
-* BaiduNetdisk：<https://pan.baidu.com/s/1_T4_w6o05ilLnCGJVp41xg>（アクセスキー：shin）
-* OneDrive：（まだです）
-* Google Drive：（まだまだだ！）
+
+- BaiduNetdisk：<https://pan.baidu.com/s/1_T4_w6o05ilLnCGJVp41xg>（アクセスキー：shin）
+- OneDrive：（まだです）
+- Google Drive：（まだまだだ！）
 
 # <font color="#7EAEF8">キャラクターについて</font>
+
 ## 立ち絵
+
 ![辰音タツ_Sun_1.0](https://s3.bmp.ovh/imgs/2022/06/02/b1b238aa6e5616da.jpg)
 イラストレーター：CRRISPY
+
 ## 設定
-* 名前：辰音タツ（ローマ字：Shinne Tatsu）
-* 性別：♂
-* 身長：175cm
-* 体重：68kg
-* 年齢：20
-* 誕生日：11月12日
-* 種：龍
-* イメージカラー：
-* 瞳の色：金色
-* 持ち物：イヤホン、リストバンド
-* 能力：電気使い
-* 性格：人好し、仲良くなったら萌え萌え、時々シンデレ、下ネタも出る
+
+- 名前：辰音タツ（ローマ字：Shinne Tatsu）
+- 性別：♂
+- 身長：175cm
+- 体重：68kg
+- 年齢：20
+- 誕生日：11月12日
+- 種：龍
+- イメージカラー：
+- 瞳の色：金色
+- 持ち物：イヤホン、リストバンド
+- 能力：電気使い
+- 性格：人好し、仲良くなったら萌え萌え、時々シンデレ、下ネタも出る
 
 # <font color="#7EAEF8">利用許諾条件</font>
+
 音源の利用は、[《UTAU中華組ウィキ登録音源公共利用規約》](/post/EULA_UTAU-中華組ウィキ登録音源公共規約_20171112)を同意したと認めます。
 
 ***

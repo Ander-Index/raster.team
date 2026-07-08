@@ -13,7 +13,6 @@ pinned: true
 unlisted: true
 lang: zh
 ---
-
 这是 Chirping Astro 主题的**完整功能演示**。写文章时可以随时回来查阅可用语法。
 
 <!-- more -->
@@ -29,6 +28,7 @@ lang: zh
 ### 列表
 
 无序列表：
+
 - 第一项
 - 第二项
   - 嵌套子项
@@ -41,6 +41,7 @@ lang: zh
 3. 第三步
 
 任务列表（GFM）：
+
 - [x] 已完成的任务
 - [ ] 未完成的任务
 - [ ] 另一个待办
@@ -54,6 +55,7 @@ lang: zh
 H2 ~ H4 会自动出现在右侧目录（TOC）中，并带有锚点链接（鼠标悬停显示 `#`）。
 
 ### 这是 H3
+
 #### 这是 H4
 
 ## 表格（GFM）
@@ -77,6 +79,7 @@ function greet(name: string): string {
 }
 
 console.log(greet('Team Raster'));
+
 ```
 
 ### 带标题的代码块
@@ -88,13 +91,16 @@ const SITE = {
   locales: ['zh', 'en', 'ja'],  // ← 新增行（绿色）
   // oldLocales: ['en', 'fr'],  // ← 删除行（红色）
 } satisfies SiteConfig;
+
 ```
 
 ### Diff 代码块
 
 ```diff
+
 - const locales = ['en', 'fr'];
-+ const locales = ['zh', 'en', 'ja'];
+- const locales = ['zh', 'en', 'ja'];
+
 ```
 
 ### 折叠代码块
@@ -107,6 +113,7 @@ function thisIsAVeryLongFunction() {
   return 'hidden content';
 }
 console.log('visible');
+
 ```
 
 ## Alert 提示框
@@ -117,24 +124,28 @@ console.log('visible');
 type: info
 title: 提示
 description: 这是一个 info 类型的提示框，默认带 lucide:info 图标。
+
 ```
 
 ```alert
 type: success
 title: 成功
 description: 操作已成功完成。
+
 ```
 
 ```alert
 type: warning
 title: 警告
 description: 请注意这个潜在的问题。
+
 ```
 
 ```alert
 type: error
 title: 错误
 description: 这个操作可能会导致问题。
+
 ```
 
 ```alert
@@ -143,6 +154,7 @@ style: outline
 icon: none
 title: 无图标 + 描边样式
 description: style 可选 soft | outline | dash，icon 设为 none 可隐藏图标。
+
 ```
 
 ## 数学公式（KaTeX）
@@ -172,7 +184,9 @@ $$
 Markdown 内联图片（`![](https://...)`）会经过 Astro 图片管线优化。如需直接输出原始 `<img>`，可用 `ashtml` 块：
 
 ```ashtml
+
 <img src="https://astro.build/assets/press/astro-icon-gradient.png" alt="Astro Logo" loading="lazy" />
+
 ```
 
 ### 图片说明（Figure）
@@ -184,11 +198,15 @@ Markdown 内联图片（`![](https://...)`）会经过 Astro 图片管线优化�
 用 ` ```ashtml ` 围栏块直接输出原始 HTML：
 
 ```ashtml
+
 <div style="display:flex;gap:8px;justify-content:center;padding:12px;">
+
   <span style="background:#570dfc;color:#fff;padding:4px 12px;border-radius:6px;">Primary</span>
   <span style="background:#13b886;color:#fff;padding:4px 12px;border-radius:6px;">Success</span>
   <span style="background:#f68700;color:#fff;padding:4px 12px;border-radius:6px;">Warning</span>
+
 </div>
+
 ```
 
 ## MDX 组件（需使用 `.mdx` 文件）
@@ -201,12 +219,17 @@ Markdown 内联图片（`![](https://...)`）会经过 Astro 图片管线优化�
 import Callout from '../../components/Callout.astro';
 
 <Callout type="info" title="注意">
+
   这是一个 info 类型的 Callout 组件。
+
 </Callout>
 
 <Callout type="warning" title="小心">
+
   这是一个 warning 类型的 Callout 组件。
+
 </Callout>
+
 ```
 
 ### VideoEmbed 组件
@@ -215,10 +238,13 @@ import Callout from '../../components/Callout.astro';
 import VideoEmbed from '../../components/VideoEmbed.astro';
 
 <!-- YouTube -->
+
 <VideoEmbed platform="youtube" id="dQw4w9WgXcQ" title="视频标题" />
 
 <!-- Bilibili 或任意 iframe -->
+
 <VideoEmbed src="//player.bilibili.com/player.html?bvid=BV1xx411c7mD" title="B站视频" />
+
 ```
 
 ### SmartImage 组件
@@ -232,12 +258,15 @@ import SmartImage from '../../components/SmartImage.astro';
   widths={[400, 800, 1200]}
   sizes="(max-width: 800px) 100vw, 800px"
 />
+
 ```
 
 ## Frontmatter 字段速查
 
 ```yaml title="完整 frontmatter 示例"
+
 ---
+
 title: 文章标题（必填，1-140 字符）
 description: 摘要描述（必填，1-280 字符，用于 SEO/RSS/卡片）
 pubDate: 2026-07-01T00:00:00.000Z     # 发布日期（必填）
@@ -258,7 +287,9 @@ lang: zh                                # 语言覆盖（默认从路径推断�
 translationKey: my-post                 # 跨语言翻译关联（默认用 slug）
 unlisted: false                         # 隐藏（不在列表/RSS/sitemap 出现，但可直链访问）
 unlistedHideFromSeo: true               # 搜索引擎 noindex（unlisted 时默认 true）
+
 ---
+
 ```
 
 ## Frontmatter 字段说明

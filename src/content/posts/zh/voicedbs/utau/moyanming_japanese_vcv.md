@@ -14,7 +14,6 @@ lang: zh
 unlisted: false
 translationKey: moyanming_japanese_vcv
 ---
-
 连续音 UTAU 声库
 
 版本: 默彦明 Vol.02
@@ -45,33 +44,33 @@ If you are looking for the English version of this page, please click the `文A`
 
 ## 其它视频源
 
-*   Bilibili: https://www.bilibili.com/video/BV1qt4y1y753
-*   YouTube: https://www.youtube.com/watch?v=-dKx_Tr4dk0
+-   Bilibili: https://www.bilibili.com/video/BV1qt4y1y753
+-   YouTube: https://www.youtube.com/watch?v=-dKx_Tr4dk0
 
 # <font color="#daa520">下载声库</font>
 
-*   百度网盘：<https://pan.baidu.com/s/1vdqzlafw_UeROY0I8ST4ag?pwd=8i12>
-*   Bowlroll: <https://bowlroll.net/file/224679>
-*   OneDrive: <https://1drv.ms/u/c/b725d10259c478d3/ERwap715DMpHpc6zzsDWZG0BDDviJR9pJY_CvYZ96if0FA?e=Nmbr8Z>
-*   uwuDrive: <https://uwu.moku.ink/share/Ldg8wCaS>
+-   百度网盘：<https://pan.baidu.com/s/1vdqzlafw_UeROY0I8ST4ag?pwd=8i12>
+-   Bowlroll: <https://bowlroll.net/file/224679>
+-   OneDrive: <https://1drv.ms/u/c/b725d10259c478d3/ERwap715DMpHpc6zzsDWZG0BDDviJR9pJY_CvYZ96if0FA?e=Nmbr8Z>
+-   uwuDrive: <https://uwu.moku.ink/share/Ldg8wCaS>
 
 # <font color="#daa520">角色设定</font>
 
-*   名字：默彦明
-    *   英文名：Evan
-    *   罗马音：Moku Hiroa
-    *   拼音：Mo4 Yan4 Ming2
-*   中之人: 泯默 (Vikot106)
-*   性别: ♂
-*   身高: 170cm
-*   体重: 65kg
-*   年龄: 19
-*   生日: 1月29日
-*   物种: 听话的丁格犬（狼犬）
-*   瞳色: 蓝色
-*   持有物: 护目镜、项圈
-*   能力: ~~掌管土豆的神~~
-*   性格: 有点害羞，但又时不时爆出一些下三路的话，热爱和平
+-   名字：默彦明
+-   英文名：Evan
+-   罗马音：Moku Hiroa
+-   拼音：Mo4 Yan4 Ming2
+-   中之人: 泯默 (Vikot106)
+-   性别: ♂
+-   身高: 170cm
+-   体重: 65kg
+-   年龄: 19
+-   生日: 1月29日
+-   物种: 听话的丁格犬（狼犬）
+-   瞳色: 蓝色
+-   持有物: 护目镜、项圈
+-   能力: ~~掌管土豆的神~~
+-   性格: 有点害羞，但又时不时爆出一些下三路的话，热爱和平
 
 # <font color="#daa520">设定图</font>
 
@@ -83,19 +82,19 @@ If you are looking for the English version of this page, please click the `文A`
 
 ## JP_VCV_VOL.02 (2020)
 
-*   oto by 透明澈
+-   oto by 透明澈
 
 （这是当前版本，请从上方的下载链接下载。）
 
 ## JP_VCV_VOL.01 (2017)
 
-*   oto by 昼
+-   oto by 昼
 
 （不再提供下载，请见谅）
 
 ## JP_CV_VOL.01 (2016)
 
-*   oto by 魂潇青天
+-   oto by 魂潇青天
 
 （不再提供下载，请见谅）
 

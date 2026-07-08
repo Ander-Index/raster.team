@@ -12,7 +12,6 @@ pinned: false
 toc: true
 unlisted: false
 ---
-
 Welcome to your new blog! This sample post walks you through the basics of using **Chirping Astro**.
 
 ## Configure your site
@@ -30,6 +29,7 @@ Copy `.env.example` to `.env`:
 
 ```bash
 cp .env.example .env
+
 ```
 
 Key variables:
@@ -46,15 +46,19 @@ Key variables:
 Create Markdown files in `src/content/posts/en/`:
 
 ```markdown
+
 ---
+
 title: 'My Post Title'
 description: 'A brief description for SEO and listings.'
 pubDate: 2026-05-03
 tags: [tag1, tag2]
 categories: [Category]
+
 ---
 
 Write your content here using standard Markdown.
+
 ```
 
 ### Available frontmatter fields
@@ -76,17 +80,21 @@ Write your content here using standard Markdown.
 For richer content, use `.mdx` files to include components:
 
 ```mdx
+
 ---
+
 title: 'MDX Example'
 description: 'Using components in posts.'
 pubDate: 2026-05-03
 tags: [mdx]
 categories: [Guide]
+
 ---
 
 import Callout from '../../components/Callout.astro';
 
 <Callout type="tip">You can embed Astro components directly in your posts!</Callout>
+
 ```
 
 ## Deploy

@@ -36,6 +36,7 @@ unlisted: true
 *	Github：<https://github.com/inkle/ink>
 
 ## 此外
+
 根据语义，将部分专有词汇进行翻译：
 
 | 原文          | 翻译   |
@@ -54,7 +55,9 @@ unlisted: true
 | Nodes       | 小节   |
 
 ## 内容目录
+
 <details>
+
   <summary>内容目录</summary>
 
 - [使用 Ink 进行写作](#使用-ink-进行写作)
@@ -234,7 +237,6 @@ unlisted: true
 
 </details>
 
-
 ## 介绍
 
 **Ink** 是一种脚本语言，围绕着用流程标记纯文本以生成交互式脚本的理念而构建。
@@ -283,7 +285,6 @@ unlisted: true
 		……夹在本段落上下的两个标记符号之间部分可以写无限长的注释，包括换行。
 	*/
 
-
 另外还有一种是用来提醒作者需要做什么用的，编译器会在编译时打印出来：
 
 （译者注：TODO 后面的冒号要使用半角冒号，也就是英文冒号，然后后面打个空格）
@@ -325,7 +326,6 @@ unlisted: true
 ### 不输出选择文本｜Suppressing choice text
 
 有些游戏将选择文本与结果分开。在 **Ink** 中，如果文本选项的文本写在方括号中，则该文本不会被打印到响应中。
-
 
 	你好世界！
 	*	[你也好！]
@@ -430,7 +430,7 @@ unlisted: true
 等号这一行就是该结点的标题（当然等号和空格不会算在内）。在这下面的内容都在这个结点内。
 
 	=== back_in_london ===
-	
+
 	我们于晚上 9 点 45 分准时到达伦敦。
 
 #### 进阶：一个结点更复杂的“你好世界”｜Advanced: a knottier "hello world"
@@ -523,9 +523,10 @@ unlisted: true
 
 	=== paragraph_1 ===
 	你站在安纳兰德城墙边，手持长剑。
-	* [打开大门] -> paragraph_2
-	* [砸了那个大门] -> paragraph_3
-	* [打道回府] -> paragraph_4
+
+- [打开大门] -> paragraph_2
+- [砸了那个大门] -> paragraph_3
+- [打道回府] -> paragraph_4
 
 	=== paragraph_2 ===
 	你打开了大门，踏上了门里那条小路。
@@ -549,21 +550,16 @@ unlisted: true
 
 	*	[我们立刻向家里赶去]， -> hurry_outside
 
-	
-
 	=== hurry_outside ===
 
 	我们赶回萨维尔街，-> as_fast_as_we_could
-
 
 	=== dragged_outside ===
 	他坚持要我们赶回萨维尔街的家，
 	-> as_fast_as_we_could
 
-
 	=== as_fast_as_we_could ===
 	<>用我们最快的速度。
-
 
 ### 故事流｜The story flow
 
@@ -636,7 +632,6 @@ unlisted: true
 
 （……除非我们在结点内移动了针脚的顺序！）
 
-
 您也可以在结点内的那些针脚上方加入任何内容。然而你需要记得为针脚进行转向。因为引擎在有针脚前有内容的时候*不会*自动进入第一个针脚，举个例子：
 
 	=== the_orient_express ===
@@ -649,7 +644,6 @@ unlisted: true
 		...
 	= in_second_class
 		...
-
 
 ### 内部转向｜Local diverts
 
@@ -729,7 +723,8 @@ unlisted: true
 
 此外，我们还可以稍微滥用一下这个语法，使用“空接箭头”来做一个带有内容的默认的选择：
 
-	* 	->
+- 	->
+
 		穆德始终无法解释他是如何从着火的车厢里逃出来的。-> season_2
 
 #### 后备选项示例｜Example of a fallback choice
@@ -787,7 +782,9 @@ unlisted: true
 游戏中的每个结点与针脚都有一个唯一的地址（这样它就可以被转向到），我们使用相同的地址来检测该内容是否被查看过。
 
 	*	{ not visit_paris } 	[去巴黎] -> visit_paris
-	+ 	{ visit_paris 	 } 		[回到巴黎] -> visit_paris
+
+- 	{ visit_paris 	 } 		[回到巴黎] -> visit_paris
+
 	*	{ visit_paris.met_estelle } [致电艾斯特尔女士] -> phone_estelle
 
 需要注意的是：如果要检测的 `knot_name`（结点名）内含有针脚的话，则需要看完*所有的*针脚后，返回的结果才是“ture”（是、真）。
@@ -799,7 +796,8 @@ unlisted: true
 您可以在一个选项上使用多个逻辑检测；如果这样做的话，那么*所有的*检测都必须通过之后，对应的选项才会出现。
 
 	*	{ not visit_paris } 	[去巴黎] -> visit_paris
-  	+ 	{ visit_paris } { not bored_of_paris }		[回到巴黎] -> visit_paris
+
+- 	{ visit_paris } { not bored_of_paris }		[回到巴黎] -> visit_paris
 
 #### 逻辑运算符：AND 和 OR｜Logical operators: AND and OR
 
@@ -825,12 +823,11 @@ unlisted: true
 
 如果它不为零，就会在类似上面的检测中返回 `true`，但也可以更具体一些：
 
-	* {seen_clue > 3} [直接逮捕杰斐逊先生]
+- {seen_clue > 3} [直接逮捕杰斐逊先生]
 
 #### 进阶：更多逻辑｜Advanced: more logic
 
 **Ink** 支持的逻辑和条件性远不止这些，请参阅[变量和逻辑](#第-3-部分变量和逻辑part-3-variables-and-logic)部分。
-
 
 ## 8) 可变文本｜Variable Text
 
@@ -851,7 +848,7 @@ unlisted: true
 序列（或称 "倒数区块"）是一组会跟踪它自己被查看了多少次，并在每次观看时显示下一个元素的替文元素组。当其中的替文元素用完时，它会保持显示最后一个元素：
 
 	无线电嘶嘶作响。{"三！"|"二！"|"一！"|*传来一声巨大的白噪音，如同炸雷。*|但那只是静电噪声。}
-	
+
 	{我用五英镑纸币买了一杯咖啡，又给朋友买了第二杯。｝
 
 	{我用我的五英镑钞票买了一杯咖啡|我为我的朋友买了第二杯咖啡。|我没有钱没更多咖啡了。}
@@ -969,12 +966,9 @@ And here's a bit of lifestyle advice. Note the sticky choice - the lure of the t
     === go_outside_instead ===
     -> END
 
-
-
 #### 另行参见：多行替文｜Sneak Preview: Multiline alternatives
+
 **Ink** 还有另一种格式来制作替换内容块用的替文。详见 [多行代码块](#多行代码块multiline-blocks)。
-
-
 
 ### 条件文本｜Conditional Text
 
@@ -1029,7 +1023,8 @@ And here's a bit of lifestyle advice. Note the sticky choice - the lure of the t
 值为 0 就表示“你目前正在你所检测的结点或针脚中使用这个函数”。值为 -1 就表示那个要检测的结点或针脚还从来没有被看过。其它任何的正值都表示你要检测的内容在多少个回合之前出现过了。
 
 	*	{TURNS_SINCE(-> sleeping.intro) > 10} 你感到疲乏……-> sleeping
-  	* 	{TURNS_SINCE(-> laugh) == 0} 你尝试不再笑。
+
+- 	{TURNS_SINCE(-> laugh) == 0} 你尝试不再笑。
 
 请注意：传递参数给 `TURNS_SINCE` 的是具体的“转向目标”，而不是简单的结点地址本身（因为结点地址在程序那边是一串数字，是一个读数，而不是一个故事中的某个位置）
 
@@ -1125,7 +1120,7 @@ TODO: （向编译器传递 `-c` 的要求）
 		*	我高兴地欢呼起来。<>
 
   	-	路已经不远了！麦基会发动引擎，然后我就安全了。
-		
+
 		*	我走到路上，四处张望[]。你敢信吗？
 		*	我要插一句，麦基通常都非常可靠[]。他从没让我失望过。或者说，在那天晚上之前，他从没让我失望过。
 
@@ -1264,7 +1259,7 @@ TODO: （向编译器传递 `-c` 的要求）
 有几种可能的玩法。一个短的：
 
 	我看着福格先生
-	
+
 	1: ……我再也控制不住我自己了。
 	2: ……但我什么也没有说。
 
@@ -1274,7 +1269,7 @@ TODO: （向编译器传递 `-c` 的要求）
 一个长点的：
 
 		我看着福格先生
-	
+
 	1: ……我再也控制不住我自己了。
 	2: ……但我什么也没有说。
 
@@ -1289,7 +1284,7 @@ TODO: （向编译器传递 `-c` 的要求）
 	> 1
 	“打个赌！”我重复着。
 	他点点头。
-	
+
 	1: “但这真的很蠢！”
 	2: “这也太糟了吧！”
 
@@ -1298,7 +1293,7 @@ TODO: （向编译器传递 `-c` 的要求）
 	他又点了点头。
 
 	1: “那我们能赢么？”
-	2: “赌注应该不大吧？”				
+	2: “赌注应该不大吧？”
 	3: 我没什么想问的了。
 
 	> 2
@@ -1307,7 +1302,6 @@ TODO: （向编译器传递 `-c` 的要求）
 	在那之后，我们在沉默中度过了一天。
 
 希望这能证明上文所阐述的理念：编织提供了一种紧凑的方式，可以提供很多分支、很多选择，但又能保证一定可以从开头走到结尾！
-
 
 ## 3) 追踪织体｜Tracking a Weave
 
@@ -1370,7 +1364,9 @@ TODO: （向编译器传递 `-c` 的要求）
 
 	=== knot_two ===
 	= stitch_two
+
 		- (gather_two)
+
 			*	{knot_one.gather_one} 	选项
 
 #### 进阶：所有的选项都可以打标签｜Advanced: all options can be labelled
@@ -1381,7 +1377,8 @@ TODO: （向编译器传递 `-c` 的要求）
 	……
 	= throw_something
 	*	(rock) [朝警卫扔石头] -> throw
-	* 	(sand) [朝警卫扔沙子] -> throw
+
+- 	(sand) [朝警卫扔沙子] -> throw
 
 	= throw
 	你朝警卫扔了{throw_something.rock:一块石头|一把沙子}。
@@ -1391,6 +1388,7 @@ TODO: （向编译器传递 `-c` 的要求）
 标签可以让我们在编制织体的过程中创建循环。下面是向 NPC 提问的标准模式。
 
 	- (opts)
+
 		*	“我能从哪里拿一套制服吗？”[]你问那个开朗的警卫。
 			“当然可以，就在那个柜子里。”他咧嘴一笑。
 		*	“告诉我安保系统的情况。”
@@ -1402,11 +1400,14 @@ TODO: （向编译器传递 `-c` 的要求）
 			->	done
 
 	- (loop)
+
 		//	在警卫厌烦之前询问几次
 		{ -> opts | -> opts | }
 		他挠挠头。
 		“好了，咱不能一天到晚就站着说话了吧？”他说道。
+
 	- (done)
+
 		你谢过了警卫，然后离开了。
 
 #### 进阶：转向指向到选项｜Advanced: diverting to options
@@ -1414,11 +1415,12 @@ TODO: （向编译器传递 `-c` 的要求）
 选项也可以被转向指向：但会直接转向到该选项的输出，*就像选择了该选项一样*。因此，打印的内容将忽略方括号内的文字，如果该选项只能使用一次，它将被标记为次数用尽。
 
 	- (opts)
+
 	*	[向警卫做鬼脸]
 		你做了个鬼脸，于是警卫向你冲过来了！	-> shove
 
 	*	(shove) [推搡警卫]你推了一把警卫，但是他很快就摆正了重心。
-	
+
 	*	{shove} [跟他打架]	-> fight_the_guard
 
 	-	-> opts
@@ -1486,8 +1488,9 @@ TODO: （向编译器传递 `-c` 的要求）
 
 	=== continue_or_quit ===
 	是现在就放弃，还是继续努力拯救你的王国？
-	*  [继续努力！]		-> more_hopeless_introspection
-	*  [放弃了]		-> current_epilogue
+
+-  [继续努力！]		-> more_hopeless_introspection
+-  [放弃了]		-> current_epilogue
 
 #### 进阶：全局变量是对外可见的｜Advanced: Global variables are externally visible
 
@@ -1530,7 +1533,6 @@ TODO: （向编译器传递 `-c` 的要求）
 	VAR a_colour = "{~red|blue|green|yellow}"
 
 因为它是全局变量，会直接影响到整个游戏。
-
 
 ## 2) 逻辑｜Logic
 
@@ -1617,7 +1619,6 @@ TODO: （向编译器传递 `-c` 的要求）
 	{ "No, thank you." != "Yes, please." }
 	{ "Yes, please" ? "ease" }
 
-
 ## 3) 条件代码块（如果，否则）｜Conditional blocks (if/else)
 
 前面我们已经看到条件代码块可以用于控制选项和故事内容；现在介绍 **Ink** 提供的与普通 if/else-if/else 结构相当的结构。
@@ -1636,7 +1637,9 @@ if 语法查询从开始到当前所产生的所有文本、选项还有结果�
 
 	{ x > 0:
 		~ y = x - 1
+
 	- else:
+
 		~ y = x + 1
 	}
 
@@ -1647,9 +1650,13 @@ if 语法查询从开始到当前所产生的所有文本、选项还有结果�
 上述语法实际上是一种更通用结构的特殊情况，类似于其他语言的 "switch "语句。下面例子中单独的 `-` 开头意味着新的 `if` 判断，作为一个简单的判断来说，只是把判断条件写到了下一行：
 
 	{
+
 		- x > 0:
+
 			~ y = x - 1
+
 		- else:
+
 			~ y = x + 1
 	}
 
@@ -1658,11 +1665,17 @@ if 语法查询从开始到当前所产生的所有文本、选项还有结果�
 使用这种结构，我们还可以实现“或者 (else-if)”：
 
 	{
+
 		- x == 0:
+
 			~ y = 0
+
 		- x > 0:
+
 			~ y = x - 1
+
 		- else:
+
 			~ y = x + 1
 	}
 
@@ -1677,10 +1690,12 @@ if 语法查询从开始到当前所产生的所有文本、选项还有结果�
 还有一个开关代码块示例：
 
 	{ x:
+
 	- 0: 	零
 	- 1: 	一
 	- 2: 	二
 	- else: 许多
+
 	}
 
 #### 示例：与背景相关的内容｜Example: context-relevant content
@@ -1689,15 +1704,19 @@ if 语法查询从开始到当前所产生的所有文本、选项还有结果�
 
 	=== dream ===
 		{
+
 			- visited_snakes && not dream_about_snakes:
+
 				~ fear++
 				-> dream_about_snakes
 
 			- visited_poland && not dream_about_polish_beer:
+
 				~ fear--
 				-> dream_about_polish_beer
 
 			- else:
+
 				// breakfast-based dreams have no effect
 				-> dream_about_marmalade
 		}
@@ -1713,7 +1732,9 @@ if 语法查询从开始到当前所产生的所有文本、选项还有结果�
 	我盯着福格先生。
 	{ know_about_wager:
 		<> "但你不是认真的吧？" 我问到。
+
 	- else:
+
 		<> "但这次旅行一定是有原因的，"我确信。
 	}
 他什么也没有回答，只是像个在研究新品种的昆虫学家一样，死死地盯着他的报纸。
@@ -1722,9 +1743,13 @@ if 语法查询从开始到当前所产生的所有文本、选项还有结果�
 
 	{ door_open:
 		*	我大步走出车厢[]，我仿佛听到老大在悄悄地自言自语。	-> go_outside
+
 	- else:
+
 		*	我请求离开[]，福格先生一脸惊讶。	-> open_door
-		* 	我站起来去开门[]。福格先生似乎并没有被这小小的叛逆举动所困扰。	-> open_door
+
+- 	我站起来去开门[]。福格先生似乎并没有被这小小的叛逆举动所困扰。	-> open_door
+
 	}
 
 ……但请注意，上述示例中缺少织体语法和嵌套并不是偶然的：这是为了避免混淆各种嵌套。所以无法在条件块中包含收束点。
@@ -1774,7 +1799,9 @@ if 语法查询从开始到当前所产生的所有文本、选项还有结果�
 
 	{ shuffle once:
 	-	太阳真大。
+
 	- 	好热的一天。
+
 	}
 
 `shuffle stopping` 将对所有内容进行洗牌（最后一条除外），一旦输出完毕，就会停留在最后一条上。
@@ -1806,7 +1833,9 @@ if 语法查询从开始到当前所产生的所有文本、选项还有结果�
 		}
 		{ number_of_warm_things > 2:
 			尽管下着雪，但我却感到无比温暖。
+
 		- else:
+
 			那一晚是我人生中最冷的一晚。
 		}
 
@@ -1840,7 +1869,9 @@ if 语法查询从开始到当前所产生的所有文本、选项还有结果�
 		~ total = total + x
 		{ x == 100:
 			-> finished(total)
+
 		- else:
+
 			-> add_one_to_one_hundred(total, x + 1)
 		}
 
@@ -1898,6 +1929,7 @@ ChatGPT 解析：
 **Ink** 包含了这样的功能：它们是结点，但是具有以下的限制和特性：
 
 一个函数：
+
 - 不能包含针脚 (Stitchs)
 - 不能使用转向或提供选择
 - 可以调用其他函数
@@ -1939,7 +1971,9 @@ ChatGPT 解析：
 	=== function harm(x) ===
 		{ stamina < x:
 			~ stamina = 0
+
 		- else:
+
 			~ stamina = stamina - x
 		}
 
@@ -1955,13 +1989,21 @@ ChatGPT 解析：
 
 	=== function describe_health(x) ===
 	{
+
 	- x == 100:
+
 		~ return "轻松愉快"
+
 	- x > 75:
+
 		~ return "略显疲惫"
+
 	- x > 45:
+
 		~ return "有些颓丧"
+
 	- else:
+
 		~ return "神情恍惚"
 	}
 
@@ -1976,7 +2018,9 @@ ChatGPT 解析：
 	=== function max(a,b) ===
 		{ a < b:
 			~ return b
+
 		- else:
+
 			~ return a
 		}
 
@@ -1984,7 +2028,9 @@ ChatGPT 解析：
 		// 返回 x 的 e 次幂，其中 e 是整数
 		{ e <= 0:
 			~ return 1
+
 		- else:
+
 			~ return x * exp(x, e - 1)
 		}
 
@@ -1995,22 +2041,30 @@ ChatGPT 解析：
 
 	2^5 和 3^3 中的最大值是 32。
 
-
 #### 示例：将数字转化为文字｜Example: turning numbers into words
 
 一下示例虽然较长，但几乎可以出现在每个 Inkle 游戏中。（请记得，带有连字符的行出现在多行大括号中时，表示为“要测试的条件”；如果大括号以变量开头，则表示“要比较的值”。）
 
     === function print_num(x) ===
     {
+
         - x >= 1000:
+
             {print_num(x / 1000)} 一千 { x mod 1000 > 0:{print_num(x mod 1000)}}
+
         - x >= 100:
+
             {print_num(x / 100)} 一百 { x mod 100 > 0:and {print_num(x mod 100)}}
+
         - x == 0:
+
             零
+
         - else:
+
             { x >= 20:
                 { x / 10:
+
                     - 2: 二十
                     - 3: 三十
                     - 4: 四十
@@ -2019,11 +2073,13 @@ ChatGPT 解析：
                     - 7: 七十
                     - 8: 八十
                     - 9: 九十
+
                 }
                 { x mod 10 > 0:<>-<>}
             }
             { x < 10 || x > 20:
                 { x mod 10:
+
                     - 1: 一
                     - 2: 二
                     - 3: 三
@@ -2033,9 +2089,13 @@ ChatGPT 解析：
                     - 7: 七
                     - 8: 八
                     - 9: 九
+
                 }
+
             - else:
+
                 { x:
+
                     - 10: 十
                     - 11: 十一
                     - 12: 十二
@@ -2046,6 +2106,7 @@ ChatGPT 解析：
                     - 17: 十七
                     - 18: 十八
                     - 19: 十九
+
                 }
             }
     }
@@ -2122,11 +2183,14 @@ ChatGPT 解析：
 
 	=== report_progress ===
 	{
+
         -  secret_agent_location == suitcase_location:
+
 		特工抓住了手提箱！
 		~ suitcase_location = HELD_BY_AGENT
 
 	-  secret_agent_location < suitcase_location:
+
 		特工向前走去。
 		~ secret_agent_location++
 	}
@@ -2151,34 +2215,44 @@ ChatGPT 解析：
 举个例子，设想一个游戏中可能会出现一下互动：
 
 	=== crossing_the_date_line ===
-	* “先生！”[] 我惊呼，“我刚刚意识到，咱们已经穿越了国际日期变更线！”
+
+- “先生！”[] 我惊呼，“我刚刚意识到，咱们已经穿越了国际日期变更线！”
 	- 福格先生只是微微抬了一下眉毛。“我已经考虑到了。”
-	* 我擦了擦额头上的冷汗[]，顿时松了一口气！
-	* 我点了点头，心情平静下来[]。他当然已经准备好了！
-	* 我低声咒骂了一句[]。我又一次被轻视了！
+- 我擦了擦额头上的冷汗[]，顿时松了一口气！
+- 我点了点头，心情平静下来[]。他当然已经准备好了！
+- 我低声咒骂了一句[]。我又一次被轻视了！
 
 但这个交互可能发生在故事的不同位置。我们不希望为每个位置都重复写一份相同的内容。但在内容结束时，程序需要知道返回到哪里。我们可以通过参数来实现这一点：
 
 	=== crossing_the_date_line(-> return_to) ===
 	...
+
 	- -> return_to
 
 	...
 
 	=== outside_honolulu ===
 	我们到达了檀香山这座大岛。
+
 	- (postscript)
+
 		-> crossing_the_date_line(-> done)
+
 	- (done)
+
 		-> END
 
 	...
 
 	=== outside_pitcairn_island ===
 	船沿着水面驶向那个小小的皮特凯恩岛。
+
 	- (postscript)
+
 		-> crossing_the_date_line(-> done)
+
 	- (done)
+
 		-> END
 
 现在，这两个位置都调用并执行了相同的一段故事流程，但在完成后，它们会返回到各自需要前往的下一步。
@@ -2200,8 +2274,9 @@ ChatGPT 解析：
 在隧道内部，其语法相比参数化的示例更加简化：我们只需使用 `->->` 声明来结束隧道。这句话的意思基本上是“继续”。
 
 	=== crossing_the_date_line ===
-	// 这是一个隧道！	
+	// 这是一个隧道！
 	...
+
 	- 	->->
 
 请注意，隧道结点并不以特殊的方式声明，因此编译器并不会在编译时检查隧道是否确实以 `->->` 语句结束，这种检查只会在运行时进行。因此，你需要仔细检查，以确保所有进入了隧道的流程都能再正确的返回出来。
@@ -2250,32 +2325,37 @@ ChatGPT 解析：
 
 当然，在某些情况下，这种灵活性是必不可少的。
 
-	=== fall_down_cliff 
-	-> hurt(5) -> 
+	=== fall_down_cliff
+	-> hurt(5) ->
 	你还活着！你站了起来继续前进。
-	
+
 	=== hurt(x)
-		~ stamina -= x 
+		~ stamina -= x
 		{ stamina <= 0:
 			->-> youre_dead
 		}
-	
+
 	=== youre_dead
 	突然，周围一片白光。有人伸手摘下你额头上的目镜。‘你输了，伙计。离开椅子吧。
 
 即使故事情节没有生死攸关的紧张感，我们也可以通过灵活的跳转机制来调整叙事的流程结构：
- 
+
 	-> talk_to_jim ->
- 
+
 	 === talk_to_jim
-	 - (opts) 	
-		*	[询问关于超空间装置的事] 
+
+	 - (opts)
+
+		*	[询问关于超空间装置的事]
 			-> warp_lacells ->
-		*	[询问关于护盾发生器的事] 
-			-> shield_generators ->	
-		* 	[停止交谈]
+		*	[询问关于护盾发生器的事]
+			-> shield_generators ->
+
+- 	[停止交谈]
+
 			->->
-	 - -> opts 
+
+	 - -> opts
 
 	 = warp_lacells
 		{ shield_generators : ->-> argue }
@@ -2286,8 +2366,8 @@ ChatGPT 解析：
 		{ warp_lacells : ->-> argue }
 		“忘了护盾发生器吧，它们一切正常。”
 		->->
-	 
-	 = argue 
+
+	 = argue
 		“问这么多问题干什么？”吉姆突然质问道。
 		...
 	 	->->
@@ -2362,14 +2442,18 @@ ChatGPT 解析：
 
 	== run_player_location
 		{
+
 			- player_location == HALLWAY: -> hallway
+
 		}
 
 	== hallway ==
 		<- characters_present(HALLWAY)
 		*	[抽屉]	-> examine_drawers
-		* 	[衣柜] -> examine_wardrobe
-		*  [前往办公室] 	-> go_office
+
+- 	[衣柜] -> examine_wardrobe
+-  [前往办公室] 	-> go_office
+
 		-	-> run_player_location
 	= examine_drawers
 		// 等等……
@@ -2425,30 +2509,37 @@ ChatGPT 解析：
 
 **在此场景中使用`-> END`不会终止当前缝合线，而是会直接终结整个叙事流**（这也正是我们需要两种不同流程终止方式的根本原因）。
 
-
 #### 示例：在多个位置添加相同选项｜Example: adding the same choice to several places
 
 缝合线可用于在多个不同位置复用相同的选项。这种用法通常需要传入转向作为参数，以指定选项执行完毕后故事应跳转的位置。
 
 	=== outside_the_house
 	门前台阶。屋子里飘出混杂薰衣草香气的凶案气息。
+
 	- (top)
+
 		<- review_case_notes(-> top)
 		*	[进入正门]
 			我迈步走进屋内。
 			-> the_hallway
-		* 	[嗅闻空气]
+
+- 	[嗅闻空气]
+
 			我讨厌薰衣草。它让我想起肥皂，而肥皂让我想起我的婚姻。
 			-> top
 
 	=== the_hallway
 	门厅。正门通向街道，角落摆着小柜子。
+
 	- (top)
+
 		<- review_case_notes(-> top)
 		*	[走出正门]
 			我踏入门外凉爽的阳光中。
 			-> outside_the_house
-		* 	[打开柜子]
+
+- 	[打开柜子]
+
 			钥匙。更多的钥匙。甚至还有钥匙。这家人到底需要多少把锁？
 			-> top
 
@@ -2457,6 +2548,7 @@ ChatGPT 解析：
 		[查阅案件笔记]
 		// 使用条件判断以确保不会频繁出现该选项
 	 	{我|又一次，我} 快速翻看目前的调查记录。依然没有明显嫌疑人。
+
 	- 	(done) -> go_back_to
 
 需注意这与隧道的区别：隧道会执行相同内容块但不提供玩家选择权。例如以下两种写法效果相同：
@@ -2464,6 +2556,7 @@ ChatGPT 解析：
 	<- childhood_memories(-> next)
 	*	[望向窗外]
 	 	车轮滚动中，我陷入恍惚……
+
 	 - (next) 直到汽笛声响起……
 
 大致上是等价于：
@@ -2472,6 +2565,7 @@ ChatGPT 解析：
 		-> think_back ->
 	*	[望向窗外]
 		车轮滚动中，我陷入恍惚……
+
 	- 	(next) T直到汽笛声响起……
 
 不过，当需要复用的选项包含多重选择、条件分支逻辑（或任何文本内容！）时，缝合线方案就会显示出其真正的优势。
@@ -2482,7 +2576,9 @@ ChatGPT 解析：
 
 ```
 === the_kitchen
+
 - (top)
+
 	<- drawers(-> top)
 	<- cupboards(-> top)
 	<- room_exits
@@ -2495,12 +2591,12 @@ ChatGPT 解析：
 = room_exits
 	// 出口；不需要"返回点"，因为离开就意味着前往其他地方
 	...
+
 ```
 
 # 第 5 部分：进阶状态追踪｜Part 5: Advanced State Tracking
 
 交互密集的游戏会迅速变得异常复杂，作者的工作不仅关乎内容创作，同样需要维护叙事连贯性。
-
 
 当游戏文本需要为任何事物建模时，这一点都尤为重要——无论是卡牌游戏规则、玩家当前对游戏世界的认知，还是房屋内各类电灯开关的状态。
 
@@ -2535,7 +2631,9 @@ ChatGPT 解析：
 	*	[触摸水壶]
 		{ kettleState == cold:
 			水壶摸起来凉凉的。
+
 		- else:
+
 		 	水壶外壁非常烫！
 		}
 
@@ -2599,7 +2697,9 @@ ChatGPT 解析：
 	//	上面还是那个列表和初始状态
 
 	=== cook_with(nameOfThing, ref thingToBoil)	// 用某物煮沸（物品名称，参数 要煮的东西）
-	+ 	{thingToBoil == cold} [打开{nameOfThing}]	// 某个要煮的东西是冷的，打开对应的物品名称
+
+- 	{thingToBoil == cold} [打开{nameOfThing}]	// 某个要煮的东西是冷的，打开对应的物品名称
+
 	  	那个{nameOfThing}开始加热了。	// 那个“物品名称”开始加热了。
 		~ thingToBoil = boiling	// 把要煮的东西状态设定为沸腾
 		-> do_cooking.done	//	转到 do_cooking 结点中的 done 针脚
@@ -2608,6 +2708,7 @@ ChatGPT 解析：
 	<- cook_with("kettle", kettleState)	//
 	<- cook_with("pot", potState)
 	<- cook_with("microwave", microwaveState)
+
 	- (done)
 
 注意："加热水状态"这个列表仍然可用，仍然可以被检测和赋值。
@@ -2632,7 +2733,7 @@ ChatGPT 解析：
 
 注意：状态组的"家族名"（合集名称）与包含状态的变量是完全独立的。因此
 
-	{ statesOfGrace == statesOfGrace.fallen:	
+	{ statesOfGrace == statesOfGrace.fallen:
 		// 检查 恩典状态 是否为：恩典状态.堕落
 	}
 
@@ -2655,9 +2756,6 @@ ChatGPT 解析：
 ……但这并不影响以下用法的正确性：
 
 	~ temp anotherStateOfGrace = statesOfGrace.saintly
-
-
-
 
 ## 3) 值的顺序｜List Values
 
@@ -2690,7 +2788,7 @@ ChatGPT 解析：
 
 您可以通过将列表名称作为函数来使用以进行反向转换：
 
-	LIST Numbers = one, two, three	// 创建一个名为“数字”的列表，里面有“一”、“二”、“三”	
+	LIST Numbers = one, two, three	// 创建一个名为“数字”的列表，里面有“一”、“二”、“三”
 	VAR score = one	//	创建一个名叫“得分”的变量
 	~ score = Numbers(2) // 设定“得分”为“数字”列表中的第2个值，这样之后，“得分”的值就会是”二“。
 
@@ -2742,8 +2840,8 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 
 	~ DoctorsInSurgery = ()
 
-
 #### 添加或删除条目｜Adding and removing entries
+
 列表的条目可以单独或批量地添加或移除。
 
 	~ DoctorsInSurgery = DoctorsInSurgery + Adams
@@ -2753,7 +2851,6 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 	~ DoctorsInSurgery -= (Adams, Eamonn, Denver)
 
 尝试添加已存在的条目不会产生任何效果。尝试移除不存在的条目也不会有任何效果。但是前面提到的这两种操作也不会报错，列表永远不会包含重读的条目。
-
 
 ### 基本查询｜Basic Queries
 
@@ -2819,14 +2916,14 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 无论 `SomeList` 本身的值是否为空，这个查询都会返回 false，这种设计在实际应用中最合理，比如这样的检测：
 
 	SilverWeapons ? best_weapon_to_use	// 查询“银制武器”列表中是否有 best_weapon_to_use（最好的武器）
-	
+
 那如果“best_weapon_to_use”（最好的武器）是空的，则返回失败。
 
 #### 示例：基础信息追踪｜Example: basic knowledge tracking
 
 多值列表在游戏中最简单的用途就是整洁地追踪“游戏标记”：
 
-	LIST Facts = (Fogg_is_fairly_odd), first_name_phileas, (Fogg_is_English)	
+	LIST Facts = (Fogg_is_fairly_odd), first_name_phileas, (Fogg_is_English)
 	// 创建“事实”列表，初始化“福格是个相当古怪的人（并留在列表中）”，“名叫菲利亚斯”，“福格是英国人”
 
 	{Facts ? Fogg_is_fairly_odd:我礼貌地笑了笑。|他是个疯子吗？}
@@ -2847,7 +2944,7 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 
 	LIST DoctorsInSurgery = (Adams), Bernard, Cartwright, (Denver), Eamonn
 	// 创建一个”外科医生“列表，初始化：亚当斯（留在列表）, 伯纳德, 卡特赖特, 丹佛（留在列表）, 埃蒙
-	
+
 	-> waiting_room
 
 	=== function whos_in_today()
@@ -2885,6 +2982,7 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 	今日坐诊医生有：Cartwright, Denver, Eamonn。
 
 #### 进阶：优化列表显示｜Advanced: nicer list printing
+
 基础的列表在游戏中可能实用，所以可以这样来优化一下：
 
 	=== function listWithCommas(list, if_empty)
@@ -2892,16 +2990,24 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 
 		{LIST_COUNT(list):
 		//	判断列表中有几个值
+
 		- 2:
+
 			{LIST_MIN(list)} 和 {listWithCommas(list - LIST_MIN(list), if_empty)}
 			//	如果有 2 个，那么就先说“<列表中已存在的值中排序值最小的那个值>和<列表中去掉最小排序值之后的新列表的值>”，然后递归再调用自身，直到这个满足终止条件（0、1 或 2 个）后调用 if_empty 的替代文本。
+
 		- 1:
+
 			{list}
 			//	只有 1 个就直接报出恐龙名字
+
 		- 0:
+
 			{if_empty}
 			//	没有（为 0 个）就显示 {if_empty} 的内容
+
 		- else:
+
 			{LIST_MIN(list)}、{listWithCommas(list - LIST_MIN(list), if_empty)}
 			//	和上面的 2 是一样的，只是 2 一开始就达到了递归的终止条件，这里可能比 2 更多，所以输出的时候考虑了语言逻辑而进行了调整。
 		}
@@ -2925,7 +3031,6 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 	我最喜欢的恐龙{LIST_COUNT(favouriteDinosaurs) != 1:们}{isAre(favouriteDinosaurs)}{listWithCommas(favouriteDinosaurs, “已全部灭绝”)}。
 
 	My favourite dinosaur{LIST_COUNT(favouriteDinosaurs) != 1:s} {isAre(favouriteDinosaurs)} {listWithCommas(favouriteDinosaurs,s “已全部灭绝”)}.
-
 
 #### 列表不是必须包含多个值｜Lists don't need to have multiple entries
 
@@ -2955,7 +3060,7 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 	// 整一个有三个值的 ValueList
 	VAR myList = ()
 	//	整一个名叫 myList 的变量，里面是空的。
-	
+
 	~ myList = ValueList()
 	// 把 ValueList 的值填入 myList
 
@@ -2972,19 +3077,17 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 	// LIST_RANGE(想截取的列表名称，你想取得的那个区间的最小排序值的整数值，你想取得的那个区间的最大排序值的整数值)
 
 或者
-	{LIST_RANGE(LIST_ALL(primeNumbers), 10, 20)} 
+	{LIST_RANGE(LIST_ALL(primeNumbers), 10, 20)}
 	// LIST_RANGE(想截取的列表名称，你想取得的那个区间的最小排序值的整数值，你想取得的那个区间的最大排序值的整数值，你想取得的那个区间的最小值值本身，你想取得的那个区间的最大值值本身)
-	
+
 其中最小值和最大值都是包含的。如果找不到精确匹配值，系统会返回最接近但不超出范围的数值。例如：
 
-	{LIST_RANGE(LIST_ALL(质数列表), 10, 20)} 
+	{LIST_RANGE(LIST_ALL(质数列表), 10, 20)}
 	//	从完整的质数列表中截取，最小截到 10，最大截到 20
 
 将输出：
 
 	11, 13, 17, 19
-
-
 
 ### 示例：汉诺塔｜Example: Tower of Hanoi
 
@@ -3004,16 +3107,22 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 	=== function can_move(from_list, to_list) ===
 	// 功能函数 can_move（检查是否可以移动），等待参数 from_list（来源柱）和 to_list（目标柱）
 	    {
+
 	    -   LIST_COUNT(from_list) == 0:
+
 		// 如果待会 来源柱 中的值为 0（也就是没有圆盘）
 	        ~ return false
 			// 返回 false
+
 	    -   LIST_COUNT(to_list) > 0 && LIST_MIN(from_list) > LIST_MIN(to_list):
+
 		// 如果待会 目标柱 同时大于 0 和 来源柱 中最小的排序值，而这两个值又大于 目标柱 中的最小排序值
 		// 实际来说就是要移动的圆盘比目标柱最上面的圆盘大
 	        ~ return false
 			// 返回 false
+
 	    -   else:
+
 		//其他情况都可以移动！
 	        ~ return true
 			// 返回 true
@@ -3025,13 +3134,14 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 	    ~ from -= whichRingToMove	// 从 来源 列表中移除 whichRingToMove
 	    ~ to += whichRingToMove	// 在 目标 列表中增加 whichRingToMove
 
-
 	== function getListForTower(towerNum)
 	// 功能参数 获取柱子列表（等待传入柱子编号）
 	    { towerNum:
+
 	        - 1:    ~ return post1	// 是 1 就返回 柱子1
 	        - 2:    ~ return post2	// 是 2 就……
 	        - 3:    ~ return post3	// ……
+
 	    }
 
 	=== function name(postNum)
@@ -3045,9 +3155,11 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 	=== function postToPlace(postNum)
 	// 功能函数 编号到次序转换
 	    { postNum:
+
 	        - 1: 第一
 	        - 2: 第二
 	        - 3: 第三
+
 	    }
 
 	=== function describe_pillar(listNum) ==
@@ -3055,19 +3167,26 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 	    ~ temp list = getListForTower(listNum)
 		//	将 获取柱子列表（柱子编号）填入 临时参数 list
 	    {
+
 	    - LIST_COUNT(list) == 0:	// 如果 list 最小排序值为 0
+
 	        {Name(listNum)}是空的。
+
 	    - LIST_COUNT(list) == 1:	// 如果 list 最小排序值为 1
+
 	        只有{list}号圆盘在{name(listNum)}上。
+
 	    - else:	// 其他情况
+
 	        在{name(listNum)}上，摆放着{list}号圆盘。
 	    }
 
-
 	=== gameloop
 	从天上俯瞰，你看到你的追随者们正在准备开始完成最后一座大神庙的建设。
+
 	- (top)
-	    +  [查看圣殿]
+-  [查看圣殿]
+
         	你依次检视每座圣殿。每座圣殿上都堆叠着石环。{describe_pillar(1)} {describe_pillar(2)} {describe_pillar(3)}
 	    <- move_post(1, 2, post1, post2)
 	    <- move_post(2, 1, post2, post1)
@@ -3080,20 +3199,23 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 
 	= move_post(from_post_num, to_post_num, ref from_post_list, ref to_post_list)
 	// 移动柱子（并代入了对应的参数）
-	    +   { can_move(from_post_list, to_post_list) }
+
+-   { can_move(from_post_list, to_post_list) }
+
 	        [将圆盘从{name(from_post_num)}移动到{name(to_post_num)}。]
 	        { move_ring(from_post_list, to_post_list) }
 	        { stopping:	// 按顺序显示下方文本并停在最后一项
 	        -	下方的祭司们建造了巨大的吊架，经过多年的努力，巨大的石环被吊起，缓缓移向下一座圣殿。
 				绳索被斩断，转瞬间石环便稳稳落下。
+
 	        -   你的谕令引发了盛大的庆典和祭祀。当葬仪的烟雾散去，移动石环的工程郑重展开。一代人成长又逝去，石环终于归位。
 	        -   { cycle:	// 循环显示下方文本
 	            - 石环在岁月流转中缓慢移动。
 	            - 祭司们为袍服颜色爆发战争，虽死伤无数，工程却仍在继续。
+
 	            }
 	        }
 	    -> top
-
 
 ## 5) 进阶列表操作｜Advanced List Operations
 
@@ -3101,7 +3223,7 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 
 本节的多数功能对大多数游戏开发并非必需。
 
-### 比较列表｜Comparing lists 
+### 比较列表｜Comparing lists
 
 我们可以使用 >、<、>= 和 <= 来比较列表大小。需要注意！这里使用的定义并不完全符合常见标准，它们是基于被比较列表中元素的数值来进行比较的。
 
@@ -3135,7 +3257,9 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 	=== function changingOfTheGuard
 		{!GuardsOnDuty: // 查询 GuardsOnDuty 列表现在是不是空的
 			~ GuardsOnDuty = LIST_ALL(Smith)
+
 		- else:
+
 			~ GuardsOnDuty = LIST_INVERT(GuardsOnDuty)
 		}
 
@@ -3169,7 +3293,6 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 
 	{LIST_COUNT(desiredValues ^ actualValues) == 1: 更正，新总统实际上只有一个值得称道的品质。{desiredValues ^ actualValues == self_belief: 而且是那个最可怕的品质。}}	// 如果两个列表只有一个交集就“吃了吐”。如果那个交集完全等于 self_belief 则输出……
 
-
 ## 6) 多列表列表（表中表）
 
 到目前为止，我们在所有示例中都使用了一个简化假设：列表变量中的值必须全部来自同一个列表族。但其实并不需要。（译者注：这是说，前面的例子最多只创建了一个列表，但其实 LIST 并不是只能有一个）
@@ -3201,7 +3324,7 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 就会输出：
 
 	阿尔弗雷德正静静地站在角落里。蝙蝠侠的存在让所有人都感到压迫。罗宾几乎被遗忘。
-	
+
 	桌子上的头条新闻用超大的字号写着“谁是蝙蝠侠？他那几乎被遗忘的助手又是谁？”
 
 而：
@@ -3231,7 +3354,9 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 	=== function turnOnKettle() ===
 	{ kettleState ? hot:
 		你打开水壶，但它立刻又跳闸关闭。
+
 	- else:
+
 		水壶里的水开始加热。
 		~ kettleState -= off
 		~ kettleState += on
@@ -3252,7 +3377,6 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 
  	~ changeState(kettleState, on)
  	~ changeState(kettleState, warm)
-
 
 #### 这对查询有何影响？
 
@@ -3275,7 +3399,6 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 
 	{ LIST_INVERT(mixedList) }            // one, b, two
 
-
 ## 7) 长示例：犯罪现场
 
 最后，这里给出一个长示例以展示本节中许多概念在实际中的运作方式。建议在阅读之前把这段代码复制到 Ink 中先试玩一下，以便更好理解地理解各个环节的运作。
@@ -3286,8 +3409,8 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 
 	// 辅助函数：从列表中弹出元素
 	=== function pop(ref list)
-	~ temp x = LIST_MIN(list) 
-	~ list -= x 
+	~ temp x = LIST_MIN(list)
+	~ list -= x
 	~ return x
 
 	//
@@ -3321,35 +3444,38 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 		~ item_state -= LIST_ALL(Supporters)
 		~ item_state += new_supporter
 
-
 	// 系统：递增式知识管理
 	// 每个列表都是一条事实链，每个事实会取代之前的事实
 	//
 
 	VAR knowledgeState = ()
 
-	=== function reached (x) 
-	~ return knowledgeState ? x 
+	=== function reached (x)
+	~ return knowledgeState ? x
 
-	=== function between(x, y) 
+	=== function between(x, y)
 	~ return knowledgeState? x && not (knowledgeState ^ y)
 
-	=== function reach(statesToSet) 
+	=== function reach(statesToSet)
 	~ temp x = pop(statesToSet)
 	{
-	- not x: 
-		~ return false 
+
+	- not x:
+
+		~ return false
 
 	- not reached(x):
+
 		~ temp chain = LIST_ALL(x)
 		~ temp statesGained = LIST_RANGE(chain, LIST_MIN(chain), x)
 		~ knowledgeState += statesGained
 		~ reach (statesToSet) 	// 设置列表中剩余状态
 		~ return true  	        // 成功设置该状态，返回 true
-	
+
 		- else:
-		~ return false || reach(statesToSet) 
-		}	
+
+		~ return false || reach(statesToSet)
+		}
 
 	//
 	// 游戏初始化
@@ -3358,7 +3484,6 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 	VAR bedroomLightState = (off, on_desk)
 
 	VAR knifeState = (under_bed)
-
 
 	//
 	// 知识链
@@ -3376,125 +3501,170 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 
 	=== murder_scene ===
 		卧室。这就是案发地。现在该寻找线索了。
+
 	- (top)
+
 		{ bedroomLightState ? seen:     <- seen_light  }
 		<- compare_prints(-> top)
 
-	*   (dobed) [床……]
+-   (dobed) [床……]
+
 		床离地不高，但也不至于什么都滚不进去。它依旧被整齐地铺好。
 		~ reach (neatly_made)
+
 		- - (bedhub)
-		* *     [掀开被子]
+- *     [掀开被子]
+
 				我掀开了被子。被褥已经被压皱。
 				~ reach (crumpled_duvet)
 				~ BedState = covers_shifted
-		* *     (uncover) {reached(crumpled_duvet)}
+
+- *     (uncover) {reached(crumpled_duvet)}
+
 				[拿掉被子]
 				小心翼翼地，我完全移开了被子，下方的被褥一片凌乱。
 				这并非一位尽职的女仆所为，显然是匆忙间丢上的。
 				~ reach (hastily_remade)
 				~ BedState = covers_off
-		* *     (duvet) {BedState == covers_off} [拉开被褥]
+
+- *     (duvet) {BedState == covers_off} [拉开被褥]
+
 				我拉开了被褥，下面的床单上粘着血迹。
 				~ BedState = bloodstain_visible
 				~ reach (body_on_bed)
 				不是尸体先被移到这里，就是这里正是案发地。
-		* *     {BedState !? made_up} [重新整理床铺]
+
+- *     {BedState !? made_up} [重新整理床铺]
+
 				我小心翼翼地把床单铺回原状，试图让它看起来毫无动过的痕迹。
 				~ BedState = made_up
-		* *     [测试床铺]
+
+- *     [测试床铺]
+
 				我张开手指按了按床，床吱呀作响，但声响并不大。
-		* *     (darkunder) [查看床下]
+
+- *     (darkunder) [查看床下]
+
 				我躺下来，往床下看去，但什么都看不清。
 
-		* *     {TURNS_SINCE(-> dobed) > 1} [看看别处？]
+- *     {TURNS_SINCE(-> dobed) > 1} [看看别处？]
+
 				我从床边退后一步，环顾四周。
 				-> top
-		- -     -> bedhub
 
-	*   {darkunder && bedroomLightState ? on_floor && bedroomLightState ? on}
+		- -     -> bedhub
+-   {darkunder && bedroomLightState ? on_floor && bedroomLightState ? on}
+
 		[查看床下]
 		我往床下看去，有什么东西在闪光。
+
 		- - (reaching)
-		* *     [伸手去拿]
+- *     [伸手去拿]
+
 				我伸手到床下去够，但无论那是什么，已经被踢得太远够不到。
 				-> reaching
-		* *     {Inventory ? cane} [用手杖够]
+
+- *     {Inventory ? cane} [用手杖够]
+
 				-> knock_with_cane
 
-		* *     {reaching > 1 } [站起来]
+- *     {reaching > 1 } [站起来]
+
 				我再次站起身，拍了拍大衣。
 				-> top
 
-	*   (knock_with_cane) {reaching && TURNS_SINCE(-> reaching) >= 4 &&  Inventory ? cane } [用手杖够床下的东西]
+-   (knock_with_cane) {reaching && TURNS_SINCE(-> reaching) >= 4 &&  Inventory ? cane } [用手杖够床下的东西]
+
 		我用手杖对准地毯轻轻一挑，闪光的东西从床脚滑了出来。
 		~ move_to_supporter( knifeState, on_floor )
-		* *     (standup) [站起来]
+
+- *     (standup) [站起来]
+
 				我满意地站起身，看到被挑出来的是一把带血的刀。
 				-> top
 
-		* *     [再次查看床下]
+- *     [再次查看床下]
+
 				我移开手杖，再次查看床下，但那里已经没有其他东西。
 				-> standup
 
-	*   {knifeState ? on_floor} [捡起刀]
+-   {knifeState ? on_floor} [捡起刀]
+
 		我小心翼翼地避开刀柄，将刀从地毯上拾起。
 		~ get(knife)
 
-	*   {Inventory ? knife} [查看刀]
+-   {Inventory ? knife} [查看刀]
+
 		刀上的血迹已经干了，足够显露出刀柄上的部分指纹！
 		~ reach (prints_on_knife)
 
-	*   [书桌……]
+-   [书桌……]
+
 		我把注意力转向书桌。一盏台灯放在一角，另一角是空空的收纳盘，桌面没有其他东西。
 		一根木手杖斜靠在桌边。
 		~ bedroomLightState += seen
 
 		- - (deskstate)
-		* *     (pickup_cane) {Inventory !? cane}  [捡起手杖]
+- *     (pickup_cane) {Inventory !? cane}  [捡起手杖]
+
 				~ get(cane)
 			我捡起了这根木手杖，它很沉，却没有任何标记。
 
-		* *    { bedroomLightState !? on } [打开台灯]
+- *    { bedroomLightState !? on } [打开台灯]
+
 				-> operate_lamp ->
 
-		* *     [查看收纳盘]
+- *     [查看收纳盘]
+
 				我看了看收纳盘，但里面什么都没有。要么是死者的文件被拿走了，要么他根本没什么业务，又或只是摆设。
 
-		+ +     (open)  {open < 3} [打开抽屉]
+- +     (open)  {open < 3} [打开抽屉]
+
 				我{随便抽开一个|又拉开另一个|拉开第三个}抽屉，{锁着|也是锁着|果然也是锁着}。
 
-		* *     {deskstate >= 2} [看看别处？]
+- *     {deskstate >= 2} [看看别处？]
+
 				我再次从桌边退后一步。
 				-> top
 
 		- -     -> deskstate
+-     {(Inventory ? cane) && TURNS_SINCE(-> deskstate) <= 2} [挥动手杖]
 
-	*     {(Inventory ? cane) && TURNS_SINCE(-> deskstate) <= 2} [挥动手杖]
 		我仍握着手杖，轻轻挥了挥。它确实很沉，但不足以当作钝器使用。
 		不过若是自卫时用上倒也合适。可死者当时为什么没有抓起它？或者碰倒它？
-		
-	*   [窗户……]
+
+-   [窗户……]
+
 		我走到窗户旁，往外看去，只能见到房子旁潺潺流过的小溪。
 
 		- - (window_opts)
+
 		<- compare_prints(-> window_opts)
-		* *     (downy) [往下看小溪]
+
+- *     (downy) [往下看小溪]
+
 				{ GlassState ? steamed:
 					透过被雾气笼罩的玻璃，我看不清小溪。 -> see_prints_on_glass -> window_opts
 				}
 				我看着那条小溪匆匆流过。这栋房子大概有点潮湿，但除此之外，这景象并没有告诉我什么。
-		* *     (greasy) [查看玻璃]
+
+- *     (greasy) [查看玻璃]
+
 				{ GlassState ? steamed: -> downy }
 				窗户上的玻璃很脏。里面外面都没人清理过。
-		* *     { GlassState ? steamed && not see_prints_on_glass && downy && greasy }
+
+- *     { GlassState ? steamed && not see_prints_on_glass && downy && greasy }
+
 				[查看雾气]
 				外面很冷，自然我的呼吸会在玻璃上起雾。 -> see_prints_on_glass ->
-		+ +     {GlassState ? steam_gone} [对着玻璃哈气]
+
+- +     {GlassState ? steam_gone} [对着玻璃哈气]
+
 				我轻轻对着玻璃哈了口气。{ reached (fingerprints_on_glass): 指纹又重新显现出来。 }
 				~ GlassState = steamed
 
-		+ +     [看看别处？]
+- +     [看看别处？]
+
 				{ window_opts < 2 || reached (fingerprints_on_glass) || GlassState ? steamed:
 					我从昏暗的玻璃上移开了视线。
 					{GlassState ? steamed:
@@ -3507,13 +3677,12 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 			~ GlassState = steamed
 
 		- -     -> window_opts
+-   {top >= 5} [离开房间]
 
-	*   {top >= 5} [离开房间]
 		我看得够多了。我{bedroomLightState ? on:关掉了台灯，然后}转身离开了房间。
 		-> joe_in_hall
 
 	-   -> top
-
 
 	= operate_lamp
 		我按下了灯的开关。
@@ -3521,16 +3690,19 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 			<> 灯泡熄灭了。
 			~ bedroomLightState += off
 			~ bedroomLightState -= on
+
 		- else:
+
 			{ bedroomLightState ? on_floor: <> 灯光透过床下洒出一丝微光。} { bedroomLightState ? on_desk : <> 灯光在抛光的桌面上闪烁着光芒。 }
 			~ bedroomLightState -= off
 			~ bedroomLightState += on
 		}
 		->->
 
-
 	= compare_prints (-> backto)
-		*   { between ((fingerprints_on_glass, prints_on_knife), fingerprints_on_glass_match_knife) } 
+
+-   { between ((fingerprints_on_glass, prints_on_knife), fingerprints_on_glass_match_knife) }
+
 	[对比刀上的指纹和窗户上的指纹]
 			我拿着带血的刀靠近窗户，对着玻璃哈了口气让指纹再次显现，尽力进行对比。
 			虽说这并不科学，但它们看起来非常相似——非常相似。
@@ -3544,10 +3716,13 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 		->->
 
 	= seen_light
-		*   {bedroomLightState !? on} [打开台灯]
+
+-   {bedroomLightState !? on} [打开台灯]
+
 			-> operate_lamp ->
 
-		*   { bedroomLightState !? on_bed  && BedState ? bloodstain_visible }
+-   { bedroomLightState !? on_bed  && BedState ? bloodstain_visible }
+
 			[把灯移到床上]
 			~ move_to_supporter(bedroomLightState, on_bed)
 
@@ -3555,80 +3730,118 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 			毫无疑问，凶手是在这里行凶的。
 			~ reach (murdered_in_bed)
 
-		*   { bedroomLightState !? on_desk } {TURNS_SINCE(-> floorit) >= 2 }
+-   { bedroomLightState !? on_desk } {TURNS_SINCE(-> floorit) >= 2 }
+
 			[把灯移回桌子]
 			~ move_to_supporter(bedroomLightState, on_desk)
 			我把灯移回桌子，放回它原来的位置。
-		*   (floorit) { bedroomLightState !? on_floor && darkunder }
+
+-   (floorit) { bedroomLightState !? on_floor && darkunder }
+
 			[把灯移到地上]
 			~ move_to_supporter(bedroomLightState, on_floor)
 			我把灯拾起，放到了地上。
+
 		-   -> top
 
 	=== joe_in_hall
 		我的警察联系人乔正站在走廊里等我。“怎么样？”他问道，“你发现了什么有趣的东西吗？”
+
 	- (found)
-		*   {found == 1} “没有。”
+-   {found == 1} “没有。”
+
 			他耸了耸肩：“可惜。”
 			-> done
-		*   { Inventory ? knife } “我找到了凶器。”
+
+-   { Inventory ? knife } “我找到了凶器。”
+
 			“干得好！”乔笑着回答，“我们以为凶手已经处理掉了它。我现在帮你封存起来。”
 			~ move_to_supporter(knifeState, with_joe)
 
-		*   {reached(prints_on_knife)} { knifeState ? with_joe }
+-   {reached(prints_on_knife)} { knifeState ? with_joe }
+
 			“刀上有指纹。”我告诉他。
 			他仔细查看。
 			“唔，不太完整，要比对起来有点困难。”
 			~ reach (joe_seen_prints_on_knife)
-		*   { reached((fingerprints_on_glass_match_knife, joe_seen_prints_on_knife)) }
+
+-   { reached((fingerprints_on_glass_match_knife, joe_seen_prints_on_knife)) }
+
 			“刀上的指纹和窗户上的指纹是同一人留下的。”
 			“谁都可能碰过窗户。”乔若有所思地回答，“但如果窗户上的指纹更完整，或许能帮我们找到匹配！”
 			~ reach (joe_wants_better_prints)
-		*   { between(body_on_bed, murdered_in_bed)}
+
+-   { between(body_on_bed, murdered_in_bed)}
+
 			“尸体曾被移到床上，然后又被移回地面。”我告诉他。
 			“为什么？”
-			* *     “我不知道。”
+
+- *     “我不知道。”
+
 					乔点点头：“好吧。”
-			* *     “可能是为了从地上拿东西？”
+
+- *     “可能是为了从地上拿东西？”
+
 					“没必要为了拿东西而搬动整具尸体。”
-			* *     “可能是死在床上的。”
+
+- *     “可能是死在床上的。”
+
 					“现在说什么都是猜测。”乔说。
-		*   { reached(murdered_in_bed) }
+
+-   { reached(murdered_in_bed) }
+
 			“受害者是在床上被谋杀的，随后尸体被移到了地上。”
 			“为什么？”
-			* *     “我不知道。”
+
+- *     “我不知道。”
+
 					乔点点头：“好吧。”
-			* *     “可能凶手想误导我们。”
+
+- *     “可能凶手想误导我们。”
+
 					“怎么误导？”
-				* * *   “想让我们以为受害者是清醒着遇害的。”我若有所思地回答，“好像他是见到了凶手才被杀。”
-				* * *   “想让我们以为曾经发生过搏斗。”我回答，“让我们以为他不是在睡梦中被杀的。”
+
+- * *   “想让我们以为受害者是清醒着遇害的。”我若有所思地回答，“好像他是见到了凶手才被杀。”
+- * *   “想让我们以为曾经发生过搏斗。”我回答，“让我们以为他不是在睡梦中被杀的。”
 				- - -   “但如果真是在床上被杀，那很可能他是在睡觉时被刺杀的。”
+
 						~ reach (murdered_while_asleep)
-			* *     “可能凶手想清理现场。”
+
+- *     “可能凶手想清理现场。”
+
 					“然后被打断了？也有可能。”
 
-		*   { found > 1} “就这些。”
+-   { found > 1} “就这些。”
+
 			“好吧，总算是个开始。”乔回答。
 			-> done
+
 		-   -> found
 	-   (done)
+
 		{
+
 		- between(joe_wants_better_prints, joe_got_better_prints):
+
 			~ reach (joe_got_better_prints)
 			<> “我现在去把窗户上的指纹提取下来。”
+
 		- reached(joe_seen_prints_on_knife):
+
 			<> “我会尽量比对这些指纹。”
+
 		- else:
+
 			<> “线索不多。”
 		}
 		-> END
-
 
 ## 8) 总结
 
 现在，我们来总结一下这个困难的章节，**Ink**的列表构造提供了：
 
 ### 标志（Flags）
+
 *	每个列表条目是一个事件
 *	使用 `+=` 来标记事件已发生
 *	使用 `?` 和 `!?` 进行测试
@@ -3641,6 +3854,7 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 	~ GameEvents += metGorgon
 
 ### 状态机（State machines）
+
 *	每个列表条目是一个状态
 *	使用 `=` 设置状态；使用 `++` 和 `--` 前进或后退
 *	使用 `==`、`>` 等进行判定
@@ -3653,6 +3867,7 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 	~ PancakeState++
 
 ### 属性（Properties）
+
 *	每个列表是不同的属性，包含该属性可取的状态值（on/off，lit/unlit 等）
 *	通过先移除旧状态，再添加新状态来改变状态
 *	使用 `?` 和 `!?` 进行判定
@@ -3670,7 +3885,6 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 		你将手机插上开始充电。
 	*	{ PhoneState ? (on, charged) } [给妈妈打电话]
 
-
 # 第 6 部分：标识符中的国际字符支持｜Part 6: International character support in identifiers
 
 默认情况下，Ink 在故事内容中使用非 ASCII 字符没有任何限制。然而，目前对常量、变量、针脚（Stitch）、转向（Divert）以及其他具名流程元素（即 标识符）的命名字符存在限制。
@@ -3679,7 +3893,6 @@ LIST primeNumbers = (two = 2), (three) = 3, (five = 5)	// “质数”列表
 
 为帮助解决上述问题，Ink 自动支持一系列预定义的可用于标识符的非 ASCII 字符范围。一般来说，这些范围包含了官方 Unicode 字符范围中字母数字的子集，足以用于标识符命名。以下部分给出了 Ink 自动支持的非 ASCII 可用字符的详细信息。
 
-
 ### 支持的标识符字符
 
 Ink 对额外字符范围的支持目前仅限于预定义的一组字符范围。
@@ -3687,35 +3900,35 @@ Ink 对额外字符范围的支持目前仅限于预定义的一组字符范围�
 以下是当前支持的标识符字符范围列表：
 
 - **阿拉伯语（Arabic）**
-    
+
     启用阿拉伯语系语言的字符，是官方 *Arabic* Unicode 范围 `\u0600-\u06FF` 的子集。
-    
+
 - **亚美尼亚语（Armenian）**
-    
+
     启用亚美尼亚语言的字符，是官方 *Armenian* Unicode 范围 `\u0530-\u058F` 的子集。
-    
+
 - **西里尔字母（Cyrillic）**
-    
+
     启用使用西里尔字母语言的字符，是官方 *Cyrillic* Unicode 范围 `\u0400-\u04FF` 的子集。
-    
+
 - **希腊语（Greek）**
-    
+
     启用使用希腊字母语言的字符，是官方 *Greek and Coptic* Unicode 范围 `\u0370-\u03FF` 的子集。
-    
+
 - **希伯来语（Hebrew）**
-    
+
     启用使用希伯来字母语言的希伯来语字符，是官方 *Hebrew* Unicode 范围 `\u0590-\u05FF` 的子集。
-    
+
 - **拉丁字母扩展 A（Latin Extended A）**
-    
+
     启用拉丁字母扩展范围的字符，完整对应官方 *Latin Extended-A* Unicode 范围 `\u0100-\u017F`。
-    
+
 - **拉丁字母扩展 B（Latin Extended B）**
-    
+
     启用拉丁字母扩展范围的字符，完整对应官方 *Latin Extended-B* Unicode 范围 `\u0180-\u024F`。
-    
+
 - **拉丁字母补充（Latin 1 Supplement）**
-    
+
     启用拉丁字母扩展范围的字符，完整对应官方 *Latin 1 Supplement* Unicode 范围 `\u0080 - \u00FF`。
 
 **注意！** Ink 文件应以 UTF-8 格式保存，以确保支持上述字符范围。

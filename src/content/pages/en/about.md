@@ -4,7 +4,6 @@ description: Chirping Astro — a Chirpy-inspired, multilingual Astro theme buil
 translationKey: about
 unlisted: true
 ---
-
 **Chirping Astro** is an open-source theme that brings the look and feel of
 the popular [Chirpy Jekyll theme](https://chirpy.cotes.page/) to
 [Astro](https://astro.build/) — with first-class internationalization, a
@@ -17,37 +16,57 @@ than animations and ad slots.
 ## What's in the box
 
 - **Reading-first layout** — fixed left sidebar with avatar, vertical nav,
+
   theme toggle, and social links; centered main column capped at 1250px;
   right rail with “Recently Updated” and “Trending Tags”.
+
 - **Light & dark themes** — the original Chirpy palette, ported to
+
   daisyUI v5 tokens, with a circular reveal transition between modes.
+
 - **Bilingual content (EN + FR)** — English served at the root, French
+
   under `/fr/`. Posts are paired by `translationKey`, and a language
   switcher in the topbar jumps between translations. Set
   `multilingual: false` in `src/config.ts` to ship a single-language
   site.
+
 - **Markdown + MDX** — Astro Content Collections with typed frontmatter,
+
   Shiki syntax highlighting, GFM, footnotes, an automatic table of
   contents, and a bundled `<Callout>` component.
+
 - **LaTeX math** — opt-in KaTeX support per post via `math: true`.
 - **Instant search** — [Pagefind](https://pagefind.app/) generates a
+
   static search index at build time; the search overlay loads on demand.
+
 - **Comments** — [Giscus](https://giscus.app/) integration backed by
+
   GitHub Discussions, with per-post opt-out.
+
 - **Smooth navigation** — Astro view transitions with a subtle fade and
+
   motion-reduced fallback for accessibility.
+
 - **SEO out of the box** — OpenGraph, Twitter cards, RSS feeds per locale,
+
   hreflang, and a sitemap.
 
 ## Built with
 
 - [**Astro 6.x**](https://astro.build/) — Content Collections, MDX, RSS,
+
   and view transitions
+
 - [**Tailwind CSS v4**](https://tailwindcss.com/) via the `@tailwindcss/vite`
+
   plugin, with [**daisyUI v5**](https://daisyui.com/) for theming
+
 - [**Pagefind**](https://pagefind.app/) for static search
 - [**Giscus**](https://giscus.app/) for comments
 - [**Shiki**](https://shiki.style/), [**KaTeX**](https://katex.org/), and
+
   [**Lucide**](https://lucide.dev/) icons
 
 ## Make it yours

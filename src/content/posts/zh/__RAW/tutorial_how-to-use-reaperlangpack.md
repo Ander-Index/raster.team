@@ -11,12 +11,17 @@ description: 双击你下载到的 .ReaperLangPack 就可以了，REAPER 会自�
 lang: zh
 unlisted: true
 ---
-双击你下载到的 .ReaperLangPack 就可以了，REAPER 会自动打开并为你安装语言包，安装完之后需要重启 REAPER. 
+双击你下载到的 .ReaperLangPack 就可以了，REAPER 会自动打开并为你安装语言包，安装完之后需要重启 REAPER.
 如果还没解决，你再戳进来……
+
 <!-- more -->
+
 # 可能是打开方式被其它软件占用
+
 这一般是手滑造成的，您只需要对其右键，然后在打开方式中选择 REAPER 就可以了。
+
 # 如果你是便携版本的 REAPER
+
 那你还可以手动导入一下：
 1. 点击菜单栏中的 "Options"（选项）
 2. 选择 "show REAPER resource path in explorer/finder"（在资源管理器或访达中显示 REAPER 资源路径）
@@ -32,5 +37,6 @@ unlisted: true
 12. 关闭 REAPER，然后再打开 REAPER，就生效啦~👌
 
 # 如果您按照以上的步骤仍然没有解决……
+
 欢迎给我发消息~
 ~~让我看看是哪个蠢蛋，这么详细了还搞不定~~

@@ -9,7 +9,6 @@ description: 二つのサイトの管理が大変だったので、一つにま�
 unlisted: false
 heroImage: /src/assets/images/site/avatar.png
 ---
-
 # なぜこの名前？
 
 "Team Raster" は中国語で「光栅組（こうさくくみ）」と訳されます。

@@ -19,56 +19,66 @@ rua～
 <!-- more -->
 
 # 🌍
+
 要寻找日语版本的冰狼（氷 クカミ）么？[请点击这里](/post/UTAU_kooriookami_Japanese_VCV)
 
 # <font color=#FFFFFF style="background-color:#c3cbf0; text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;">【冰狼CVVChinese Tender音源配布】为了你唱下去【UTAU】</font>
 
 <iframe src="//player.bilibili.com/player.html?aid=8649008&bvid=BV1ex41127Xe&cid=14244954&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" frameborder="no" framespacing="0" allowfullscreen="true" style="min-height:540px;width:100%;height:100%;"> </iframe>
 
-* Bilibili：<https://www.bilibili.com/video/BV1ex41127Xe/>
-* UST & 混音：冰狼
-* 插画：阿谨
+- Bilibili：<https://www.bilibili.com/video/BV1ex41127Xe/>
+- UST & 混音：冰狼
+- 插画：阿谨
 
 # <font color=#FFFFFF style="background-color:#c3cbf0; text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;">声库设定</font>
-* 立绘画师：Enma
-* 中文名：冰狼｜日文名：氷 クカミ
-* 性别：♂｜年龄：17岁｜生日：12月1日
-* 身高：174.2cm｜体重：58kg
-* 携带物：空气周围的水汽冰晶
-* 毛发颜色：蓝（#6699FF）｜瞳色：金色｜代表色：蓝
-* 兴趣：弹琴、搭积木和收集卡片
-* 性格：开朗中带有些许腼腆，爱卖萌，偶尔会体现出傲娇的情绪
-* 音源年龄偏向：少年｜口头禅：嘿嘿、哼唧
-* 喜欢的食物：肉类、冰淇淋、薯片｜讨厌的食物：菠菜、白菜、蒜苗等蔬菜
-* 特殊习惯：习惯说话用第一人称“冰狼”或“狼狼”，第二人称用对方的昵称。（例子：呐，给狼狼买这个好不好~）
-* 其他补充：喜欢被抚摸，顺毛，但是被人恶意把毛发弄乱可是要发火的！
+
+- 立绘画师：Enma
+- 中文名：冰狼｜日文名：氷 クカミ
+- 性别：♂｜年龄：17岁｜生日：12月1日
+- 身高：174.2cm｜体重：58kg
+- 携带物：空气周围的水汽冰晶
+- 毛发颜色：蓝（#6699FF）｜瞳色：金色｜代表色：蓝
+- 兴趣：弹琴、搭积木和收集卡片
+- 性格：开朗中带有些许腼腆，爱卖萌，偶尔会体现出傲娇的情绪
+- 音源年龄偏向：少年｜口头禅：嘿嘿、哼唧
+- 喜欢的食物：肉类、冰淇淋、薯片｜讨厌的食物：菠菜、白菜、蒜苗等蔬菜
+- 特殊习惯：习惯说话用第一人称“冰狼”或“狼狼”，第二人称用对方的昵称。（例子：呐，给狼狼买这个好不好~）
+- 其他补充：喜欢被抚摸，顺毛，但是被人恶意把毛发弄乱可是要发火的！
 
 # <font color=#FFFFFF style="background-color:#c3cbf0; text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;">相关下载</font>
+
 以下链接如失效请麻烦邮件或评论告知，谢谢~！
 
 ## 冰狼_CVVC-Tender
+
 发布时间：2017 年 2 月 16 日
 音阶：D3、G3
 百度网盘：<https://pan.baidu.com/s/1hsp5ne8>
 
 ## 冰狼_CVVC-弱音阶
+
 发布时间：2016 年 4 月 20 日
 音阶：C3
 百度网盘：<https://pan.baidu.com/s/1gfrZhab>
 
 ## 冰狼_CVVC-四音阶
+
 <font color = red>请下载并应用修复补丁</font>
+
 发布时间：2015 年 7 月 21 日
 音阶：A2、E3、A3、D4
 百度网盘：<https://pan.baidu.com/s/1qWmkyRU>
+
 ### 冰狼_CVVC-四音阶_补丁-oto 修复包
+
 发布时间：2016 年 4 月 15 日
-* 取消辅音【zw】、【cw】、【zhw】、【chw】的oto设定，并替换为【z】、【c】、【zh】、【ch】
-* 新增尾音【ir】、【i0】
-* 修复oto若干条
+
+- 取消辅音【zw】、【cw】、【zhw】、【chw】的oto设定，并替换为【z】、【c】、【zh】、【ch】
+- 新增尾音【ir】、【i0】
+- 修复oto若干条
 
 百度网盘：<https://pan.baidu.com/s/1nu7L1wt>
 
-
 # <font color=#FFFFFF style="background-color:#c3cbf0; text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;">使用条款</font>
+
 使用即代表您同意[《UTAU 中华组 wiki 公共规约中文版》](https://vocawiki.net/utau:china:shiyongguiyue)

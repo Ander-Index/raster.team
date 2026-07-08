@@ -4,7 +4,6 @@ description: How this site collects, uses, and protects personal data.
 translationKey: privacy
 unlisted: true
 ---
-
 This Privacy Policy explains how **[SITE_NAME]** ("we", "us", or "our")
 collects, uses, and protects information when you visit **[SITE_URL]**.
 
@@ -23,10 +22,13 @@ collects, uses, and protects information when you visit **[SITE_URL]**.
 Depending on how you use this site, we may process:
 
 - Usage data: pages viewed, referrer, browser, device type, and approximate
+
   region.
+
 - Technical data: IP address, user agent, and performance/error logs.
 - Information you provide directly: email or message content when you contact us.
 - Comment data (if enabled): profile and comment metadata handled by
+
   **[COMMENT_PROVIDER, e.g., Giscus/GitHub]**.
 
 ## 3. How we use information
