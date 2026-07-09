@@ -27,8 +27,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/zh/terms/eulas/mitsukawa-takeshi.md",
-                "mode": "preview",
+                "file": "posts/zh/voicedbs/utau/mitsukawa-takeshi.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -214,8 +214,8 @@
   },
   "active": "7f755d909c1116ce",
   "lastOpenFiles": [
-    "posts/zh/voicedbs/utau/mitsukawa-takeshi.md",
     "posts/zh/terms/eulas/mitsukawa-takeshi.md",
+    "posts/zh/voicedbs/utau/mitsukawa-takeshi.md",
     "posts/zh/terms/eulas",
     "posts/zh/terms",
     "posts/zh/__RAW/eula_nekobamo.md",

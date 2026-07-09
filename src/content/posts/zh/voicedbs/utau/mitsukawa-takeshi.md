@@ -39,9 +39,9 @@ unlisted: false
 
 # <font color=#FFFFFF style="background-color:#98f15a; text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;">制作及使用感想</font>
 
-- 从2014年12月入坑，到一遍一遍地修改音源，到现在的正式发布，已经一年半了。中途断断续续，接近弃坑的状态。到现在已经调过十几首的测试曲，是时候拿出来让各位试用了。
-- 子音速度建议整体在150以上，录制用的是140的BPM，不加子音速度的话会有一种口水都要从屏幕喷出来的感觉。
-- 引擎的话，中之人自己是一直都用tips，据使用者反应Mores的效果也很棒，大家根据自己的喜好选择引擎即可。
+- 从 2014 年 12 月入坑，到一遍一遍地修改音源，到现在的正式发布，已经一年半了。中途断断续续，接近弃坑的状态。到现在已经调过十几首的测试曲，是时候拿出来让各位试用了。
+- 子音速度建议整体在 150 以上，录制用的是 140 的 BPM，不加子音速度的话会有一种口水都要从屏幕喷出来的感觉。
+- 引擎的话，中之人自己是一直都用tips，据使用者反应 Mores 的效果也很棒，大家根据自己的喜好选择引擎即可。
 - 希望大家能喜欢，中之人会努力为大家制作更好的音源。
 
 # <font color=#FFFFFF style="background-color:#98f15a; text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;">光川君的资料</font>
@@ -58,7 +58,7 @@ unlisted: false
 
 # <font color=#FFFFFF style="background-color:#98f15a; text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;">使用规约</font>
 
-以任何方式对“光川武”进行使用时，这就表示您已同意[《光川武使用规约与免责声明》](/posts/zh/terms/eulas/mitsukawa-takeshi.md)
+以任何方式对“光川武”进行使用时，这就表示您已同意[《光川武使用规约与免责声明》](posts/zh/terms/eulas/mitsukawa-takeshi.md)
 
 # <font color=#FFFFFF style="background-color:#98f15a; text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;">联系方式</font>
 
