@@ -1,12 +1,14 @@
 ---
-title: 【EULA】光川武使用规约与免责声明
-pubDate: "2016-06-14T16:00:00.000Z"
+title: 【许可协议】光川武使用规约与免责声明
+pubDate: 2016-06-14T16:00:00.000Z
 draft: false
 toc: true
 pinned: false
 math: false
-tags: [使用规约]
-categories: [使用规约]
+tags:
+  - 使用规约
+categories:
+  - 使用规约
 description: “光川武”是指UTAU用日语四音阶连续音音源，是由“DX”进行角色形象设计、绘制，由“射射”本人声音录制并加工制成的。 以任何方式对“光川武”进行使用时，这就表示您已同意以下使用规约。
 lang: zh
 unlisted: true

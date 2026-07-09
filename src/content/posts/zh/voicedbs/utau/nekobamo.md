@@ -89,7 +89,7 @@ unlisted: false
 
 # <font color=#5D6BA3 style="background-color:#F6DCBB;">感谢您下载使用本音源！</font>
 
-以任何方式对“猫葉莫 ねこばも”进行使用时，这就表示您已同意[《猫葉莫使用规约与免责条款》](/post/EULA_Nekobamo)
+以任何方式对“猫葉莫 ねこばも”进行使用时，这就表示您已同意[《猫葉莫使用规约与免责条款》](posts/zh/terms/eulas/nekobamo.md)
 
 # <font color=#5D6BA3 style="background-color:#F6DCBB;">联系方式</font>
 
