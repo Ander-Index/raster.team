@@ -12,7 +12,7 @@ categories:
   - 关于
 description: 《 ↙ ｡ì ◡ í｡ ↘ 》
 lang: zh
-unlisted: true
+unlisted: false
 ---
  <font color = "#966495">《 ↙ ｡ì ◡ í｡ ↘ 》</font>
 
@@ -26,10 +26,11 @@ unlisted: true
 
 如果你想了解一个人，除了别人口中的描述之外，我想，直接与这个人交流一下才更能得到对你更直观的信息哦。
 
- # <font color = "#966495">委托信息</font>
+# <font color = "#966495">委托信息</font>
+ 
 肝力不足，委托关闭，已接下的内容都在填了。🥴
 
- # <font color = "#966495">联系方式</font>
+# <font color = "#966495">联系方式</font>
 
 - 📧 邮件：[点击这里给我发邮件](mailto:raylum@outlook.com)（写成这样或许可以防一些机器人）
 - 📺 Bilibili：[https://space.bilibili.com/6349837](https://space.bilibili.com/6349837)（🍒Σ）
@@ -40,9 +41,10 @@ unlisted: true
 # <font color = "#966495">关于设定</font>
 
 福瑞控当然是要整个兽设啦！
+
 瑞洛凩看起来是一只黄老虎……面部有两个箭头，尾巴上有一个瓶子，这是关键识别点。虎纹并不固定。
 
-<font style="color:rgba(0,0,0,0);">那你实际上是一个？一个一个一个……？：<本站域名>/post/About_Ray-Lum_INSIDE/</font>
+<font style="color:rgba(0,0,0,0);">那你实际上是一个？一个一个一个……？：<本站域名>/posts/ray-lum_inside/</font>
 
 # <font color = "#966495">FAQ</font>
 

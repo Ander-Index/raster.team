@@ -83,4 +83,4 @@ unlisted: false
 # <font color="#7EAEF8">使用条款</font>
 
 使用即代表您同意[《UTAU中华组wiki公共规约中文版》](https://vocawiki.net/utau:china:shiyongguiyue)
-日本語版：[《UTAU中華組ウィキ登録音源公共利用規約》](/post/EULA_UTAU-中華組ウィキ登録音源公共規約_20171112)
+日本語版：[《UTAU中華組ウィキ登録音源公共利用規約》](/posts/terms/eulas/utau中华组wiki公共使用规约-copy/)

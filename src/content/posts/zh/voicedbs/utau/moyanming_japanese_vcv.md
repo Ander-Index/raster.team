@@ -100,7 +100,7 @@ If you are looking for the English version of this page, please click the `文A`
 
 # <font color="#daa520">最终用户许可协议</font>
 
-使用即代表您同意[《UTAU中华组wiki公共使用规约》](/post/eula_utau中华组wiki公共使用规约-copy)
+使用即代表您同意[《UTAU中华组wiki公共使用规约》](/posts/terms/eulas/utau中华组wiki公共使用规约-copy/)
 
 # <font color="#daa520">联系方式</font>
 

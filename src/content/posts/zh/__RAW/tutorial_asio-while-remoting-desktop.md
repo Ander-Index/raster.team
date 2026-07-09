@@ -21,7 +21,7 @@ unlisted: true
 
 <!-- more -->
 
-这篇文章不讨论如何把 ASIO 音频串流到 OBS，这部分内容在这篇文章内：[《【ReaRoute ASIO】如何将 DAW 的声音发送到 OBS 以进行直播》](/post/Tutorial_ReaRoute-ASIO-to-OBS-with-REAPER)
+这篇文章不讨论如何把 ASIO 音频串流到 OBS，这部分内容在这篇文章内：[《【ReaRoute ASIO】如何将 DAW 的声音发送到 OBS 以进行直播》](/posts/__raw/tutorial_rearoute-asio-to-obs-with-reaper/)
 
 ![](https://raster.team/post-images/1693385680485.png)
 

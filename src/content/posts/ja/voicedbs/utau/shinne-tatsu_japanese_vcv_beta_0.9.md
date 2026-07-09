@@ -81,7 +81,7 @@ unlisted: false
 
 # <font color="#7EAEF8">利用許諾条件</font>
 
-音源の利用は、[《UTAU中華組ウィキ登録音源公共利用規約》](/post/EULA_UTAU-中華組ウィキ登録音源公共規約_20171112)を同意したと認めます。
+音源の利用は、[《UTAU中華組ウィキ登録音源公共利用規約》](/posts/terms/eulas/utau中华组wiki公共使用规约-copy/)を同意したと認めます。
 
 ***
 

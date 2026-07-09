@@ -23,7 +23,7 @@ rua～
 
 # 🌍
 
-要寻找日语版本的冰狼（氷 クカミ）么？[请点击这里](/post/UTAU_kooriookami_Japanese_VCV)
+要寻找日语版本的冰狼（氷 クカミ）么？[请点击这里](/posts/voicedbs/utau/kooriookami_japanese_vcv/)
 
 # <font color=#FFFFFF style="background-color:#6699FF; text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;">【冰狼CVVChinese Tender音源配布】为了你唱下去【UTAU】</font>
 

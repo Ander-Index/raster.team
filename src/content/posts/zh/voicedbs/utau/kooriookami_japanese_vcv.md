@@ -23,7 +23,7 @@ rua～
 
 # 🌍
 
-要寻找中文版本的冰狼（氷 クカミ）么？[请点击这里](/post/UTAU_kooriookami_Chinese_CVVC)
+要寻找中文版本的冰狼（氷 クカミ）么？[请点击这里](/posts/voicedbs/utau/kooriookami_chinese_cvvc/)
 
 # <font color=#FFFFFF style="background-color:#c3cbf0; text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;">【氷 クカミ 日语六阶VCV NORMAL音源配布】镜花水月【UST配布】</font>
 

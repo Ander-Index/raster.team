@@ -98,7 +98,7 @@ Type: Single Pitch (C3)
 
 # <font color="#daa520">EULA</font>
 
-By using it, you agree to [《UTAU中华组wiki公共使用规约》](/post/eula_utau中华组wiki公共使用规约-copy)
+By using it, you agree to [《UTAU中华组wiki公共使用规约》](/posts/terms/eulas/utau中华组wiki公共使用规约-copy/)
 
 # <font color="#daa520">Contact</font>
 

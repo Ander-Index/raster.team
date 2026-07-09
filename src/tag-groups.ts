@@ -43,7 +43,6 @@ export const TAG_GROUPS: readonly TagGroup[] = [
   { zh: '插画', en: 'Illustrations', ja: 'イラスト' },
   { zh: '工具', en: 'Tool', ja: 'ツール' },
   { zh: '音频', en: 'Audio', ja: 'オーディオ' },
-  { zh: '关于', en: 'About' },
   
   // ─── Legal ────────────────────────────────────────────────
   { zh: '使用规约', en: 'EULA', ja: '利用規約' },

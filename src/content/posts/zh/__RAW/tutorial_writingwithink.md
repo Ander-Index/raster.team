@@ -3933,4 +3933,4 @@ Ink 对额外字符范围的支持目前仅限于预定义的一组字符范围�
 
 **注意！** Ink 文件应以 UTF-8 格式保存，以确保支持上述字符范围。
 
-果您希望在标识符中使用的特定但目前尚未支持的字符范围，欢迎在 Ink 主代码库提交 [issue](/inkle/ink/issues/new) 或提交 [pull request](/inkle/ink/pulls)。
+果您希望在标识符中使用的特定但目前尚未支持的字符范围，欢迎在 Ink 主代码库提交 [issue](https://github.com/inkle/ink/issues/new) 或提交 [pull request](https://github.com/inkle/ink/pulls)。

@@ -8,11 +8,11 @@ pinned: false
 math: false
 tags: [歌词]
 categories: [歌词]
-description: 作者：[TNT](/post/UTAU_EN-US_Shinne-Tatsu_Japanese_VCV_1.0)
+description: 作者：[TNT](/en/posts/voicedbs/utau/shinne-tatsu_japanese_vcv_10/)
 lang: zh
 unlisted: true
 ---
-作者：[TNT](/post/UTAU_EN-US_Shinne-Tatsu_Japanese_VCV_1.0)
+作者：[TNT](/en/posts/voicedbs/utau/shinne-tatsu_japanese_vcv_10/)
 
 <!-- more -->
 

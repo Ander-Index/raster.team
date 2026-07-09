@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "3c0f612cc97d77a3",
+        "id": "4a77238314490707",
         "type": "tabs",
         "children": [
           {
-            "id": "09b2d779309c3f84",
+            "id": "664fad15430fb1bb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/zh/__RAW/links_friends.md",
+                "file": "posts/zh/about/ray-lum_inside.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "links_friends"
+              "title": "ray-lum_inside"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 726.5
+    "width": 413.5
   },
   "right": {
     "id": "e7536589fc3b8c77",
@@ -94,7 +94,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "posts/zh/__RAW/links_friends.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "links_friends 的反向链接列表"
+              "title": "反向链接"
             }
           },
           {
@@ -113,12 +112,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "posts/zh/__RAW/links_friends.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "links_friends 的出链列表"
+              "title": "出链"
             }
           },
           {
@@ -156,20 +154,20 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "posts/zh/__RAW/links_friends.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "links_friends 的大纲"
+              "title": "大纲"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 337.5
+    "width": 494.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -182,20 +180,33 @@
       "bases:新建数据库": false
     }
   },
-  "active": "09b2d779309c3f84",
+  "active": "664fad15430fb1bb",
   "lastOpenFiles": [
+    "posts/zh/about/about_ray-lum.md",
+    "posts/zh/about/ray-lum_inside.md",
+    "posts/zh/about/shinne-tatsu.md",
+    "posts/zh/about/xi-qian.md",
+    "posts/zh/about/about_nomo-wang.md",
+    "posts/zh/__RAW/links_friends.md",
+    "posts/zh/__RAW/qnap-ru-he-zai-wei-lian-tong-de-nas-shang-yun-xing-peerbanhelper.md.bak",
+    "posts/zh/__RAW/music_yun-guang.md.bak",
+    "posts/zh/__RAW/music_karinn.md.bak",
+    "posts/zh/__RAW/mmd_boy-next-door.md.bak",
+    "posts/zh/__RAW/lyric_jitsu.md.bak",
+    "posts/zh/__RAW/live2d_raku-kogarashi_normal_1.0.md.bak",
+    "posts/zh/__RAW/links_friends.md.bak",
+    "posts/zh/__RAW/links_boy-next-door.md.bak",
+    "posts/zh/__RAW/link_heart-acg.md.bak",
+    "posts/zh/__RAW/kontakt_how-to-upgrade-kontakt-without-losing-configurations.md.bak",
     "posts/zh/__RAW/links_friends 1.md",
     "posts/zh/__RAW/lyric_jitsu 1.md",
     "posts/zh/voicedbs/utau/shinne-tatsu_japanese_vcv_beta_0.9.md",
     "post/EULA_UTAU-中華組ウィキ登録音源公共規約_20171112.md",
-    "post",
     "posts/zh/terms/eulas/utau中华组wiki公共使用规约-copy.md",
     "posts/zh/terms/eulas/mitsukawa-takeshi.md",
     "posts/zh/terms/eulas/nekobamo.md",
     "posts/zh/voicedbs/utau/nekobamo.md",
     "posts/zh/voicedbs/utau/mitsukawa-takeshi.md",
-    "posts/zh/terms/eulas",
-    "posts/zh/terms",
     "posts/zh/__RAW/eula_nekobamo 1.md",
     "posts/zh/voicedbs/utau/kooriookami_chinese_cvvc.md",
     "posts/zh/__RAW/eula_mitsukawa-takeshi 1.md",
@@ -206,19 +217,6 @@
     "posts/ja/voicedbs/utau/shinne-tatsu_japanese_vcv_1.0.md",
     "posts/ja/voicedbs/utau/shinne-tatsu_chinese_cvvc_1.3.md",
     "posts/ja/voicedbs/utau/shinne-tatsu_japanese_vcv_beta_0.9.md",
-    "posts/en/voicedbs/utau/shinne-tatsu_japanese_vcv_beta_0.9.md",
-    "posts/en/voicedbs/utau/shinne-tatsu_japanese_vcv_1.0.md",
-    "posts/en/voicedbs/utau/shinne-tatsu_chinese_cvvc_1.3.md",
-    "posts/zh/__RAW/tutorial_writingwithink.md",
-    "posts/zh/tools/reaper__chinese-simplified.reaperlangpack.md",
-    "posts/zh/tools",
-    "posts/zh/misc",
-    "posts/zh/__RAW/reaper_chinese-simplified.reaperlangpack 1.md",
-    "posts/en/voicedbs/utau/evan_japanese_vcv.md",
-    "posts/ja/voicedbs/utau",
-    "posts/ja/voicedbs",
-    "posts/zh/voicedbs/utau",
-    "posts/zh/voicedbs",
-    "posts/en/voicedbs/utau/UTAU_EN-US_Evan_Japanese_VCV.md.tmp_rename"
+    "posts/en/voicedbs/utau/shinne-tatsu_japanese_vcv_beta_0.9.md"
   ]
 }

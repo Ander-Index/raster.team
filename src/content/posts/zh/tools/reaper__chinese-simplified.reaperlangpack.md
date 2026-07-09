@@ -34,7 +34,7 @@ unlisted: false
 - 【通用】其它新增功能
 - ~~【通用】增加了一些已知问题~~
 
-更改历史记录可以点[这里](/post/Changelog_ReaperLangPack)查看
+更改历史记录可以点[这里](/posts/__raw/changelog_reaperlangpack/)查看
 
 # 下载地址
 
@@ -69,7 +69,7 @@ Stash: <https://stash.reaper.fm/u/raylum>
 # 那么，要怎么用呢？
 
 这就是个普通的语言包，别家汉化包怎么用这个就怎么用……
-但你要真的是小白的话……请看这个：[《【REAPER】下载到的 REAPER 语言包怎么用？》](/post/Tutorial_How-to-use-ReaperLangPack)
+但你要真的是小白的话……请看这个：[《【REAPER】下载到的 REAPER 语言包怎么用？》](/posts/__raw/tutorial_how-to-use-reaperlangpack/)
 
 # 这个汉化包有什么优势？
 
@@ -110,7 +110,7 @@ Stash: <https://stash.reaper.fm/u/raylum>
 # 联系方式
 
 - 王洛木：[点击这里给我发邮件](mailto:Nomo_Wang@outlook.com)（这样写或许可以防一些机器人）
-- 本站跳转：[【关于】王洛木](/post/About_Nomo-Wang)
+- 本站跳转：[【关于】王洛木](/posts/__raw/about_nomo-wang/)
 
 # ☕
 

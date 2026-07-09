@@ -53,4 +53,4 @@ unlisted: true
 得到的 .heic 文件一张就是一份壁纸，很显然 Apple 把他们一份一份的封装起来了。
 想给这方面做的确实不行的 Windows 用就需要解散它们，并转换成 .jpg。
 要怎么解开这些 .heic，并导出其中的内容呢？
-请移步这篇：[《【教程】如何不写代码就提取或转换含有多张图片的 .heic》](/post/Tutorial_Unpack-HEIC)
+请移步这篇：[《【教程】如何不写代码就提取或转换含有多张图片的 .heic》](/posts/__raw/tutorial_unpack-heic/)
