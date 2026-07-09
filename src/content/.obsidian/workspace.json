@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/zh/__RAW/eula_utau中华组wiki公共使用规约-copy.md",
+                "file": "posts/zh/__RAW/links_friends.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "eula_utau中华组wiki公共使用规约-copy"
+              "title": "links_friends"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "主题功能",
+                "query": "20171112",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 319.5
+    "width": 726.5
   },
   "right": {
     "id": "e7536589fc3b8c77",
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "posts/zh/__RAW/eula_utau中华组wiki公共使用规约-copy.md",
+                "file": "posts/zh/__RAW/links_friends.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "eula_utau中华组wiki公共使用规约-copy 的反向链接列表"
+              "title": "links_friends 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "posts/zh/__RAW/eula_utau中华组wiki公共使用规约-copy.md",
+                "file": "posts/zh/__RAW/links_friends.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "eula_utau中华组wiki公共使用规约-copy 的出链列表"
+              "title": "links_friends 的出链列表"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "posts/zh/__RAW/eula_utau中华组wiki公共使用规约-copy.md",
+                "file": "posts/zh/__RAW/links_friends.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "eula_utau中华组wiki公共使用规约-copy 的大纲"
+              "title": "links_friends 的大纲"
             }
           }
         ]
@@ -184,6 +184,12 @@
   },
   "active": "09b2d779309c3f84",
   "lastOpenFiles": [
+    "posts/zh/__RAW/links_friends 1.md",
+    "posts/zh/__RAW/lyric_jitsu 1.md",
+    "posts/zh/voicedbs/utau/shinne-tatsu_japanese_vcv_beta_0.9.md",
+    "post/EULA_UTAU-中華組ウィキ登録音源公共規約_20171112.md",
+    "post",
+    "posts/zh/terms/eulas/utau中华组wiki公共使用规约-copy.md",
     "posts/zh/terms/eulas/mitsukawa-takeshi.md",
     "posts/zh/terms/eulas/nekobamo.md",
     "posts/zh/voicedbs/utau/nekobamo.md",
@@ -197,7 +203,6 @@
     "posts/zh/voicedbs/utau/moyanming_japanese_vcv.md",
     "posts/zh/voicedbs/utau/shinne-tatsu_chinese_cvvc_1.3.md",
     "posts/zh/voicedbs/utau/shinne-tatsu_japanese_vcv_1.0.md",
-    "posts/zh/voicedbs/utau/shinne-tatsu_japanese_vcv_beta_0.9.md",
     "posts/ja/voicedbs/utau/shinne-tatsu_japanese_vcv_1.0.md",
     "posts/ja/voicedbs/utau/shinne-tatsu_chinese_cvvc_1.3.md",
     "posts/ja/voicedbs/utau/shinne-tatsu_japanese_vcv_beta_0.9.md",
@@ -214,10 +219,6 @@
     "posts/ja/voicedbs",
     "posts/zh/voicedbs/utau",
     "posts/zh/voicedbs",
-    "posts/zh/__RAW/wallpaper_jitsu.md",
-    "posts/zh/__RAW/tutorial_unpack-heic.md",
-    "posts/zh/__RAW/tutorial_twine-chapbook-guide.md",
-    "posts/en/voicedbs/utau/UTAU_EN-US_Evan_Japanese_VCV.md.tmp_rename",
-    "posts/en/voicedbs/utau"
+    "posts/en/voicedbs/utau/UTAU_EN-US_Evan_Japanese_VCV.md.tmp_rename"
   ]
 }
