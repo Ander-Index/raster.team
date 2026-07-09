@@ -10,7 +10,7 @@ categories:
 translationKey: getting-started
 pinned: false
 toc: true
-unlisted: false
+unlisted: true
 ---
 Welcome to your new blog! This sample post walks you through the basics of using **Chirping Astro**.
 

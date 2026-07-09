@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>变量部分</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-2459343d.css">
+        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../custom-110853f7.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-4c1238d9.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-9a453c8c.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="变量部分the-vars-section"><a class="header" href="#变量部分the-vars-section">变量部分｜The Vars Section</a></h1>
+<p>Chapbook 允许你处理状态的主要方式是通过 _变量 (vars) _部分。这些部分总是出现在段落开头，并且通过两个短杠（<code>--</code>）与普通文本分隔开。</p>
+<p>延续上一节的例子，一个极其刻板的地牢探险的第一段可能看起来是这样的：</p>
+<pre><code>力量：18
+敏捷：7
+体质：14
+智力：9
+感知：8
+魅力：11
+--
+在村中酒馆度过一个纵情狂欢的夜晚后，你踏上了前往最近地下城的小径。这是个阳光明媚的日子，心中有了明确的目标让你倍感愉悦。
+</code></pre>
+<p>当玩家访问该段落时，Chapbook 会在故事状态中添加六个变量：<code>力量</code>、<code>敏捷</code>、<code>体质</code>等，并将它们设置为所列出的数值。</p>
+<p>变量区块永远不会向玩家显示任何内容；这样，例如，你可以设置一个名为 <code>doomedToDieInFiveMinutes</code> 的变量，而除非你希望让玩家知道，否则玩家将对此一无所知。</p>
+<aside data-hint="info">
+如果一个段落使用 <code>{embed passage}</code> 修饰符嵌入到另一个段落中，其变量区块也会生效。
+</aside>
+<p>每个段落中只能有一个变量区块，但实际上也只需要一个。状态变量的命名也必须遵循一些规则。它们必须以字母（大写或小写）、下划线（<code>_</code>）或美元符号（<code>$</code>）开头；第一个字符之后可以是前述类型的字符以及数字的任意组合。<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup></p>
+<p>遗憾的是，你不能在变量名中使用空格。因此，一种被称为 <em>驼峰命名法</em>（因其产生的单词形似驼峰）的常见做法是使用大写字母将短语连接在一起，就像上面那个 <code>doomedToDieInFiveMinutes</code> 的例子一样。另一种命名风格，<em>蛇形命名法</em>，则倾向于使用下划线；例如 <code>doomed_to_die_in_five_minutes</code> 。两种方式都完全可以。选择你觉得最舒服的使用即可。</p>
+<p>另一种常见做法是，当变量的值仅在当前段落中使用时，在变量名前加一个下划线。这种做法只是给自己一个提示；Chapbook 并不强制要求这样使用。<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup></p>
+<aside data-hint="info">
+变量名可以包含句点 (<code>.</code>)，但它们具有特殊含义。在阅读"<a href="objects-and-lookups.html">对象与查找值</a>"部分之前，最好避免在变量名中使用句点。
+</aside>
+<aside data-hint="danger">
+<p>
+Chapbook 和网页浏览器会保留某些变量名供其自身使用。如果你尝试使用与这些保留名重叠的变量名，可能会发生不可预测的情况，因此应避免使用它们。Chapbook 保留了以下名称（意思是，以下内容不可做为变量名）：
+</p>
+
+<ul>
+<li><code>browser</code></li>
+
+<li><code>engine</code></li>
+
+<li><code>now</code></li>
+
+<li><code>passage</code></li>
+
+<li><code>random</code></li>
+
+<li><code>story</code></li>
+
+</ul>
+
+<p>
+浏览器保留了相当多的变量名（截至本文撰写时超过两百个），但你不太可能想使用其中的大多数，例如 `ondeviceorientation`。更多详细信息请参阅<a href="https://developer.mozilla.org/en-US/docs/Web/API/Window#Properties">详尽列表</a>。
+</p>
+
+</aside>
+<p>变量名唯一会向玩家显示的时刻，是在他们游玩你的故事时发生错误的情况下，因此请选择易于记忆且具有描述性的名称。既然可以使用 <code>sawFootprintsInVault</code>，就没有必要使用 <code>clueF</code> 这样的变量名。</p>
+<h2 id="变量具有类型variables-have-types"><a class="header" href="#变量具有类型variables-have-types">变量具有类型｜Variables Have Types</a></h2>
+<p>本节开头的例子为变量分配了数字，但变量也可以保存其他类型的值。</p>
+<p><em>字符串</em> 是字母、数字、空格和其他符号的集合。字符串由撇号（<code>'</code>）或引号（<code>"</code>）包围，以明确其起始和结束位置，这与文本参数值的用法相同。你可以使用任一标点符号来标记字符串的开头和结尾，但就像 Markdown 的斜体和粗体一样，每次使用必须保持一致。如果需要在字符串内部使用分隔符字符，请在其前面键入反斜杠（<code>\</code>），例如 <code>'Don\'t, just don\'t.'</code>。</p>
+<p>字符串非常适合用于存储事物的名称。例如，如果您想让玩家在故事开始时为主角命名，字符串将是最佳变量类型。您还可以使用字符串来存储模糊类型的值。例如，您可以将两个角色之间的关系状态记录为“<code>友好</code>”、“<code>中立</code>”、“<code>警惕</code>”或“<code>敌对</code>”。</p>
+<p><em>布尔值</em> 简单地记录真或假的值。与数字类似，你不需要在布尔值周围添加任何符号来表明它是什么；只需输入 <code>true</code> 或 <code>false</code>。布尔值非常适合记录故事中是否发生了某事；例如，主角是否找到了线索。</p>
+<p>还有其他更复杂的值类型将在后面讨论，但数字、字符串和布尔值已经足够你使用很长一段时间了。作为回顾，这里有一个示例段落，其变量部分包含了所有三种类型的变量。</p>
+<pre><code>dollarsInPocket: 12
+openedPortalToAlternateDimension: true
+名字: 'James'
+--
+你的冒险旅程即将抵达终点。
+</code></pre>
+<h2 id="变量可以被计算variables-can-be-calculated"><a class="header" href="#变量可以被计算variables-can-be-calculated">变量可以被计算｜Variables Can Be Calculated</a></h2>
+<p>你不必将变量设置为某个单一的值——也就是说，当主角在地上发现一美元时，变量部分可以这样写：</p>
+<pre><code>dollarsInPocket: dollarsInPocket + 1
+</code></pre>
+<p>此变量部分通过表达式将 dollarsInPocket 变量增加1。您可以将<code>表达式</code>理解为公式或计算过程，即任何能通过求值转换为单一值的元素。例如，您可以使用基础数学<code>运算</code>——加法、减法、乘法、除法——来处理数值变量。您还可以使用加法连接两个字符串，例如 <code>fullName: first + ' ' + last</code>，但不可对字符串使用其他数学运算符。</p>
+<p>您还可以比较两个数字或字符串，得到一个布尔值。</p>
+<ul>
+<li>
+<p><code>===</code>，“等于”<br>如果两侧是相同的数字或字符串，则为真。字符串必须完全相同：<code>'DOE'</code> 不等于 <code>'DOE'</code>，<code>'DOE '</code>（注意末尾的空格）也不等于 <code>'DOE'</code>。</p>
+</li>
+<li>
+<p><code>!==</code>，“不等于”<br>如果两边不相同，则为真。</p>
+</li>
+<li>
+<p><code>&gt;</code>, “大于”，以及 <code>&gt;=</code>，“大于或等于”<br>如果左侧大于右侧，则为真。如果使用 <code>&gt;=</code>，则当两边相等时也为真。</p>
+</li>
+<li>
+<p><code>&lt;</code>,“小于”，以及 <code>&lt;=</code>，“小于或等于”<br>当左侧小于右侧时为真。如果使用 <code>&lt;=</code>，那么当两侧相等时也为真。</p>
+</li>
+</ul>
+<p>一般来说，如果一个字符串在字母顺序中排在另一个之后，就认为它更大。例如，<code>'b' &gt; 'a'</code>。但这些比较可能会令人困惑且不直观。<code>'+'</code> 是否大于 <code>'&amp;'</code>？实际上是的，但你能一眼看出来吗？你可能会惊讶地发现 <code>'A' &lt; 'a'</code>。<sup class="footnote-reference" id="fr-3-1"><a href="#footnote-3">3</a></sup>因此，通常最好不要对字符串使用大于或小于运算符。</p>
+<p>以下是一个变量部分的示例，展示了如何使用这些变量。</p>
+<pre><code>correct: guess === 3
+nighttime: hour &gt;= 18
+--
+主持人向后靠在椅子上，咧嘴一笑。
+</code></pre>
+<p>布尔变量有自己独立的一套运算符。</p>
+<ul>
+<li>
+<p><code>!</code>，“非”
+将真值变为假，反之亦然。</p>
+</li>
+<li>
+<p><code>&amp;&amp;</code>，“和”<br>仅当两侧都为真时，结果为真。</p>
+</li>
+<li>
+<p><code>||</code>，“或”<br>当一侧或两侧为真时，结果为真。</p>
+</li>
+</ul>
+<aside data-hint="danger">
+您不能在变量部分使用插入或修饰符。它们仅在您用于段落显示的文本内部有效。
+</aside>
+<h2 id="用括号澄清表达式clarifying-expressions-with-parentheses"><a class="header" href="#用括号澄清表达式clarifying-expressions-with-parentheses">用括号澄清表达式｜Clarifying Expressions With Parentheses</a></h2>
+<p>表达式常常很复杂。例如，在一个简单的角色扮演场景中，你可能决定一个手持锤子的角色造成<code>力量 * 2 + 4</code> 的伤害。但如果<code>力量</code>是 12，这个表达式是得出 28（12 乘以 2，再加 4）还是 72（2 加 4，再乘以 12）？</p>
+<p>你可能记得数学课上学过数学运算符有优先级规则；具体来说，乘法在加法之前进行。但你很可能从未学过布尔逻辑的规则——例如，<code>!true || false</code> 会得出什么结果？<sup class="footnote-reference" id="fr-4-1"><a href="#footnote-4">4</a></sup>——即使你知道这些规则，在复杂表达式中正确应用它们也可能很棘手。</p>
+<p>在这些情况下，你可以使用括号来帮助表达式更易于理解，甚至可以覆盖正常的运算顺序。<code>(力量 * 2) + 4</code> 清楚地表明了表达式将如何被求值——如果你确实希望上面的答案是 72，你可以通过写成 <code>力量 * (2 + 4)</code> 来指定。</p>
+<h2 id="求值仅发生一次evaluation-only-happens-once"><a class="header" href="#求值仅发生一次evaluation-only-happens-once">求值仅发生一次｜Evaluation Only Happens Once</a></h2>
+<p>关于将变量设置为表达式，需要记住的一个重要点是，求值只发生一次，即在你设置变量的时候。想象一下这个场景：</p>
+<ol>
+<li>在一个段落中，你将变量 <code>牙齿打颤</code> 设置为 <code>温度 &lt; 0</code>。</li>
+<li>在后续段落中，主角进入室内并设置温度：<code>温度 + 20</code>。</li>
+</ol>
+<p>变量现在不一致了：<code>牙齿打颤</code>为真，但<code>温度</code>高于 0。避免此问题的最佳方法是避免让一个变量完全从另一个变量派生。如果<code>牙齿打颤</code>这个变量所做的只是反映<code>温度</code>是否大于 0，那么你就不需要一个单独的名为<code>牙齿打颤</code>的变量。更好的用法是设置<code>感冒: 温度 &lt; 0 &amp;&amp; !穿着夹克</code>，以反映主角因未穿夹克在室外而感冒了。他们随后可能会进入室内或穿上夹克，但显然这些变化都不会影响主角已经<code>感冒</code>的事实。</p>
+<h2 id="表达式可用于插入语句中expressions-can-be-used-in-inserts"><a class="header" href="#表达式可用于插入语句中expressions-can-be-used-in-inserts">表达式可用于插入语句中｜Expressions Can Be Used in Inserts</a></h2>
+<p>在插入中，表达式可以替代值使用。例如，以下段落：</p>
+<pre><code>目标: '另一个段落'
+--
+{embed passage: 目标}
+</code></pre>
+<p>将显示名为“另一个段落”的段落内的内容。请注意，这种用法与将变量名放在引号内不同，Chapbook 会将引号内的内容视为字符串。也就是说，这个段落：</p>
+<pre><code>目标: '另一个段落'
+--
+{embed passage: '目标'}
+</code></pre>
+<p>会显示文字“目标”，而非变量值。这当然可能造成混淆。最简单的记忆规则是：单引号或双引号始终用于包裹字符串。如果某个内容没有引号包裹，它就会被求值。</p>
+<p>正如标题所示，插入可以使用整个表达式而不仅仅是将变量作为值。例如：</p>
+<pre><code>宠物类型: '猫'
+活动: '走路'
+--
+{embed passage: 猫 + 走路}
+</code></pre>
+<p>将显示段落内容为“猫走路”。</p>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1">
+<p>变量名中可以使用非拉丁字符，例如 <code>sabiduría</code> 或 <code>мудрость</code>，但请注意，不完全支持 Unicode 标准的旧版网页浏览器——实际上是指如今使用率极低的旧版 Internet Explorer——可能会因此产生严重混淆。（王洛木：真的还有人在用 IE 上网冲浪么……） <a href="#fr-1-1">↩</a></p>
+</li>
+<li id="footnote-2">
+<p>SugarCube 故事格式推广了这一做法，并且事实上确实会在玩家导航到另一个段落后丢弃以下划线开头的变量。（王洛木：也就是临时变量。） <a href="#fr-2-1">↩</a></p>
+</li>
+<li id="footnote-3">
+<p>字符串中字符排序的最终依据是 Unicode 标准。字符通过其 Unicode 码点进行比较；数值更高的码点意味着一个字符大于另一个字符。 <a href="#fr-3-1">↩</a></p>
+</li>
+<li id="footnote-4">
+<p>如果你好奇的话，<code>!true || false</code> 会得出 false。“非”运算符的优先级高于“或”运算符。 <a href="#fr-4-1">↩</a></p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../state/what-is-state.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../state/displaying-variables.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../state/what-is-state.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../state/displaying-variables.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-c2a407aa.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

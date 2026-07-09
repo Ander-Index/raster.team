@@ -1,22 +1,27 @@
 ---
 title: 【Twine】Chapbook 简体中文指南
-pubDate: "2026-03-17T03:22:06.000Z"
+pubDate: 2026-03-17T03:22:06.000Z
 draft: false
-heroImage: "https://blog.raster.team/Sub-Sites/Chapbook_Gudie/path.jpeg"
+heroImage: https://img.cntracker.net/img/ee0bae0ed341a7e7a3ff6be3ea0e429d3df02987449611b6fe36d0525dac77ce.jpeg
 toc: true
 pinned: false
 math: false
-tags: [教程, Twine, 互动小说]
-categories: [教程]
-description: 嗨～这位对互动小说创作感兴趣的朋友～欢迎你～ 如果您知道这是什么，想要直接去看教程，那么可以直接跳转了：[/Sub-Sites/Chapbook_Gudie/index.html](/Sub-Sites/Chapbook_Gudie/index.html)
+tags:
+  - 教程
+  - Twine
+  - 互动小说
+categories:
+  - 教程
+description: 嗨～这位对互动小说创作感兴趣的朋友～欢迎你～
 lang: zh
 unlisted: false
 ---
+
 嗨～这位对互动小说创作感兴趣的朋友～欢迎你～
 
-如果您知道这是什么，想要直接去看教程，那么可以直接跳转了：[/Sub-Sites/Chapbook_Gudie/index.html](/Sub-Sites/Chapbook_Gudie/index.html)
+如果您知道这是什么，想要直接去看教程，那么可以直接跳转了：[/sub-sites/chapbook_gudie/index.html](/sub-sites/chapbook_gudie/index.html)
 
-<!-- more -->
+官方收录版：<https://klembot.github.io/chapbook/guide/zh-hans/>
 
 # 这是什么？
 

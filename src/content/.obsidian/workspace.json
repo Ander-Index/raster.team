@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/zh/links/mmd_boy-next-door.md",
+                "file": "posts/en/demo/getting-started.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "mmd_boy-next-door"
+              "title": "getting-started"
             }
           }
         ],
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "20171112",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -197,10 +197,12 @@
   },
   "active": "fea76a65098ba36c",
   "lastOpenFiles": [
+    "posts/zh/tutorials/resident-evil-4.md",
+    "posts/zh/tutorials/twine-chapbook-guide.md",
+    "posts/zh/links/mmd_boy-next-door.md",
     "posts/zh/links/heart-acg.md",
     "posts/zh/links/friends.md",
     "posts/zh/links/boy-next-door.md",
-    "posts/zh/links/mmd_boy-next-door.md",
     "posts/zh/__drafts/hu-dong-xiao-shuo-cai-keng-zhi-nan.md",
     "posts/zh/creations/models/live2d__raku-kogarashi_normal_1.0.md",
     "posts/zh/creations/models",
@@ -229,9 +231,7 @@
     "posts/zh/tutorials/writing-with-ink.md",
     "posts/zh/tutorials/macos-12+-的系统壁纸路径.md",
     "posts/zh/tutorials/unpack-heic.md",
-    "posts/zh/tutorials/twine-chapbook-guide.md",
     "posts/zh/tutorials/build-your-own-site-easy.md",
-    "posts/zh/tutorials/rearoute-asio-to-obs-with-reaper.md",
     "posts/zh/tutorials"
   ]
 }
