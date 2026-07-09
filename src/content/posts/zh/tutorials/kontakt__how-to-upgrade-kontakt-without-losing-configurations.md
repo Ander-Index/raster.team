@@ -42,7 +42,7 @@ unlisted: false
 1. First    插入了一个 Kontakt 6 并将此内容重命名为“康泰克 6”，象征性的加载一个音色。
 2. Second   插入了一个 Kontakt 6 并不重命名，象征性的加载一个音色。
 3. Third    插入了一个 Kontakt 7，可以象征性的加载一个音色。
-![](https://raster.team/post-images/1697014831868.png)
+![](https://img.cntracker.net/img/51c1df8f115cf2b38c20fce2d17c260d432b5021e343ec21121b53e04eb2c7d5.png)
 
 在您的实际操作中，请触类旁通，因为你电脑里的插件指纹可能与我的不一样，所以您大概不能直接从我这里复制我的 ID 号。
 
