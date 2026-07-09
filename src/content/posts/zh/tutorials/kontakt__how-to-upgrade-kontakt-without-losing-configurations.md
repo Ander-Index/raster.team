@@ -1,16 +1,20 @@
 ---
 title: 【REAPER】如何将工程中的 Kontakt 批量无损跨版本升级？
-pubDate: "2023-10-11T10:16:25.000Z"
+pubDate: 2023-10-11T10:16:25.000Z
 draft: false
-heroImage: "https://us.v-cdn.net/6034896/uploads/YGOD1WXOXP2D/screenshot-2022-10-07-at-11-27-14.png"
+heroImage: https://us.v-cdn.net/6034896/uploads/YGOD1WXOXP2D/screenshot-2022-10-07-at-11-27-14.png
 toc: true
 pinned: false
 math: false
-tags: [教程, REAPER, Kontakt]
-categories: [教程]
+tags:
+  - 教程
+  - REAPER
+  - Kontakt
+categories:
+  - 教程
 description: 我的意思是，如果你使 REAPER, 那么你就不需要一个一个的替换成最新的 Kontakt, 再重新把音色加载一遍…… 也就是说，这篇文章想要告诉你如何把 REAPER 里所有用到的 Kontakt 在不丢失配置的情况下升级到最新的 Kontakt 大版本，比如从 Kontakt 6 升级到 Kontakt 7 而不丢失之前的配置。
 lang: zh
-unlisted: true
+unlisted: false
 ---
 我的意思是，如果你使 REAPER, 那么你就不需要一个一个的替换成最新的 Kontakt, 再重新把音色加载一遍……
 也就是说，这篇文章想要告诉你如何把 REAPER 里所有用到的 Kontakt 在不丢失配置的情况下升级到最新的 Kontakt 大版本，比如从 Kontakt 6 升级到 Kontakt 7 而不丢失之前的配置。

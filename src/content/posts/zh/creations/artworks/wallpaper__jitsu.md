@@ -1,16 +1,19 @@
 ---
 title: 【壁纸】実
-pubDate: "2022-11-11T16:00:00.000Z"
+pubDate: 2022-11-11T16:00:00.000Z
 draft: false
-heroImage: "https://cntracker.net/img/7f5fb2c267c1b631cf7d82e5c54a2aa1.jpg"
+heroImage: https://cntracker.net/img/7f5fb2c267c1b631cf7d82e5c54a2aa1.jpg
 toc: true
 pinned: false
 math: false
-tags: [壁纸, 插画]
-categories: [壁纸]
-description: "風が静かな夜に 向き合うふたり"
+tags:
+  - 壁纸
+  - 插画
+categories:
+  - 壁纸
+description: 風が静かな夜に 向き合うふたり
 lang: zh
-unlisted: true
+unlisted: false
 ---
 > 風が静かな夜に
 > 向き合うふたり

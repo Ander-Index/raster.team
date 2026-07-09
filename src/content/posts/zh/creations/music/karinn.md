@@ -1,16 +1,19 @@
 ---
 title: 【Single】桜色の残影〜カリン
-pubDate: "2023-12-06T16:00:00.000Z"
+pubDate: 2023-12-06T16:00:00.000Z
 draft: false
-heroImage: "https://y.qq.com/music/photo_new/T002R300x300M000003KDh9j4Tr5M2_1.jpg"
+heroImage: https://y.qq.com/music/photo_new/T002R300x300M000003KDh9j4Tr5M2_1.jpg
 toc: true
 pinned: false
 math: false
-tags: [音乐, 作品]
-categories: [音乐]
+tags:
+  - 音乐
+  - 作品
+categories:
+  - 音乐
 description: ……（每天都在与自己的懒惰斗争） to 寒 for 花梨
 lang: zh
-unlisted: true
+unlisted: false
 ---
 ……（每天都在与自己的懒惰斗争）
 to 寒

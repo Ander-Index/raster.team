@@ -1,15 +1,21 @@
 ---
 title: 【ReaStream】远程桌面时的 ASIO 音频串流解决方案
-pubDate: "2023-09-07T04:03:52.000Z"
+pubDate: 2023-09-07T04:03:52.000Z
 draft: false
 toc: true
 pinned: false
 math: false
-tags: [教程, REAPER, 音频]
-categories: [教程]
+tags:
+  - 教程
+  - REAPER
+  - 音频
+  - ReaStream
+  - ASIO
+categories:
+  - 教程
 description: 龟软 Windows 的音频部分做的就是一坨……所以斯坦伯格开发了 ASIO 这种音频驱动。 但是由于这个 ASIO 并不经过系统，所以在使用 RDP 进行远程桌面或者使用 OBS 进行直播时，是无法直接接收这些音频的。 仍然有一些方案可以完成 ASIO 串流，比较常见的方案是 ASIO LINK PRO（残废）, 还有那个做的并不怎么样但是是瘸子里面的将军的 VoiceMeeter. 但今...
 lang: zh
-unlisted: true
+unlisted: false
 ---
 龟软 Windows 的音频部分做的就是一坨……所以斯坦伯格开发了 ASIO 这种音频驱动。
 

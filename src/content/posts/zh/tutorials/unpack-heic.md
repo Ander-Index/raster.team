@@ -9,7 +9,7 @@ tags: [教程, macOS, Windows]
 categories: [教程]
 description: 不写代码就提取或转换含有多张图片的 .heic 文件的方法。
 lang: zh
-unlisted: true
+unlisted: false
 ---
 # 写在前面
 

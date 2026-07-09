@@ -10,7 +10,7 @@ tags: [教程, REAPER, 音频, OBS]
 categories: [教程]
 description: ASIO LINK PRO 在我这里就没正常过…… VoiceMeeter 我不喜欢。 那就没有别的解决方案可以把使用了 ASIO 的 DAW 其音频发送到 OBS 了么？ 当然有，很方便，而且适用于所有支持 ASIO 的 DAW.
 lang: zh
-unlisted: true
+unlisted: false
 ---
 ASIO LINK PRO 在我这里就没正常过……
 VoiceMeeter 我不喜欢。

@@ -32,7 +32,10 @@ unlisted: true
 
 - D3 音阶 oto 修改（适用于下载了6/21日前的音源包，下载后请放入D3文件夹下覆盖原有oto）感谢妖莲的指正
 
-~~https://pan.baidu.com/s/1cdZp9O~~（链接已失效）
+
+
+~~https://pan.baidu.com/s/1cdZp9O~~
+（链接已失效）
 
 # <font color=#FFFFFF style="background-color:#98f15a; text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;">2016年6月16日</font>
 
@@ -40,4 +43,5 @@ unlisted: true
 - G3 音阶 oto 修改（适用于下载了配布视频下方评论内地址的音源包，下载后请放入G3文件夹下覆盖原有oto）感谢妖莲的指正
 - 加入了立绘图片image.png
 
-~~https://pan.baidu.com/s/1i4H0fwp~~（链接已失效）
+~~https://pan.baidu.com/s/1i4H0fwp~~
+（链接已失效）

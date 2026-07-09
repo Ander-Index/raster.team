@@ -35,7 +35,7 @@ unlisted: false
 
 - 百度云：<https://pan.baidu.com/s/1QREgM3gz6h6u9eNUZ5aACg>（提取码：i2bk）
 
-更新记录请点击这里查看：[【更新记录】光川武](/posts/__raw/changelog_mitsukawa-takeshi/)
+更新记录请点击这里查看：[【更新记录】光川武](posts/zh/changelogs/mitsukawa-takeshi.md)
 
 # <font color=#FFFFFF style="background-color:#98f15a; text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;">制作及使用感想</font>
 

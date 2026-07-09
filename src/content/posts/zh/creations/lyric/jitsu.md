@@ -1,16 +1,18 @@
 ---
 title: 【歌词】実
-pubDate: "2022-10-23T15:48:48.000Z"
+pubDate: 2022-10-23T15:48:48.000Z
 draft: false
-heroImage: "https://cntracker.net/img/7f5fb2c267c1b631cf7d82e5c54a2aa1.jpg"
+heroImage: https://cntracker.net/img/7f5fb2c267c1b631cf7d82e5c54a2aa1.jpg
 toc: true
 pinned: false
 math: false
-tags: [歌词]
-categories: [歌词]
+tags:
+  - 歌词
+categories:
+  - 歌词
 description: 作者：[TNT](/en/posts/voicedbs/utau/shinne-tatsu_japanese_vcv_10/)
 lang: zh
-unlisted: true
+unlisted: false
 ---
 作者：[TNT](/en/posts/voicedbs/utau/shinne-tatsu_japanese_vcv_10/)
 

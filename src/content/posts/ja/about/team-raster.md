@@ -2,7 +2,7 @@
 title: 【紹介】チーム ラスター
 pubDate: 2021-12-24T07:02:24.000Z
 tags:
-  - 紹介
+  - 概要
 categories:
   - 紹介
 description: 二つのサイトの管理が大変だったので、一つにまとめました。

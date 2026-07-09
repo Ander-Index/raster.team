@@ -1,16 +1,18 @@
 ---
 title: 【友链】随心 ACG
-pubDate: "2023-02-04T16:05:48.000Z"
+pubDate: 2023-02-04T16:05:48.000Z
 draft: false
-heroImage: "https://heart.furcode.cn/image/index-bg.jpg"
+heroImage: https://heart.furcode.cn/image/index-bg.jpg
 toc: true
 pinned: false
 math: false
-tags: [友链]
-categories: [友链]
+tags:
+  - 友链
+categories:
+  - 友链
 description: 随心社（随心 ACG）是用爱发电的以 Furry 和歌声合成为主要制作方向的 ACGN 创作社团
 lang: zh
-unlisted: true
+unlisted: false
 ---
 随心社（随心 ACG）是用爱发电的以 Furry 和歌声合成为主要制作方向的 ACGN 创作社团
 

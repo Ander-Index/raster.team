@@ -34,7 +34,7 @@ unlisted: false
 - 【通用】其它新增功能
 - ~~【通用】增加了一些已知问题~~
 
-更改历史记录可以点[这里](/posts/__raw/changelog_reaperlangpack/)查看
+更改历史记录可以点[这里](posts/zh/changelogs/reaperlangpack.md)查看
 
 # 下载地址
 
@@ -69,8 +69,7 @@ Stash: <https://stash.reaper.fm/u/raylum>
 # 那么，要怎么用呢？
 
 这就是个普通的语言包，别家汉化包怎么用这个就怎么用……
-但你要真的是小白的话……请看这个：[《【REAPER】下载到的 REAPER 语言包怎么用？》](/posts/__raw/tutorial_how-to-use-reaperlangpack/)
-
+但你要真的是小白的话……请看这个：[《【REAPER】下载到的 REAPER 语言包怎么用？》](posts/zh/tutorials/how-to-use-reaperlangpack.md)
 # 这个汉化包有什么优势？
 
 - 持续更新，一般来说，REAPER 稳定版更新后的三天之内这里就同步跟上了。

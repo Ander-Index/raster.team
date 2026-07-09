@@ -44,7 +44,7 @@ unlisted: false
 
 瑞洛凩看起来是一只黄老虎……面部有两个箭头，尾巴上有一个瓶子，这是关键识别点。虎纹并不固定。
 
-<font style="color:rgba(0,0,0,0);">那你实际上是一个？一个一个一个……？：<本站域名>/posts/ray-lum_inside/</font>
+<font style="color:rgba(0,0,0,0);">那你实际上是一个？一个一个一个……？：<本站域名>/posts/about/ray-lum_inside/</font>
 
 # <font color = "#966495">FAQ</font>
 

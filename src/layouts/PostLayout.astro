@@ -210,6 +210,6 @@ const crumbs = [
 </BaseLayout>
 
 {/* Translation links exposed for the LanguageSwitcher to read at runtime */}
-<script is:inline define:vars={{ links: translationLinks }}>
+<script is:inline data-astro-rerun define:vars={{ links: translationLinks }}>
   window.__chirpyTranslations = links;
 </script>

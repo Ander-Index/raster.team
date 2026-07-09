@@ -85,6 +85,6 @@ const availableLocales = (Object.keys(translationLinks) as Locale[]).sort();
 {/* Translation links exposed for the LanguageSwitcher to read at runtime.
     Same mechanism PostLayout uses; without this the switcher would fall
     back to same-slug-different-locale and 404 on translated tags. */}
-<script is:inline define:vars={{ links: translationLinks }}>
+<script is:inline data-astro-rerun define:vars={{ links: translationLinks }}>
   window.__chirpyTranslations = links;
 </script>

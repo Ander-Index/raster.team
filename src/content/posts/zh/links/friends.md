@@ -1,15 +1,17 @@
 ---
 title: 【友链】别人家的站点
-pubDate: "2019-12-31T16:00:00.000Z"
+pubDate: 2019-12-31T16:00:00.000Z
 draft: false
 toc: true
 pinned: false
 math: false
-tags: [友链]
-categories: [友链]
+tags:
+  - 友链
+categories:
+  - 友链
 description: TA 们都是厉害的人。
 lang: zh
-unlisted: true
+unlisted: false
 ---
 TA 们都是厉害的人。
 
