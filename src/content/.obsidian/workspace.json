@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "posts/zh/links/UTAU_仙人指路.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "【UTAU】",
+                "query": "友链",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -74,7 +74,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -182,12 +183,13 @@
   },
   "active": "9aef1f5098e22bd0",
   "lastOpenFiles": [
+    "posts/zh/links/friends.md",
+    "posts/zh/__drafts/qnap-ru-he-zai-wei-lian-tong-de-nas-shang-yun-xing-peerbanhelper.md",
+    "posts/zh/links/UTAU_仙人指路.md",
     "posts/zh/links/mmd_boy-next-door.md",
     "1999-12-31.md",
-    "posts/zh/links/UTAU_仙人指路.md",
     "posts/zh/links/heart-acg.md",
     "posts/zh/links/boy-next-door.md",
-    "posts/zh/links/friends.md",
     "posts/zh/tutorials/writing-with-ink.md",
     "posts/zh/tutorials/macos-12+-的系统壁纸路径.md",
     "posts/zh/about/nomo-wang.md",
@@ -197,7 +199,6 @@
     "posts/zh/tutorials/rearoute-asio-to-obs-with-reaper.md",
     "posts/zh/tutorials/asio-while-remoting-desktop.md",
     "posts/zh/__drafts/hu-dong-xiao-shuo-cai-keng-zhi-nan.md",
-    "posts/zh/__drafts/qnap-ru-he-zai-wei-lian-tong-de-nas-shang-yun-xing-peerbanhelper.md",
     "posts/zh/__drafts/choicescript-zhi-nan.md",
     "posts/zh/tutorials/build-your-own-site-easy.md",
     "posts/zh/tutorials/how-to-use-reaperlangpack.md",
