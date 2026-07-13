@@ -27,16 +27,15 @@ unlisted: false
 
 <!-- more -->
 
-这篇文章不讨论如何把 ASIO 音频串流到 OBS，这部分内容在这篇文章内：[《【ReaRoute ASIO】如何将 DAW 的声音发送到 OBS 以进行直播》](/posts/__raw/tutorial_rearoute-asio-to-obs-with-reaper/)
+这篇文章不讨论如何把 ASIO 音频串流到 OBS，这部分内容在这篇文章内：[《【ReaRoute ASIO】如何将 DAW 的声音发送到 OBS 以进行直播》](posts/zh/tutorials/rearoute-asio-to-obs-with-reaper)
 
-![](https://raster.team/post-images/1693385680485.png)
+![173](https://img.cntracker.net/img/730ad32abc013d608b074431741565703f921716dc77e8f37433a57266d9407f.png)
 
 没错，就是 Cockos 开发的这么一个小巧的插件，就可以解决要在别的地方设置很久且很繁琐的 ASIO 串流的问题。不愧是开发了 REAPER 的公司，Cockos VERY New Bee!
 
 下面，以“**将 DAW 的音频串流到 OBS**” 为例子，介绍一下如何使用 ReaStream 进行本地串流。
 在这之后，会附加有关“**如何将使用 ASIO 驱动的音频串流到远程计算机**”的介绍。
 
-@[toc]
 
 # 配置环境
 

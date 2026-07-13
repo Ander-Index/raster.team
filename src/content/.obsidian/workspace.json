@@ -11,10 +11,14 @@
             "id": "9aef1f5098e22bd0",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "posts/zh/tutorials/asio-while-remoting-desktop.md",
+                "mode": "preview",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "asio-while-remoting-desktop"
             }
           }
         ]
@@ -49,10 +53,10 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "ReaRoute ASIO】如何将 DAW 的声音发送到 OBS 以进",
                 "matchingCase": false,
                 "explainSearch": false,
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               },
@@ -70,7 +74,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",

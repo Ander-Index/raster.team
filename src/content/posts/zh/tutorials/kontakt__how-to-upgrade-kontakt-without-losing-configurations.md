@@ -29,7 +29,6 @@ unlisted: false
 
 我猜这大概就和当年宣布“Windows 10 是最后一个版本的 Windows”一样……
 
-@[toc]
 
 那么废话少说：
 
