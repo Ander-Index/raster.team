@@ -1,10 +1,7 @@
 ---
 title: 【MMD】别人家的孩子
-pubDate: 1999-12-31T16:00:00.000Z
-draft: false
+pubDate: 2000-01-01
 toc: true
-pinned: false
-math: false
 tags:
   - 友链
   - MMD
@@ -12,7 +9,6 @@ tags:
 categories:
   - 模型
 description: 洛凩暂时没有多余的肝来搞3D模型了，但您不妨看看别人家的孩子~
-lang: zh
 unlisted: false
 ---
 洛凩暂时没有多余的肝来搞3D模型了，但您不妨看看别人家的孩子~

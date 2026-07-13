@@ -55,7 +55,9 @@ unlisted: false
 <https://www.reaper.fm/reaplugs/>
 
 ReaStream 包含在 ReaPlugins 套件中。这套免费插件包含了许多实用插件，就算不使用 ReaStream, 这套插件也是非常推荐的。~~虽然上次这套插件更新是很久之前了，不过正所谓能跑就不用动嘛，更何况这套插件的运行状况还很不错……（2023年8月30日）~~
-![](https://raster.team/post-images/1693386930340.png)
+
+![](https://img.cntracker.net/img/e852a60a78ef6be4708048d61ea7cb0016473b337cf3f8b692dba8308d18df9c.png)
+
 已经是2023年了，就没必要再使用 32-bit 的版本了，除非遇到了兼容性问题，比如想串流的某些软件不支持 64-bit 的插件。~~（那可真够老的）~~ 直接下载那个 64-bit 的，然后按照它默认的路径安装[^1]就可以了。
 
 [^1]: 之所以按照默认路径安装，是因为 OBS 它暂时不能自定义 VST 的扫描路径。而这个 ReaPlugins 默认安装的路径就在 OBS 能识别到的地方。参考：<https://obsproject.com/kb/vst-2-x-plugin-filter>（2023年8月30日）

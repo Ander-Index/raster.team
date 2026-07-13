@@ -49,7 +49,7 @@ REAPER 官方下载页：<http://reaper.fm/download.php>
 
 且在安装的时候，ReaRoute ASIO 是一个可选项，所以安装时要确保已经勾选了ReaRoute ASIO.
 
-![安装截图](https://raster.team/post-images/1693475687780.png)
+![安装截图](https://img.cntracker.net/img/7b4f82f906ffe75f1b2026742fc35a84c0f921f5a160fccad3834ff45bff837e.png)
 
 <center>这个 ReaRoute ASIO 一定要选上</center>
 
@@ -62,18 +62,18 @@ REAPER 官方下载页：<http://reaper.fm/download.php>
 ReaRoute ASIO 并不是用来驱动声卡的，它是一套虚拟线路。所以在 REAPER 中，音频设备仍然要选择使用当前声卡的 ASIO 驱动。
 
 比如这里我的声卡是 YAMAHA UR242. 那么在 REAPER 偏好设置中，ASIO 驱动就选择 Yamaha Steinberg USB ASIO.
-![](https://raster.team/post-images/1693535636273.png)
+![](https://img.cntracker.net/img/d60f58f9c5307195ab1f8542bc31e2104d67a0b36ab55da8b274b2e4bde424dc.png)
 
 ## 2. 设置 ReaRoute ASIO 路由
 
 先假定要把总线上的音频输出到 OBS，（如果你想输出某个轨道的音频，就把假定的内容替换为那个轨道，毕竟总线其实也是一条轨道。）
 
-按下 Route 按钮来打开路由面板![](https://raster.team/post-images/1693535940516.png)
+按下 <ruby>![](https://img.cntracker.net/img/67a0a9d5027d676c7db7482d385e24cf865b11e6f1114d58148396df1538c1dc.png)<rt>Route</rt></ruby> 按钮来打开路由面板
 
-<center>如果没找到这个按钮，就需要去 选项 > 主题 > 主题调整器 中把这个按钮显示出来</center>
+如果没找到这个按钮，就需要去 选项 > 主题 > 主题调整器 中把这个按钮显示出来
 
 然后，在音频硬件输出中选择 ReaRoute 系列的通道。
-![](https://raster.team/post-images/1693536096834.png)
+![](https://img.cntracker.net/img/11c4be4d6a9ff38c4e159ef0da04b915287ee6725468ee028d19040996df12d0.png)
 
  其中，两个一组的 ReaRoute 通道意味着立体声输出。单独的 ReaRoute 通道意味着单声道输出。
  可根据自己的需要同时串流多个通道到多个地方去。
@@ -88,13 +88,14 @@ ReaRoute ASIO 并不是用来驱动声卡的，它是一套虚拟线路。所以
 
 ## 1. 从 OBS 的 来源 面板中选择 ASIO Input Capture
 
-![](https://raster.team/post-images/1693538190535.png)
+![](https://img.cntracker.net/img/c0cf4e0238fe57b69a930ffb234c0fac4683359aa3b24845d5f3d73e78b0aa99.png)
 
 <center>如果没有这个选项，滚回去安装 OBS-ASIO</center>
 
 ## 2. 从 Device 里选择 ReaRoute ASIO
 
-![](https://raster.team/post-images/1693538750903.png)
+![](https://img.cntracker.net/img/0aaaa91d34ab823e764f08bef5932910a062c507ce1556e7f7753038c9ce125b.png)
+
 注意这里是要选择 ReaRoute ASIO, 而不是声卡 ASIO, 因为信号是从 ReaRoute ASIO 来的。
 
 ## 3. 选择 Format 与 Channel
@@ -146,19 +147,19 @@ Live 是没有办法把自己的总线输出直接在发送给声卡的同时复
 ## 2. 配置 REAPER
 
 Live 正在发出信号，那么就需要 REAPER 进行接收并“解码”
-    1. 将 REAPER 按照前半部分教程中的路由进行设置，这样一来 ReaRoute ASIO 的 1/2 便和 OBS 连接在了一起。
-    2. 在 REAPER 中新建一条轨道，用来接收与 Live 建立的 3/4 中的内容。
-    3. 按亮该轨道的录音准备，并选择 ReaRoute 3 / ReaRoute 4, 如果你想要使用其它的路由方案，请自行选择输入设备。![](https://raster.team/post-images/1693821147025.png)
-    4. 打开 监听 按钮。此时如果你的 Live 播放正常的话，那么你应当能够听到来自 Live 正在播放的内容。
-    5. 检查一下 OBS 的 ASIO Input Capture 的电平是否正在跳动，如果跳动则说明音频顺利的从 Live 通过 ReaRoute ASIO 3/4 到达 REAPER, 并从 REAPER 通过 ReaRoute ASIO 1/2 到达了 OBS.
-    6. ENJOY! 你甚至可以试着自己玩出其它 DAW 互相串流的花样，还可以叫上 ReaStream 和 ReaNINJAM 一起玩~ヽ(￣ω￣(￣ω￣〃)ゝ（也可以把当前的配置保存为一个模板，方便下次直接用。）
+1. 将 REAPER 按照前半部分教程中的路由进行设置，这样一来 ReaRoute ASIO 的 1/2 便和 OBS 连接在了一起。
+2. 在 REAPER 中新建一条轨道，用来接收与 Live 建立的 3/4 中的内容。
+3. 按亮该轨道的录音准备，并选择 ReaRoute 3 / ReaRoute 4, 如果你想要使用其它的路由方案，请自行选择输入设备。![](https://img.cntracker.net/img/b530dd39b7fa8b4b244665673524c24792bbd042edd0397ae80a2ccc78983966.png)
+4. 打开 监听 按钮。此时如果你的 Live 播放正常的话，那么你应当能够听到来自 Live 正在播放的内容。
+5. 检查一下 OBS 的 ASIO Input Capture 的电平是否正在跳动，如果跳动则说明音频顺利的从 Live 通过 ReaRoute ASIO 3/4 到达 REAPER, 并从 REAPER 通过 ReaRoute ASIO 1/2 到达了 OBS.
+6. ENJOY! 你甚至可以试着自己玩出其它 DAW 互相串流的花样，还可以叫上 ReaStream 和 ReaNINJAM 一起玩~ヽ(￣ω￣(￣ω￣〃)ゝ（也可以把当前的配置保存为一个模板，方便下次直接用。）
 
 ## 故障排除
 
 ### Q: 设置好了 REAPER 的新轨道和接收, 但是什么内容也没有输入进 REAPER
 
 这可能是 Live 的 Master 输出没有还卡在 1/2 上，手动设置为 3/4 就好
-![](https://raster.team/post-images/1693820535276.png)
+![](https://img.cntracker.net/img/81fc0eb9d27968f5f60ab711d5f8935906da8849008f6f18223ed85d4e79bfd9.png)
 
 ### Q: 听到了声音的重复
 

@@ -269,7 +269,7 @@ unlisted: true
 
 # <font color = red>今晚，我就会找到你。</font>
 
-![](https://raster.team/post-images/1693969386544.jpg)
+![](https://img.cntracker.net/img/8a32219594423137768c05e901ecbc47617d7b9354442303227b6f1c0aeddaeb.jpg)
 
 <center>2017 年刚开始画图时的作品</center>
 

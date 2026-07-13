@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/zh/tutorials/asio-while-remoting-desktop.md",
+                "file": "posts/zh/links/UTAU_仙人指路.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "asio-while-remoting-desktop"
+              "title": "UTAU_仙人指路"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "ReaRoute ASIO】如何将 DAW 的声音发送到 OBS 以进",
+                "query": "【UTAU】",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -74,8 +74,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -183,7 +182,24 @@
   },
   "active": "9aef1f5098e22bd0",
   "lastOpenFiles": [
+    "posts/zh/links/mmd_boy-next-door.md",
+    "1999-12-31.md",
+    "posts/zh/links/UTAU_仙人指路.md",
+    "posts/zh/links/heart-acg.md",
+    "posts/zh/links/boy-next-door.md",
+    "posts/zh/links/friends.md",
+    "posts/zh/tutorials/writing-with-ink.md",
+    "posts/zh/tutorials/macos-12+-的系统壁纸路径.md",
+    "posts/zh/about/nomo-wang.md",
+    "posts/zh/tools/reaper__chinese-simplified.reaperlangpack.md",
     "posts/zh/tutorials/kontakt__how-to-upgrade-kontakt-without-losing-configurations.md",
+    "posts/zh/about/ray-lum_inside.md",
+    "posts/zh/tutorials/rearoute-asio-to-obs-with-reaper.md",
+    "posts/zh/tutorials/asio-while-remoting-desktop.md",
+    "posts/zh/__drafts/hu-dong-xiao-shuo-cai-keng-zhi-nan.md",
+    "posts/zh/__drafts/qnap-ru-he-zai-wei-lian-tong-de-nas-shang-yun-xing-peerbanhelper.md",
+    "posts/zh/__drafts/choicescript-zhi-nan.md",
+    "posts/zh/tutorials/build-your-own-site-easy.md",
     "posts/zh/tutorials/how-to-use-reaperlangpack.md",
     "posts/en/demo/getting-started.md",
     "posts/zh/voicedbs/utau/shinne-tatsu_japanese_vcv_beta_0.9.md",
@@ -192,29 +208,12 @@
     "posts/zh/voicedbs/utau/nekobamo.md",
     "posts/zh/voicedbs/utau/moyanming_japanese_vcv.md",
     "posts/zh/voicedbs/utau/mitsukawa-takeshi.md",
-    "posts/zh/voicedbs/utau/kooriookami_japanese_vcv.md",
-    "posts/zh/voicedbs/utau/kooriookami_chinese_cvvc.md",
     "posts/zh/voicedbs/utau",
     "posts/zh/voicedbs",
-    "posts/zh/tutorials/writing-with-ink.md",
-    "posts/zh/tutorials/unpack-heic.md",
-    "posts/zh/tutorials/twine-chapbook-guide.md",
-    "posts/zh/tutorials/resident-evil-4.md",
-    "posts/zh/tutorials/rearoute-asio-to-obs-with-reaper.md",
-    "posts/zh/tutorials/macos-12+-的系统壁纸路径.md",
-    "posts/zh/tutorials/build-your-own-site-easy.md",
-    "posts/zh/tutorials/asio-while-remoting-desktop.md",
     "posts/zh/tutorials",
-    "posts/zh/tools/reaper__chinese-simplified.reaperlangpack.md",
     "posts/zh/tools",
-    "posts/zh/terms/eulas/utau中华组wiki公共使用规约-copy.md",
-    "posts/zh/terms/eulas/nekobamo.md",
-    "posts/zh/terms/eulas/mitsukawa-takeshi.md",
     "posts/zh/terms/eulas",
     "posts/zh/terms",
-    "posts/zh/links/mmd_boy-next-door.md",
-    "posts/zh/links/heart-acg.md",
-    "posts/zh/links/friends.md",
     "posts/zh/links",
     "posts/zh/demo",
     "posts/zh/creations/music",
