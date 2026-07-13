@@ -169,7 +169,7 @@ export const SOCIALS: readonly SocialLink[] = [
   },
   CONTACT_EMAIL && {
     label: 'Email',
-    href: `mailto:${CONTACT_EMAIL}`,
+    href: `mailto:team-raster@outlook.com`,
     icon: 'lucide:mail',
   },
   { label: 'RSS', href: '/rss.xml', icon: 'lucide:rss' },

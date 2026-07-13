@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "4a77238314490707",
+        "id": "ac65043111425fd4",
         "type": "tabs",
         "children": [
           {
-            "id": "f018609a37f66b45",
+            "id": "9aef1f5098e22bd0",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "posts/zh/tutorials/kontakt__how-to-upgrade-kontakt-without-losing-configurations.md",
-                "mode": "source",
-                "source": true
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "kontakt__how-to-upgrade-kontakt-without-losing-configurations"
+              "title": "新标签页"
             }
           }
         ]
@@ -180,8 +176,9 @@
       "bases:新建数据库": false
     }
   },
-  "active": "f018609a37f66b45",
+  "active": "9aef1f5098e22bd0",
   "lastOpenFiles": [
+    "posts/zh/tutorials/kontakt__how-to-upgrade-kontakt-without-losing-configurations.md",
     "posts/zh/tutorials/how-to-use-reaperlangpack.md",
     "posts/en/demo/getting-started.md",
     "posts/zh/voicedbs/utau/shinne-tatsu_japanese_vcv_beta_0.9.md",
@@ -200,7 +197,6 @@
     "posts/zh/tutorials/resident-evil-4.md",
     "posts/zh/tutorials/rearoute-asio-to-obs-with-reaper.md",
     "posts/zh/tutorials/macos-12+-的系统壁纸路径.md",
-    "posts/zh/tutorials/kontakt__how-to-upgrade-kontakt-without-losing-configurations.md",
     "posts/zh/tutorials/build-your-own-site-easy.md",
     "posts/zh/tutorials/asio-while-remoting-desktop.md",
     "posts/zh/tutorials",
