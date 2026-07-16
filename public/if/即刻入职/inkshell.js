@@ -1051,8 +1051,49 @@ var __inkshell_entry__ = (() => {
   // src/storage.ts
   var MAX_SLOT = 9;
   var PREFIX = "inkshell_save";
+  var _storyId = "";
+  function setStoryId(id) {
+    _storyId = (id || "").trim();
+  }
+  function extractStoryId(json) {
+    try {
+      const root = json.root;
+      if (Array.isArray(root) && Array.isArray(root[0])) {
+        let id = "";
+        let title = "";
+        for (const item of root[0]) {
+          if (Array.isArray(item) && item[0] === "#" && item[2] === "/#") {
+            const tagVal = String(item[1] || "").replace(/^\^/, "");
+            if (!id) {
+              const m = tagVal.match(/^id:\s*(.+)$/i);
+              if (m) id = m[1].trim();
+            }
+            if (!title) {
+              const m = tagVal.match(/^title:\s*(.+)$/i);
+              if (m) title = m[1].trim();
+            }
+          }
+        }
+        if (id) return id;
+        if (title) return title;
+      }
+    } catch {
+    }
+    let s;
+    try {
+      s = JSON.stringify(json);
+    } catch {
+      s = String(json);
+    }
+    let h = 2166136261;
+    for (let i = 0; i < s.length; i++) {
+      h ^= s.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return "h" + (h >>> 0).toString(16);
+  }
   function key(slot) {
-    return PREFIX + "_" + slot;
+    return _storyId ? PREFIX + "_" + _storyId + "_" + slot : PREFIX + "_" + slot;
   }
   function get(name) {
     return localStorage.getItem(PREFIX + "_" + name);
@@ -1102,6 +1143,8 @@ var __inkshell_entry__ = (() => {
       removeSlot,
       getSlots,
       clearAllSlots,
+      setStoryId,
+      extractStoryId,
       MAX_SLOT
     };
   }

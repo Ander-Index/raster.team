@@ -157,7 +157,7 @@ body {
 /* ---- story container ---- */
 #story-root { max-width: 720px; margin: 0 auto; padding: 104px 24px 120px; }
 
-.inkshell-passage { white-space: pre-wrap; }
+.inkshell-passage { white-space: pre-wrap; overflow-wrap: break-word; }
 .inkshell-passage hr { display: block; margin: 16px 0; border: none; border-top: 2px solid var(--hr); }
 .inkshell-passage code, .inkshell-passage pre, .inkshell-passage samp {
  font-family: "SymbolsNerdFont", "SarasaMonoSC", "Courier New", "Menlo", monospace;

@@ -29,7 +29,7 @@
  .inkshell-actions { display: none; }
  .inkshell-btn { display: none; }
 
- .inkshell-passage { white-space: pre-wrap; }
+ .inkshell-passage { white-space: pre-wrap; overflow-wrap: break-word; }
  .inkshell-choices { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
  .inkshell-choice { display: block; width: 100%; padding: 10px 14px; text-align: left; cursor: pointer; }
  .inkshell-image { max-width: 100%; height: auto; }
@@ -90,6 +90,18 @@
                         "Export your Ink story from Inky (File → Export story.js) " +
                         "and place it in this folder, overwriting story.js.";
                     return;
+                }
+
+                // Namespace save slots per story so saves from different
+                // stories never cross-contaminate.
+                // 为每个故事隔离存档，避免不同故事的存档互相串扰。
+                if (
+                    window.InkShellStorage &&
+                    window.InkShellStorage.extractStoryId
+                ) {
+                    window.InkShellStorage.setStoryId(
+                        window.InkShellStorage.extractStoryId(data),
+                    );
                 }
 
                 var player = new InkShell({
