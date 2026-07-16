@@ -1,38 +1,141 @@
-﻿<!doctype html>
-<html lang="zh-CN">
-<head>
-    <link rel="icon" type="image/png" href="./logo.png">
-    <meta charset="utf-8">
+<!doctype html>
+<!--
+  InkShell — Index Template / 首页模板（含标准外壳）
+  --------------------------------------------------
+  顶部菜单栏（logo 位 / 标题 / 保存·读取·重置·主题）由引擎的 Shell 插件驱动。
+  主题只需写 style.css：给 .inkshell-bar / .inkshell-btn 等定样式，
+  并（可选）用 body { --themes: ...; } 声明配色清单来开启主题切换按钮。
+  此文件由 build.sh 同步到所有主题；不要在主题里直接改它，深度定制请复制出去。
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>InkShell</title>
+        <link rel="icon" href="favicon.ico" />
+ <style>
+ /* Fallback styles: bare minimum so content is readable without a theme.
+ All shell / UI elements are hidden by default — themes opt in via style.css.
+ style.css loads AFTER this block, so theme rules always win on equal specificity.
+ 后备样式：无主题时内容仍可读。所有外壳/UI 元素默认隐藏——主题在 style.css 里开启显示。
+ style.css 在本块之后加载，同优先级下主题规则始终覆盖后备。 */
+ body { margin: 0; font-family: system-ui, sans-serif; }
 
-    <title>自然之神的伪冒祭祀｜黑川物流</title>
+ .inkshell-bar { display: none; }
+ .inkshell-logo { display: none; }
+ .inkshell-title { display: none; }
+ .inkshell-spacer { display: none; }
+ .inkshell-burger { display: none; }
+ .inkshell-actions { display: none; }
+ .inkshell-btn { display: none; }
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ .inkshell-passage { white-space: pre-wrap; }
+ .inkshell-choices { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+ .inkshell-choice { display: block; width: 100%; padding: 10px 14px; text-align: left; cursor: pointer; }
+ .inkshell-image { max-width: 100%; height: auto; }
+ </style>
+ <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!-- ===== standard shell / 标准外壳 ===== -->
+        <header class="inkshell-bar">
+            <div class="inkshell-logo" aria-hidden="true"></div>
+            <div class="inkshell-title" id="inkshell-title">InkShell</div>
+            <div class="inkshell-spacer"></div>
 
-    <link rel="stylesheet" href="style.css">
-	
-    <script type="text/javascript" src="ink.js"></script>
-    <script type="text/javascript" src="calico.js"></script>
-	<script type="module" src="project.js"></script>
-</head>
+            <!-- hamburger (small screens) / 汉堡键（小屏） -->
+            <button class="inkshell-btn inkshell-burger" id="inkshell-burger" aria-label="菜单" aria-expanded="false">≡</button>
 
-<body>
-    <div id="container">
-        <div id="toolbar">
-            <div id="toolbar-left">
-                <a href="https://kk-l.com" target="_blank" id="logo-link">
-                    <img src="./logo.png" alt="kk-l logo" id="logo-img" />
-                </a>
-                <span id="toolbar-title">自然之神的伪冒祭祀</span>
-            </div>
-            
-            <div id="toolbar-buttons">
-                <a href="#" id="save-btn">保存</a>
-                <a href="#" id="load-btn">读取</a>
-                <a href="#" id="reset-btn">重置</a>
-                <a href="#" id="theme-btn">主题</a>
-            </div> 
-            </div>
-        <div id="story"></div>
-    </div>
-</body>
+            <!-- actions / 功能区 -->
+            <nav class="inkshell-actions" id="inkshell-actions" aria-label="功能">
+                <button class="inkshell-btn" id="inkshell-save" disabled title="占位（待实现）">保存</button>
+                <button class="inkshell-btn" id="inkshell-load" disabled title="占位（待实现）">读取</button>
+                <button class="inkshell-btn" id="inkshell-reset" disabled title="占位（待实现）">重置</button>
+                <button class="inkshell-btn" id="inkshell-theme" hidden>主题</button>
+            </nav>
+        </header>
+
+        <!-- ===== story ===== -->
+        <div id="story-root"></div>
+
+        <!-- 1. inkjs runtime (must load before inkshell.js / 必须在 inkshell.js 之前加载) -->
+        <script src="ink.js"></script>
+
+        <!-- 2. InkShell engine + built-in plugins / InkShell 引擎 + 内建插件 -->
+        <script src="inkshell.js"></script>
+
+        <!-- 3. Theme JS (loaded AFTER engine so it can use InkShell / InkShellPlugins
+             at top level. Defines window.beforeStart(player), called by the boot
+             script AFTER plugins are installed but BEFORE player.start().
+             build.sh ensures this file always exists — empty = no overrides.
+             在引擎之后加载，顶层可直接使用 InkShell / InkShellPlugins。
+             定义 window.beforeStart(player)，由启动脚本在插件安装后、
+             player.start() 之前调用。build.sh 确保此文件始终存在——空文件 = 无覆盖。) -->
+        <script src="theme.js"></script>
+
+        <!-- 4. Story data (CORS-free: <script> is not subject to fetch restrictions / 绕过 CORS：script 标签不受 fetch 限制) -->
+        <script src="story.js"></script>
+
+        <!-- 5. Boot / 启动 -->
+        <script>
+            (function () {
+                "use strict";
+
+                var container = document.getElementById("story-root");
+
+                var data = window.storyContent;
+                if (!data) {
+                    container.textContent =
+                        "Error: story.js not found or storyContent not defined. " +
+                        "Export your Ink story from Inky (File → Export story.js) " +
+                        "and place it in this folder, overwriting story.js.";
+                    return;
+                }
+
+                var player = new InkShell({
+                    container: container,
+                    inkJson: data,
+                });
+
+                // Required plugins (Inky official conventions) / 必备插件（Inky 官方约定）
+                player.install(new InkShellPlugins.DomRenderer());
+                player.install(new InkShellPlugins.Clear());
+                player.install(new InkShellPlugins.Class());
+                player.install(new InkShellPlugins.Image());
+                player.install(new InkShellPlugins.Restart());
+                player.install(new InkShellPlugins.Link());
+                player.install(new InkShellPlugins.LinkOpen());
+
+                // Optional plugins (InkShell extensions) / 可选插件（InkShell 扩展）
+                player.install(new InkShellPlugins.InputText());
+                player.install(new InkShellPlugins.InputNumber());
+                player.install(new InkShellPlugins.Background());
+                player.install(new InkShellPlugins.Audio());
+ player.install(new InkShellPlugins.Load());
+ player.install(new InkShellPlugins.Save());
+
+ // Page chrome: title / reset / theme switch / hamburger.
+ // Install LAST so the title listener is in place before start().
+ // 页面外壳：标题 / 重置 / 主题切换 / 汉堡菜单。最后装，
+ // 确保 tag:title 监听器在 start() 之前就位。
+ player.install(new InkShellPlugins.Title());
+ player.install(new InkShellPlugins.Reset());
+ player.install(new InkShellPlugins.Theme());
+
+ // Expose player globally so theme.js can use it.
+ // 暴露 player 到全局，供 theme.js 使用。
+ window.player = player;
+
+ // Theme JS hook: if theme.js defined window.beforeStart,
+ // call it now so the theme can register listeners before start().
+ // 主题 JS 钩子：如果 theme.js 定义了 window.beforeStart，
+ // 现在调用它，让主题在 start() 之前注册监听器。
+ if (typeof window.beforeStart === "function") {
+ window.beforeStart(player);
+ }
+
+ player.start();
+            })();
+        </script>
+    </body>
 </html>
