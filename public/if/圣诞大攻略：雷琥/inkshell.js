@@ -83,6 +83,9 @@ var __inkshell_entry__ = (() => {
       this._cumulativeText = "";
       this._listenerOrder = 0;
       this._currentInstallPriority = 0;
+      this._epoch = 0;
+      this._endedFired = false;
+      this._lastVarValues = {};
       const inkjs = window.inkjs;
       this._story = new inkjs.Story(config.inkJson);
       this._installVariableObserver();
@@ -143,6 +146,9 @@ var __inkshell_entry__ = (() => {
         console.error("InkShell: error restarting story:", e);
         return;
       }
+      this._epoch++;
+      this._endedFired = false;
+      this._lastVarValues = {};
       this._content = null;
       this._cumulativeText = "";
       this.emit("story:restart", {});
@@ -164,6 +170,7 @@ var __inkshell_entry__ = (() => {
       this._container = null;
       this._content = null;
       this._cumulativeText = "";
+      this._epoch++;
     }
     // ---- story progression / 故事推进 ----
     continue() {
@@ -172,6 +179,7 @@ var __inkshell_entry__ = (() => {
         const story = this._story;
         const parsedTags = [];
         const turnText = [];
+        const epoch = this._epoch;
         while (story.canContinue) {
           turnText.push(story.Continue());
           const rawTags = story.currentTags || [];
@@ -182,6 +190,7 @@ var __inkshell_entry__ = (() => {
             this.emit("tag:" + tag.name, tag);
             if (tag.name === "clear") cleared = true;
           }
+          if (this._epoch !== epoch) return;
           if (cleared) {
             turnText.splice(0, turnText.length - 1);
             this._cumulativeText = "";
@@ -203,7 +212,12 @@ var __inkshell_entry__ = (() => {
           path: story.state && story.state.currentPathString || null
         };
         if (!story.canContinue && story.currentChoices && story.currentChoices.length === 0) {
-          this.emit("story:ended", {});
+          if (!this._endedFired) {
+            this._endedFired = true;
+            this.emit("story:ended", {});
+          }
+        } else {
+          this._endedFired = false;
         }
         this.emit("story:content", this._content);
         this.emit("story:turnComplete", this._content);
@@ -234,15 +248,35 @@ var __inkshell_entry__ = (() => {
       if (!story.state) return null;
       return story.state.ToJson();
     }
+    /**
+     * Restore a saved state. Returns true on success; false (and a
+     * story:error event) when the JSON is corrupt or from an incompatible
+     * story version — in that case the current story keeps running and the
+     * DOM is left untouched.
+     * 恢复存档状态。成功返回 true；JSON 损坏或来自不兼容的故事版本时
+     * 返回 false（并发出 story:error）——此时当前故事继续运行，DOM 不变。
+     */
     load(jsonStr) {
-      if (!this._story) return;
+      if (!this._story) return false;
       const story = this._story;
-      if (!story.state) return;
-      story.state.LoadJson(jsonStr);
+      if (!story.state) return false;
+      try {
+        story.state.LoadJson(jsonStr);
+      } catch (e) {
+        this.emit("story:error", {
+          message: e.message,
+          error: e
+        });
+        return false;
+      }
+      this._epoch++;
+      this._endedFired = false;
+      this._lastVarValues = {};
       this._content = null;
       this._cumulativeText = "";
       this.emit("story:load", {});
       this.continue();
+      return true;
     }
     // ---- read-only state / 只读状态 ----
     get canContinue() {
@@ -271,7 +305,10 @@ var __inkshell_entry__ = (() => {
     getTurnCount() {
       if (!this._story) return 0;
       try {
-        return this._story.state?.currentTurnIndex ?? 0;
+        return Math.max(
+          0,
+          this._story.state?.currentTurnIndex ?? 0
+        );
       } catch {
         return 0;
       }
@@ -288,7 +325,6 @@ var __inkshell_entry__ = (() => {
       const story = this._story;
       if (!story.variablesState) return;
       story.variablesState[name] = value;
-      this.emit("story:variableChanged", { name, value });
     }
     /**
      * Subscribe to inkjs global variable changes so that assignments
@@ -307,7 +343,13 @@ var __inkshell_entry__ = (() => {
       try {
         story.state.variablesState.ObserveVariableChange(
           (name, value) => {
-            this.emit("story:variableChanged", { name, value });
+            let v = value;
+            if (v && typeof v === "object" && "valueObject" in v) {
+              v = v.valueObject;
+            }
+            if (this._lastVarValues[name] === v) return;
+            this._lastVarValues[name] = v;
+            this.emit("story:variableChanged", { name, value: v });
           }
         );
       } catch (e) {
@@ -688,7 +730,7 @@ var __inkshell_entry__ = (() => {
 
   // src/plugins/__image.ts
   var SIZE_CACHE_KEY = "inkshell_imgsize";
-  var Image = class _Image {
+  var Image = class {
     constructor() {
       this.id = "image";
       this.version = "1.1.0";
@@ -800,7 +842,7 @@ var __inkshell_entry__ = (() => {
       this._collectUrls(data, urls);
       for (const src of urls) {
         if (this._sizes[src]) continue;
-        const probe = new _Image();
+        const probe = document.createElement("img");
         this._sizeImg(probe, src);
         probe.src = src;
       }
@@ -1059,11 +1101,12 @@ var __inkshell_entry__ = (() => {
     try {
       const root = json.root;
       if (Array.isArray(root) && Array.isArray(root[0])) {
+        const items = root[0];
         let id = "";
         let title = "";
-        for (const item of root[0]) {
-          if (Array.isArray(item) && item[0] === "#" && item[2] === "/#") {
-            const tagVal = String(item[1] || "").replace(/^\^/, "");
+        for (let i = 0; i < items.length; i++) {
+          if (items[i] === "#" && typeof items[i + 1] === "string" && items[i + 2] === "/#") {
+            const tagVal = String(items[i + 1]).replace(/^\^/, "");
             if (!id) {
               const m = tagVal.match(/^id:\s*(.+)$/i);
               if (m) id = m[1].trim();
@@ -1072,6 +1115,7 @@ var __inkshell_entry__ = (() => {
               const m = tagVal.match(/^title:\s*(.+)$/i);
               if (m) title = m[1].trim();
             }
+            i += 2;
           }
         }
         if (id) return id;
@@ -1194,7 +1238,7 @@ var __inkshell_entry__ = (() => {
     save(slot = 0) {
       const player = this._player;
       if (!player) return null;
-      if (slot < 0 || slot > this._slotCount) return null;
+      if (!Number.isInteger(slot) || slot < 0 || slot > this._slotCount) return null;
       const state = player.save();
       if (!state) return null;
       const info = {
@@ -1211,7 +1255,7 @@ var __inkshell_entry__ = (() => {
     /** Clear a slot. Returns true if there was a save to remove. */
     /** 清除一个槽。若原本有存档返回 true。 */
     remove(slot) {
-      if (slot < 0 || slot > this._slotCount) return false;
+      if (!Number.isInteger(slot) || slot < 0 || slot > this._slotCount) return false;
       const existed = getSlot(slot) !== null;
       removeSlot(slot);
       if (this._player) this._player.emit("save:removed", { slot });
@@ -1297,7 +1341,7 @@ var __inkshell_entry__ = (() => {
       if (!player) return false;
       const info = getSlot(slot);
       if (!info) return false;
-      player.load(info.state);
+      if (player.load(info.state) === false) return false;
       this._restoreHtml(info.html);
       player.emit("save:loaded", { slot, info });
       return true;
@@ -1332,6 +1376,7 @@ var __inkshell_entry__ = (() => {
      */
     importSave(slot, file) {
       const player = this._player;
+      if (!Number.isInteger(slot) || slot < 0 || slot > MAX_SLOT) return;
       const doImport = (f) => {
         const reader = new FileReader();
         reader.onload = () => {

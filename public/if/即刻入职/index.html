@@ -2,7 +2,8 @@
 <!--
   InkShell — Index Template / 首页模板（含标准外壳）
   --------------------------------------------------
-  顶部菜单栏（logo 位 / 标题 / 保存·读取·重置·主题）由引擎的 Shell 插件驱动。
+  顶部菜单栏（logo 位 / 标题 / 保存·读取·重置·主题）的 HTML 在此定义，
+  按钮功能由 Title / Reset / Theme 插件 + 主题的 theme.js 激活。
   主题只需写 style.css：给 .inkshell-bar / .inkshell-btn 等定样式，
   并（可选）用 body { --themes: ...; } 声明配色清单来开启主题切换按钮。
   此文件由 build.sh 同步到所有主题；不要在主题里直接改它，深度定制请复制出去。

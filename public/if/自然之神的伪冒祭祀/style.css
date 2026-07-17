@@ -21,6 +21,16 @@ body {
   /* 主题切换统一过渡时长——所有换色元素共用，保证同步 */
   --theme-duration: 0.2s;
   --theme-ease: ease;
+
+  /* ---- 段落淡入淡出参数（theme.js 读取） ---- */
+  --fade-in-duration: 600ms; /* 段淡入时间（主题内共用：模态框遮罩同用） */
+  --fade-in-stagger: 200ms;  /* 段开始淡入间隔（第 N 段延迟 N×此值） */
+  --fade-out-duration: 100ms;/* # CLEAR 时段淡出时间 */
+  --fade-out-stagger: 100ms; /* 段开始淡出间隔（逐段"唰～"消除） */
+  --fade-wait-exit: 1;       /* 1 = 等淡出结束后再开始淡入；0 = 交叉淡变 */
+
+  /* 段距附加量：段距 = 行距 1lh + 此值（0.5lh 时段距 = 1.5×行距） */
+  --para-gap: 0.5lh;
 }
 
 /* ---- 黑 / dark ---- */
@@ -163,6 +173,60 @@ body {
  font-family: "SymbolsNerdFont", "SarasaMonoSC", "Courier New", "Menlo", monospace;
 }
 
+/* Paragraph gap INSIDE a passage / 段落内部的段距
+   One .inkshell-passage holds a whole turn's text; the author's
+   "paragraphs" are the \n-separated ink lines inside it, so margins
+   on .inkshell-passage can't space them. theme.js replaces each
+   interior \n with a block-level .ks-pgap span:
+     paragraph gap = 1lh (the line break) + --para-gap (this span)
+   Wrapped lines still break at 1lh. --para-gap = 1lh → 段距 = 2×行距.
+   一个 .inkshell-passage 装着整回合文本；作者的"段"是其中
+   以 \n 分隔的 ink 行，给 .inkshell-passage 加外边距根本够不着。
+   theme.js 把段落内部的 \n 换成块级 .ks-pgap：
+     段距 = 换行 1lh + --para-gap（本元素高度）
+   折叠产生的行仍是 1lh。--para-gap = 1lh 时段距 = 2×行距。 */
+.ks-pgap { display: block; height: var(--para-gap, 1lh); }
+
+/* One paragraph (one ink source line) wrapped by theme.js — the unit
+   the fade system sequences ("一段接一段"). Block display only;
+   rendering identical to the anonymous blocks that were there before.
+   一个段（一行 ink 源码），由 theme.js 包裹——淡入淡出系统
+   按此逐段调度（"一段接一段"）。仅 block 显示，
+   与原先的匿名块渲染一致。 */
+.ks-pline { display: block; }
+
+/* Standalone #IMAGE images: block display drops the inline strut that
+   added stray pixels below; margins follow the paragraph rhythm.
+   独立 #IMAGE 图片：block 显示去掉图片下方内联支柱的多余像素；
+   上下边距跟随段距节奏。 */
+.inkshell-image { display: block; margin: var(--para-gap, 1lh) 0 1lh; }
+
+/* ---- segment fade in/out / 段落淡入淡出 ----
+   One "segment" = a passage div, a standalone #IMAGE image, or the
+   choices block (top-level children of #story-root). Opacity-only:
+   layout never shifts, so story:turnComplete scroll math stays correct.
+   一个"段" = 一个段落 div / 一张独立 #IMAGE 图片 / 选项块
+   （#story-root 的顶层子元素）。仅透明度动画：布局不变，
+   story:turnComplete 的滚动计算始终正确。
+   theme.js drives everything: [data-new] + unseen images get .ks-enter
+   (opacity 0, no transition) → reflow → release with per-segment delay.
+   On dom:clear, clones of the old segments fade out in .ks-exit-layer.
+   全部由 theme.js 驱动：新段钉 .ks-enter → 回流 → 按段间隔释放。
+   dom:clear 时旧段克隆进 .ks-exit-layer 淡出。 */
+.inkshell-passage, .inkshell-choices, .inkshell-image, .ks-pline {
+  opacity: 1;
+  transition: opacity var(--fade-in-duration, 300ms) ease;
+}
+.ks-enter { opacity: 0; transition: none; }
+
+.ks-exit-layer { position: fixed; inset: 0; pointer-events: none; z-index: 900; }
+.ks-exit { opacity: 1; transition: opacity var(--fade-out-duration, 300ms) ease; }
+.ks-exit.go { opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .inkshell-passage, .inkshell-choices, .inkshell-image, .ks-pline { transition: none; }
+}
+
 .inkshell-choices {
   display: flex; flex-direction: column; gap: 10px;
   margin-top: 28px; padding-top: 20px;
@@ -228,7 +292,7 @@ body {
   display: flex; align-items: center; justify-content: center;
   background: rgba(0, 0, 0, 0.55);
   padding: 20px; z-index: 1000;
-  animation: ks-fade 0.15s ease;
+  animation: ks-fade var(--fade-in-duration, 200ms) ease;
 }
 @keyframes ks-fade { from { opacity: 0; } to { opacity: 1; } }
 
@@ -274,6 +338,21 @@ body {
   font-size: 14px; margin-top: 2px;
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
+
+/* ---- per-row import/export ops / 槽行导入导出操作 ---- */
+.ks-slot--has-ops { grid-template-columns: 40px 1fr auto; }
+.ks-slot-ops { display: flex; gap: 6px; }
+.ks-op {
+  padding: 4px 10px; border-radius: 4px; cursor: pointer;
+  font: inherit; font-size: 12px;
+  border: 1px solid var(--border); background: transparent; color: var(--muted);
+  transition: background-color var(--theme-duration) var(--theme-ease),
+              color var(--theme-duration) var(--theme-ease);
+}
+.ks-op:hover { color: var(--fg); background: var(--choice-bg-hover); }
+.ks-slot--empty { opacity: 0.55; cursor: default; }
+.ks-slot--empty:hover { background: var(--choice-bg); }
+.ks-hint { font-size: 12px; color: var(--muted); line-height: 1.6; margin-top: 14px; }
 
 .ks-divider { height: 1px; background: var(--border); margin: 12px 0; }
 

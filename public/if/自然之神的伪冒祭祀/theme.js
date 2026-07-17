@@ -43,6 +43,302 @@ window.beforeStart = function (player) {
   var justRestarted = false;
   player.on("story:restart", function () { justRestarted = true; });
 
+  // ---- Paragraph gaps inside passages / 段落内部的段距 ----
+  // One .inkshell-passage holds a whole turn's text; the author's
+  // "paragraphs" are the \n-separated ink lines INSIDE it. Margins on
+  // .inkshell-passage therefore can't space them. Instead, every
+  // interior \n is replaced with a block-level .ks-pgap span whose
+  // height is --para-gap: paragraph gap = 1lh + --para-gap, while
+  // wrapped lines still break at 1lh.
+  // 一个 .inkshell-passage 装着整回合文本；作者的"段"是其中
+  // 以 \n 分隔的 ink 行——外边距够不着它们。改为把段落内部的
+  // 每个 \n 换成高 --para-gap 的块级 .ks-pgap：
+  // 段距 = 1lh + --para-gap，折叠行仍只有 1lh。
+  // Trailing \n is kept as-is (it provides the 1lh after the passage).
+  // 结尾 \n 原样保留（提供段落后方的 1lh 空隙）。
+  player.on("dom:passage", function (data) {
+    var passage = data && data.element;
+    if (!passage) return;
+
+    // Collect text nodes first (never mutate while walking).
+    var walker = document.createTreeWalker(passage, NodeFilter.SHOW_TEXT);
+    var nodes = [];
+    var node;
+    while ((node = walker.nextNode())) nodes.push(node);
+
+    // hasAfter[i] = any visible text exists in nodes AFTER nodes[i].
+    // 反向预扫描：nodes[i] 之后是否还有可见文字。
+    var hasAfter = new Array(nodes.length);
+    var after = false;
+    for (var i = nodes.length - 1; i >= 0; i--) {
+      hasAfter[i] = after;
+      if (/\S/.test(nodes[i].nodeValue)) after = true;
+    }
+
+    for (var j = 0; j < nodes.length; j++) {
+      var t = nodes[j];
+      if (t.nodeValue.indexOf("\n") === -1) continue;
+      // Respect preformatted semantics: no gap injection inside code.
+      // 代码块内保留原换行语义，不注入间隔。
+      var pe = t.parentElement;
+      if (pe && pe.closest("pre, code, samp")) continue;
+      var parts = t.nodeValue.split("\n");
+      if (parts.length < 2) continue;
+
+      var frag = document.createDocumentFragment();
+      for (var k = 0; k < parts.length; k++) {
+        if (k > 0) {
+          // Interior break → gap span; trailing break → keep the \n.
+          // 中间换行 → 间隔元素；结尾换行 → 保留 \n。
+          var restHasText = /\S/.test(parts.slice(k).join("")) || hasAfter[j];
+          if (restHasText) {
+            var gap = document.createElement("span");
+            gap.className = "ks-pgap";
+            gap.setAttribute("aria-hidden", "true");
+            frag.appendChild(gap);
+          } else {
+            frag.appendChild(document.createTextNode("\n"));
+          }
+        }
+        if (parts[k]) frag.appendChild(document.createTextNode(parts[k]));
+      }
+      t.parentNode.replaceChild(frag, t);
+    }
+
+    // ---- wrap each paragraph in a .ks-pline block / 把每个段包进 .ks-pline ----
+    // .ks-pgap spans are the paragraph separators; everything between two
+    // of them forms one paragraph. Wrapping gives the fade system a
+    // per-paragraph handle ("一段接一段") without changing rendering —
+    // the paragraphs were already anonymous blocks between the pgap spans.
+    // .ks-pgap 是段间分隔；两个 pgap 之间即一个段。包裹后淡入淡出
+    // 系统就能以段为单位调度（"一段接一段"），渲染不变——
+    // 这些段本来就是 pgap 之间的匿名块。
+    var out = document.createDocumentFragment();
+    var current = [];
+    var flush = function () {
+      if (!current.length) return;
+      var hasContent = false;
+      for (var i = 0; i < current.length; i++) {
+        var n = current[i];
+        if (n.nodeType === 1 || /\S/.test(n.nodeValue || "")) { hasContent = true; break; }
+      }
+      if (!hasContent) {
+        // Whitespace-only run: keep it unwrapped (harmless as-is).
+        // 纯空白片段：原样放回，不包。
+        for (var k = 0; k < current.length; k++) out.appendChild(current[k]);
+        current = [];
+        return;
+      }
+      var span = document.createElement("span");
+      span.className = "ks-pline";
+      for (var m = 0; m < current.length; m++) span.appendChild(current[m]);
+      out.appendChild(span);
+      current = [];
+    };
+    var kids = passage.childNodes;
+    while (kids.length) {
+      var kid = kids[0];
+      if (kid.nodeType === 1 && kid.classList.contains("ks-pgap")) {
+        flush();
+        out.appendChild(kid); // pgap stays between plines / pgap 留在段之间
+      } else {
+        // Detach into the current group (childNodes is live — must remove).
+        // 移入当前分组（childNodes 是活集合，必须显式移除）。
+        passage.removeChild(kid);
+        current.push(kid);
+      }
+    }
+    flush();
+    passage.appendChild(out);
+  });
+
+  // ---- Segment fade in/out / 段落淡入淡出 ----
+  // One "segment" = a passage div, a standalone #IMAGE image, or the
+  // choices block — top-level children of the story container, so plain
+  // iteration over container.children gives document order for free.
+  // 一个"段" = 一个段落 div / 一张独立 #IMAGE 图片 / 选项块——都是
+  // 故事容器的顶层子元素，直接遍历 container.children 即得文档顺序。
+  //
+  // All four timings are CSS variables on body (see style.css), read here:
+  // 四个时间参数都是 body 上的 CSS 变量（见 style.css），在此读取：
+  //   --fade-in-duration   段落淡入时间
+  //   --fade-in-stagger    段落开始淡入间隔
+  //   --fade-out-duration  # CLEAR 时段落淡出时间
+  //   --fade-out-stagger   段落开始淡出间隔
+  function cssSec(name, fallback) {
+    var raw = window.getComputedStyle(document.body).getPropertyValue(name).trim();
+    if (!raw) return fallback;
+    var n = parseFloat(raw);
+    if (!isFinite(n)) return fallback;
+    return raw.slice(-2) === "ms" ? n / 1000 : n;
+  }
+
+  var reducedMotion = !!(window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+
+  // Milliseconds the next fade-in must wait for an in-progress fade-out
+  // (0 = crossfade immediately). Set by the dom:clear handler when
+  // --fade-wait-exit is on, consumed by the story:turnComplete handler.
+  // 下一次淡入需要等待进行中的淡出结束的毫秒数（0 = 立即交叉淡变）。
+  // --fade-wait-exit 开启时由 dom:clear 处理器设置，
+  // 由 story:turnComplete 处理器消费。
+  var pendingExitMs = 0;
+
+  // ---- fade-in: release new paragraphs one stagger apart / 淡入：逐段释放 ----
+  // Segment model: a passage with .ks-pline children fades PER PARAGRAPH
+  // ("一段接一段"); a passage without plines, a standalone image, or the
+  // choices block each count as one segment.
+  // 段模型：含 .ks-pline 的回合段按"段"逐个淡入（"一段接一段"）；
+  // 无 pline 的回合段、独立图片、选项块各算一个段。
+  player.on("story:turnComplete", function () {
+    var container = player.container;
+    if (!container) return;
+    var fresh = [];
+    for (var i = 0; i < container.children.length; i++) {
+      var el = container.children[i];
+      if (el.hasAttribute("data-new")) {
+        el.removeAttribute("data-new");
+        if (el.classList.contains("inkshell-passage")) {
+          var plines = el.querySelectorAll(":scope > .ks-pline");
+          if (plines.length) {
+            for (var p = 0; p < plines.length; p++) fresh.push(plines[p]);
+          } else {
+            fresh.push(el);
+          }
+        } else {
+          fresh.push(el); // choices block / 选项块
+        }
+      } else if (
+        el.classList.contains("inkshell-image") &&
+        !el.hasAttribute("data-ks-seen")
+      ) {
+        fresh.push(el);
+      }
+    }
+    // Consume any pending fade-out wait even when nothing fades in, so a
+    // stale value never leaks into a later turn.
+    // 即使本回合没有新段也消费掉等待值，避免滞留到后面的回合。
+    var wait = pendingExitMs / 1000;
+    pendingExitMs = 0;
+    if (!fresh.length) return;
+
+    var stagger = cssSec("--fade-in-stagger", 0.2);
+    var dur = cssSec("--fade-in-duration", 0.6);
+    for (var j = 0; j < fresh.length; j++) {
+      var seg = fresh[j];
+      seg.classList.add("ks-enter"); // opacity 0, no transition
+      // Round to ms — 0.3s-style values produce FP noise like 0.8999…s.
+      // 毫秒取整——0.3s 这类值会产生 0.8999…s 的浮点噪声。
+      seg.style.transitionDelay =
+        Math.round((wait + j * stagger) * 1000) / 1000 + "s";
+      if (seg.classList.contains("inkshell-image")) {
+        seg.setAttribute("data-ks-seen", "");
+      }
+    }
+    // Force reflow: the browser must register opacity:0 before release,
+    // otherwise the transition has nothing to animate from.
+    // 强制回流：浏览器必须先登记 opacity:0，否则过渡没有起点可播。
+    void container.offsetWidth;
+    for (var k = 0; k < fresh.length; k++) {
+      (function (el, idx) {
+        el.classList.remove("ks-enter");
+        // Hygiene: drop the inline delay once the fade has completed, so it
+        // can't leak into any future opacity change of this element.
+        // 卫生：淡入结束后清掉内联 delay，避免渗入该元素未来的透明度变化。
+        var done = false;
+        var clear = function () {
+          if (!done) { done = true; el.style.transitionDelay = ""; }
+        };
+        el.addEventListener("transitionend", clear, { once: true });
+        setTimeout(clear, (wait + idx * stagger + dur) * 1000 + 200);
+      })(fresh[k], k);
+    }
+  });
+
+  // Restored images from a save snapshot must not be mistaken for new
+  // segments on the next turn — mark them seen, never fade them.
+  // 读档快照还原的图片不能在下一回合被误认为新段——标记为已见，永不淡入。
+  player.on("save:loaded", function () {
+    var container = player.container;
+    if (!container) return;
+    var imgs = container.querySelectorAll(".inkshell-image");
+    for (var i = 0; i < imgs.length; i++) imgs[i].setAttribute("data-ks-seen", "");
+  });
+
+  // ---- fade-out on clear / CLEAR 时淡出 ----
+  // The Clear plugin removes old segments synchronously — we can't (and
+  // shouldn't) delay that. Instead we clone the doomed segments into a
+  // viewport-fixed overlay at their exact on-screen positions and fade
+  // the clones, while the real nodes vanish and new segments fade in
+  // underneath: a crossfade with zero layout/scroll side effects.
+  // Clear 插件同步移除旧段——我们不能（也不该）拖延它。改为把将死的段
+  // 克隆到视口固定覆盖层的原屏幕位置上淡出；真实节点消失、新段在
+  // 下方淡入：零布局/滚动副作用的交叉淡变。
+  // Priority 75: MUST run before the Image plugin's dom:clear cleanup
+  // (priority 50), which removes tracked images — otherwise the doomed
+  // images are already gone when we collect segments for the exit clones.
+  // 优先级 75：必须先于 Image 插件的 dom:clear 清理（优先级 50）运行——
+  // 它会移除受追踪的图片，否则收集淡出段时图片已被抢先删掉。
+  player.on("dom:clear", function () {
+    if (reducedMotion) return;
+    var container = player.container;
+    if (!container) return;
+    // Same segment model as fade-in: pline-level when available, so the
+    // exit sweeps paragraph by paragraph ("从一端到一端").
+    // 与淡入同一套段模型：有 pline 按段逐个消失（"从一端到一端"）。
+    var segments = [];
+    for (var i = 0; i < container.children.length; i++) {
+      var el = container.children[i];
+      if (el.classList.contains("inkshell-passage")) {
+        var plines = el.querySelectorAll(":scope > .ks-pline");
+        if (plines.length) {
+          for (var p = 0; p < plines.length; p++) segments.push(plines[p]);
+        } else {
+          segments.push(el);
+        }
+      } else if (el.matches(".inkshell-image, .inkshell-choices")) {
+        segments.push(el);
+      }
+    }
+    if (!segments.length) return;
+    var dur = cssSec("--fade-out-duration", 0.1);
+    var stagger = cssSec("--fade-out-stagger", 0.1);
+    if (dur <= 0) return;
+
+    // --fade-wait-exit: tell the upcoming fade-in to hold until this
+    // fade-out finishes. Consumed (and reset) at story:turnComplete.
+    // --fade-wait-exit：让随后的淡入等到本次淡出结束再开始。
+    // 在 story:turnComplete 消费（并归零）。
+    if (cssSec("--fade-wait-exit", 1) > 0) {
+      pendingExitMs = Math.round((dur + stagger * (segments.length - 1)) * 1000);
+    }
+
+    var overlay = document.createElement("div");
+    overlay.className = "ks-exit-layer";
+    for (var j = 0; j < segments.length; j++) {
+      var rect = segments[j].getBoundingClientRect();
+      var clone = segments[j].cloneNode(true);
+      clone.removeAttribute("data-new");
+      clone.classList.remove("ks-enter");
+      clone.classList.add("ks-exit");
+      clone.style.position = "fixed";
+      clone.style.left = rect.left + "px";
+      clone.style.top = rect.top + "px";
+      clone.style.width = rect.width + "px";
+      clone.style.margin = "0";
+      clone.style.transitionDelay = Math.round(j * stagger * 1000) / 1000 + "s";
+      overlay.appendChild(clone);
+    }
+    document.body.appendChild(overlay);
+    void overlay.offsetWidth; // register initial state / 登记初始状态
+    var exits = overlay.querySelectorAll(".ks-exit");
+    for (var k = 0; k < exits.length; k++) exits[k].classList.add("go");
+    var total = (dur + stagger * (segments.length - 1)) * 1000 + 100;
+    setTimeout(function () {
+      if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+    }, total);
+  }, 75);
+
   // ---- Auto-scroll: new passage scrolls into view / 自动滚动 ----
   // story:turnComplete fires AFTER all synchronous story:content handlers
   // have run (DomRenderer creates passages, Image inserts #IMAGE images),
@@ -122,12 +418,12 @@ window.beforeStart = function (player) {
 
   // ============================================================
   //  Save / Load / Reset UI / 存档 · 读档 · 重置
-  //  Built on the window.InkShellSave API exposed by the Save & Load
-  //  plugins. The Reset button is cloned to drop the built-in Reset
-  //  plugin's window.confirm handler so we can use our own dialog.
-  //  基于 Save / Load 插件暴露的 window.InkShellSave API。
-  //  重置按钮用克隆替换，丢弃内建 Reset 插件的 window.confirm，
-  //  改用我们自己的对话框。
+  //  Built on the window.InkShellSave / window.InkShellReset APIs
+  //  exposed by the Save / Load / Reset plugins. Core renders no UI —
+  //  the dialogs below are entirely theme-owned.
+  //  基于 Save / Load / Reset 插件暴露的 window.InkShellSave /
+  //  window.InkShellReset API。core 不渲染任何 UI ——
+  //  下方对话框完全由主题搭建。
   // ============================================================
 
   var OVERWRITE_KEY = "inkshell_overwrite_noconfirm";
@@ -236,27 +532,67 @@ window.beforeStart = function (player) {
   }
 
   // ---- one slot row / 单个存档槽行 ----
+  // The row is a div[role=button], not a <button> — nested <button> ops
+  // (导出/导入) inside a <button> row would be invalid HTML.
   // forSave=true: empty slots clickable (save into them).
-  // forSave=false: empty slots disabled (can't load nothing).
-  // forSave=true：空槽可点（存入）；false：空槽禁用（无法读取）。
+  // forSave=false: empty slots become import targets (import a .json into them).
+  // 行元素用 div[role=button] 而非 <button> —— <button> 行里嵌套
+  // 操作钮（导出/导入）是非法 HTML。
+  // forSave=true：空槽可点（存入）；false：空槽作为导入目标（导入 .json 到该槽）。
   function slotRow(num, info, forSave) {
-    var btn = el("button", "ks-slot");
+    var btn = el("div", "ks-slot");
+    btn.setAttribute("role", "button");
+    btn.tabIndex = 0;
     btn.appendChild(el("span", "ks-slot-num", String(num)));
     var main = el("div", "ks-slot-main");
     if (info) {
       main.appendChild(el("div", "ks-slot-time", fmtTime(info.timestamp)));
       main.appendChild(el("div", "ks-slot-preview", info.preview || "（无预览）"));
     } else {
-      main.appendChild(el("div", "ks-slot-time", forSave ? "空槽位" : "（无存档）"));
-      if (!forSave) btn.disabled = true;
+      main.appendChild(el("div", "ks-slot-time", forSave ? "空槽位" : "空槽位（可导入存档）"));
+      if (!forSave) btn.classList.add("ks-slot--empty");
     }
     btn.appendChild(main);
     return btn;
   }
 
+  // Enter / Space activate div[role=button] rows (real <button> gets this free).
+  // Enter / Space 激活 div[role=button] 行（真 <button> 自带此行为）。
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    var t = e.target;
+    if (t && t.classList && t.classList.contains("ks-slot")) {
+      e.preventDefault();
+      t.click();
+    }
+  });
+
+  // ---- small per-row op button (export / import) / 槽行小操作钮（导出/导入） ----
+  // stopPropagation so the row's own click (save/load) never fires.
+  // stopPropagation 防止触发整行自身的点击（存档/读档）。
+  function addOp(row, label, title, onClick) {
+    var ops = row.querySelector(".ks-slot-ops");
+    if (!ops) {
+      ops = el("div", "ks-slot-ops");
+      row.classList.add("ks-slot--has-ops");
+      row.appendChild(ops);
+    }
+    var b = el("button", "ks-op", label);
+    b.type = "button";
+    if (title) b.title = title;
+    b.addEventListener("click", function (e) {
+      e.stopPropagation();
+      onClick();
+    });
+    ops.appendChild(b);
+    return b;
+  }
+
   // ---- auto-save slot row (numbered "自" / 自动存档行（标记"自"）） ----
   function autoRow(info) {
-    var btn = el("button", "ks-slot");
+    var btn = el("div", "ks-slot");
+    btn.setAttribute("role", "button");
+    btn.tabIndex = 0;
     btn.appendChild(el("span", "ks-slot-num", "自"));
     var main = el("div", "ks-slot-main");
     if (info) {
@@ -264,7 +600,7 @@ window.beforeStart = function (player) {
       main.appendChild(el("div", "ks-slot-preview", info.preview || "（无预览）"));
     } else {
       main.appendChild(el("div", "ks-slot-time", "自动存档（空）"));
-      btn.disabled = true;
+      btn.classList.add("ks-slot--empty");
     }
     btn.appendChild(main);
     return btn;
@@ -300,6 +636,13 @@ window.beforeStart = function (player) {
             });
           }
         });
+        // Occupied slots can be exported to a .json backup right from here.
+        // 已占用的槽位可以直接从这里导出为 .json 备份。
+        if (info) {
+          addOp(row, "导出", "导出为 .json 文件", function () {
+            saveApi.exportSave(n);
+          });
+        }
         m.body.appendChild(row);
       })(i, slots[i]);
     }
@@ -314,16 +657,43 @@ window.beforeStart = function (player) {
   }
 
   // ---- Load dialog / 读档对话框（槽 0 + 分割线 + 1–9） ----
+  // Occupied rows get an 导出 op; empty rows get an 导入 op (file picker).
+  // After an import completes the dialog refreshes so the new save shows up.
+  // 占用行带「导出」；空行带「导入」（弹文件选择器）。
+  // 导入完成后对话框自动刷新，让新存档出现。
+  var loadModal = null; // currently open load dialog / 当前打开的读档对话框
+
+  player.on("save:imported", function () {
+    if (loadModal) {
+      loadModal.close();
+      openLoad(window.InkShellSave);
+    }
+  });
+
   function openLoad(saveApi) {
     var slots = saveApi.getSlots();
     var m = openModal("读取存档");
+    // Track the open dialog so save:imported can refresh it; unwrap on close.
+    // 跟踪打开的对话框以便 save:imported 刷新；关闭时解除跟踪。
+    loadModal = m;
+    var origClose = m.close;
+    m.close = function () {
+      if (loadModal === m) loadModal = null;
+      origClose();
+    };
 
     var aRow = autoRow(slots[0]);
     aRow.addEventListener("click", function () {
+      if (!slots[0]) return;
       saveApi.load(0);
       m.close();
       scrollToEnd();
     });
+    if (slots[0]) {
+      addOp(aRow, "导出", "导出为 .json 文件", function () {
+        saveApi.exportSave(0);
+      });
+    }
     m.body.appendChild(aRow);
 
     m.body.appendChild(el("div", "ks-divider"));
@@ -337,10 +707,28 @@ window.beforeStart = function (player) {
             m.close();
             scrollToEnd();
           });
+          addOp(row, "导出", "导出为 .json 文件", function () {
+            saveApi.exportSave(n);
+          });
+        } else {
+          // Empty slot → import target. importSave() pops a file picker;
+          // the save:imported listener above refreshes this dialog.
+          // 空槽 → 导入目标。importSave() 弹文件选择器；
+          // 上方 save:imported 监听器负责刷新本对话框。
+          addOp(row, "导入", "从 .json 文件导入到此槽", function () {
+            saveApi.importSave(n);
+          });
         }
         m.body.appendChild(row);
       })(i, slots[i]);
     }
+
+    // Persistence warning / 持久性提示
+    m.body.appendChild(el(
+      "div",
+      "ks-hint",
+      "存档保存在浏览器中：清理浏览器的「Cookie 和网站数据」会将其删除。重要进度请用「导出」备份为文件。"
+    ));
   }
 
   // ---- Reset dialog / 重置对话框（两选项） ----
