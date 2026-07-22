@@ -11,10 +11,14 @@
             "id": "c557edb0f82d5f1a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "posts/zh/tutorials/asio-while-remoting-desktop.md",
+                "mode": "preview",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "asio-while-remoting-desktop"
             }
           }
         ]
@@ -49,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "kontakt",
+                "query": "Stream",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -70,7 +74,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -178,6 +183,7 @@
   },
   "active": "c557edb0f82d5f1a",
   "lastOpenFiles": [
+    "posts/zh/tutorials/rearoute-asio-to-obs-with-reaper.md",
     "posts/zh/__drafts/inkshell.md",
     "posts/zh/tutorials/kontakt__how-to-upgrade-kontakt-without-losing-configurations.md",
     "posts/zh/links/UTAU_仙人指路.md",
@@ -192,7 +198,6 @@
     "posts/zh/about/nomo-wang.md",
     "posts/zh/tools/reaper__chinese-simplified.reaperlangpack.md",
     "posts/zh/about/ray-lum_inside.md",
-    "posts/zh/tutorials/rearoute-asio-to-obs-with-reaper.md",
     "posts/zh/tutorials/asio-while-remoting-desktop.md",
     "posts/zh/__drafts/hu-dong-xiao-shuo-cai-keng-zhi-nan.md",
     "posts/zh/__drafts/choicescript-zhi-nan.md",

@@ -16,6 +16,7 @@ categories:
 description: 龟软 Windows 的音频部分做的就是一坨……所以斯坦伯格开发了 ASIO 这种音频驱动。 但是由于这个 ASIO 并不经过系统，所以在使用 RDP 进行远程桌面或者使用 OBS 进行直播时，是无法直接接收这些音频的。 仍然有一些方案可以完成 ASIO 串流，比较常见的方案是 ASIO LINK PRO（残废）, 还有那个做的并不怎么样但是是瘸子里面的将军的 VoiceMeeter. 但今...
 lang: zh
 unlisted: false
+heroImage: https://img.cntracker.net/img/b4bb16be7ede3128698d5e4bbb2850eec2bbad5b1803e3fce976367d89ea6a8b.jpg
 ---
 龟软 Windows 的音频部分做的就是一坨……所以斯坦伯格开发了 ASIO 这种音频驱动。
 
