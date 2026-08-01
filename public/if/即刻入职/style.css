@@ -16,7 +16,7 @@
 
 /* ---- 调色板清单：≥2 项时会显示"主题"按钮并循环 ---- */
 body {
-  --themes: black, white, yellow;
+  --themes: black, white, yellow, purple, green;
 
   /* 主题切换统一过渡时长——所有换色元素共用，保证同步 */
   --theme-duration: 0.2s;
@@ -25,8 +25,10 @@ body {
   /* ---- 段落淡入淡出参数（theme.js 读取） ---- */
   --fade-in-duration: 600ms; /* 段淡入时间（主题内共用：模态框遮罩同用） */
   --fade-in-stagger: 200ms;  /* 段开始淡入间隔（第 N 段延迟 N×此值） */
-  --fade-out-duration: 100ms;/* # CLEAR 时段淡出时间 */
-  --fade-out-stagger: 100ms; /* 段开始淡出间隔（逐段"唰～"消除） */
+  --fade-in-ease: ease-in-out; /* 淡入缓动：两端都软，"显形"不突兀 */
+  --fade-out-duration: 200ms;/* # CLEAR 时段淡出时间 */
+  --fade-out-stagger: 50ms;  /* 段开始淡出间隔（逐段"唰～"消除） */
+  --fade-out-ease: ease-in;  /* 淡出缓动：先慢后快，抽离感 */
   --fade-wait-exit: 1;       /* 1 = 等淡出结束后再开始淡入；0 = 交叉淡变 */
 
   /* 段距附加量：段距 = 行距 1lh + 此值（0.5lh 时段距 = 1.5×行距） */
@@ -35,53 +37,87 @@ body {
 
 /* ---- 黑 / dark ---- */
 body[data-theme="black"] {
-  --bg: #141414;
-  --fg: #e8e8e8;
-  --muted: #8a8a8a;
-  --bar-bg: #1c1c1c;
-  --bar-fg: #e8e8e8;
-  --border: #2a2a2a;
-  --hr: #888888;
+  --bg: #0f1114;
+  --fg: #d8dce2;
+  --muted: #8b93a1;
+  --bar-bg: #16191e;
+  --bar-fg: #e2e6ec;
+  --border: #262b33;
+  --hr: #3a4150;
   --accent: #e8e8e8;        /* white on dark / 黑底白 */
   --accent-fg: #141414;
-  --passage-bg: #1a1a1a;
-  --choice-bg: #222;
-  --choice-bg-hover: #2e2e2e;
-  --disabled: #555;
+  --passage-bg: #15181d;
+  --choice-bg: #1b1f26;
+  --choice-bg-hover: #252b35;
+  --disabled: #4a5160;
 }
 
 /* ---- 白 / light ---- */
 body[data-theme="white"] {
-  --bg: #f7f6f2;
-  --fg: #1a1a1a;
-  --muted: #777;
+  --bg: #f2f3f4;
+  --fg: #1c1e21;
+  --muted: #646a71;
   --bar-bg: #ffffff;
-  --bar-fg: #1a1a1a;
-  --border: #e2e0d8;
-  --hr: #AAAAAA;
+  --bar-fg: #1c1e21;
+  --border: #e3e5e7;
+  --hr: #c9ced4;
   --accent: #1a1a1a;        /* black on light / 白底黑 */
   --accent-fg: #ffffff;
   --passage-bg: #ffffff;
-  --choice-bg: #f0eee7;
-  --choice-bg-hover: #e6e3d8;
-  --disabled: #bbb;
+  --choice-bg: #eef0f2;
+  --choice-bg-hover: #e2e6ea;
+  --disabled: #b9bec4;
 }
 
 /* ---- 黄 / reading yellow (warm paper, easy on the eyes) ---- */
 body[data-theme="yellow"] {
-  --bg: #f4ecd6;
-  --fg: #2e2818;
-  --muted: #8a7a55;
-  --bar-bg: #ede2c0;
-  --bar-fg: #2e2818;
-  --border: #ddd0a8;
-  --hr: #ddd0a8;
+  --bg: #f1e5c8;
+  --fg: #332a17;
+  --muted: #75653f;
+  --bar-bg: #e9d9ae;
+  --bar-fg: #332a17;
+  --border: #d8c48f;
+  --hr: #cbb47e;
   --accent: #b8861f;        /* deeper yellow on warm paper / 黄底深黄 */
   --accent-fg: #f4ecd6;
-  --passage-bg: #f8f0da;
-  --choice-bg: #efe4c4;
-  --choice-bg-hover: #e8dab2;
-  --disabled: #b8a878;
+  --passage-bg: #f7edd4;
+  --choice-bg: #eadbb4;
+  --choice-bg-hover: #e0cc96;
+  --disabled: #b3a06e;
+}
+
+/* ---- 紫 / luoshu purple (浅紫罗兰阅读纸，主角洛书主题色) ---- */
+body[data-theme="purple"] {
+  --bg: #f3eef5;
+  --fg: #2e2438;
+  --muted: #756580;
+  --bar-bg: #eae0f0;
+  --bar-fg: #2e2438;
+  --border: #ddd0e3;
+  --hr: #c9b8d4;
+  --accent: #966495;        /* 洛书紫 on lilac paper / 紫底洛书紫 */
+  --accent-fg: #ffffff;
+  --passage-bg: #faf6fc;
+  --choice-bg: #ece3f2;
+  --choice-bg-hover: #e2d5ea;
+  --disabled: #b9a9c4;
+}
+
+/* ---- 绿 / sage green (浅鼠尾草绿阅读纸) ---- */
+body[data-theme="green"] {
+  --bg: #f2f5ee;
+  --fg: #26301f;
+  --muted: #66754f;
+  --bar-bg: #e9efe0;
+  --bar-fg: #26301f;
+  --border: #d8e0ca;
+  --hr: #c2cfae;
+  --accent: #93b17a;        /* 鼠尾草绿 on sage paper / 绿底鼠尾草 */
+  --accent-fg: #26301f;     /* accent 偏浅，压字用深绿不用白（5.78:1） */
+  --passage-bg: #f8faf3;
+  --choice-bg: #eaf0df;
+  --choice-bg-hover: #dfe8cf;
+  --disabled: #b3bfa0;
 }
 
 /* ---- reset & base ---- */
@@ -215,12 +251,18 @@ body {
    dom:clear 时旧段克隆进 .ks-exit-layer 淡出。 */
 .inkshell-passage, .inkshell-choices, .inkshell-image, .ks-pline {
   opacity: 1;
-  transition: opacity var(--fade-in-duration, 300ms) ease;
+  transition: opacity var(--fade-in-duration, 600ms) var(--fade-in-ease, ease-in-out);
 }
 .ks-enter { opacity: 0; transition: none; }
 
-.ks-exit-layer { position: fixed; inset: 0; pointer-events: none; z-index: 900; }
-.ks-exit { opacity: 1; transition: opacity var(--fade-out-duration, 300ms) ease; }
+/* z-index 90: below the opaque menu bar (100), above page content.
+   Exit clones near the top must stay COVERED by the bar like the
+   original text was — at 900 they painted right over it.
+   z-index 90：低于不透明菜单栏（100），高于页面内容。
+   靠近顶部的淡出克隆必须像原文一样被菜单栏盖住——
+   之前 900 时它们直接画到了菜单栏上面。 */
+.ks-exit-layer { position: fixed; inset: 0; pointer-events: none; z-index: 90; }
+.ks-exit { opacity: 1; transition: opacity var(--fade-out-duration, 100ms) var(--fade-out-ease, ease-in); }
 .ks-exit.go { opacity: 0; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -292,7 +334,7 @@ body {
   display: flex; align-items: center; justify-content: center;
   background: rgba(0, 0, 0, 0.55);
   padding: 20px; z-index: 1000;
-  animation: ks-fade var(--fade-in-duration, 200ms) ease;
+  animation: ks-fade var(--fade-in-duration, 600ms) var(--fade-in-ease, ease-in-out);
 }
 @keyframes ks-fade { from { opacity: 0; } to { opacity: 1; } }
 

@@ -510,7 +510,7 @@ var __inkshell_entry__ = (() => {
   }
   function sanitizeHtml(html) {
     if (!html) return "";
-    const stripped = html.replace(/\n*(<\/?(?:hr|h[1-6]|p|div|blockquote|pre|ul|ol|dl)\b[^>]*>)\n*/gi, "$1");
+    const stripped = html.replace(/(?:[ \t]*\n[ \t]*)?(<\/?(?:hr|h[1-6]|p|div|blockquote|pre|ul|ol|dl|li|dt|dd)\b[^>]*>)(?:[ \t]*\n[ \t]*)?/gi, "$1");
     const doc = new DOMParser().parseFromString(stripped, "text/html");
     walkAndClean(doc.body);
     return doc.body.innerHTML;

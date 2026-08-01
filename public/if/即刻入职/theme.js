@@ -78,10 +78,13 @@ window.beforeStart = function (player) {
     for (var j = 0; j < nodes.length; j++) {
       var t = nodes[j];
       if (t.nodeValue.indexOf("\n") === -1) continue;
-      // Respect preformatted semantics: no gap injection inside code.
-      // 代码块内保留原换行语义，不注入间隔。
+      // Respect preformatted semantics (code) and list structure (ul/ol/dl):
+      // line breaks inside those are structural, not paragraph breaks —
+      // injecting .ks-pgap between <li>s would blow the list apart.
+      // 尊重预排版语义（代码）与列表结构（ul/ol/dl）：其中的换行是
+      // 结构而非段间隔——在 <li> 之间注入 .ks-pgap 会把列表撑散。
       var pe = t.parentElement;
-      if (pe && pe.closest("pre, code, samp")) continue;
+      if (pe && pe.closest("pre, code, samp, ul, ol, dl")) continue;
       var parts = t.nodeValue.split("\n");
       if (parts.length < 2) continue;
 
@@ -222,10 +225,52 @@ window.beforeStart = function (player) {
     pendingExitMs = 0;
     if (!fresh.length) return;
 
+    // Exit running → reposition INSTANTLY to the new content before any
+    // culling. The old segments keep fading as viewport-fixed clones
+    // above; underneath, the player is already at the destination, so the
+    // culling below is evaluated at the DESTINATION viewport. Without
+    // this, the smooth auto-scroll would yank the view mid-exit and the
+    // fresh segments (still off-screen at this moment) would all be
+    // culled — no fade-in at all.
+    // 有淡出在进行 → 先瞬时重定位到新内容，再做裁剪。旧段以视口固定
+    // 克隆在上方继续淡出；底下玩家已到目的地，下方裁剪按"目的地视口"
+    // 评估。否则平滑自动滚动会在淡出途中生拉视口，而新段（此刻仍在
+    // 屏外）会被全部裁掉——连淡入都没有。
+    // (Smooth scrolling can't work here: it never updates rects
+    // synchronously, so culling would always read stale positions.)
+    // （平滑滚动在此无效：它不会同步更新 rect，裁剪永远读到旧位置。）
+    if (wait > 0) {
+      var passages = container.querySelectorAll(".inkshell-passage");
+      var target = passages.length
+        ? passages[passages.length - 1]
+        : fresh[0];
+      if (target) {
+        var y = window.pageYOffset +
+          target.getBoundingClientRect().top - barOffset();
+        window.scrollTo(0, Math.max(0, y));
+      }
+    }
+
+    // Viewport culling: fresh segments OFF-screen skip the choreography
+    // and appear fully formed — the staggered "一段接一段" sequence is
+    // only spent on what the player can actually see. Otherwise a long
+    // turn's tail would still be queueing while the player has already
+    // scrolled past the unfinished animation.
+    // 视口裁剪：屏外新段跳过编排直接成型——"一段接一段"的 stagger
+    // 序列只花在玩家真正看得见的内容上。否则长回合的尾部还在排队，
+    // 玩家早已滑过尚未播到的动画。
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    var onscreen = [];
+    for (var v = 0; v < fresh.length; v++) {
+      var r = fresh[v].getBoundingClientRect();
+      if (r.bottom > 0 && r.top < vh) onscreen.push(fresh[v]);
+    }
+    if (!onscreen.length) return;
+
     var stagger = cssSec("--fade-in-stagger", 0.2);
     var dur = cssSec("--fade-in-duration", 0.6);
-    for (var j = 0; j < fresh.length; j++) {
-      var seg = fresh[j];
+    for (var j = 0; j < onscreen.length; j++) {
+      var seg = onscreen[j];
       seg.classList.add("ks-enter"); // opacity 0, no transition
       // Round to ms — 0.3s-style values produce FP noise like 0.8999…s.
       // 毫秒取整——0.3s 这类值会产生 0.8999…s 的浮点噪声。
@@ -239,7 +284,7 @@ window.beforeStart = function (player) {
     // otherwise the transition has nothing to animate from.
     // 强制回流：浏览器必须先登记 opacity:0，否则过渡没有起点可播。
     void container.offsetWidth;
-    for (var k = 0; k < fresh.length; k++) {
+    for (var k = 0; k < onscreen.length; k++) {
       (function (el, idx) {
         el.classList.remove("ks-enter");
         // Hygiene: drop the inline delay once the fade has completed, so it
@@ -251,7 +296,7 @@ window.beforeStart = function (player) {
         };
         el.addEventListener("transitionend", clear, { once: true });
         setTimeout(clear, (wait + idx * stagger + dur) * 1000 + 200);
-      })(fresh[k], k);
+      })(onscreen[k], k);
     }
   });
 
@@ -301,23 +346,42 @@ window.beforeStart = function (player) {
       }
     }
     if (!segments.length) return;
-    var dur = cssSec("--fade-out-duration", 0.1);
-    var stagger = cssSec("--fade-out-stagger", 0.1);
+    var dur = cssSec("--fade-out-duration", 0.2);
+    var stagger = cssSec("--fade-out-stagger", 0.05);
     if (dur <= 0) return;
 
+    // Viewport culling: only segments intersecting the viewport get exit
+    // clones. Off-screen backlog vanishes with the DOM removal (nobody can
+    // see it anyway) and never inflates the wait — exit time now scales
+    // with ONE SCREEN of content, not the whole reading history.
+    // 视口裁剪：只有与视口相交的段才生成淡出克隆。屏外堆叠随 DOM 移除
+    // 直接消失（反正没人看得见），绝不撑大等待——淡出时长随"一屏"
+    // 而非全部阅读历史。
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    var visible = [];
+    var rects = [];
+    for (var v = 0; v < segments.length; v++) {
+      var r = segments[v].getBoundingClientRect();
+      if (r.bottom > 0 && r.top < vh) {
+        visible.push(segments[v]);
+        rects.push(r);
+      }
+    }
+    if (!visible.length) return;
+
     // --fade-wait-exit: tell the upcoming fade-in to hold until this
-    // fade-out finishes. Consumed (and reset) at story:turnComplete.
+    // fade-out finishes. Computed from VISIBLE segments only.
     // --fade-wait-exit：让随后的淡入等到本次淡出结束再开始。
-    // 在 story:turnComplete 消费（并归零）。
+    // 只按视口内的段数计算。
     if (cssSec("--fade-wait-exit", 1) > 0) {
-      pendingExitMs = Math.round((dur + stagger * (segments.length - 1)) * 1000);
+      pendingExitMs = Math.round((dur + stagger * (visible.length - 1)) * 1000);
     }
 
     var overlay = document.createElement("div");
     overlay.className = "ks-exit-layer";
-    for (var j = 0; j < segments.length; j++) {
-      var rect = segments[j].getBoundingClientRect();
-      var clone = segments[j].cloneNode(true);
+    for (var j = 0; j < visible.length; j++) {
+      var rect = rects[j];
+      var clone = visible[j].cloneNode(true);
       clone.removeAttribute("data-new");
       clone.classList.remove("ks-enter");
       clone.classList.add("ks-exit");
@@ -333,7 +397,7 @@ window.beforeStart = function (player) {
     void overlay.offsetWidth; // register initial state / 登记初始状态
     var exits = overlay.querySelectorAll(".ks-exit");
     for (var k = 0; k < exits.length; k++) exits[k].classList.add("go");
-    var total = (dur + stagger * (segments.length - 1)) * 1000 + 100;
+    var total = (dur + stagger * (visible.length - 1)) * 1000 + 100;
     setTimeout(function () {
       if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
     }, total);
