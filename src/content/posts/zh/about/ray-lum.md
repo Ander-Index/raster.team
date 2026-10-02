@@ -35,7 +35,6 @@ unlisted: false
 - 📧 邮件：[点击这里给我发邮件](mailto:raylum@outlook.com)（写成这样或许可以防一些机器人）
 - 📺 Bilibili：[https://space.bilibili.com/6349837](https://space.bilibili.com/6349837)（🍒Σ）
 - 👁‍🗨 微博：[https://weibo.com/2306956104](https://weibo.com/2306956104)（只发原创与利益相关）
-- 👨‍❤️‍👨 凩制品：[834949965](https://jq.qq.com/?_wv=1027&k=grmT2FoK)（QQ群，点击群号即可直接加群）
 - 🐧 南极恶禽：[871533911](https://qm.qq.com/cgi-bin/qm/qr?k=aGzLwvW7lxasuVwGU2JMJMzqO7vkqqOM&noverify=0)（点击链接加我为QQ好友）
 
 # <font color = "#966495">关于设定</font>
