@@ -72,17 +72,31 @@ const t = useTranslations(locale);
     root.style.setProperty('--theme-radius', `${radius}px`);
     root.dataset.themeAnim = theme === 'chirpy-dark' ? 'to-dark' : 'to-light';
 
-    const transition = (
-      document as unknown as {
-        // eslint-disable-next-line no-unused-vars
-        startViewTransition: (cb: () => void) => { finished: Promise<void> };
-      }
-    ).startViewTransition(() => {
+    let committed = false;
+    const commitOnce = () => {
+      if (committed) return;
+      committed = true;
       commitTheme(theme);
-    });
-    transition.finished.finally(() => {
+    };
+
+    try {
+      const transition = (
+        document as unknown as {
+          startViewTransition: (cb: () => void) => { finished: Promise<void> };
+        }
+      ).startViewTransition(commitOnce);
+      transition.finished
+        .catch(() => {
+          /* A cancelled transition must not leave the old theme. */
+          commitOnce();
+        })
+        .finally(() => {
+          delete root.dataset.themeAnim;
+        });
+    } catch {
+      commitOnce();
       delete root.dataset.themeAnim;
-    });
+    }
   }
 
   function updateIcons(theme: Theme): void {
@@ -92,36 +106,76 @@ const t = useTranslations(locale);
     });
   }
 
+  let activeController: AbortController | null = null;
+
   function init(): void {
+    activeController?.abort();
+    const controller = new AbortController();
+    activeController = controller;
+    const { signal } = controller;
+
     updateIcons(currentTheme());
     document.querySelectorAll<HTMLElement>('[data-theme-toggle]').forEach((btn) => {
-      btn.addEventListener('click', (event) => {
-        const next: Theme = currentTheme() === 'chirpy-dark' ? 'chirpy-light' : 'chirpy-dark';
-        const rect = btn.getBoundingClientRect();
-        const origin = {
-          x: (event as MouseEvent).clientX || rect.left + rect.width / 2,
-          y: (event as MouseEvent).clientY || rect.top + rect.height / 2,
-        };
-        applyTheme(next, origin);
-      });
+      btn.addEventListener(
+        'click',
+        (event) => {
+          const next: Theme = currentTheme() === 'chirpy-dark' ? 'chirpy-light' : 'chirpy-dark';
+          const rect = btn.getBoundingClientRect();
+          const pointer = event as MouseEvent;
+          const origin = {
+            x: pointer.clientX || rect.left + rect.width / 2,
+            y: pointer.clientY || rect.top + rect.height / 2,
+          };
+          applyTheme(next, origin);
+        },
+        { signal },
+      );
     });
+
     // Sync with system preference if user hasn't pinned a theme yet.
     const mql = window.matchMedia('(prefers-color-scheme: dark)');
-    mql.addEventListener('change', (e) => {
-      try {
-        if (localStorage.getItem(STORAGE_KEY)) return;
-      } catch {
-        /* ignore */
-      }
-      // Apply visually only — do not persist so the system preference
-      // remains the source of truth until the user explicitly toggles.
-      commitTheme(e.matches ? 'chirpy-dark' : 'chirpy-light', false);
-    });
+    mql.addEventListener(
+      'change',
+      (e) => {
+        try {
+          if (localStorage.getItem(STORAGE_KEY)) return;
+        } catch {
+          /* ignore */
+        }
+        // Apply visually only — do not persist so the system preference
+        // remains the source of truth until the user explicitly toggles.
+        commitTheme(e.matches ? 'chirpy-dark' : 'chirpy-light', false);
+      },
+      { signal },
+    );
   }
 
-  // `astro:page-load` fires on initial load AND after each client-side
-  // navigation (DOM is swapped so old listeners are gone). Using only
-  // this event avoids double-binding on first load which would fire two
-  // startViewTransition() calls and cancel the animation.
-  document.addEventListener('astro:page-load', init);
+  // `astro:page-load` covers SPA navigations. It can fire before this
+  // deferred module executes on the initial load, so boot immediately as
+  // well (with abort cleanup to prevent double-binding).
+  const themeWindow = window as typeof window & {
+    __chirpyThemeInit?: () => void;
+    __chirpyThemeCleanup?: () => void;
+    __chirpyThemeLifecycle?: boolean;
+  };
+  themeWindow.__chirpyThemeCleanup?.();
+  themeWindow.__chirpyThemeInit = init;
+  if (!themeWindow.__chirpyThemeLifecycle) {
+    themeWindow.__chirpyThemeLifecycle = true;
+    document.addEventListener('astro:page-load', () => themeWindow.__chirpyThemeInit?.());
+    document.addEventListener('astro:before-swap', () => {
+      themeWindow.__chirpyThemeCleanup?.();
+      themeWindow.__chirpyThemeCleanup = undefined;
+    });
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => themeWindow.__chirpyThemeInit?.(), {
+        once: true,
+      });
+    } else {
+      themeWindow.__chirpyThemeInit();
+    }
+  } else {
+    themeWindow.__chirpyThemeInit();
+  }
+  themeWindow.__chirpyThemeCleanup = () => activeController?.abort();
 </script>

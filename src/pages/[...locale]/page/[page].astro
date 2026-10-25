@@ -2,14 +2,14 @@
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import PostList from '~/components/PostList.astro';
 import Pagination from '~/components/Pagination.astro';
-import { SITE } from '~/config';
+import { SITE, type Locale } from '~/config';
 import { localizedPath, useTranslations } from '~/i18n/utils';
-import { getPosts } from '~/utils/posts';
+import { getPosts, getPaginationLanguageLinks } from '~/utils/posts';
 
 interface Props {
   current: number;
   last: number;
-  locale: any;
+  locale: Locale;
 }
 
 export async function getStaticPaths() {
@@ -38,11 +38,15 @@ const start = (current - 1) * pageSize;
 const pagePosts = allPosts.slice(start, start + pageSize);
 
 const hrefForPage = (n: number) => localizedPath(n === 1 ? '/' : `/page/${n}/`, locale);
+// Same-page equivalents only; a locale without this page number is omitted
+// from both the menu and hreflang (never replaced with its homepage).
+const languageLinks = await getPaginationLanguageLinks(current);
 ---
 
 <BaseLayout
   title={`${t('list.allPosts')} — ${t('pagination.page')} ${current}`}
   pathWithoutLocale={`/page/${current}/`}
+  languageLinks={languageLinks}
 >
   <header class="mb-6">
     <h1 class="text-3xl font-bold tracking-tight">{t('list.allPosts')}</h1>

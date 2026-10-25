@@ -4,6 +4,20 @@ A minimal starter template for [Chirping Astro](https://github.com/kannansuresh/
 
 > **Live demo:** [https://kannansuresh.github.io/chirping-astro](https://kannansuresh.github.io/chirping-astro)
 
+## 项目维护说明
+
+本仓库基于 Chirping Astro 6 + Unified Markdown 处理流程维护，部分文章翻译尚不完整，缺失翻译会按现有语言链接规则回退。
+
+维护手册见 [上游同步指南](docs/maintenance/UPSTREAM.md) 和 [修复记录](docs/maintenance/BUGFIXES.md)。仓库以 Bun 为唯一包管理器，常用命令：
+
+```bash
+bun install --frozen-lockfile
+bun run check
+bun scripts/upstream-sync.ts check
+```
+
+上游 `main` 已使用 Astro 7/Satteri，需单独制定并验证迁移计划；当前同步工具会标记 `INCOMPATIBLE` 并拒绝直接应用，不会盲目覆盖不兼容文件。
+
 ## Quick Start
 
 ### Option 1: Astro CLI (recommended)

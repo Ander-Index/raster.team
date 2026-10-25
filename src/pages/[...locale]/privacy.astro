@@ -1,19 +1,29 @@
 ---
-import { getEntry, render } from 'astro:content';
+import { render } from 'astro:content';
 import PageLayout from '~/layouts/PageLayout.astro';
-import { SITE } from '~/config';
+import { SITE, type Locale } from '~/config';
 import { siteTagline } from '~/i18n/utils';
+import {
+  getPublishablePrivacyEntry,
+  getPublishablePrivacyLocales,
+  getPrivacyLanguageLinks,
+} from '~/utils/content-pages';
+import { shouldNoindex } from '~/utils/seo-policy';
 
-export function getStaticPaths() {
-  return SITE.locales.map((l) => ({
+export async function getStaticPaths() {
+  const locales = await getPublishablePrivacyLocales();
+  return locales.map((l) => ({
     params: { locale: l === SITE.defaultLocale ? undefined : l },
     props: { locale: l },
   }));
 }
-const { locale } = Astro.props;
-const entry = await getEntry('pages', `${locale}/privacy`);
+
+const { locale } = Astro.props as { locale: Locale };
+// getStaticPaths only emits locales with a non-placeholder policy.
+const entry = await getPublishablePrivacyEntry(locale);
 if (!entry) return Astro.rewrite('/404');
 const { Content } = await render(entry);
+const languageLinks = await getPrivacyLanguageLinks();
 ---
 
 <PageLayout
@@ -21,6 +31,8 @@ const { Content } = await render(entry);
   description={entry.data.description ?? siteTagline(locale)}
   locale={locale}
   math={entry.data.math}
+  languageLinks={languageLinks}
+  noindex={shouldNoindex(entry.data)}
 >
   <Content />
 </PageLayout>

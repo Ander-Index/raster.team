@@ -61,7 +61,7 @@ const body = post.body ?? '';
   body={body}
   prev={prev}
   next={next}
-  locale={post.id.split('/')[0] as any}
+  locale={post.data.lang}
 >
   <Content />
 </PostLayout>

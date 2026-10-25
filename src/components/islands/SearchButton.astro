@@ -141,48 +141,19 @@ const i18n = {
 </dialog>
 
 <script>
-  interface PagefindSearchData {
-    url: string;
-    excerpt?: string;
-    meta?: { title?: string };
-  }
+  import {
+    getPagefind,
+    type PagefindResult,
+    type PagefindSearchData,
+  } from '../../utils/pagefind-client';
 
-  interface PagefindResult {
-    data: () => Promise<PagefindSearchData>;
-  }
-
-  interface PagefindModule {
-    init?: () => Promise<void>;
-    // eslint-disable-next-line no-unused-vars
-    search: (term: string) => Promise<{ results: PagefindResult[] } | null>;
-  }
-
-  let pagefindModule: PagefindModule | null = null;
-  let loadPromise: Promise<PagefindModule> | null = null;
   /** Most recent search token — used to ignore stale async resolutions. */
   let searchToken = 0;
   let highlightIdx = -1;
   let resultLinks: HTMLElement[] = [];
   let debounceTimer: ReturnType<typeof setTimeout> | undefined;
-  let PAGEFIND_SCRIPT: string | undefined;
   let I18N: Record<string, string> = {};
-
-  function loadPagefind() {
-    if (pagefindModule) return Promise.resolve(pagefindModule);
-    if (loadPromise) return loadPromise;
-    loadPromise = import(/* @vite-ignore */ PAGEFIND_SCRIPT as string)
-      .then(async (mod) => {
-        if (typeof mod.init === 'function') await mod.init();
-        pagefindModule = mod;
-        return mod;
-      })
-      .catch((err) => {
-        console.error('Failed to load Pagefind', err);
-        loadPromise = null;
-        throw err;
-      });
-    return loadPromise;
-  }
+  let activeController: AbortController | null = null;
 
   function escapeHtml(s: string) {
     return String(s)
@@ -321,27 +292,37 @@ const i18n = {
   }
 
   function init() {
+    activeController?.abort();
+    const controller = new AbortController();
+    activeController = controller;
+    const { signal } = controller;
+
+    // Invalidate any search started by the previous page/locale.
+    searchToken++;
+    clearTimeout(debounceTimer);
+
     const dialog = document.querySelector<HTMLDialogElement>('[data-search-modal]');
     const input = document.querySelector<HTMLInputElement>('[data-search-input]');
     const clearBtn = document.querySelector<HTMLButtonElement>('[data-search-clear]');
     const results = document.querySelector<HTMLElement>('[data-search-results]');
     if (!dialog || !input || !results || !clearBtn) return;
 
-    PAGEFIND_SCRIPT = dialog.dataset.pagefindScript;
+    const script = dialog.dataset.pagefindScript;
     I18N = JSON.parse(dialog.dataset.i18n || '{}');
 
     function reset() {
+      clearTimeout(debounceTimer);
+      searchToken++;
       input!.value = '';
       clearBtn!.classList.add('hidden');
       clearBtn!.classList.remove('inline-flex');
       renderIdle(results!);
-      searchToken++;
     }
 
     async function runSearch(term: string) {
       const myToken = ++searchToken;
       try {
-        const pf = await loadPagefind();
+        const pf = await getPagefind(script);
         if (myToken !== searchToken) return;
         renderSearching(results!);
         const search = await pf.search(term);
@@ -355,6 +336,7 @@ const i18n = {
         if (myToken !== searchToken) return;
         renderResults(results!, data);
       } catch (err) {
+        if (myToken !== searchToken) return;
         console.error(err);
         renderState(
           results!,
@@ -374,45 +356,61 @@ const i18n = {
       }
       clearTimeout(debounceTimer);
       if (!term) {
+        searchToken++;
         renderIdle(results!);
         return;
       }
       debounceTimer = setTimeout(() => runSearch(term), 140);
     }
 
-    input.addEventListener('input', onInput);
+    input.addEventListener('input', onInput, { signal });
 
-    clearBtn.addEventListener('click', () => {
-      reset();
-      input!.focus();
-    });
+    clearBtn.addEventListener(
+      'click',
+      () => {
+        reset();
+        input!.focus();
+      },
+      { signal },
+    );
 
     // Reset whenever the dialog closes (Esc, backdrop click, close button).
-    dialog.addEventListener('close', reset);
+    dialog.addEventListener('close', reset, { signal });
 
-    // Keyboard nav while typing.
-    input.addEventListener('keydown', (e: KeyboardEvent) => {
-      if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        moveHighlight(1);
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        moveHighlight(-1);
-      } else if (e.key === 'Enter') {
-        if (activateHighlight()) e.preventDefault();
-      }
-    });
+    // Keyboard nav while typing. Escape is handled explicitly because a
+    // non-empty type=search input may not trigger native dialog cancel
+    // consistently across browsers.
+    input.addEventListener(
+      'keydown',
+      (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          if (dialog!.open) dialog!.close();
+          else reset();
+        } else if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          moveHighlight(1);
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          moveHighlight(-1);
+        } else if (e.key === 'Enter') {
+          if (activateHighlight()) e.preventDefault();
+        }
+      },
+      { signal },
+    );
 
-    async function openSearch() {
+    function openSearch() {
+      if (dialog!.open) return;
       if (typeof dialog!.showModal === 'function') dialog!.showModal();
       else dialog!.setAttribute('open', '');
-      // Pre-load Pagefind so the first keystroke is instant.
-      loadPagefind().catch(() => {});
+      // Pre-load the index for the CURRENT `<html lang>`.
+      getPagefind(script).catch(() => {});
       requestAnimationFrame(() => input!.focus());
     }
 
     document.querySelectorAll('[data-search-open]').forEach((btn) => {
-      btn.addEventListener('click', openSearch);
+      btn.addEventListener('click', openSearch, { signal });
     });
 
     function isTypingTarget(target: EventTarget | null) {
@@ -422,17 +420,43 @@ const i18n = {
       return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
     }
 
-    document.addEventListener('keydown', (e: KeyboardEvent) => {
-      const isCmdK = (e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k';
-      const isSlash =
-        e.key === '/' && !e.metaKey && !e.ctrlKey && !e.altKey && !isTypingTarget(e.target);
-      if (isCmdK || isSlash) {
-        e.preventDefault();
-        openSearch();
-      }
-    });
+    document.addEventListener(
+      'keydown',
+      (e: KeyboardEvent) => {
+        if (e.defaultPrevented) return;
+        const isCmdK = (e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k';
+        const isSlash =
+          e.key === '/' && !e.metaKey && !e.ctrlKey && !e.altKey && !isTypingTarget(e.target);
+        if (isCmdK || isSlash) {
+          e.preventDefault();
+          openSearch();
+        }
+      },
+      { signal },
+    );
   }
 
+  // Register lifecycle handlers once. A re-executed module replaces the
+  // callback instead of stacking another keydown/page-load listener.
+  const searchWindow = window as typeof window & {
+    __chirpySearchButtonInit?: () => void;
+    __chirpySearchButtonCleanup?: () => void;
+    __chirpySearchButtonLifecycle?: boolean;
+  };
+  searchWindow.__chirpySearchButtonCleanup?.();
+  searchWindow.__chirpySearchButtonInit = init;
+  if (!searchWindow.__chirpySearchButtonLifecycle) {
+    searchWindow.__chirpySearchButtonLifecycle = true;
+    document.addEventListener('astro:page-load', () => searchWindow.__chirpySearchButtonInit?.());
+    document.addEventListener('astro:before-swap', () => {
+      searchWindow.__chirpySearchButtonCleanup?.();
+      searchWindow.__chirpySearchButtonCleanup = undefined;
+    });
+  }
+  searchWindow.__chirpySearchButtonCleanup = () => {
+    searchToken++;
+    clearTimeout(debounceTimer);
+    activeController?.abort();
+  };
   init();
-  document.addEventListener('astro:page-load', init);
 </script>

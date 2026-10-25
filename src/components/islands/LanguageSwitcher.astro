@@ -2,34 +2,64 @@
 /**
  * Accessible language switcher.
  *
- * On post pages, the PostLayout sets `window.__chirpyTranslations` with a
- * map of locale -> absolute path to the translation sibling. The runtime
- * script in this island reads that map and rewrites the per-locale hrefs
- * so the user lands on the equivalent article.
+ * Pages that have a non-1:1 translation (posts with different slugs,
+ * translated tag names, categories that exist in only some locales,
+ * partially generated pagination) pass an explicit `languageLinks` map
+ * through BaseLayout -> Topbar. The server-rendered hrefs are therefore
+ * correct before any client JavaScript runs.
  *
- * For other pages we strip the current pathname's locale prefix and
- * rebuild it for the target — preserving the path 1:1.
+ * When no map is supplied (home, archives, taxonomy indexes, search),
+ * we strip the current pathname's locale prefix and rebuild it for the
+ * target — these pages are generated in every locale.
  */
 
 import { SITE, type Locale } from '../../config';
-import { useTranslations, localizedPath, stripLocale, localeLabel } from '../../i18n/utils';
+import {
+  useTranslations,
+  localizedPath,
+  stripLocale,
+  localeLabel,
+  type LanguageLinks,
+} from '../../i18n/utils';
 import { Icon } from 'astro-icon/components';
 
 export interface Props {
   locale: Locale;
   /**
+   * Explicit locale -> already-localized path map. Locales absent from
+   * the map are not offered. When omitted, `availableLocales` (or all
+   * locales) are assumed to have the same path.
+   */
+  languageLinks?: LanguageLinks;
+  /**
    * Locales for which a translation of the current page actually
-   * exists. Defaults to all `SITE.locales`. The current locale is
-   * always treated as available.
+   * exists. Only used as a fallback when `languageLinks` is absent.
    */
   availableLocales?: readonly Locale[];
 }
 
-const { locale, availableLocales } = Astro.props;
+const { locale, languageLinks, availableLocales } = Astro.props as Props;
 const t = useTranslations(locale);
-const allowed = new Set<Locale>([locale, ...((availableLocales ?? SITE.locales) as Locale[])]);
-const otherLocales = SITE.locales.filter((l) => l !== locale && allowed.has(l));
 const fallbackBase = stripLocale(Astro.url.pathname);
+
+/** locale -> actual href, computed entirely at build time. */
+const links: LanguageLinks = {};
+if (languageLinks) {
+  for (const l of SITE.locales) {
+    const href = languageLinks[l];
+    if (href) links[l] = href;
+  }
+  // Defensive: the current page must always point at itself.
+  if (!links[locale]) links[locale] = localizedPath(fallbackBase, locale);
+} else {
+  const allowed = new Set<Locale>([locale, ...((availableLocales ?? SITE.locales) as Locale[])]);
+  for (const l of SITE.locales) {
+    if (allowed.has(l)) links[l] = localizedPath(fallbackBase, l);
+  }
+}
+
+const otherLocales = SITE.locales.filter((l) => l !== locale && links[l]);
+const currentHref = links[locale] ?? localizedPath(fallbackBase, locale);
 ---
 
 {
@@ -58,14 +88,14 @@ const fallbackBase = stripLocale(Astro.url.pathname);
           {t('lang.switcher')}
         </li>
         <li>
-          <a href={localizedPath(fallbackBase, locale)} aria-current="true" class="font-medium">
+          <a href={currentHref} aria-current="true" class="font-medium">
             <span class="badge badge-primary badge-sm">{locale.toUpperCase()}</span>
             {localeLabel(locale)}
           </a>
         </li>
         {otherLocales.map((target) => (
           <li>
-            <a href={localizedPath(fallbackBase, target)} data-lang-target={target}>
+            <a href={links[target]} data-lang-target={target}>
               <span class="badge badge-ghost badge-sm">{target.toUpperCase()}</span>
               {localeLabel(target)}
             </a>
@@ -75,22 +105,3 @@ const fallbackBase = stripLocale(Astro.url.pathname);
     </div>
   )
 }
-
-<script>
-  function rewireLanguageLinks() {
-    const w = window as unknown as { __chirpyTranslations?: Record<string, string> };
-    const map = w.__chirpyTranslations;
-    if (!map) return;
-    document.querySelectorAll<HTMLAnchorElement>('[data-lang-target]').forEach((a) => {
-      const target = a.dataset.langTarget;
-      if (target && map[target]) a.href = map[target];
-    });
-    // Consume the per-page map so it can't leak onto the next page.
-    // Home / Archives / Categories etc. don't set their own map; without
-    // this clear, their switcher would inherit the previous tag or post
-    // page's translation targets and send those pages to the wrong URL.
-    w.__chirpyTranslations = undefined;
-  }
-  rewireLanguageLinks();
-  document.addEventListener('astro:page-load', rewireLanguageLinks);
-</script>

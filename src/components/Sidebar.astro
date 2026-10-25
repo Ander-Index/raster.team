@@ -63,7 +63,7 @@ const navMatches = navItems.map((item) => {
 const activeLen = Math.max(0, ...navMatches.filter((m) => m.matched).map((m) => m.stripped.length));
 ---
 
-<aside id="sidebar" class="chirpy-sidebar" aria-label="Sidebar">
+<aside id="sidebar" class="chirpy-sidebar" aria-label="Sidebar" data-pagefind-ignore>
   {/* Profile */}
   <header class="flex w-full flex-col items-center pt-4 pb-6 text-center">
     <a href={home} class="flex flex-col items-center" aria-label={siteTitle(locale)}>

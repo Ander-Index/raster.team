@@ -1,5 +1,11 @@
-import { SITE, type Locale } from '../config';
+import { readdirSync, statSync } from 'node:fs';
+import { join, relative } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+import { SITE } from '../config';
 import { withBase } from '../i18n/utils';
+import { contentEntryId } from '../utils/content-id';
+import { resolveContentLink } from '../utils/internal-links';
 
 type Node = {
   type: string;
@@ -7,82 +13,81 @@ type Node = {
   children?: Node[];
 };
 
+type VFileLike = {
+  path?: string | URL;
+};
+
+const CONTENT_ROOT = join(process.cwd(), 'src', 'content');
+const POSTS_ROOT = join(CONTENT_ROOT, 'posts');
+
+function walkSourceFiles(dir: string, files: string[] = []): string[] {
+  for (const name of readdirSync(dir)) {
+    const path = join(dir, name);
+    if (statSync(path).isDirectory()) {
+      walkSourceFiles(path, files);
+    } else if (/\.(md|mdx)$/i.test(name)) {
+      files.push(path);
+    }
+  }
+  return files;
+}
+
 /**
- * Rewrite Obsidian-style internal links to their canonical site URLs.
- *
- * In Obsidian (vault root = `src/content/`, link format = "Absolute path in
- * vault"), a link to a post is written as the content-collection path, e.g.:
- *
- *   posts/zh/terms/eulas/mitsukawa-takeshi.md
- *
- * But the site serves the default locale (zh) at the URL root (no `/zh/`),
- * drops the `.md` extension, and prefixes `/posts/`. So the real URL is:
- *
- *   /posts/terms/eulas/mitsukawa-takeshi/
- *
- * This mirrors the logic of `postPath()` in `src/utils/posts.ts`. Non-default
- * locales keep their prefix: a reference to `posts/ja/foo.md` resolves to
- * `/ja/posts/foo/`, even from a zh post (explicit cross-locale link).
- *
- * Only links that clearly reference a content file are rewritten:
- *   - end with `.md` / `.mdx`, OR
- *   - contain a `posts/` segment with a following locale segment.
- * Everything else (external URLs, anchors, real site paths) is left untouched.
- * A trailing `#hash` / `?query` is preserved.
+ * Content-relative source path -> actual Astro loader ID.
+ * e.g. `posts/zh/tools/reaper__chinese-simplified.reaperlangpack.md`
+ *   -> `zh/tools/reaper__chinese-simplifiedreaperlangpack`
  */
-function resolveContentLink(rawUrl: string): string | null {
-  if (!rawUrl) return null;
+function collectSourceIds(): Map<string, string> {
+  const map = new Map<string, string>();
+  let files: string[];
+  try {
+    files = walkSourceFiles(POSTS_ROOT);
+  } catch {
+    return map;
+  }
+  for (const file of files) {
+    const relativeToPosts = relative(POSTS_ROOT, file).replaceAll('\\', '/');
+    const sourceKey = `posts/${relativeToPosts}`;
+    map.set(sourceKey, contentEntryId(relativeToPosts));
+  }
+  return map;
+}
 
-  // Split off any trailing hash / query; re-attached at the end.
-  const hashIdx = rawUrl.indexOf('#');
-  const queryIdx = rawUrl.indexOf('?');
-  let cut = rawUrl.length;
-  if (hashIdx >= 0) cut = Math.min(cut, hashIdx);
-  if (queryIdx >= 0) cut = Math.min(cut, queryIdx);
-  const pathPart = rawUrl.slice(0, cut);
-  const suffix = rawUrl.slice(cut);
-
-  // Skip external URLs, protocol-relative URLs and pure anchors.
-  if (/^[a-z][a-z0-9+.-]*:/i.test(pathPart)) return null;
-  if (pathPart.startsWith('//')) return null;
-  if (pathPart.startsWith('#')) return null;
-
-  const hasMdExt = /\.(md|mdx)$/i.test(pathPart);
-  const hasPostsSeg = /(^|\/)posts\//.test(pathPart);
-  if (!hasMdExt && !hasPostsSeg) return null;
-
-  const segments = pathPart
-    .replace(/^\.{1,2}\//, '') // strip leading ./ or ../
-    .replace(/^\/+/, '') // strip leading slashes
-    .split('/');
-
-  const localeSet = SITE.locales as readonly string[];
-  const localeIdx = segments.findIndex((s) => localeSet.includes(s));
-  if (localeIdx < 0) return null;
-
-  const targetLocale = segments[localeIdx] as Locale;
-  const slug = segments
-    .slice(localeIdx + 1)
-    .join('/')
-    .replace(/\.(md|mdx)$/i, '')
-    .replace(/\/+$/, '');
-
-  const urlPath =
-    targetLocale === SITE.defaultLocale
-      ? `/posts/${slug}/`
-      : `/${targetLocale}/posts/${slug}/`;
-
-  return `${withBase(urlPath)}${suffix}`;
+function currentSourceFromFile(file: VFileLike | undefined): string | undefined {
+  if (!file?.path) return undefined;
+  let absolute: string;
+  try {
+    const raw = file.path instanceof URL ? fileURLToPath(file.path) : String(file.path);
+    absolute = raw.startsWith('file:') ? fileURLToPath(raw) : raw;
+  } catch {
+    return undefined;
+  }
+  const relativeToContent = relative(CONTENT_ROOT, absolute).replaceAll('\\', '/');
+  return relativeToContent.startsWith('..') ? undefined : relativeToContent;
 }
 
 export function remarkInternalLinks() {
-  return (tree: Node) => {
+  let sourceIds: Map<string, string> | undefined;
+
+  return (tree: Node, file?: VFileLike) => {
+    sourceIds ??= collectSourceIds();
+    const currentSource = currentSourceFromFile(file);
+    const context = {
+      sourceIds,
+      currentSource,
+      locales: SITE.locales,
+      defaultLocale: SITE.defaultLocale,
+    };
+
     function visit(node: Node | undefined) {
       if (!node) return;
 
-      if (node.type === 'link' && typeof node.url === 'string') {
-        const resolved = resolveContentLink(node.url);
-        if (resolved) node.url = resolved;
+      if ((node.type === 'link' || node.type === 'definition') && typeof node.url === 'string') {
+        const resolved = resolveContentLink(node.url, context);
+        // Only rewrite a link when it maps to a real content entry; broken
+        // source links, assets, external URLs and published site paths
+        // stay byte-for-byte unchanged.
+        if (resolved) node.url = withBase(resolved);
       }
 
       if (Array.isArray(node.children)) {

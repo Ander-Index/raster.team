@@ -1,6 +1,7 @@
 ---
 import { SITE, type Locale } from '../config';
 import { localizedPath, useTranslations } from '../i18n/utils';
+import { getPublishablePrivacyEntry } from '../utils/content-pages';
 
 interface Props {
   locale: Locale;
@@ -11,7 +12,10 @@ const t = useTranslations(locale);
 const year = new Date().getFullYear();
 const footerLeftText = SITE.footer.leftText?.trim();
 const footerRightText = SITE.footer.rightText?.trim();
-const showPrivacyPolicy = SITE.footer.showPrivacyPolicy ?? SITE.showPrivacyPolicy;
+const policyConfigured = SITE.footer.showPrivacyPolicy ?? SITE.showPrivacyPolicy;
+// Only link to a policy that actually exists for this locale and is not
+// still the shipped `[SITE_NAME]` / `[SITE_URL]` template.
+const showPrivacyPolicy = policyConfigured && (await getPublishablePrivacyEntry(locale)) !== undefined;
 const showThemeCredits = SITE.footer.showThemeCredits ?? true;
 const shouldRenderRightFooter = Boolean(footerRightText) || showThemeCredits;
 const resolvedLeftText = footerLeftText
@@ -21,6 +25,7 @@ const resolvedLeftText = footerLeftText
 
 <footer
   aria-label="Site Info"
+  data-pagefind-ignore
   class="border-base-300 text-base-content/70 mt-10 flex flex-col gap-1 border-t py-6 text-sm lg:flex-row lg:items-center lg:justify-between"
 >
   <p>

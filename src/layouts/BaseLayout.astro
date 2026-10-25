@@ -11,7 +11,14 @@ import BackToTop from '../components/islands/BackToTop.astro';
 import { ClientRouter } from 'astro:transitions';
 import faviconImg from '../assets/images/site/avatar.png';
 import { type Locale } from '../config';
-import { detectLocale, htmlLang, useTranslations, stripLocale, withBase } from '../i18n/utils';
+import {
+  detectLocale,
+  htmlLang,
+  useTranslations,
+  stripLocale,
+  withBase,
+  type LanguageLinks,
+} from '../i18n/utils';
 import { buildSeo, type SeoMeta } from '../utils/seo';
 
 interface Props {
@@ -47,6 +54,12 @@ interface Props {
    * `/en/tags/links/`). Takes precedence over `pathWithoutLocale`.
    */
   hreflangPaths?: Partial<Record<Locale, string>>;
+  /**
+   * Explicit locale -> actual localized path map (locale prefix + base
+   * included). When supplied it drives BOTH the language switcher and
+   * the head hreflang tags, so menu and SEO cannot drift apart.
+   */
+  languageLinks?: LanguageLinks;
 }
 
 const {
@@ -64,6 +77,7 @@ const {
   noindex,
   availableLocales,
   hreflangPaths,
+  languageLinks,
 } = Astro.props;
 
 const locale: Locale = detectLocale(Astro.url.pathname);
@@ -86,6 +100,7 @@ const meta: SeoMeta =
     tags,
     availableLocales,
     hreflangPaths,
+    hreflangLinks: languageLinks,
     noindex,
   });
 ---
@@ -138,7 +153,12 @@ const meta: SeoMeta =
     <Sidebar locale={locale} />
 
     <div class="chirpy-main-wrapper">
-      <Topbar locale={locale} crumbs={crumbs} availableLocales={availableLocales} />
+      <Topbar
+        locale={locale}
+        crumbs={crumbs}
+        availableLocales={availableLocales}
+        languageLinks={languageLinks}
+      />
 
       <div class="chirpy-shell">
         <div class="flex flex-1 gap-10">

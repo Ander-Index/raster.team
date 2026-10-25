@@ -4,7 +4,7 @@ import PostList from '~/components/PostList.astro';
 import Pagination from '~/components/Pagination.astro';
 import { SITE } from '~/config';
 import { localizedPath, siteTitle, siteTagline } from '~/i18n/utils';
-import { getPosts } from '~/utils/posts';
+import { getPosts, getPaginationLanguageLinks } from '~/utils/posts';
 
 export function getStaticPaths() {
   return SITE.locales.map((l) => ({
@@ -21,9 +21,17 @@ const currentPage = 1;
 const pagePosts = posts.slice(0, pageSize);
 
 const hrefForPage = (n: number) => localizedPath(n === 1 ? '/' : `/page/${n}/`, locale);
+// Page 1 exists in every locale; build the map explicitly so the menu and
+// hreflang share one source of truth with paginated pages.
+const languageLinks = await getPaginationLanguageLinks(1);
 ---
 
-<BaseLayout title={siteTitle(locale)} description={siteTagline(locale)} pathWithoutLocale="/">
+<BaseLayout
+  title={siteTitle(locale)}
+  description={siteTagline(locale)}
+  pathWithoutLocale="/"
+  languageLinks={languageLinks}
+>
   <PostList posts={pagePosts} locale={locale} />
   <Pagination
     currentPage={currentPage}

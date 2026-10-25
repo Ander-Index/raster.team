@@ -4,7 +4,12 @@
  * Spans the main area with controls aligned to the centered content shell.
  */
 import { SITE, type Locale } from '../config';
-import { useTranslations, localizedPath, siteTitle } from '../i18n/utils';
+import {
+  useTranslations,
+  localizedPath,
+  siteTitle,
+  type LanguageLinks,
+} from '../i18n/utils';
 import { Icon } from 'astro-icon/components';
 import SearchButton from './islands/SearchButton.astro';
 import LanguageSwitcher from './islands/LanguageSwitcher.astro';
@@ -21,14 +26,19 @@ interface Props {
    * language switcher so it only links to working pages.
    */
   availableLocales?: readonly Locale[];
+  /**
+   * Explicit locale -> actual localized path map. Forwarded verbatim so
+   * the SSR language menu never needs client-side correction.
+   */
+  languageLinks?: LanguageLinks;
 }
 
-const { locale, crumbs = [], availableLocales } = Astro.props;
+const { locale, crumbs = [], availableLocales, languageLinks } = Astro.props;
 const t = useTranslations(locale);
 const home = localizedPath('/', locale);
 ---
 
-<header class="chirpy-topbar" aria-label="Top Bar">
+<header class="chirpy-topbar" aria-label="Top Bar" data-pagefind-ignore>
   <div class="chirpy-shell chirpy-topbar__inner">
     <div class="flex flex-1 items-center gap-2 px-1">
       <button
@@ -78,7 +88,11 @@ const home = localizedPath('/', locale);
       <SearchButton locale={locale} />
       {
         SITE.multilingual && (
-          <LanguageSwitcher locale={locale} availableLocales={availableLocales} />
+          <LanguageSwitcher
+            locale={locale}
+            availableLocales={availableLocales}
+            languageLinks={languageLinks}
+          />
         )
       }
     </div>

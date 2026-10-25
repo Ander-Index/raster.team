@@ -300,7 +300,7 @@ unlisted: false
 	一行普通的游戏文本。# 颜色-蓝色
 	A line of normal game-text. # colour it blue
 
-这些标签不会显示在主文本流中，但可以被游戏读取，并根据需要使用。请参阅 [《运行您的 Ink》](RunningYourInk_Simplified-Chinese.md#marking-up-your-ink-content-with-tags) 获取更多信息。
+这些标签不会显示在主文本流中，但可以被游戏读取，并根据需要使用。请参阅 [《运行您的 Ink》](https://github.com/inkle/ink/blob/master/Documentation/RunningYourInk.md#marking-up-your-ink-content-with-tags) 获取更多信息。
 
 ## 2) 选择｜Choices
 
@@ -2203,7 +2203,7 @@ ChatGPT 解析：
 *	外部函数声明：在 Ink 中可以声明外部函数，允许你直接调用游戏中的 C# 函数。
 *	变量观察器：当 Ink 中的变量被修改时，触发游戏中的回调函数。
 
-这两种方法的详细描述见 [Running your ink](RunningYourInk.md).
+这两种方法的详细描述见 [Running your ink](https://github.com/inkle/ink/blob/master/Documentation/RunningYourInk.md).
 
 # 第 4 部分：进阶流程控制｜Part 4: Advanced Flow Control
 

@@ -14,8 +14,9 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 
 import { SITE, type Locale } from '../config';
 import { TAG_GROUPS, type TagGroup } from '../tag-groups';
-import { withBase, LOCALE_META } from '../i18n/utils';
+import { withBase, localizedPath, LOCALE_META, type LanguageLinks } from '../i18n/utils';
 import { slugify } from './slugify';
+import { selectTranslation } from './translations';
 
 export type Post = CollectionEntry<'posts'> & {
   data: CollectionEntry<'posts'>['data'] & { lang: Locale; translationKey: string };
@@ -55,14 +56,22 @@ export function postSlug(entry: Post): string {
   return stripLocaleFromId(entry.id).replace(/\.(md|mdx)$/i, '');
 }
 
-/** Full localized URL path for a post. */
-export function postPath(entry: Post): string {
+/** Locale-prefixed route for a post, WITHOUT the configured base path. */
+export function postRoutePath(entry: Post): string {
   const slug = postSlug(entry);
-  const path =
-    entry.data.lang === SITE.defaultLocale
-      ? `/posts/${slug}/`
-      : `/${entry.data.lang}/posts/${slug}/`;
-  return withBase(path);
+  return entry.data.lang === SITE.defaultLocale
+    ? `/posts/${slug}/`
+    : `/${entry.data.lang}/posts/${slug}/`;
+}
+
+/** Full localized URL path for a post (includes the configured base). */
+export function postPath(entry: Post): string {
+  return withBase(postRoutePath(entry));
+}
+
+/** Stable translation reference used for sibling pairing. */
+function translationRef(entry: Post) {
+  return { translationKey: entry.data.translationKey, slug: postSlug(entry) };
 }
 
 /** Sort posts: pinned first, then by pubDate desc. */
@@ -124,18 +133,62 @@ export async function getPostBySlug(locale: Locale, slug: string): Promise<Post 
   return posts.find((p) => postSlug(p) === slug);
 }
 
-/** All translation siblings of a post (other locales sharing translationKey). */
+/**
+ * All published/listed translation siblings of a post.
+ *
+ * Pairing uses the normalized `translationKey` only. Posts without
+ * frontmatter `translationKey` already default to their generated slug, so
+ * same-slug siblings still pair; conflicting explicit keys never do.
+ * Unlisted and production drafts are never returned by `getPosts()`, so a
+ * listed article can never advertise a hidden sibling in its language menu.
+ */
 export async function getTranslations(entry: Post): Promise<Record<Locale, Post | undefined>> {
   const out: Partial<Record<Locale, Post | undefined>> = {};
+  const ref = translationRef(entry);
   for (const locale of SITE.locales) {
     if (locale === entry.data.lang) {
       out[locale] = entry;
       continue;
     }
     const all = await getPosts(locale);
-    out[locale] = all.find((p) => p.data.translationKey === entry.data.translationKey);
+    out[locale] = selectTranslation(ref, all, (p) => p.data.translationKey);
   }
   return out as Record<Locale, Post | undefined>;
+}
+
+/**
+ * Build the exact locale -> URL map for a post's language switcher and
+ * hreflang tags. Both consume this one map, so different-slug siblings
+ * cannot drift between menu and `<head>`.
+ */
+export async function getPostLanguageLinks(entry: Post): Promise<LanguageLinks> {
+  const translations = await getTranslations(entry);
+  const links: LanguageLinks = {};
+  for (const locale of SITE.locales) {
+    const sibling = translations[locale];
+    if (sibling) links[locale] = postPath(sibling);
+  }
+  return links;
+}
+
+/**
+ * Language links for a paginated listing page.
+ *
+ * A locale is offered only when it actually generates the same page
+ * number. `current = 1` is the locale home page and exists everywhere;
+ * `/page/2/` in another locale is offered only if that locale has enough
+ * listed posts. Never substitutes a homepage for a missing page.
+ */
+export async function getPaginationLanguageLinks(current: number): Promise<LanguageLinks> {
+  const links: LanguageLinks = {};
+  for (const locale of SITE.locales) {
+    const posts = await getPosts(locale);
+    const lastPage = Math.max(1, Math.ceil(posts.length / SITE.postsPerPage));
+    if (current <= lastPage) {
+      links[locale] = localizedPath(current === 1 ? '/' : `/page/${current}/`, locale);
+    }
+  }
+  return links;
 }
 
 /** Tags for a locale, with counts, sorted by count desc then alpha. */
@@ -257,6 +310,36 @@ export function categoryPath(locale: Locale, category: string): string {
   const path =
     locale === SITE.defaultLocale ? `/categories/${slug}/` : `/${locale}/categories/${slug}/`;
   return withBase(path);
+}
+
+/**
+ * Resolve every *actually generated* category variant for the current
+ * category. Categories have no translation table, so only the exact same
+ * slug in another locale is considered (the target must also have posts,
+ * because category pages are generated from real categories only).
+ */
+export async function resolveCategoryTranslations(
+  categoryName: string,
+  currentLocale: Locale,
+): Promise<TagTranslationResult> {
+  const slug = slugify(categoryName);
+  const links: Partial<Record<Locale, string>> = {};
+  const paths: Partial<Record<Locale, string>> = {};
+
+  for (const locale of SITE.locales) {
+    if (locale === currentLocale) {
+      links[locale] = categoryPath(locale, categoryName);
+      paths[locale] = `/categories/${slug}/`;
+      continue;
+    }
+    const categories = await getCategoriesWithCount(locale);
+    const resolved = categories.find((category) => slugify(category.name) === slug)?.name;
+    if (resolved) {
+      links[locale] = categoryPath(locale, resolved);
+      paths[locale] = `/categories/${slug}/`;
+    }
+  }
+  return { links, paths };
 }
 
 // ──────────────────────────────────────────────────────────────────────

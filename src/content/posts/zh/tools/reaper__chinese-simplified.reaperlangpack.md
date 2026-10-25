@@ -109,7 +109,7 @@ Stash: <https://stash.reaper.fm/u/raylum>
 # 联系方式
 
 - 王洛木：[点击这里给我发邮件](mailto:Nomo_Wang@outlook.com)（这样写或许可以防一些机器人）
-- 本站跳转：[【关于】王洛木](/posts/__raw/about_nomo-wang/)
+- 本站跳转：[【关于】王洛木](/posts/about/nomo-wang/)
 
 # ☕
 

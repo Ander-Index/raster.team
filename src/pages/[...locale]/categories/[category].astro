@@ -1,13 +1,18 @@
 ---
-import { SITE } from '~/config';
+import { SITE, type Locale } from '~/config';
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import PostList from '~/components/PostList.astro';
 import { useTranslations, localizedPath } from '~/i18n/utils';
-import { getPosts, getCategoriesWithCount, slugify } from '~/utils/posts';
+import {
+  getPosts,
+  getCategoriesWithCount,
+  slugify,
+  resolveCategoryTranslations,
+} from '~/utils/posts';
 
 interface Props {
   categoryName: string;
-  locale: any;
+  locale: Locale;
 }
 
 export async function getStaticPaths() {
@@ -31,11 +36,14 @@ const t = useTranslations(locale);
 const posts = (await getPosts(locale)).filter(
   (p) => p.data.categories && p.data.categories.some((c) => slugify(c) === category),
 );
+// Only offer locales that actually generate the same category slug.
+const { links: languageLinks } = await resolveCategoryTranslations(categoryName, locale);
 ---
 
 <BaseLayout
   title={categoryName}
   pathWithoutLocale={`/categories/${category}/`}
+  languageLinks={languageLinks}
   crumbs={[
     { label: t('categories.title'), href: localizedPath('/categories/', locale) },
     { label: categoryName },

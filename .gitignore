@@ -38,3 +38,5 @@ pagefind/
 
 # misc
 *.log
+# upstream-sync cache
+.cache/

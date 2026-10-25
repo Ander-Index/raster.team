@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "description": "Path scope for the scoped upstream three-way sync. Protected paths are never applied automatically; manual paths are reported and require an explicit decision before recording.",
+  "allowedSourceDirs": [
+    "src/components/",
+    "src/layouts/",
+    "src/pages/",
+    "src/plugins/",
+    "src/styles/",
+    "src/types/",
+    "src/utils/",
+    "src/i18n/"
+  ],
+  "protectedPaths": [
+    "src/content/",
+    "src/assets/",
+    "public/",
+    ".env*",
+    ".github/",
+    "src/config.ts",
+    "src/content.config.ts",
+    "src/tag-groups.ts",
+    "astro.config.mjs",
+    "package.json",
+    "bun.lock",
+    "package-lock.json",
+    "bun.lockb",
+    "docs/",
+    "scripts/",
+    ".cache/",
+    ".astro/",
+    "dist/",
+    "node_modules/"
+  ],
+  "manualPaths": [
+    "src/i18n/ui.ts",
+    "src/env.d.ts",
+    "tsconfig.json",
+    "eslint.config.js",
+    "bunfig.toml",
+    ".prettierrc.json",
+    ".prettierignore",
+    ".gitattributes",
+    ".gitignore",
+    "LICENSE"
+  ]
+}

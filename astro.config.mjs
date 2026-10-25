@@ -1,11 +1,7 @@
 // @ts-check
 import { defineConfig, fontProviders, svgoOptimizer } from 'astro/config';
 import process from 'node:process';
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
-import { join } from 'node:path';
-import { fileURLToPath } from 'node:url';
 import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
 import expressiveCode from 'astro-expressive-code';
 import tailwindcss from '@tailwindcss/vite';
@@ -21,94 +17,6 @@ import { remarkInternalLinks } from './src/plugins/remark-internal-links.ts';
 import { unified } from '@astrojs/markdown-remark';
 
 import { SITE } from './src/config';
-
-const rawBase = (process.env.BASE_PATH ?? '/').replace(/\/$/, '');
-const BASE = rawBase.startsWith('/') ? rawBase : `/${rawBase}`;
-const SITEMAP_XSL_HREF = `${BASE}/sitemap/styles.xsl`;
-const SKIP_RSS_SITEMAP = process.env.CI_SKIP_RSS_SITEMAP === 'true';
-
-/**
- * Set of URL path segments that belong to unlisted posts/pages.
- * Populated by `collectUnlistedUrls()` integration before the sitemap
- * integration runs, so the sitemap `filter` can exclude them.
- *
- * We use path segments (e.g. "posts/my-slug") rather than full URLs so
- * the check works regardless of `SITE_URL` or `BASE_PATH` values.
- */
-const unlistedPathSegments = new Set();
-
-/**
- * Integration that reads the content collection at build time and
- * populates `unlistedPathSegments` with the URL path segments of every
- * unlisted post. Must be listed BEFORE `@astrojs/sitemap` in the
- * integrations array.
- */
-function collectUnlistedUrls() {
-  return {
-    name: 'chirpy:collect-unlisted-urls',
-    hooks: {
-      'astro:build:start': async () => {
-        try {
-          // Dynamically import so this only runs during builds (not in
-          // the config evaluation phase where astro:content isn't ready).
-          const { getCollection } = await import('astro:content');
-          const entries = await getCollection('posts');
-          for (const entry of entries) {
-            if (!entry.data.unlisted) continue;
-            // Derive locale and slug from the entry id (e.g. "en/my-post.md").
-            const segs = entry.id.split(/[\\/]/);
-            const locale = segs[0] && /** @type {readonly string[]} */ (SITE.locales).includes(segs[0]) ? segs[0] : SITE.defaultLocale;
-            const slug = segs.slice(1).join('/').replace(/\.(md|mdx)$/i, '');
-            if (locale === SITE.defaultLocale) {
-              unlistedPathSegments.add(`posts/${slug}`);
-            } else {
-              unlistedPathSegments.add(`${locale}/posts/${slug}`);
-            }
-          }
-        } catch {
-          // Content collections aren't available in all build contexts
-          // (e.g. CI fast mode). Silently skip — the sitemap will include
-          // unlisted posts in that case, which is acceptable for CI.
-        }
-      },
-    },
-  };
-}
-
-/**
- * Tiny inline integration: after `@astrojs/sitemap` runs, rewrite the
- * absolute XSL `href` it emits (always prefixed with `site`, e.g.
- * `https://aneejian.com/sitemap/styles.xsl`) to a root-relative path.
- *
- * Why: a root-relative href works in BOTH environments
- *   - production: same origin as the sitemap, browsers apply the XSL
- *   - `bun serve` / preview: same origin (localhost), no cross-origin
- *     XSLT block (which renders as a blank page in browsers).
- *
- * Crawlers ignore `<?xml-stylesheet ?>` entirely, so SEO is unaffected.
- */
-function rewriteSitemapXslToRelative() {
-  return {
-    name: 'chirpy:rewrite-sitemap-xsl',
-    hooks: {
-      'astro:build:done': (/** @type {{ dir: URL }} */ { dir }) => {
-        const distDir = fileURLToPath(dir);
-        const files = readdirSync(distDir).filter(
-          (f) => f.startsWith('sitemap') && f.endsWith('.xml'),
-        );
-        for (const file of files) {
-          const path = join(distDir, file);
-          const xml = readFileSync(path, 'utf8');
-          const fixed = xml.replace(
-            /<\?xml-stylesheet\b[^?]*\?>/,
-            `<?xml-stylesheet type="text/xsl" href="${SITEMAP_XSL_HREF}"?>`,
-          );
-          if (fixed !== xml) writeFileSync(path, fixed);
-        }
-      },
-    },
-  };
-}
 
 // https://astro.build/config
 export default defineConfig({
@@ -159,8 +67,8 @@ export default defineConfig({
   // i18n config: ZH is default and serves at root (no prefix); EN at /en, JA at /ja.
   // The /zh/ prefix is a Cloudflare Pages edge 301 -> root alias (public/_redirects),
   // NOT an Astro route — no /zh/ pages are generated here.
-  // We rely on filesystem routing (src/pages/[...locale]) for the actual routes, but
-  // still expose locales here so integrations like sitemap can emit hreflang alternates.
+  // We rely on filesystem routing (src/pages/[...locale]) for the actual routes and
+  // expose the locale set here for Astro's i18n-aware helpers.
   i18n: {
     locales: [...SITE.locales],
     defaultLocale: SITE.defaultLocale,
@@ -243,33 +151,8 @@ export default defineConfig({
     // MDX must come after Expressive Code so EC can transform fenced
     // code blocks inside .mdx files too.
     mdx(),
-    ...(SKIP_RSS_SITEMAP
-      ? []
-      : [
-          collectUnlistedUrls(),
-          sitemap({
-            i18n: {
-              defaultLocale: SITE.defaultLocale,
-              locales: Object.fromEntries(SITE.locales.map((l) => [l, l])),
-            },
-            // Browsers (and only browsers) apply this XSL to render a
-            // human-readable view of `sitemap-index.xml` and `sitemap-0.xml`.
-            // Search-engine crawlers ignore the processing instruction.
-            // Note: `@astrojs/sitemap` rewrites this into an ABSOLUTE URL using
-            // `site`. The `rewriteSitemapXslToRelative()` integration below
-            // turns it back into a root-relative path so local preview works.
-            xslURL: SITEMAP_XSL_HREF,
-            filter: (page) => {
-              if (page.includes('/draft/') || page.endsWith('/404/')) return false;
-              // Exclude unlisted posts from the sitemap.
-              for (const seg of unlistedPathSegments) {
-                if (page.includes(String(seg))) return false;
-              }
-              return true;
-            },
-          }),
-          rewriteSitemapXslToRelative(),
-        ]),
+    // Sitemaps are static Astro endpoints (`src/pages/sitemap-*.xml.ts`)
+    // generated from the same real route helpers as the pages themselves.
   ],
 
   vite: {

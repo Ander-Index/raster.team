@@ -53,17 +53,14 @@ const posts = (await getPosts(locale)).filter((p) => p.data.tags.some((tg) => sl
 
 // Resolve every locale variant of this tag (translated via the table in
 // src/tag-groups.ts, or shared verbatim, e.g. "UTAU").
-const { links: translationLinks, paths: hreflangPaths } = await resolveTagTranslations(
-  tagName,
-  locale,
-);
-const availableLocales = (Object.keys(translationLinks) as Locale[]).sort();
+const { links: languageLinks } = await resolveTagTranslations(tagName, locale);
+const availableLocales = (Object.keys(languageLinks) as Locale[]).sort();
 ---
 
 <BaseLayout
   title={`#${tagName}`}
   pathWithoutLocale={`/tags/${tag}/`}
-  hreflangPaths={hreflangPaths}
+  languageLinks={languageLinks}
   availableLocales={availableLocales}
   noindex={posts.length === 0}
   crumbs={[
@@ -81,10 +78,3 @@ const availableLocales = (Object.keys(translationLinks) as Locale[]).sort();
   </header>
   <PostList posts={posts} locale={locale} />
 </BaseLayout>
-
-{/* Translation links exposed for the LanguageSwitcher to read at runtime.
-    Same mechanism PostLayout uses; without this the switcher would fall
-    back to same-slug-different-locale and 404 on translated tags. */}
-<script is:inline data-astro-rerun define:vars={{ links: translationLinks }}>
-  window.__chirpyTranslations = links;
-</script>

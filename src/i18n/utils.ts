@@ -21,6 +21,8 @@ const DEFAULT_LOCALE: Locale = SITE.defaultLocale;
  * formatting, Open Graph locale, Giscus locale and switcher labels.
  * Adding a locale never requires touching a `switch` again.
  */
+export type LanguageLinks = Partial<Record<Locale, string>>;
+
 export const LOCALE_META: Record<
   Locale,
   { label: string; htmlLang: string; intl: string; og: string; giscus: string }
@@ -125,7 +127,6 @@ export function stripLocale(pathname: string): string {
  *   const t = useTranslations('ja');
  *   t('nav.home') // 'ホーム'
  */
-// eslint-disable-next-line no-unused-vars
 export function useTranslations(locale: Locale): (key: UIKey) => string {
   const dict = messages[locale] ?? messages[DEFAULT_LOCALE] ?? {};
   return function t(key: UIKey): string {
@@ -216,6 +217,33 @@ export function alternatesByPath(
     list.push({
       locale: 'x-default',
       href: new URL(localizedPath(pathsByLocale[DEFAULT_LOCALE]!, DEFAULT_LOCALE), SITE.url).toString(),
+    });
+  }
+  return list;
+}
+
+/**
+ * Build absolute hreflang alternates from an explicit map of already
+ * localized site paths (locale prefix and base included).
+ *
+ * This is the preferred helper when the language switcher and the
+ * `<link rel="alternate">` tags must share one exact map — for example a
+ * post whose translated sibling uses a different slug, or a pagination
+ * page that only exists in some locales.
+ */
+export function alternatesByLinks(
+  linksByLocale: LanguageLinks,
+): Array<{ locale: Locale | 'x-default'; href: string }> {
+  const list: Array<{ locale: Locale | 'x-default'; href: string }> = [];
+  for (const locale of SITE.locales) {
+    const href = linksByLocale[locale];
+    if (!href) continue;
+    list.push({ locale, href: new URL(href, SITE.url).toString() });
+  }
+  if (linksByLocale[DEFAULT_LOCALE]) {
+    list.push({
+      locale: 'x-default',
+      href: new URL(linksByLocale[DEFAULT_LOCALE]!, SITE.url).toString(),
     });
   }
   return list;

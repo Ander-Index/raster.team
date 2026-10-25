@@ -15,22 +15,25 @@
     "preview": "astro preview",
     "serve": "bun run build && bun preview",
     "astro": "astro",
-    "pagefind": "pagefind --site dist --output-subdir _pagefind",
+    "pagefind": "bun scripts/build-pagefind.mjs",
     "postbuild": "echo \"Pagefind index generated in dist/_pagefind\"",
     "typecheck": "astro check",
     "test": "bun test",
     "lint": "eslint . --max-warnings=0",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write \"**/*.{astro,ts,tsx,js,jsx,md,mdx,css,json}\"",
-    "format:check": "prettier --check \"**/*.{astro,ts,tsx,js,jsx,md,mdx,css,json}\""
+    "format:check": "prettier --check \"**/*.{astro,ts,tsx,js,jsx,md,mdx,css,json}\"",
+    "test:built": "bun scripts/check-built.mjs",
+    "check": "bun run lint && bun run typecheck && bun test && bun run build && bun run test:built"
   },
   "dependencies": {
+    "@astrojs/markdown-remark": "^7.2.0",
     "@astrojs/mdx": "^6.0.1",
     "@astrojs/rss": "^4.0.18",
-    "@astrojs/sitemap": "^3.7.3",
     "astro": "^6.4.3",
     "astro-expressive-code": "^0.42.0",
-    "astro-icon": "^1.1.5"
+    "astro-icon": "^1.1.5",
+    "github-slugger": "^2.0.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
@@ -50,6 +53,7 @@
     "eslint": "^10.4.1",
     "eslint-plugin-astro": "^1.7.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
+    "globals": "^16.5.0",
     "katex": "^0.17.0",
     "pagefind": "^1.5.2",
     "prettier": "^3.8.3",

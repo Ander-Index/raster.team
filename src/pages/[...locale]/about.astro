@@ -1,8 +1,12 @@
 ---
-import { getEntry, render } from 'astro:content';
+import { render } from 'astro:content';
 import PageLayout from '~/layouts/PageLayout.astro';
-import { SITE } from '~/config';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import { SITE, type Locale } from '~/config';
 import { siteTagline } from '~/i18n/utils';
+import { getAboutEntry, getAboutLanguageLinks } from '~/utils/content-pages';
+import { getTagGroup, tagPath } from '~/utils/posts';
+import { shouldNoindex } from '~/utils/seo-policy';
 
 export function getStaticPaths() {
   return SITE.locales.map((l) => ({
@@ -10,17 +14,45 @@ export function getStaticPaths() {
     props: { locale: l },
   }));
 }
-const { locale } = Astro.props;
-const entry = await getEntry('pages', `${locale}/about`);
-if (!entry) return Astro.rewrite('/404');
-const { Content } = await render(entry);
+
+const { locale } = Astro.props as { locale: Locale };
+const entry = await getAboutEntry(locale);
+const aboutTagHref = tagPath(locale, getTagGroup('关于')?.[locale] ?? '关于');
+const Content = entry ? (await render(entry)).Content : undefined;
+const languageLinks = entry ? await getAboutLanguageLinks() : { [locale]: aboutTagHref };
+
+// No `/about` content page exists yet: the navigation intentionally points
+// at the locale's "about" tag listing. Keep the direct old `/about` route
+// useful with a redirect to that same real page instead of publishing a
+// fake article.
+if (!entry) {
+  Astro.response.status = 302;
+  Astro.response.headers.set('Location', encodeURI(aboutTagHref));
+}
 ---
 
-<PageLayout
-  title={entry.data.title}
-  description={entry.data.description ?? siteTagline(locale)}
-  locale={locale}
-  math={entry.data.math}
->
-  <Content />
-</PageLayout>
+{
+  entry && Content ? (
+    <PageLayout
+      title={entry.data.title}
+      description={entry.data.description ?? siteTagline(locale)}
+      locale={locale}
+      math={entry.data.math}
+      languageLinks={languageLinks}
+      noindex={shouldNoindex(entry.data)}
+    >
+      <Content />
+    </PageLayout>
+  ) : (
+    <BaseLayout
+      title="About"
+      description={siteTagline(locale)}
+      languageLinks={languageLinks}
+      noindex={true}
+    >
+      <p>
+        <a href={aboutTagHref}>About</a>
+      </p>
+    </BaseLayout>
+  )
+}

@@ -1,6 +1,14 @@
 /* global URL */
 import { SITE, type Locale } from '../config';
-import { alternates, alternatesByPath, withBase, siteTitle, siteTagline } from '../i18n/utils';
+import {
+  alternates,
+  alternatesByLinks,
+  alternatesByPath,
+  withBase,
+  siteTitle,
+  siteTagline,
+  type LanguageLinks,
+} from '../i18n/utils';
 
 export interface SeoMeta {
   title: string;
@@ -34,6 +42,11 @@ interface BuildSeoArgs {
   modifiedTime?: Date;
   tags?: string[];
   /**
+   * Override canonical URL from frontmatter (`canonicalURL`).
+   * Must already be absolute (validated by the content schema).
+   */
+  canonical?: string;
+  /**
    * Restrict hreflang alternates to a subset of locales. Used on post
    * pages where a translation may be missing.
    */
@@ -45,6 +58,13 @@ interface BuildSeoArgs {
    * `pathWithoutLocale` + `availableLocales`.
    */
   hreflangPaths?: Partial<Record<Locale, string>>;
+  /**
+   * Explicit already-localized paths (locale prefix + base included).
+   * Prefer this over `hreflangPaths` so the language switcher and the
+   * head hreflang tags consume the SAME map, including different-slug
+   * translations and partially generated pagination/category routes.
+   */
+  hreflangLinks?: LanguageLinks;
   /** Emit `<meta name="robots" content="noindex, nofollow">`. */
   noindex?: boolean;
 }
@@ -57,16 +77,18 @@ export function buildSeo(args: BuildSeoArgs): SeoMeta {
         ? `${args.title} — ${siteTitle(args.locale)}`
         : siteTitle(args.locale),
     description: args.description ?? siteTagline(args.locale),
-    canonical: new URL(args.fullPath, SITE.url).toString(),
+    canonical: args.canonical ?? new URL(args.fullPath, SITE.url).toString(),
     ogImage: new URL(withBase(args.ogImage ?? SITE.defaultOgImage), SITE.url).toString(),
     type: args.type ?? 'website',
     publishedTime: args.publishedTime?.toISOString(),
     modifiedTime: args.modifiedTime?.toISOString(),
     tags: args.tags,
     locale: args.locale,
-    hreflangs: args.hreflangPaths
-      ? alternatesByPath(args.hreflangPaths)
-      : alternates(args.pathWithoutLocale, args.availableLocales),
+    hreflangs: args.hreflangLinks
+      ? alternatesByLinks(args.hreflangLinks)
+      : args.hreflangPaths
+        ? alternatesByPath(args.hreflangPaths)
+        : alternates(args.pathWithoutLocale, args.availableLocales),
     noindex: args.noindex,
   };
 }
