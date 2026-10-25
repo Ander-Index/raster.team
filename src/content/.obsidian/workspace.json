@@ -55,7 +55,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "群",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -76,8 +76,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -183,7 +182,7 @@
       "bases:新建数据库": false
     }
   },
-  "active": "c557edb0f82d5f1a",
+  "active": "8d973fe026f366d2",
   "lastOpenFiles": [
     "posts/zh/about/ray-lum.md",
     "posts/zh/tutorials/asio-while-remoting-desktop.md",
