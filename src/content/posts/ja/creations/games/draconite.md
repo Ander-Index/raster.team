@@ -27,7 +27,7 @@ unlisted: false
 
 <!-- more -->
 
-## 百年後、静けさの下で動き出すもの
+# 百年後、静けさの下で動き出すもの
 
 百年前、大陸に落下した隕石は、時代を大きく進めるエネルギー「龍晶」をもたらしました。新たな時代の幕が開いても、その物語はまだ終わっていません。
 
@@ -35,9 +35,9 @@ unlisted: false
 
 任務を果たすだけでなく、自分の手で答えを探す冒険が始まります。
 
-<img src="https://img.cntracker.net/img/1669517dd51aad161e46c5493823920b341a9293d865ddeaba7ef73f1e8cdea0.jpg" alt="『Draconite』公式ゲーム画面、その1" width="1920" height="1080" loading="lazy" decoding="async">
+![『Draconite』公式ゲーム画面、その1](https://img.cntracker.net/img/1669517dd51aad161e46c5493823920b341a9293d865ddeaba7ef73f1e8cdea0.jpg)
 
-## 巡回の先で、人々の物語に出会う
+# 巡回の先で、人々の物語に出会う
 
 『Draconite』は、**獣人（Furry）をテーマに、探索と物語を中心に据えた横スクロール型アドベンチャーゲーム**です。行動するたびに物語が進み、立ち止まって見つめた細部にも手がかりが隠れています。
 
@@ -48,9 +48,9 @@ unlisted: false
 
 散らばった手がかりと人々の物語が交わるとき、サミットの裏に隠された真実も、少しずつ近づいてきます。
 
-<img src="https://img.cntracker.net/img/7eba550f42fc155c2cf3c8eb4421f7be705ce3c6867243f22c48a44b6dd4efe1.jpg" alt="『Draconite』公式ゲーム画面、その5" width="1920" height="1080" loading="lazy" decoding="async">
+![『Draconite』公式ゲーム画面、その5](https://img.cntracker.net/img/7eba550f42fc155c2cf3c8eb4421f7be705ce3c6867243f22c48a44b6dd4efe1.jpg)
 
-## 辰遠がオーディオスーパーバイザーとして参加
+# 辰遠がオーディオスーパーバイザーとして参加
 
 チームラスターから特にお知らせしたいのが、**辰遠が本作のオーディオスーパーバイザーを務めていること**です。
 
@@ -58,7 +58,7 @@ unlisted: false
 
 いつも応援してくださり、ありがとうございます。気になった方は、こうした作品が好きなお友達にも紹介していただけるとうれしいです。
 
-## Steamストアへ
+# Steamストアへ
 
 - **タイトル：** Draconite / 龍晶（簡体字表記：龙晶）
 - **開発・販売：** Draconite Studios
@@ -70,8 +70,6 @@ unlisted: false
 
 <iframe src="https://store.steampowered.com/widget/4337080/?l=japanese" title="『Draconite』Steam公式ストアウィジェット" width="646" height="190" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" style="width:100%;max-width:646px;border:0;"></iframe>
 
-[Steamで『Draconite』を見る](https://store.steampowered.com/app/4337080/Draconite/?l=japanese)。公式トレーラーや最新のお知らせをチェックし、気になったらゲームを購入して、研究所での物語を始めてみてください。ウィジェットが表示されない場合も、このリンクからストアへアクセスできます。
+[Steamで『Draconite』を見る](https://store.steampowered.com/app/4337080/Draconite/?l=japanese)
 
 > **コンテンツに関するご案内：** 公式ストアでは、部分的な裸体表現、身体検査・スキャンのゲームプレイ、軽い性的なほのめかしを含む会話が案内されています。購入前にストアの成人向けコンテンツの説明をご確認ください。
-
-_ゲーム紹介、発売日、プラットフォーム情報は [Steam公式ストア](https://store.steampowered.com/app/4337080/Draconite/?l=japanese)をもとに構成し、プロモーション画像とスクリーンショットも同ページのものを使用しています。価格、セール、対応言語、今後の更新については、ストアの最新情報をご確認ください。_

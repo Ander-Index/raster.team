@@ -15,7 +15,7 @@
               "state": {
                 "file": "posts/zh/creations/games/draconite.md",
                 "mode": "preview",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "draconite"
@@ -96,6 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "posts/zh/creations/games/draconite.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -156,6 +157,7 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "posts/zh/creations/games/draconite.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -164,7 +166,8 @@
               "title": "大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",

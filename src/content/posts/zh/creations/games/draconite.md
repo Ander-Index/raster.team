@@ -27,7 +27,7 @@ unlisted: false
 
 <!-- more -->
 
-## 百年之后，暗流再起
+# 百年之后，暗流再起
 
 一百年前，一颗陨石坠落大陆，带来了跨时代的能源——龙晶。新的时代由此开启，而关于它的故事，还远没有结束。
 
@@ -35,9 +35,9 @@ unlisted: false
 
 这一次，你不仅要完成任务，还要亲自寻找答案。
 
-<img src="https://img.cntracker.net/img/1669517dd51aad161e46c5493823920b341a9293d865ddeaba7ef73f1e8cdea0.jpg" alt="《龙晶》官方游戏截图之一" width="1920" height="1080" loading="lazy" decoding="async">
+![《龙晶》官方游戏截图之一](https://img.cntracker.net/img/1669517dd51aad161e46c5493823920b341a9293d865ddeaba7ef73f1e8cdea0.jpg)
 
-## 不只是巡查，也是一次走近彼此的冒险
+# 不只是巡查，也是一次走近彼此的冒险
 
 《龙晶》是一款以 **Furry（兽人）为主题、以探索与叙事为核心的横版冒险游戏**。故事在一次次行动中展开，也藏在你愿意驻足留意的细节里。
 
@@ -48,9 +48,9 @@ unlisted: false
 
 当人物的故事与散落的线索交织，峰会背后的真相，也会一步步向你靠近。
 
-<img src="https://img.cntracker.net/img/7eba550f42fc155c2cf3c8eb4421f7be705ce3c6867243f22c48a44b6dd4efe1.jpg" alt="《龙晶》官方游戏截图之五" width="1920" height="1080" loading="lazy" decoding="async">
+![《龙晶》官方游戏截图之五](https://img.cntracker.net/img/7eba550f42fc155c2cf3c8eb4421f7be705ce3c6867243f22c48a44b6dd4efe1.jpg)
 
-## 辰远参与制作：音频监制
+# 辰远参与制作：音频监制
 
 这款游戏与光栅组的联系，也值得在这里特别介绍：**辰远在《龙晶》中担任音频监制。**
 
@@ -58,7 +58,7 @@ unlisted: false
 
 感谢你一直以来的关注，也欢迎把《龙晶》分享给喜欢这类作品的朋友。
 
-## 现在前往 Steam
+# 现在前往 Steam
 
 - **游戏名称：** 龙晶 / Draconite
 - **开发与发行：** Draconite Studios
@@ -68,8 +68,6 @@ unlisted: false
 
 <iframe src="https://store.steampowered.com/widget/4337080/?l=schinese" title="《龙晶》Steam 官方商店小部件" width="646" height="190" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" style="width:100%;max-width:646px;border:0;"></iframe>
 
-[前往 Steam 商店查看《龙晶》](https://store.steampowered.com/app/4337080/Draconite/?l=schinese)，观看官方预告、了解最新消息，或购买游戏，开始你的研究所之旅。小部件若未能显示，也可以通过这个链接直接访问商店。
+[前往 Steam 商店查看《龙晶》](https://store.steampowered.com/app/4337080/Draconite/?l=schinese)
 
 > **内容提示：** 官方商店标注本作含部分裸露、身体检查／扫描玩法，以及轻度性暗示对白。购买前请阅读商店的成人内容说明，并确认适合自己。
-
-_游戏介绍、发售与平台信息据 [Steam 官方商店](https://store.steampowered.com/app/4337080/Draconite/?l=schinese)整理；宣传图与截图来自同一商店页面。价格、优惠、语言支持及后续更新请以商店最新信息为准。_
