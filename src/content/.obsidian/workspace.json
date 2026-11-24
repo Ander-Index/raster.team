@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/zh/creations/games/draconite.md",
+                "file": "posts/zh/tools/reaper__chinese-simplified.reaperlangpack.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "draconite"
+              "title": "reaper__chinese-simplified.reaperlangpack"
             }
           }
         ]
@@ -43,7 +43,7 @@
                 "sortOrder": "alphabetical",
                 "autoReveal": false,
                 "showSearch": true,
-                "searchQuery": ""
+                "searchQuery": "reaper"
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -187,6 +187,7 @@
   },
   "active": "c557edb0f82d5f1a",
   "lastOpenFiles": [
+    "posts/zh/creations/games/draconite.md",
     "posts/zh/tutorials/writing-with-ink.md",
     "posts/ja/creations/games/draconite.md",
     "posts/ja/creations/games",
@@ -194,7 +195,6 @@
     "posts/en/creations/games/draconite.md",
     "posts/en/creations/games",
     "posts/en/creations",
-    "posts/zh/creations/games/draconite.md",
     "posts/zh/about/ray-lum.md",
     "posts/zh/tutorials/asio-while-remoting-desktop.md",
     "posts/zh/tutorials/rearoute-asio-to-obs-with-reaper.md",
