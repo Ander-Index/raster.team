@@ -29,11 +29,11 @@ unlisted: false
 
 # 本次更新
 
-- 相比 v7.60，本版新增约 5600 条简体中文译文，REAPER 主程序的中文翻译已基本补齐。
-- 更新至 REAPER 7.86 官方语言模板，补译新增的菜单、对话框和提示。
-- 大幅补齐偏好设置及底部帮助说明、鼠标修饰键、渲染和路由相关文字。
-- 扩充 REAPER 与 SWS 扩展的动作列表译文，可用中文或英文搜索。
-- 修订部分旧译，统一“接选”、“调度车道”、“停靠坞”等术语。
+- 【通用】新增约 5600 条简体中文译文，REAPER + SWS 已完全本地化完毕。
+- 【通用】大幅补齐偏好设置及底部帮助说明、鼠标修饰键、渲染和路由相关文字。
+- 【通用】扩充 REAPER 与 SWS 扩展的动作列表译文，可用中文或英文搜索。
+- 【通用】修订部分旧译，统一“接选”、“调度车道”、“停靠坞”等术语。
+- 【通用】~~增加了一些已知问题~~
 
 更改历史记录可以点[这里](posts/zh/changelogs/reaperlangpack.md)查看
 
@@ -42,12 +42,15 @@ unlisted: false
 ## Windows 11 与 macOS 专用版本
 
 Windows 11 与 macOS 专用！
+
 Windows 11 与 macOS 专用！
+
 Windows 11 与 macOS 专用！
+
 **其它系统用了会变丑。**
 
 - 直链下载：<https://img.cntracker.net/img/34c253dac4091b7b2a6ccd92d0b3c9e7df3141bb46bd00a639ad4a49f270fb1e.ReaperLangPack>
-- OneDrive：<https://1drv.ms/u/c/fa3b7e259cd253d3/IQBgCqFzc-ORRIfv4lTFYPhZAQA9o096hTZIHrs5U8sRprs?e=hRMyjK>（链接无过期时间）
+- OneDrive：<https://1drv.ms/u/c/fa3b7e259cd253d3/IQBgCqFzc-ORRIfv4lTFYPhZAQA9o096hTZIHrs5U8sRprs?e=hRMyjK>
 
 ## 通用纯文字版本
 
@@ -55,7 +58,7 @@ Windows 11 和 macOS 以外的系统使用这个版本，当然不喜欢带图�
 ~~（那难道不是只剩下 Linux 了么……）~~
 
 - 直链下载：<https://img.cntracker.net/img/6f70845ff931b059e064956c9455b6cb1f2f3d250d2fcccf14940c8bd697f61f.ReaperLangPack>
-- OneDrive：<https://1drv.ms/u/c/fa3b7e259cd253d3/IQBYi2JB5-dIT4PJQhKB2gklASTkyJ4Pefcqw6tdxUFw9Vk?e=HW0ntz>（链接无过期时间）
+- OneDrive：<https://1drv.ms/u/c/fa3b7e259cd253d3/IQBYi2JB5-dIT4PJQhKB2gklASTkyJ4Pefcqw6tdxUFw9Vk?e=HW0ntz>
 
 # 分流站
 
@@ -71,6 +74,7 @@ Stash: <https://stash.reaper.fm/u/raylum>
 
 这就是个普通的语言包，别家汉化包怎么用这个就怎么用……
 但你要真的是小白的话……请看这个：[《【REAPER】下载到的 REAPER 语言包怎么用？》](posts/zh/tutorials/how-to-use-reaperlangpack.md)
+
 # 这个汉化包有什么优势？
 
 - 持续更新，一般来说，REAPER 稳定版更新后的三天之内这里就同步跟上了。
@@ -110,7 +114,7 @@ Stash: <https://stash.reaper.fm/u/raylum>
 # 联系方式
 
 - 王洛木：[点击这里给我发邮件](mailto:Nomo_Wang@outlook.com)（这样写或许可以防一些机器人）
-- 本站跳转：[【关于】王洛木](/posts/about/nomo-wang/)
+- 本站跳转：[【关于】王洛木](posts/zh/about/nomo-wang)
 
 # ☕
 
@@ -121,6 +125,7 @@ Stash: <https://stash.reaper.fm/u/raylum>
 
 # 碎碎念（最近的在最前）
 
+- 就没有一个 GUI 可以让某个 AI 作为首脑，指挥其它厂商的 AI 干活么？（2026 年 11 月 24 日）
 - 换 macOS 了，我真的受不了 M$ 的 Windows 了。macOS 再怎么不舒服，但是真的是一个“稳”字把我拿捏住了我的后脖颈……（2023 年 9 月 26 日）
 - 啊啊啊，操作列表好长！我不响丸啦！（然而说归说，闹归闹……）（2023 年 4 月 24 日）
 - 人们一定没有想过计算机会发展到如此的程度，以至于现在 Unicode 都没能统一所有的显示文本。（2023 年 2 月 2 日）
