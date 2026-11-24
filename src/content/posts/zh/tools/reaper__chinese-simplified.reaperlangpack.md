@@ -1,6 +1,6 @@
 ---
 title: 【REAPER】简体中文语言包
-pubDate: 2026-02-03T03:22:35.000Z
+pubDate: 2026-11-24T02:35:00.000Z
 draft: false
 heroImage: https://cntracker.net/img/fd863c92225505f28bcbd1f4f1aaa7cd.jpg
 toc: true
@@ -12,27 +12,28 @@ tags:
   - 语言包
 categories:
   - 工具
-description: 🎉  没错！这款深度打磨的 REAPER 汉化包终于发布啦~！ 💴  完全免费，持续更新 📅  最后更新时间：2026 年 02 月 02 日 ℹ️  版本：7.60（也兼容旧版 REAPER）
+description: 🎉  没错！这款深度打磨的 REAPER 汉化包终于发布啦~！ 💴  完全免费，持续更新 📅  最后更新时间：2026 年 11 月 24 日 ℹ️  版本：7.86（也兼容旧版 REAPER）
 lang: zh
 unlisted: false
 ---
 🎉  没错！这款深度打磨的 REAPER 汉化包终于发布啦~！
 💴  完全免费，持续更新
-📅  最后更新时间：2026 年 02 月 02 日
-ℹ️  版本：7.60（也兼容旧版 REAPER）
+📅  最后更新时间：2026 年 11 月 24 日
+ℹ️  版本：7.86（也兼容旧版 REAPER）
 
 <!-- more -->
 
 🤗  新手老手都友好型的 REAPER 汉化包，谁用谁知道~
 ❤️  由于已经基本汉化完整了，所以接下来的更新会随大型变更来发布，比如说有显眼的问题或者新的菜单布局更新一类导致汉化失效或者需要补全的情况。
-📢️ 由于软件会更新，所以翻译也具有一定时效性，百度云链接都是 365 天自动失效的。
+📢️ 由于软件会更新，所以翻译也具有一定时效性。
 
 # 本次更新
 
-- 【通用】新增菜单的覆盖
-- 【通用】新增偏好设置的覆盖
-- 【通用】其它新增功能
-- ~~【通用】增加了一些已知问题~~
+- 相比 v7.60，本版新增约 5,600 条简体中文译文，REAPER 主程序的中文翻译已基本补齐。
+- 更新至 REAPER 7.86 官方语言模板，补译新增的菜单、对话框和提示。
+- 大幅补齐偏好设置及底部帮助说明、鼠标修饰键、渲染和路由相关文字。
+- 扩充 REAPER 与 SWS 扩展的动作列表译文，可用中文或英文搜索。
+- 修订部分旧译，统一“接选”、“调度车道”、“停靠坞”等术语。
 
 更改历史记录可以点[这里](posts/zh/changelogs/reaperlangpack.md)查看
 
@@ -45,16 +46,16 @@ Windows 11 与 macOS 专用！
 Windows 11 与 macOS 专用！
 **其它系统用了会变丑。**
 
-- 百度云：<https://pan.baidu.com/s/1yfuMM1RH-C3WqKAZtEF34g?pwd=996s>（链接有效期 365 天）
-- OneDrive: <https://1drv.ms/u/c/fa3b7e259cd253d3/IQCYywNsxiR3RYCojUZNcIWQAWTrHgzwkSRMcrEBmf3_ISk?e=eWhGAq>（链接无过期时间）
+- 直链下载：<https://img.cntracker.net/img/34c253dac4091b7b2a6ccd92d0b3c9e7df3141bb46bd00a639ad4a49f270fb1e.ReaperLangPack>
+- OneDrive：<https://1drv.ms/u/c/fa3b7e259cd253d3/IQBgCqFzc-ORRIfv4lTFYPhZAQA9o096hTZIHrs5U8sRprs?e=hRMyjK>（链接无过期时间）
 
 ## 通用纯文字版本
 
 Windows 11 和 macOS 以外的系统使用这个版本，当然不喜欢带图标的用户也可以用。
 ~~（那难道不是只剩下 Linux 了么……）~~
 
-- 百度云：<https://pan.baidu.com/s/1zH8a27F1lSid7GMVYyqPrw?pwd=fgzw>（链接有效期 365 天）
-- OneDrive: <https://1drv.ms/u/c/fa3b7e259cd253d3/IQCWtq35MZ8KT7YeUHVtZHexAYqsWy0hJ2rqaSgAek204ak?e=FBl27v>（链接无过期时间）
+- 直链下载：<https://img.cntracker.net/img/6f70845ff931b059e064956c9455b6cb1f2f3d250d2fcccf14940c8bd697f61f.ReaperLangPack>
+- OneDrive：<https://1drv.ms/u/c/fa3b7e259cd253d3/IQBYi2JB5-dIT4PJQhKB2gklASTkyJ4Pefcqw6tdxUFw9Vk?e=HW0ntz>（链接无过期时间）
 
 # 分流站
 
