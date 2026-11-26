@@ -57,7 +57,7 @@
                 "sortOrder": "alphabetical",
                 "autoReveal": false,
                 "showSearch": true,
-                "searchQuery": "王洛"
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -69,7 +69,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "王洛",
+                "query": "站建站所用到的",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -202,8 +202,9 @@
   },
   "active": "c557edb0f82d5f1a",
   "lastOpenFiles": [
-    "posts/zh/about/nomo-wang.md",
+    "posts/zh/tutorials/build-your-own-site-easy.md",
     "posts/zh/tools/reaper__chinese-simplified.reaperlangpack.md",
+    "posts/zh/about/nomo-wang.md",
     "posts/zh/changelogs/reaperlangpack.md",
     "posts/zh/creations/games/draconite.md",
     "posts/zh/tutorials/writing-with-ink.md",
@@ -229,7 +230,6 @@
     "posts/zh/about/ray-lum_inside.md",
     "posts/zh/__drafts/hu-dong-xiao-shuo-cai-keng-zhi-nan.md",
     "posts/zh/__drafts/choicescript-zhi-nan.md",
-    "posts/zh/tutorials/build-your-own-site-easy.md",
     "posts/zh/tutorials/how-to-use-reaperlangpack.md",
     "posts/en/demo/getting-started.md",
     "posts/zh/voicedbs/utau",
