@@ -1,0 +1,45 @@
+<!doctype html>
+<!-- InkShell shared boot template. The selected theme owns all presentation
+     and chooses its plugins in window.beforeStart(player).
+     公共启动模板：主题持有呈现，并在 beforeStart(player) 中选择插件。 -->
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InkShell</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="story-root"></div>
+
+    <!-- Dependency order / 依赖顺序 -->
+    <script src="ink.js"></script>
+    <script src="inkshell.js"></script>
+    <script src="plugins.js"></script>
+    <script src="theme.js"></script>
+    <script src="story.js"></script>
+    <script>
+      (function () {
+        "use strict";
+        var container = document.getElementById("story-root");
+        var data = window.storyContent;
+        if (!data) {
+          container.textContent =
+            "Error: story.js not found or storyContent not defined. " +
+            "Export your Ink story from Inky (File → Export story.js) " +
+            "and place it in this folder, overwriting story.js.";
+          return;
+        }
+
+        var player = new InkShell({ container: container, inkJson: data });
+        window.player = player;
+        if (window.InkShellStorage && window.InkShellStorage.extractStoryId) {
+          window.InkShellStorage.setStoryId(window.InkShellStorage.extractStoryId(data));
+        }
+        if (typeof window.beforeStart === "function") window.beforeStart(player);
+        player.start();
+      })();
+    </script>
+  </body>
+</html>

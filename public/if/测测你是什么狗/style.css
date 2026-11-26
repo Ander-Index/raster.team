@@ -1,0 +1,461 @@
+/* Theme baseline: common passage and media rules chosen by this theme.
+ Shell elements are hidden until this theme overrides their display.
+ Theme-specific rules follow this block and win on equal specificity.
+ 主题基础样式：段落与媒体规则由本主题选择；外壳元素由后续主题规则开启。
+ 同优先级下，后续规则覆盖基础样式。 */
+ body { margin: 0; font-family: system-ui, sans-serif; }
+
+ .inkshell-bar { display: none; }
+ .inkshell-logo { display: none; }
+ .inkshell-title { display: none; }
+ .inkshell-spacer { display: none; }
+ .inkshell-burger { display: none; }
+ .inkshell-actions { display: none; }
+ .inkshell-btn { display: none; }
+
+ .inkshell-passage { white-space: pre-wrap; overflow-wrap: break-word; }
+ .inkshell-choices { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+ .inkshell-choice { display: block; width: 100%; padding: 10px 14px; text-align: left; cursor: pointer; }
+ .inkshell-image { max-width: 100%; height: auto; }
+
+/* ============================================================
+   InkShell — Kurokawa Logistics Theme / 黑川物流主题
+   ============================================================ */
+
+/* ---- Remote fonts / 远程字体 ---- */
+@font-face {
+  font-family: "SymbolsNerdFont";
+  src: url("https://blog.raster.team/fonts/SymbolsNerdFontMono-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "SarasaMonoSC";
+  src: url("https://blog.raster.team/fonts/SarasaMonoSC-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* ---- 调色板清单：≥2 项时会显示"主题"按钮并循环 ---- */
+body {
+  --themes: black, white, yellow, purple, green;
+
+  /* 主题切换统一过渡时长——所有换色元素共用，保证同步 */
+  --theme-duration: 0.2s;
+  --theme-ease: ease;
+
+  /* ---- 段落淡入淡出参数（theme.js 读取） ---- */
+  --fade-in-duration: 600ms; /* 段淡入时间（主题内共用：模态框遮罩同用） */
+  --fade-in-stagger: 200ms;  /* 段开始淡入间隔（第 N 段延迟 N×此值） */
+  --fade-in-ease: ease-in-out; /* 淡入缓动：两端都软，"显形"不突兀 */
+  --fade-out-duration: 200ms;/* # CLEAR 时段淡出时间 */
+  --fade-out-stagger: 50ms;  /* 段开始淡出间隔（逐段"唰～"消除） */
+  --fade-out-ease: ease-in;  /* 淡出缓动：先慢后快，抽离感 */
+  --fade-wait-exit: 1;       /* 1 = 等淡出结束后再开始淡入；0 = 交叉淡变 */
+
+  /* 段距附加量：段距 = 行距 1lh + 此值（0.5lh 时段距 = 1.5×行距） */
+  --para-gap: 0.5lh;
+}
+
+/* ---- 黑 / dark ---- */
+body[data-theme="black"] {
+  --bg: #0f1114;
+  --fg: #d8dce2;
+  --muted: #8b93a1;
+  --bar-bg: #16191e;
+  --bar-fg: #e2e6ec;
+  --border: #262b33;
+  --hr: #3a4150;
+  --accent: #e8e8e8;        /* white on dark / 黑底白 */
+  --accent-fg: #141414;
+  --passage-bg: #15181d;
+  --choice-bg: #1b1f26;
+  --choice-bg-hover: #252b35;
+  --disabled: #4a5160;
+}
+
+/* ---- 白 / light ---- */
+body[data-theme="white"] {
+  --bg: #f2f3f4;
+  --fg: #1c1e21;
+  --muted: #646a71;
+  --bar-bg: #ffffff;
+  --bar-fg: #1c1e21;
+  --border: #e3e5e7;
+  --hr: #c9ced4;
+  --accent: #1a1a1a;        /* black on light / 白底黑 */
+  --accent-fg: #ffffff;
+  --passage-bg: #ffffff;
+  --choice-bg: #eef0f2;
+  --choice-bg-hover: #e2e6ea;
+  --disabled: #b9bec4;
+}
+
+/* ---- 黄 / reading yellow (warm paper, easy on the eyes) ---- */
+body[data-theme="yellow"] {
+  --bg: #f1e5c8;
+  --fg: #332a17;
+  --muted: #75653f;
+  --bar-bg: #e9d9ae;
+  --bar-fg: #332a17;
+  --border: #d8c48f;
+  --hr: #cbb47e;
+  --accent: #b8861f;        /* deeper yellow on warm paper / 黄底深黄 */
+  --accent-fg: #f4ecd6;
+  --passage-bg: #f7edd4;
+  --choice-bg: #eadbb4;
+  --choice-bg-hover: #e0cc96;
+  --disabled: #b3a06e;
+}
+
+/* ---- 紫 / luoshu purple (浅紫罗兰阅读纸，主角洛书主题色) ---- */
+body[data-theme="purple"] {
+  --bg: #f3eef5;
+  --fg: #2e2438;
+  --muted: #756580;
+  --bar-bg: #eae0f0;
+  --bar-fg: #2e2438;
+  --border: #ddd0e3;
+  --hr: #c9b8d4;
+  --accent: #966495;        /* 洛书紫 on lilac paper / 紫底洛书紫 */
+  --accent-fg: #ffffff;
+  --passage-bg: #faf6fc;
+  --choice-bg: #ece3f2;
+  --choice-bg-hover: #e2d5ea;
+  --disabled: #b9a9c4;
+}
+
+/* ---- 绿 / sage green (浅鼠尾草绿阅读纸) ---- */
+body[data-theme="green"] {
+  --bg: #f2f5ee;
+  --fg: #26301f;
+  --muted: #66754f;
+  --bar-bg: #e9efe0;
+  --bar-fg: #26301f;
+  --border: #d8e0ca;
+  --hr: #c2cfae;
+  --accent: #93b17a;        /* 鼠尾草绿 on sage paper / 绿底鼠尾草 */
+  --accent-fg: #26301f;     /* accent 偏浅，压字用深绿不用白（5.78:1） */
+  --passage-bg: #f8faf3;
+  --choice-bg: #eaf0df;
+  --choice-bg-hover: #dfe8cf;
+  --disabled: #b3bfa0;
+}
+
+/* ---- reset & base ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+
+/* 长文被 # CLEAR 截断后页面变短，滚动条随之消失会改变布局视口宽度：
+   居中栏横移，且贴近 720px 断点时小屏字号媒体查询会翻转。
+   常驻滚动条槽位让视口宽度稳定，消除截断瞬间的位移/字号跳变。
+   （对 overlay 滚动条系统无影响；不支持的旧浏览器静默忽略。
+   此规则为本主题动画服务，故意不放 core——其他主题未必需要。） */
+html { scrollbar-gutter: stable; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "SymbolsNerdFont", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+  transition: background-color var(--theme-duration) var(--theme-ease),
+              color var(--theme-duration) var(--theme-ease);
+}
+
+/* 所有换色元素共用过渡，主题切换时整 UI 同步变色 */
+.inkshell-bar,
+.inkshell-logo,
+.inkshell-title,
+.inkshell-btn,
+.inkshell-choices,
+.inkshell-choice,
+.inkshell-input-wrapper,
+.inkshell-input-field,
+.inkshell-input-submit,
+.inkshell-input-prompt {
+  transition: background-color var(--theme-duration) var(--theme-ease),
+              color var(--theme-duration) var(--theme-ease),
+              border-color var(--theme-duration) var(--theme-ease);
+}
+
+/* ---- top menu bar / 顶部菜单栏 ---- */
+.inkshell-bar {
+ display: flex;
+ align-items: center;
+ gap: 14px;
+ padding: 0 18px;
+ height: 56px;
+ background: var(--bar-bg);
+ color: var(--bar-fg);
+ border-bottom: 2px solid var(--accent);
+ position: fixed;
+ top: 0; left: 0; right: 0;
+ z-index: 100;
+}
+
+.inkshell-logo {
+ display: block;
+ width: 32px; height: 32px;
+ background: url("https://publish-01.obsidian.md/access/fc4add7e66498778dd34d4bc50d93dc3/Content/%E6%9D%82%E9%A1%B9%E5%86%85%E5%AE%B9/favicon-196x196.png") center / contain no-repeat;
+ border-radius: 3px;
+}
+
+.inkshell-title {
+ display: block;
+ font-weight: 700; font-size: 16px; opacity: 0.92;
+ white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.inkshell-spacer { display: block; flex: 1 1 auto; }
+
+.inkshell-actions { display: flex; gap: 8px; align-items: center; }
+
+.inkshell-btn {
+ display: inline-block;
+ border: 1px solid var(--border);
+ background: transparent;
+ color: var(--bar-fg);
+ font: inherit; font-size: 14px;
+ padding: 7px 12px;
+ border-radius: 4px;
+ cursor: pointer;
+}
+.inkshell-btn[hidden] { display: none; }
+.inkshell-btn:hover { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+.inkshell-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.inkshell-btn:disabled { color: var(--disabled); cursor: not-allowed; opacity: 0.7; }
+.inkshell-btn:disabled:hover { background: transparent; color: var(--disabled); border-color: var(--border); }
+
+/* hamburger hidden on wide screens / 汉堡键宽屏隐藏 */
+.inkshell-burger { display: none !important; }
+
+/* ---- story container ---- */
+#story-root { max-width: 720px; margin: 0 auto; padding: 104px 24px 120px; }
+
+.inkshell-passage { white-space: pre-wrap; overflow-wrap: break-word; }
+.inkshell-passage hr { display: block; margin: 16px 0; border: none; border-top: 2px solid var(--hr); }
+.inkshell-passage code, .inkshell-passage pre, .inkshell-passage samp {
+ font-family: "SymbolsNerdFont", "SarasaMonoSC", "Courier New", "Menlo", monospace;
+}
+
+/* Paragraph gap INSIDE a passage / 段落内部的段距
+   One .inkshell-passage holds a whole turn's text; the author's
+   "paragraphs" are the \n-separated ink lines inside it, so margins
+   on .inkshell-passage can't space them. theme.js replaces each
+   interior \n with a block-level .ks-pgap span:
+     paragraph gap = 1lh (the line break) + --para-gap (this span)
+   Wrapped lines still break at 1lh. --para-gap = 1lh → 段距 = 2×行距.
+   一个 .inkshell-passage 装着整回合文本；作者的"段"是其中
+   以 \n 分隔的 ink 行，给 .inkshell-passage 加外边距根本够不着。
+   theme.js 把段落内部的 \n 换成块级 .ks-pgap：
+     段距 = 换行 1lh + --para-gap（本元素高度）
+   折叠产生的行仍是 1lh。--para-gap = 1lh 时段距 = 2×行距。 */
+.ks-pgap { display: block; height: var(--para-gap, 1lh); }
+
+/* One paragraph (one ink source line) wrapped by theme.js — the unit
+   the fade system sequences ("一段接一段"). Block display only;
+   rendering identical to the anonymous blocks that were there before.
+   一个段（一行 ink 源码），由 theme.js 包裹——淡入淡出系统
+   按此逐段调度（"一段接一段"）。仅 block 显示，
+   与原先的匿名块渲染一致。 */
+.ks-pline { display: block; }
+
+/* Standalone #IMAGE images: block display drops the inline strut that
+   added stray pixels below; margins follow the paragraph rhythm.
+   独立 #IMAGE 图片：block 显示去掉图片下方内联支柱的多余像素；
+   上下边距跟随段距节奏。 */
+.inkshell-image { display: block; margin: var(--para-gap, 1lh) 0 1lh; }
+
+/* ---- segment fade in/out / 段落淡入淡出 ----
+   One "segment" = a passage div, a standalone #IMAGE image, or the
+   choices block (top-level children of #story-root). Opacity-only:
+   layout never shifts, so story:turnComplete scroll math stays correct.
+   一个"段" = 一个段落 div / 一张独立 #IMAGE 图片 / 选项块
+   （#story-root 的顶层子元素）。仅透明度动画：布局不变，
+   story:turnComplete 的滚动计算始终正确。
+   theme.js drives everything: [data-new] + unseen images get .ks-enter
+   (opacity 0, no transition) → reflow → release with per-segment delay.
+   On dom:clear, clones of the old segments fade out in .ks-exit-layer.
+   全部由 theme.js 驱动：新段钉 .ks-enter → 回流 → 按段间隔释放。
+   dom:clear 时旧段克隆进 .ks-exit-layer 淡出。 */
+.inkshell-passage, .inkshell-choices, .inkshell-image, .ks-pline {
+  opacity: 1;
+  transition: opacity var(--fade-in-duration, 600ms) var(--fade-in-ease, ease-in-out);
+}
+.ks-enter { opacity: 0; transition: none; }
+
+/* z-index 90: below the opaque menu bar (100), above page content.
+   Exit clones near the top must stay COVERED by the bar like the
+   original text was — at 900 they painted right over it.
+   z-index 90：低于不透明菜单栏（100），高于页面内容。
+   靠近顶部的淡出克隆必须像原文一样被菜单栏盖住——
+   之前 900 时它们直接画到了菜单栏上面。 */
+.ks-exit-layer { position: fixed; inset: 0; pointer-events: none; z-index: 90; }
+.ks-exit { opacity: 1; transition: opacity var(--fade-out-duration, 200ms) var(--fade-out-ease, ease-in); }
+.ks-exit.go { opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .inkshell-passage, .inkshell-choices, .inkshell-image, .ks-pline { transition: none; }
+}
+
+.inkshell-choices {
+  display: flex; flex-direction: column; gap: 10px;
+  margin-top: 28px; padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.inkshell-choice {
+  display: block; width: 100%;
+  padding: 12px 16px;
+  background: var(--choice-bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 3px;
+  font: inherit; font-size: 16px; text-align: left; cursor: pointer;
+}
+.inkshell-choice:hover, .inkshell-choice:focus { background: var(--choice-bg-hover); border-left-color: var(--accent); outline: none; }
+
+/* text / number input */
+.inkshell-input-wrapper {
+  display: flex; gap: 8px; align-items: center;
+  margin-top: 16px; padding: 14px 16px;
+  background: var(--choice-bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+.inkshell-input-prompt { flex: 0 0 auto; color: var(--muted); }
+.inkshell-input-field {
+  flex: 1 1 auto; padding: 7px 10px;
+  font: inherit; font-size: 16px;
+  background: var(--bg); color: var(--fg);
+  border: 1px solid var(--border); border-radius: 3px;
+}
+.inkshell-input-submit {
+  padding: 7px 16px;
+  background: var(--accent); color: var(--accent-fg);
+  border: none; border-radius: 3px;
+  font: inherit; font-size: 14px; cursor: pointer;
+}
+
+/* ---- responsive: collapse actions into hamburger / 响应式 ---- */
+@media (max-width: 720px) {
+ .inkshell-burger { display: inline-flex !important; align-items: center; padding: 7px 10px; font-size: 18px; line-height: 1; }
+ .inkshell-actions {
+ position: absolute; top: 56px; right: 0;
+ flex-direction: column; align-items: stretch; gap: 4px;
+ padding: 10px; min-width: 150px;
+ background: var(--bar-bg);
+ border-bottom: 2px solid var(--accent);
+ border-left: 1px solid var(--border);
+ display: none;
+ }
+ .inkshell-actions.inkshell-open { display: flex; }
+  .inkshell-actions .inkshell-btn { width: 100%; text-align: left; }
+  #story-root { padding: 84px 16px 80px; font-size: 16px; }
+}
+
+/* ============================================================
+   Modal / dialog / 模态对话框（存档·读档·重置）
+   ============================================================ */
+.ks-overlay {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 20px; z-index: 1000;
+  animation: ks-fade var(--fade-in-duration, 600ms) var(--fade-in-ease, ease-in-out);
+}
+@keyframes ks-fade { from { opacity: 0; } to { opacity: 1; } }
+
+.ks-modal {
+  width: 100%; max-width: 460px;
+  max-height: 80vh; overflow-y: auto;
+  background: var(--bar-bg); color: var(--bar-fg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  font-size: 15px;
+}
+
+.ks-modal-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  font-weight: 700; font-size: 16px;
+}
+.ks-modal-close {
+  background: none; border: none; cursor: pointer;
+  font-size: 22px; line-height: 1; padding: 0 4px; color: var(--muted);
+}
+.ks-modal-close:hover { color: var(--fg); }
+.ks-modal-body { padding: 12px 20px 20px; }
+
+/* ---- slot rows / 存档槽行 ---- */
+.ks-slot {
+  display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: center;
+  width: 100%; text-align: left;
+  padding: 10px 12px; margin-bottom: 8px;
+  background: var(--choice-bg); color: var(--fg);
+  border: 1px solid var(--border); border-radius: 4px;
+  cursor: pointer; font: inherit;
+  transition: background-color var(--theme-duration) var(--theme-ease);
+}
+.ks-slot:hover { background: var(--choice-bg-hover); }
+.ks-slot-num { font-weight: 700; font-size: 18px; color: var(--muted); text-align: center; }
+.ks-slot-main { min-width: 0; }
+.ks-slot-time { font-size: 13px; color: var(--muted); }
+.ks-slot-preview {
+  font-size: 14px; margin-top: 2px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* ---- per-row import/export ops / 槽行导入导出操作 ---- */
+.ks-slot--has-ops { grid-template-columns: 40px 1fr auto; }
+.ks-slot-ops { display: flex; gap: 6px; }
+.ks-op {
+  padding: 4px 10px; border-radius: 4px; cursor: pointer;
+  font: inherit; font-size: 12px;
+  border: 1px solid var(--border); background: transparent; color: var(--muted);
+  transition: background-color var(--theme-duration) var(--theme-ease),
+              color var(--theme-duration) var(--theme-ease);
+}
+.ks-op:hover { color: var(--fg); background: var(--choice-bg-hover); }
+.ks-slot--empty { opacity: 0.55; cursor: default; }
+.ks-slot--empty:hover { background: var(--choice-bg); }
+.ks-hint { font-size: 12px; color: var(--muted); line-height: 1.6; margin-top: 14px; }
+
+.ks-divider { height: 1px; background: var(--border); margin: 12px 0; }
+
+/* ---- confirm dialog bits / 确认框 ---- */
+.ks-check {
+  display: flex; align-items: center; gap: 6px;
+  margin: 14px 0 0; font-size: 13px; color: var(--muted); cursor: pointer;
+}
+.ks-msg { line-height: 1.6; margin-bottom: 4px; white-space: pre-wrap; }
+
+.ks-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 18px; }
+.ks-btn {
+  padding: 8px 16px; border-radius: 4px; font: inherit; font-size: 14px;
+  cursor: pointer; border: 1px solid var(--border);
+  background: transparent; color: var(--bar-fg);
+  transition: background-color var(--theme-duration) var(--theme-ease),
+              color var(--theme-duration) var(--theme-ease);
+}
+.ks-btn:hover { background: var(--choice-bg); }
+.ks-btn--primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+.ks-btn--primary:hover { background: var(--accent); filter: brightness(1.1); }
+.ks-btn--danger { border-color: #c0392b; color: #e05848; }
+.ks-btn--danger:hover { background: #c0392b; color: #fff; }
+
+/* ---- reset menu big options / 重置菜单大选项 ---- */
+.ks-reset-opt {
+  display: block; width: 100%; text-align: left;
+  padding: 14px 16px; margin-bottom: 10px;
+  background: var(--choice-bg); color: var(--fg);
+  border: 1px solid var(--border); border-radius: 4px;
+  cursor: pointer; font: inherit;
+  transition: background-color var(--theme-duration) var(--theme-ease);
+}
+.ks-reset-opt:hover { background: var(--choice-bg-hover); }
+.ks-reset-opt--danger { border-color: #c0392b; }
+.ks-reset-opt-title { font-weight: 700; font-size: 15px; }
+.ks-reset-opt-desc { font-size: 13px; color: var(--muted); margin-top: 4px; }
