@@ -18,7 +18,7 @@ lang: zh
 unlisted: false
 ---
 
-[辰远](/posts/about/shinne-tatsu/)与[锰锰摇摇车](https://space.bilibili.com/385332260)合作完成的《明日方舟》12F×博 主题中文填词男声翻唱——《呐呐呐｜ねぇねぇねぇ》。
+[辰远](posts/zh/about/shinne-tatsu)与[锰锰摇摇车](https://space.bilibili.com/385332260)合作完成的《明日方舟》12F×博 主题中文填词男声翻唱——《呐呐呐｜ねぇねぇねぇ》。
 
 <!-- more -->
 

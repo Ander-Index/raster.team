@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/zh/tools/reaper__chinese-simplified.reaperlangpack.md",
-                "mode": "source",
+                "file": "posts/zh/creations/music/nee-nee-nee.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "reaper__chinese-simplified.reaperlangpack"
+              "title": "nee-nee-nee"
             }
           },
           {
@@ -199,10 +199,10 @@
       "bases:新建数据库": false
     }
   },
-  "active": "8d973fe026f366d2",
+  "active": "c557edb0f82d5f1a",
   "lastOpenFiles": [
-    "posts/zh/tutorials/build-your-own-site-easy.md",
     "posts/zh/tools/reaper__chinese-simplified.reaperlangpack.md",
+    "posts/zh/tutorials/build-your-own-site-easy.md",
     "posts/zh/about/nomo-wang.md",
     "posts/zh/changelogs/reaperlangpack.md",
     "posts/zh/creations/games/draconite.md",
